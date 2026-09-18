@@ -54,10 +54,121 @@
 </head>
 <body class="min-h-screen flex flex-col selection:bg-amber-500 selection:text-black">
 
+  <!-- Side Navigation Drawer Backdrop -->
+  <div id="sidebarBackdrop" onclick="toggleSidebar(false)" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden transition-opacity duration-300"></div>
+
+  <!-- Side Navigation Drawer -->
+  <aside id="sideNavDrawer" class="fixed top-0 left-0 bottom-0 w-80 max-w-[85vw] bg-slate-900/95 border-r border-slate-800 z-50 transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col shadow-2xl backdrop-blur-2xl">
+    <div class="p-5 border-b border-slate-800 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-500 to-purple-500 flex items-center justify-center font-black text-white text-lg shadow-lg shadow-blue-500/20">
+          LN
+        </div>
+        <div>
+          <div class="font-bold text-white text-sm tracking-tight flex items-center gap-1.5">
+            <span>Lakshay Nagpal</span>
+            <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-blue-500/20 text-blue-400 border border-blue-500/30">VERIFIED</span>
+          </div>
+          <span class="text-xs text-slate-400 font-mono block">Engineering Control Center</span>
+        </div>
+      </div>
+      <button onclick="toggleSidebar(false)" class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all" title="Close Menu">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+
+    <div class="flex-grow overflow-y-auto py-4 px-3 space-y-6">
+      <div>
+        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">Core Portals</div>
+        <div class="mt-2 space-y-1">
+          <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 font-medium transition-all group text-sm">
+            <span class="text-lg">🏠</span>
+            <span>Master Dashboard</span>
+          </a>
+          <a href="dsa_master_tracker.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 font-medium transition-all group text-sm">
+            <span class="text-lg">⚡</span>
+            <span>DSA Master Tracker</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono">240+ LC</span>
+          </a>
+          <a href="learning_hub.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 font-medium transition-all group text-sm">
+            <span class="text-lg">🧠</span>
+            <span>Learning Hub</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 font-mono">5 Tracks</span>
+          </a>
+          <a href="typescript_curriculum.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 font-medium transition-all group text-sm">
+            <span class="text-lg">📘</span>
+            <span>TypeScript Curriculum</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-mono">14K Lines</span>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">Higher Education &amp; Admissions</div>
+        <div class="mt-2 space-y-1">
+          <a href="german_universities_evaluation.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 font-medium transition-all group text-sm">
+            <span class="text-lg">🇩🇪</span>
+            <span>German Universities</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 font-mono">Tuition-Free</span>
+          </a>
+          <a href="cat_2026_syllabus_roadmap.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-blue-500/15 text-blue-300 border border-blue-500/30 font-semibold transition-all group text-sm">
+            <span class="text-lg">🐯</span>
+            <span>CAT 2026 Strategy</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 font-mono">IIM/IIT</span>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">Professional Dossier</div>
+        <div class="mt-2 space-y-1">
+          <a href="lebenslauf_de.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 font-medium transition-all group text-sm">
+            <span class="text-lg">📄</span>
+            <span>Lebenslauf (German CV)</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 font-mono">DIN 5008</span>
+          </a>
+          <a href="index.html#projects" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
+            <span class="text-lg">💻</span>
+            <span>Cloud Projects</span>
+          </a>
+          <a href="https://lakshayn0001.github.io/Portfolio/" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
+            <span class="text-lg">🌐</span>
+            <span>Developer Portfolio</span>
+            <svg class="w-3.5 h-3.5 text-slate-500 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">Connect</div>
+        <div class="mt-2 space-y-1">
+          <a href="https://www.linkedin.com/in/lakshay-nagpal-1a2a0134a/" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
+            <svg class="w-4 h-4 text-[#0a66c2] fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z"/></svg>
+            <span>LinkedIn Profile</span>
+          </a>
+          <a href="https://github.com/lakshayn0001/dashboard" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
+            <svg class="w-4 h-4 text-slate-400 fill-current" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
+            <span>GitHub Repository</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-4 border-t border-slate-800 text-[11px] text-slate-400 flex items-center justify-between">
+      <span>Immediate Joiner / 0 Days</span>
+      <span class="text-blue-400 font-mono">Full-Stack SDE</span>
+    </div>
+  </aside>
+
+
   <!-- Sticky Top Navigation -->
   <header class="sticky top-0 z-50 w-full border-b border-slate-800 glass-nav shadow-lg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <div class="flex items-center gap-3">
+                <button onclick="toggleSidebar(true)" class="p-2 rounded-xl bg-slate-800 border border-slate-700 hover:border-amber-500 text-slate-300 hover:text-white transition-all flex items-center gap-1.5" title="Toggle Navigation Menu">
+          <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <span class="text-xs font-semibold hidden sm:inline">Menu</span>
+        </button>
         <a href="index.html" class="w-9 h-9 rounded-xl bg-slate-800 border border-slate-700 hover:border-amber-500 flex items-center justify-center text-slate-300 hover:text-white transition-all" title="Back to Master Dashboard">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
         </a>
@@ -1290,6 +1401,20 @@
       const bar = document.getElementById('floatingAudioBar');
       if (bar) bar.classList.add('hidden');
     }
+  
+    function toggleSidebar(open) {
+      const drawer = document.getElementById('sideNavDrawer');
+      const backdrop = document.getElementById('sidebarBackdrop');
+      if (!drawer) return;
+      if (open) {
+        drawer.classList.remove('-translate-x-full');
+        if (backdrop) backdrop.classList.remove('hidden');
+      } else {
+        drawer.classList.add('-translate-x-full');
+        if (backdrop) backdrop.classList.add('hidden');
+      }
+    }
+
   </script>
 </body>
 </html>

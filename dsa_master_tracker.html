@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSA Master Tracker & Pattern Guide | Lakshay Nagpal</title>
+  <meta name="description" content="Interactive Data Structures and Algorithms Master Tracker featuring 240+ curated LeetCode problems across 25 core patterns with thinking models, complexity analysis, and Big-Tech company mappings.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              900: '#1e3a8a',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Menlo', 'Monaco', 'Courier New', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: #0b0f19;
+      color: #e2e8f0;
+    }
+    .glass-nav {
+      background: rgba(11, 15, 25, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .glass-card {
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #0f172a; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    .solved-card {
+      border-color: rgba(16, 185, 129, 0.4) !important;
+      background-color: rgba(6, 78, 59, 0.15) !important;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-emerald-500 selection:text-black">
+
+  <!-- Side Navigation Drawer Backdrop -->
+  <div id="sidebarBackdrop" onclick="toggleSidebar(false)" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden transition-opacity duration-300"></div>
+
+  <!-- Modern Side Navigation Drawer -->
+  <aside id="sideNavDrawer" class="fixed top-0 left-0 bottom-0 w-80 max-w-[85vw] bg-slate-900/95 border-r border-slate-800 z-50 transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col shadow-2xl backdrop-blur-2xl">
+    <!-- Sidebar Header -->
+    <div class="p-5 border-b border-slate-800 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 via-teal-500 to-blue-500 flex items-center justify-center font-black text-white text-lg shadow-lg shadow-emerald-500/20">
+          LN
+        </div>
+        <div>
+          <div class="font-bold text-white text-sm tracking-tight flex items-center gap-1.5">
+            <span>Lakshay Nagpal</span>
+            <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">VERIFIED</span>
+          </div>
+          <span class="text-xs text-slate-400 font-mono block">Engineering Control Center</span>
+        </div>
+      </div>
+      <button onclick="toggleSidebar(false)" class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all" title="Close Menu">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+
+    <!-- Sidebar Navigation Links -->
+    <div class="flex-grow overflow-y-auto py-4 px-3 space-y-6">
+      <!-- Section 1: Core Navigation -->
+      <div>
+        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">Core Portals</div>
+        <div class="mt-2 space-y-1">
+          <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
+            <span class="text-lg">🏠</span>
+            <span>Master Dashboard</span>
+          </a>
+          <a href="dsa_master_tracker.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 transition-all group text-sm font-semibold">
+            <span class="text-lg">⚡</span>
+            <span>DSA Master Tracker</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono">240+ LC</span>
+          </a>
+          <a href="learning_hub.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
+            <span class="text-lg">🧠</span>
+            <span>Learning Hub</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 font-mono">Courses</span>
+          </a>
+          <a href="typescript_curriculum.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
+            <span class="text-lg">📘</span>
+            <span>TypeScript Curriculum</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-mono">14K Lines</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Section 2: Admissions & Academics -->
+      <div>
+        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">Higher Education &amp; Admissions</div>
+        <div class="mt-2 space-y-1">
+          <a href="german_universities_evaluation.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
+            <span class="text-lg">🇩🇪</span>
+            <span>German Universities</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 font-mono">Tuition-Free</span>
+          </a>
+          <a href="cat_2026_syllabus_roadmap.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
+            <span class="text-lg">🐯</span>
+            <span>CAT 2026 Strategy</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 font-mono">IIM/IIT</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Section 3: Professional Dossier -->
+      <div>
+        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">Professional Dossier</div>
+        <div class="mt-2 space-y-1">
+          <a href="lebenslauf_de.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
+            <span class="text-lg">📄</span>
+            <span>Lebenslauf (German CV)</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 font-mono">DIN 5008</span>
+          </a>
+          <a href="index.html#projects" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
+            <span class="text-lg">💻</span>
+            <span>Cloud Projects</span>
+          </a>
+          <a href="https://lakshayn0001.github.io/Portfolio/" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
+            <span class="text-lg">🌐</span>
+            <span>Developer Portfolio</span>
+            <svg class="w-3.5 h-3.5 text-slate-500 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Section 4: Direct Social Links -->
+      <div>
+        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">Connect</div>
+        <div class="mt-2 space-y-1">
+          <a href="https://www.linkedin.com/in/lakshay-nagpal-1a2a0134a/" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
+            <svg class="w-4 h-4 text-[#0a66c2] fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z"/></svg>
+            <span>LinkedIn Profile</span>
+          </a>
+          <a href="https://github.com/lakshayn0001/dashboard" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
+            <svg class="w-4 h-4 text-slate-400 fill-current" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
+            <span>GitHub Repository</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar Footer -->
+    <div class="p-4 border-t border-slate-800 text-[11px] text-slate-400 flex items-center justify-between">
+      <span>Immediate Joiner / 0 Days</span>
+      <span class="text-emerald-400 font-mono">B.Tech 70.56%</span>
+    </div>
+  </aside>
+
+  <!-- Sticky Top Glass Navigation Bar -->
+  <header class="sticky top-0 z-40 w-full border-b border-slate-800 glass-nav shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Left: Sidebar Toggle + Title -->
+      <div class="flex items-center gap-3">
+        <button onclick="toggleSidebar(true)" class="p-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 hover:border-emerald-500/50 transition-all flex items-center gap-2" title="Toggle Navigation Menu">
+          <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <span class="text-xs font-semibold hidden sm:inline">Menu</span>
+        </button>
+
+        <a href="index.html" class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white font-black text-sm">
+            ⚡
+          </div>
+          <div>
+            <span class="font-bold text-white text-sm sm:text-base tracking-tight block">DSA Master Tracker</span>
+            <span class="text-[10px] text-emerald-400 font-mono hidden sm:block">240+ LeetCode Patterns &amp; Thinking Engine</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Center / Desktop Quick Navigation -->
+      <nav class="hidden lg:flex items-center gap-2 text-xs font-medium text-slate-300">
+        <a href="#stats" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 hover:text-white transition-all">Stats</a>
+        <a href="#problems" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 hover:text-white transition-all">Problem List</a>
+        <a href="#roadmap" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 hover:text-white transition-all">6-Phase Order</a>
+        <a href="#company-matrix" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 hover:text-white transition-all">Company Matrix</a>
+        <a href="#cheat-sheet" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 hover:text-white transition-all">Cheat Sheet</a>
+      </nav>
+
+      <!-- Right: Actions & LinkedIn -->
+      <div class="flex items-center gap-2">
+        <a href="https://www.linkedin.com/in/lakshay-nagpal-1a2a0134a/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0a66c2] hover:bg-[#004182] text-white text-xs font-semibold shadow-sm transition-all" title="LinkedIn Profile">
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z"/></svg>
+          <span class="hidden sm:inline">LinkedIn</span>
+        </a>
+        <a href="learning_hub.html" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-sm transition-all">
+          <span>Learning Hub</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+
+    <!-- Hero Banner -->
+    <section class="rounded-3xl bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 border border-slate-800 p-6 sm:p-10 relative overflow-hidden shadow-2xl">
+      <div class="absolute -right-20 -top-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      
+      <div class="max-w-4xl space-y-4 relative z-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          Algorithmic Interview Mastery &amp; Progress System
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+          DSA Master Tracker &amp; <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">Pattern Guide</span>
+        </h1>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Targeted mastery of <strong>240+ curated LeetCode problems</strong> covering the 25 core algorithmic patterns required for Google, Meta, Amazon, Microsoft, and Uber. Every single problem features direct problem links, company priority tags, and an expandable <em>"Helping Approach / How to Think"</em> mental model.
+        </p>
+
+        <!-- Audio Summary Button -->
+        <div class="pt-2 flex flex-wrap items-center gap-3">
+          <button onclick="playAudioSummary(this, 'DSA Tracker Overview', 'Welcome to Lakshay Nagpal's Data Structures and Algorithms Master Tracker. This portal covers over 240 curated LeetCode problems across 25 algorithmic patterns, designed for top-tier software engineering interviews. Rather than solving a thousand random problems, focus on core pattern recognition: sliding window, prefix sums, binary search on answers, two pointers, graphs, dynamic programming, and monotonic stacks. All progress is saved automatically to your local browser.')" class="audio-brief-btn inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/90 hover:bg-slate-700 border border-slate-700 hover:border-emerald-500/50 text-slate-200 text-xs font-semibold shadow-lg transition-all">
+            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+            <span class="audio-label" data-default-label="Listen Audio Brief (40s)">Listen Audio Brief (40s)</span>
+          </button>
+
+          <button onclick="exportProgress()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-slate-800/60 hover:bg-slate-700 text-slate-300 text-xs font-medium border border-slate-700 transition-all">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+            <span>Export Progress</span>
+          </button>
+
+          <button onclick="resetProgressPrompt()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-slate-800/60 hover:bg-red-900/30 text-slate-400 hover:text-red-300 text-xs font-medium border border-slate-700 hover:border-red-500/30 transition-all">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+            <span>Reset</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Live Tracking & Statistics -->
+    <section id="stats" class="space-y-4">
+      <div class="flex items-center justify-between">
+        <h2 class="text-xl font-bold text-white tracking-tight flex items-center gap-2">
+          <span>📊 Live Tracking Dashboard</span>
+          <span class="text-xs font-normal text-slate-400 font-mono">(Persistent in LocalStorage)</span>
+        </h2>
+        <span id="overallPercentage" class="text-lg font-black text-emerald-400 font-mono">0%</span>
+      </div>
+
+      <!-- Main Progress Bar -->
+      <div class="w-full bg-slate-800/80 rounded-full h-4 overflow-hidden p-0.5 border border-slate-700">
+        <div id="overallProgressBar" class="bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-500 h-full rounded-full transition-all duration-500" style="width: 0%;"></div>
+      </div>
+
+      <!-- Stat Cards -->
+      <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
+        <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 text-center">
+          <div class="text-xs font-medium text-slate-400">Total Solved</div>
+          <div class="text-2xl font-black text-white mt-1">
+            <span id="statTotalSolved">0</span> <span class="text-sm font-normal text-slate-500">/ <span id="statTotalCount">247</span></span>
+          </div>
+          <div class="text-[11px] text-emerald-400 mt-1 font-mono" id="statTotalPct">0% Complete</div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 text-center">
+          <div class="text-xs font-medium text-emerald-400">Easy Problems</div>
+          <div class="text-2xl font-black text-emerald-300 mt-1">
+            <span id="statEasySolved">0</span> <span class="text-sm font-normal text-slate-500">/ <span id="statEasyCount">61</span></span>
+          </div>
+          <div class="text-[11px] text-slate-400 mt-1 font-mono" id="statEasyPct">0%</div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 text-center">
+          <div class="text-xs font-medium text-amber-400">Medium (Core)</div>
+          <div class="text-2xl font-black text-amber-300 mt-1">
+            <span id="statMedSolved">0</span> <span class="text-sm font-normal text-slate-500">/ <span id="statMedCount">148</span></span>
+          </div>
+          <div class="text-[11px] text-slate-400 mt-1 font-mono" id="statMedPct">0%</div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 text-center">
+          <div class="text-xs font-medium text-rose-400">Hard (FAANG)</div>
+          <div class="text-2xl font-black text-rose-300 mt-1">
+            <span id="statHardSolved">0</span> <span class="text-sm font-normal text-slate-500">/ <span id="statHardCount">38</span></span>
+          </div>
+          <div class="text-[11px] text-slate-400 mt-1 font-mono" id="statHardPct">0%</div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 text-center col-span-2 sm:col-span-1">
+          <div class="text-xs font-medium text-yellow-400">Review Later</div>
+          <div class="text-2xl font-black text-yellow-300 mt-1 flex items-center justify-center gap-1">
+            <span>⭐</span>
+            <span id="statStarredCount">0</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mt-1 font-mono">Bookmarked</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Search, Filters & Controls -->
+    <section class="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-xl space-y-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+        <!-- Text Search -->
+        <div class="lg:col-span-2 relative">
+          <input type="text" id="searchInput" oninput="applyFilters()" placeholder="Search problem title, #, pattern, or keyword..." class="w-full pl-9 pr-4 py-2.5 rounded-xl bg-slate-950/80 border border-slate-700 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-emerald-500 transition-all">
+          <svg class="w-4 h-4 text-slate-500 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        </div>
+
+        <!-- Topic Filter Dropdown -->
+        <div>
+          <select id="topicFilter" onchange="applyFilters()" class="w-full px-3 py-2.5 rounded-xl bg-slate-950/80 border border-slate-700 text-slate-300 text-xs focus:outline-none focus:border-emerald-500">
+            <option value="ALL">All 25 Topics</option>
+          </select>
+        </div>
+
+        <!-- Company Filter Dropdown -->
+        <div>
+          <select id="companyFilter" onchange="applyFilters()" class="w-full px-3 py-2.5 rounded-xl bg-slate-950/80 border border-slate-700 text-slate-300 text-xs focus:outline-none focus:border-emerald-500">
+            <option value="ALL">All Companies</option>
+            <option value="Google">Google</option>
+            <option value="Meta">Meta</option>
+            <option value="Amazon">Amazon</option>
+            <option value="Microsoft">Microsoft</option>
+            <option value="Apple">Apple</option>
+            <option value="Uber">Uber</option>
+            <option value="Bloomberg">Bloomberg</option>
+            <option value="Netflix">Netflix</option>
+          </select>
+        </div>
+
+        <!-- Difficulty Pill Filter Buttons -->
+        <div class="flex items-center gap-1 bg-slate-950/80 p-1 rounded-xl border border-slate-700 justify-between">
+          <button onclick="setDifficultyFilter('ALL', this)" class="diff-filter-btn px-2.5 py-1 rounded-lg text-xs font-semibold bg-emerald-600 text-white transition-all">All</button>
+          <button onclick="setDifficultyFilter('Easy', this)" class="diff-filter-btn px-2.5 py-1 rounded-lg text-xs font-medium text-slate-400 hover:text-emerald-400 transition-all">Easy</button>
+          <button onclick="setDifficultyFilter('Medium', this)" class="diff-filter-btn px-2.5 py-1 rounded-lg text-xs font-medium text-slate-400 hover:text-amber-400 transition-all">Med</button>
+          <button onclick="setDifficultyFilter('Hard', this)" class="diff-filter-btn px-2.5 py-1 rounded-lg text-xs font-medium text-slate-400 hover:text-rose-400 transition-all">Hard</button>
+        </div>
+      </div>
+
+      <!-- Secondary Filters & Status Badges -->
+      <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-slate-800 text-xs">
+        <div class="flex items-center gap-2">
+          <span class="text-slate-400 font-medium">Status:</span>
+          <button onclick="setStatusFilter('ALL', this)" class="status-filter-btn px-2.5 py-1 rounded-lg bg-slate-800 text-white font-medium">All (<span id="countAll">247</span>)</button>
+          <button onclick="setStatusFilter('SOLVED', this)" class="status-filter-btn px-2.5 py-1 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-emerald-300 transition-all font-medium">Solved (<span id="countSolved">0</span>)</button>
+          <button onclick="setStatusFilter('UNSOLVED', this)" class="status-filter-btn px-2.5 py-1 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition-all font-medium">Unsolved (<span id="countUnsolved">247</span>)</button>
+          <button onclick="setStatusFilter('STARRED', this)" class="status-filter-btn px-2.5 py-1 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-yellow-300 transition-all font-medium">Starred (<span id="countStarred">0</span>)</button>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <span class="text-slate-400">Showing <span id="filteredCount" class="font-bold text-white">247</span> problems</span>
+          <button onclick="clearAllFilters()" class="text-emerald-400 hover:underline">Reset Filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Strategy Guides & Priority Order Accordions -->
+    <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      
+      <!-- Phase 1 to 6 Priority Order -->
+      <div id="roadmap" class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl space-y-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="text-lg">🗺️</span>
+            <h3 class="font-bold text-white text-base">Recommended 6-Phase Order</h3>
+          </div>
+          <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 font-mono">Systematic</span>
+        </div>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Do not begin with DP or advanced graphs. Progress through verified phases to build pattern intuition:
+        </p>
+        <div class="space-y-2 text-xs font-mono">
+          <div class="p-2.5 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between">
+            <span class="text-emerald-400 font-bold">Phase 1</span>
+            <span class="text-slate-300">Arrays, Strings, Hashing, 2-Pointers, Window, Prefix</span>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between">
+            <span class="text-blue-400 font-bold">Phase 2</span>
+            <span class="text-slate-300">Binary Search, Stack, Queue, Linked List, Intervals</span>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between">
+            <span class="text-indigo-400 font-bold">Phase 3</span>
+            <span class="text-slate-300">Recursion, Trees, BST, Heap / Priority Queue, BFS/DFS</span>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between">
+            <span class="text-amber-400 font-bold">Phase 4</span>
+            <span class="text-slate-300">Graphs, Topological Sort, Union Find, Shortest Path</span>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between">
+            <span class="text-purple-400 font-bold">Phase 5</span>
+            <span class="text-slate-300">Backtracking, 1D DP, 2D DP, Advanced State Machines</span>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between">
+            <span class="text-rose-400 font-bold">Phase 6</span>
+            <span class="text-slate-300">Trie, Monotonic Stack, Bit Manipulation, Design</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Company DSA Emphasis Matrix -->
+      <div id="company-matrix" class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl space-y-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="text-lg">🏢</span>
+            <h3 class="font-bold text-white text-base">Company DSA Emphasis</h3>
+          </div>
+          <span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 font-mono">Target Mix</span>
+        </div>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Big tech hiring loops prioritize distinct pattern domains:
+        </p>
+        <div class="space-y-1.5 text-xs max-h-60 overflow-y-auto pr-1">
+          <div class="flex items-center justify-between py-1 border-b border-slate-800/80">
+            <span class="font-bold text-white">Google</span>
+            <span class="text-slate-400 text-right">Graphs, Trees, DP, Binary Search</span>
+          </div>
+          <div class="flex items-center justify-between py-1 border-b border-slate-800/80">
+            <span class="font-bold text-white">Meta</span>
+            <span class="text-slate-400 text-right">Arrays, Strings, Hashing, Trees, BFS/DFS</span>
+          </div>
+          <div class="flex items-center justify-between py-1 border-b border-slate-800/80">
+            <span class="font-bold text-white">Amazon</span>
+            <span class="text-slate-400 text-right">Arrays, Sliding Window, Trees, Heap, DP</span>
+          </div>
+          <div class="flex items-center justify-between py-1 border-b border-slate-800/80">
+            <span class="font-bold text-white">Microsoft</span>
+            <span class="text-slate-400 text-right">Arrays, Strings, Trees, Linked Lists, DP</span>
+          </div>
+          <div class="flex items-center justify-between py-1 border-b border-slate-800/80">
+            <span class="font-bold text-white">Uber</span>
+            <span class="text-slate-400 text-right">Graphs, Shortest Path, Trees, Binary Search</span>
+          </div>
+          <div class="flex items-center justify-between py-1 border-b border-slate-800/80">
+            <span class="font-bold text-white">Apple</span>
+            <span class="text-slate-400 text-right">Arrays, Strings, Trees, Graphs, DP</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pattern Matching Cheat Sheet -->
+      <div id="cheat-sheet" class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl space-y-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="text-lg">⚡</span>
+            <h3 class="font-bold text-white text-base">Pattern Matching Cheat Sheet</h3>
+          </div>
+          <span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 font-mono">Instant Reflex</span>
+        </div>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Instantly recognize the optimal data structure from problem clues:
+        </p>
+        <div class="space-y-1.5 text-xs max-h-60 overflow-y-auto pr-1">
+          <div class="flex items-center justify-between py-1 border-b border-slate-800/80">
+            <span class="text-slate-300">Pair Sum in Sorted Array</span>
+            <span class="text-emerald-400 font-mono font-semibold">Two Pointers</span>
+          </div>
+          <div class="flex items-center justify-between py-1 border-b border-slate-800/80">
+            <span class="text-slate-300">Contiguous Subarray Criteria</span>
+            <span class="text-teal-400 font-mono font-semibold">Sliding Window</span>
+          </div>
+          <div class="flex items-center justify-between py-1 border-b border-slate-800/80">
+            <span class="text-slate-300">Subarray Sum Equals K</span>
+            <span class="text-cyan-400 font-mono font-semibold">Prefix Sum + Map</span>
+          </div>
+          <div class="flex items-center justify-between py-1 border-b border-slate-800/80">
+            <span class="text-slate-300">Next Greater / Smaller Element</span>
+            <span class="text-blue-400 font-mono font-semibold">Monotonic Stack</span>
+          </div>
+          <div class="flex items-center justify-between py-1 border-b border-slate-800/80">
+            <span class="text-slate-300">Top K / Running Median</span>
+            <span class="text-indigo-400 font-mono font-semibold">Heap / Priority Queue</span>
+          </div>
+          <div class="flex items-center justify-between py-1 border-b border-slate-800/80">
+            <span class="text-slate-300">Course Schedule / Precedence</span>
+            <span class="text-purple-400 font-mono font-semibold">Topological Sort</span>
+          </div>
+          <div class="flex items-center justify-between py-1 border-b border-slate-800/80">
+            <span class="text-slate-300">Connected Network Redundancy</span>
+            <span class="text-rose-400 font-mono font-semibold">Union Find / DSU</span>
+          </div>
+          <div class="flex items-center justify-between py-1 border-b border-slate-800/80">
+            <span class="text-slate-300">LRU Cache in O(1)</span>
+            <span class="text-amber-400 font-mono font-semibold">Map + Doubly Linked List</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Problem List by Topic -->
+    <section id="problems" class="space-y-8">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-2xl font-black text-white tracking-tight">Curated LeetCode Problem Library</h2>
+          <p class="text-xs text-slate-400 mt-0.5">Toggle problem checkmarks to update your live progress. Click "Helping Approach" to view the mental model, algorithm steps, and interview pitfalls.</p>
+        </div>
+      </div>
+
+      <!-- Topic Containers Rendered via JS -->
+      <div id="topicsContainer" class="space-y-8">
+        <!-- Rendered by renderTopicsAndProblems() -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Helping Approach Drawer / Modal -->
+  <div id="approachModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+    <div class="max-w-2xl w-full bg-slate-900 border border-slate-700 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto relative animate-in fade-in zoom-in-95 duration-200">
+      <button onclick="closeApproachModal()" class="absolute top-6 right-6 p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-all">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+
+      <div>
+        <div class="flex items-center gap-2">
+          <span id="modalDiff" class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300">Easy</span>
+          <span id="modalTopic" class="text-xs font-mono text-slate-400">Arrays</span>
+        </div>
+        <h3 id="modalTitle" class="text-xl sm:text-2xl font-black text-white mt-1">Two Sum</h3>
+        <div class="flex flex-wrap items-center gap-2 mt-2" id="modalTags"></div>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm">
+        <div class="p-4 rounded-2xl bg-emerald-950/20 border border-emerald-500/30 space-y-1.5">
+          <div class="font-bold text-emerald-300 flex items-center gap-1.5 text-xs uppercase tracking-wider">
+            <span>💡</span> Mental Model &amp; Intuition ("How to Think")
+          </div>
+          <p id="modalMental" class="text-slate-200 leading-relaxed font-sans"></p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-slate-950/60 border border-slate-800 space-y-1.5">
+          <div class="font-bold text-blue-300 flex items-center gap-1.5 text-xs uppercase tracking-wider">
+            <span>⚙️</span> Algorithmic Step-by-Step
+          </div>
+          <p id="modalAlgo" class="text-slate-300 leading-relaxed font-sans"></p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div class="p-3.5 rounded-xl bg-slate-950/60 border border-slate-800">
+            <div class="text-[11px] text-slate-400 font-mono">Time Complexity</div>
+            <div id="modalTc" class="text-sm font-black text-emerald-400 font-mono mt-0.5">O(N)</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-slate-950/60 border border-slate-800">
+            <div class="text-[11px] text-slate-400 font-mono">Space Complexity</div>
+            <div id="modalSc" class="text-sm font-black text-blue-400 font-mono mt-0.5">O(N)</div>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-rose-950/20 border border-rose-500/30 space-y-1.5">
+          <div class="font-bold text-rose-300 flex items-center gap-1.5 text-xs uppercase tracking-wider">
+            <span>⚠️</span> Common Interview Trap / Edge Case
+          </div>
+          <p id="modalTrap" class="text-slate-300 leading-relaxed font-sans"></p>
+        </div>
+
+        <!-- Personal Notes for this problem -->
+        <div class="space-y-1.5 pt-2">
+          <label class="text-xs font-bold text-slate-300 block">Personal Scratchpad / Notes (Saved to LocalStorage):</label>
+          <textarea id="modalNotes" rows="3" placeholder="Write any personal takeaways, tricky testcases, or syntax quirks here..." class="w-full p-3 rounded-xl bg-slate-950 border border-slate-700 text-slate-200 text-xs focus:outline-none focus:border-emerald-500 font-mono" oninput="saveCurrentProblemNotes()"></textarea>
+        </div>
+      </div>
+
+      <div class="pt-2 flex items-center justify-between border-t border-slate-800">
+        <a id="modalLcLink" href="#" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-600 hover:bg-amber-500 text-slate-950 font-bold text-xs transition-all shadow-md">
+          <span>Open on LeetCode</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+        </a>
+        <button onclick="toggleModalSolved()" id="modalSolvedBtn" class="px-4 py-2 rounded-xl border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500/20 text-xs font-bold transition-all">
+          Mark as Solved
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Audio Player Bar -->
+  <div id="floatingAudioBar" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 hidden max-w-md w-[92%] bg-slate-900/95 border border-emerald-500/40 rounded-2xl shadow-2xl p-3.5 backdrop-blur-xl transition-all">
+    <div class="flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2.5 overflow-hidden">
+        <div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+          <span class="animate-pulse">🎙️</span>
+        </div>
+        <div class="truncate">
+          <div id="audioPlayerTitle" class="text-xs font-bold text-white truncate">DSA Master Overview</div>
+          <div id="audioPlayerStatus" class="text-[10px] text-emerald-400 truncate">Narrating brief summary (Female Voice)...</div>
+        </div>
+      </div>
+      <div class="flex items-center gap-2 shrink-0">
+        <button onclick="toggleAudioPlayback()" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 transition-all" title="Play/Pause">
+          <svg id="pauseIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <svg id="playIcon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        </button>
+        <button onclick="stopAudioSummary()" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-all" title="Close Audio">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-auto border-t border-slate-800 bg-slate-950 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-2">
+      <div class="text-xs text-slate-400">
+        Prepared for <strong class="text-white">Lakshay Nagpal</strong> | Full-Stack Software Engineer &amp; Masters Candidate
+      </div>
+      <div class="text-[11px] text-slate-500">
+        240+ Curated LeetCode Problems | LocalStorage State Tracking | Verified 2026 Curriculum
+      </div>
+    </div>
+  </footer>
+
+  <!-- Load Problem Data -->
+  <script src="dsa_problems_data.js"></script>
+
+  <!-- Application Logic -->
+  <script>
+    // State management
+    const STORAGE_KEY = 'lakshay_dsa_tracker_v1';
+    let userState = {
+      solved: {}, // problemId: true
+      starred: {}, // problemId: true
+      notes: {} // problemId: string
+    };
+
+    let activeDifficulty = 'ALL';
+    let activeStatus = 'ALL';
+    let currentModalProblem = null;
+
+    // Load state from localStorage
+    function loadState() {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+          userState = JSON.parse(saved);
+          if (!userState.solved) userState.solved = {};
+          if (!userState.starred) userState.starred = {};
+          if (!userState.notes) userState.notes = {};
+        }
+      } catch (e) {
+        console.error('Failed to parse localStorage state:', e);
+      }
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(userState));
+        updateStats();
+      } catch (e) {
+        console.error('Failed to save state to localStorage:', e);
+      }
+    }
+
+    // Sidebar controls
+    function toggleSidebar(open) {
+      const drawer = document.getElementById('sideNavDrawer');
+      const backdrop = document.getElementById('sidebarBackdrop');
+      if (open) {
+        drawer.classList.remove('-translate-x-full');
+        backdrop.classList.remove('hidden');
+      } else {
+        drawer.classList.add('-translate-x-full');
+        backdrop.classList.add('hidden');
+      }
+    }
+
+    // Initialize UI
+    window.addEventListener('DOMContentLoaded', () => {
+      loadState();
+      populateTopicDropdown();
+      renderTopicsAndProblems();
+      updateStats();
+    });
+
+    function populateTopicDropdown() {
+      const select = document.getElementById('topicFilter');
+      if (!window.DSA_TOPICS_DATA) return;
+      DSA_TOPICS_DATA.forEach(t => {
+        const opt = document.createElement('option');
+        opt.value = t.topic;
+        opt.innerText = t.topic;
+        select.appendChild(opt);
+      });
+    }
+
+    function updateStats() {
+      if (!window.DSA_PROBLEMS_LIST) return;
+      const total = DSA_PROBLEMS_LIST.length;
+      let solvedCount = 0;
+      let easySolved = 0, medSolved = 0, hardSolved = 0;
+      let easyTotal = 0, medTotal = 0, hardTotal = 0;
+      let starredCount = 0;
+
+      DSA_PROBLEMS_LIST.forEach(p => {
+        const isSolved = !!userState.solved[p.id];
+        const isStarred = !!userState.starred[p.id];
+
+        if (p.diff === 'Easy') easyTotal++;
+        else if (p.diff === 'Medium') medTotal++;
+        else if (p.diff === 'Hard') hardTotal++;
+
+        if (isSolved) {
+          solvedCount++;
+          if (p.diff === 'Easy') easySolved++;
+          else if (p.diff === 'Medium') medSolved++;
+          else if (p.diff === 'Hard') hardSolved++;
+        }
+        if (isStarred) starredCount++;
+      });
+
+      const overallPct = total > 0 ? Math.round((solvedCount / total) * 100) : 0;
+      const easyPct = easyTotal > 0 ? Math.round((easySolved / easyTotal) * 100) : 0;
+      const medPct = medTotal > 0 ? Math.round((medSolved / medTotal) * 100) : 0;
+      const hardPct = hardTotal > 0 ? Math.round((hardSolved / hardTotal) * 100) : 0;
+
+      document.getElementById('overallPercentage').innerText = `${overallPct}%`;
+      document.getElementById('overallProgressBar').style.width = `${overallPct}%`;
+
+      document.getElementById('statTotalSolved').innerText = solvedCount;
+      document.getElementById('statTotalCount').innerText = total;
+      document.getElementById('statTotalPct').innerText = `${overallPct}% Complete`;
+
+      document.getElementById('statEasySolved').innerText = easySolved;
+      document.getElementById('statEasyCount').innerText = easyTotal;
+      document.getElementById('statEasyPct').innerText = `${easyPct}%`;
+
+      document.getElementById('statMedSolved').innerText = medSolved;
+      document.getElementById('statMedCount').innerText = medTotal;
+      document.getElementById('statMedPct').innerText = `${medPct}%`;
+
+      document.getElementById('statHardSolved').innerText = hardSolved;
+      document.getElementById('statHardCount').innerText = hardTotal;
+      document.getElementById('statHardPct').innerText = `${hardPct}%`;
+
+      document.getElementById('statStarredCount').innerText = starredCount;
+
+      document.getElementById('countAll').innerText = total;
+      document.getElementById('countSolved').innerText = solvedCount;
+      document.getElementById('countUnsolved').innerText = total - solvedCount;
+      document.getElementById('countStarred').innerText = starredCount;
+    }
+
+    // Render topics and problems
+    function renderTopicsAndProblems() {
+      const container = document.getElementById('topicsContainer');
+      if (!container || !window.DSA_TOPICS_DATA) return;
+      container.innerHTML = '';
+
+      DSA_TOPICS_DATA.forEach((topicObj, topicIdx) => {
+        const topicSection = document.createElement('div');
+        topicSection.className = 'topic-section rounded-2xl bg-slate-900/60 border border-slate-800 p-5 sm:p-6 space-y-4';
+        topicSection.setAttribute('data-topic-name', topicObj.topic);
+
+        // Calculate topic stats
+        let topicSolved = 0;
+        topicObj.problems.forEach(pTuple => {
+          // Find matching problem in all problems
+          const found = DSA_PROBLEMS_LIST.find(p => p.topic === topicObj.topic && p.title === pTuple[0]);
+          if (found && userState.solved[found.id]) topicSolved++;
+        });
+        const topicTotal = topicObj.problems.length;
+        const topicPct = topicTotal > 0 ? Math.round((topicSolved / topicTotal) * 100) : 0;
+
+        // Header
+        const header = document.createElement('div');
+        header.className = 'flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-800';
+        header.innerHTML = `
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-sm font-mono text-emerald-400 font-bold">#${topicIdx + 1}</span>
+              <h3 class="text-lg font-bold text-white tracking-tight">${topicObj.topic}</h3>
+              <span class="text-xs px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 font-mono">${topicTotal} Qs</span>
+            </div>
+            <p class="text-xs text-slate-400 mt-0.5">${topicObj.description}</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="text-right">
+              <span class="text-xs font-bold text-emerald-400 font-mono topic-solved-count">${topicSolved}</span>
+              <span class="text-xs text-slate-500 font-mono">/ ${topicTotal} solved (${topicPct}%)</span>
+            </div>
+            <button onclick="listenTopicBrief('${topicObj.topic}')" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-emerald-400 transition-all" title="Listen Topic Brief">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+            </button>
+          </div>
+        `;
+        topicSection.appendChild(header);
+
+        // Problem Cards Grid
+        const grid = document.createElement('div');
+        grid.className = 'grid grid-cols-1 md:grid-cols-2 gap-3 problem-grid';
+
+        topicObj.problems.forEach(pTuple => {
+          const problem = DSA_PROBLEMS_LIST.find(p => p.topic === topicObj.topic && p.title === pTuple[0]);
+          if (!problem) return;
+
+          const card = createProblemCard(problem);
+          grid.appendChild(card);
+        });
+
+        topicSection.appendChild(grid);
+        container.appendChild(topicSection);
+      });
+    }
+
+    function createProblemCard(p) {
+      const isSolved = !!userState.solved[p.id];
+      const isStarred = !!userState.starred[p.id];
+
+      const card = document.createElement('div');
+      card.id = `problemCard_${p.id}`;
+      card.className = `problem-card p-4 rounded-xl border transition-all duration-200 ${isSolved ? 'solved-card' : 'bg-slate-950/60 border-slate-800/80 hover:border-slate-700'}`;
+      card.setAttribute('data-id', p.id);
+      card.setAttribute('data-topic', p.topic);
+      card.setAttribute('data-diff', p.diff);
+      card.setAttribute('data-title', p.title.toLowerCase());
+      card.setAttribute('data-pattern', p.pattern.toLowerCase());
+      card.setAttribute('data-companies', p.companies.join(',').toLowerCase());
+
+      // Diff badge color
+      let diffClass = 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30';
+      if (p.diff === 'Medium') diffClass = 'bg-amber-500/10 text-amber-400 border-amber-500/30';
+      if (p.diff === 'Hard') diffClass = 'bg-rose-500/10 text-rose-400 border-rose-500/30';
+
+      const companyPills = p.companies.slice(0, 3).map(c => `<span class="px-1.5 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300 font-mono">${c}</span>`).join('');
+
+      card.innerHTML = `
+        <div class="flex items-start justify-between gap-2">
+          <div class="flex items-start gap-2.5">
+            <input type="checkbox" ${isSolved ? 'checked' : ''} onchange="toggleProblemSolved(${p.id}, this.checked)" class="mt-1 w-4 h-4 rounded text-emerald-500 focus:ring-0 focus:ring-offset-0 bg-slate-900 border-slate-700 cursor-pointer">
+            <div>
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <span class="text-xs font-mono font-bold text-slate-400">#${p.lc}</span>
+                <a href="${p.url}" target="_blank" rel="noreferrer" class="font-bold text-sm text-white hover:text-emerald-400 transition-all inline-flex items-center gap-1 group">
+                  <span class="${isSolved ? 'line-through text-slate-400' : ''}">${p.title}</span>
+                  <svg class="w-3 h-3 text-slate-500 group-hover:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+              </div>
+              <div class="flex flex-wrap items-center gap-1.5 mt-1">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold border ${diffClass}">${p.diff}</span>
+                <span class="px-2 py-0.5 rounded text-[10px] bg-slate-900 text-slate-300 border border-slate-800 font-mono">${p.pattern}</span>
+                ${companyPills}
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleStar(${p.id})" class="text-sm p-1 rounded-lg hover:bg-slate-800 transition-all" title="Star for review">
+            <span class="${isStarred ? 'text-yellow-400' : 'text-slate-600 hover:text-slate-400'}">★</span>
+          </button>
+        </div>
+
+        <div class="mt-3 pt-2.5 border-t border-slate-800/80 flex items-center justify-between">
+          <button onclick="openApproachModal(${p.id})" class="text-xs font-medium text-emerald-400 hover:text-emerald-300 inline-flex items-center gap-1 transition-all">
+            <span>💡 Helping Approach</span>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          </button>
+          <span class="text-[10px] text-slate-400 font-mono">${p.tc} · ${p.sc}</span>
+        </div>
+      `;
+
+      return card;
+    }
+
+    function toggleProblemSolved(id, solved) {
+      if (solved) {
+        userState.solved[id] = true;
+      } else {
+        delete userState.solved[id];
+      }
+      saveState();
+
+      const card = document.getElementById(`problemCard_${id}`);
+      if (card) {
+        if (solved) {
+          card.classList.add('solved-card');
+          const title = card.querySelector('a span');
+          if (title) title.classList.add('line-through', 'text-slate-400');
+        } else {
+          card.classList.remove('solved-card');
+          const title = card.querySelector('a span');
+          if (title) title.classList.remove('line-through', 'text-slate-400');
+        }
+      }
+      applyFilters();
+    }
+
+    function toggleStar(id) {
+      if (userState.starred[id]) {
+        delete userState.starred[id];
+      } else {
+        userState.starred[id] = true;
+      }
+      saveState();
+      const card = document.getElementById(`problemCard_${id}`);
+      if (card) {
+        const star = card.querySelector('button[title="Star for review"] span');
+        if (star) {
+          if (userState.starred[id]) {
+            star.className = 'text-yellow-400';
+          } else {
+            star.className = 'text-slate-600 hover:text-slate-400';
+          }
+        }
+      }
+      applyFilters();
+    }
+
+    // Modal logic
+    function openApproachModal(id) {
+      const p = DSA_PROBLEMS_LIST.find(item => item.id === id);
+      if (!p) return;
+      currentModalProblem = p;
+
+      document.getElementById('modalTitle').innerText = `#${p.lc} ${p.title}`;
+      document.getElementById('modalTopic').innerText = p.topic;
+      document.getElementById('modalDiff').innerText = p.diff;
+      document.getElementById('modalMental').innerText = p.mental;
+      document.getElementById('modalAlgo').innerText = p.algo;
+      document.getElementById('modalTc').innerText = p.tc;
+      document.getElementById('modalSc').innerText = p.sc;
+      document.getElementById('modalTrap').innerText = p.trap;
+      document.getElementById('modalLcLink').href = p.url;
+
+      // Note field
+      document.getElementById('modalNotes').value = userState.notes[p.id] || '';
+
+      // Solved button label
+      const solvedBtn = document.getElementById('modalSolvedBtn');
+      if (userState.solved[p.id]) {
+        solvedBtn.innerText = 'Mark as Unsolved';
+        solvedBtn.className = 'px-4 py-2 rounded-xl border border-rose-500/40 text-rose-400 hover:bg-rose-500/20 text-xs font-bold transition-all';
+      } else {
+        solvedBtn.innerText = 'Mark as Solved';
+        solvedBtn.className = 'px-4 py-2 rounded-xl border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500/20 text-xs font-bold transition-all';
+      }
+
+      // Tags
+      const tagsContainer = document.getElementById('modalTags');
+      tagsContainer.innerHTML = `
+        <span class="px-2 py-0.5 rounded text-xs bg-slate-800 text-slate-300 font-mono">Pattern: ${p.pattern}</span>
+        ${p.companies.map(c => `<span class="px-2 py-0.5 rounded text-xs bg-slate-800 text-blue-300 font-mono">${c}</span>`).join('')}
+      `;
+
+      document.getElementById('approachModal').classList.remove('hidden');
+    }
+
+    function closeApproachModal() {
+      document.getElementById('approachModal').classList.add('hidden');
+      currentModalProblem = null;
+    }
+
+    function toggleModalSolved() {
+      if (!currentModalProblem) return;
+      const id = currentModalProblem.id;
+      const isSolved = !userState.solved[id];
+      toggleProblemSolved(id, isSolved);
+      openApproachModal(id); // Re-render modal button
+    }
+
+    function saveCurrentProblemNotes() {
+      if (!currentModalProblem) return;
+      const notes = document.getElementById('modalNotes').value;
+      if (notes.trim()) {
+        userState.notes[currentModalProblem.id] = notes;
+      } else {
+        delete userState.notes[currentModalProblem.id];
+      }
+      saveState();
+    }
+
+    // Filter logic
+    function setDifficultyFilter(diff, btn) {
+      activeDifficulty = diff;
+      document.querySelectorAll('.diff-filter-btn').forEach(b => {
+        b.className = 'diff-filter-btn px-2.5 py-1 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 transition-all';
+      });
+      btn.className = 'diff-filter-btn px-2.5 py-1 rounded-lg text-xs font-semibold bg-emerald-600 text-white transition-all';
+      applyFilters();
+    }
+
+    function setStatusFilter(status, btn) {
+      activeStatus = status;
+      document.querySelectorAll('.status-filter-btn').forEach(b => {
+        b.className = 'status-filter-btn px-2.5 py-1 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition-all font-medium';
+      });
+      btn.className = 'status-filter-btn px-2.5 py-1 rounded-lg bg-slate-800 text-white font-medium';
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const q = (document.getElementById('searchInput').value || '').toLowerCase().trim();
+      const topic = document.getElementById('topicFilter').value;
+      const company = document.getElementById('companyFilter').value;
+
+      let visibleCount = 0;
+
+      document.querySelectorAll('.topic-section').forEach(sec => {
+        const secTopic = sec.getAttribute('data-topic-name');
+        let sectionMatches = true;
+
+        if (topic !== 'ALL' && secTopic !== topic) {
+          sectionMatches = false;
+        }
+
+        let visibleCardsInSection = 0;
+
+        sec.querySelectorAll('.problem-card').forEach(card => {
+          const id = parseInt(card.getAttribute('data-id'));
+          const pDiff = card.getAttribute('data-diff');
+          const pTitle = card.getAttribute('data-title');
+          const pPattern = card.getAttribute('data-pattern');
+          const pCompanies = card.getAttribute('data-companies');
+          const isSolved = !!userState.solved[id];
+          const isStarred = !!userState.starred[id];
+
+          let match = sectionMatches;
+
+          // Search match
+          if (match && q) {
+            match = pTitle.includes(q) || pPattern.includes(q) || pCompanies.includes(q) || card.innerText.toLowerCase().includes(q);
+          }
+
+          // Difficulty match
+          if (match && activeDifficulty !== 'ALL') {
+            match = (pDiff === activeDifficulty);
+          }
+
+          // Company match
+          if (match && company !== 'ALL') {
+            match = pCompanies.includes(company.toLowerCase());
+          }
+
+          // Status match
+          if (match && activeStatus !== 'ALL') {
+            if (activeStatus === 'SOLVED') match = isSolved;
+            else if (activeStatus === 'UNSOLVED') match = !isSolved;
+            else if (activeStatus === 'STARRED') match = isStarred;
+          }
+
+          if (match) {
+            card.classList.remove('hidden');
+            visibleCardsInSection++;
+            visibleCount++;
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+
+        if (visibleCardsInSection > 0) {
+          sec.classList.remove('hidden');
+        } else {
+          sec.classList.add('hidden');
+        }
+      });
+
+      document.getElementById('filteredCount').innerText = visibleCount;
+    }
+
+    function clearAllFilters() {
+      document.getElementById('searchInput').value = '';
+      document.getElementById('topicFilter').value = 'ALL';
+      document.getElementById('companyFilter').value = 'ALL';
+      activeDifficulty = 'ALL';
+      activeStatus = 'ALL';
+      applyFilters();
+    }
+
+    function exportProgress() {
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(userState, null, 2));
+      const downloadAnchor = document.createElement('a');
+      downloadAnchor.setAttribute("href", dataStr);
+      downloadAnchor.setAttribute("download", "lakshay_dsa_tracker_progress.json");
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      downloadAnchor.remove();
+    }
+
+    function resetProgressPrompt() {
+      if (confirm("Are you sure you want to reset all solved and starred problem marks?")) {
+        userState = { solved: {}, starred: {}, notes: {} };
+        saveState();
+        renderTopicsAndProblems();
+        updateStats();
+      }
+    }
+
+    // TTS Audio Engine (Female Voice Model)
+    let currentUtterance = null;
+    let activeAudioBtn = null;
+
+    function getFemaleVoice() {
+      const voices = window.speechSynthesis.getVoices();
+      if (!voices || voices.length === 0) return null;
+      const enVoices = voices.filter(v => v.lang && v.lang.startsWith('en'));
+      const pool = enVoices.length > 0 ? enVoices : voices;
+
+      let found = pool.find(v => /female/i.test(v.name));
+      if (found) return found;
+
+      const femaleNames = [
+        'Samantha', 'Victoria', 'Karen', 'Zira', 'Jenny', 'Aria', 'Ava', 'Allison',
+        'Susan', 'Moira', 'Tessa', 'Fiona', 'Veena', 'Google UK English Female',
+        'Google US English', 'Microsoft Zira', 'Microsoft Jenny', 'Microsoft Aria'
+      ];
+      found = pool.find(v => femaleNames.some(fn => v.name.includes(fn)));
+      if (found) return found;
+
+      const maleNames = ['Daniel', 'Alex', 'David', 'George', 'Fred', 'Mark', 'Guy', 'Tom', 'Oliver', 'James'];
+      found = pool.find(v => !maleNames.some(mn => v.name.includes(mn)));
+      return found || pool[0];
+    }
+
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+      };
+    }
+
+    function playAudioSummary(btn, title, text) {
+      if (!('speechSynthesis' in window)) {
+        alert('Text-to-speech audio is not supported in this browser.');
+        return;
+      }
+
+      if (window.speechSynthesis.speaking && activeAudioBtn === btn) {
+        toggleAudioPlayback();
+        return;
+      }
+
+      stopAudioSummary();
+
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = 1.0;
+      utterance.pitch = 1.06; // Articulate, natural female pitch
+
+      const femaleVoice = getFemaleVoice();
+      if (femaleVoice) utterance.voice = femaleVoice;
+
+      utterance.onstart = () => {
+        activeAudioBtn = btn;
+        if (btn) {
+          btn.classList.add('ring-2', 'ring-emerald-400', 'bg-emerald-600', 'text-white');
+          const label = btn.querySelector('.audio-label');
+          if (label) label.innerText = 'Playing...';
+        }
+        const bar = document.getElementById('floatingAudioBar');
+        const titleEl = document.getElementById('audioPlayerTitle');
+        const statusEl = document.getElementById('audioPlayerStatus');
+        if (bar) bar.classList.remove('hidden');
+        if (titleEl) titleEl.innerText = title;
+        if (statusEl) statusEl.innerText = 'Narrating brief summary (Female Voice)...';
+        showPlayIcon(false);
+      };
+
+      utterance.onend = () => { stopAudioSummary(); };
+      utterance.onerror = () => { stopAudioSummary(); };
+
+      currentUtterance = utterance;
+      window.speechSynthesis.speak(utterance);
+    }
+
+    function listenTopicBrief(topicName) {
+      const topicObj = DSA_TOPICS_DATA.find(t => t.topic === topicName);
+      if (!topicObj) return;
+      const text = `Overview of ${topicObj.topic}. ${topicObj.description}. Contains ${topicObj.problems.length} high-yield problems. Focus on mastering the key patterns and edge cases.`;
+      playAudioSummary(null, `${topicName} Brief`, text);
+    }
+
+    function toggleAudioPlayback() {
+      if (!window.speechSynthesis.speaking) return;
+      if (window.speechSynthesis.paused) {
+        window.speechSynthesis.resume();
+        showPlayIcon(false);
+        if (activeAudioBtn) {
+          const label = activeAudioBtn.querySelector('.audio-label');
+          if (label) label.innerText = 'Playing...';
+        }
+        document.getElementById('audioPlayerStatus').innerText = 'Narrating brief summary...';
+      } else {
+        window.speechSynthesis.pause();
+        showPlayIcon(true);
+        if (activeAudioBtn) {
+          const label = activeAudioBtn.querySelector('.audio-label');
+          if (label) label.innerText = 'Paused';
+        }
+        document.getElementById('audioPlayerStatus').innerText = 'Paused (click to resume)';
+      }
+    }
+
+    function showPlayIcon(isPaused) {
+      const pauseIcon = document.getElementById('pauseIcon');
+      const playIcon = document.getElementById('playIcon');
+      if (pauseIcon && playIcon) {
+        if (isPaused) {
+          pauseIcon.classList.add('hidden');
+          playIcon.classList.remove('hidden');
+        } else {
+          pauseIcon.classList.remove('hidden');
+          playIcon.classList.add('hidden');
+        }
+      }
+    }
+
+    function stopAudioSummary() {
+      window.speechSynthesis.cancel();
+      if (activeAudioBtn) {
+        activeAudioBtn.classList.remove('ring-2', 'ring-emerald-400', 'bg-emerald-600', 'text-white');
+        const label = activeAudioBtn.querySelector('.audio-label');
+        if (label) label.innerText = label.getAttribute('data-default-label') || 'Listen Audio Brief';
+        activeAudioBtn = null;
+      }
+      const bar = document.getElementById('floatingAudioBar');
+      if (bar) bar.classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
