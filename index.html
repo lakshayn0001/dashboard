@@ -33,42 +33,121 @@
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
     body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      background-color: #0b0f19;
+      background-color: #070b14;
       color: #e2e8f0;
     }
-    .glow-radial {
-      background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15), transparent 70%);
+    /* Liquid refraction orbs */
+    .droplet-orb-1 {
+      position: fixed;
+      top: -100px;
+      left: 20%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.16) 0%, rgba(99, 102, 241, 0.06) 50%, transparent 70%);
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
     }
-    .glow-card {
+    .droplet-orb-2 {
+      position: fixed;
+      bottom: -100px;
+      right: 5%;
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.14) 0%, rgba(14, 165, 233, 0.05) 50%, transparent 70%);
+      filter: blur(90px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .droplet-orb-3 {
+      position: fixed;
+      top: 40%;
+      left: 45%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, transparent 70%);
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    /* Glass Water Droplet System */
+    .glass-droplet {
+      background: radial-gradient(135% 135% at 50% 0%, rgba(255, 255, 255, 0.07) 0%, rgba(15, 23, 42, 0.72) 100%);
+      backdrop-filter: blur(24px) saturate(190%);
+      -webkit-backdrop-filter: blur(24px) saturate(190%);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow:
+        inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.28),
+        inset 0 -1px 2px 0 rgba(0, 0, 0, 0.4),
+        0 16px 36px -10px rgba(0, 0, 0, 0.5);
       position: relative;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .glow-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 35px -10px rgba(59, 130, 246, 0.2);
+    .glass-droplet:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 255, 255, 0.22);
+      box-shadow:
+        inset 0 2px 2px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -1px 2px 0 rgba(0, 0, 0, 0.4),
+        0 22px 45px -12px rgba(59, 130, 246, 0.25);
     }
-    .glass-nav {
-      background: rgba(11, 15, 25, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+    .glass-droplet-sidebar {
+      background: rgba(11, 17, 32, 0.88);
+      backdrop-filter: blur(28px) saturate(200%);
+      -webkit-backdrop-filter: blur(28px) saturate(200%);
+      border-right: 1px solid rgba(255, 255, 255, 0.09);
+      box-shadow:
+        inset -1px 0 1px 0 rgba(255, 255, 255, 0.06),
+        4px 0 24px rgba(0, 0, 0, 0.35);
+    }
+    .glass-droplet-nav {
+      background: rgba(11, 17, 32, 0.82);
+      backdrop-filter: blur(24px) saturate(190%);
+      -webkit-backdrop-filter: blur(24px) saturate(190%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+      box-shadow:
+        inset 0 -1px 1px 0 rgba(255, 255, 255, 0.06),
+        0 8px 32px rgba(0, 0, 0, 0.35);
+    }
+    .droplet-pill {
+      background: radial-gradient(120% 120% at 30% 20%, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.04) 60%, rgba(0, 0, 0, 0.25) 100%);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow:
+        inset 0 1px 1px 0 rgba(255, 255, 255, 0.3),
+        0 4px 12px rgba(0, 0, 0, 0.25);
+      transition: all 0.2s ease;
+    }
+    .droplet-pill:hover {
+      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow:
+        inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.45),
+        0 6px 16px rgba(59, 130, 246, 0.3);
+      transform: translateY(-1px);
     }
     /* Custom scrollbar */
-    ::-webkit-scrollbar { width: 8px; height: 8px; }
-    ::-webkit-scrollbar-track { background: #0f172a; }
-    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    ::-webkit-scrollbar { width: 7px; height: 7px; }
+    ::-webkit-scrollbar-track { background: #070b14; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; border: 1px solid rgba(255,255,255,0.08); }
+    ::-webkit-scrollbar-thumb:hover { background: #334155; }
   </style>
 </head>
-<body class="min-h-screen flex flex-col selection:bg-blue-600 selection:text-white">
+<body class="min-h-screen bg-[#070b14] text-slate-200 selection:bg-blue-600 selection:text-white flex flex-col relative overflow-x-hidden">
 
-  <!-- Side Navigation Drawer Backdrop -->
-  <div id="sidebarBackdrop" onclick="toggleSidebar(false)" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden transition-opacity duration-300"></div>
+  <!-- Ambient liquid orbs for glass refraction -->
+  <div class="droplet-orb-1"></div>
+  <div class="droplet-orb-2"></div>
+  <div class="droplet-orb-3"></div>
 
-  <!-- Side Navigation Drawer -->
-  <aside id="sideNavDrawer" class="fixed top-0 left-0 bottom-0 w-80 max-w-[85vw] bg-slate-900/95 border-r border-slate-800 z-50 transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col shadow-2xl backdrop-blur-2xl">
-    <div class="p-5 border-b border-slate-800 flex items-center justify-between">
+  <!-- Mobile-only backdrop for small screens (< lg) -->
+  <div id="sidebarBackdrop" onclick="toggleSidebar(false)" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-20 hidden lg:hidden transition-opacity duration-300"></div>
+
+  <!-- Persistent Left Side Navigation (Always Open on Desktop) -->
+  <aside id="sideNavDrawer" class="w-72 fixed inset-y-0 left-0 z-30 flex flex-col glass-droplet-sidebar transition-transform duration-300 -translate-x-full lg:translate-x-0">
+    <div class="p-5 border-b border-white/10 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-500 to-purple-500 flex items-center justify-center font-black text-white text-lg shadow-lg shadow-blue-500/20">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-500 to-purple-500 flex items-center justify-center font-black text-white text-lg shadow-lg shadow-blue-500/30 droplet-pill">
           LN
         </div>
         <div>
@@ -76,10 +155,11 @@
             <span>Lakshay Nagpal</span>
             <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-blue-500/20 text-blue-400 border border-blue-500/30">VERIFIED</span>
           </div>
-          <span class="text-xs text-slate-400 font-mono block">Engineering Control Center</span>
+          <span class="text-xs text-slate-400 font-mono block">Control Center</span>
         </div>
       </div>
-      <button onclick="toggleSidebar(false)" class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all" title="Close Menu">
+      <!-- Close button visible only on mobile -->
+      <button onclick="toggleSidebar(false)" class="lg:hidden p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all" title="Close Menu">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
       </button>
     </div>
@@ -88,24 +168,19 @@
       <div>
         <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">Core Portals</div>
         <div class="mt-2 space-y-1">
-          <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-blue-500/15 text-blue-300 border border-blue-500/30 transition-all group text-sm font-semibold">
+          <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-blue-500/15 text-blue-300 border border-blue-500/30 transition-all group text-sm font-semibold shadow-sm">
             <span class="text-lg">🏠</span>
             <span>Master Dashboard</span>
-          </a>
-          <a href="#dsa-library" onclick="toggleSidebar(false)" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
-            <span class="text-lg">⚡</span>
-            <span>DSA Problem Library</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono">240+ LC</span>
-          </a>
-          <a href="dsa_master_tracker.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
-            <span class="text-lg">📊</span>
-            <span>DSA Master Tracker (Full)</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 font-mono">Dedicated</span>
           </a>
           <a href="learning_hub.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
             <span class="text-lg">🧠</span>
             <span>Learning Hub</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 font-mono">5 Tracks</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 font-mono">5 Tracks + DSA</span>
+          </a>
+          <a href="dsa_master_tracker.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
+            <span class="text-lg">⚡</span>
+            <span>DSA Master Tracker</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono">240+ LC</span>
           </a>
           <a href="typescript_curriculum.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
             <span class="text-lg">📘</span>
@@ -139,7 +214,7 @@
             <span>Lebenslauf (German CV)</span>
             <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 font-mono">DIN 5008</span>
           </a>
-          <a href="#projects" onclick="toggleSidebar(false)" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
+          <a href="#projects" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
             <span class="text-lg">💻</span>
             <span>Cloud Projects</span>
           </a>
@@ -166,57 +241,51 @@
       </div>
     </div>
 
-    <div class="p-4 border-t border-slate-800 text-[11px] text-slate-400 flex items-center justify-between">
+    <div class="p-4 border-t border-white/10 text-[11px] text-slate-400 flex items-center justify-between">
       <span>Immediate Joiner / 0 Days</span>
       <span class="text-blue-400 font-mono">B.Tech 70.56%</span>
     </div>
   </aside>
 
-  <!-- Top Glass Navigation Bar -->
-  <header class="sticky top-0 z-50 w-full border-b border-slate-800 glass-nav shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <button onclick="toggleSidebar(true)" class="p-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 hover:border-blue-500/50 transition-all flex items-center gap-2 cursor-pointer shadow-sm" title="Open Navigation Menu">
-          <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-          <span class="text-xs font-bold text-white hidden sm:inline">Menu</span>
-        </button>
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-black text-white text-lg shadow-md shadow-blue-500/20 shrink-0">
-          LN
+  <!-- Main Content Wrapper (Beside Permanent Sidebar on Desktop) -->
+  <div class="lg:pl-72 flex flex-col min-h-screen relative z-10">
+
+    <!-- Sticky Top Glass Navigation Bar (No Menu Button on Desktop) -->
+    <header class="sticky top-0 z-20 w-full glass-droplet-nav">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <!-- Mobile Drawer Trigger ONLY on <lg screens -->
+          <button onclick="toggleSidebar(true)" class="lg:hidden p-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition-all flex items-center gap-1.5 cursor-pointer shadow-sm" title="Open Navigation Menu">
+            <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            <span class="text-xs font-semibold">Menu</span>
+          </button>
+
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="text-xs sm:text-sm font-bold text-white tracking-tight">Full-Stack Engineer &amp; Control Center</span>
+            <span class="text-xs font-mono text-slate-500 hidden md:inline">• Immediate Joiner (0 Days)</span>
+          </div>
         </div>
-        <div>
-          <span class="font-bold text-white text-base tracking-tight block">Lakshay Nagpal</span>
-          <span class="text-xs text-slate-400 font-mono flex items-center gap-1.5">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            Full-Stack Engineer &amp; Control Center
-          </span>
+
+        <div class="flex items-center gap-2">
+          <a href="learning_hub.html" class="droplet-pill px-3 py-1.5 rounded-xl text-blue-300 hover:text-white text-xs font-semibold inline-flex items-center gap-1.5 transition-all">
+            <span>🧠</span>
+            <span class="hidden sm:inline">Learning Hub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/lakshay-nagpal-1a2a0134a/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#0a66c2] hover:bg-[#004182] text-white text-xs font-semibold shadow-sm transition-all" title="LinkedIn Profile">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z"/></svg>
+            <span class="hidden sm:inline">LinkedIn</span>
+          </a>
+          <a href="https://github.com/lakshayn0001" target="_blank" rel="noreferrer" class="p-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-all droplet-pill" title="GitHub Profile">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
+          </a>
+          <a href="https://lakshayn0001.github.io/Portfolio/" target="_blank" rel="noreferrer" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-md shadow-blue-500/30 transition-all">
+            <span>Portfolio</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+          </a>
         </div>
       </div>
-
-      <!-- Quick Action Badges & Direct Shortcuts -->
-      <nav class="hidden md:flex items-center gap-2 text-xs font-semibold">
-        <a href="#dsa-library" class="px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/20 transition-all flex items-center gap-1.5 shadow-sm">
-          <span>⚡</span> DSA Library (240+)
-        </a>
-        <a href="learning_hub.html" class="px-3 py-1.5 rounded-lg bg-blue-500/10 border border-blue-500/30 text-blue-400 hover:bg-blue-500/20 transition-all flex items-center gap-1.5 shadow-sm">
-          <span>🧠</span> Learning Hub
-        </a>
-      </nav>
-
-      <div class="flex items-center gap-2">
-        <a href="https://www.linkedin.com/in/lakshay-nagpal-1a2a0134a/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0a66c2] hover:bg-[#004182] text-white text-xs font-semibold shadow-sm shadow-[#0a66c2]/30 transition-all" title="LinkedIn Profile">
-          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z"/></svg>
-          <span class="hidden sm:inline">LinkedIn</span>
-        </a>
-        <a href="https://github.com/lakshayn0001" target="_blank" rel="noreferrer" class="p-2 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-all" title="GitHub Profile">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
-        </a>
-        <a href="https://lakshayn0001.github.io/Portfolio/" target="_blank" rel="noreferrer" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-sm shadow-blue-500/30 transition-all">
-          <span>Portfolio</span>
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-        </a>
-      </div>
-    </div>
-  </header>
+    </header>
 
   <!-- Hero & Statistics Section -->
   <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
@@ -242,27 +311,27 @@
 
       <!-- Key Profile Metric Highlights -->
       <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 max-w-5xl mx-auto pt-6">
-        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
+        <div class="glass-droplet p-4 rounded-2xl text-center">
           <div class="text-xs font-medium text-slate-400">German Benchmark</div>
           <div class="text-xl sm:text-2xl font-black text-emerald-400 mt-1">2.47 <span class="text-xs font-normal text-slate-300">("Gut")</span></div>
           <div class="text-[11px] text-slate-500 mt-0.5">B.Tech 70.56% (MDU)</div>
         </div>
-        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
+        <div class="glass-droplet p-4 rounded-2xl text-center">
           <div class="text-xs font-medium text-slate-400">Core CS Match</div>
           <div class="text-xl sm:text-2xl font-black text-blue-400 mt-1">~70 ECTS</div>
           <div class="text-[11px] text-slate-500 mt-0.5">Direct M.Sc. Eligibility</div>
         </div>
-        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
+        <div class="glass-droplet p-4 rounded-2xl text-center">
           <div class="text-xs font-medium text-slate-400">CAT 2026 Target</div>
           <div class="text-xl sm:text-2xl font-black text-amber-400 mt-1">93–96%ile</div>
           <div class="text-[11px] text-slate-500 mt-0.5">DoMS IITs + CAP IIMs</div>
         </div>
-        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
+        <div class="glass-droplet p-4 rounded-2xl text-center">
           <div class="text-xs font-medium text-slate-400">TypeScript Mastery</div>
           <div class="text-xl sm:text-2xl font-black text-indigo-400 mt-1">14,700+</div>
           <div class="text-[11px] text-slate-500 mt-0.5">Lines of Production Code</div>
         </div>
-        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 text-center col-span-2 sm:col-span-1">
+        <div class="glass-droplet p-4 rounded-2xl text-center col-span-2 sm:col-span-1">
           <div class="text-xs font-medium text-slate-400">Notice Period</div>
           <div class="text-xl sm:text-2xl font-black text-emerald-400 mt-1">0 Days</div>
           <div class="text-[11px] text-slate-500 mt-0.5">Immediate Joiner</div>
@@ -293,7 +362,7 @@
     <section class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="cardsGrid">
 
       <!-- Card: DSA Master Tracker & LeetCode Pattern Guide (NEW) -->
-      <article id="dsa-portal" data-category="dsa" data-keywords="dsa leetcode patterns algorithms arrays sliding window two pointers prefix sum binary search trees graphs dynamic programming monotonic stack faang tracking" class="resource-card glow-card rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950 border border-emerald-500/40 p-6 sm:p-8 flex flex-col justify-between">
+      <article id="dsa-portal" data-category="dsa" data-keywords="dsa leetcode patterns algorithms arrays sliding window two pointers prefix sum binary search trees graphs dynamic programming monotonic stack faang tracking" class="resource-card glow-card glass-droplet rounded-2xl border border-emerald-500/40 p-6 sm:p-8 flex flex-col justify-between">
         <div class="space-y-4">
           <div class="flex items-start justify-between gap-3 flex-wrap">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider">
@@ -327,9 +396,9 @@
         </div>
 
         <div class="pt-8 border-t border-slate-800/80 mt-6 flex flex-wrap items-center gap-3">
-          <a href="#dsa-library" class="flex-1 min-w-[170px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm shadow-md shadow-emerald-500/20 transition-all">
-            <span>Explore 240+ Questions Below</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+          <a href="learning_hub.html#dsa-track" class="flex-1 min-w-[200px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm shadow-md shadow-emerald-500/20 transition-all">
+            <span>Explore 240+ Questions in Learning Hub ↗</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
           </a>
           <a href="dsa_master_tracker.html" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-emerald-400 font-semibold text-sm transition-all" title="Launch Dedicated Standalone Tracker">
             <span>Full Tracker ↗</span>
@@ -345,18 +414,18 @@
       </article>
 
       <!-- Card: Engineering Learning Hub (NEW) -->
-      <article id="learning-portal" data-category="learning" data-keywords="learning hub curriculum engineering architecture system design devops docker kubernetes ai rag database postgresql typescript" class="resource-card glow-card rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950 border border-blue-500/40 p-6 sm:p-8 flex flex-col justify-between">
+      <article id="learning-portal" data-category="learning" data-keywords="learning hub curriculum engineering architecture system design devops docker kubernetes ai rag database postgresql typescript" class="resource-card glow-card glass-droplet rounded-2xl border border-blue-500/40 p-6 sm:p-8 flex flex-col justify-between">
         <div class="space-y-4">
           <div class="flex items-start justify-between gap-3 flex-wrap">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-wider">
-              <span>🧠</span> 5 Engineering Tracks
+              <span>🧠</span> Modular Curriculum &amp; Architecture
             </div>
             <div class="flex items-center gap-2">
-              <button onclick="playAudioSummary(this, 'Engineering Learning Hub Overview', 'Learning Hub: Central platform engineered for continuous technical advancement. Houses the live 14,000-line TypeScript curriculum and structured upcoming roadmaps for Distributed System Design, Cloud & DevOps, Applied AI Engineering, and PostgreSQL Database Internals.')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/15 hover:bg-blue-500/25 text-blue-300 border border-blue-500/30 text-xs font-semibold transition-all">
+              <button onclick="playAudioSummary(this, 'Learning Hub Overview', 'Engineering Learning Hub: Modular curriculum tracks spanning TypeScript Mastery, Distributed System Design, Cloud and DevOps, Applied AI, and High-Performance Databases. Engineered to bridge the gap between syntax and production architecture.')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/15 hover:bg-blue-500/25 text-blue-300 border border-blue-500/30 text-xs font-semibold transition-all">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                <span class="audio-label" data-default-label="Audio Brief (20s)">Audio Brief (20s)</span>
+                <span class="audio-label" data-default-label="Audio Brief (25s)">Audio Brief (25s)</span>
               </button>
-              <span class="text-xs font-mono text-blue-400 bg-blue-950/40 px-2.5 py-1 rounded-md border border-blue-500/30">Scalable Platform</span>
+              <span class="text-xs font-mono text-blue-400 bg-blue-950/40 px-2.5 py-1 rounded-md border border-blue-500/30">Active Hub</span>
             </div>
           </div>
 
@@ -365,23 +434,23 @@
               Engineering Learning Hub
             </h2>
             <p class="text-slate-300 text-sm mt-2 leading-relaxed">
-              A scalable portal hosting <strong class="text-white">advanced technical curriculums</strong>. Houses Track 1: Production TypeScript (10 levels, 73 drills), alongside structured modules for System Design (HLD/LLD), Cloud &amp; DevOps (Docker/K8s/CI-CD), Applied AI (RAG/Embeddings), and Database Internals.
+              Comprehensive continuous learning center organizing structured engineering tracks: Production TypeScript, Distributed Systems, Cloud &amp; DevOps Infrastructure, and Applied AI Systems.
             </p>
           </div>
 
           <div class="flex flex-wrap gap-2 pt-2">
-            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700 text-xs text-slate-300">📘 Track 1: Production TypeScript (Active)</span>
-            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700 text-xs text-slate-300">🏗️ Track 2: System Design &amp; Caching (Redis/Kafka)</span>
-            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700 text-xs text-slate-300">☁️ Track 3: Cloud &amp; DevOps (Docker/K8s/Terraform)</span>
-            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700 text-xs text-slate-300">🤖 Track 4: Applied AI &amp; LLM Systems (RAG)</span>
-            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700 text-xs text-slate-300">🗄️ Track 5: PostgreSQL Internals &amp; MVCC</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700 text-xs text-slate-300">Track 1: Production TypeScript (14K Lines)</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700 text-xs text-slate-300">Track 2: System Design &amp; Architecture</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700 text-xs text-slate-300">Track 3: Cloud &amp; DevOps (Docker, K8s)</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700 text-xs text-slate-300">Track 4: Applied AI &amp; LLM Systems</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700 text-xs text-slate-300">Track 5: High-Scale Databases</span>
           </div>
         </div>
 
         <div class="pt-8 border-t border-slate-800/80 mt-6 flex flex-wrap items-center gap-3">
-          <a href="learning_hub.html" class="flex-1 min-w-[160px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm shadow-md shadow-blue-500/20 transition-all">
-            <span>Explore Learning Hub</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          <a href="learning_hub.html" class="flex-1 min-w-[170px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm shadow-md shadow-blue-500/20 transition-all">
+            <span>Open Learning Hub</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
           </a>
           <button onclick="openPreview('learning_hub.html', 'Engineering Learning Hub')" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-sm transition-all">
             <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
@@ -393,8 +462,8 @@
         </div>
       </article>
 
-      <!-- Card 1: German Universities Postgraduate Strategic Evaluation -->
-      <article id="german-portal" data-category="academics" data-keywords="germany master masters university universities passau siegen deggendorf hildesheim ects aps blue card tum tu9 rwth dortmund frankfurt tu berlin daad" class="resource-card glow-card rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6 sm:p-8 flex flex-col justify-between">
+      <!-- Card: German Universities Evaluation -->
+      <article id="german-portal" data-category="academics" data-keywords="germany master masters university universities passau siegen deggendorf hildesheim ects aps blue card tum tu9 rwth dortmund frankfurt tu berlin daad" class="resource-card glow-card glass-droplet rounded-2xl border border-slate-800 p-6 sm:p-8 flex flex-col justify-between">
         <div class="space-y-4">
           <div class="flex items-start justify-between gap-3 flex-wrap">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider">
@@ -445,7 +514,7 @@
       </article>
 
       <!-- Card 2: CAT 2026 Strategic Master Roadmap & Empirical Syllabus -->
-      <article id="cat-portal" data-category="cat" data-keywords="cat 2026 mba iim iit syllabus varc dilr quant arithmetic algebra geometry timetable 2iim cracku arun sharma test pattern rodha gejo speaks" class="resource-card glow-card rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6 sm:p-8 flex flex-col justify-between">
+      <article id="cat-portal" data-category="cat" data-keywords="cat 2026 mba iim iit syllabus varc dilr quant arithmetic algebra geometry timetable 2iim cracku arun sharma test pattern rodha gejo speaks" class="resource-card glow-card glass-droplet rounded-2xl border border-slate-800 p-6 sm:p-8 flex flex-col justify-between">
         <div class="space-y-4">
           <div class="flex items-start justify-between gap-3 flex-wrap">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider">
@@ -496,7 +565,7 @@
       </article>
 
       <!-- Card 3: Production TypeScript Curriculum & Interview Mastery Guide -->
-      <article id="ts-guide" data-category="typescript" data-keywords="typescript curriculum guide interview types generics type gymnastics ast compiler architecture microservices patterns leetcode full-stack node react deep dive" class="resource-card glow-card rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6 sm:p-8 flex flex-col justify-between">
+      <article id="ts-guide" data-category="typescript" data-keywords="typescript curriculum guide interview types generics type gymnastics ast compiler architecture microservices patterns leetcode full-stack node react deep dive" class="resource-card glow-card glass-droplet rounded-2xl border border-slate-800 p-6 sm:p-8 flex flex-col justify-between">
         <div class="space-y-4">
           <div class="flex items-start justify-between gap-3 flex-wrap">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-xs font-bold uppercase tracking-wider">
@@ -547,7 +616,7 @@
       </article>
 
       <!-- Card 4: German Lebenslauf (DIN 5008 CV) -->
-      <article id="lebenslauf" data-category="academics" data-keywords="lebenslauf resume cv german din 5008 lakshay nagpal profile education full stack experience mdu rohtak" class="resource-card glow-card rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6 sm:p-8 flex flex-col justify-between">
+      <article id="lebenslauf" data-category="academics" data-keywords="lebenslauf resume cv german din 5008 lakshay nagpal profile education full stack experience mdu rohtak" class="resource-card glow-card glass-droplet rounded-2xl border border-slate-800 p-6 sm:p-8 flex flex-col justify-between">
         <div class="space-y-4">
           <div class="flex items-start justify-between gap-3 flex-wrap">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-purple-500/10 border border-purple-500/30 text-purple-400 text-xs font-bold uppercase tracking-wider">
@@ -597,7 +666,7 @@
       </article>
 
       <!-- Card 5: Production Cloud Applications & Open-Source Codebases -->
-      <article id="projects" data-category="projects" data-keywords="projects real-time chat application ai data analyst dashboard portfolio react nextjs socketio postgresql prisma docker kubernetes vercel" class="resource-card glow-card rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6 sm:p-8 flex flex-col justify-between">
+      <article id="projects" data-category="projects" data-keywords="projects real-time chat application ai data analyst dashboard portfolio react nextjs socketio postgresql prisma docker kubernetes vercel" class="resource-card glow-card glass-droplet rounded-2xl border border-slate-800 p-6 sm:p-8 flex flex-col justify-between">
         <div class="space-y-4">
           <div class="flex items-start justify-between gap-3 flex-wrap">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-wider">
@@ -685,129 +754,25 @@
 
     </section>
 
-    <!-- Dedicated DSA Problem Library Section (240+ LeetCode Questions with Direct Links & Helping Approaches) -->
-    <section id="dsa-library" class="rounded-2xl bg-gradient-to-b from-slate-900 via-slate-900/90 to-slate-950 border border-emerald-500/40 p-6 sm:p-8 space-y-6 shadow-2xl">
-      <!-- Section Header -->
-      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-800">
-        <div class="space-y-2">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider">
-            <span>⚡</span> 240+ LeetCode Problem Library &amp; Thinking Approaches
-          </div>
-          <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight flex items-center gap-3">
-            <span>DSA Question Bank &amp; Direct Links</span>
-            <span class="text-xs font-mono font-normal px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">25 Patterns</span>
-          </h2>
-          <p class="text-xs sm:text-sm text-slate-400 max-w-3xl leading-relaxed">
-            Directly browse and solve every curated LeetCode problem. Each card features direct problem URLs, Big-Tech tags (Google, Meta, Amazon, Microsoft, Uber), checkbox persistence via <code class="text-emerald-300 bg-slate-800 px-1 py-0.5 rounded text-[11px]">localStorage</code>, and expandable <strong class="text-slate-200">"Helping Approach / How to Think"</strong> mental models with optimal time/space complexities and interview traps.
-          </p>
-        </div>
-
-        <div class="flex flex-wrap items-center gap-3 shrink-0">
-          <button onclick="playAudioSummary(this, 'DSA Problem Library Overview', 'DSA Problem Library: Contains 247 curated LeetCode problems organized across 25 high-yield patterns. Each problem has direct links to LeetCode, company interview focus tags, and an expandable helping approach drawer with intuition, algorithm steps, optimal time complexity, and interview traps to avoid.')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 hover:border-emerald-500/50 text-xs font-semibold transition-all">
-            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-            <span class="audio-label" data-default-label="Listen DSA Guide (25s)">Listen DSA Guide (25s)</span>
-          </button>
-          <a href="dsa_master_tracker.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-lg shadow-emerald-500/20 transition-all">
-            <span>Full Standalone Tracker ↗</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Live Statistics Ribbon -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800 text-center">
-          <div class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Total Solved</div>
-          <div class="text-xl font-black text-emerald-400 mt-0.5"><span id="libSolvedCount">0</span> <span class="text-xs font-normal text-slate-500">/ <span id="libTotalCount">247</span></span></div>
-          <div class="w-full bg-slate-800 rounded-full h-1.5 mt-2 overflow-hidden">
-            <div id="libOverallBar" class="bg-emerald-400 h-1.5 rounded-full transition-all duration-300" style="width: 0%"></div>
-          </div>
-        </div>
-        <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800 text-center">
-          <div class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Easy Questions</div>
-          <div class="text-xl font-black text-emerald-400 mt-0.5"><span id="libEasySolved">0</span> <span class="text-xs font-normal text-slate-500">/ <span id="libEasyTotal">60</span></span></div>
-          <div class="text-[11px] text-slate-500 font-mono mt-1" id="libEasyPct">0% Complete</div>
-        </div>
-        <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800 text-center">
-          <div class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Medium Questions</div>
-          <div class="text-xl font-black text-amber-400 mt-0.5"><span id="libMedSolved">0</span> <span class="text-xs font-normal text-slate-500">/ <span id="libMedTotal">158</span></span></div>
-          <div class="text-[11px] text-slate-500 font-mono mt-1" id="libMedPct">0% Complete</div>
-        </div>
-        <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800 text-center">
-          <div class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Hard Questions</div>
-          <div class="text-xl font-black text-rose-400 mt-0.5"><span id="libHardSolved">0</span> <span class="text-xs font-normal text-slate-500">/ <span id="libHardTotal">29</span></span></div>
-          <div class="text-[11px] text-slate-500 font-mono mt-1" id="libHardPct">0% Complete</div>
-        </div>
-      </div>
-
-      <!-- Real-Time Search & Pattern Filters -->
-      <div class="space-y-3 pt-2">
-        <div class="flex flex-col sm:flex-row gap-2.5">
-          <div class="relative flex-grow">
-            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-            </div>
-            <input type="text" id="libSearchInput" oninput="filterLibProblems()" placeholder="Search 240+ questions: Two Sum, #121, sliding window, Google, dynamic programming, BFS..." class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-950/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all">
-          </div>
-
-          <div class="flex items-center gap-2 overflow-x-auto shrink-0">
-            <!-- Difficulty Filters -->
-            <button onclick="setLibDiffFilter('ALL', this)" class="lib-diff-btn active px-3 py-2 rounded-xl text-xs font-bold bg-emerald-600 text-white transition-all">All Diff</button>
-            <button onclick="setLibDiffFilter('Easy', this)" class="lib-diff-btn px-3 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-emerald-400 hover:bg-slate-700 transition-all">Easy</button>
-            <button onclick="setLibDiffFilter('Medium', this)" class="lib-diff-btn px-3 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-amber-400 hover:bg-slate-700 transition-all">Medium</button>
-            <button onclick="setLibDiffFilter('Hard', this)" class="lib-diff-btn px-3 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-rose-400 hover:bg-slate-700 transition-all">Hard</button>
-
-            <!-- Status Filters -->
-            <button onclick="setLibStatusFilter('ALL', this)" class="lib-status-btn active px-3 py-2 rounded-xl text-xs font-bold bg-slate-700 text-white transition-all">All Status</button>
-            <button onclick="setLibStatusFilter('UNSOLVED', this)" class="lib-status-btn px-3 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all">To Solve</button>
-            <button onclick="setLibStatusFilter('SOLVED', this)" class="lib-status-btn px-3 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-emerald-400 hover:bg-slate-700 transition-all">Solved</button>
-          </div>
-        </div>
-
-        <!-- 25 Algorithmic Topic Filter Tabs (Scrollable) -->
-        <div class="flex items-center gap-1.5 overflow-x-auto pb-2 scrollbar-thin" id="libTopicTabs">
-          <!-- Topic tabs populated dynamically by JS -->
-        </div>
-      </div>
-
-      <!-- Problem Matching Counter & Quick Actions -->
-      <div class="flex items-center justify-between text-xs text-slate-400 px-1">
-        <span>Showing <strong id="libVisibleCount" class="text-white font-mono">247</strong> problems matching filters</span>
-        <div class="flex items-center gap-3">
-          <button onclick="expandAllApproaches()" class="text-emerald-400 hover:text-emerald-300 font-semibold cursor-pointer">Expand All Approaches</button>
-          <span>•</span>
-          <button onclick="collapseAllApproaches()" class="text-slate-400 hover:text-slate-300 font-semibold cursor-pointer">Collapse All</button>
-        </div>
-      </div>
-
-      <!-- Problems Dynamic Cards Grid -->
-      <div id="libProblemsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-3.5 pt-2">
-        <!-- Rendered by JavaScript -->
-      </div>
-    </section>
-
-    <!-- GitHub Pages Deployment Notice & Instructions Callout -->
-    <section class="rounded-2xl bg-slate-900/60 border border-slate-800 p-6 sm:p-8">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div class="space-y-1">
-          <div class="text-xs font-bold uppercase tracking-wider text-blue-400 flex items-center gap-1.5">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-            Instant Cloud Access Anywhere
-          </div>
-          <h3 class="text-lg font-bold text-white">Deployed on GitHub Pages for 24/7 Availability</h3>
-          <p class="text-xs text-slate-400 max-w-2xl">
-            This dashboard serves as the root <code class="text-blue-300 bg-slate-800 px-1 py-0.5 rounded">index.html</code> for GitHub Pages. Access your complete German University evaluations, TypeScript curriculum, and CV from any phone, laptop, or browser worldwide.
-          </p>
-        </div>
-        <div class="flex items-center gap-3">
-          <a href="https://github.com/lakshayn0001/dashboard" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 transition-all">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
-            <span>GitHub Repository</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
   </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800/80 bg-[#090d16] py-8 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 space-y-2">
+      <div class="flex justify-center items-center gap-4 text-slate-400">
+        <a href="https://github.com/lakshayn0001" target="_blank" rel="noreferrer" class="hover:text-blue-400 transition-colors">GitHub</a>
+        <span>•</span>
+        <a href="https://lakshayn0001.github.io/Portfolio/" target="_blank" rel="noreferrer" class="hover:text-blue-400 transition-colors">Developer Portfolio</a>
+        <span>•</span>
+        <a href="cat_2026_syllabus_roadmap.html" class="hover:text-amber-400 transition-colors">CAT 2026 Roadmap</a>
+        <span>•</span>
+        <a href="mailto:lakshayn0001@gmail.com" class="hover:text-blue-400 transition-colors">Contact</a>
+      </div>
+      <p>&copy; 2026 Lakshay Nagpal. Configured for GitHub Pages deployment.</p>
+    </div>
+  </footer>
+
+  </div> <!-- End Main Content Wrapper (lg:pl-72) -->
 
   <!-- Interactive Fullscreen / In-Page Preview Modal -->
   <div id="previewModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-md flex flex-col items-center justify-center p-2 sm:p-6">
@@ -842,22 +807,6 @@
     <span id="toastMsg">Link copied to clipboard!</span>
   </div>
 
-  <!-- Footer -->
-  <footer class="border-t border-slate-800/80 bg-[#090d16] py-8 text-center text-xs text-slate-500">
-    <div class="max-w-7xl mx-auto px-4 space-y-2">
-      <div class="flex justify-center items-center gap-4 text-slate-400">
-        <a href="https://github.com/lakshayn0001" target="_blank" rel="noreferrer" class="hover:text-blue-400 transition-colors">GitHub</a>
-        <span>•</span>
-        <a href="https://lakshayn0001.github.io/Portfolio/" target="_blank" rel="noreferrer" class="hover:text-blue-400 transition-colors">Developer Portfolio</a>
-        <span>•</span>
-        <a href="cat_2026_syllabus_roadmap.html" class="hover:text-amber-400 transition-colors">CAT 2026 Roadmap</a>
-        <span>•</span>
-        <a href="mailto:lakshayn0001@gmail.com" class="hover:text-blue-400 transition-colors">Contact</a>
-      </div>
-      <p>&copy; 2026 Lakshay Nagpal. Configured for GitHub Pages deployment.</p>
-    </div>
-  </footer>
-
   <!-- Floating Bottom Audio Controller Bar -->
   <div id="floatingAudioBar" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden max-w-xl w-[92%] sm:w-auto px-4 py-2.5 rounded-2xl bg-slate-900/95 border border-blue-500/40 shadow-2xl backdrop-blur-xl flex items-center justify-between gap-4 transition-all">
     <div class="flex items-center gap-3 overflow-hidden">
@@ -882,9 +831,6 @@
       </button>
     </div>
   </div>
-
-  <!-- Load Problem Database -->
-  <script src="dsa_problems_data.js"></script>
 
   <!-- Interactive Scripts -->
   <script>
@@ -936,18 +882,6 @@
           card.style.display = 'none';
         }
       });
-
-      const dsaSection = document.getElementById('dsa-library');
-      if (dsaSection) {
-        if (cat === 'all' || cat === 'dsa') {
-          dsaSection.style.display = 'block';
-          if (cat === 'dsa') {
-            dsaSection.scrollIntoView({ behavior: 'smooth' });
-          }
-        } else {
-          dsaSection.style.display = 'none';
-        }
-      }
     }
 
     // In-Page Preview Modal Controls
@@ -982,354 +916,6 @@
         toggleSidebar(false);
       }
     });
-
-    // ==========================================
-    // DSA PROBLEM LIBRARY INTERACTIVE CONTROLLER
-    // ==========================================
-    const DSA_STORAGE_KEY = 'lakshay_dsa_tracker_v1';
-    let dsaLibState = { solved: {}, starred: {}, notes: {} };
-    let libSelectedTopic = 'ALL';
-    let libSelectedDiff = 'ALL';
-    let libSelectedStatus = 'ALL';
-
-    function loadDsaLibState() {
-      try {
-        const saved = localStorage.getItem(DSA_STORAGE_KEY);
-        if (saved) {
-          dsaLibState = JSON.parse(saved);
-          if (!dsaLibState.solved) dsaLibState.solved = {};
-          if (!dsaLibState.starred) dsaLibState.starred = {};
-        }
-      } catch (e) {
-        console.error('Error loading DSA state:', e);
-      }
-    }
-
-    function saveDsaLibState() {
-      try {
-        localStorage.setItem(DSA_STORAGE_KEY, JSON.stringify(dsaLibState));
-        updateDsaLibStats();
-      } catch (e) {
-        console.error('Error saving DSA state:', e);
-      }
-    }
-
-    function initDsaLibrary() {
-      loadDsaLibState();
-      renderLibTopicTabs();
-      renderLibProblems();
-      updateDsaLibStats();
-    }
-
-    // Render topic tabs from window.DSA_TOPICS_DATA
-    function renderLibTopicTabs() {
-      const container = document.getElementById('libTopicTabs');
-      if (!container || !window.DSA_TOPICS_DATA) return;
-
-      container.innerHTML = `
-        <button onclick="setLibTopic('ALL', this)" class="lib-topic-tab active px-3 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap bg-emerald-600 text-white transition-all cursor-pointer">
-          All Patterns (${window.DSA_PROBLEMS_LIST ? window.DSA_PROBLEMS_LIST.length : 247})
-        </button>
-      `;
-
-      window.DSA_TOPICS_DATA.forEach(t => {
-        const btn = document.createElement('button');
-        btn.onclick = () => setLibTopic(t.topic, btn);
-        btn.className = 'lib-topic-tab px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition-all cursor-pointer';
-        btn.innerText = `${t.topic} (${t.problems.length})`;
-        container.appendChild(btn);
-      });
-    }
-
-    function setLibTopic(topic, btn) {
-      libSelectedTopic = topic;
-      document.querySelectorAll('.lib-topic-tab').forEach(b => {
-        b.classList.remove('bg-emerald-600', 'text-white', 'active', 'font-bold');
-        b.classList.add('bg-slate-800', 'text-slate-300', 'font-semibold');
-      });
-      btn.classList.remove('bg-slate-800', 'text-slate-300');
-      btn.classList.add('bg-emerald-600', 'text-white', 'active', 'font-bold');
-      renderLibProblems();
-    }
-
-    function setLibDiffFilter(diff, btn) {
-      libSelectedDiff = diff;
-      document.querySelectorAll('.lib-diff-btn').forEach(b => {
-        b.classList.remove('bg-emerald-600', 'text-white', 'active');
-        b.classList.add('bg-slate-800');
-        if (b.innerText.includes('Easy')) b.classList.add('text-emerald-400');
-        else if (b.innerText.includes('Medium')) b.classList.add('text-amber-400');
-        else if (b.innerText.includes('Hard')) b.classList.add('text-rose-400');
-        else b.classList.add('text-slate-300');
-      });
-      btn.classList.remove('bg-slate-800', 'text-emerald-400', 'text-amber-400', 'text-rose-400', 'text-slate-300');
-      btn.classList.add('bg-emerald-600', 'text-white', 'active');
-      renderLibProblems();
-    }
-
-    function setLibStatusFilter(status, btn) {
-      libSelectedStatus = status;
-      document.querySelectorAll('.lib-status-btn').forEach(b => {
-        b.classList.remove('bg-slate-700', 'text-white', 'active');
-        b.classList.add('bg-slate-800');
-        if (b.innerText.includes('Solved')) b.classList.add('text-emerald-400');
-        else b.classList.add('text-slate-300');
-      });
-      btn.classList.remove('bg-slate-800', 'text-slate-300', 'text-emerald-400');
-      btn.classList.add('bg-slate-700', 'text-white', 'active');
-      renderLibProblems();
-    }
-
-    function filterLibProblems() {
-      renderLibProblems();
-    }
-
-    // Render problem cards matching search, topic, diff, and status
-    function renderLibProblems() {
-      const container = document.getElementById('libProblemsContainer');
-      const countEl = document.getElementById('libVisibleCount');
-      if (!container || !window.DSA_PROBLEMS_LIST) return;
-
-      const q = (document.getElementById('libSearchInput')?.value || '').toLowerCase().trim();
-
-      const matched = window.DSA_PROBLEMS_LIST.filter(p => {
-        const isSolved = !!dsaLibState.solved[p.id];
-
-        // 1. Topic filter
-        if (libSelectedTopic !== 'ALL' && p.topic !== libSelectedTopic) return false;
-
-        // 2. Difficulty filter
-        if (libSelectedDiff !== 'ALL' && p.diff !== libSelectedDiff) return false;
-
-        // 3. Status filter
-        if (libSelectedStatus === 'SOLVED' && !isSolved) return false;
-        if (libSelectedStatus === 'UNSOLVED' && isSolved) return false;
-
-        // 4. Search query
-        if (q) {
-          const hay = `${p.title} ${p.lc} ${p.slug} ${p.topic} ${p.pattern} ${p.companies.join(' ')} ${p.mental}`.toLowerCase();
-          if (!hay.includes(q)) return false;
-        }
-
-        return true;
-      });
-
-      if (countEl) countEl.innerText = matched.length;
-
-      if (matched.length === 0) {
-        container.innerHTML = `
-          <div class="col-span-full p-8 rounded-xl bg-slate-950/60 border border-slate-800 text-center space-y-2">
-            <div class="text-2xl">🔍</div>
-            <div class="text-sm font-semibold text-white">No DSA problems matched your filters</div>
-            <p class="text-xs text-slate-500">Try clearing the search query or resetting difficulty and topic filters.</p>
-          </div>
-        `;
-        return;
-      }
-
-      container.innerHTML = '';
-      matched.forEach(p => {
-        const isSolved = !!dsaLibState.solved[p.id];
-
-        let diffBadge = 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30';
-        if (p.diff === 'Medium') diffBadge = 'bg-amber-500/10 text-amber-400 border-amber-500/30';
-        if (p.diff === 'Hard') diffBadge = 'bg-rose-500/10 text-rose-400 border-rose-500/30';
-
-        const companiesHtml = p.companies.slice(0, 3).map(c =>
-          `<span class="px-1.5 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300 font-mono">${c}</span>`
-        ).join('');
-
-        const card = document.createElement('div');
-        card.id = `libCard_${p.id}`;
-        card.className = `p-4 rounded-xl border transition-all duration-200 ${isSolved ? 'bg-emerald-950/20 border-emerald-500/40' : 'bg-slate-950/70 border-slate-800 hover:border-slate-700'}`;
-
-        card.innerHTML = `
-          <div class="flex items-start justify-between gap-3">
-            <div class="flex items-start gap-2.5 flex-grow min-w-0">
-              <input type="checkbox" ${isSolved ? 'checked' : ''} onchange="toggleLibSolved(${p.id}, this.checked)" class="mt-1 w-4 h-4 rounded text-emerald-500 focus:ring-0 focus:ring-offset-0 bg-slate-900 border-slate-700 cursor-pointer shrink-0">
-              <div class="min-w-0 flex-grow">
-                <div class="flex items-center gap-1.5 flex-wrap">
-                  <span class="text-xs font-mono font-bold text-slate-400">#${p.lc}</span>
-                  <a href="${p.url}" target="_blank" rel="noreferrer" class="font-bold text-sm text-white hover:text-emerald-400 transition-colors inline-flex items-center gap-1.5 group truncate" title="Open on LeetCode: ${p.title}">
-                    <span class="${isSolved ? 'line-through text-slate-400' : ''}">${p.title}</span>
-                    <svg class="w-3.5 h-3.5 text-slate-500 group-hover:text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                  </a>
-                </div>
-
-                <div class="flex flex-wrap items-center gap-1.5 mt-1.5">
-                  <span class="px-2 py-0.5 rounded text-[10px] font-bold border ${diffBadge}">${p.diff}</span>
-                  <span class="px-2 py-0.5 rounded text-[10px] bg-slate-900 text-slate-300 border border-slate-800 font-mono">${p.pattern}</span>
-                  <span class="px-2 py-0.5 rounded text-[10px] bg-slate-900/80 text-blue-300 border border-blue-500/20 font-mono">${p.topic}</span>
-                  ${companiesHtml}
-                </div>
-              </div>
-            </div>
-
-            <!-- Action buttons -->
-            <div class="flex items-center gap-1.5 shrink-0">
-              <a href="${p.url}" target="_blank" rel="noreferrer" class="px-2.5 py-1 rounded-lg bg-emerald-600/15 hover:bg-emerald-600 border border-emerald-500/30 text-emerald-300 hover:text-white text-xs font-semibold inline-flex items-center gap-1 transition-all" title="Direct LeetCode problem link">
-                <span>Solve</span>
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-              </a>
-              <button onclick="toggleApproach(${p.id})" id="approachToggleBtn_${p.id}" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-medium inline-flex items-center gap-1 transition-all cursor-pointer" title="View mental model and complexity">
-                <span>💡 Approach</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Expandable Helping Approach Drawer -->
-          <div id="approachDrawer_${p.id}" class="approach-drawer hidden mt-3 p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2 text-xs">
-            <div>
-              <span class="text-emerald-400 font-bold uppercase tracking-wider text-[10px] block">💡 Intuition &amp; Mental Model</span>
-              <p class="text-slate-300 mt-0.5 leading-relaxed">${p.mental}</p>
-            </div>
-            <div>
-              <span class="text-blue-400 font-bold uppercase tracking-wider text-[10px] block">🛠️ Algorithm &amp; Strategy</span>
-              <p class="text-slate-300 mt-0.5 leading-relaxed">${p.algo}</p>
-            </div>
-            <div class="flex flex-wrap items-center justify-between gap-2 pt-1 border-t border-slate-800/80">
-              <div class="flex items-center gap-3">
-                <span class="text-slate-400">Time: <strong class="text-emerald-400 font-mono">${p.tc}</strong></span>
-                <span class="text-slate-400">Space: <strong class="text-blue-400 font-mono">${p.sc}</strong></span>
-              </div>
-              <a href="${p.url}" target="_blank" rel="noreferrer" class="text-[11px] text-emerald-400 hover:underline inline-flex items-center gap-1">
-                <span>Open ${p.title} on LeetCode</span>
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-              </a>
-            </div>
-            <div class="p-2 rounded bg-amber-500/10 border border-amber-500/20 text-amber-300 text-[11px]">
-              <strong>⚠️ Interview Trap:</strong> ${p.trap}
-            </div>
-          </div>
-        `;
-
-        container.appendChild(card);
-      });
-    }
-
-    function toggleLibSolved(id, isChecked) {
-      if (isChecked) {
-        dsaLibState.solved[id] = true;
-      } else {
-        delete dsaLibState.solved[id];
-      }
-      saveDsaLibState();
-
-      const card = document.getElementById(`libCard_${id}`);
-      if (card) {
-        if (isChecked) {
-          card.classList.add('bg-emerald-950/20', 'border-emerald-500/40');
-          card.classList.remove('bg-slate-950/70', 'border-slate-800');
-          const title = card.querySelector('a span');
-          if (title) title.classList.add('line-through', 'text-slate-400');
-        } else {
-          card.classList.remove('bg-emerald-950/20', 'border-emerald-500/40');
-          card.classList.add('bg-slate-950/70', 'border-slate-800');
-          const title = card.querySelector('a span');
-          if (title) title.classList.remove('line-through', 'text-slate-400');
-        }
-      }
-    }
-
-    function toggleApproach(id) {
-      const drawer = document.getElementById(`approachDrawer_${id}`);
-      const btn = document.getElementById(`approachToggleBtn_${id}`);
-      if (!drawer) return;
-
-      if (drawer.classList.contains('hidden')) {
-        drawer.classList.remove('hidden');
-        if (btn) {
-          btn.classList.add('bg-emerald-600', 'text-white');
-          btn.classList.remove('bg-slate-800', 'text-slate-300');
-        }
-      } else {
-        drawer.classList.add('hidden');
-        if (btn) {
-          btn.classList.remove('bg-emerald-600', 'text-white');
-          btn.classList.add('bg-slate-800', 'text-slate-300');
-        }
-      }
-    }
-
-    function expandAllApproaches() {
-      document.querySelectorAll('.approach-drawer').forEach(d => d.classList.remove('hidden'));
-      document.querySelectorAll('[id^="approachToggleBtn_"]').forEach(b => {
-        b.classList.add('bg-emerald-600', 'text-white');
-        b.classList.remove('bg-slate-800', 'text-slate-300');
-      });
-    }
-
-    function collapseAllApproaches() {
-      document.querySelectorAll('.approach-drawer').forEach(d => d.classList.add('hidden'));
-      document.querySelectorAll('[id^="approachToggleBtn_"]').forEach(b => {
-        b.classList.remove('bg-emerald-600', 'text-white');
-        b.classList.add('bg-slate-800', 'text-slate-300');
-      });
-    }
-
-    function updateDsaLibStats() {
-      if (!window.DSA_PROBLEMS_LIST) return;
-      const total = window.DSA_PROBLEMS_LIST.length;
-      let solvedCount = 0;
-      let easySolved = 0, medSolved = 0, hardSolved = 0;
-      let easyTotal = 0, medTotal = 0, hardTotal = 0;
-
-      window.DSA_PROBLEMS_LIST.forEach(p => {
-        const isSolved = !!dsaLibState.solved[p.id];
-        if (p.diff === 'Easy') {
-          easyTotal++;
-          if (isSolved) easySolved++;
-        } else if (p.diff === 'Medium') {
-          medTotal++;
-          if (isSolved) medSolved++;
-        } else if (p.diff === 'Hard') {
-          hardTotal++;
-          if (isSolved) hardSolved++;
-        }
-        if (isSolved) solvedCount++;
-      });
-
-      const overallPct = total > 0 ? Math.round((solvedCount / total) * 100) : 0;
-      const easyPct = easyTotal > 0 ? Math.round((easySolved / easyTotal) * 100) : 0;
-      const medPct = medTotal > 0 ? Math.round((medSolved / medTotal) * 100) : 0;
-      const hardPct = hardTotal > 0 ? Math.round((hardSolved / hardTotal) * 100) : 0;
-
-      const solvedEl = document.getElementById('libSolvedCount');
-      const totalEl = document.getElementById('libTotalCount');
-      const barEl = document.getElementById('libOverallBar');
-      if (solvedEl) solvedEl.innerText = solvedCount;
-      if (totalEl) totalEl.innerText = total;
-      if (barEl) barEl.style.width = `${overallPct}%`;
-
-      const easySolvedEl = document.getElementById('libEasySolved');
-      const easyTotalEl = document.getElementById('libEasyTotal');
-      const easyPctEl = document.getElementById('libEasyPct');
-      if (easySolvedEl) easySolvedEl.innerText = easySolved;
-      if (easyTotalEl) easyTotalEl.innerText = easyTotal;
-      if (easyPctEl) easyPctEl.innerText = `${easyPct}% Complete`;
-
-      const medSolvedEl = document.getElementById('libMedSolved');
-      const medTotalEl = document.getElementById('libMedTotal');
-      const medPctEl = document.getElementById('libMedPct');
-      if (medSolvedEl) medSolvedEl.innerText = medSolved;
-      if (medTotalEl) medTotalEl.innerText = medTotal;
-      if (medPctEl) medPctEl.innerText = `${medPct}% Complete`;
-
-      const hardSolvedEl = document.getElementById('libHardSolved');
-      const hardTotalEl = document.getElementById('libHardTotal');
-      const hardPctEl = document.getElementById('libHardPct');
-      if (hardSolvedEl) hardSolvedEl.innerText = hardSolved;
-      if (hardTotalEl) hardTotalEl.innerText = hardTotal;
-      if (hardPctEl) hardPctEl.innerText = `${hardPct}% Complete`;
-    }
-
-    // Initialize DSA library when DOM is ready
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initDsaLibrary);
-    } else {
-      initDsaLibrary();
-    }
-
 
     // Copy File Link Helper
     function copyFileLink(fileName) {
