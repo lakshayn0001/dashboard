@@ -31,6 +31,7 @@
   </script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+    
     body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
       background-color: #e9eee4;
@@ -39,52 +40,185 @@
         radial-gradient(at 88% 82%, rgba(138, 168, 122, 0.28) 0%, transparent 50%),
         radial-gradient(at 50% 50%, rgba(215, 226, 206, 0.25) 0%, transparent 60%);
       color: #1a2517;
+      min-height: 100vh;
     }
-    .glass-nav {
-      background: rgba(246, 250, 242, 0.9);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(135, 160, 122, 0.25);
+
+    /* Ambient Liquid Refraction Orbs */
+    .droplet-orb-1 {
+      position: fixed;
+      top: -100px;
+      left: 18%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(125, 160, 110, 0.32) 0%, rgba(125, 160, 110, 0) 70%);
+      filter: blur(60px);
+      pointer-events: none;
+      z-index: 0;
     }
-    .glass-card {
+    .droplet-orb-2 {
+      position: fixed;
+      bottom: -100px;
+      right: 6%;
+      width: 540px;
+      height: 540px;
+      background: radial-gradient(circle, rgba(168, 190, 145, 0.35) 0%, rgba(168, 190, 145, 0) 70%);
+      filter: blur(70px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .droplet-orb-3 {
+      position: fixed;
+      top: 40%;
+      left: 45%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(95, 132, 85, 0.22) 0%, rgba(95, 132, 85, 0) 70%);
+      filter: blur(55px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Light Liquid Glass Water Droplet Effect */
+    .glass-droplet {
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(246, 250, 242, 0.72) 100%);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
       border: 1px solid rgba(255, 255, 255, 0.95);
-      box-shadow: inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 1), 0 10px 30px -10px rgba(45, 65, 36, 0.1);
+      box-shadow: 
+        inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 1),
+        inset 0 -1px 2px 0 rgba(90, 115, 80, 0.08),
+        0 14px 34px -10px rgba(45, 65, 36, 0.10),
+        0 2px 8px -2px rgba(45, 65, 36, 0.05);
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
+    .glass-droplet::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 8%; right: 8%;
+      height: 1.5px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.95), transparent);
+      pointer-events: none;
+    }
+    .glass-droplet:hover {
+      transform: translateY(-2px);
+      box-shadow: 
+        inset 0 2px 2px 0 rgba(255, 255, 255, 1),
+        0 20px 42px -10px rgba(50, 75, 40, 0.14),
+        0 4px 12px -2px rgba(45, 65, 36, 0.08);
+      border-color: rgba(120, 150, 105, 0.4);
+    }
+
+    /* Sidebar & Navigation */
+    .glass-droplet-sidebar {
+      background: rgba(246, 250, 242, 0.94);
+      backdrop-filter: blur(28px) saturate(190%);
+      -webkit-backdrop-filter: blur(28px) saturate(190%);
+      border-right: 1px solid rgba(135, 160, 122, 0.25);
+      box-shadow: 
+        inset -1px 0 1px 0 rgba(255, 255, 255, 0.85),
+        4px 0 24px rgba(45, 65, 36, 0.06);
+    }
+    .glass-droplet-nav {
+      background: rgba(246, 250, 242, 0.88);
+      backdrop-filter: blur(24px) saturate(190%);
+      -webkit-backdrop-filter: blur(24px) saturate(190%);
+      border-bottom: 1px solid rgba(135, 160, 122, 0.25);
+      box-shadow: 
+        inset 0 -1px 1px 0 rgba(255, 255, 255, 0.85),
+        0 4px 20px rgba(45, 65, 36, 0.06);
+    }
+
+    /* Droplet Pills */
+    .droplet-pill {
+      background: linear-gradient(135deg, #ffffff 0%, #f4f7f0 100%);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(110, 140, 95, 0.28);
+      box-shadow: 
+        inset 0 1px 1px 0 #ffffff,
+        0 2px 6px rgba(45, 65, 36, 0.08);
+      color: #24331e;
+      transition: all 0.2s ease;
+    }
+    .droplet-pill:hover {
+      border-color: rgba(90, 125, 75, 0.5);
+      box-shadow: 
+        inset 0 1.5px 1.5px 0 #ffffff,
+        0 4px 12px rgba(45, 65, 36, 0.12);
+      transform: translateY(-1px);
+    }
+
+    /* Form Inputs */
+    .olive-input {
+      background-color: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(115, 145, 100, 0.35);
+      color: #192516;
+      box-shadow: inset 0 1px 2px rgba(45, 65, 36, 0.04);
+      transition: all 0.2s ease;
+    }
+    .olive-input:focus {
+      border-color: #4a6839;
+      box-shadow: 0 0 0 3px rgba(95, 135, 75, 0.2);
+      outline: none;
+    }
+
+    .olive-select {
+      background-color: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(115, 145, 100, 0.35);
+      color: #192516;
+      box-shadow: inset 0 1px 2px rgba(45, 65, 36, 0.04);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23385429'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.75rem center;
+      background-size: 1rem;
+      transition: all 0.2s ease;
+    }
+    .olive-select:focus {
+      border-color: #4a6839;
+      box-shadow: 0 0 0 3px rgba(95, 135, 75, 0.2);
+      outline: none;
+    }
+
+    /* Scrollbars */
     ::-webkit-scrollbar { width: 7px; height: 7px; }
     ::-webkit-scrollbar-track { background: #e0e6d8; }
     ::-webkit-scrollbar-thumb { background: #96af8c; border-radius: 4px; border: 1px solid rgba(255,255,255,0.7); }
     ::-webkit-scrollbar-thumb:hover { background: #738f68; }
+
     .solved-card {
       border-color: rgba(46, 125, 50, 0.5) !important;
       background-color: rgba(232, 245, 233, 0.85) !important;
     }
   </style>
 </head>
-<body class="min-h-screen flex flex-col selection:bg-emerald-500 selection:text-black">
+<body class="selection:bg-emerald-600 selection:text-white flex flex-col relative overflow-x-hidden">
 
-  <!-- Side Navigation Drawer Backdrop -->
-  <div id="sidebarBackdrop" onclick="toggleSidebar(false)" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden transition-opacity duration-300"></div>
+  <!-- Ambient liquid orbs for light glass refraction -->
+  <div class="droplet-orb-1"></div>
+  <div class="droplet-orb-2"></div>
+  <div class="droplet-orb-3"></div>
 
-  <!-- Modern Side Navigation Drawer -->
-  <aside id="sideNavDrawer" class="fixed top-0 left-0 bottom-0 w-80 max-w-[85vw] bg-slate-900/95 border-r border-slate-800 z-50 transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col shadow-2xl backdrop-blur-2xl">
-    <!-- Sidebar Header -->
-    <div class="p-5 border-b border-slate-800 flex items-center justify-between">
+  <!-- Mobile-only backdrop for small screens (< lg) -->
+  <div id="sidebarBackdrop" onclick="toggleSidebar(false)" class="fixed inset-0 bg-stone-900/40 backdrop-blur-sm z-20 hidden lg:hidden transition-opacity duration-300"></div>
+
+  <!-- Persistent Left Side Navigation (Always Open on Desktop) -->
+  <aside id="sideNavDrawer" class="w-72 fixed inset-y-0 left-0 z-30 flex flex-col glass-droplet-sidebar transition-transform duration-300 -translate-x-full lg:translate-x-0">
+    <div class="p-5 border-b border-stone-300/60 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 via-teal-500 to-blue-500 flex items-center justify-center font-black text-white text-lg shadow-lg shadow-emerald-500/20">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 via-teal-600 to-olive-700 flex items-center justify-center font-black text-white text-lg shadow-md droplet-pill">
           LN
         </div>
         <div>
-          <div class="font-bold text-white text-sm tracking-tight flex items-center gap-1.5">
+          <div class="font-bold text-stone-900 text-sm tracking-tight flex items-center gap-1.5">
             <span>Lakshay Nagpal</span>
-            <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">VERIFIED</span>
+            <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">VERIFIED</span>
           </div>
-          <span class="text-xs text-slate-400 font-mono block">Engineering Control Center</span>
+          <span class="text-xs text-stone-600 font-mono block">Engineering Control Center</span>
         </div>
       </div>
-      <button onclick="toggleSidebar(false)" class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all" title="Close Menu">
+      <!-- Close button visible only on mobile -->
+      <button onclick="toggleSidebar(false)" class="lg:hidden p-1.5 rounded-lg text-stone-500 hover:text-stone-900 hover:bg-stone-200 transition-all" title="Close Menu">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
       </button>
     </div>
@@ -93,83 +227,88 @@
     <div class="flex-grow overflow-y-auto py-4 px-3 space-y-6">
       <!-- Section 1: Core Navigation -->
       <div>
-        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">Core Portals</div>
+        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Core Portals</div>
         <div class="mt-2 space-y-1">
-          <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
+          <a href="dsa_master_tracker.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-emerald-100/90 text-emerald-950 border border-emerald-300 transition-all group text-sm font-bold shadow-sm">
+            <span class="text-lg">⚡</span>
+            <span>DSA Master Tracker</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-200/80 text-emerald-900 font-mono">240+ LC</span>
+          </a>
+          <a href="profile.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
+            <span class="text-lg">👤</span>
+            <span>Candidate Profile</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-mono font-bold">Resume &amp; Bio</span>
+          </a>
+          <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
             <span class="text-lg">🏠</span>
             <span>Master Dashboard</span>
           </a>
-          <a href="profile.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
-            <span class="text-lg">👤</span>
-            <span>Candidate Profile</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono font-bold">Resume &amp; Bio</span>
-          </a>
-          <a href="dsa_master_tracker.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 transition-all group text-sm font-semibold">
-            <span class="text-lg">⚡</span>
-            <span>DSA Master Tracker</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono">240+ LC</span>
-          </a>
-          <a href="learning_hub.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
+          <a href="learning_hub.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
             <span class="text-lg">🧠</span>
             <span>Learning Hub</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 font-mono">Courses</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-mono">5 Tracks</span>
           </a>
-          <a href="typescript_curriculum.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
+          <a href="typescript_curriculum.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
             <span class="text-lg">📘</span>
             <span>TypeScript Curriculum</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-mono">14K Lines</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-800 font-mono">14K Lines</span>
           </a>
         </div>
       </div>
 
       <!-- Section 2: Admissions & Academics -->
       <div>
-        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">Higher Education &amp; Admissions</div>
+        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Higher Education &amp; Admissions</div>
         <div class="mt-2 space-y-1">
-          <a href="german_universities_evaluation.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
+          <a href="german_universities_evaluation.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
             <span class="text-lg">🇩🇪</span>
             <span>German Universities</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 font-mono">Tuition-Free</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-mono">Tuition-Free</span>
           </a>
-          <a href="cat_2026_syllabus_roadmap.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
+          <a href="cat_2026_syllabus_roadmap.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
             <span class="text-lg">🐯</span>
             <span>CAT 2026 Strategy</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 font-mono">IIM/IIT</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 font-mono">IIM/IIT</span>
           </a>
         </div>
       </div>
 
       <!-- Section 3: Professional Dossier -->
       <div>
-        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">Professional Dossier</div>
+        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Professional Dossier</div>
         <div class="mt-2 space-y-1">
-          <a href="lebenslauf_de.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
+          <a href="profile.html#job-portals" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
+            <span class="text-lg">💼</span>
+            <span>Job Portals Engine</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-mono">60+ Links</span>
+          </a>
+          <a href="lebenslauf_de.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
             <span class="text-lg">📄</span>
             <span>Lebenslauf (German CV)</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 font-mono">DIN 5008</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-stone-200 text-stone-800 font-mono">DIN 5008</span>
           </a>
-          <a href="index.html#projects" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
-            <span class="text-lg">💻</span>
-            <span>Cloud Projects</span>
+          <a href="assets/Lakshay_Nagpal_Resume.pdf" download="Lakshay_Nagpal_Resume.pdf" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-emerald-800 hover:text-emerald-950 hover:bg-emerald-50 transition-all group text-sm font-semibold">
+            <span class="text-lg">📥</span>
+            <span>Download Resume (PDF)</span>
           </a>
-          <a href="https://lakshayn0001.github.io/Portfolio/" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
+          <a href="https://lakshayn0001.github.io/Portfolio/" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
             <span class="text-lg">🌐</span>
             <span>Developer Portfolio</span>
-            <svg class="w-3.5 h-3.5 text-slate-500 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            <svg class="w-3.5 h-3.5 text-stone-400 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
           </a>
         </div>
       </div>
 
       <!-- Section 4: Direct Social Links -->
       <div>
-        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">Connect</div>
+        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Connect</div>
         <div class="mt-2 space-y-1">
-          <a href="https://www.linkedin.com/in/lakshay-nagpal-1a2a0134a/" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
+          <a href="https://www.linkedin.com/in/lakshay-nagpal-1a2a0134a/" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
             <svg class="w-4 h-4 text-[#0a66c2] fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z"/></svg>
             <span>LinkedIn Profile</span>
           </a>
-          <a href="https://github.com/lakshayn0001/dashboard" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
-            <svg class="w-4 h-4 text-slate-400 fill-current" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
+          <a href="https://github.com/lakshayn0001/dashboard" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
+            <svg class="w-4 h-4 text-stone-600 fill-current" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
             <span>GitHub Repository</span>
           </a>
         </div>
@@ -177,94 +316,95 @@
     </div>
 
     <!-- Sidebar Footer -->
-    <div class="p-4 border-t border-slate-800 text-[11px] text-slate-400 flex items-center justify-between">
+    <div class="p-4 border-t border-stone-300/60 text-[11px] text-stone-600 flex items-center justify-between">
       <span>Immediate Joiner / 0 Days</span>
-      <span class="text-emerald-400 font-mono">B.Tech 70.56%</span>
+      <span class="text-emerald-800 font-mono font-bold">B.Tech 70.56%</span>
     </div>
   </aside>
 
-  <!-- Sticky Top Glass Navigation Bar -->
-  <header class="sticky top-0 z-40 w-full border-b border-slate-800 glass-nav shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      
-      <!-- Left: Sidebar Toggle + Title -->
-      <div class="flex items-center gap-3">
-        <button onclick="toggleSidebar(true)" class="p-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 hover:border-emerald-500/50 transition-all flex items-center gap-2" title="Toggle Navigation Menu">
-          <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-          <span class="text-xs font-semibold hidden sm:inline">Menu</span>
-        </button>
+  <!-- Main Content Wrapper (Beside Permanent Sidebar on Desktop) -->
+  <div class="lg:pl-72 flex flex-col min-h-screen relative z-10">
 
-        <a href="index.html" class="flex items-center gap-2">
-          <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white font-black text-sm">
-            ⚡
-          </div>
-          <div>
-            <span class="font-bold text-white text-sm sm:text-base tracking-tight block">DSA Master Tracker</span>
-            <span class="text-[10px] text-emerald-400 font-mono hidden sm:block">240+ LeetCode Patterns &amp; Thinking Engine</span>
-          </div>
-        </a>
+    <!-- Sticky Top Glass Navigation Bar (No Menu Button on Desktop) -->
+    <header class="sticky top-0 z-20 w-full glass-droplet-nav">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        
+        <!-- Left: Mobile Toggle (Hidden on Desktop) + Title -->
+        <div class="flex items-center gap-3">
+          <button onclick="toggleSidebar(true)" class="lg:hidden p-2 rounded-xl bg-white/90 hover:bg-stone-100 text-stone-700 hover:text-stone-950 border border-stone-300 transition-all flex items-center gap-1.5 cursor-pointer shadow-sm" title="Open Navigation Menu">
+            <svg class="w-5 h-5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            <span class="text-xs font-semibold">Menu</span>
+          </button>
+
+          <a href="index.html" class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-emerald-600 to-teal-600 flex items-center justify-center text-white font-black text-sm droplet-pill">
+              ⚡
+            </div>
+            <div>
+              <span class="font-bold text-stone-900 text-sm sm:text-base tracking-tight block">DSA Master Tracker</span>
+              <span class="text-[10px] text-emerald-800 font-mono hidden sm:block">240+ LeetCode Patterns &amp; Thinking Engine</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Center / Desktop Quick Navigation -->
+        <nav class="hidden lg:flex items-center gap-2 text-xs font-medium text-stone-700">
+          <a href="#stats" class="px-2.5 py-1.5 rounded-lg hover:bg-stone-200/70 hover:text-stone-950 transition-all">Stats</a>
+          <a href="#problems" class="px-2.5 py-1.5 rounded-lg hover:bg-stone-200/70 hover:text-stone-950 transition-all">Problem List</a>
+          <a href="#roadmap" class="px-2.5 py-1.5 rounded-lg hover:bg-stone-200/70 hover:text-stone-950 transition-all">6-Phase Order</a>
+          <a href="#company-matrix" class="px-2.5 py-1.5 rounded-lg hover:bg-stone-200/70 hover:text-stone-950 transition-all">Company Matrix</a>
+          <a href="#cheat-sheet" class="px-2.5 py-1.5 rounded-lg hover:bg-stone-200/70 hover:text-stone-950 transition-all">Cheat Sheet</a>
+        </nav>
+
+        <!-- Right: Actions & LinkedIn -->
+        <div class="flex items-center gap-2">
+          <a href="profile.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/90 hover:bg-stone-100 text-stone-700 hover:text-stone-950 border border-stone-300 text-xs font-semibold shadow-sm transition-all" title="Lakshay Nagpal Profile &amp; Resume">
+            <span>👤</span>
+            <span class="hidden sm:inline">Profile</span>
+          </a>
+          <a href="https://www.linkedin.com/in/lakshay-nagpal-1a2a0134a/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0a66c2] hover:bg-[#004182] text-white text-xs font-semibold shadow-sm transition-all" title="LinkedIn Profile">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z"/></svg>
+            <span class="hidden sm:inline">LinkedIn</span>
+          </a>
+          <a href="learning_hub.html" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-semibold shadow-sm transition-all">
+            <span>Learning Hub</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          </a>
+        </div>
       </div>
+    </header>
 
-      <!-- Center / Desktop Quick Navigation -->
-      <nav class="hidden lg:flex items-center gap-2 text-xs font-medium text-slate-300">
-        <a href="#stats" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 hover:text-white transition-all">Stats</a>
-        <a href="#problems" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 hover:text-white transition-all">Problem List</a>
-        <a href="#roadmap" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 hover:text-white transition-all">6-Phase Order</a>
-        <a href="#company-matrix" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 hover:text-white transition-all">Company Matrix</a>
-        <a href="#cheat-sheet" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 hover:text-white transition-all">Cheat Sheet</a>
-      </nav>
-
-      <!-- Right: Actions & LinkedIn -->
-      <div class="flex items-center gap-2">
-        <a href="profile.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white border border-slate-700 text-xs font-semibold shadow-sm transition-all" title="Lakshay Nagpal Profile &amp; Resume">
-          <span>👤</span>
-          <span class="hidden sm:inline">Profile</span>
-        </a>
-        <a href="https://www.linkedin.com/in/lakshay-nagpal-1a2a0134a/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0a66c2] hover:bg-[#004182] text-white text-xs font-semibold shadow-sm transition-all" title="LinkedIn Profile">
-          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z"/></svg>
-          <span class="hidden sm:inline">LinkedIn</span>
-        </a>
-        <a href="learning_hub.html" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-sm transition-all">
-          <span>Learning Hub</span>
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <!-- Main Container -->
-  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+    <!-- Main Container -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10 w-full">
 
     <!-- Hero Banner -->
-    <section class="rounded-3xl bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 border border-slate-800 p-6 sm:p-10 relative overflow-hidden shadow-2xl">
-      <div class="absolute -right-20 -top-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
-      
+    <section class="rounded-3xl glass-droplet p-6 sm:p-10 relative overflow-hidden shadow-sm">
       <div class="max-w-4xl space-y-4 relative z-10">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100/90 border border-emerald-300 text-emerald-900 text-xs font-bold uppercase tracking-wider">
+          <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
           Algorithmic Interview Mastery &amp; Progress System
         </div>
-        <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
-          DSA Master Tracker &amp; <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">Pattern Guide</span>
+        <h1 class="text-3xl sm:text-5xl font-black text-stone-900 tracking-tight leading-tight">
+          DSA Master Tracker &amp; <span class="text-emerald-800">Pattern Guide</span>
         </h1>
-        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+        <p class="text-stone-700 text-sm sm:text-base leading-relaxed">
           Targeted mastery of <strong>240+ curated LeetCode problems</strong> covering the 25 core algorithmic patterns required for Google, Meta, Amazon, Microsoft, and Uber. Every single problem features direct problem links, company priority tags, and an expandable <em>"Helping Approach / How to Think"</em> mental model.
         </p>
 
         <!-- Audio Summary Button -->
         <div class="pt-2 flex flex-wrap items-center gap-3">
-          <button onclick="playAudioSummary(this, 'DSA Tracker Overview', 'Welcome to Lakshay Nagpal\'s Data Structures and Algorithms Master Tracker. This portal covers over 240 curated LeetCode problems across 25 algorithmic patterns, designed for top-tier software engineering interviews. Rather than solving a thousand random problems, focus on core pattern recognition: sliding window, prefix sums, binary search on answers, two pointers, graphs, dynamic programming, and monotonic stacks. All progress is saved automatically to your local browser.')" class="audio-brief-btn inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/90 hover:bg-slate-700 border border-slate-700 hover:border-emerald-500/50 text-slate-200 text-xs font-semibold shadow-lg transition-all">
-            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+          <button onclick="playAudioSummary(this, 'DSA Tracker Overview', 'Welcome to Lakshay Nagpal\'s Data Structures and Algorithms Master Tracker. This portal covers over 240 curated LeetCode problems across 25 algorithmic patterns, designed for top-tier software engineering interviews. Rather than solving a thousand random problems, focus on core pattern recognition: sliding window, prefix sums, binary search on answers, two pointers, graphs, dynamic programming, and monotonic stacks. All progress is saved automatically to your local browser.')" class="audio-brief-btn inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 hover:bg-stone-100 border border-stone-300/80 text-stone-800 text-xs font-semibold shadow-sm transition-all">
+            <svg class="w-4 h-4 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
             <span class="audio-label" data-default-label="Listen Audio Brief (40s)">Listen Audio Brief (40s)</span>
           </button>
 
-          <button onclick="exportProgress()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-slate-800/60 hover:bg-slate-700 text-slate-300 text-xs font-medium border border-slate-700 transition-all">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+          <button onclick="exportProgress()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white/90 hover:bg-stone-100 text-stone-800 text-xs font-medium border border-stone-300/80 shadow-sm transition-all">
+            <svg class="w-3.5 h-3.5 text-stone-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
             <span>Export Progress</span>
           </button>
 
-          <button onclick="resetProgressPrompt()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-slate-800/60 hover:bg-red-900/30 text-slate-400 hover:text-red-300 text-xs font-medium border border-slate-700 hover:border-red-500/30 transition-all">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+          <button onclick="resetProgressPrompt()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white/90 hover:bg-red-50 text-rose-700 text-xs font-medium border border-stone-300/80 hover:border-red-300 shadow-sm transition-all">
+            <svg class="w-3.5 h-3.5 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
             <span>Reset</span>
           </button>
         </div>
@@ -274,82 +414,82 @@
     <!-- Section: Live Tracking & Statistics -->
     <section id="stats" class="space-y-4">
       <div class="flex items-center justify-between">
-        <h2 class="text-xl font-bold text-white tracking-tight flex items-center gap-2">
+        <h2 class="text-xl font-bold text-stone-900 tracking-tight flex items-center gap-2">
           <span>📊 Live Tracking Dashboard</span>
-          <span class="text-xs font-normal text-slate-400 font-mono">(Persistent in LocalStorage)</span>
+          <span class="text-xs font-normal text-stone-500 font-mono">(Persistent in LocalStorage)</span>
         </h2>
-        <span id="overallPercentage" class="text-lg font-black text-emerald-400 font-mono">0%</span>
+        <span id="overallPercentage" class="text-lg font-black text-emerald-800 font-mono">0%</span>
       </div>
 
       <!-- Main Progress Bar -->
-      <div class="w-full bg-slate-800/80 rounded-full h-4 overflow-hidden p-0.5 border border-slate-700">
-        <div id="overallProgressBar" class="bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-500 h-full rounded-full transition-all duration-500" style="width: 0%;"></div>
+      <div class="w-full bg-stone-200/80 rounded-full h-4 overflow-hidden p-0.5 border border-stone-300/70">
+        <div id="overallProgressBar" class="bg-gradient-to-r from-emerald-600 via-teal-500 to-cyan-600 h-full rounded-full transition-all duration-500" style="width: 0%;"></div>
       </div>
 
       <!-- Stat Cards -->
       <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
-        <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 text-center">
-          <div class="text-xs font-medium text-slate-400">Total Solved</div>
-          <div class="text-2xl font-black text-white mt-1">
-            <span id="statTotalSolved">0</span> <span class="text-sm font-normal text-slate-500">/ <span id="statTotalCount">247</span></span>
+        <div class="p-4 rounded-2xl glass-droplet text-center shadow-sm">
+          <div class="text-xs font-medium text-stone-600">Total Solved</div>
+          <div class="text-2xl font-black text-stone-900 mt-1">
+            <span id="statTotalSolved">0</span> <span class="text-sm font-normal text-stone-500">/ <span id="statTotalCount">247</span></span>
           </div>
-          <div class="text-[11px] text-emerald-400 mt-1 font-mono" id="statTotalPct">0% Complete</div>
+          <div class="text-[11px] text-emerald-700 mt-1 font-mono font-bold" id="statTotalPct">0% Complete</div>
         </div>
 
-        <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 text-center">
-          <div class="text-xs font-medium text-emerald-400">Easy Problems</div>
-          <div class="text-2xl font-black text-emerald-300 mt-1">
-            <span id="statEasySolved">0</span> <span class="text-sm font-normal text-slate-500">/ <span id="statEasyCount">61</span></span>
+        <div class="p-4 rounded-2xl glass-droplet text-center shadow-sm">
+          <div class="text-xs font-medium text-emerald-800">Easy Problems</div>
+          <div class="text-2xl font-black text-emerald-700 mt-1">
+            <span id="statEasySolved">0</span> <span class="text-sm font-normal text-stone-500">/ <span id="statEasyCount">61</span></span>
           </div>
-          <div class="text-[11px] text-slate-400 mt-1 font-mono" id="statEasyPct">0%</div>
+          <div class="text-[11px] text-stone-500 mt-1 font-mono" id="statEasyPct">0%</div>
         </div>
 
-        <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 text-center">
-          <div class="text-xs font-medium text-amber-400">Medium (Core)</div>
-          <div class="text-2xl font-black text-amber-300 mt-1">
-            <span id="statMedSolved">0</span> <span class="text-sm font-normal text-slate-500">/ <span id="statMedCount">148</span></span>
+        <div class="p-4 rounded-2xl glass-droplet text-center shadow-sm">
+          <div class="text-xs font-medium text-amber-800">Medium (Core)</div>
+          <div class="text-2xl font-black text-amber-700 mt-1">
+            <span id="statMedSolved">0</span> <span class="text-sm font-normal text-stone-500">/ <span id="statMedCount">148</span></span>
           </div>
-          <div class="text-[11px] text-slate-400 mt-1 font-mono" id="statMedPct">0%</div>
+          <div class="text-[11px] text-stone-500 mt-1 font-mono" id="statMedPct">0%</div>
         </div>
 
-        <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 text-center">
-          <div class="text-xs font-medium text-rose-400">Hard (FAANG)</div>
-          <div class="text-2xl font-black text-rose-300 mt-1">
-            <span id="statHardSolved">0</span> <span class="text-sm font-normal text-slate-500">/ <span id="statHardCount">38</span></span>
+        <div class="p-4 rounded-2xl glass-droplet text-center shadow-sm">
+          <div class="text-xs font-medium text-rose-800">Hard (FAANG)</div>
+          <div class="text-2xl font-black text-rose-700 mt-1">
+            <span id="statHardSolved">0</span> <span class="text-sm font-normal text-stone-500">/ <span id="statHardCount">38</span></span>
           </div>
-          <div class="text-[11px] text-slate-400 mt-1 font-mono" id="statHardPct">0%</div>
+          <div class="text-[11px] text-stone-500 mt-1 font-mono" id="statHardPct">0%</div>
         </div>
 
-        <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 text-center col-span-2 sm:col-span-1">
-          <div class="text-xs font-medium text-yellow-400">Review Later</div>
-          <div class="text-2xl font-black text-yellow-300 mt-1 flex items-center justify-center gap-1">
+        <div class="p-4 rounded-2xl glass-droplet text-center shadow-sm col-span-2 sm:col-span-1">
+          <div class="text-xs font-medium text-amber-700">Review Later</div>
+          <div class="text-2xl font-black text-amber-600 mt-1 flex items-center justify-center gap-1">
             <span>⭐</span>
             <span id="statStarredCount">0</span>
           </div>
-          <div class="text-[11px] text-slate-400 mt-1 font-mono">Bookmarked</div>
+          <div class="text-[11px] text-stone-500 mt-1 font-mono">Bookmarked</div>
         </div>
       </div>
     </section>
 
     <!-- Section: Search, Filters & Controls -->
-    <section class="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-xl space-y-4">
+    <section class="p-5 rounded-2xl glass-droplet space-y-4 shadow-sm">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
         <!-- Text Search -->
         <div class="lg:col-span-2 relative">
-          <input type="text" id="searchInput" oninput="applyFilters()" placeholder="Search problem title, #, pattern, or keyword..." class="w-full pl-9 pr-4 py-2.5 rounded-xl bg-slate-950/80 border border-slate-700 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-emerald-500 transition-all">
-          <svg class="w-4 h-4 text-slate-500 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          <input type="text" id="searchInput" oninput="applyFilters()" placeholder="Search problem title, #, pattern, or keyword..." class="w-full pl-9 pr-4 py-2.5 rounded-xl olive-input text-xs font-medium">
+          <svg class="w-4 h-4 text-stone-400 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
         </div>
 
         <!-- Topic Filter Dropdown -->
         <div>
-          <select id="topicFilter" onchange="applyFilters()" class="w-full px-3 py-2.5 rounded-xl bg-slate-950/80 border border-slate-700 text-slate-300 text-xs focus:outline-none focus:border-emerald-500">
+          <select id="topicFilter" onchange="applyFilters()" class="w-full px-3 py-2.5 rounded-xl olive-select text-xs font-medium">
             <option value="ALL">All 25 Topics</option>
           </select>
         </div>
 
         <!-- Company Filter Dropdown -->
         <div>
-          <select id="companyFilter" onchange="applyFilters()" class="w-full px-3 py-2.5 rounded-xl bg-slate-950/80 border border-slate-700 text-slate-300 text-xs focus:outline-none focus:border-emerald-500">
+          <select id="companyFilter" onchange="applyFilters()" class="w-full px-3 py-2.5 rounded-xl olive-select text-xs font-medium">
             <option value="ALL">All Companies</option>
             <option value="Google">Google</option>
             <option value="Meta">Meta</option>
@@ -363,27 +503,27 @@
         </div>
 
         <!-- Difficulty Pill Filter Buttons -->
-        <div class="flex items-center gap-1 bg-slate-950/80 p-1 rounded-xl border border-slate-700 justify-between">
-          <button onclick="setDifficultyFilter('ALL', this)" class="diff-filter-btn px-2.5 py-1 rounded-lg text-xs font-semibold bg-emerald-600 text-white transition-all">All</button>
-          <button onclick="setDifficultyFilter('Easy', this)" class="diff-filter-btn px-2.5 py-1 rounded-lg text-xs font-medium text-slate-400 hover:text-emerald-400 transition-all">Easy</button>
-          <button onclick="setDifficultyFilter('Medium', this)" class="diff-filter-btn px-2.5 py-1 rounded-lg text-xs font-medium text-slate-400 hover:text-amber-400 transition-all">Med</button>
-          <button onclick="setDifficultyFilter('Hard', this)" class="diff-filter-btn px-2.5 py-1 rounded-lg text-xs font-medium text-slate-400 hover:text-rose-400 transition-all">Hard</button>
+        <div class="flex items-center gap-1 bg-white/70 p-1 rounded-xl border border-stone-300/80 justify-between">
+          <button onclick="setDifficultyFilter('ALL', this)" class="diff-filter-btn px-2.5 py-1 rounded-lg text-xs font-bold bg-emerald-700 text-white transition-all shadow-sm">All</button>
+          <button onclick="setDifficultyFilter('Easy', this)" class="diff-filter-btn px-2.5 py-1 rounded-lg text-xs font-medium text-stone-600 hover:text-emerald-800 transition-all">Easy</button>
+          <button onclick="setDifficultyFilter('Medium', this)" class="diff-filter-btn px-2.5 py-1 rounded-lg text-xs font-medium text-stone-600 hover:text-amber-800 transition-all">Med</button>
+          <button onclick="setDifficultyFilter('Hard', this)" class="diff-filter-btn px-2.5 py-1 rounded-lg text-xs font-medium text-stone-600 hover:text-rose-800 transition-all">Hard</button>
         </div>
       </div>
 
       <!-- Secondary Filters & Status Badges -->
-      <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-slate-800 text-xs">
+      <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-stone-300/70 text-xs">
         <div class="flex items-center gap-2">
-          <span class="text-slate-400 font-medium">Status:</span>
-          <button onclick="setStatusFilter('ALL', this)" class="status-filter-btn px-2.5 py-1 rounded-lg bg-slate-800 text-white font-medium">All (<span id="countAll">247</span>)</button>
-          <button onclick="setStatusFilter('SOLVED', this)" class="status-filter-btn px-2.5 py-1 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-emerald-300 transition-all font-medium">Solved (<span id="countSolved">0</span>)</button>
-          <button onclick="setStatusFilter('UNSOLVED', this)" class="status-filter-btn px-2.5 py-1 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition-all font-medium">Unsolved (<span id="countUnsolved">247</span>)</button>
-          <button onclick="setStatusFilter('STARRED', this)" class="status-filter-btn px-2.5 py-1 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-yellow-300 transition-all font-medium">Starred (<span id="countStarred">0</span>)</button>
+          <span class="text-stone-600 font-medium">Status:</span>
+          <button onclick="setStatusFilter('ALL', this)" class="status-filter-btn px-2.5 py-1 rounded-lg bg-emerald-700 text-white font-bold shadow-sm">All (<span id="countAll">247</span>)</button>
+          <button onclick="setStatusFilter('SOLVED', this)" class="status-filter-btn px-2.5 py-1 rounded-lg bg-white/80 border border-stone-300 text-stone-700 hover:bg-emerald-50 hover:text-emerald-900 transition-all font-medium">Solved (<span id="countSolved">0</span>)</button>
+          <button onclick="setStatusFilter('UNSOLVED', this)" class="status-filter-btn px-2.5 py-1 rounded-lg bg-white/80 border border-stone-300 text-stone-700 hover:bg-stone-100 transition-all font-medium">Unsolved (<span id="countUnsolved">247</span>)</button>
+          <button onclick="setStatusFilter('STARRED', this)" class="status-filter-btn px-2.5 py-1 rounded-lg bg-white/80 border border-stone-300 text-stone-700 hover:bg-amber-50 hover:text-amber-900 transition-all font-medium">Starred (<span id="countStarred">0</span>)</button>
         </div>
 
         <div class="flex items-center gap-2">
-          <span class="text-slate-400">Showing <span id="filteredCount" class="font-bold text-white">247</span> problems</span>
-          <button onclick="clearAllFilters()" class="text-emerald-400 hover:underline">Reset Filters</button>
+          <span class="text-stone-600">Showing <span id="filteredCount" class="font-bold text-stone-900">247</span> problems</span>
+          <button onclick="clearAllFilters()" class="text-emerald-700 font-bold hover:underline">Reset Filters</button>
         </div>
       </div>
     </section>
@@ -392,129 +532,129 @@
     <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
       
       <!-- Phase 1 to 6 Priority Order -->
-      <div id="roadmap" class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl space-y-4">
+      <div id="roadmap" class="p-6 rounded-2xl glass-droplet shadow-sm space-y-4">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-2">
             <span class="text-lg">🗺️</span>
-            <h3 class="font-bold text-white text-base">Recommended 6-Phase Order</h3>
+            <h3 class="font-bold text-stone-900 text-base">Recommended 6-Phase Order</h3>
           </div>
-          <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 font-mono">Systematic</span>
+          <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-mono font-bold">Systematic</span>
         </div>
-        <p class="text-xs text-slate-400 leading-relaxed">
+        <p class="text-xs text-stone-600 leading-relaxed">
           Do not begin with DP or advanced graphs. Progress through verified phases to build pattern intuition:
         </p>
         <div class="space-y-2 text-xs font-mono">
-          <div class="p-2.5 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between">
-            <span class="text-emerald-400 font-bold">Phase 1</span>
-            <span class="text-slate-300">Arrays, Strings, Hashing, 2-Pointers, Window, Prefix</span>
+          <div class="p-2.5 rounded-xl bg-white/80 border border-stone-300/70 flex items-center justify-between">
+            <span class="text-emerald-800 font-bold">Phase 1</span>
+            <span class="text-stone-800">Arrays, Strings, Hashing, 2-Pointers, Window, Prefix</span>
           </div>
-          <div class="p-2.5 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between">
-            <span class="text-blue-400 font-bold">Phase 2</span>
-            <span class="text-slate-300">Binary Search, Stack, Queue, Linked List, Intervals</span>
+          <div class="p-2.5 rounded-xl bg-white/80 border border-stone-300/70 flex items-center justify-between">
+            <span class="text-blue-800 font-bold">Phase 2</span>
+            <span class="text-stone-800">Binary Search, Stack, Queue, Linked List, Intervals</span>
           </div>
-          <div class="p-2.5 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between">
-            <span class="text-indigo-400 font-bold">Phase 3</span>
-            <span class="text-slate-300">Recursion, Trees, BST, Heap / Priority Queue, BFS/DFS</span>
+          <div class="p-2.5 rounded-xl bg-white/80 border border-stone-300/70 flex items-center justify-between">
+            <span class="text-indigo-800 font-bold">Phase 3</span>
+            <span class="text-stone-800">Recursion, Trees, BST, Heap / Priority Queue, BFS/DFS</span>
           </div>
-          <div class="p-2.5 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between">
-            <span class="text-amber-400 font-bold">Phase 4</span>
-            <span class="text-slate-300">Graphs, Topological Sort, Union Find, Shortest Path</span>
+          <div class="p-2.5 rounded-xl bg-white/80 border border-stone-300/70 flex items-center justify-between">
+            <span class="text-amber-800 font-bold">Phase 4</span>
+            <span class="text-stone-800">Graphs, Topological Sort, Union Find, Shortest Path</span>
           </div>
-          <div class="p-2.5 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between">
-            <span class="text-purple-400 font-bold">Phase 5</span>
-            <span class="text-slate-300">Backtracking, 1D DP, 2D DP, Advanced State Machines</span>
+          <div class="p-2.5 rounded-xl bg-white/80 border border-stone-300/70 flex items-center justify-between">
+            <span class="text-purple-800 font-bold">Phase 5</span>
+            <span class="text-stone-800">Backtracking, 1D DP, 2D DP, Advanced State Machines</span>
           </div>
-          <div class="p-2.5 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between">
-            <span class="text-rose-400 font-bold">Phase 6</span>
-            <span class="text-slate-300">Trie, Monotonic Stack, Bit Manipulation, Design</span>
+          <div class="p-2.5 rounded-xl bg-white/80 border border-stone-300/70 flex items-center justify-between">
+            <span class="text-rose-800 font-bold">Phase 6</span>
+            <span class="text-stone-800">Trie, Monotonic Stack, Bit Manipulation, Design</span>
           </div>
         </div>
       </div>
 
       <!-- Company DSA Emphasis Matrix -->
-      <div id="company-matrix" class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl space-y-4">
+      <div id="company-matrix" class="p-6 rounded-2xl glass-droplet shadow-sm space-y-4">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-2">
             <span class="text-lg">🏢</span>
-            <h3 class="font-bold text-white text-base">Company DSA Emphasis</h3>
+            <h3 class="font-bold text-stone-900 text-base">Company DSA Emphasis</h3>
           </div>
-          <span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 font-mono">Target Mix</span>
+          <span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-mono font-bold">Target Mix</span>
         </div>
-        <p class="text-xs text-slate-400 leading-relaxed">
+        <p class="text-xs text-stone-600 leading-relaxed">
           Big tech hiring loops prioritize distinct pattern domains:
         </p>
         <div class="space-y-1.5 text-xs max-h-60 overflow-y-auto pr-1">
-          <div class="flex items-center justify-between py-1 border-b border-slate-800/80">
-            <span class="font-bold text-white">Google</span>
-            <span class="text-slate-400 text-right">Graphs, Trees, DP, Binary Search</span>
+          <div class="flex items-center justify-between py-1.5 border-b border-stone-300/60">
+            <span class="font-bold text-stone-900">Google</span>
+            <span class="text-stone-600 text-right">Graphs, Trees, DP, Binary Search</span>
           </div>
-          <div class="flex items-center justify-between py-1 border-b border-slate-800/80">
-            <span class="font-bold text-white">Meta</span>
-            <span class="text-slate-400 text-right">Arrays, Strings, Hashing, Trees, BFS/DFS</span>
+          <div class="flex items-center justify-between py-1.5 border-b border-stone-300/60">
+            <span class="font-bold text-stone-900">Meta</span>
+            <span class="text-stone-600 text-right">Arrays, Strings, Hashing, Trees, BFS/DFS</span>
           </div>
-          <div class="flex items-center justify-between py-1 border-b border-slate-800/80">
-            <span class="font-bold text-white">Amazon</span>
-            <span class="text-slate-400 text-right">Arrays, Sliding Window, Trees, Heap, DP</span>
+          <div class="flex items-center justify-between py-1.5 border-b border-stone-300/60">
+            <span class="font-bold text-stone-900">Amazon</span>
+            <span class="text-stone-600 text-right">Arrays, Sliding Window, Trees, Heap, DP</span>
           </div>
-          <div class="flex items-center justify-between py-1 border-b border-slate-800/80">
-            <span class="font-bold text-white">Microsoft</span>
-            <span class="text-slate-400 text-right">Arrays, Strings, Trees, Linked Lists, DP</span>
+          <div class="flex items-center justify-between py-1.5 border-b border-stone-300/60">
+            <span class="font-bold text-stone-900">Microsoft</span>
+            <span class="text-stone-600 text-right">Arrays, Strings, Trees, Linked Lists, DP</span>
           </div>
-          <div class="flex items-center justify-between py-1 border-b border-slate-800/80">
-            <span class="font-bold text-white">Uber</span>
-            <span class="text-slate-400 text-right">Graphs, Shortest Path, Trees, Binary Search</span>
+          <div class="flex items-center justify-between py-1.5 border-b border-stone-300/60">
+            <span class="font-bold text-stone-900">Uber</span>
+            <span class="text-stone-600 text-right">Graphs, Shortest Path, Trees, Binary Search</span>
           </div>
-          <div class="flex items-center justify-between py-1 border-b border-slate-800/80">
-            <span class="font-bold text-white">Apple</span>
-            <span class="text-slate-400 text-right">Arrays, Strings, Trees, Graphs, DP</span>
+          <div class="flex items-center justify-between py-1.5 border-b border-stone-300/60">
+            <span class="font-bold text-stone-900">Apple</span>
+            <span class="text-stone-600 text-right">Arrays, Strings, Trees, Graphs, DP</span>
           </div>
         </div>
       </div>
 
       <!-- Pattern Matching Cheat Sheet -->
-      <div id="cheat-sheet" class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl space-y-4">
+      <div id="cheat-sheet" class="p-6 rounded-2xl glass-droplet shadow-sm space-y-4">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-2">
             <span class="text-lg">⚡</span>
-            <h3 class="font-bold text-white text-base">Pattern Matching Cheat Sheet</h3>
+            <h3 class="font-bold text-stone-900 text-base">Pattern Matching Cheat Sheet</h3>
           </div>
-          <span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 font-mono">Instant Reflex</span>
+          <span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 font-mono font-bold">Instant Reflex</span>
         </div>
-        <p class="text-xs text-slate-400 leading-relaxed">
+        <p class="text-xs text-stone-600 leading-relaxed">
           Instantly recognize the optimal data structure from problem clues:
         </p>
         <div class="space-y-1.5 text-xs max-h-60 overflow-y-auto pr-1">
-          <div class="flex items-center justify-between py-1 border-b border-slate-800/80">
-            <span class="text-slate-300">Pair Sum in Sorted Array</span>
-            <span class="text-emerald-400 font-mono font-semibold">Two Pointers</span>
+          <div class="flex items-center justify-between py-1.5 border-b border-stone-300/60">
+            <span class="text-stone-800">Pair Sum in Sorted Array</span>
+            <span class="text-emerald-800 font-mono font-bold">Two Pointers</span>
           </div>
-          <div class="flex items-center justify-between py-1 border-b border-slate-800/80">
-            <span class="text-slate-300">Contiguous Subarray Criteria</span>
-            <span class="text-teal-400 font-mono font-semibold">Sliding Window</span>
+          <div class="flex items-center justify-between py-1.5 border-b border-stone-300/60">
+            <span class="text-stone-800">Contiguous Subarray Criteria</span>
+            <span class="text-teal-800 font-mono font-bold">Sliding Window</span>
           </div>
-          <div class="flex items-center justify-between py-1 border-b border-slate-800/80">
-            <span class="text-slate-300">Subarray Sum Equals K</span>
-            <span class="text-cyan-400 font-mono font-semibold">Prefix Sum + Map</span>
+          <div class="flex items-center justify-between py-1.5 border-b border-stone-300/60">
+            <span class="text-stone-800">Subarray Sum Equals K</span>
+            <span class="text-cyan-800 font-mono font-bold">Prefix Sum + Map</span>
           </div>
-          <div class="flex items-center justify-between py-1 border-b border-slate-800/80">
-            <span class="text-slate-300">Next Greater / Smaller Element</span>
-            <span class="text-blue-400 font-mono font-semibold">Monotonic Stack</span>
+          <div class="flex items-center justify-between py-1.5 border-b border-stone-300/60">
+            <span class="text-stone-800">Next Greater / Smaller Element</span>
+            <span class="text-blue-800 font-mono font-bold">Monotonic Stack</span>
           </div>
-          <div class="flex items-center justify-between py-1 border-b border-slate-800/80">
-            <span class="text-slate-300">Top K / Running Median</span>
-            <span class="text-indigo-400 font-mono font-semibold">Heap / Priority Queue</span>
+          <div class="flex items-center justify-between py-1.5 border-b border-stone-300/60">
+            <span class="text-stone-800">Top K / Running Median</span>
+            <span class="text-indigo-800 font-mono font-bold">Heap / Priority Queue</span>
           </div>
-          <div class="flex items-center justify-between py-1 border-b border-slate-800/80">
-            <span class="text-slate-300">Course Schedule / Precedence</span>
-            <span class="text-purple-400 font-mono font-semibold">Topological Sort</span>
+          <div class="flex items-center justify-between py-1.5 border-b border-stone-300/60">
+            <span class="text-stone-800">Course Schedule / Precedence</span>
+            <span class="text-purple-800 font-mono font-bold">Topological Sort</span>
           </div>
-          <div class="flex items-center justify-between py-1 border-b border-slate-800/80">
-            <span class="text-slate-300">Connected Network Redundancy</span>
-            <span class="text-rose-400 font-mono font-semibold">Union Find / DSU</span>
+          <div class="flex items-center justify-between py-1.5 border-b border-stone-300/60">
+            <span class="text-stone-800">Connected Network Redundancy</span>
+            <span class="text-rose-800 font-mono font-bold">Union Find / DSU</span>
           </div>
-          <div class="flex items-center justify-between py-1 border-b border-slate-800/80">
-            <span class="text-slate-300">LRU Cache in O(1)</span>
-            <span class="text-amber-400 font-mono font-semibold">Map + Doubly Linked List</span>
+          <div class="flex items-center justify-between py-1.5 border-b border-stone-300/60">
+            <span class="text-stone-800">LRU Cache in O(1)</span>
+            <span class="text-amber-800 font-mono font-bold">Map + Doubly Linked List</span>
           </div>
         </div>
       </div>
@@ -524,8 +664,8 @@
     <section id="problems" class="space-y-8">
       <div class="flex items-center justify-between">
         <div>
-          <h2 class="text-2xl font-black text-white tracking-tight">Curated LeetCode Problem Library</h2>
-          <p class="text-xs text-slate-400 mt-0.5">Toggle problem checkmarks to update your live progress. Click "Helping Approach" to view the mental model, algorithm steps, and interview pitfalls.</p>
+          <h2 class="text-2xl font-black text-stone-900 tracking-tight">Curated LeetCode Problem Library</h2>
+          <p class="text-xs text-stone-600 mt-0.5">Toggle problem checkmarks to update your live progress. Click "Helping Approach" to view the mental model, algorithm steps, and interview pitfalls.</p>
         </div>
       </div>
 
@@ -538,67 +678,67 @@
   </main>
 
   <!-- Helping Approach Drawer / Modal -->
-  <div id="approachModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
-    <div class="max-w-2xl w-full bg-slate-900 border border-slate-700 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto relative animate-in fade-in zoom-in-95 duration-200">
-      <button onclick="closeApproachModal()" class="absolute top-6 right-6 p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-all">
+  <div id="approachModal" class="fixed inset-0 bg-stone-900/60 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+    <div class="max-w-2xl w-full bg-white/95 backdrop-blur-2xl border border-stone-300 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto relative animate-in fade-in zoom-in-95 duration-200">
+      <button onclick="closeApproachModal()" class="absolute top-6 right-6 p-2 rounded-xl text-stone-400 hover:text-stone-900 hover:bg-stone-100 transition-all">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
       </button>
 
       <div>
         <div class="flex items-center gap-2">
-          <span id="modalDiff" class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300">Easy</span>
-          <span id="modalTopic" class="text-xs font-mono text-slate-400">Arrays</span>
+          <span id="modalDiff" class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">Easy</span>
+          <span id="modalTopic" class="text-xs font-mono text-stone-500">Arrays</span>
         </div>
-        <h3 id="modalTitle" class="text-xl sm:text-2xl font-black text-white mt-1">Two Sum</h3>
+        <h3 id="modalTitle" class="text-xl sm:text-2xl font-black text-stone-900 mt-1">Two Sum</h3>
         <div class="flex flex-wrap items-center gap-2 mt-2" id="modalTags"></div>
       </div>
 
       <div class="space-y-4 text-xs sm:text-sm">
-        <div class="p-4 rounded-2xl bg-emerald-950/20 border border-emerald-500/30 space-y-1.5">
-          <div class="font-bold text-emerald-300 flex items-center gap-1.5 text-xs uppercase tracking-wider">
+        <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-300 space-y-1.5">
+          <div class="font-bold text-emerald-900 flex items-center gap-1.5 text-xs uppercase tracking-wider">
             <span>💡</span> Mental Model &amp; Intuition ("How to Think")
           </div>
-          <p id="modalMental" class="text-slate-200 leading-relaxed font-sans"></p>
+          <p id="modalMental" class="text-stone-800 leading-relaxed font-sans"></p>
         </div>
 
-        <div class="p-4 rounded-2xl bg-slate-950/60 border border-slate-800 space-y-1.5">
-          <div class="font-bold text-blue-300 flex items-center gap-1.5 text-xs uppercase tracking-wider">
+        <div class="p-4 rounded-2xl bg-stone-50 border border-stone-300 space-y-1.5">
+          <div class="font-bold text-blue-900 flex items-center gap-1.5 text-xs uppercase tracking-wider">
             <span>⚙️</span> Algorithmic Step-by-Step
           </div>
-          <p id="modalAlgo" class="text-slate-300 leading-relaxed font-sans"></p>
+          <p id="modalAlgo" class="text-stone-700 leading-relaxed font-sans"></p>
         </div>
 
         <div class="grid grid-cols-2 gap-3">
-          <div class="p-3.5 rounded-xl bg-slate-950/60 border border-slate-800">
-            <div class="text-[11px] text-slate-400 font-mono">Time Complexity</div>
-            <div id="modalTc" class="text-sm font-black text-emerald-400 font-mono mt-0.5">O(N)</div>
+          <div class="p-3.5 rounded-xl bg-stone-50 border border-stone-300">
+            <div class="text-[11px] text-stone-500 font-mono">Time Complexity</div>
+            <div id="modalTc" class="text-sm font-black text-emerald-800 font-mono mt-0.5">O(N)</div>
           </div>
-          <div class="p-3.5 rounded-xl bg-slate-950/60 border border-slate-800">
-            <div class="text-[11px] text-slate-400 font-mono">Space Complexity</div>
-            <div id="modalSc" class="text-sm font-black text-blue-400 font-mono mt-0.5">O(N)</div>
+          <div class="p-3.5 rounded-xl bg-stone-50 border border-stone-300">
+            <div class="text-[11px] text-stone-500 font-mono">Space Complexity</div>
+            <div id="modalSc" class="text-sm font-black text-blue-800 font-mono mt-0.5">O(N)</div>
           </div>
         </div>
 
-        <div class="p-4 rounded-2xl bg-rose-950/20 border border-rose-500/30 space-y-1.5">
-          <div class="font-bold text-rose-300 flex items-center gap-1.5 text-xs uppercase tracking-wider">
+        <div class="p-4 rounded-2xl bg-rose-50 border border-rose-300 space-y-1.5">
+          <div class="font-bold text-rose-900 flex items-center gap-1.5 text-xs uppercase tracking-wider">
             <span>⚠️</span> Common Interview Trap / Edge Case
           </div>
-          <p id="modalTrap" class="text-slate-300 leading-relaxed font-sans"></p>
+          <p id="modalTrap" class="text-stone-700 leading-relaxed font-sans"></p>
         </div>
 
         <!-- Personal Notes for this problem -->
         <div class="space-y-1.5 pt-2">
-          <label class="text-xs font-bold text-slate-300 block">Personal Scratchpad / Notes (Saved to LocalStorage):</label>
-          <textarea id="modalNotes" rows="3" placeholder="Write any personal takeaways, tricky testcases, or syntax quirks here..." class="w-full p-3 rounded-xl bg-slate-950 border border-slate-700 text-slate-200 text-xs focus:outline-none focus:border-emerald-500 font-mono" oninput="saveCurrentProblemNotes()"></textarea>
+          <label class="text-xs font-bold text-stone-800 block">Personal Scratchpad / Notes (Saved to LocalStorage):</label>
+          <textarea id="modalNotes" rows="3" placeholder="Write any personal takeaways, tricky testcases, or syntax quirks here..." class="w-full p-3 rounded-xl olive-input text-xs font-mono" oninput="saveCurrentProblemNotes()"></textarea>
         </div>
       </div>
 
-      <div class="pt-2 flex items-center justify-between border-t border-slate-800">
-        <a id="modalLcLink" href="#" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-600 hover:bg-amber-500 text-slate-950 font-bold text-xs transition-all shadow-md">
+      <div class="pt-2 flex items-center justify-between border-t border-stone-300/80">
+        <a id="modalLcLink" href="#" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs transition-all shadow-md">
           <span>Open on LeetCode</span>
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
         </a>
-        <button onclick="toggleModalSolved()" id="modalSolvedBtn" class="px-4 py-2 rounded-xl border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500/20 text-xs font-bold transition-all">
+        <button onclick="toggleModalSolved()" id="modalSolvedBtn" class="px-4 py-2 rounded-xl border border-emerald-600 text-emerald-800 hover:bg-emerald-100 text-xs font-bold transition-all">
           Mark as Solved
         </button>
       </div>
@@ -606,23 +746,23 @@
   </div>
 
   <!-- Floating Audio Player Bar -->
-  <div id="floatingAudioBar" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 hidden max-w-md w-[92%] bg-slate-900/95 border border-emerald-500/40 rounded-2xl shadow-2xl p-3.5 backdrop-blur-xl transition-all">
+  <div id="floatingAudioBar" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 hidden max-w-md w-[92%] bg-white/95 border border-emerald-500/40 rounded-2xl shadow-2xl p-3.5 backdrop-blur-xl transition-all text-stone-900">
     <div class="flex items-center justify-between gap-3">
       <div class="flex items-center gap-2.5 overflow-hidden">
-        <div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+        <div class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-700 shrink-0">
           <span class="animate-pulse">🎙️</span>
         </div>
         <div class="truncate">
-          <div id="audioPlayerTitle" class="text-xs font-bold text-white truncate">DSA Master Overview</div>
-          <div id="audioPlayerStatus" class="text-[10px] text-emerald-400 truncate">Narrating brief summary (Female Voice)...</div>
+          <div id="audioPlayerTitle" class="text-xs font-bold text-stone-900 truncate">DSA Master Overview</div>
+          <div id="audioPlayerStatus" class="text-[10px] text-emerald-800 truncate">Narrating brief summary (Female Voice)...</div>
         </div>
       </div>
       <div class="flex items-center gap-2 shrink-0">
-        <button onclick="toggleAudioPlayback()" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 transition-all" title="Play/Pause">
+        <button onclick="toggleAudioPlayback()" class="p-2 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-800 transition-all" title="Play/Pause">
           <svg id="pauseIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           <svg id="playIcon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
         </button>
-        <button onclick="stopAudioSummary()" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-all" title="Close Audio">
+        <button onclick="stopAudioSummary()" class="p-2 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-500 hover:text-stone-900 transition-all" title="Close Audio">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
       </div>
@@ -630,16 +770,18 @@
   </div>
 
   <!-- Footer -->
-  <footer class="mt-auto border-t border-slate-800 bg-slate-950 py-8">
+  <footer class="mt-auto border-t border-stone-300/70 bg-stone-100/80 py-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-2">
-      <div class="text-xs text-slate-400">
-        Prepared for <strong class="text-white">Lakshay Nagpal</strong> | Full-Stack Software Engineer &amp; Masters Candidate
+      <div class="text-xs text-stone-600">
+        Prepared for <strong class="text-stone-900">Lakshay Nagpal</strong> | Full-Stack Software Engineer &amp; Masters Candidate
       </div>
-      <div class="text-[11px] text-slate-500">
+      <div class="text-[11px] text-stone-500">
         240+ Curated LeetCode Problems | LocalStorage State Tracking | Verified 2026 Curriculum
       </div>
     </div>
   </footer>
+
+  </div><!-- Close Main Content Wrapper (lg:pl-72) -->
 
   <!-- Load Problem Data -->
   <script src="dsa_problems_data.js"></script>
@@ -779,7 +921,7 @@
 
       DSA_TOPICS_DATA.forEach((topicObj, topicIdx) => {
         const topicSection = document.createElement('div');
-        topicSection.className = 'topic-section rounded-2xl bg-slate-900/60 border border-slate-800 p-5 sm:p-6 space-y-4';
+        topicSection.className = 'topic-section rounded-2xl glass-droplet p-5 sm:p-6 space-y-4 shadow-sm';
         topicSection.setAttribute('data-topic-name', topicObj.topic);
 
         // Calculate topic stats
@@ -794,22 +936,22 @@
 
         // Header
         const header = document.createElement('div');
-        header.className = 'flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-800';
+        header.className = 'flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-stone-300/70';
         header.innerHTML = `
           <div>
             <div class="flex items-center gap-2">
-              <span class="text-sm font-mono text-emerald-400 font-bold">#${topicIdx + 1}</span>
-              <h3 class="text-lg font-bold text-white tracking-tight">${topicObj.topic}</h3>
-              <span class="text-xs px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 font-mono">${topicTotal} Qs</span>
+              <span class="text-sm font-mono text-emerald-800 font-bold">#${topicIdx + 1}</span>
+              <h3 class="text-lg font-bold text-stone-900 tracking-tight">${topicObj.topic}</h3>
+              <span class="text-xs px-2 py-0.5 rounded-full bg-stone-200/80 text-stone-800 font-mono font-medium">${topicTotal} Qs</span>
             </div>
-            <p class="text-xs text-slate-400 mt-0.5">${topicObj.description}</p>
+            <p class="text-xs text-stone-600 mt-0.5">${topicObj.description}</p>
           </div>
           <div class="flex items-center gap-3">
             <div class="text-right">
-              <span class="text-xs font-bold text-emerald-400 font-mono topic-solved-count">${topicSolved}</span>
-              <span class="text-xs text-slate-500 font-mono">/ ${topicTotal} solved (${topicPct}%)</span>
+              <span class="text-xs font-bold text-emerald-800 font-mono topic-solved-count">${topicSolved}</span>
+              <span class="text-xs text-stone-500 font-mono">/ ${topicTotal} solved (${topicPct}%)</span>
             </div>
-            <button onclick="listenTopicBrief('${topicObj.topic}')" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-emerald-400 transition-all" title="Listen Topic Brief">
+            <button onclick="listenTopicBrief('${topicObj.topic}')" class="p-1.5 rounded-lg bg-white/90 hover:bg-stone-100 text-stone-600 hover:text-emerald-800 border border-stone-300/80 transition-all shadow-sm" title="Listen Topic Brief">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
             </button>
           </div>
@@ -839,7 +981,7 @@
 
       const card = document.createElement('div');
       card.id = `problemCard_${p.id}`;
-      card.className = `problem-card p-4 rounded-xl border transition-all duration-200 ${isSolved ? 'solved-card' : 'bg-slate-950/60 border-slate-800/80 hover:border-slate-700'}`;
+      card.className = `problem-card p-4 rounded-xl border transition-all duration-200 ${isSolved ? 'solved-card' : 'bg-white/90 border-stone-300/80 hover:border-emerald-600/50 shadow-sm hover:shadow-md'}`;
       card.setAttribute('data-id', p.id);
       card.setAttribute('data-topic', p.topic);
       card.setAttribute('data-diff', p.diff);
@@ -848,42 +990,42 @@
       card.setAttribute('data-companies', p.companies.join(',').toLowerCase());
 
       // Diff badge color
-      let diffClass = 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30';
-      if (p.diff === 'Medium') diffClass = 'bg-amber-500/10 text-amber-400 border-amber-500/30';
-      if (p.diff === 'Hard') diffClass = 'bg-rose-500/10 text-rose-400 border-rose-500/30';
+      let diffClass = 'bg-emerald-100 text-emerald-800 border-emerald-300';
+      if (p.diff === 'Medium') diffClass = 'bg-amber-100 text-amber-900 border-amber-300';
+      if (p.diff === 'Hard') diffClass = 'bg-rose-100 text-rose-900 border-rose-300';
 
-      const companyPills = p.companies.slice(0, 3).map(c => `<span class="px-1.5 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300 font-mono">${c}</span>`).join('');
+      const companyPills = p.companies.slice(0, 3).map(c => `<span class="px-1.5 py-0.5 rounded text-[10px] bg-stone-100 text-stone-700 border border-stone-200 font-mono">${c}</span>`).join('');
 
       card.innerHTML = `
         <div class="flex items-start justify-between gap-2">
           <div class="flex items-start gap-2.5">
-            <input type="checkbox" ${isSolved ? 'checked' : ''} onchange="toggleProblemSolved(${p.id}, this.checked)" class="mt-1 w-4 h-4 rounded text-emerald-500 focus:ring-0 focus:ring-offset-0 bg-slate-900 border-slate-700 cursor-pointer">
+            <input type="checkbox" ${isSolved ? 'checked' : ''} onchange="toggleProblemSolved(${p.id}, this.checked)" class="mt-1 w-4 h-4 rounded text-emerald-600 focus:ring-0 focus:ring-offset-0 bg-white border-stone-300 cursor-pointer">
             <div>
               <div class="flex items-center gap-1.5 flex-wrap">
-                <span class="text-xs font-mono font-bold text-slate-400">#${p.lc}</span>
-                <a href="${p.url}" target="_blank" rel="noreferrer" class="font-bold text-sm text-white hover:text-emerald-400 transition-all inline-flex items-center gap-1 group">
-                  <span class="${isSolved ? 'line-through text-slate-400' : ''}">${p.title}</span>
-                  <svg class="w-3 h-3 text-slate-500 group-hover:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                <span class="text-xs font-mono font-bold text-stone-500">#${p.lc}</span>
+                <a href="${p.url}" target="_blank" rel="noreferrer" class="font-bold text-sm text-stone-900 hover:text-emerald-700 transition-all inline-flex items-center gap-1 group">
+                  <span class="${isSolved ? 'line-through text-stone-400' : ''}">${p.title}</span>
+                  <svg class="w-3 h-3 text-stone-400 group-hover:text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                 </a>
               </div>
               <div class="flex flex-wrap items-center gap-1.5 mt-1">
                 <span class="px-2 py-0.5 rounded text-[10px] font-bold border ${diffClass}">${p.diff}</span>
-                <span class="px-2 py-0.5 rounded text-[10px] bg-slate-900 text-slate-300 border border-slate-800 font-mono">${p.pattern}</span>
+                <span class="px-2 py-0.5 rounded text-[10px] bg-stone-100 text-stone-700 border border-stone-200 font-mono">${p.pattern}</span>
                 ${companyPills}
               </div>
             </div>
           </div>
-          <button onclick="toggleStar(${p.id})" class="text-sm p-1 rounded-lg hover:bg-slate-800 transition-all" title="Star for review">
-            <span class="${isStarred ? 'text-yellow-400' : 'text-slate-600 hover:text-slate-400'}">★</span>
+          <button onclick="toggleStar(${p.id})" class="text-sm p-1 rounded-lg hover:bg-stone-100 transition-all" title="Star for review">
+            <span class="${isStarred ? 'text-amber-500' : 'text-stone-300 hover:text-stone-500'}">★</span>
           </button>
         </div>
 
-        <div class="mt-3 pt-2.5 border-t border-slate-800/80 flex items-center justify-between">
-          <button onclick="openApproachModal(${p.id})" class="text-xs font-medium text-emerald-400 hover:text-emerald-300 inline-flex items-center gap-1 transition-all">
+        <div class="mt-3 pt-2.5 border-t border-stone-200/80 flex items-center justify-between">
+          <button onclick="openApproachModal(${p.id})" class="text-xs font-semibold text-emerald-700 hover:text-emerald-800 inline-flex items-center gap-1 transition-all">
             <span>💡 Helping Approach</span>
             <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
           </button>
-          <span class="text-[10px] text-slate-400 font-mono">${p.tc} · ${p.sc}</span>
+          <span class="text-[10px] text-stone-500 font-mono">${p.tc} · ${p.sc}</span>
         </div>
       `;
 
@@ -903,11 +1045,11 @@
         if (solved) {
           card.classList.add('solved-card');
           const title = card.querySelector('a span');
-          if (title) title.classList.add('line-through', 'text-slate-400');
+          if (title) title.classList.add('line-through', 'text-stone-400');
         } else {
           card.classList.remove('solved-card');
           const title = card.querySelector('a span');
-          if (title) title.classList.remove('line-through', 'text-slate-400');
+          if (title) title.classList.remove('line-through', 'text-stone-400');
         }
       }
       applyFilters();
@@ -925,9 +1067,9 @@
         const star = card.querySelector('button[title="Star for review"] span');
         if (star) {
           if (userState.starred[id]) {
-            star.className = 'text-yellow-400';
+            star.className = 'text-amber-500';
           } else {
-            star.className = 'text-slate-600 hover:text-slate-400';
+            star.className = 'text-stone-300 hover:text-stone-500';
           }
         }
       }
@@ -957,17 +1099,17 @@
       const solvedBtn = document.getElementById('modalSolvedBtn');
       if (userState.solved[p.id]) {
         solvedBtn.innerText = 'Mark as Unsolved';
-        solvedBtn.className = 'px-4 py-2 rounded-xl border border-rose-500/40 text-rose-400 hover:bg-rose-500/20 text-xs font-bold transition-all';
+        solvedBtn.className = 'px-4 py-2 rounded-xl border border-rose-400 text-rose-700 hover:bg-rose-50 text-xs font-bold transition-all';
       } else {
         solvedBtn.innerText = 'Mark as Solved';
-        solvedBtn.className = 'px-4 py-2 rounded-xl border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500/20 text-xs font-bold transition-all';
+        solvedBtn.className = 'px-4 py-2 rounded-xl border border-emerald-600 text-emerald-800 hover:bg-emerald-50 text-xs font-bold transition-all';
       }
 
       // Tags
       const tagsContainer = document.getElementById('modalTags');
       tagsContainer.innerHTML = `
-        <span class="px-2 py-0.5 rounded text-xs bg-slate-800 text-slate-300 font-mono">Pattern: ${p.pattern}</span>
-        ${p.companies.map(c => `<span class="px-2 py-0.5 rounded text-xs bg-slate-800 text-blue-300 font-mono">${c}</span>`).join('')}
+        <span class="px-2 py-0.5 rounded text-xs bg-stone-100 text-stone-700 border border-stone-200 font-mono">Pattern: ${p.pattern}</span>
+        ${p.companies.map(c => `<span class="px-2 py-0.5 rounded text-xs bg-blue-50 text-blue-800 border border-blue-200 font-mono">${c}</span>`).join('')}
       `;
 
       document.getElementById('approachModal').classList.remove('hidden');
@@ -1001,18 +1143,18 @@
     function setDifficultyFilter(diff, btn) {
       activeDifficulty = diff;
       document.querySelectorAll('.diff-filter-btn').forEach(b => {
-        b.className = 'diff-filter-btn px-2.5 py-1 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 transition-all';
+        b.className = 'diff-filter-btn px-2.5 py-1 rounded-lg text-xs font-medium text-stone-600 hover:text-emerald-800 transition-all';
       });
-      btn.className = 'diff-filter-btn px-2.5 py-1 rounded-lg text-xs font-semibold bg-emerald-600 text-white transition-all';
+      btn.className = 'diff-filter-btn px-2.5 py-1 rounded-lg text-xs font-bold bg-emerald-700 text-white transition-all shadow-sm';
       applyFilters();
     }
 
     function setStatusFilter(status, btn) {
       activeStatus = status;
       document.querySelectorAll('.status-filter-btn').forEach(b => {
-        b.className = 'status-filter-btn px-2.5 py-1 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition-all font-medium';
+        b.className = 'status-filter-btn px-2.5 py-1 rounded-lg bg-white/80 border border-stone-300 text-stone-700 hover:bg-stone-100 transition-all font-medium';
       });
-      btn.className = 'status-filter-btn px-2.5 py-1 rounded-lg bg-slate-800 text-white font-medium';
+      btn.className = 'status-filter-btn px-2.5 py-1 rounded-lg bg-emerald-700 text-white font-bold shadow-sm';
       applyFilters();
     }
 

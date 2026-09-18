@@ -168,6 +168,23 @@
       outline: none;
     }
 
+    .olive-select {
+      background-color: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(115, 145, 100, 0.35);
+      color: #192516;
+      box-shadow: inset 0 1px 2px rgba(45, 65, 36, 0.04);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23385429'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.75rem center;
+      background-size: 1rem;
+      transition: all 0.2s ease;
+    }
+    .olive-select:focus {
+      border-color: #4a6839;
+      box-shadow: 0 0 0 3px rgba(95, 135, 75, 0.2);
+      outline: none;
+    }
+
     /* Scrollbars */
     ::-webkit-scrollbar { width: 7px; height: 7px; }
     ::-webkit-scrollbar-track { background: #e0e6d8; }
@@ -259,10 +276,15 @@
       <div>
         <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Professional Dossier</div>
         <div class="mt-2 space-y-1">
-          <a href="#cold-email" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-semibold">
+          <a href="#cold-email" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
             <span class="text-lg">✉️</span>
             <span>Cold Email Generator</span>
             <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-mono">Customizer</span>
+          </a>
+          <a href="#job-portals" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-semibold">
+            <span class="text-lg">💼</span>
+            <span>Job Portals Engine</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-mono">60+ Links</span>
           </a>
           <a href="lebenslauf_de.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
             <span class="text-lg">📄</span>
@@ -944,6 +966,213 @@
 
       </section>
 
+      <!-- ========================================================================= -->
+      <!-- SECTION 5: GLOBAL JOB PORTALS & STRATEGIC APPLICATION LAUNCHPAD           -->
+      <!-- ========================================================================= -->
+      <section id="job-portals" class="glass-droplet rounded-3xl p-6 sm:p-8 space-y-6 border border-stone-300/80 shadow-md">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-stone-200">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-100 border border-blue-300 text-blue-900 text-xs font-bold uppercase tracking-wider">
+              💼 Strategic Career Launchpad • 64 Curated Portals
+            </div>
+            <h2 class="text-2xl font-black text-stone-900 mt-1">
+              Global Job Portals &amp; Country Directory
+            </h2>
+            <p class="text-xs text-stone-600 mt-0.5">
+              Targeted job-search platforms for <strong>India 🇮🇳</strong>, <strong>Dubai / UAE 🇦🇪</strong>, <strong>Germany 🇩🇪</strong>, <strong>Global Remote 🌍</strong>, and <strong>Direct Big Tech 🏢</strong> with cadence schedules.
+            </p>
+          </div>
+          <div class="flex items-center gap-2">
+            <span id="portalCountBadge" class="px-3 py-1.5 rounded-xl bg-emerald-100 text-emerald-900 border border-emerald-300 font-mono text-xs font-bold shadow-sm">
+              Showing 64 Portals
+            </span>
+          </div>
+        </div>
+
+        <!-- Strategy Checklist & Daily Cadence Planner -->
+        <div class="p-5 rounded-2xl bg-white/90 border border-stone-300/80 space-y-4 shadow-sm">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-stone-200 pb-3">
+            <div class="text-xs font-bold uppercase tracking-wider text-stone-700 flex items-center gap-2">
+              <span>🎯</span> Recommended Multi-Market Application Strategy
+            </div>
+            <div class="flex items-center gap-1 text-xs">
+              <button onclick="setCadenceTab('india')" id="cadenceTab-india" class="px-3 py-1 rounded-lg font-bold bg-emerald-700 text-white shadow-sm transition-all cursor-pointer">🇮🇳 India</button>
+              <button onclick="setCadenceTab('uae')" id="cadenceTab-uae" class="px-3 py-1 rounded-lg font-medium text-stone-700 hover:bg-stone-200 transition-all cursor-pointer">🇦🇪 Dubai/UAE</button>
+              <button onclick="setCadenceTab('germany')" id="cadenceTab-germany" class="px-3 py-1 rounded-lg font-medium text-stone-700 hover:bg-stone-200 transition-all cursor-pointer">🇩🇪 Germany</button>
+            </div>
+          </div>
+
+          <!-- Tab Content: India -->
+          <div id="cadencePanel-india" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-3.5 rounded-xl bg-emerald-50/80 border border-emerald-200 space-y-2">
+              <div class="flex items-center justify-between text-xs font-bold text-emerald-950">
+                <span class="flex items-center gap-1.5">⚡ Daily Core Priority (High Volume)</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 font-mono text-[10px]">6 Platforms</span>
+              </div>
+              <p class="text-[11px] text-stone-700 leading-relaxed">
+                Apply daily on: <strong>Naukri</strong>, <strong>LinkedIn Jobs</strong>, <strong>Instahyre</strong> (recruiter outreach), <strong>Cutshort</strong> (founder direct), <strong>Indeed India</strong>, and <strong>Foundit</strong>. Keep profile activity &amp; resume fresh daily.
+              </p>
+              <button onclick="filterByCadenceGroup('india', 'daily')" class="text-xs text-emerald-800 font-bold hover:underline flex items-center gap-1 cursor-pointer">
+                View Daily India Portals →
+              </button>
+            </div>
+            <div class="p-3.5 rounded-xl bg-stone-50 border border-stone-200 space-y-2">
+              <div class="flex items-center justify-between text-xs font-bold text-stone-900">
+                <span class="flex items-center gap-1.5">📅 2–3× Per Week (High-Yield Startups)</span>
+                <span class="px-2 py-0.5 rounded bg-stone-200 text-stone-800 font-mono text-[10px]">4 Platforms</span>
+              </div>
+              <p class="text-[11px] text-stone-700 leading-relaxed">
+                Check 2-3x weekly: <strong>Wellfound</strong> (funded tech startups), <strong>Glassdoor</strong> (reviews &amp; salaries), <strong>TimesJobs</strong>, and <strong>Hirect</strong> (founder chat app).
+              </p>
+              <button onclick="filterByCadenceGroup('india', 'biweekly')" class="text-xs text-stone-800 font-bold hover:underline flex items-center gap-1 cursor-pointer">
+                View 2–3× / Week Portals →
+              </button>
+            </div>
+          </div>
+
+          <!-- Tab Content: UAE -->
+          <div id="cadencePanel-uae" class="hidden grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-3.5 rounded-xl bg-emerald-50/80 border border-emerald-200 space-y-2">
+              <div class="flex items-center justify-between text-xs font-bold text-emerald-950">
+                <span class="flex items-center gap-1.5">⚡ Daily UAE Core (Dubai &amp; Abu Dhabi)</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 font-mono text-[10px]">6 Platforms</span>
+              </div>
+              <p class="text-[11px] text-stone-700 leading-relaxed">
+                Apply daily on: <strong>LinkedIn Jobs UAE</strong>, <strong>Bayt</strong> (Middle East #1), <strong>NaukriGulf</strong> (GCC tech), <strong>GulfTalent</strong> (executive &amp; software), <strong>Foundit Gulf</strong>, and <strong>Indeed UAE</strong>.
+              </p>
+              <button onclick="filterByCadenceGroup('uae', 'daily')" class="text-xs text-emerald-800 font-bold hover:underline flex items-center gap-1 cursor-pointer">
+                View Daily UAE Portals →
+              </button>
+            </div>
+            <div class="p-3.5 rounded-xl bg-stone-50 border border-stone-200 space-y-2">
+              <div class="flex items-center justify-between text-xs font-bold text-stone-900">
+                <span class="flex items-center gap-1.5">📅 2–3× Per Week + Government</span>
+                <span class="px-2 py-0.5 rounded bg-stone-200 text-stone-800 font-mono text-[10px]">6 Platforms</span>
+              </div>
+              <p class="text-[11px] text-stone-700 leading-relaxed">
+                Check 2-3x weekly: <strong>Gulf News Careers</strong>, <strong>Laimoon</strong>, <strong>Dubizzle Jobs</strong>, <strong>Dubai Careers</strong> (Gov), and <strong>Federal Government Jobs</strong>.
+              </p>
+              <button onclick="filterByCadenceGroup('uae', 'biweekly')" class="text-xs text-stone-800 font-bold hover:underline flex items-center gap-1 cursor-pointer">
+                View 2–3× / Week Portals →
+              </button>
+            </div>
+          </div>
+
+          <!-- Tab Content: Germany -->
+          <div id="cadencePanel-germany" class="hidden grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-3.5 rounded-xl bg-emerald-50/80 border border-emerald-200 space-y-2">
+              <div class="flex items-center justify-between text-xs font-bold text-emerald-950">
+                <span class="flex items-center gap-1.5">⚡ Daily Germany Core (English &amp; Visa)</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 font-mono text-[10px]">6 Platforms</span>
+              </div>
+              <p class="text-[11px] text-stone-700 leading-relaxed">
+                Apply daily on: <strong>LinkedIn Germany</strong> (English-speaking), <strong>StepStone Germany</strong>, <strong>Indeed DE</strong>, <strong>XING</strong>, <strong>Make it in Germany</strong> (official foreign skilled worker portal), and <strong>Bundesagentur für Arbeit</strong>.
+              </p>
+              <button onclick="filterByCadenceGroup('germany', 'daily')" class="text-xs text-emerald-800 font-bold hover:underline flex items-center gap-1 cursor-pointer">
+                View Daily German Portals →
+              </button>
+            </div>
+            <div class="p-3.5 rounded-xl bg-stone-50 border border-stone-200 space-y-2">
+              <div class="flex items-center justify-between text-xs font-bold text-stone-900">
+                <span class="flex items-center gap-1.5">📅 2–3× Per Week (Tech &amp; Reverse Hiring)</span>
+                <span class="px-2 py-0.5 rounded bg-stone-200 text-stone-800 font-mono text-[10px]">6 Platforms</span>
+              </div>
+              <p class="text-[11px] text-stone-700 leading-relaxed">
+                Check 2-3x weekly: <strong>GermanTechJobs</strong>, <strong>Honeypot</strong> (reverse hiring), <strong>Berlin Startup Jobs</strong>, <strong>JOIN</strong>, <strong>Jobware</strong>, and <strong>EURES</strong> (EU mobility).
+              </p>
+              <button onclick="filterByCadenceGroup('germany', 'biweekly')" class="text-xs text-stone-800 font-bold hover:underline flex items-center gap-1 cursor-pointer">
+                View 2–3× / Week Portals →
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter Controls Dock (Dropdowns + Search) -->
+        <div class="p-4 sm:p-5 rounded-2xl bg-white/90 border border-stone-300/80 space-y-3 shadow-sm">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            <!-- Dropdown 1: Country / Market -->
+            <div>
+              <label for="portalCountrySelect" class="block text-xs font-bold text-stone-700 mb-1">
+                🌐 Country / Region
+              </label>
+              <select id="portalCountrySelect" onchange="filterPortals()" class="w-full px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold olive-select cursor-pointer">
+                <option value="ALL">🌍 All Countries &amp; Markets (64)</option>
+                <option value="india">🇮🇳 India (21 Portals)</option>
+                <option value="uae">🇦🇪 Dubai / UAE (16 Portals)</option>
+                <option value="germany">🇩🇪 Germany (23 Portals)</option>
+                <option value="global">🌍 Global &amp; Remote (8 Portals)</option>
+                <option value="enterprise">🏢 Direct Enterprise Careers (6 Portals)</option>
+              </select>
+            </div>
+
+            <!-- Dropdown 2: Tier / Category -->
+            <div>
+              <label for="portalTierSelect" class="block text-xs font-bold text-stone-700 mb-1">
+                🏷️ Tier &amp; Specialization
+              </label>
+              <select id="portalTierSelect" onchange="filterPortals()" class="w-full px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold olive-select cursor-pointer">
+                <option value="ALL">🌟 All Tiers &amp; Categories</option>
+                <option value="tier1">Tier 1: Daily Essential (Must Use)</option>
+                <option value="tier2">Tier 2: Tech &amp; Startup Specialists</option>
+                <option value="tier3">Tier 3: Regional &amp; Additional</option>
+                <option value="gov">🏛️ Official Government Portals</option>
+                <option value="enterprise">🏢 Direct Big Tech Careers</option>
+              </select>
+            </div>
+
+            <!-- Dropdown 3: Cadence -->
+            <div>
+              <label for="portalCadenceSelect" class="block text-xs font-bold text-stone-700 mb-1">
+                ⏱️ Application Cadence
+              </label>
+              <select id="portalCadenceSelect" onchange="filterPortals()" class="w-full px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold olive-select cursor-pointer">
+                <option value="ALL">📅 All Schedules</option>
+                <option value="daily">⚡ Daily High-Priority</option>
+                <option value="biweekly">📅 2–3× Per Week</option>
+                <option value="weekly">📅 Weekly / Direct Check</option>
+              </select>
+            </div>
+
+            <!-- Search Bar -->
+            <div>
+              <label for="portalSearchInput" class="block text-xs font-bold text-stone-700 mb-1">
+                🔍 Search Portals
+              </label>
+              <div class="relative">
+                <input type="text" id="portalSearchInput" oninput="filterPortals()" placeholder="e.g. Naukri, StepStone, Honeypot..." class="w-full pl-8 pr-3 py-2 rounded-xl text-xs sm:text-sm font-semibold olive-input">
+                <svg class="w-3.5 h-3.5 text-stone-400 absolute left-2.5 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Filter Buttons -->
+          <div class="flex flex-wrap items-center gap-1.5 pt-2 border-t border-stone-200">
+            <span class="text-[11px] font-bold text-stone-500 mr-1">Quick Select:</span>
+            <button onclick="quickSetPortalFilter('india', 'ALL')" class="px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-stone-100 hover:bg-emerald-100 text-stone-700 hover:text-emerald-900 border border-stone-200 transition-all cursor-pointer">🇮🇳 All India</button>
+            <button onclick="quickSetPortalFilter('uae', 'ALL')" class="px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-stone-100 hover:bg-emerald-100 text-stone-700 hover:text-emerald-900 border border-stone-200 transition-all cursor-pointer">🇦🇪 All UAE</button>
+            <button onclick="quickSetPortalFilter('germany', 'ALL')" class="px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-stone-100 hover:bg-emerald-100 text-stone-700 hover:text-emerald-900 border border-stone-200 transition-all cursor-pointer">🇩🇪 All Germany</button>
+            <button onclick="quickSetPortalFilter('ALL', 'daily')" class="px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-emerald-100 hover:bg-emerald-200 text-emerald-900 border border-emerald-300 transition-all cursor-pointer">⚡ Daily Must-Apply</button>
+            <button onclick="quickSetPortalFilter('ALL', 'gov')" class="px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-blue-100 hover:bg-blue-200 text-blue-900 border border-blue-300 transition-all cursor-pointer">🏛️ Government Exchanges</button>
+            <button onclick="quickSetPortalFilter('enterprise', 'ALL')" class="px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-purple-100 hover:bg-purple-200 text-purple-900 border border-purple-300 transition-all cursor-pointer">🏢 Big Tech Careers</button>
+            <button onclick="resetPortalFilters()" class="ml-auto text-[11px] font-bold text-stone-500 hover:text-stone-900 underline cursor-pointer">Reset All Filters</button>
+          </div>
+        </div>
+
+        <!-- Dynamic Portal Grid -->
+        <div id="portalsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
+          <!-- Populated dynamically via renderPortals() -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="portalsEmptyState" class="hidden p-12 text-center bg-white/80 rounded-2xl border border-stone-300 space-y-2">
+          <span class="text-3xl block">🔍</span>
+          <h3 class="text-base font-bold text-stone-900">No matching job portals found</h3>
+          <p class="text-xs text-stone-500">Try adjusting your country filter, tier selection, or search keywords.</p>
+          <button onclick="resetPortalFilters()" class="px-3 py-1.5 rounded-xl bg-emerald-700 text-white text-xs font-bold mt-2">Reset Filters</button>
+        </div>
+
+      </section>
+
     </main>
 
     <!-- Footer -->
@@ -1125,6 +1354,272 @@ Resume: https://drive.google.com/file/d/1Agx-wMrLAPT3ilMJyPQiS8TGtIiT4ByT/view?u
       document.addEventListener('DOMContentLoaded', renderColdEmail);
     } else {
       renderColdEmail();
+    }
+
+    // =========================================================================
+    // SECTION 5: JOB PORTALS DATASET & INTERACTIVE ENGINE
+    // =========================================================================
+    const JOB_PORTALS_DATA = [
+      // --- INDIA TIER 1 ---
+      { name: "Naukri", country: "india", countryLabel: "🇮🇳 India", tier: "tier1", tierLabel: "Tier 1: Must Use", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://www.naukri.com/", note: "Largest Indian job portal; essential for volume corporate & IT hiring", badge: "Daily Essential", category: "General & IT" },
+      { name: "LinkedIn Jobs India", country: "india", countryLabel: "🇮🇳 India", tier: "tier1", tierLabel: "Tier 1: Must Use", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://www.linkedin.com/jobs/", note: "Jobs + direct recruiter outreach + warm alumni & peer referrals", badge: "Daily Essential", category: "Professional Network" },
+      { name: "Indeed India", country: "india", countryLabel: "🇮🇳 India", tier: "tier1", tierLabel: "Tier 1: Must Use", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://in.indeed.com/", note: "High-volume general and software developer aggregator", badge: "Daily Essential", category: "Aggregator" },
+      { name: "Foundit (Monster India)", country: "india", countryLabel: "🇮🇳 India", tier: "tier1", tierLabel: "Tier 1: Must Use", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://www.foundit.in/", note: "Experienced IT and enterprise software engineering roles", badge: "Daily Essential", category: "IT & Engineering" },
+      { name: "Glassdoor India", country: "india", countryLabel: "🇮🇳 India", tier: "tier1", tierLabel: "Tier 1: Must Use", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://www.glassdoor.co.in/Job/index.htm", note: "Job postings combined with salary insights and interview reviews", badge: "2–3× / Week", category: "Research & Jobs" },
+      { name: "TimesJobs", country: "india", countryLabel: "🇮🇳 India", tier: "tier1", tierLabel: "Tier 1: Must Use", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://www.timesjobs.com/", note: "Traditional Indian corporate and IT enterprise hiring", badge: "2–3× / Week", category: "Corporate & IT" },
+      { name: "Shine", country: "india", countryLabel: "🇮🇳 India", tier: "tier1", tierLabel: "Tier 1: Must Use", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://www.shine.com/", note: "General hiring portal backed by HT Media", badge: "2–3× / Week", category: "General Hiring" },
+
+      // --- INDIA TIER 2 (TECH & STARTUPS) ---
+      { name: "Instahyre", country: "india", countryLabel: "🇮🇳 India", tier: "tier2", tierLabel: "Tier 2: Tech Specialist", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://www.instahyre.com/", note: "AI-driven direct recruiter outreach for top tech startups & product companies", badge: "Tech Specialist", category: "Product & Startups" },
+      { name: "Cutshort", country: "india", countryLabel: "🇮🇳 India", tier: "tier2", tierLabel: "Tier 2: Tech Specialist", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://cutshort.io/", note: "Direct messaging with engineering managers and startup founders", badge: "Tech Specialist", category: "Product & Startups" },
+      { name: "Wellfound (AngelList)", country: "india", countryLabel: "🇮🇳 India", tier: "tier2", tierLabel: "Tier 2: Tech Specialist", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://wellfound.com/jobs", note: "Premier portal for funded tech startups and high-growth scaleups", badge: "Startup Leader", category: "Startups & Scaleups" },
+      { name: "Hirect", country: "india", countryLabel: "🇮🇳 India", tier: "tier2", tierLabel: "Tier 2: Tech Specialist", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://hirect.in/", note: "Chat-first hiring app connecting candidates directly with startup founders", badge: "Chat-First", category: "Direct Founder Chat" },
+      { name: "HackerEarth Jobs", country: "india", countryLabel: "🇮🇳 India", tier: "tier2", tierLabel: "Tier 2: Tech Specialist", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://www.hackerearth.com/jobs/", note: "Coding challenge and assessment-based software engineering roles", badge: "Skill Assessment", category: "Developer Assessment" },
+      { name: "Freshersworld", country: "india", countryLabel: "🇮🇳 India", tier: "tier2", tierLabel: "Tier 2: Tech Specialist", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://www.freshersworld.com/", note: "Early career & entry-level engineering openings across India", badge: "Early Career", category: "Entry / Early Career" },
+      { name: "Internshala", country: "india", countryLabel: "🇮🇳 India", tier: "tier2", tierLabel: "Tier 2: Tech Specialist", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://internshala.com/jobs", note: "Early career full-time jobs and software engineering internships", badge: "Early Career", category: "Early Career" },
+      { name: "Apna", country: "india", countryLabel: "🇮🇳 India", tier: "tier2", tierLabel: "Tier 2: Tech Specialist", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://apna.co/", note: "Fast-growing Indian professional network and job marketplace", badge: "Marketplace", category: "General Tech" },
+
+      // --- INDIA TIER 3 ---
+      { name: "Quikr Jobs", country: "india", countryLabel: "🇮🇳 India", tier: "tier3", tierLabel: "Tier 3: Additional Portals", cadence: "weekly", cadenceLabel: "📅 Weekly", url: "https://www.quikr.com/jobs", note: "Regional and local Indian job listings", badge: "Regional", category: "Regional" },
+      { name: "WorkIndia", country: "india", countryLabel: "🇮🇳 India", tier: "tier3", tierLabel: "Tier 3: Additional Portals", cadence: "weekly", cadenceLabel: "📅 Weekly", url: "https://www.workindia.in/", note: "High-volume direct employer hiring in metropolitan centers", badge: "Direct Hire", category: "Direct Hire" },
+      { name: "JobHai", country: "india", countryLabel: "🇮🇳 India", tier: "tier3", tierLabel: "Tier 3: Additional Portals", cadence: "weekly", cadenceLabel: "📅 Weekly", url: "https://www.jobhai.com/", note: "Verified company job opportunities powered by Info Edge (Naukri)", badge: "Verified", category: "Direct Hire" },
+      { name: "CareerBuilder India", country: "india", countryLabel: "🇮🇳 India", tier: "tier3", tierLabel: "Tier 3: Additional Portals", cadence: "weekly", cadenceLabel: "📅 Weekly", url: "https://www.careerbuilder.com/", note: "Global corporate career listings with Indian vacancies", badge: "Corporate", category: "Corporate" },
+      { name: "HerKey (JobsForHer)", country: "india", countryLabel: "🇮🇳 India", tier: "tier3", tierLabel: "Tier 3: Additional Portals", cadence: "weekly", cadenceLabel: "📅 Weekly", url: "https://www.herkey.com/", note: "Diversity and inclusion focused hiring platform for tech & corporate", badge: "Diversity", category: "Diversity" },
+      { name: "IIMJobs", country: "india", countryLabel: "🇮🇳 India", tier: "tier3", tierLabel: "Tier 3: Additional Portals", cadence: "weekly", cadenceLabel: "📅 Weekly", url: "https://www.iimjobs.com/", note: "Premium mid-to-senior management, analytics, and software roles", badge: "Mid-Senior", category: "Mid-Senior / Leadership" },
+
+      // --- DUBAI / UAE TIER 1 ---
+      { name: "LinkedIn Jobs UAE", country: "uae", countryLabel: "🇦🇪 Dubai / UAE", tier: "tier1", tierLabel: "Tier 1: Must Use", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://www.linkedin.com/jobs/", note: "Dominant platform for multinational tech & corporate roles in Dubai / Abu Dhabi", badge: "Daily Essential", category: "Corporate & Tech" },
+      { name: "Bayt", country: "uae", countryLabel: "🇦🇪 Dubai / UAE", tier: "tier1", tierLabel: "Tier 1: Must Use", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://www.bayt.com/", note: "Largest and most established Middle East job portal across GCC", badge: "Daily Essential", category: "Middle East Leader" },
+      { name: "NaukriGulf", country: "uae", countryLabel: "🇦🇪 Dubai / UAE", tier: "tier1", tierLabel: "Tier 1: Must Use", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://www.naukrigulf.com/", note: "Specialized GCC hiring arm of Naukri with heavy software developer demand", badge: "Daily Essential", category: "GCC Tech" },
+      { name: "Foundit Gulf (Monster Gulf)", country: "uae", countryLabel: "🇦🇪 Dubai / UAE", tier: "tier1", tierLabel: "Tier 1: Must Use", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://www.founditgulf.com/", note: "Major corporate and software engineering job exchange across GCC", badge: "Daily Essential", category: "GCC Corporate" },
+      { name: "GulfTalent", country: "uae", countryLabel: "🇦🇪 Dubai / UAE", tier: "tier1", tierLabel: "Tier 1: Must Use", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://www.gulftalent.com/", note: "Professional and executive tech vacancies across Dubai, Abu Dhabi, Riyadh", badge: "Daily Essential", category: "Professional" },
+      { name: "Indeed UAE", country: "uae", countryLabel: "🇦🇪 Dubai / UAE", tier: "tier1", tierLabel: "Tier 1: Must Use", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://ae.indeed.com/", note: "Broad job index for tech, operations, and IT services in UAE", badge: "Daily Essential", category: "Aggregator" },
+      { name: "Glassdoor UAE", country: "uae", countryLabel: "🇦🇪 Dubai / UAE", tier: "tier1", tierLabel: "Tier 1: Must Use", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://www.glassdoor.com/Job/index.htm", note: "UAE listings with local tax-free compensation benchmarks and reviews", badge: "2–3× / Week", category: "Research & Jobs" },
+
+      // --- DUBAI / UAE TIER 2 ---
+      { name: "Gulf News Careers", country: "uae", countryLabel: "🇦🇪 Dubai / UAE", tier: "tier2", tierLabel: "Tier 2: UAE-Specific", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://gulfnews.com/jobs", note: "Leading UAE daily newspaper career portal with verified private employers", badge: "UAE Media", category: "Media & Verified" },
+      { name: "Laimoon", country: "uae", countryLabel: "🇦🇪 Dubai / UAE", tier: "tier2", tierLabel: "Tier 2: UAE-Specific", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://www.laimoon.com/", note: "Dubai-headquartered portal tracking certified IT and developer openings", badge: "UAE Regional", category: "Career Portal" },
+      { name: "Dubizzle Jobs", country: "uae", countryLabel: "🇦🇪 Dubai / UAE", tier: "tier2", tierLabel: "Tier 2: UAE-Specific", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://dubai.dubizzle.com/jobs/", note: "Popular UAE classifieds platform for direct employer hiring in Dubai", badge: "Direct Employer", category: "Classifieds" },
+      { name: "Khaleej Times Jobs", country: "uae", countryLabel: "🇦🇪 Dubai / UAE", tier: "tier2", tierLabel: "Tier 2: UAE-Specific", cadence: "weekly", cadenceLabel: "📅 Weekly", url: "https://jobs.khaleejtimes.com/", note: "Trusted UAE English daily career listings for corporate and technology sectors", badge: "UAE Media", category: "Media & Corporate" },
+      { name: "Monster Gulf", country: "uae", countryLabel: "🇦🇪 Dubai / UAE", tier: "tier2", tierLabel: "Tier 2: UAE-Specific", cadence: "weekly", cadenceLabel: "📅 Weekly", url: "https://www.monstergulf.com/", note: "GCC employment search engine connecting expats to regional hubs", badge: "GCC Portal", category: "GCC Portal" },
+
+      // --- UAE GOVERNMENT ---
+      { name: "Dubai Careers", country: "uae", countryLabel: "🇦🇪 Dubai / UAE", tier: "gov", tierLabel: "Official Government", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://www.dubaicareers.ae/", note: "Official centralized job portal of the Government of Dubai", badge: "Government", category: "Public Sector" },
+      { name: "Federal Government Jobs (FAHR)", country: "uae", countryLabel: "🇦🇪 Dubai / UAE", tier: "gov", tierLabel: "Official Government", cadence: "weekly", cadenceLabel: "📅 Weekly", url: "https://www.federaljobs.ae/", note: "Official portal for UAE Federal Government ministries and entities", badge: "Federal Gov", category: "Public Sector" },
+      { name: "Abu Dhabi Government (TAMM)", country: "uae", countryLabel: "🇦🇪 Dubai / UAE", tier: "gov", tierLabel: "Official Government", cadence: "weekly", cadenceLabel: "📅 Weekly", url: "https://www.tamm.abudhabi/", note: "Official unified portal for Abu Dhabi government and semi-gov agencies", badge: "Abu Dhabi Gov", category: "Public Sector" },
+      { name: "Sharjah Government Jobs", country: "uae", countryLabel: "🇦🇪 Dubai / UAE", tier: "gov", tierLabel: "Official Government", cadence: "weekly", cadenceLabel: "📅 Weekly", url: "https://portal.shjmun.gov.ae/", note: "Public sector and municipal employment opportunities in Sharjah", badge: "Sharjah Gov", category: "Public Sector" },
+
+      // --- GERMANY TIER 1 (ESSENTIAL & GOV) ---
+      { name: "LinkedIn Jobs Germany", country: "germany", countryLabel: "🇩🇪 Germany", tier: "tier1", tierLabel: "Tier 1: Essential", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://www.linkedin.com/jobs/", note: "Top portal for international, English-speaking tech roles in Berlin, Munich, Frankfurt", badge: "Daily Essential", category: "International / English" },
+      { name: "StepStone Germany", country: "germany", countryLabel: "🇩🇪 Germany", tier: "tier1", tierLabel: "Tier 1: Essential", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://www.stepstone.de/", note: "Leading commercial job portal in Germany with massive engineering coverage", badge: "Daily Essential", category: "Germany Leader" },
+      { name: "Indeed Germany", country: "germany", countryLabel: "🇩🇪 Germany", tier: "tier1", tierLabel: "Tier 1: Essential", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://de.indeed.com/", note: "Broadest German aggregate indexing Mittelstand to enterprise vacancies", badge: "Daily Essential", category: "Aggregator" },
+      { name: "XING Jobs", country: "germany", countryLabel: "🇩🇪 Germany", tier: "tier1", tierLabel: "Tier 1: Essential", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://www.xing.com/jobs", note: "Leading professional network in DACH (Germany, Austria, Switzerland)", badge: "Daily Essential", category: "DACH Network" },
+      { name: "Bundesagentur für Arbeit", country: "germany", countryLabel: "🇩🇪 Germany", tier: "gov", tierLabel: "Official Government", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://www.arbeitsagentur.de/jobsuche/", note: "Official German Federal Employment Agency database with nationwide verified jobs", badge: "Federal Agency", category: "Official Government" },
+      { name: "Make it in Germany", country: "germany", countryLabel: "🇩🇪 Germany", tier: "gov", tierLabel: "Official Government", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://www.make-it-in-germany.com/en/working-in-germany/job-listings", note: "Official Federal portal for international skilled workers; employers welcome foreign applicants & visa sponsorship", badge: "Skilled Worker Portal", category: "Official Government" },
+      { name: "EURES (European Job Mobility)", country: "germany", countryLabel: "🇩🇪 Germany", tier: "gov", tierLabel: "Official Government", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://eures.europa.eu/", note: "European Union cross-border employment exchange connecting EU/EEA employers", badge: "EU-Wide Portal", category: "Official Government" },
+
+      // --- GERMANY TIER 2 (TECH & STARTUPS) ---
+      { name: "Berlin Startup Jobs", country: "germany", countryLabel: "🇩🇪 Germany", tier: "tier2", tierLabel: "Tier 2: Tech Specialist", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://berlinstartupjobs.com/", note: "Premier hub for English-speaking engineering roles in Europe's startup capital", badge: "Startup Hub", category: "Tech & Startups" },
+      { name: "GermanTechJobs", country: "germany", countryLabel: "🇩🇪 Germany", tier: "tier2", tierLabel: "Tier 2: Tech Specialist", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://germantechjobs.de/", note: "Developer-first job board with transparent salary brackets and tech stack filters", badge: "Dev-First", category: "Tech & Startups" },
+      { name: "Honeypot", country: "germany", countryLabel: "🇩🇪 Germany", tier: "tier2", tierLabel: "Tier 2: Tech Specialist", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://www.honeypot.io/", note: "Reverse recruitment platform: German and European tech companies apply to you", badge: "Reverse Hiring", category: "Tech & Startups" },
+      { name: "JOIN", country: "germany", countryLabel: "🇩🇪 Germany", tier: "tier2", tierLabel: "Tier 2: Tech Specialist", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://join.com/", note: "Modern European hiring platform widely adopted by German tech scaleups", badge: "Modern Scaleups", category: "Tech & Startups" },
+      { name: "Joblift Germany", country: "germany", countryLabel: "🇩🇪 Germany", tier: "tier2", tierLabel: "Tier 2: Tech Specialist", cadence: "weekly", cadenceLabel: "📅 Weekly", url: "https://joblift.de/", note: "Meta-search engine aggregating millions of job listings across German regions", badge: "Meta-Search", category: "Aggregator" },
+      { name: "meinestadt.de Jobs", country: "germany", countryLabel: "🇩🇪 Germany", tier: "tier2", tierLabel: "Tier 2: Tech Specialist", cadence: "weekly", cadenceLabel: "📅 Weekly", url: "https://jobs.meinestadt.de/", note: "Regional job portal indexing opportunities by German city and state", badge: "Regional Germany", category: "Regional" },
+      { name: "Kimeta", country: "germany", countryLabel: "🇩🇪 Germany", tier: "tier2", tierLabel: "Tier 2: Tech Specialist", cadence: "weekly", cadenceLabel: "📅 Weekly", url: "https://www.kimeta.de/", note: "Top German meta-search engine scanning corporate career portals", badge: "Meta-Search", category: "Aggregator" },
+      { name: "Jobware", country: "germany", countryLabel: "🇩🇪 Germany", tier: "tier2", tierLabel: "Tier 2: Tech Specialist", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://www.jobware.de/", note: "Targeted job portal for specialists and qualified engineers in Germany", badge: "Specialist", category: "Engineering Specialist" },
+      { name: "Absolventa", country: "germany", countryLabel: "🇩🇪 Germany", tier: "tier2", tierLabel: "Tier 2: Tech Specialist", cadence: "weekly", cadenceLabel: "📅 Weekly", url: "https://www.absolventa.de/", note: "Specialized for university graduates, early-career engineers, and junior devs", badge: "Graduate & Junior", category: "Graduates" },
+      { name: "Yourfirm", country: "germany", countryLabel: "🇩🇪 Germany", tier: "tier2", tierLabel: "Tier 2: Tech Specialist", cadence: "weekly", cadenceLabel: "📅 Weekly", url: "https://www.yourfirm.de/", note: "Leading portal exclusively for German Mittelstand (hidden champions & SMEs)", badge: "Mittelstand", category: "SME / Mittelstand" },
+
+      // --- GERMANY & GLOBAL REMOTE ---
+      { name: "We Work Remotely", country: "global", countryLabel: "🌍 Global Remote", tier: "tier2", tierLabel: "Remote Specialists", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://weworkremotely.com/", note: "Largest remote work community with global full-stack & backend engineering roles", badge: "Remote Leader", category: "Remote" },
+      { name: "Remote OK", country: "global", countryLabel: "🌍 Global Remote", tier: "tier2", tierLabel: "Remote Specialists", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://remoteok.com/", note: "Live remote jobs directory with real-time software developer listings", badge: "Remote Tech", category: "Remote" },
+      { name: "Remotive", country: "global", countryLabel: "🌍 Global Remote", tier: "tier2", tierLabel: "Remote Specialists", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://remotive.com/", note: "Vetted remote tech jobs curated for developers, DevOps, and QA engineers", badge: "Vetted Remote", category: "Remote" },
+      { name: "EU Remote Jobs", country: "germany", countryLabel: "🇩🇪 Germany & EU", tier: "tier2", tierLabel: "Remote Specialists", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://euremotejobs.com/", note: "Remote roles specifically accommodating European time zones (CET / UTC+1)", badge: "EU Timezone", category: "Remote Europe" },
+      { name: "Welcome to the Jungle (Otta)", country: "global", countryLabel: "🌍 Global Remote", tier: "tier2", tierLabel: "Remote Specialists", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://www.welcometothejungle.com/", note: "Curated modern tech jobs matching candidates to high-quality tech culture", badge: "Curated Tech", category: "Curated" },
+
+      // --- GLOBAL PORTALS ---
+      { name: "Jooble", country: "global", countryLabel: "🌍 Global Remote", tier: "tier3", tierLabel: "Tier 3: Additional Portals", cadence: "weekly", cadenceLabel: "📅 Weekly", url: "https://jooble.org/", note: "Global meta-search engine operating across 70+ countries", badge: "Global Meta", category: "Aggregator" },
+      { name: "ZipRecruiter", country: "global", countryLabel: "🌍 Global Remote", tier: "tier3", tierLabel: "Tier 3: Additional Portals", cadence: "weekly", cadenceLabel: "📅 Weekly", url: "https://www.ziprecruiter.com/", note: "AI-powered job matching with 1-click apply functionality", badge: "Global", category: "Aggregator" },
+      { name: "Adzuna", country: "global", countryLabel: "🌍 Global Remote", tier: "tier3", tierLabel: "Tier 3: Additional Portals", cadence: "weekly", cadenceLabel: "📅 Weekly", url: "https://www.adzuna.com/", note: "Job search engine tracking market salary trends and hiring demand", badge: "Global", category: "Aggregator" },
+      { name: "Talent.com", country: "global", countryLabel: "🌍 Global Remote", tier: "tier3", tierLabel: "Tier 3: Additional Portals", cadence: "weekly", cadenceLabel: "📅 Weekly", url: "https://www.talent.com/", note: "Global job marketplace with salary calculators and tax tools", badge: "Global", category: "Aggregator" },
+
+      // --- DIRECT ENTERPRISE CAREERS ---
+      { name: "Amazon Jobs", country: "enterprise", countryLabel: "🏢 Direct Tech Enterprise", tier: "enterprise", tierLabel: "Enterprise Careers", cadence: "weekly", cadenceLabel: "🏢 Direct Company", url: "https://www.amazon.jobs/", note: "Direct applications for AWS, Retail, and Software Development Engineer (SDE) roles", badge: "Direct Career Page", category: "Big Tech" },
+      { name: "Google Careers", country: "enterprise", countryLabel: "🏢 Direct Tech Enterprise", tier: "enterprise", tierLabel: "Enterprise Careers", cadence: "weekly", cadenceLabel: "🏢 Direct Company", url: "https://careers.google.com/", note: "Software Engineer, Cloud, and Systems roles worldwide (India, Munich, Zurich, US)", badge: "Direct Career Page", category: "Big Tech" },
+      { name: "Microsoft Careers", country: "enterprise", countryLabel: "🏢 Direct Tech Enterprise", tier: "enterprise", tierLabel: "Enterprise Careers", cadence: "weekly", cadenceLabel: "🏢 Direct Company", url: "https://careers.microsoft.com/", note: "Azure, Developer Division, and Full-Stack openings worldwide", badge: "Direct Career Page", category: "Big Tech" },
+      { name: "Adobe Careers", country: "enterprise", countryLabel: "🏢 Direct Tech Enterprise", tier: "enterprise", tierLabel: "Enterprise Careers", cadence: "weekly", cadenceLabel: "🏢 Direct Company", url: "https://careers.adobe.com/", note: "Experience Cloud, Creative Cloud, and Core Platform engineering teams", badge: "Direct Career Page", category: "Big Tech" },
+      { name: "Samsung Careers", country: "enterprise", countryLabel: "🏢 Direct Tech Enterprise", tier: "enterprise", tierLabel: "Enterprise Careers", cadence: "weekly", cadenceLabel: "🏢 Direct Company", url: "https://www.samsung.com/global/careers/", note: "Samsung R&D Institute (SRI) software engineering and cloud systems", badge: "Direct Career Page", category: "Global Enterprise" },
+      { name: "JPMorgan Chase Careers", country: "enterprise", countryLabel: "🏢 Direct Tech Enterprise", tier: "enterprise", tierLabel: "Enterprise Careers", cadence: "weekly", cadenceLabel: "🏢 Direct Company", url: "https://www.jpmorganchase.com/careers", note: "Corporate & Investment Banking software engineering and financial technology", badge: "Direct Career Page", category: "FinTech / Enterprise" }
+    ];
+
+    function renderPortals() {
+      const countryFilter = document.getElementById('portalCountrySelect')?.value || 'ALL';
+      const tierFilter = document.getElementById('portalTierSelect')?.value || 'ALL';
+      const cadenceFilter = document.getElementById('portalCadenceSelect')?.value || 'ALL';
+      const searchQuery = (document.getElementById('portalSearchInput')?.value || '').toLowerCase().trim();
+
+      const filtered = JOB_PORTALS_DATA.filter(portal => {
+        if (countryFilter !== 'ALL' && portal.country !== countryFilter) return false;
+        if (tierFilter !== 'ALL' && portal.tier !== tierFilter) return false;
+        if (cadenceFilter !== 'ALL' && portal.cadence !== cadenceFilter) return false;
+        if (searchQuery) {
+          const matchName = portal.name.toLowerCase().includes(searchQuery);
+          const matchNote = portal.note.toLowerCase().includes(searchQuery);
+          const matchCountry = portal.countryLabel.toLowerCase().includes(searchQuery);
+          const matchCategory = portal.category.toLowerCase().includes(searchQuery);
+          if (!matchName && !matchNote && !matchCountry && !matchCategory) return false;
+        }
+        return true;
+      });
+
+      const countBadge = document.getElementById('portalCountBadge');
+      if (countBadge) {
+        countBadge.innerText = `Showing ${filtered.length} of ${JOB_PORTALS_DATA.length} Portals`;
+      }
+
+      const grid = document.getElementById('portalsGrid');
+      const emptyState = document.getElementById('portalsEmptyState');
+      if (!grid) return;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        if (emptyState) emptyState.classList.remove('hidden');
+        return;
+      }
+
+      if (emptyState) emptyState.classList.add('hidden');
+
+      grid.innerHTML = filtered.map(portal => {
+        // Determine badge color
+        let badgeColor = 'bg-stone-100 text-stone-800 border-stone-200';
+        if (portal.cadence === 'daily') {
+          badgeColor = 'bg-emerald-100 text-emerald-900 border-emerald-300 font-bold';
+        } else if (portal.tier === 'gov') {
+          badgeColor = 'bg-blue-100 text-blue-900 border-blue-300 font-bold';
+        } else if (portal.tier === 'enterprise') {
+          badgeColor = 'bg-purple-100 text-purple-900 border-purple-300 font-bold';
+        }
+
+        return `
+          <div class="p-4 rounded-2xl bg-white/95 border border-stone-300/80 space-y-3 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+            <div class="space-y-2">
+              <div class="flex items-start justify-between gap-2">
+                <span class="text-xs font-semibold text-stone-500 font-mono">${portal.countryLabel}</span>
+                <span class="px-2 py-0.5 rounded-full text-[10px] border ${badgeColor}">
+                  ${portal.cadenceLabel}
+                </span>
+              </div>
+              <h3 class="text-sm font-bold text-stone-900 tracking-tight flex items-center gap-1.5">
+                ${portal.name}
+              </h3>
+              <p class="text-xs text-stone-600 leading-relaxed">
+                ${portal.note}
+              </p>
+            </div>
+            
+            <div class="pt-2 border-t border-stone-100 flex items-center justify-between gap-2">
+              <span class="text-[10px] font-mono text-stone-400 truncate max-w-[120px]">${portal.category}</span>
+              <div class="flex items-center gap-1.5 shrink-0">
+                <button onclick="copyPortalLink('${portal.url}', '${portal.name.replace(/'/g, "\\'")}')" class="p-1.5 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs transition-all cursor-pointer" title="Copy URL to Clipboard">
+                  📋
+                </button>
+                <a href="${portal.url}" target="_blank" rel="noreferrer" class="px-3 py-1.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-semibold inline-flex items-center gap-1 shadow-sm transition-all">
+                  <span>Open ↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function setCadenceTab(tab) {
+      ['india', 'uae', 'germany'].forEach(t => {
+        const btn = document.getElementById(`cadenceTab-${t}`);
+        const panel = document.getElementById(`cadencePanel-${t}`);
+        if (t === tab) {
+          if (btn) {
+            btn.className = 'px-3 py-1 rounded-lg font-bold bg-emerald-700 text-white shadow-sm transition-all cursor-pointer';
+          }
+          if (panel) panel.classList.remove('hidden');
+        } else {
+          if (btn) {
+            btn.className = 'px-3 py-1 rounded-lg font-medium text-stone-700 hover:bg-stone-200 transition-all cursor-pointer';
+          }
+          if (panel) panel.classList.add('hidden');
+        }
+      });
+    }
+
+    function filterByCadenceGroup(country, cadence) {
+      const countrySelect = document.getElementById('portalCountrySelect');
+      const cadenceSelect = document.getElementById('portalCadenceSelect');
+      const tierSelect = document.getElementById('portalTierSelect');
+      const searchInput = document.getElementById('portalSearchInput');
+
+      if (countrySelect) countrySelect.value = country;
+      if (cadenceSelect) cadenceSelect.value = cadence;
+      if (tierSelect) tierSelect.value = 'ALL';
+      if (searchInput) searchInput.value = '';
+
+      renderPortals();
+      const grid = document.getElementById('portalsGrid');
+      if (grid) {
+        grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function quickSetPortalFilter(country, cadenceOrTier) {
+      const countrySelect = document.getElementById('portalCountrySelect');
+      const cadenceSelect = document.getElementById('portalCadenceSelect');
+      const tierSelect = document.getElementById('portalTierSelect');
+      const searchInput = document.getElementById('portalSearchInput');
+
+      if (countrySelect) countrySelect.value = country;
+      if (searchInput) searchInput.value = '';
+
+      if (cadenceOrTier === 'daily' || cadenceOrTier === 'biweekly') {
+        if (cadenceSelect) cadenceSelect.value = cadenceOrTier;
+        if (tierSelect) tierSelect.value = 'ALL';
+      } else if (cadenceOrTier === 'gov' || cadenceOrTier === 'enterprise') {
+        if (tierSelect) tierSelect.value = cadenceOrTier;
+        if (cadenceSelect) cadenceSelect.value = 'ALL';
+      } else {
+        if (cadenceSelect) cadenceSelect.value = 'ALL';
+        if (tierSelect) tierSelect.value = 'ALL';
+      }
+
+      renderPortals();
+    }
+
+    function resetPortalFilters() {
+      const countrySelect = document.getElementById('portalCountrySelect');
+      const cadenceSelect = document.getElementById('portalCadenceSelect');
+      const tierSelect = document.getElementById('portalTierSelect');
+      const searchInput = document.getElementById('portalSearchInput');
+
+      if (countrySelect) countrySelect.value = 'ALL';
+      if (cadenceSelect) cadenceSelect.value = 'ALL';
+      if (tierSelect) tierSelect.value = 'ALL';
+      if (searchInput) searchInput.value = '';
+
+      renderPortals();
+      showToast('Reset all portal filters');
+    }
+
+    function copyPortalLink(url, name) {
+      navigator.clipboard.writeText(url).then(() => {
+        showToast(`Copied ${name} link: ${url}`);
+      }).catch(() => {
+        showToast(`Copied: ${url}`);
+      });
+    }
+
+    // Initialize portals on load
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', renderPortals);
+    } else {
+      renderPortals();
     }
 
     window.addEventListener('keydown', (e) => {
