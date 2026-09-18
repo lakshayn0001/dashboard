@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lebenslauf - Lakshay Nagpal</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 1.6cm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #212529;
+      background-color: #f8f9fa;
+      line-height: 1.45;
+      font-size: 10pt;
+    }
+    .page-container {
+      max-width: 210mm;
+      margin: 20px auto;
+      background: #ffffff;
+      padding: 1.8cm 1.8cm;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+    @media print {
+      body {
+        background: #ffffff;
+      }
+      .page-container {
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        max-width: none;
+      }
+      .page-break {
+        page-break-before: always;
+        padding-top: 1.2cm;
+      }
+    }
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid #0e366b;
+      padding-bottom: 14px;
+      margin-bottom: 14px;
+    }
+    .header-info {
+      flex: 1;
+    }
+    .candidate-name {
+      font-size: 22pt;
+      font-weight: 700;
+      color: #0e366b;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+    .candidate-title {
+      font-size: 12pt;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 8px;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: auto auto;
+      gap: 3px 20px;
+      font-size: 9pt;
+      color: #475569;
+    }
+    .contact-grid a {
+      color: #0e366b;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-grid a:hover {
+      text-decoration: underline;
+    }
+    .photo-box {
+      width: 105px;
+      height: 130px;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-left: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f1f5f9;
+      color: #64748b;
+      font-size: 8.5pt;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .photo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 13px;
+    }
+    h2 {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #0e366b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 2px;
+      margin-bottom: 6px;
+    }
+    .personal-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9pt;
+      margin-bottom: 4px;
+    }
+    .personal-table td {
+      padding: 2.5px 0;
+      vertical-align: top;
+    }
+    .personal-table td.label {
+      width: 25%;
+      font-weight: 600;
+      color: #1e293b;
+    }
+    .personal-table td.value {
+      width: 75%;
+      color: #334155;
+    }
+
+    .summary-text {
+      font-size: 9.2pt;
+      text-align: justify;
+      color: #334155;
+      line-height: 1.45;
+    }
+
+    /* Experience & Projects */
+    .item-block {
+      margin-bottom: 10px;
+    }
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .item-title {
+      font-weight: 700;
+      font-size: 9.8pt;
+      color: #0f172a;
+    }
+    .item-period {
+      font-size: 9pt;
+      font-weight: 600;
+      color: #475569;
+      white-space: nowrap;
+    }
+    .item-subtitle {
+      display: flex;
+      justify-content: space-between;
+      font-size: 9pt;
+      font-style: italic;
+      color: #334155;
+      margin-bottom: 3px;
+    }
+    .item-meta {
+      font-size: 8.3pt;
+      color: #64748b;
+      margin-bottom: 4px;
+    }
+    .item-meta a {
+      color: #0e366b;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    ul {
+      margin-left: 17px;
+      margin-bottom: 4px;
+    }
+    li {
+      font-size: 9pt;
+      margin-bottom: 2.5px;
+      color: #334155;
+      line-height: 1.4;
+    }
+    .tech-stack {
+      font-size: 8.5pt;
+      color: #475569;
+      margin-top: 3px;
+    }
+    .tech-stack strong {
+      color: #1e293b;
+    }
+
+    /* Skills */
+    .skills-group {
+      font-size: 9pt;
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+    .skills-group strong {
+      color: #0f172a;
+      display: inline-block;
+      width: 170px;
+    }
+
+    /* Signature */
+    .signature-area {
+      margin-top: 25px;
+      font-size: 9pt;
+      color: #334155;
+    }
+    .sig-line {
+      width: 220px;
+      border-bottom: 1px solid #64748b;
+      margin: 18px 0 4px 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-container">
+
+  <!-- ==================== HEADER ==================== -->
+  <div class="header">
+    <div class="header-info">
+      <div class="candidate-name">LAKSHAY NAGPAL</div>
+      <div class="candidate-title">Full-Stack Softwareentwickler / Software Engineer</div>
+      <div class="contact-grid">
+        <div><strong>E-Mail:</strong> <a href="mailto:lakshayn0001@gmail.com">lakshayn0001@gmail.com</a></div>
+        <div><strong>Telefon / WhatsApp:</strong> +91 83959 91957</div>
+        <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/lakshay-nagpal-1a2a0134a/" target="_blank">linkedin.com/in/lakshay-nagpal</a></div>
+        <div><strong>GitHub:</strong> <a href="https://github.com/lakshayn0001" target="_blank">github.com/lakshayn0001</a></div>
+        <div><strong>Portfolio:</strong> <a href="https://lakshayn0001.github.io/Portfolio/" target="_blank">lakshayn0001.github.io/Portfolio</a></div>
+        <div><strong>Standort:</strong> Indien (Vollumfänglich umzugsbereit)</div>
+      </div>
+    </div>
+    <div class="photo-box">
+      <!-- Ersetzen Sie 'photo.jpg' durch Ihren Bildpfad -->
+      <span>Bewerbungs-<br>foto</span>
+    </div>
+  </div>
+
+  <!-- ==================== PERSÖNLICHE DATEN & STATUS ==================== -->
+  <section>
+    <h2>Persönliche Angaben & Status</h2>
+    <table class="personal-table">
+      <tr>
+        <td class="label">Staatsangehörigkeit:</td>
+        <td class="value">Indisch</td>
+      </tr>
+      <tr>
+        <td class="label">Wohnort / Mobilität:</td>
+        <td class="value">Indien (100% umzugsbereit nach Deutschland / EU)</td>
+      </tr>
+      <tr>
+        <td class="label">Arbeitserlaubnis / Visum:</td>
+        <td class="value"><strong>Berechtigt für die Blaue Karte EU</strong> (Erfordert Visumsponsoring; Hochschulabschluss Anabin H+ gelistet)</td>
+      </tr>
+      <tr>
+        <td class="label">Verfügbarkeit / Frist:</td>
+        <td class="value"><strong>Sofort verfügbar</strong> (0 Tage Kündigungsfrist – sofortiger Arbeitsantritt möglich)</td>
+      </tr>
+      <tr>
+        <td class="label">Sprachkenntnisse:</td>
+        <td class="value">
+          <strong>Deutsch:</strong> Grundkenntnisse (A1 in Vorbereitung / hohe Lernbereitschaft) &ensp;|&ensp;
+          <strong>Englisch:</strong> Verhandlungssicher (C1/C2) &ensp;|&ensp;
+          <strong>Hindi:</strong> Muttersprache (C2)
+        </td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- ==================== KURZPROFIL ==================== -->
+  <section>
+    <h2>Kurzprofil</h2>
+    <p class="summary-text">
+      Ergebnisorientierter Full-Stack Softwareentwickler mit 2,8 Jahren solider Unternehmenserfahrung in skalierbaren Web-Architekturen, relationalen SQL-Datenbanken und automatisierter Deployment-Koordination. Versiert im Aufbau performanter End-to-End-Lösungen mit TypeScript, React.js, Next.js, Node.js, PostgreSQL und Docker. Nachgewiesene Erfolge bei der Steuerung von über 50 Produktions-Builds in 15+ Serverumgebungen unter Einhaltung einer Systemverfügbarkeit von über 99,5%. Schnelle Einarbeitung in komplexe Systemworkflows, ausgeprägtes Qualitätsbewusstsein und sofort einsatzbereit für anspruchsvolle Entwicklerteams in Deutschland.
+    </p>
+  </section>
+
+  <!-- ==================== BERUFLICHER WERDEGANG ==================== -->
+  <section>
+    <h2>Beruflicher Werdegang</h2>
+
+    <div class="item-block">
+      <div class="item-header">
+        <span class="item-title">Open Access Technology India Pvt. Ltd. (OATI)</span>
+        <span class="item-period">04/2023 – 01/2026</span>
+      </div>
+      <div class="item-subtitle">
+        <span>Softwareentwickler – Integration / Software Integrator (Vollzeit)</span>
+        <span>Mohali, Indien</span>
+      </div>
+      <div class="item-meta">
+        <strong>Karriereentwicklung:</strong> Software Integrator (ab 01/2025) ← Associate Software Integrator (ab 10/2023) ← Trainee (ab 04/2023) | 
+        <a href="https://drive.google.com/file/d/1V3WUaI4ASQmF7MOENCaoWenCwt1-78oX/view?usp=sharing" target="_blank">Arbeitszeugnis / Experience Letter</a>
+      </div>
+      <ul>
+        <li>Koordination und Automatisierung von Software-Deployments über 15+ heterogene Unternehmensserver-Umgebungen; Reduzierung des manuellen Rollout-Aufwands um ca. 40% pro Release-Zyklus.</li>
+        <li>Steuerung des gesamten Release-Lifecycles für mehr als 50 Produktiv-Builds; Durchführung umfassender Pre-Release-Validierungen zur Gewährleistung einer Hochverfügbarkeit von >99,5% nach dem Rollout.</li>
+        <li>Konzeption und Ausführung von über 100 SQL-Validierungsabfragen sowie Schema-Migrationsskripten zur Vermeidung von Schema-Inkonsistenzen und zur Sicherung absoluter Produktionsdatenintegrität.</li>
+        <li>Tiefgehende Ursachenanalyse (Root-Cause Analysis) für kritische Deployment-Blocker durch Auswertung von System-Logs und REST-API-Payloads; Reduzierung der mittleren Wiederherstellungszeit (MTTR) um ca. 30%.</li>
+        <li>Erstellung und Pflege präziser Server-Inventarisierungen und Konfigurationsübersichten zur Unterstützung von Hochverfügbarkeits-Architekturen.</li>
+      </ul>
+      <div class="tech-stack"><strong>Technologien:</strong> SQL, REST-APIs, Linux, Release-Management, Systemanalyse, Datenbankmigrationen</div>
+    </div>
+
+    <div class="item-block" style="margin-top: 10px;">
+      <div class="item-header">
+        <span class="item-title">Geekster</span>
+        <span class="item-period">01/2022 – 06/2022</span>
+      </div>
+      <div class="item-subtitle">
+        <span>Praktikant Lehrassistent / Intern Teaching Assistant Engineer</span>
+        <span>Remote, Indien</span>
+      </div>
+      <div class="item-meta">
+        <a href="https://drive.google.com/file/d/1rsVBAD43JQncRFX5xs_6V71Au6KGY20u/view?usp=sharing" target="_blank">Zertifikat & Empfehlungsschreiben einsehen</a>
+      </div>
+      <ul>
+        <li>Fachliche Betreuung und Mentoring einer Kohorte von über 40 angehenden Entwicklern in modernen Frontend-Technologien (JavaScript, React.js, HTML5, CSS3); Erzielung einer Kursabschlussquote von über 85%.</li>
+        <li>Leitung von mehr als 25 praxisnahen Live-Debugging-Sessions und Code-Reviews zur Behebung komplexer algorithmischer Problemstellungen und State-Management-Herausforderungen.</li>
+        <li>Vermittlung industrieller Best Practices bezüglich REST-API-Integration, responsivem Webdesign und modularer Komponenten-Wiederverwendbarkeit.</li>
+      </ul>
+      <div class="tech-stack"><strong>Technologien:</strong> JavaScript (ES6+), React.js, HTML5, CSS3, REST-APIs, Git</div>
+    </div>
+  </section>
+
+  <!-- ==================== SEITE 2 / PAGE BREAK ==================== -->
+  <div class="page-break"></div>
+
+  <!-- ==================== AUSGEWÄHLTE PRAXISPROJEKTE ==================== -->
+  <section>
+    <h2>Ausgewählte Praxisprojekte</h2>
+
+    <div class="item-block">
+      <div class="item-header">
+        <span class="item-title">Real-Time Chat Application</span>
+        <span class="item-period">
+          <a href="https://github.com/lakshayn0001/Chat-Application" target="_blank" style="color: #0e366b; font-size: 8.5pt; text-decoration: none; font-weight: 600;">GitHub</a> | 
+          <a href="https://chat-application-blush-phi.vercel.app/" target="_blank" style="color: #0e366b; font-size: 8.5pt; text-decoration: none; font-weight: 600;">Live-Demo</a>
+        </span>
+      </div>
+      <div class="item-subtitle">Full-Stack Echtzeit-Kommunikationsplattform</div>
+      <ul>
+        <li>Architektur und Implementierung einer hochparallelen Echtzeit-Messaging-Plattform mit bidirektionalen Kommunikationsstreams via Socket.IO und WebSockets; Latenz unter 100ms für Nachrichtenzustellung und Live-Präsenz.</li>
+        <li>Design und Optimierung eines relationalen PostgreSQL-Datenbankschemas mit Prisma ORM; Abfrage und Indizierung des Konversationsverlaufs in unter 50ms.</li>
+        <li>Containerisierung aller Microservices mit Docker und Konfiguration produktionsreifer Kubernetes-Manifeste (Ingress, ConfigMaps, Secrets, Deployments).</li>
+      </ul>
+      <div class="tech-stack"><strong>Stack:</strong> Next.js 16 (App Router), TypeScript, PostgreSQL, Prisma ORM, Socket.IO, WebSockets, NextAuth, Docker, Kubernetes</div>
+    </div>
+
+    <div class="item-block" style="margin-top: 8px;">
+      <div class="item-header">
+        <span class="item-title">AI Data Analytics Dashboard</span>
+        <span class="item-period">
+          <a href="https://github.com/lakshayn0001/AI_Data_Analyst_Dashboard" target="_blank" style="color: #0e366b; font-size: 8.5pt; text-decoration: none; font-weight: 600;">GitHub</a> | 
+          <a href="https://ai-data-analyst-dashboard-orcin.vercel.app/" target="_blank" style="color: #0e366b; font-size: 8.5pt; text-decoration: none; font-weight: 600;">Live-Demo</a>
+        </span>
+      </div>
+      <div class="item-subtitle">KI-gestützte Datenanalyse- & Visualisierungsplattform</div>
+      <ul>
+        <li>Entwicklung einer intuitiven KI-Analyseplattform zur schnellen Verarbeitung mehr-megabytegroßer CSV-Datensätze in unter 2 Sekunden mit natürlichsprachiger Abfragefunktion.</li>
+        <li>Konzeption einer schema-bewussten Pipeline unter Anbindung der Google Gemini API zur dynamischen Generierung und Ausführung valider MongoDB-Queries; Reduzierung der manuellen Analysezeit um 80%.</li>
+        <li>Implementierung modularer REST-APIs mit Multer für stream-basierte Dateiverarbeitung sowie Visualisierung relevanter Kennzahlen über 6+ interaktive Chart.js-Diagramme.</li>
+      </ul>
+      <div class="tech-stack"><strong>Stack:</strong> React.js (Vite), Node.js, Express.js, MongoDB, Mongoose, Google Gemini AI API, Multer, Chart.js, Tailwind CSS</div>
+    </div>
+  </section>
+
+  <!-- ==================== AUSBILDUNG & AKADEMISCHER WERDEGANG ==================== -->
+  <section>
+    <h2>Ausbildung & Akademischer Werdegang</h2>
+    <div class="item-block">
+      <div class="item-header">
+        <span class="item-title">Maharshi Dayanand University</span>
+        <span class="item-period">2019 – 2023</span>
+      </div>
+      <div class="item-subtitle">Bachelor of Technology (B.Tech.) in Informatik / Computer Science</div>
+      <div style="font-size: 9pt; color: #334155; margin-top: 3px; line-height: 1.45;">
+        <div><strong>Abschlussnote:</strong> CGPA 7,2 / 10 &ensp;→&ensp; <strong>Entspricht ca. Note 2,4 im deutschen Notensystem (Prädikat: „Gut“</strong> nach der offiziellen bayerischen Formel).</div>
+        <div><strong>Anerkennung in Deutschland:</strong> <strong>Staatlich anerkannte Hochschule mit Status H+ in der Anabin-Datenbank</strong> (ZAB) – voll anerkannt für das beschleunigte Fachkräfteverfahren und die Blaue Karte EU.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ZERTIFIKATE & WEITERBILDUNG ==================== -->
+  <section>
+    <h2>Zertifikate & Weiterbildung</h2>
+    <div style="font-size: 9pt; color: #334155; line-height: 1.45;">
+      <div>
+        <strong>React JS Certificate</strong> – Geekster (2022) | 
+        <a href="https://drive.google.com/file/d/1rsVBAD43JQncRFX5xs_6V71Au6KGY20u/view?usp=sharing" target="_blank" style="color: #0e366b; font-weight: 600; text-decoration: none;">Zertifikat ansehen</a>
+      </div>
+      <div style="margin-top: 3px;">
+        <strong>Kontinuierliche Weiterbildung:</strong> Containerisierung & Orchestrierung mit Docker & Kubernetes (K8s Manifeste), Cloud-Services mit Microsoft Azure.
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== IT-KENNTNISSE ==================== -->
+  <section>
+    <h2>IT-Kenntnisse & Fachkompetenzen</h2>
+    <div class="skills-group"><strong>Programmiersprachen:</strong> JavaScript (ES6+), TypeScript, SQL, Python, HTML5, CSS3</div>
+    <div class="skills-group"><strong>Frontend-Entwicklung:</strong> React.js, Next.js (App Router), Tailwind CSS, Redux Toolkit, Chart.js</div>
+    <div class="skills-group"><strong>Backend & APIs:</strong> Node.js, Express.js, RESTful APIs, JWT Authentifizierung, WebSockets, Socket.IO</div>
+    <div class="skills-group"><strong>Datenbanken & ORM:</strong> PostgreSQL, Prisma ORM, MongoDB, Mongoose</div>
+    <div class="skills-group"><strong>DevOps & Tools:</strong> Docker, Docker Compose, Kubernetes (K8s Manifeste), Git, GitHub, Postman, Linux, VS Code</div>
+    <div class="skills-group"><strong>KI & Real-Time:</strong> Google Gemini AI API, LLM-Abfrage-Pipelines, Prompt Engineering</div>
+  </section>
+
+  <!-- ==================== ORT, DATUM & UNTERSCHRIFT ==================== -->
+  <div class="signature-area">
+    <div>Indien, 8. September 2026</div>
+    <div class="sig-line"></div>
+    <div style="font-size: 8.8pt; font-weight: 600; color: #1e293b;">Lakshay Nagpal</div>
+  </div>
+
+</div>
+
+</body>
+</html>

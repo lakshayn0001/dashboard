@@ -1,0 +1,33 @@
+# Sensitive personal identity documents (Do NOT commit)
+*.pdf
+*.jpg
+*.jpeg
+*.png
+Date_of_Birth_Certificate*
+birth_certificate*
+Left_Thumb_Impression*
+passport_photo*
+signature_output/
+desktop_cassette_wallpaper.jpg
+
+# Development environments and system artifacts
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.vscode/
+.idea/
+
+# Internal bot systems and candidate notes
+multi-bot-system/
+grok-bot-army/
+*.ipynb
+AI_CAREER_PROMPT.md
+CANDIDATE_DOSSIER.md
+GEMINI.md
+GERMANY_MBA_AND_TECH_MASTERS_STRATEGY.md
+GROK_CAREER_BOT.md
+resume.tex
+lebenslauf_de.tex
+test.txt
+test_file.txt

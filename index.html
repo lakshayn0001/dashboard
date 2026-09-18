@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lakshay Nagpal | Engineering & Academic Roadmap Dashboard</title>
+  <meta name="description" content="Centralized developer hub and academic admissions roadmap for Lakshay Nagpal - German Master's Evaluations, Production TypeScript Curriculum, and Full-Stack Engineering Showcase.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              900: '#1e3a8a',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Menlo', 'Monaco', 'Courier New', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: #0b0f19;
+      color: #e2e8f0;
+    }
+    .glow-radial {
+      background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15), transparent 70%);
+    }
+    .glow-card {
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glow-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 35px -10px rgba(59, 130, 246, 0.2);
+    }
+    .glass-nav {
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #0f172a; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #475569; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-blue-600 selection:text-white">
+
+  <!-- Top Glass Navigation Bar -->
+  <header class="sticky top-0 z-40 w-full border-b border-slate-800 glass-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-black text-white text-lg shadow-md shadow-blue-500/20">
+          LN
+        </div>
+        <div>
+          <span class="font-bold text-white text-base tracking-tight block">Lakshay Nagpal</span>
+          <span class="text-xs text-slate-400 font-mono flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Full-Stack Engineer &amp; Masters Aspirant
+          </span>
+        </div>
+      </div>
+
+      <!-- Quick Action Badges / Links -->
+      <nav class="hidden md:flex items-center gap-2 text-sm font-medium">
+        <a href="#german-portal" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all">🇩🇪 German Unis</a>
+        <a href="#ts-guide" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all">⚡ TypeScript Guide</a>
+        <a href="#lebenslauf" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all">📄 Lebenslauf (CV)</a>
+        <a href="#projects" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all">💻 Projects</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a href="https://github.com/lakshayn0001" target="_blank" rel="noreferrer" class="p-2 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-all" title="GitHub Profile">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
+        </a>
+        <a href="https://lakshayn0001.github.io/Portfolio/" target="_blank" rel="noreferrer" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-sm shadow-blue-500/30 transition-all">
+          <span>Portfolio</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero & Statistics Section -->
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+
+    <section class="glow-radial pt-4 pb-6 text-center space-y-4">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-semibold uppercase tracking-wider">
+        <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+        Interactive Resource Launchpad &amp; Portal
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+        Engineering &amp; Academic <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400">Control Center</span>
+      </h1>
+      <p class="max-w-2xl mx-auto text-slate-400 text-sm sm:text-base leading-relaxed">
+        Unified portal hosting the complete German Universities Postgraduate Admission Engine, the 14,000+ line Production TypeScript &amp; System Architecture Curriculum, and full-stack cloud projects.
+      </p>
+
+      <!-- Key Profile Metric Highlights -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl mx-auto pt-6">
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
+          <div class="text-xs font-medium text-slate-400">German Grade Benchmark</div>
+          <div class="text-xl sm:text-2xl font-black text-emerald-400 mt-1">2.47 <span class="text-xs font-normal text-slate-300">("Gut")</span></div>
+          <div class="text-[11px] text-slate-500 mt-0.5">B.Tech 70.56% (MDU Rohtak)</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
+          <div class="text-xs font-medium text-slate-400">Core CS Equivalency</div>
+          <div class="text-xl sm:text-2xl font-black text-blue-400 mt-1">~70 ECTS</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">Direct Consecutive Eligibility</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
+          <div class="text-xs font-medium text-slate-400">TypeScript Curriculum</div>
+          <div class="text-xl sm:text-2xl font-black text-indigo-400 mt-1">14,700+</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">Lines of In-Depth Code &amp; Theory</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
+          <div class="text-xs font-medium text-slate-400">Notice Period</div>
+          <div class="text-xl sm:text-2xl font-black text-amber-400 mt-1">0 Days</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">Immediate Joiner (Full-Stack)</div>
+        </div>
+      </div>
+
+      <!-- Live Search & Filter Bar -->
+      <div class="max-w-2xl mx-auto pt-4 flex flex-col sm:flex-row gap-2">
+        <div class="relative flex-grow">
+          <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </div>
+          <input type="text" id="searchInput" oninput="filterCards()" placeholder="Search universities, ECTS, generics, AST, Socket.IO, Passau..." class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all">
+        </div>
+        <div class="flex items-center gap-1.5 overflow-x-auto justify-center">
+          <button onclick="setFilter('all', this)" class="filter-tag active px-3 py-2 rounded-xl text-xs font-semibold bg-blue-600 text-white transition-all">All</button>
+          <button onclick="setFilter('academics', this)" class="filter-tag px-3 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition-all">Academics</button>
+          <button onclick="setFilter('typescript', this)" class="filter-tag px-3 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition-all">TypeScript</button>
+          <button onclick="setFilter('projects', this)" class="filter-tag px-3 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition-all">Projects</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Applications & Resource Showcase Grid -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="cardsGrid">
+
+      <!-- Card 1: German Universities Postgraduate Strategic Evaluation -->
+      <article id="german-portal" data-category="academics" data-keywords="germany master masters university universities passau siegen deggendorf hildesheim ects aps blue card tum tu9 rwth dortmund frankfurt tu berlin daad" class="resource-card glow-card rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6 sm:p-8 flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="flex items-start justify-between gap-3 flex-wrap">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+              <span>🇩🇪</span> M.Sc. Admissions Engine (2026/27)
+            </div>
+            <span class="text-xs font-mono text-slate-400 bg-slate-800/80 px-2.5 py-1 rounded-md border border-slate-700">70.8 KB • Interactive</span>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-extrabold text-white tracking-tight flex items-center gap-2">
+              German Universities Postgraduate Strategic Evaluation
+            </h2>
+            <p class="text-slate-300 text-sm mt-2 leading-relaxed">
+              Exhaustive analysis comparing consecutive <strong class="text-white">€0-tuition M.Sc. Computer Science</strong> vs. high-debt private MBAs. Features an interactive filter for Safe, Realistic, and Ambitious universities, exact ECTS matching criteria, APS certification milestones, and EU Blue Card residency pathways.
+            </p>
+          </div>
+
+          <!-- Feature Highlights Tags -->
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700 text-xs text-slate-300">🎯 Passau (Cutoff 2.7 - Strong Match)</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700 text-xs text-slate-300">🏛️ Siegen (No NC / Direct Eligible)</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700 text-xs text-slate-300">⚙️ TH Deggendorf (Aptitude Exam)</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700 text-xs text-slate-300">💶 €0 Tuition Public University Focus</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700 text-xs text-slate-300">📑 Complete APS &amp; Blocked Account Guide</span>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="pt-8 border-t border-slate-800/80 mt-6 flex flex-wrap items-center gap-3">
+          <a href="german_universities_evaluation.html" class="flex-1 min-w-[160px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm shadow-md shadow-blue-500/20 transition-all">
+            <span>Launch Roadmap</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+          <button onclick="openPreview('german_universities_evaluation.html', 'German Universities Strategic Roadmap')" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-sm transition-all">
+            <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+            <span>Preview</span>
+          </button>
+          <button onclick="copyFileLink('german_universities_evaluation.html')" class="p-2.5 rounded-xl bg-slate-800/60 hover:bg-slate-700 text-slate-400 hover:text-slate-200 transition-all" title="Copy Direct URL">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+          </button>
+        </div>
+      </article>
+
+      <!-- Card 2: Production TypeScript Curriculum & Interview Mastery Guide -->
+      <article id="ts-guide" data-category="typescript" data-keywords="typescript curriculum guide interview types generics type gymnastics ast compiler architecture microservices patterns leetcode full-stack node react deep dive" class="resource-card glow-card rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6 sm:p-8 flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="flex items-start justify-between gap-3 flex-wrap">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-xs font-bold uppercase tracking-wider">
+              <span>⚡</span> Production TypeScript Mastery
+            </div>
+            <span class="text-xs font-mono text-slate-400 bg-slate-800/80 px-2.5 py-1 rounded-md border border-slate-700">751 KB • 14,700+ Lines</span>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-extrabold text-white tracking-tight flex items-center gap-2">
+              TypeScript Full-Stack Curriculum &amp; Interview Mastery
+            </h2>
+            <p class="text-slate-300 text-sm mt-2 leading-relaxed">
+              Exhaustive engineering manual spanning the entire spectrum of modern TypeScript: advanced generics, conditional and mapped types, compiler AST transformations, memory leak profiling, distributed microservices, and FAANG-grade coding interviews.
+            </p>
+          </div>
+
+          <!-- Feature Highlights Tags -->
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700 text-xs text-slate-300">🧩 Type Gymnastics &amp; Mapped Types</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700 text-xs text-slate-300">🌳 TypeScript Compiler API &amp; AST</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700 text-xs text-slate-300">🏗️ Scalable Microservices Architecture</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700 text-xs text-slate-300">💡 LeetCode &amp; System Design Patterns</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700 text-xs text-slate-300">🎨 Light/Dark Interactive Themes Built-in</span>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="pt-8 border-t border-slate-800/80 mt-6 flex flex-wrap items-center gap-3">
+          <a href="typescript_curriculum.html" class="flex-1 min-w-[160px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm shadow-md shadow-indigo-500/20 transition-all">
+            <span>Open Curriculum Guide</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+          <button onclick="openPreview('typescript_curriculum.html', 'TypeScript Full-Stack Curriculum')" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-sm transition-all">
+            <svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+            <span>Preview</span>
+          </button>
+          <button onclick="copyFileLink('typescript_curriculum.html')" class="p-2.5 rounded-xl bg-slate-800/60 hover:bg-slate-700 text-slate-400 hover:text-slate-200 transition-all" title="Copy Direct URL">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+          </button>
+        </div>
+      </article>
+
+      <!-- Card 3: German Lebenslauf (DIN 5008 CV) -->
+      <article id="lebenslauf" data-category="academics" data-keywords="lebenslauf resume cv german din 5008 lakshay nagpal profile education full stack experience mdu rohtak" class="resource-card glow-card rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6 sm:p-8 flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="flex items-start justify-between gap-3 flex-wrap">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-purple-500/10 border border-purple-500/30 text-purple-400 text-xs font-bold uppercase tracking-wider">
+              <span>📄</span> DIN 5008 German Standard
+            </div>
+            <span class="text-xs font-mono text-slate-400 bg-slate-800/80 px-2.5 py-1 rounded-md border border-slate-700">A4 Format • Print Ready</span>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-extrabold text-white tracking-tight flex items-center gap-2">
+              German Lebenslauf (Curriculum Vitae)
+            </h2>
+            <p class="text-slate-300 text-sm mt-2 leading-relaxed">
+              Standardized German CV formatted specifically for DACH engineering recruiters and university admission committees. Includes verified B.Tech marks, verified semester breakdown, production tech stack, and key project repositories.
+            </p>
+          </div>
+
+          <!-- Feature Highlights Tags -->
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700 text-xs text-slate-300">📋 DIN 5008 German Compliant Layout</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700 text-xs text-slate-300">🎓 Complete 8-Semester Marks Breakdown</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700 text-xs text-slate-300">💼 Project Links with Live Demonstrations</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700 text-xs text-slate-300">🖨️ 1-Click Browser Print &amp; PDF Export</span>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="pt-8 border-t border-slate-800/80 mt-6 flex flex-wrap items-center gap-3">
+          <a href="lebenslauf_de.html" class="flex-1 min-w-[160px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-semibold text-sm shadow-md shadow-purple-500/20 transition-all">
+            <span>View Lebenslauf</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+          <button onclick="openPreview('lebenslauf_de.html', 'German Lebenslauf (CV)')" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-sm transition-all">
+            <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+            <span>Preview</span>
+          </button>
+          <button onclick="copyFileLink('lebenslauf_de.html')" class="p-2.5 rounded-xl bg-slate-800/60 hover:bg-slate-700 text-slate-400 hover:text-slate-200 transition-all" title="Copy Direct URL">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+          </button>
+        </div>
+      </article>
+
+      <!-- Card 4: Production Cloud Applications & Open-Source Codebases -->
+      <article id="projects" data-category="projects" data-keywords="projects real-time chat application ai data analyst dashboard portfolio react nextjs socketio postgresql prisma docker kubernetes vercel" class="resource-card glow-card rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6 sm:p-8 flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="flex items-start justify-between gap-3 flex-wrap">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-wider">
+              <span>💻</span> Production Cloud Deployments
+            </div>
+            <span class="text-xs font-mono text-slate-400 bg-slate-800/80 px-2.5 py-1 rounded-md border border-slate-700">Full-Stack Repositories</span>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-extrabold text-white tracking-tight flex items-center gap-2">
+              Cloud Applications &amp; Projects
+            </h2>
+            <p class="text-slate-300 text-sm mt-2 leading-relaxed">
+              Production engineering systems designed for scale, real-time communication, and AI analytical automation.
+            </p>
+          </div>
+
+          <!-- Featured Project List -->
+          <div class="space-y-3 pt-2">
+            <!-- Project 1 -->
+            <div class="p-3.5 rounded-xl bg-slate-800/50 border border-slate-800 hover:border-slate-700 transition-all flex items-center justify-between gap-3">
+              <div>
+                <div class="text-sm font-bold text-white flex items-center gap-2">
+                  <span>Real-Time Chat Engine</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono">Sub-100ms</span>
+                </div>
+                <div class="text-xs text-slate-400 mt-0.5">Next.js 16, TypeScript, Socket.IO, PostgreSQL, Prisma, Docker, K8s</div>
+              </div>
+              <div class="flex items-center gap-2">
+                <a href="https://chat-application-blush-phi.vercel.app/" target="_blank" rel="noreferrer" class="px-2.5 py-1 rounded bg-blue-600/80 hover:bg-blue-600 text-white text-xs font-semibold">Demo</a>
+                <a href="https://github.com/lakshayn0001/Chat-Application" target="_blank" rel="noreferrer" class="p-1.5 rounded bg-slate-700 hover:bg-slate-600 text-slate-300 hover:text-white" title="GitHub">
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="p-3.5 rounded-xl bg-slate-800/50 border border-slate-800 hover:border-slate-700 transition-all flex items-center justify-between gap-3">
+              <div>
+                <div class="text-sm font-bold text-white flex items-center gap-2">
+                  <span>AI Data Analytics Dashboard</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-mono">Gemini AI</span>
+                </div>
+                <div class="text-xs text-slate-400 mt-0.5">React.js, Node.js, Express, MongoDB, Gemini 1.5 API, Chart.js</div>
+              </div>
+              <div class="flex items-center gap-2">
+                <a href="https://ai-data-analyst-dashboard-orcin.vercel.app/" target="_blank" rel="noreferrer" class="px-2.5 py-1 rounded bg-blue-600/80 hover:bg-blue-600 text-white text-xs font-semibold">Demo</a>
+                <a href="https://github.com/lakshayn0001/AI_Data_Analyst_Dashboard" target="_blank" rel="noreferrer" class="p-1.5 rounded bg-slate-700 hover:bg-slate-600 text-slate-300 hover:text-white" title="GitHub">
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="p-3.5 rounded-xl bg-slate-800/50 border border-slate-800 hover:border-slate-700 transition-all flex items-center justify-between gap-3">
+              <div>
+                <div class="text-sm font-bold text-white flex items-center gap-2">
+                  <span>Interactive Engineering Portfolio</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 font-mono">React / Tailwind</span>
+                </div>
+                <div class="text-xs text-slate-400 mt-0.5">Comprehensive interactive profile, skills matrix, and project showcase</div>
+              </div>
+              <div class="flex items-center gap-2">
+                <a href="https://lakshayn0001.github.io/Portfolio/" target="_blank" rel="noreferrer" class="px-2.5 py-1 rounded bg-purple-600/80 hover:bg-purple-600 text-white text-xs font-semibold">Live</a>
+                <a href="https://github.com/lakshayn0001/Portfolio" target="_blank" rel="noreferrer" class="p-1.5 rounded bg-slate-700 hover:bg-slate-600 text-slate-300 hover:text-white" title="GitHub">
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Footer -->
+        <div class="pt-6 border-t border-slate-800/80 mt-6 flex items-center justify-between">
+          <a href="https://github.com/lakshayn0001?tab=repositories" target="_blank" rel="noreferrer" class="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1.5 transition-colors">
+            <span>Explore all repositories on GitHub</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+          </a>
+          <span class="text-xs text-slate-500 font-mono">Open Source</span>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- GitHub Pages Deployment Notice & Instructions Callout -->
+    <section class="rounded-2xl bg-slate-900/60 border border-slate-800 p-6 sm:p-8">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div class="space-y-1">
+          <div class="text-xs font-bold uppercase tracking-wider text-blue-400 flex items-center gap-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            Instant Cloud Access Anywhere
+          </div>
+          <h3 class="text-lg font-bold text-white">Deployed on GitHub Pages for 24/7 Availability</h3>
+          <p class="text-xs text-slate-400 max-w-2xl">
+            This dashboard serves as the root <code class="text-blue-300 bg-slate-800 px-1 py-0.5 rounded">index.html</code> for GitHub Pages. Access your complete German University evaluations, TypeScript curriculum, and CV from any phone, laptop, or browser worldwide.
+          </p>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="https://github.com/lakshayn0001/dashboard" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 transition-all">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
+            <span>GitHub Repository</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Interactive Fullscreen / In-Page Preview Modal -->
+  <div id="previewModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-md flex flex-col items-center justify-center p-2 sm:p-6">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-6xl h-[92vh] flex flex-col shadow-2xl overflow-hidden">
+      <!-- Modal Header -->
+      <div class="px-5 py-3.5 border-b border-slate-800 bg-slate-900/90 flex items-center justify-between gap-4">
+        <div class="flex items-center gap-2.5 overflow-hidden">
+          <span class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
+          <span id="previewTitle" class="font-bold text-sm sm:text-base text-white truncate">Preview</span>
+          <span id="previewUrlBadge" class="hidden sm:inline-block font-mono text-[11px] text-slate-400 bg-slate-800 px-2 py-0.5 rounded"></span>
+        </div>
+        <div class="flex items-center gap-2">
+          <a id="previewExternalLink" href="#" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold transition-all">
+            <span>Open in Tab</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+          </a>
+          <button onclick="closePreview()" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-all" title="Close (Esc)">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+          </button>
+        </div>
+      </div>
+      <!-- Modal Iframe Container -->
+      <div class="flex-grow w-full h-full bg-white relative">
+        <iframe id="previewIframe" src="about:blank" class="w-full h-full border-0"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 hidden px-4 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white text-xs font-semibold shadow-xl flex items-center gap-2">
+    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+    <span id="toastMsg">Link copied to clipboard!</span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800/80 bg-[#090d16] py-8 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 space-y-2">
+      <div class="flex justify-center items-center gap-4 text-slate-400">
+        <a href="https://github.com/lakshayn0001" target="_blank" rel="noreferrer" class="hover:text-blue-400 transition-colors">GitHub</a>
+        <span>•</span>
+        <a href="https://lakshayn0001.github.io/Portfolio/" target="_blank" rel="noreferrer" class="hover:text-blue-400 transition-colors">Developer Portfolio</a>
+        <span>•</span>
+        <a href="mailto:lakshayn0001@gmail.com" class="hover:text-blue-400 transition-colors">Contact</a>
+      </div>
+      <p>&copy; 2026 Lakshay Nagpal. Configured for GitHub Pages deployment.</p>
+    </div>
+  </footer>
+
+  <!-- Interactive Scripts -->
+  <script>
+    // Search Filtering Function
+    function filterCards() {
+      const q = document.getElementById('searchInput').value.toLowerCase().trim();
+      const cards = document.querySelectorAll('.resource-card');
+      cards.forEach(card => {
+        const text = (card.getAttribute('data-keywords') || '') + ' ' + card.innerText.toLowerCase();
+        if (!q || text.includes(q)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Category Filter Function
+    function setFilter(cat, btn) {
+      document.querySelectorAll('.filter-tag').forEach(b => {
+        b.classList.remove('bg-blue-600', 'text-white');
+        b.classList.add('bg-slate-800', 'text-slate-300');
+      });
+      btn.classList.remove('bg-slate-800', 'text-slate-300');
+      btn.classList.add('bg-blue-600', 'text-white');
+
+      const cards = document.querySelectorAll('.resource-card');
+      cards.forEach(card => {
+        const cCat = card.getAttribute('data-category');
+        if (cat === 'all' || cCat === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // In-Page Preview Modal Controls
+    function openPreview(url, title) {
+      const modal = document.getElementById('previewModal');
+      const iframe = document.getElementById('previewIframe');
+      const titleEl = document.getElementById('previewTitle');
+      const badgeEl = document.getElementById('previewUrlBadge');
+      const externalLink = document.getElementById('previewExternalLink');
+
+      titleEl.innerText = title;
+      badgeEl.innerText = url;
+      externalLink.href = url;
+      iframe.src = url;
+
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePreview() {
+      const modal = document.getElementById('previewModal');
+      const iframe = document.getElementById('previewIframe');
+      modal.classList.add('hidden');
+      iframe.src = 'about:blank';
+      document.body.style.overflow = 'auto';
+    }
+
+    // Keyboard ESC listener
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closePreview();
+    });
+
+    // Copy File Link Helper
+    function copyFileLink(fileName) {
+      const fullUrl = new URL(fileName, window.location.href).href;
+      navigator.clipboard.writeText(fullUrl).then(() => {
+        showToast(`Copied link to ${fileName}`);
+      }).catch(() => {
+        showToast(`Link: ${fullUrl}`);
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.innerText = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 2500);
+    }
+  </script>
+</body>
+</html>
