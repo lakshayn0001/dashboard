@@ -113,11 +113,17 @@
         </p>
 
         <!-- Golden Rule Callout -->
-        <div class="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-200 text-xs sm:text-sm font-medium flex items-start gap-3">
-          <svg class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          <div>
-            <strong class="text-white">The Golden Rule:</strong> Start Monday with <strong>Arithmetic Percentages + 1 Daily RC + 1 Table DILR set</strong>. Do not jump to Geometry or Para Jumbles in week 1.
+        <div class="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-200 text-xs sm:text-sm font-medium flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <div>
+              <strong class="text-white">The Golden Rule:</strong> Start Monday with <strong>Arithmetic Percentages + 1 Daily RC + 1 Table DILR set</strong>. Do not jump to Geometry or Para Jumbles in week 1.
+            </div>
           </div>
+          <button onclick="playAudioSummary(this, 'CAT 2026 Golden Rule & Start Order', 'Welcome to the CAT 2026 roadmap. The golden rule is: start Monday with Arithmetic Percentages, one daily Reading Comprehension passage from Aeon or The Hindu, and one table-based DILR set. Never jump into Geometry or Para Jumbles during week one.')" class="audio-brief-btn self-start sm:self-auto flex-shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 text-xs font-semibold transition-all">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+            <span class="audio-label" data-default-label="Listen Brief (25s)">Listen Brief (25s)</span>
+          </button>
         </div>
       </div>
 
@@ -157,7 +163,13 @@
             Does IIM or IIT Publish an Official CAT Syllabus?
           </h2>
         </div>
-        <span class="text-xs font-mono px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 self-start sm:self-auto">Official Fact Check</span>
+        <div class="flex items-center gap-2 flex-wrap">
+          <button onclick="playAudioSummary(this, 'Official IIM & IIT Syllabus Truth', 'Official Syllabus Fact Check: Neither the conducting IIMs nor participating IITs release an official chapter-wise syllabus book. They only define the 3-section 40-minute test structure. This roadmap presents an empirical syllabus reverse-engineered from 2017 through 2025 actual exam slots. Furthermore, IIT management departments give strong weight to four-year B.Tech CSE degrees, making them optimal targets in the 93 to 96 percentile band.')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 border border-amber-500/30 text-xs font-semibold transition-all">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+            <span class="audio-label" data-default-label="Listen Brief (30s)">Listen Brief (30s)</span>
+          </button>
+          <span class="text-xs font-mono px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40">Official Fact Check</span>
+        </div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
@@ -209,13 +221,17 @@
 
     <!-- SECTION 1: Test Structure Table -->
     <section id="structure" class="space-y-4">
-      <div class="flex items-center justify-between">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
           <h2 class="text-xl font-bold text-white flex items-center gap-2">
             <span>⏱️</span> Official Test Architecture (66 Questions • 120 Minutes)
           </h2>
           <p class="text-xs text-slate-400">Strict 40-minute timer per section. You cannot switch between sections.</p>
         </div>
+        <button onclick="playAudioSummary(this, 'CAT Test Architecture', 'Test Architecture: 66 questions in 120 minutes with strict 40-minute locked timers per section. VARC has 24 questions, DILR has 22 questions, and Quantitative Ability has 22 questions. Correct answers earn plus 3 marks, while wrong MCQs lose 1 mark. Non-MCQ TITA questions carry zero negative penalty.')" class="audio-brief-btn self-start sm:self-auto inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-500/15 hover:bg-blue-500/25 text-blue-300 border border-blue-500/30 text-xs font-semibold transition-all">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+          <span class="audio-label" data-default-label="Listen Brief (20s)">Listen Brief (20s)</span>
+        </button>
       </div>
 
       <div class="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-900/60">
@@ -258,12 +274,18 @@
 
     <!-- SECTION 2: 4-Step Practice Loop -->
     <section id="loop" class="rounded-2xl bg-slate-900/60 border border-slate-800 p-6 sm:p-8 space-y-6">
-      <div>
-        <div class="text-emerald-400 text-xs font-bold uppercase tracking-wider">The Execution Blueprint</div>
-        <h2 class="text-2xl font-extrabold text-white tracking-tight mt-1">
-          The Universal 4-Step Study Loop (For Every Single Topic)
-        </h2>
-        <p class="text-xs text-slate-400 mt-1">Do NOT watch 10 videos and call it study. Follow this strict sequence:</p>
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <div class="text-emerald-400 text-xs font-bold uppercase tracking-wider">The Execution Blueprint</div>
+          <h2 class="text-2xl font-extrabold text-white tracking-tight mt-1">
+            The Universal 4-Step Study Loop (For Every Single Topic)
+          </h2>
+          <p class="text-xs text-slate-400 mt-1">Do NOT watch 10 videos and call it study. Follow this strict sequence:</p>
+        </div>
+        <button onclick="playAudioSummary(this, 'The Universal 4-Step Study Loop', 'The 4-Step Daily Study Loop: Step 1, learn the concept with one targeted video for 30 to 40 minutes. Step 2, solve 15 to 25 foundational problems untimed. Step 3, solve 10 to 15 real CAT previous-year questions. Step 4, log your mistakes in an error notebook with root causes. Never binge multiple videos without solving.')" class="audio-brief-btn self-start sm:self-auto inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/30 text-xs font-semibold transition-all">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+          <span class="audio-label" data-default-label="Listen Brief (25s)">Listen Brief (25s)</span>
+        </button>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -340,7 +362,13 @@
             <h3 class="text-xl font-bold text-white mt-1">Verbal Ability &amp; Reading Comprehension (24 Questions)</h3>
             <p class="text-xs text-slate-400 mt-0.5">RC is the real exam (~16 Qs, 4 passages). VA is 6–8 high-accuracy questions.</p>
           </div>
-          <span class="text-xs font-mono text-slate-400">40 Minutes Locked</span>
+          <div class="flex items-center gap-2">
+            <button onclick="playAudioSummary(this, 'VARC Section Strategy', 'Verbal Ability and Reading Comprehension: Reading Comprehension makes up 16 questions across 4 passages on philosophy, psychology, economics, and history. Read daily from Aeon Essays and The Hindu. Verbal Ability provides 8 questions: Para Summary, Sentence Insertion, and Odd Sentence Out. Skip grammar drills and vocabulary lists.')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-500/15 hover:bg-blue-500/25 text-blue-300 border border-blue-500/30 text-xs font-semibold transition-all">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+              <span class="audio-label" data-default-label="Listen Brief (25s)">Listen Brief (25s)</span>
+            </button>
+            <span class="text-xs font-mono text-slate-400">40 Min Locked</span>
+          </div>
         </div>
 
         <div class="p-6 space-y-6">
@@ -451,7 +479,13 @@
             <h3 class="text-xl font-bold text-white mt-1">Data Interpretation &amp; Logical Reasoning (22 Questions)</h3>
             <p class="text-xs text-slate-400 mt-0.5">Paper presents 4 or 5 SETS. Your entire goal is to identify and complete 2 CLEAN sets (90+ percentile benchmark).</p>
           </div>
-          <span class="text-xs font-mono text-slate-400">40 Minutes Locked</span>
+          <div class="flex items-center gap-2">
+            <button onclick="playAudioSummary(this, 'DILR Section Strategy & 12-Minute Rule', 'Data Interpretation and Logical Reasoning: The exam gives you 4 or 5 sets. Your target is to complete 2 clean sets for a 90-plus percentile score. Apply the 12-minute rule: if a set does not open cleanly within 6 to 7 minutes, mark skip immediately and move to the next set.')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/30 text-xs font-semibold transition-all">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+              <span class="audio-label" data-default-label="Listen Brief (25s)">Listen Brief (25s)</span>
+            </button>
+            <span class="text-xs font-mono text-slate-400">40 Min Locked</span>
+          </div>
         </div>
 
         <div class="p-6 space-y-4">
@@ -574,7 +608,13 @@
             <h3 class="text-xl font-bold text-white mt-1">Quantitative Ability (22 Questions)</h3>
             <p class="text-xs text-slate-400 mt-0.5">Strict Class 8–10 math applied with deceptive wording. Follow the high-yield progression order.</p>
           </div>
-          <span class="text-xs font-mono text-slate-400">40 Minutes Locked</span>
+          <div class="flex items-center gap-2">
+            <button onclick="playAudioSummary(this, 'Quantitative Ability Sequence', 'Quantitative Ability: Follow the strict high-yield sequence. Start with Arithmetic for 8 to 10 questions. Next, tackle Algebra for 5 to 7 questions, Geometry for 3 to 5 questions, and Number Systems. Save Modern Math and Permutations for last.')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-purple-500/15 hover:bg-purple-500/25 text-purple-300 border border-purple-500/30 text-xs font-semibold transition-all">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+              <span class="audio-label" data-default-label="Listen Brief (20s)">Listen Brief (20s)</span>
+            </button>
+            <span class="text-xs font-mono text-slate-400">40 Min Locked</span>
+          </div>
         </div>
 
         <div class="p-6 space-y-6">
@@ -776,10 +816,16 @@
 
     <!-- SECTION 4: 10-Day Kickstart Timetable -->
     <section id="timetable" class="space-y-4">
-      <div>
-        <div class="text-amber-400 text-xs font-bold uppercase tracking-wider">Exact Schedule</div>
-        <h2 class="text-2xl font-extrabold text-white tracking-tight mt-1">Your Exact First 10 Practice Days</h2>
-        <p class="text-xs text-slate-400 mt-0.5">Follow this day-by-day protocol without deviation to install irreversible momentum.</p>
+      <div class="flex items-start justify-between gap-3 flex-wrap">
+        <div>
+          <div class="text-amber-400 text-xs font-bold uppercase tracking-wider">Exact Schedule</div>
+          <h2 class="text-2xl font-extrabold text-white tracking-tight mt-1">Your Exact First 10 Practice Days</h2>
+          <p class="text-xs text-slate-400 mt-0.5">Follow this day-by-day protocol without deviation to install irreversible momentum.</p>
+        </div>
+        <button onclick="playAudioSummary(this, 'First 10 Practice Days Schedule', 'First 10 Days Schedule: Day 1 begins with a full 120-minute diagnostic mock to benchmark weak areas. Days 2 to 6 master core arithmetic starting with percentages, profit and loss, ratios, and averages, paired with one daily reading passage and one DILR set. Days 7 to 10 introduce timed sectional tests and time-speed-distance.')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 border border-amber-500/30 text-xs font-semibold transition-all">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+          <span class="audio-label" data-default-label="Listen Brief (25s)">Listen Brief (25s)</span>
+        </button>
       </div>
 
       <div class="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-900/60">
@@ -860,10 +906,16 @@
 
     <!-- SECTION 5: Where Do I Click Directory -->
     <section id="links" class="rounded-2xl bg-slate-900/60 border border-slate-800 p-6 sm:p-8 space-y-6">
-      <div>
-        <div class="text-blue-400 text-xs font-bold uppercase tracking-wider">Curated Portals</div>
-        <h2 class="text-2xl font-extrabold text-white tracking-tight mt-1">Official &amp; Top Free Practice Portals</h2>
-        <p class="text-xs text-slate-400 mt-1">Direct links to official examination sites, video lectures, and previous year repositories.</p>
+      <div class="flex items-start justify-between gap-3 flex-wrap">
+        <div>
+          <div class="text-blue-400 text-xs font-bold uppercase tracking-wider">Curated Portals</div>
+          <h2 class="text-2xl font-extrabold text-white tracking-tight mt-1">Official &amp; Top Free Practice Portals</h2>
+          <p class="text-xs text-slate-400 mt-1">Direct links to official examination sites, video lectures, and previous year repositories.</p>
+        </div>
+        <button onclick="playAudioSummary(this, 'Curated Practice Portals & Resources', 'Curated Portals Directory: Direct links to the official IIM CAT portal, complete 2017 to 2025 previous year questions on 2IIM with video explanations, Cracku free daily targets, Gejo Speaks for reading comprehension strategy, Rodha for quant lectures in English, and Aeon Essays for daily reading muscle.')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-500/15 hover:bg-blue-500/25 text-blue-300 border border-blue-500/30 text-xs font-semibold transition-all">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+          <span class="audio-label" data-default-label="Listen Brief (25s)">Listen Brief (25s)</span>
+        </button>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
@@ -979,9 +1031,15 @@
 
     <!-- SECTION 6: What You Can Ignore -->
     <section class="rounded-2xl bg-red-500/5 border border-red-500/20 p-6 sm:p-8 space-y-4">
-      <div class="flex items-center gap-2 text-red-400 font-bold text-sm uppercase tracking-wider">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-        <span>High-Impact Time Savers: What to Actively Ignore</span>
+      <div class="flex items-center justify-between gap-3 flex-wrap">
+        <div class="flex items-center gap-2 text-red-400 font-bold text-sm uppercase tracking-wider">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+          <span>High-Impact Time Savers: What to Actively Ignore</span>
+        </div>
+        <button onclick="playAudioSummary(this, 'What to Actively Ignore', 'What to Ignore: Save hundreds of study hours. Spoken English, group discussions, and essays are for post-November interviews. Skip dictionary vocabulary flashcards and direct grammar rules as modern CAT does not ask them. Omit class 11 and 12 calculus and complex trigonometry, and avoid hoarding multiple quant textbooks.')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-red-500/15 hover:bg-red-500/25 text-red-300 border border-red-500/30 text-xs font-semibold transition-all">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+          <span class="audio-label" data-default-label="Listen Brief (25s)">Listen Brief (25s)</span>
+        </button>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs text-slate-300">
@@ -1030,7 +1088,32 @@
     </div>
   </footer>
 
-  <!-- Interactive Checklist Script with LocalStorage Persistence -->
+  <!-- Floating Bottom Audio Controller Bar -->
+  <div id="floatingAudioBar" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden max-w-xl w-[92%] sm:w-auto px-4 py-2.5 rounded-2xl bg-slate-900/95 border border-amber-500/40 shadow-2xl backdrop-blur-xl flex items-center justify-between gap-4 transition-all">
+    <div class="flex items-center gap-3 overflow-hidden">
+      <!-- Animated equalizer bars -->
+      <div class="flex items-end gap-0.5 h-4 w-4 text-amber-400">
+        <span class="w-1 bg-amber-400 rounded-full animate-bounce h-2"></span>
+        <span class="w-1 bg-amber-400 rounded-full animate-bounce h-4" style="animation-delay: 0.15s"></span>
+        <span class="w-1 bg-amber-400 rounded-full animate-bounce h-3" style="animation-delay: 0.3s"></span>
+      </div>
+      <div class="truncate">
+        <div id="audioPlayerTitle" class="text-xs font-bold text-white truncate">Playing Audio Summary</div>
+        <div id="audioPlayerStatus" class="text-[11px] text-slate-400">Narrating brief...</div>
+      </div>
+    </div>
+    <div class="flex items-center gap-2 flex-shrink-0">
+      <button onclick="toggleAudioPlayback()" id="audioPlayPauseBtn" class="p-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white transition-all" title="Pause / Resume">
+        <svg id="pauseIcon" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/></svg>
+        <svg id="playIcon" class="w-4 h-4 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+      <button onclick="stopAudioSummary()" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-all" title="Stop Audio">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Interactive Checklist Script & Audio Engine -->
   <script>
     const STORAGE_KEY = 'cat2026_topics_state';
 
@@ -1066,6 +1149,108 @@
     }
 
     document.addEventListener('DOMContentLoaded', loadSavedProgress);
+
+    // Web Speech Synthesis Audio Brief Engine
+    let currentUtterance = null;
+    let activeAudioBtn = null;
+
+    function playAudioSummary(btn, title, text) {
+      if (!('speechSynthesis' in window)) {
+        alert('Text-to-speech audio is not supported in this browser.');
+        return;
+      }
+
+      if (window.speechSynthesis.speaking && activeAudioBtn === btn) {
+        toggleAudioPlayback();
+        return;
+      }
+
+      stopAudioSummary();
+
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = 1.02;
+      utterance.pitch = 1.0;
+
+      const voices = window.speechSynthesis.getVoices();
+      const naturalVoice = voices.find(v => v.lang.startsWith('en') && (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Samantha') || v.name.includes('Daniel') || v.name.includes('Alex')));
+      if (naturalVoice) utterance.voice = naturalVoice;
+
+      utterance.onstart = () => {
+        activeAudioBtn = btn;
+        if (btn) {
+          btn.classList.add('ring-2', 'ring-amber-400', 'bg-amber-600', 'text-white');
+          const label = btn.querySelector('.audio-label');
+          if (label) label.innerText = 'Playing...';
+        }
+        const bar = document.getElementById('floatingAudioBar');
+        const titleEl = document.getElementById('audioPlayerTitle');
+        const statusEl = document.getElementById('audioPlayerStatus');
+        if (bar) bar.classList.remove('hidden');
+        if (titleEl) titleEl.innerText = title;
+        if (statusEl) statusEl.innerText = 'Narrating brief summary...';
+        showPlayIcon(false);
+      };
+
+      utterance.onend = () => {
+        stopAudioSummary();
+      };
+
+      utterance.onerror = () => {
+        stopAudioSummary();
+      };
+
+      currentUtterance = utterance;
+      window.speechSynthesis.speak(utterance);
+    }
+
+    function toggleAudioPlayback() {
+      if (!window.speechSynthesis.speaking) return;
+      if (window.speechSynthesis.paused) {
+        window.speechSynthesis.resume();
+        showPlayIcon(false);
+        if (activeAudioBtn) {
+          const label = activeAudioBtn.querySelector('.audio-label');
+          if (label) label.innerText = 'Playing...';
+        }
+        const statusEl = document.getElementById('audioPlayerStatus');
+        if (statusEl) statusEl.innerText = 'Narrating brief summary...';
+      } else {
+        window.speechSynthesis.pause();
+        showPlayIcon(true);
+        if (activeAudioBtn) {
+          const label = activeAudioBtn.querySelector('.audio-label');
+          if (label) label.innerText = 'Paused';
+        }
+        const statusEl = document.getElementById('audioPlayerStatus');
+        if (statusEl) statusEl.innerText = 'Paused (click to resume)';
+      }
+    }
+
+    function showPlayIcon(isPaused) {
+      const pauseIcon = document.getElementById('pauseIcon');
+      const playIcon = document.getElementById('playIcon');
+      if (pauseIcon && playIcon) {
+        if (isPaused) {
+          pauseIcon.classList.add('hidden');
+          playIcon.classList.remove('hidden');
+        } else {
+          pauseIcon.classList.remove('hidden');
+          playIcon.classList.add('hidden');
+        }
+      }
+    }
+
+    function stopAudioSummary() {
+      window.speechSynthesis.cancel();
+      if (activeAudioBtn) {
+        activeAudioBtn.classList.remove('ring-2', 'ring-amber-400', 'bg-amber-600', 'text-white');
+        const label = activeAudioBtn.querySelector('.audio-label');
+        if (label) label.innerText = label.getAttribute('data-default-label') || 'Listen Brief (25s)';
+        activeAudioBtn = null;
+      }
+      const bar = document.getElementById('floatingAudioBar');
+      if (bar) bar.classList.add('hidden');
+    }
   </script>
 </body>
 </html>
