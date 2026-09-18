@@ -37,10 +37,12 @@
         padding: 0;
         box-shadow: none;
         max-width: none;
-      }
       .page-break {
         page-break-before: always;
         padding-top: 1.2cm;
+      }
+      .no-print {
+        display: none !important;
       }
     }
     /* Header */
@@ -229,6 +231,29 @@
   </style>
 </head>
 <body>
+
+<!-- Sticky Top Navigation for Dashboard Integration (Hidden in Print) -->
+<nav class="no-print" style="position: sticky; top: 0; z-index: 100; background: #0f172a; border-bottom: 1px solid #1e293b; padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; color: #f8fafc; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <a href="index.html" style="color: #94a3b8; text-decoration: none; display: inline-flex; align-items: center; gap: 5px; font-weight: 600;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#94a3b8'">
+      <span>&larr; Hub</span>
+    </a>
+    <span style="color: #475569;">|</span>
+    <span style="font-weight: 700; color: #ffffff;">Lakshay Nagpal · Lebenslauf (DIN 5008)</span>
+  </div>
+  <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+    <a href="german_universities_evaluation.html" style="color: #94a3b8; text-decoration: none; padding: 4px 10px; border-radius: 6px; background: #1e293b; font-size: 12px;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#94a3b8'">🇩🇪 German Unis</a>
+    <a href="cat_2026_syllabus_roadmap.html" style="color: #f59e0b; text-decoration: none; padding: 4px 10px; border-radius: 6px; background: #1e293b; font-size: 12px;" onmouseover="this.style.color='#fbbf24'" onmouseout="this.style.color='#f59e0b'">🐯 CAT 2026</a>
+    <a href="typescript_curriculum.html" style="color: #94a3b8; text-decoration: none; padding: 4px 10px; border-radius: 6px; background: #1e293b; font-size: 12px;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#94a3b8'">⚡ TypeScript</a>
+    <a href="https://www.linkedin.com/in/lakshay-nagpal-1a2a0134a/" target="_blank" rel="noreferrer" style="background: #0a66c2; color: white; text-decoration: none; padding: 5px 12px; border-radius: 6px; font-weight: 600; font-size: 12px; display: inline-flex; align-items: center; gap: 6px;">
+      <svg style="width: 14px; height: 14px; fill: currentColor;" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z"/></svg>
+      <span>LinkedIn</span>
+    </a>
+    <button onclick="window.print()" style="background: #334155; color: white; border: none; padding: 5px 12px; border-radius: 6px; font-weight: 600; font-size: 12px; cursor: pointer;">
+      🖨️ Drucken / PDF
+    </button>
+  </div>
+</nav>
 
 <div class="page-container">
 

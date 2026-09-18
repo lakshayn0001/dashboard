@@ -1484,7 +1484,9 @@ a:hover { text-decoration: underline; }
 <header class="top-nav">
   <div class="nav-inner">
     <div class="brand-group">
-      <div class="ts-logo">TS</div>
+      <a href="index.html" style="text-decoration: none;">
+        <div class="ts-logo">TS</div>
+      </a>
       <div>
         <div class="nav-title">TypeScript Full-Stack Curriculum</div>
       </div>
@@ -1500,11 +1502,24 @@ a:hover { text-decoration: underline; }
     </div>
 
     <div class="nav-actions">
+      <a href="index.html" class="btn" style="text-decoration:none;" title="Back to Master Dashboard">
+        🏠 Hub
+      </a>
+      <a href="german_universities_evaluation.html" class="btn" style="text-decoration:none;" title="German Universities Roadmap">
+        🇩🇪 German Unis
+      </a>
+      <a href="cat_2026_syllabus_roadmap.html" class="btn" style="text-decoration:none;" title="CAT 2026 Master Roadmap">
+        🐯 CAT 2026
+      </a>
+      <a href="https://www.linkedin.com/in/lakshay-nagpal-1a2a0134a/" target="_blank" rel="noreferrer" class="btn" style="background:#0a66c2; color:white; border-color:#0a66c2; text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-weight:600;" title="Lakshay Nagpal on LinkedIn">
+        <svg style="width:14px; height:14px; fill:currentColor;" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z"/></svg>
+        <span>LinkedIn</span>
+      </a>
       <button class="btn" onclick="toggleTheme()" id="theme-btn" title="Toggle Light/Dark Theme">
         <span id="theme-icon">🌙</span> <span id="theme-label">Dark</span>
       </button>
       <button class="btn" onclick="window.print()" title="Print to PDF or Paper">
-        🖨️ Print / PDF
+        🖨️ Print
       </button>
       <button class="btn btn-primary" onclick="expandAll()" title="Expand All Code & Sections">
         Expand All
