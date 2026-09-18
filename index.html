@@ -741,27 +741,63 @@
 
               <div>
                 <h2 class="text-2xl font-extrabold text-stone-900 tracking-tight flex items-center gap-2">
-                  Cloud Production Projects &amp; Live Web Showcase
+                  Cloud Production Projects &amp; Live Web Applications
                 </h2>
                 <p class="text-stone-700 text-sm mt-2 leading-relaxed">
-                  Demonstrations of modern distributed web engineering: WebSocket event handling, Redis pub/sub caching, microservice decomposition, and clean architectural design.
+                  End-to-end deployed production web applications demonstrating WebSocket event pipelines, PostgreSQL/Prisma database indexing, Gemini AI data analysis, and microservice integration:
                 </p>
               </div>
 
+              <!-- Two Featured Live Apps in Card 7 -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
+                <div class="p-3.5 rounded-xl bg-white/90 border border-stone-300 space-y-1.5 shadow-sm">
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-xs text-stone-900">💬 Real-Time Chat App</span>
+                    <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold">Next.js 16 + Socket.IO</span>
+                  </div>
+                  <p class="text-[11px] text-stone-600 leading-snug">
+                    PostgreSQL/Prisma, room presence, sub-50ms message retrieval.
+                  </p>
+                  <div class="flex items-center gap-2 pt-1">
+                    <a href="https://chat-application-blush-phi.vercel.app/" target="_blank" rel="noreferrer" class="text-xs font-bold text-emerald-800 hover:text-emerald-950 underline">Live App ↗</a>
+                    <span class="text-stone-300">•</span>
+                    <a href="https://github.com/lakshayn0001/Chat-Application" target="_blank" rel="noreferrer" class="text-xs font-medium text-stone-600 hover:text-stone-900 underline">GitHub ↗</a>
+                  </div>
+                </div>
+
+                <div class="p-3.5 rounded-xl bg-white/90 border border-stone-300 space-y-1.5 shadow-sm">
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-xs text-stone-900">📊 AI Data Analyst</span>
+                    <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-blue-100 text-blue-800 font-bold">React + Gemini AI</span>
+                  </div>
+                  <p class="text-[11px] text-stone-600 leading-snug">
+                    Multer CSV streaming, natural-language to DB queries &amp; charts in &lt;2s.
+                  </p>
+                  <div class="flex items-center gap-2 pt-1">
+                    <a href="https://ai-data-analyst-dashboard-orcin.vercel.app/" target="_blank" rel="noreferrer" class="text-xs font-bold text-blue-800 hover:text-blue-950 underline">Live App ↗</a>
+                    <span class="text-stone-300">•</span>
+                    <a href="https://github.com/lakshayn0001/AI_Data_Analyst_Dashboard" target="_blank" rel="noreferrer" class="text-xs font-medium text-stone-600 hover:text-stone-900 underline">GitHub ↗</a>
+                  </div>
+                </div>
+              </div>
+
               <div class="flex flex-wrap gap-2 pt-1">
-                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">High-Concurrency WebSocket Gateway</span>
-                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">Next.js 15 &amp; React 19 Full-Stack</span>
-                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">Dockerized Container Workflows</span>
+                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">WebSocket Concurrency</span>
+                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">PostgreSQL / Prisma</span>
+                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">Gemini AI Queries</span>
               </div>
             </div>
 
             <div class="pt-6 border-t border-stone-200 mt-6 flex flex-wrap items-center gap-3">
-              <a href="https://lakshayn0001.github.io/Portfolio/" target="_blank" rel="noreferrer" class="flex-1 min-w-[170px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-sm shadow-sm transition-all">
-                <span>View Live Portfolio ↗</span>
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              <a href="profile.html#cold-email" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-xs shadow-sm transition-all">
+                <span>✉️ Cold Email Generator ↗</span>
               </a>
-              <a href="https://github.com/lakshayn0001" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-white hover:bg-stone-100 text-stone-700 font-semibold text-sm border border-stone-300 shadow-sm transition-all">
-                <span>GitHub Repos ↗</span>
+              <a href="https://lakshayn0001.github.io/Portfolio/" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-900 font-semibold text-xs border border-stone-300 shadow-sm transition-all">
+                <span>Live Portfolio ↗</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+              <a href="https://github.com/lakshayn0001" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-white hover:bg-stone-100 text-stone-700 font-semibold text-xs border border-stone-300 shadow-sm transition-all">
+                <span>GitHub ↗</span>
               </a>
             </div>
           </article>

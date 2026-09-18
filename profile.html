@@ -259,6 +259,11 @@
       <div>
         <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Professional Dossier</div>
         <div class="mt-2 space-y-1">
+          <a href="#cold-email" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-semibold">
+            <span class="text-lg">✉️</span>
+            <span>Cold Email Generator</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-mono">Customizer</span>
+          </a>
           <a href="lebenslauf_de.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
             <span class="text-lg">📄</span>
             <span>Lebenslauf (German CV)</span>
@@ -440,13 +445,17 @@
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
               </a>
 
-              <a href="resume.html" target="_blank" class="droplet-pill px-4 py-2.5 rounded-xl text-stone-800 hover:text-stone-950 text-xs font-bold inline-flex items-center gap-2 transition-all">
-                <span>📄 View Web Resume</span>
+              <a href="https://drive.google.com/file/d/1Agx-wMrLAPT3ilMJyPQiS8TGtIiT4ByT/view?usp=sharing" target="_blank" rel="noreferrer" class="droplet-pill px-4 py-2.5 rounded-xl text-stone-800 hover:text-stone-950 text-xs font-bold inline-flex items-center gap-2 transition-all" title="View Original Resume on Google Drive">
+                <span>☁️ Google Drive Resume</span>
                 <svg class="w-3.5 h-3.5 text-stone-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
               </a>
 
-              <button onclick="copyAllDetails()" class="droplet-pill px-4 py-2.5 rounded-xl text-emerald-800 hover:text-emerald-950 text-xs font-bold inline-flex items-center gap-2 transition-all">
-                <span>📋 Copy Complete Candidate Dossier</span>
+              <a href="#cold-email" class="droplet-pill px-4 py-2.5 rounded-xl text-emerald-900 hover:text-emerald-950 text-xs font-bold inline-flex items-center gap-2 transition-all bg-emerald-100/80 border border-emerald-300">
+                <span>✉️ Cold Email Generator</span>
+              </a>
+
+              <button onclick="copyAllDetails()" class="droplet-pill px-4 py-2.5 rounded-xl text-stone-800 hover:text-stone-950 text-xs font-bold inline-flex items-center gap-2 transition-all">
+                <span>📋 Copy Dossier</span>
               </button>
             </div>
 
@@ -769,7 +778,170 @@
             <span class="text-[10px] uppercase font-bold text-stone-500 block">Notice Period</span>
             <span class="text-xs font-bold text-emerald-800">0 Days (Immediate)</span>
           </button>
+
+          <button onclick="copyColdEmail()" class="p-3.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 text-left transition-all group shadow-sm col-span-1 sm:col-span-2 lg:col-span-4 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] uppercase font-bold text-emerald-800 block">✉️ Cold Outreach Email</span>
+              <span class="text-xs font-bold text-emerald-950 group-hover:text-emerald-700">1-Click Copy Tailored Cold Email (Currently set for: <span id="quickCopyCompLabel" class="underline font-mono">bebo Technologies</span>)</span>
+            </div>
+            <span class="px-3 py-1 rounded-lg bg-emerald-700 text-white text-xs font-bold shadow-sm">Copy Email 📋</span>
+          </button>
         </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 4: COLD OUTREACH EMAIL HUB & DYNAMIC COMPANY CONVERTER            -->
+      <!-- ========================================================================= -->
+      <section id="cold-email" class="glass-droplet rounded-3xl p-6 sm:p-8 space-y-6 border border-stone-300/80 shadow-md">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-stone-200">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-100 border border-emerald-300 text-emerald-900 text-xs font-bold uppercase tracking-wider">
+              ✉️ High-Conversion Job Outreach Hub
+            </div>
+            <h2 class="text-2xl font-black text-stone-900 mt-1">
+              Cold Email Generator &amp; Company Customizer
+            </h2>
+            <p class="text-xs text-stone-600 mt-0.5">
+              Instantly personalize Lakshay's proven cold email for any target company, copy it with 1-click, or open directly in your mail app.
+            </p>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="copyColdEmail()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold shadow-sm transition-all cursor-pointer">
+              <span>📋 Copy Customized Email</span>
+            </button>
+            <button onclick="openMailto()" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 text-xs font-semibold shadow-sm transition-all cursor-pointer" title="Open in Email Client">
+              <span>📧 Send Email</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Customization Inputs -->
+        <div class="p-4 sm:p-5 rounded-2xl bg-white/90 border border-stone-300/80 space-y-4 shadow-sm">
+          <div class="text-xs font-bold uppercase tracking-wider text-stone-600 flex items-center gap-1.5">
+            <span>⚙️</span> Customize Template Variables
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <div>
+              <label for="coldEmailCompany" class="block text-xs font-bold text-stone-700 mb-1">
+                Target Company Name <span class="text-emerald-700">*</span>
+              </label>
+              <input type="text" id="coldEmailCompany" value="bebo Technologies" oninput="renderColdEmail()" placeholder="e.g. bebo Technologies, Google, Razorpay" class="w-full px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold text-stone-900 bg-stone-50 border border-stone-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white transition-all">
+            </div>
+
+            <div>
+              <label for="coldEmailRole" class="block text-xs font-bold text-stone-700 mb-1">
+                Target Role / Department
+              </label>
+              <input type="text" id="coldEmailRole" value="full-stack roles" oninput="renderColdEmail()" placeholder="e.g. full-stack roles, Software Engineer" class="w-full px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold text-stone-900 bg-stone-50 border border-stone-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white transition-all">
+            </div>
+
+            <div>
+              <label for="coldEmailRecipient" class="block text-xs font-bold text-stone-700 mb-1">
+                Recipient / Addressee
+              </label>
+              <input type="text" id="coldEmailRecipient" value="Hiring Team" oninput="renderColdEmail()" placeholder="e.g. Hiring Team, Engineering Manager" class="w-full px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold text-stone-900 bg-stone-50 border border-stone-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white transition-all">
+            </div>
+          </div>
+
+          <!-- Quick Preset Chips -->
+          <div class="flex flex-wrap items-center gap-1.5 pt-1">
+            <span class="text-[11px] font-bold text-stone-500 mr-1">Quick Fill:</span>
+            <button onclick="setColdCompany('bebo Technologies')" class="px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-stone-100 hover:bg-emerald-100 text-stone-700 hover:text-emerald-900 border border-stone-200 transition-all cursor-pointer">bebo Technologies</button>
+            <button onclick="setColdCompany('Google')" class="px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-stone-100 hover:bg-emerald-100 text-stone-700 hover:text-emerald-900 border border-stone-200 transition-all cursor-pointer">Google</button>
+            <button onclick="setColdCompany('Microsoft')" class="px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-stone-100 hover:bg-emerald-100 text-stone-700 hover:text-emerald-900 border border-stone-200 transition-all cursor-pointer">Microsoft</button>
+            <button onclick="setColdCompany('Amazon')" class="px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-stone-100 hover:bg-emerald-100 text-stone-700 hover:text-emerald-900 border border-stone-200 transition-all cursor-pointer">Amazon</button>
+            <button onclick="setColdCompany('Razorpay')" class="px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-stone-100 hover:bg-emerald-100 text-stone-700 hover:text-emerald-900 border border-stone-200 transition-all cursor-pointer">Razorpay</button>
+            <button onclick="setColdCompany('Cred')" class="px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-stone-100 hover:bg-emerald-100 text-stone-700 hover:text-emerald-900 border border-stone-200 transition-all cursor-pointer">Cred</button>
+            <button onclick="setColdCompany('Swiggy')" class="px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-stone-100 hover:bg-emerald-100 text-stone-700 hover:text-emerald-900 border border-stone-200 transition-all cursor-pointer">Swiggy</button>
+            <button onclick="setColdCompany('Zomato')" class="px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-stone-100 hover:bg-emerald-100 text-stone-700 hover:text-emerald-900 border border-stone-200 transition-all cursor-pointer">Zomato</button>
+            <button onclick="setColdCompany('Atlassian')" class="px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-stone-100 hover:bg-emerald-100 text-stone-700 hover:text-emerald-900 border border-stone-200 transition-all cursor-pointer">Atlassian</button>
+            <button onclick="setColdCompany('Uber')" class="px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-stone-100 hover:bg-emerald-100 text-stone-700 hover:text-emerald-900 border border-stone-200 transition-all cursor-pointer">Uber</button>
+          </div>
+
+          <!-- Subject Line Quick Bar -->
+          <div class="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-xl bg-stone-100/90 border border-stone-300 text-xs">
+            <div class="flex items-center gap-2 overflow-hidden">
+              <span class="font-bold text-stone-600 shrink-0">Subject:</span>
+              <span id="coldEmailSubjectText" class="font-mono text-stone-900 truncate font-semibold">Enquiry: Full-Stack Roles at bebo Technologies - Lakshay Nagpal (Immediate Joiner)</span>
+            </div>
+            <button onclick="copyColdSubject()" class="shrink-0 px-3 py-1 rounded-lg bg-white hover:bg-stone-200 text-stone-800 border border-stone-300 font-semibold text-[11px] shadow-sm transition-all cursor-pointer">
+              📋 Copy Subject
+            </button>
+          </div>
+        </div>
+
+        <!-- Live Formatted Email Preview Container -->
+        <div class="relative rounded-2xl bg-white border border-stone-300 shadow-sm overflow-hidden">
+          <div class="px-4 py-2.5 bg-stone-100/90 border-b border-stone-200 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-red-400"></span>
+              <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+              <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+              <span class="text-xs font-mono font-semibold text-stone-600 ml-2">Live Formatted Email Preview</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <button onclick="copyColdEmail()" class="text-xs px-3 py-1 rounded-md bg-emerald-700 hover:bg-emerald-800 text-white font-bold transition-all cursor-pointer">
+                📋 Copy Text
+              </button>
+            </div>
+          </div>
+
+          <div id="coldEmailPreview" class="p-5 sm:p-6 text-xs sm:text-sm text-stone-800 font-sans leading-relaxed whitespace-pre-wrap select-all font-normal"></div>
+        </div>
+
+        <!-- Two Live Showcased Projects Grid -->
+        <div class="space-y-3 pt-2">
+          <div class="flex items-center justify-between">
+            <h3 class="text-sm font-bold uppercase tracking-wider text-stone-700 flex items-center gap-2">
+              <span>🚀</span> Live Featured Production Projects (Referenced in Email)
+            </h3>
+            <span class="text-xs text-stone-500 font-mono">End-to-End Deployed</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Project 1: Real-Time Chat App -->
+            <div class="p-4 rounded-2xl bg-white/90 border border-stone-300/80 space-y-2.5 shadow-sm">
+              <div class="flex items-center justify-between">
+                <span class="text-base">💬</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold font-mono bg-emerald-100 text-emerald-800">Next.js 16 + Socket.IO</span>
+              </div>
+              <h4 class="text-sm font-bold text-stone-900">Real-Time Chat Application</h4>
+              <p class="text-xs text-stone-600 leading-relaxed">
+                Built with Next.js 16, TypeScript, Socket.IO, and PostgreSQL/Prisma. Handles authenticated WebSocket sessions, active room presence, and indexed queries for sub-50ms message retrieval.
+              </p>
+              <div class="flex items-center gap-2 pt-1">
+                <a href="https://chat-application-blush-phi.vercel.app/" target="_blank" rel="noreferrer" class="px-3 py-1.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-semibold inline-flex items-center gap-1 shadow-sm">
+                  <span>Live Demo ↗</span>
+                </a>
+                <a href="https://github.com/lakshayn0001/Chat-Application" target="_blank" rel="noreferrer" class="px-3 py-1.5 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-semibold inline-flex items-center gap-1 border border-stone-200">
+                  <span>GitHub Code ↗</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Project 2: AI Data Analyst Dashboard -->
+            <div class="p-4 rounded-2xl bg-white/90 border border-stone-300/80 space-y-2.5 shadow-sm">
+              <div class="flex items-center justify-between">
+                <span class="text-base">📊</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold font-mono bg-blue-100 text-blue-800">React + Gemini AI + Node</span>
+              </div>
+              <h4 class="text-sm font-bold text-stone-900">AI Data Analyst Dashboard</h4>
+              <p class="text-xs text-stone-600 leading-relaxed">
+                Built with React, Node.js, Express, MongoDB, and Gemini AI. Handles stream-based CSV uploads via Multer and translates natural-language prompts into structured database queries and charts in under 2 seconds.
+              </p>
+              <div class="flex items-center gap-2 pt-1">
+                <a href="https://ai-data-analyst-dashboard-orcin.vercel.app/" target="_blank" rel="noreferrer" class="px-3 py-1.5 rounded-lg bg-blue-700 hover:bg-blue-800 text-white text-xs font-semibold inline-flex items-center gap-1 shadow-sm">
+                  <span>Live Demo ↗</span>
+                </a>
+                <a href="https://github.com/lakshayn0001/AI_Data_Analyst_Dashboard" target="_blank" rel="noreferrer" class="px-3 py-1.5 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-semibold inline-flex items-center gap-1 border border-stone-200">
+                  <span>GitHub Code ↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </section>
 
     </main>
@@ -863,6 +1035,96 @@ Portfolio: https://lakshayn0001.github.io/Portfolio/`;
       navigator.clipboard.writeText(dossier).then(() => {
         showToast("Copied full candidate dossier to clipboard!");
       });
+    }
+
+    function getColdEmailData() {
+      const companyInput = document.getElementById('coldEmailCompany');
+      const roleInput = document.getElementById('coldEmailRole');
+      const recipientInput = document.getElementById('coldEmailRecipient');
+
+      const company = (companyInput && companyInput.value.trim()) ? companyInput.value.trim() : 'bebo Technologies';
+      const role = (roleInput && roleInput.value.trim()) ? roleInput.value.trim() : 'full-stack roles';
+      const recipient = (recipientInput && recipientInput.value.trim()) ? recipientInput.value.trim() : 'Hiring Team';
+
+      const subject = `Enquiry: Full-Stack Roles at ${company} - Lakshay Nagpal (Immediate Joiner)`;
+
+      const body = `Dear ${recipient},
+
+I am writing to enquire about ${role} at ${company}. Over the past 2.8 years at Open Access Technology India (OATI), I worked as a Software Integrator supporting staging and production releases—collaborating with engineering teams on deployments, SQL schema migrations, and troubleshooting release issues using application logs and REST API payloads.
+
+Alongside that work, I built and deployed two live applications end-to-end:
+
+Real-Time Chat Application
+Built with Next.js 16, TypeScript, Socket.IO, and PostgreSQL/Prisma. It handles authenticated WebSocket sessions, active room presence, and indexed database queries for sub-50ms message retrieval.
+Live: https://chat-application-blush-phi.vercel.app/
+GitHub: https://github.com/lakshayn0001/Chat-Application
+
+AI Data Analyst Dashboard
+Built with React, Node.js, Express, MongoDB, and Gemini AI. It handles stream-based CSV uploads via Multer and translates natural-language prompts into structured database queries and charts in under 2 seconds.
+Live: https://ai-data-analyst-dashboard-orcin.vercel.app/
+GitHub: https://github.com/lakshayn0001/AI_Data_Analyst_Dashboard
+
+I have completed my tenure at OATI and am available to join immediately with no notice period. If my background is relevant to a current or upcoming opening, I would be grateful for the chance to connect.
+
+Thank you very much for your time and consideration.
+
+Best regards,
+Lakshay Nagpal
+Phone: +91 83959 91957
+Email: lakshayn0001@gmail.com
+Portfolio: https://lakshayn0001.github.io/Portfolio/
+GitHub: https://github.com/lakshayn0001
+Resume: https://drive.google.com/file/d/1Agx-wMrLAPT3ilMJyPQiS8TGtIiT4ByT/view?usp=sharing`;
+
+      return { company, role, recipient, subject, body };
+    }
+
+    function renderColdEmail() {
+      const data = getColdEmailData();
+      const subjectEl = document.getElementById('coldEmailSubjectText');
+      if (subjectEl) subjectEl.innerText = data.subject;
+      const previewEl = document.getElementById('coldEmailPreview');
+      if (previewEl) previewEl.textContent = data.body;
+      const quickComp = document.getElementById('quickCopyCompLabel');
+      if (quickComp) quickComp.innerText = data.company;
+    }
+
+    function setColdCompany(name) {
+      const compInput = document.getElementById('coldEmailCompany');
+      if (compInput) {
+        compInput.value = name;
+        renderColdEmail();
+        showToast(`Target company updated to ${name}`);
+      }
+    }
+
+    function copyColdEmail() {
+      const data = getColdEmailData();
+      navigator.clipboard.writeText(data.body).then(() => {
+        showToast(`Copied cold email for ${data.company}!`);
+      }).catch(() => {
+        showToast("Copied cold email to clipboard!");
+      });
+    }
+
+    function copyColdSubject() {
+      const data = getColdEmailData();
+      navigator.clipboard.writeText(data.subject).then(() => {
+        showToast(`Copied subject line for ${data.company}!`);
+      });
+    }
+
+    function openMailto() {
+      const data = getColdEmailData();
+      const mailtoUrl = `mailto:?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(data.body)}`;
+      window.open(mailtoUrl, '_blank');
+    }
+
+    // Initialize Cold Email Preview
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', renderColdEmail);
+    } else {
+      renderColdEmail();
     }
 
     window.addEventListener('keydown', (e) => {
