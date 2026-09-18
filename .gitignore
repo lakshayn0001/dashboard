@@ -3,6 +3,7 @@
 *.jpg
 *.jpeg
 *.png
+!assets/**
 Date_of_Birth_Certificate*
 birth_certificate*
 Left_Thumb_Impression*

@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candidate Profile &amp; Verified Credentials | Lakshay Nagpal</title>
+  <meta name="description" content="Verified candidate profile, educational marks breakdown, downloadable resume, official photo, and enterprise software engineering credentials for Lakshay Nagpal.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            olive: {
+              50: '#f5f7f2',
+              100: '#e9eee4',
+              200: '#d7e2ce',
+              300: '#becfb3',
+              400: '#9fb791',
+              500: '#7e9c6f',
+              600: '#628053',
+              700: '#4d6540',
+              800: '#3d5133',
+              900: '#2a3823',
+              950: '#172213',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Menlo', 'Monaco', 'Courier New', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+    
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: #e9eee4;
+      background-image: 
+        radial-gradient(at 12% 15%, rgba(162, 188, 146, 0.35) 0%, transparent 55%),
+        radial-gradient(at 88% 82%, rgba(138, 168, 122, 0.28) 0%, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(215, 226, 206, 0.25) 0%, transparent 60%);
+      color: #1a2517;
+      min-height: 100vh;
+    }
+
+    /* Ambient Liquid Refraction Orbs */
+    .droplet-orb-1 {
+      position: fixed;
+      top: -100px;
+      left: 18%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(125, 160, 110, 0.32) 0%, rgba(125, 160, 110, 0) 70%);
+      filter: blur(60px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .droplet-orb-2 {
+      position: fixed;
+      bottom: -100px;
+      right: 6%;
+      width: 540px;
+      height: 540px;
+      background: radial-gradient(circle, rgba(168, 190, 145, 0.35) 0%, rgba(168, 190, 145, 0) 70%);
+      filter: blur(70px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .droplet-orb-3 {
+      position: fixed;
+      top: 40%;
+      left: 45%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(95, 132, 85, 0.22) 0%, rgba(95, 132, 85, 0) 70%);
+      filter: blur(55px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Light Liquid Glass Water Droplet Effect */
+    .glass-droplet {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(246, 250, 242, 0.72) 100%);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 
+        inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 1),
+        inset 0 -1px 2px 0 rgba(90, 115, 80, 0.08),
+        0 14px 34px -10px rgba(45, 65, 36, 0.10),
+        0 2px 8px -2px rgba(45, 65, 36, 0.05);
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-droplet::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 8%; right: 8%;
+      height: 1.5px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.95), transparent);
+      pointer-events: none;
+    }
+    .glass-droplet:hover {
+      transform: translateY(-2px);
+      box-shadow: 
+        inset 0 2px 2px 0 rgba(255, 255, 255, 1),
+        0 20px 42px -10px rgba(50, 75, 40, 0.14),
+        0 4px 12px -2px rgba(45, 65, 36, 0.08);
+      border-color: rgba(120, 150, 105, 0.4);
+    }
+
+    /* Sidebar & Navigation */
+    .glass-droplet-sidebar {
+      background: rgba(246, 250, 242, 0.94);
+      backdrop-filter: blur(28px) saturate(190%);
+      -webkit-backdrop-filter: blur(28px) saturate(190%);
+      border-right: 1px solid rgba(135, 160, 122, 0.25);
+      box-shadow: 
+        inset -1px 0 1px 0 rgba(255, 255, 255, 0.85),
+        4px 0 24px rgba(45, 65, 36, 0.06);
+    }
+    .glass-droplet-nav {
+      background: rgba(246, 250, 242, 0.88);
+      backdrop-filter: blur(24px) saturate(190%);
+      -webkit-backdrop-filter: blur(24px) saturate(190%);
+      border-bottom: 1px solid rgba(135, 160, 122, 0.25);
+      box-shadow: 
+        inset 0 -1px 1px 0 rgba(255, 255, 255, 0.85),
+        0 4px 20px rgba(45, 65, 36, 0.06);
+    }
+
+    /* Droplet Pills */
+    .droplet-pill {
+      background: linear-gradient(135deg, #ffffff 0%, #f4f7f0 100%);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(110, 140, 95, 0.28);
+      box-shadow: 
+        inset 0 1px 1px 0 #ffffff,
+        0 2px 6px rgba(45, 65, 36, 0.08);
+      color: #24331e;
+      transition: all 0.2s ease;
+    }
+    .droplet-pill:hover {
+      border-color: rgba(90, 125, 75, 0.5);
+      box-shadow: 
+        inset 0 1.5px 1.5px 0 #ffffff,
+        0 4px 12px rgba(45, 65, 36, 0.12);
+      transform: translateY(-1px);
+    }
+
+    /* Form Inputs */
+    .olive-input {
+      background-color: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(115, 145, 100, 0.35);
+      color: #192516;
+      box-shadow: inset 0 1px 2px rgba(45, 65, 36, 0.04);
+      transition: all 0.2s ease;
+    }
+    .olive-input:focus {
+      border-color: #4a6839;
+      box-shadow: 0 0 0 3px rgba(95, 135, 75, 0.2);
+      outline: none;
+    }
+
+    /* Scrollbars */
+    ::-webkit-scrollbar { width: 7px; height: 7px; }
+    ::-webkit-scrollbar-track { background: #e0e6d8; }
+    ::-webkit-scrollbar-thumb { background: #96af8c; border-radius: 4px; border: 1px solid rgba(255,255,255,0.7); }
+    ::-webkit-scrollbar-thumb:hover { background: #738f68; }
+  </style>
+</head>
+<body class="selection:bg-emerald-600 selection:text-white flex flex-col relative overflow-x-hidden">
+
+  <!-- Ambient liquid orbs for light glass refraction -->
+  <div class="droplet-orb-1"></div>
+  <div class="droplet-orb-2"></div>
+  <div class="droplet-orb-3"></div>
+
+  <!-- Mobile-only backdrop for small screens (< lg) -->
+  <div id="sidebarBackdrop" onclick="toggleSidebar(false)" class="fixed inset-0 bg-stone-900/40 backdrop-blur-sm z-20 hidden lg:hidden transition-opacity duration-300"></div>
+
+  <!-- Persistent Left Side Navigation (Always Open on Desktop) -->
+  <aside id="sideNavDrawer" class="w-72 fixed inset-y-0 left-0 z-30 flex flex-col glass-droplet-sidebar transition-transform duration-300 -translate-x-full lg:translate-x-0">
+    <div class="p-5 border-b border-stone-300/60 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 via-teal-600 to-olive-700 flex items-center justify-center font-black text-white text-lg shadow-md droplet-pill">
+          LN
+        </div>
+        <div>
+          <div class="font-bold text-stone-900 text-sm tracking-tight flex items-center gap-1.5">
+            <span>Lakshay Nagpal</span>
+            <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">VERIFIED</span>
+          </div>
+          <span class="text-xs text-stone-600 font-mono block">Candidate Profile</span>
+        </div>
+      </div>
+      <!-- Close button visible only on mobile -->
+      <button onclick="toggleSidebar(false)" class="lg:hidden p-1.5 rounded-lg text-stone-500 hover:text-stone-900 hover:bg-stone-200 transition-all" title="Close Menu">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+
+    <div class="flex-grow overflow-y-auto py-4 px-3 space-y-6">
+      <!-- Group 1: Core Portals -->
+      <div>
+        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Core Portals</div>
+        <div class="mt-2 space-y-1">
+          <a href="profile.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-emerald-100/90 text-emerald-950 border border-emerald-300 transition-all group text-sm font-bold shadow-sm">
+            <span class="text-lg">👤</span>
+            <span>Candidate Profile</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-200/80 text-emerald-900 font-mono">Active</span>
+          </a>
+          <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
+            <span class="text-lg">🏠</span>
+            <span>Master Dashboard</span>
+          </a>
+          <a href="learning_hub.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
+            <span class="text-lg">🧠</span>
+            <span>Learning Hub</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-mono">5 Tracks + DSA</span>
+          </a>
+          <a href="dsa_master_tracker.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
+            <span class="text-lg">⚡</span>
+            <span>DSA Master Tracker</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-mono">240+ LC</span>
+          </a>
+          <a href="typescript_curriculum.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
+            <span class="text-lg">📘</span>
+            <span>TypeScript Curriculum</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-800 font-mono">14K Lines</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Group 2: Higher Education -->
+      <div>
+        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Higher Education &amp; Admissions</div>
+        <div class="mt-2 space-y-1">
+          <a href="german_universities_evaluation.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
+            <span class="text-lg">🇩🇪</span>
+            <span>German Universities</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-mono">Tuition-Free</span>
+          </a>
+          <a href="cat_2026_syllabus_roadmap.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
+            <span class="text-lg">🐯</span>
+            <span>CAT 2026 Strategy</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 font-mono">IIM/IIT</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Group 3: Professional Dossier -->
+      <div>
+        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Professional Dossier</div>
+        <div class="mt-2 space-y-1">
+          <a href="lebenslauf_de.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
+            <span class="text-lg">📄</span>
+            <span>Lebenslauf (German CV)</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-stone-200 text-stone-800 font-mono">DIN 5008</span>
+          </a>
+          <a href="assets/Lakshay_Nagpal_Resume.pdf" download="Lakshay_Nagpal_Resume.pdf" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-emerald-800 hover:text-emerald-950 hover:bg-emerald-50 transition-all group text-sm font-semibold">
+            <span class="text-lg">📥</span>
+            <span>Download Resume (PDF)</span>
+          </a>
+          <a href="assets/lakshay_photo.jpg" download="Lakshay_Nagpal_Photo.jpg" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
+            <span class="text-lg">📷</span>
+            <span>Download Photo (HD)</span>
+          </a>
+          <a href="https://lakshayn0001.github.io/Portfolio/" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
+            <span class="text-lg">🌐</span>
+            <span>Developer Portfolio</span>
+            <svg class="w-3.5 h-3.5 text-stone-400 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Group 4: Connect -->
+      <div>
+        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Connect</div>
+        <div class="mt-2 space-y-1">
+          <a href="https://www.linkedin.com/in/lakshay-nagpal-1a2a0134a/" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
+            <svg class="w-4 h-4 text-[#0a66c2] fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z"/></svg>
+            <span>LinkedIn Profile</span>
+          </a>
+          <a href="https://github.com/lakshayn0001/dashboard" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
+            <svg class="w-4 h-4 text-stone-600 fill-current" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
+            <span>GitHub Repository</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-4 border-t border-stone-300/60 text-[11px] text-stone-600 flex items-center justify-between">
+      <span>Immediate Joiner / 0 Days</span>
+      <span class="text-emerald-800 font-mono font-bold">B.Tech 70.56%</span>
+    </div>
+  </aside>
+
+  <!-- Main Content Wrapper (Beside Permanent Sidebar on Desktop) -->
+  <div class="lg:pl-72 flex flex-col min-h-screen relative z-10">
+
+    <!-- Sticky Top Glass Navigation Bar (No Menu Button on Desktop) -->
+    <header class="sticky top-0 z-20 w-full glass-droplet-nav">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <!-- Mobile Drawer Trigger ONLY on <lg screens -->
+          <button onclick="toggleSidebar(true)" class="lg:hidden p-2 rounded-xl bg-white/90 hover:bg-stone-100 text-stone-700 hover:text-stone-950 border border-stone-300 transition-all flex items-center gap-1.5 cursor-pointer shadow-sm" title="Open Navigation Menu">
+            <svg class="w-5 h-5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            <span class="text-xs font-semibold">Menu</span>
+          </button>
+
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse"></span>
+            <span class="text-xs sm:text-sm font-bold text-stone-900 tracking-tight">Verified Candidate Profile &amp; Dossier</span>
+            <span class="text-xs font-mono text-stone-500 hidden md:inline">• Lakshay Nagpal</span>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <a href="index.html" class="droplet-pill px-3 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 text-xs font-semibold inline-flex items-center gap-1.5 transition-all">
+            <span>🏠</span>
+            <span class="hidden sm:inline">Dashboard</span>
+          </a>
+          <a href="learning_hub.html" class="droplet-pill px-3 py-1.5 rounded-xl text-stone-800 hover:text-stone-950 text-xs font-semibold inline-flex items-center gap-1.5 transition-all">
+            <span>🧠</span>
+            <span class="hidden sm:inline">Learning Hub</span>
+          </a>
+          <a href="assets/Lakshay_Nagpal_Resume.pdf" download="Lakshay_Nagpal_Resume.pdf" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-semibold shadow-sm transition-all">
+            <span>📥 Resume PDF</span>
+          </a>
+          <a href="https://www.linkedin.com/in/lakshay-nagpal-1a2a0134a/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#0a66c2] hover:bg-[#004182] text-white text-xs font-semibold shadow-sm transition-all" title="LinkedIn Profile">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z"/></svg>
+            <span class="hidden sm:inline">LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+
+      <!-- ========================================================================= -->
+      <!-- CANDIDATE PROFILE HERO CARD WITH OFFICIAL PHOTO & DIRECT DOWNLOADS         -->
+      <!-- ========================================================================= -->
+      <section class="glass-droplet rounded-3xl p-6 sm:p-10 border border-stone-300/80 shadow-lg relative overflow-hidden">
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-8 relative z-10">
+          
+          <!-- Candidate Photo Frame with Liquid Droplet Border -->
+          <div class="flex flex-col items-center gap-3 shrink-0">
+            <div class="relative group">
+              <div class="w-44 h-56 sm:w-48 sm:h-60 rounded-2xl overflow-hidden border-2 border-emerald-600/40 shadow-xl bg-stone-200">
+                <img src="assets/lakshay_photo.jpg" alt="Lakshay Nagpal Photo" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300" onerror="this.src='https://lh3.googleusercontent.com/d/1NlQQecqt_uyCdu5it10zyRcuRkj2jHLd'">
+              </div>
+              <div class="absolute -bottom-2 -right-2 bg-emerald-600 text-white p-1.5 rounded-full shadow-md border-2 border-white" title="Verified Identity">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+              </div>
+            </div>
+
+            <!-- Photo Actions -->
+            <div class="flex items-center gap-2">
+              <a href="assets/lakshay_photo.jpg" download="Lakshay_Nagpal_Photo.jpg" class="droplet-pill px-3 py-1.5 rounded-xl text-xs font-bold text-emerald-800 hover:text-emerald-950 inline-flex items-center gap-1.5 shadow-sm" title="Download High-Resolution Image">
+                <span>📷 Download Photo</span>
+              </a>
+              <a href="https://drive.google.com/file/d/1NlQQecqt_uyCdu5it10zyRcuRkj2jHLd/view?usp=sharing" target="_blank" rel="noreferrer" class="p-1.5 rounded-xl bg-white hover:bg-stone-100 text-stone-600 hover:text-stone-950 border border-stone-300 transition-all shadow-sm" title="Open on Google Drive">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Profile Details Header -->
+          <div class="space-y-4 flex-grow text-center md:text-left">
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-2">
+              <span class="px-3 py-1 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-900 text-xs font-bold uppercase tracking-wider">
+                Full-Stack Software Engineer
+              </span>
+              <span class="px-3 py-1 rounded-full bg-blue-100 border border-blue-300 text-blue-900 text-xs font-bold">
+                0 Days Notice (Immediate Joiner)
+              </span>
+              <span class="px-3 py-1 rounded-full bg-amber-100 border border-amber-300 text-amber-900 text-xs font-mono font-bold">
+                B.Tech 70.56% (First Division)
+              </span>
+            </div>
+
+            <div>
+              <h1 class="text-3xl sm:text-4xl font-black text-stone-900 tracking-tight">
+                Lakshay Nagpal
+              </h1>
+              <p class="text-stone-600 text-sm mt-1 font-mono">
+                MDU Rohtak Reg No: <strong class="text-stone-900">191070161</strong> • German Grade: <strong class="text-emerald-800">2.47 ("Gut")</strong>
+              </p>
+            </div>
+
+            <p class="text-stone-700 text-sm leading-relaxed max-w-3xl">
+              Results-driven Full-Stack Software Engineer with 2.8 years of enterprise experience delivering scalable web applications, robust backend microservices, and automated CI/CD pipelines. Coordinated 50+ production builds across 15+ distributed server environments sustaining 99.5%+ post-deployment uptime.
+            </p>
+
+            <!-- Primary Contact & One-Click Copy Badges -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 pt-2">
+              <div class="p-2.5 rounded-xl bg-white/90 border border-stone-300/80 flex items-center justify-between shadow-sm">
+                <div class="truncate text-xs">
+                  <span class="text-stone-500 block text-[10px]">Email Address</span>
+                  <strong class="text-stone-900 select-all">lakshayn0001@gmail.com</strong>
+                </div>
+                <button onclick="copyToClipboard('lakshayn0001@gmail.com', 'Email Address')" class="p-1.5 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-700 transition-all cursor-pointer" title="Copy Email">
+                  📋
+                </button>
+              </div>
+
+              <div class="p-2.5 rounded-xl bg-white/90 border border-stone-300/80 flex items-center justify-between shadow-sm">
+                <div class="truncate text-xs">
+                  <span class="text-stone-500 block text-[10px]">Phone (Direct/WhatsApp)</span>
+                  <strong class="text-stone-900 select-all">+91 83959 91957</strong>
+                </div>
+                <button onclick="copyToClipboard('+918395991957', 'Phone Number')" class="p-1.5 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-700 transition-all cursor-pointer" title="Copy Phone">
+                  📋
+                </button>
+              </div>
+
+              <div class="p-2.5 rounded-xl bg-white/90 border border-stone-300/80 flex items-center justify-between shadow-sm">
+                <div class="truncate text-xs">
+                  <span class="text-stone-500 block text-[10px]">Current Location</span>
+                  <strong class="text-stone-900">India (Open to Relocation)</strong>
+                </div>
+                <button onclick="copyToClipboard('India (Immediate Joiner / 0 Days Notice)', 'Location Status')" class="p-1.5 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-700 transition-all cursor-pointer" title="Copy Location">
+                  📋
+                </button>
+              </div>
+            </div>
+
+            <!-- Primary Action CTAs -->
+            <div class="pt-3 flex flex-wrap items-center justify-center md:justify-start gap-3">
+              <a href="assets/Lakshay_Nagpal_Resume.pdf" download="Lakshay_Nagpal_Resume.pdf" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold shadow-sm transition-all">
+                <span>📥 Download Official Resume (PDF)</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+              </a>
+
+              <a href="resume.html" target="_blank" class="droplet-pill px-4 py-2.5 rounded-xl text-stone-800 hover:text-stone-950 text-xs font-bold inline-flex items-center gap-2 transition-all">
+                <span>📄 View Web Resume</span>
+                <svg class="w-3.5 h-3.5 text-stone-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+
+              <button onclick="copyAllDetails()" class="droplet-pill px-4 py-2.5 rounded-xl text-emerald-800 hover:text-emerald-950 text-xs font-bold inline-flex items-center gap-2 transition-all">
+                <span>📋 Copy Complete Candidate Dossier</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 1: VERIFIED EDUCATIONAL QUALIFICATIONS & 8-SEMESTER BREAKDOWN     -->
+      <!-- ========================================================================= -->
+      <section class="glass-droplet rounded-3xl p-6 sm:p-8 space-y-6 border border-stone-300/80 shadow-md">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-stone-200">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-100 border border-emerald-300 text-emerald-900 text-xs font-bold uppercase tracking-wider">
+              🎓 Verified Educational Records (2017 – 2023)
+            </div>
+            <h2 class="text-2xl font-black text-stone-900 mt-1">
+              Complete Academic Qualifications &amp; Semester Marks
+            </h2>
+          </div>
+          <div class="text-right">
+            <span class="text-xs text-stone-500 block">Grand Total Aggregate</span>
+            <span class="text-xl font-black text-emerald-800">3810 / 5400 (70.56%)</span>
+          </div>
+        </div>
+
+        <!-- B.Tech Degree Summary Card -->
+        <div class="p-5 rounded-2xl bg-white/90 border border-stone-300/80 space-y-4 shadow-sm">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <h3 class="text-lg font-bold text-stone-900">
+                Bachelor of Technology (B.Tech) in Computer Science &amp; Engineering
+              </h3>
+              <p class="text-xs text-stone-600 mt-0.5">
+                Maharshi Dayanand University (MDU Rohtak, Haryana, India) • Duration: 2019 – 2023
+              </p>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="px-3 py-1 rounded-lg bg-emerald-100 text-emerald-800 text-xs font-bold font-mono">
+                First Division
+              </span>
+              <span class="px-3 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-bold font-mono">
+                CGPA: 7.2 / 10
+              </span>
+              <button onclick="copyToClipboard('191070161', 'MDU Registration Number')" class="px-2.5 py-1 rounded-lg bg-stone-200 hover:bg-stone-300 text-stone-700 text-xs font-semibold">
+                Copy Reg: 191070161
+              </button>
+            </div>
+          </div>
+
+          <!-- Official 8-Semester Detailed Table -->
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs border-collapse">
+              <thead>
+                <tr class="bg-stone-100 text-stone-700 border-b border-stone-300 uppercase tracking-wider text-[10px]">
+                  <th class="py-2.5 px-3">Semester</th>
+                  <th class="py-2.5 px-3">Exam Session</th>
+                  <th class="py-2.5 px-3">Roll Number</th>
+                  <th class="py-2.5 px-3">Marks Obtained</th>
+                  <th class="py-2.5 px-3">Max Marks</th>
+                  <th class="py-2.5 px-3">Percentage</th>
+                  <th class="py-2.5 px-3">Key Highlights / Core Subjects</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-stone-200 text-stone-800">
+                <tr class="hover:bg-stone-50/80 transition-colors">
+                  <td class="py-2 px-3 font-bold">Semester 1</td>
+                  <td class="py-2 px-3 font-mono text-stone-600">Dec 2019</td>
+                  <td class="py-2 px-3 font-mono">3440261</td>
+                  <td class="py-2 px-3 font-bold text-stone-900">361</td>
+                  <td class="py-2 px-3 text-stone-500">600</td>
+                  <td class="py-2 px-3 font-semibold text-emerald-700">60.17%</td>
+                  <td class="py-2 px-3 text-stone-600 text-[11px]">Engg Graphics: 92/100, Physics-I: 53/100, Maths-I: 50/100</td>
+                </tr>
+                <tr class="hover:bg-stone-50/80 transition-colors">
+                  <td class="py-2 px-3 font-bold">Semester 2</td>
+                  <td class="py-2 px-3 font-mono text-stone-600">Dec 2020</td>
+                  <td class="py-2 px-3 font-mono">5406197</td>
+                  <td class="py-2 px-3 font-bold text-stone-900">452</td>
+                  <td class="py-2 px-3 text-stone-500">600</td>
+                  <td class="py-2 px-3 font-semibold text-emerald-700">75.33%</td>
+                  <td class="py-2 px-3 text-stone-600 text-[11px]">Chemistry-I: 72/100, Math-II: 72/100, C Programming: 70/100</td>
+                </tr>
+                <tr class="hover:bg-stone-50/80 transition-colors">
+                  <td class="py-2 px-3 font-bold">Semester 3</td>
+                  <td class="py-2 px-3 font-mono text-stone-600">Mar 2021</td>
+                  <td class="py-2 px-3 font-mono">8015609</td>
+                  <td class="py-2 px-3 font-bold text-stone-900">632</td>
+                  <td class="py-2 px-3 text-stone-500">800</td>
+                  <td class="py-2 px-3 font-bold text-emerald-800">79.00%</td>
+                  <td class="py-2 px-3 text-stone-600 text-[11px]">Python: 88/100, DSA: 82/100, Math-III: 79/100, Digital Electronics: 72/100</td>
+                </tr>
+                <tr class="hover:bg-stone-50/80 transition-colors">
+                  <td class="py-2 px-3 font-bold">Semester 4</td>
+                  <td class="py-2 px-3 font-mono text-stone-600">Jul 2021</td>
+                  <td class="py-2 px-3 font-mono">2021998</td>
+                  <td class="py-2 px-3 font-bold text-stone-900">589</td>
+                  <td class="py-2 px-3 text-stone-500">750</td>
+                  <td class="py-2 px-3 font-bold text-emerald-800">78.53%</td>
+                  <td class="py-2 px-3 text-stone-600 text-[11px]">OOP: 80/100, Web Tech: 80/100, OS: 76/100, COA: 76/100</td>
+                </tr>
+                <tr class="hover:bg-stone-50/80 transition-colors">
+                  <td class="py-2 px-3 font-bold">Semester 5</td>
+                  <td class="py-2 px-3 font-mono text-stone-600">Feb 2022</td>
+                  <td class="py-2 px-3 font-mono">7044642</td>
+                  <td class="py-2 px-3 font-bold text-stone-900">557</td>
+                  <td class="py-2 px-3 text-stone-500">800</td>
+                  <td class="py-2 px-3 font-semibold text-emerald-700">69.63%</td>
+                  <td class="py-2 px-3 text-stone-600 text-[11px]">Computer Networks: 79/100, Microprocessor: 72/100, DAA: 66/100</td>
+                </tr>
+                <tr class="hover:bg-stone-50/80 transition-colors">
+                  <td class="py-2 px-3 font-bold">Semester 6</td>
+                  <td class="py-2 px-3 font-mono text-stone-600">Jul 2022</td>
+                  <td class="py-2 px-3 font-mono">3044406</td>
+                  <td class="py-2 px-3 font-bold text-stone-900">523</td>
+                  <td class="py-2 px-3 text-stone-500">800</td>
+                  <td class="py-2 px-3 font-semibold text-emerald-700">65.38%</td>
+                  <td class="py-2 px-3 text-stone-600 text-[11px]">AI: 69/100, Mobile &amp; Wireless: 65/100, Adv Java: 61/100</td>
+                </tr>
+                <tr class="hover:bg-stone-50/80 transition-colors">
+                  <td class="py-2 px-3 font-bold">Semester 7</td>
+                  <td class="py-2 px-3 font-mono text-stone-600">Dec 2022</td>
+                  <td class="py-2 px-3 font-mono">9065016</td>
+                  <td class="py-2 px-3 font-bold text-stone-900">353</td>
+                  <td class="py-2 px-3 text-stone-500">550</td>
+                  <td class="py-2 px-3 font-semibold text-emerald-700">64.18%</td>
+                  <td class="py-2 px-3 text-stone-600 text-[11px]">Project-II: 70/100, English for Professionals: 70/100</td>
+                </tr>
+                <tr class="hover:bg-stone-50/80 transition-colors">
+                  <td class="py-2 px-3 font-bold">Semester 8</td>
+                  <td class="py-2 px-3 font-mono text-stone-600">May 2023</td>
+                  <td class="py-2 px-3 font-mono">4072806</td>
+                  <td class="py-2 px-3 font-bold text-stone-900">343</td>
+                  <td class="py-2 px-3 text-stone-500">500</td>
+                  <td class="py-2 px-3 font-semibold text-emerald-700">68.60%</td>
+                  <td class="py-2 px-3 text-stone-600 text-[11px]">Project-III: 83/100, Big Data Analytics: 68/100</td>
+                </tr>
+                <tr class="bg-emerald-50/80 font-bold border-t-2 border-emerald-600 text-stone-900">
+                  <td colspan="3" class="py-3 px-3 uppercase">Official Cumulative Total (Sem 1–8)</td>
+                  <td class="py-3 px-3 text-emerald-900 text-sm">3810</td>
+                  <td class="py-3 px-3 text-stone-600 text-sm">5400</td>
+                  <td class="py-3 px-3 text-emerald-800 text-sm">70.56%</td>
+                  <td class="py-3 px-3 text-emerald-900">First Division with Distinction in Projects</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Schooling Qualifications (12th & 10th) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Class XII -->
+          <div class="p-4 rounded-2xl bg-white/90 border border-stone-300/80 space-y-2 shadow-sm">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase tracking-wider text-stone-500">Class XII (Senior Secondary, March 2019)</span>
+              <button onclick="copyToClipboard('Roll: 3019214019, Marks: 276/500 (55.20%), BSEH', 'Class XII Details')" class="text-[11px] font-semibold text-emerald-800 hover:underline">
+                Copy
+              </button>
+            </div>
+            <h4 class="text-base font-bold text-stone-900">Board of School Education Haryana (BSEH)</h4>
+            <p class="text-xs text-stone-600">TIT Sr Sec School, Bhiwani • Roll No: <strong class="text-stone-900">3019214019</strong></p>
+            <div class="flex items-center gap-3 pt-1">
+              <span class="text-sm font-bold text-stone-900">276 / 500 (55.20%)</span>
+              <span class="text-xs font-mono text-stone-500">GPA: 4.40 / 10</span>
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-stone-100 text-stone-700">Science (Non-Medical)</span>
+            </div>
+            <p class="text-[11px] text-stone-500 pt-1">
+              English Core: 65, Hindi Core: 59, Physics: 52 (Th: 23, Pr: 29), Chemistry: 53 (Th: 23, Pr: 30), Math: 47
+            </p>
+          </div>
+
+          <!-- Class X -->
+          <div class="p-4 rounded-2xl bg-white/90 border border-stone-300/80 space-y-2 shadow-sm">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase tracking-wider text-stone-500">Class X (Secondary School, 2017)</span>
+              <button onclick="copyToClipboard('Roll: 2107357, CGPA: 7.2/10 (68.4%), CBSE', 'Class X Details')" class="text-[11px] font-semibold text-emerald-800 hover:underline">
+                Copy
+              </button>
+            </div>
+            <h4 class="text-base font-bold text-stone-900">Central Board of Secondary Education (CBSE)</h4>
+            <p class="text-xs text-stone-600">Vaish Model Sr Sec School, Bhiwani • Roll No: <strong class="text-stone-900">2107357</strong></p>
+            <div class="flex items-center gap-3 pt-1">
+              <span class="text-sm font-bold text-stone-900">CGPA: 7.2 / 10</span>
+              <span class="text-xs font-mono text-emerald-800 font-bold">68.4% (CBSE Formula: 7.2 × 9.5)</span>
+            </div>
+            <p class="text-[11px] text-stone-500 pt-1">
+              English: B2 (GP 7), Hindi: B2 (GP 7), Math: B2 (GP 7), Science: B1 (GP 8), Social Science: B2 (GP 7)
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 2: PROFESSIONAL EXPERIENCE & ENTERPRISE TRACK RECORD             -->
+      <!-- ========================================================================= -->
+      <section class="glass-droplet rounded-3xl p-6 sm:p-8 space-y-6 border border-stone-300/80 shadow-md">
+        <div class="flex items-center justify-between border-b border-stone-200 pb-4">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-100 border border-blue-300 text-blue-900 text-xs font-bold uppercase tracking-wider">
+              💼 Professional Work History (2.8 Years)
+            </div>
+            <h2 class="text-2xl font-black text-stone-900 mt-1">
+              Enterprise Software Engineering Experience
+            </h2>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <!-- Job 1: OATI -->
+          <div class="p-5 rounded-2xl bg-white/90 border border-stone-300/80 space-y-3 shadow-sm">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <h3 class="text-lg font-bold text-stone-900">
+                  Software Developer – Integration
+                </h3>
+                <span class="text-sm font-semibold text-emerald-800">
+                  Open Access Technology India Pvt. Ltd. (OATI)
+                </span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="px-3 py-1 rounded-lg bg-stone-100 text-stone-700 text-xs font-mono font-semibold">
+                  Apr 2023 – Jan 2026 (2.8 Yrs)
+                </span>
+                <a href="https://drive.google.com/file/d/1V3WUaI4ASQmF7MOENCaoWenCwt1-78oX/view?usp=sharing" target="_blank" rel="noreferrer" class="px-3 py-1 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold inline-flex items-center gap-1 shadow-sm">
+                  <span>Experience Letter ↗</span>
+                </a>
+              </div>
+            </div>
+
+            <ul class="list-disc list-inside text-xs text-stone-700 space-y-1.5 leading-relaxed">
+              <li>Automated and orchestrated application deployment workflows across <strong>15+ distributed enterprise server environments</strong>, reducing manual rollout overhead by ~40% across release cycles.</li>
+              <li>Governed end-to-end release lifecycles across <strong>50+ production builds</strong>, executing pre-release validation protocols and environment health checks to sustain <strong>99.5%+ post-deployment system availability</strong>.</li>
+              <li>Authored and executed <strong>100+ transactional SQL validation routines</strong> and schema migration scripts to verify database connectivity, mitigate schema drift, and safeguard production data integrity.</li>
+              <li>Conducted root-cause analysis on critical release blockers by interrogating system logs and backend REST API payloads, reducing mean time to resolution (MTTR) by ~30%.</li>
+            </ul>
+          </div>
+
+          <!-- Job 2: Geekster -->
+          <div class="p-5 rounded-2xl bg-white/90 border border-stone-300/80 space-y-3 shadow-sm">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <h3 class="text-lg font-bold text-stone-900">
+                  Intern Teaching Assistant Engineer
+                </h3>
+                <span class="text-sm font-semibold text-blue-800">
+                  Geekster
+                </span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="px-3 py-1 rounded-lg bg-stone-100 text-stone-700 text-xs font-mono font-semibold">
+                  Jan 2022 – Jun 2022 (6 Mos)
+                </span>
+                <a href="https://drive.google.com/file/d/1rsVBAD43JQncRFX5xs_6V71Au6KGY20u/view?usp=sharing" target="_blank" rel="noreferrer" class="px-3 py-1 rounded-lg bg-blue-700 hover:bg-blue-800 text-white text-xs font-bold inline-flex items-center gap-1 shadow-sm">
+                  <span>View Certificate ↗</span>
+                </a>
+              </div>
+            </div>
+
+            <ul class="list-disc list-inside text-xs text-stone-700 space-y-1.5 leading-relaxed">
+              <li>Mentored a cohort of <strong>40+ aspiring software developers</strong> in core frontend engineering (JavaScript, React.js, HTML5, CSS3), achieving an <strong>85%+ curriculum completion rate</strong>.</li>
+              <li>Facilitated <strong>25+ technical debugging sessions</strong>, guiding developers through algorithmic optimization, state management, REST API consumption, and modular component reusability.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 3: QUICK COPY CENTER FOR FAST JOB APPLICATIONS                   -->
+      <!-- ========================================================================= -->
+      <section class="glass-droplet rounded-3xl p-6 sm:p-8 space-y-6 border border-stone-300/80 shadow-md">
+        <div class="flex items-center justify-between border-b border-stone-200 pb-4">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-amber-100 border border-amber-300 text-amber-900 text-xs font-bold uppercase tracking-wider">
+              ⚡ Instant 1-Click Copy Center
+            </div>
+            <h2 class="text-2xl font-black text-stone-900 mt-1">
+              Application Field Shortcuts
+            </h2>
+          </div>
+          <span class="text-xs text-stone-500">Click any card to copy its value immediately</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <button onclick="copyToClipboard('Lakshay Nagpal', 'Full Name')" class="p-3.5 rounded-xl bg-white hover:bg-stone-50 border border-stone-300/80 text-left transition-all group shadow-sm">
+            <span class="text-[10px] uppercase font-bold text-stone-500 block">Full Name</span>
+            <span class="text-xs font-bold text-stone-900 group-hover:text-emerald-700">Lakshay Nagpal</span>
+          </button>
+
+          <button onclick="copyToClipboard('lakshayn0001@gmail.com', 'Email Address')" class="p-3.5 rounded-xl bg-white hover:bg-stone-50 border border-stone-300/80 text-left transition-all group shadow-sm">
+            <span class="text-[10px] uppercase font-bold text-stone-500 block">Email Address</span>
+            <span class="text-xs font-bold text-stone-900 group-hover:text-emerald-700">lakshayn0001@gmail.com</span>
+          </button>
+
+          <button onclick="copyToClipboard('+918395991957', 'Phone Number')" class="p-3.5 rounded-xl bg-white hover:bg-stone-50 border border-stone-300/80 text-left transition-all group shadow-sm">
+            <span class="text-[10px] uppercase font-bold text-stone-500 block">Phone Number</span>
+            <span class="text-xs font-bold text-stone-900 group-hover:text-emerald-700">+91 83959 91957</span>
+          </button>
+
+          <button onclick="copyToClipboard('191070161', 'MDU Registration Number')" class="p-3.5 rounded-xl bg-white hover:bg-stone-50 border border-stone-300/80 text-left transition-all group shadow-sm">
+            <span class="text-[10px] uppercase font-bold text-stone-500 block">MDU Reg Number</span>
+            <span class="text-xs font-bold text-stone-900 group-hover:text-emerald-700">191070161</span>
+          </button>
+
+          <button onclick="copyToClipboard('70.56%', 'B.Tech Percentage')" class="p-3.5 rounded-xl bg-white hover:bg-stone-50 border border-stone-300/80 text-left transition-all group shadow-sm">
+            <span class="text-[10px] uppercase font-bold text-stone-500 block">B.Tech Aggregate</span>
+            <span class="text-xs font-bold text-stone-900 group-hover:text-emerald-700">70.56% (3810/5400)</span>
+          </button>
+
+          <button onclick="copyToClipboard('7.2', 'CGPA')" class="p-3.5 rounded-xl bg-white hover:bg-stone-50 border border-stone-300/80 text-left transition-all group shadow-sm">
+            <span class="text-[10px] uppercase font-bold text-stone-500 block">B.Tech CGPA</span>
+            <span class="text-xs font-bold text-stone-900 group-hover:text-emerald-700">7.2 / 10</span>
+          </button>
+
+          <button onclick="copyToClipboard('2.47', 'German Equivalent Grade')" class="p-3.5 rounded-xl bg-white hover:bg-stone-50 border border-stone-300/80 text-left transition-all group shadow-sm">
+            <span class="text-[10px] uppercase font-bold text-stone-500 block">German Grade</span>
+            <span class="text-xs font-bold text-stone-900 group-hover:text-emerald-700">2.47 ("Gut")</span>
+          </button>
+
+          <button onclick="copyToClipboard('0 Days', 'Notice Period')" class="p-3.5 rounded-xl bg-white hover:bg-stone-50 border border-stone-300/80 text-left transition-all group shadow-sm">
+            <span class="text-[10px] uppercase font-bold text-stone-500 block">Notice Period</span>
+            <span class="text-xs font-bold text-emerald-800">0 Days (Immediate)</span>
+          </button>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto border-t border-stone-300/70 bg-[#e4eae0] py-8 text-center text-xs text-stone-600">
+      <div class="max-w-7xl mx-auto px-4 space-y-2">
+        <div class="flex justify-center items-center gap-4 text-stone-700">
+          <a href="index.html" class="hover:text-emerald-800 transition-colors font-semibold">Dashboard</a>
+          <span>•</span>
+          <a href="learning_hub.html" class="hover:text-emerald-800 transition-colors font-semibold">Learning Hub</a>
+          <span>•</span>
+          <a href="assets/Lakshay_Nagpal_Resume.pdf" download="Lakshay_Nagpal_Resume.pdf" class="hover:text-emerald-800 transition-colors font-semibold">Download Resume (PDF)</a>
+          <span>•</span>
+          <a href="assets/lakshay_photo.jpg" download="Lakshay_Nagpal_Photo.jpg" class="hover:text-emerald-800 transition-colors font-semibold">Download Photo</a>
+          <span>•</span>
+          <a href="mailto:lakshayn0001@gmail.com" class="hover:text-emerald-800 transition-colors">Contact</a>
+        </div>
+        <p>&copy; 2026 Lakshay Nagpal. Candidate Profile &amp; Verified Credentials • Configured for GitHub Pages.</p>
+      </div>
+    </footer>
+
+  </div> <!-- End Main Content Wrapper (lg:pl-72) -->
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 hidden px-4 py-2.5 rounded-xl bg-stone-900 text-white text-xs font-semibold shadow-xl flex items-center gap-2">
+    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+    <span id="toastMsg">Copied to clipboard!</span>
+  </div>
+
+  <script>
+    function toggleSidebar(open) {
+      const drawer = document.getElementById('sideNavDrawer');
+      const backdrop = document.getElementById('sidebarBackdrop');
+      if (!drawer) return;
+      if (open) {
+        drawer.classList.remove('-translate-x-full');
+        if (backdrop) backdrop.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      } else {
+        drawer.classList.add('-translate-x-full');
+        if (backdrop) backdrop.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function copyToClipboard(text, label) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast(`Copied ${label}: ${text}`);
+      }).catch(() => {
+        showToast(`Copied: ${text}`);
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.innerText = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 2500);
+    }
+
+    function copyAllDetails() {
+      const dossier = `CANDIDATE DOSSIER - LAKSHAY NAGPAL
+Role: Full-Stack Software Engineer
+Email: lakshayn0001@gmail.com
+Phone: +91 83959 91957
+Location: India (Immediate Joiner / 0 Days Notice)
+
+B.Tech in Computer Science & Engineering (2019-2023):
+University: Maharshi Dayanand University (MDU Rohtak)
+Registration No: 191070161
+Grand Total: 3810 / 5400 (70.56% Aggregate, First Division)
+CGPA: 7.2 / 10 | German Equivalent: 2.47 ("Gut")
+
+Class XII: BSEH, TIT Sr Sec School, Bhiwani (Roll: 3019214019), 276/500 (55.20%)
+Class X: CBSE, Vaish Model Sr Sec School, Bhiwani (Roll: 2107357), CGPA 7.2 / 10 (68.4%)
+
+Experience:
+1. Open Access Technology India Pvt. Ltd. (OATI) | Apr 2023 – Jan 2026 (2.8 Yrs)
+   Role: Software Developer – Integration
+2. Geekster | Jan 2022 – Jun 2022 (6 Mos)
+   Role: Intern Teaching Assistant Engineer
+
+LinkedIn: https://www.linkedin.com/in/lakshay-nagpal-1a2a0134a/
+GitHub: https://github.com/lakshayn0001
+Portfolio: https://lakshayn0001.github.io/Portfolio/`;
+
+      navigator.clipboard.writeText(dossier).then(() => {
+        showToast("Copied full candidate dossier to clipboard!");
+      });
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        toggleSidebar(false);
+      }
+    });
+  </script>
+</body>
+</html>
