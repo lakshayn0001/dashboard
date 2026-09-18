@@ -11,6 +11,7 @@ Interactive developer portal and admissions roadmap hosted on GitHub Pages. Cent
 | Module | Description | Direct Link |
 | :--- | :--- | :--- |
 | 🇩🇪 **German Universities Postgraduate Analysis** | Comprehensive roadmap evaluating public €0-tuition Master of Science vs. private MBAs, ECTS requirements (~70 ECTS match), German grade benchmark (2.47 'Gut'), APS verification, and EU Blue Card pathways. | [`german_universities_evaluation.html`](german_universities_evaluation.html) |
+| 🐯 **CAT 2026 Strategic Master Roadmap & Empirical Syllabus** | Full 3-section preparation plan (VARC 24 Qs, DILR 22 Qs, QA 22 Qs), 4-step daily loop, 10-day timetable, interactive topic checklist, free English lecture links, and official IIM & IIT facts. | [`cat_2026_syllabus_roadmap.html`](cat_2026_syllabus_roadmap.html) |
 | ⚡ **Production TypeScript Curriculum & Interview Mastery** | 14,700+ lines deep dive spanning generics, type gymnastics, compiler AST manipulation, distributed microservices, and FAANG interview patterns. | [`typescript_curriculum.html`](typescript_curriculum.html) |
 | 📄 **German Lebenslauf (DIN 5008 CV)** | Standardized German-language curriculum vitae tailored for DACH employers and German university admissions. | [`lebenslauf_de.html`](lebenslauf_de.html) |
 | 💻 **Full-Stack Cloud Projects** | Production applications including Next.js 16 Real-Time Chat App (Socket.IO, K8s, Docker) and AI Data Analytics Dashboard (Gemini 1.5 API). | [GitHub Repositories](https://github.com/lakshayn0001?tab=repositories) |

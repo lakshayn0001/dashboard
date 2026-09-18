@@ -80,6 +80,7 @@
       <!-- Quick Action Badges / Links -->
       <nav class="hidden md:flex items-center gap-2 text-sm font-medium">
         <a href="#german-portal" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all">🇩🇪 German Unis</a>
+        <a href="#cat-portal" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all text-amber-400 font-semibold">🐯 CAT 2026</a>
         <a href="#ts-guide" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all">⚡ TypeScript Guide</a>
         <a href="#lebenslauf" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all">📄 Lebenslauf (CV)</a>
         <a href="#projects" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all">💻 Projects</a>
@@ -109,30 +110,35 @@
         Engineering &amp; Academic <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400">Control Center</span>
       </h1>
       <p class="max-w-2xl mx-auto text-slate-400 text-sm sm:text-base leading-relaxed">
-        Unified portal hosting the complete German Universities Postgraduate Admission Engine, the 14,000+ line Production TypeScript &amp; System Architecture Curriculum, and full-stack cloud projects.
+        Unified portal hosting the complete German Universities Postgraduate Admission Engine, the CAT 2026 Strategic Master Roadmap, the 14,000+ line Production TypeScript &amp; Architecture Curriculum, and cloud projects.
       </p>
 
       <!-- Key Profile Metric Highlights -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl mx-auto pt-6">
+      <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 max-w-5xl mx-auto pt-6">
         <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
-          <div class="text-xs font-medium text-slate-400">German Grade Benchmark</div>
+          <div class="text-xs font-medium text-slate-400">German Benchmark</div>
           <div class="text-xl sm:text-2xl font-black text-emerald-400 mt-1">2.47 <span class="text-xs font-normal text-slate-300">("Gut")</span></div>
-          <div class="text-[11px] text-slate-500 mt-0.5">B.Tech 70.56% (MDU Rohtak)</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">B.Tech 70.56% (MDU)</div>
         </div>
         <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
-          <div class="text-xs font-medium text-slate-400">Core CS Equivalency</div>
+          <div class="text-xs font-medium text-slate-400">Core CS Match</div>
           <div class="text-xl sm:text-2xl font-black text-blue-400 mt-1">~70 ECTS</div>
-          <div class="text-[11px] text-slate-500 mt-0.5">Direct Consecutive Eligibility</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">Direct M.Sc. Eligibility</div>
         </div>
         <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
-          <div class="text-xs font-medium text-slate-400">TypeScript Curriculum</div>
+          <div class="text-xs font-medium text-slate-400">CAT 2026 Target</div>
+          <div class="text-xl sm:text-2xl font-black text-amber-400 mt-1">93–96%ile</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">DoMS IITs + CAP IIMs</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
+          <div class="text-xs font-medium text-slate-400">TypeScript Mastery</div>
           <div class="text-xl sm:text-2xl font-black text-indigo-400 mt-1">14,700+</div>
-          <div class="text-[11px] text-slate-500 mt-0.5">Lines of In-Depth Code &amp; Theory</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">Lines of Production Code</div>
         </div>
-        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 text-center col-span-2 sm:col-span-1">
           <div class="text-xs font-medium text-slate-400">Notice Period</div>
-          <div class="text-xl sm:text-2xl font-black text-amber-400 mt-1">0 Days</div>
-          <div class="text-[11px] text-slate-500 mt-0.5">Immediate Joiner (Full-Stack)</div>
+          <div class="text-xl sm:text-2xl font-black text-emerald-400 mt-1">0 Days</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">Immediate Joiner</div>
         </div>
       </div>
 
@@ -142,11 +148,12 @@
           <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
           </div>
-          <input type="text" id="searchInput" oninput="filterCards()" placeholder="Search universities, ECTS, generics, AST, Socket.IO, Passau..." class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all">
+          <input type="text" id="searchInput" oninput="filterCards()" placeholder="Search universities, CAT syllabus, ECTS, generics, AST, DILR, Socket.IO, Passau..." class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all">
         </div>
         <div class="flex items-center gap-1.5 overflow-x-auto justify-center">
           <button onclick="setFilter('all', this)" class="filter-tag active px-3 py-2 rounded-xl text-xs font-semibold bg-blue-600 text-white transition-all">All</button>
-          <button onclick="setFilter('academics', this)" class="filter-tag px-3 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition-all">Academics</button>
+          <button onclick="setFilter('academics', this)" class="filter-tag px-3 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition-all">German Unis</button>
+          <button onclick="setFilter('cat', this)" class="filter-tag px-3 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition-all">CAT 2026</button>
           <button onclick="setFilter('typescript', this)" class="filter-tag px-3 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition-all">TypeScript</button>
           <button onclick="setFilter('projects', this)" class="filter-tag px-3 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition-all">Projects</button>
         </div>
@@ -201,7 +208,52 @@
         </div>
       </article>
 
-      <!-- Card 2: Production TypeScript Curriculum & Interview Mastery Guide -->
+      <!-- Card 2: CAT 2026 Strategic Master Roadmap & Empirical Syllabus -->
+      <article id="cat-portal" data-category="cat" data-keywords="cat 2026 mba iim iit syllabus varc dilr quant arithmetic algebra geometry timetable 2iim cracku arun sharma test pattern rodha gejo speaks" class="resource-card glow-card rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6 sm:p-8 flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="flex items-start justify-between gap-3 flex-wrap">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider">
+              <span>🐯</span> CAT 2026 Master Roadmap
+            </div>
+            <span class="text-xs font-mono text-slate-400 bg-slate-800/80 px-2.5 py-1 rounded-md border border-slate-700">Empirical Syllabus • Checklist</span>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-extrabold text-white tracking-tight flex items-center gap-2">
+              CAT 2026 Strategic Roadmap &amp; Empirical Syllabus
+            </h2>
+            <p class="text-slate-300 text-sm mt-2 leading-relaxed">
+              Exhaustive section-by-section preparation blueprint covering the 3 locked boxes: <strong class="text-white">VARC (24 Qs), DILR (22 Qs), and QA (22 Qs)</strong>. Includes the 4-step daily study loop, exact 10-day kickstart timetable, interactive browser-saved topic checklist, curated free lecture directory, and official IIM &amp; IIT test specification clarifications.
+            </p>
+          </div>
+
+          <!-- Feature Highlights Tags -->
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700 text-xs text-slate-300">⏱️ 66 Qs • 120 Min (40m Strict Sectional)</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700 text-xs text-slate-300">📈 Arithmetic High-Yield Progression</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700 text-xs text-slate-300">⚡ Golden 12-Min DILR Rule (Pick 2 Sets)</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700 text-xs text-slate-300">🏛️ IITs &amp; CAP IIMs (Target 93–96%ile)</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700 text-xs text-slate-300">✅ Interactive Browser-Saved Checklist</span>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="pt-8 border-t border-slate-800/80 mt-6 flex flex-wrap items-center gap-3">
+          <a href="cat_2026_syllabus_roadmap.html" class="flex-1 min-w-[160px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-slate-950 font-bold text-sm shadow-md shadow-amber-500/20 transition-all">
+            <span>Launch CAT Roadmap</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+          <button onclick="openPreview('cat_2026_syllabus_roadmap.html', 'CAT 2026 Strategic Master Roadmap &amp; Empirical Syllabus')" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-sm transition-all">
+            <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+            <span>Preview</span>
+          </button>
+          <button onclick="copyFileLink('cat_2026_syllabus_roadmap.html')" class="p-2.5 rounded-xl bg-slate-800/60 hover:bg-slate-700 text-slate-400 hover:text-slate-200 transition-all" title="Copy Direct URL">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+          </button>
+        </div>
+      </article>
+
+      <!-- Card 3: Production TypeScript Curriculum & Interview Mastery Guide -->
       <article id="ts-guide" data-category="typescript" data-keywords="typescript curriculum guide interview types generics type gymnastics ast compiler architecture microservices patterns leetcode full-stack node react deep dive" class="resource-card glow-card rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6 sm:p-8 flex flex-col justify-between">
         <div class="space-y-4">
           <div class="flex items-start justify-between gap-3 flex-wrap">
@@ -440,6 +492,8 @@
         <a href="https://github.com/lakshayn0001" target="_blank" rel="noreferrer" class="hover:text-blue-400 transition-colors">GitHub</a>
         <span>•</span>
         <a href="https://lakshayn0001.github.io/Portfolio/" target="_blank" rel="noreferrer" class="hover:text-blue-400 transition-colors">Developer Portfolio</a>
+        <span>•</span>
+        <a href="cat_2026_syllabus_roadmap.html" class="hover:text-amber-400 transition-colors">CAT 2026 Roadmap</a>
         <span>•</span>
         <a href="mailto:lakshayn0001@gmail.com" class="hover:text-blue-400 transition-colors">Contact</a>
       </div>

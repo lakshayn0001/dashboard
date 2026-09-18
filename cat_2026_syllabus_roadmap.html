@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAT 2026 Master Roadmap &amp; Empirical Syllabus | Lakshay Nagpal</title>
+  <meta name="description" content="Exhaustive CAT 2026 strategic preparation roadmap, section-wise empirical syllabus, 10-day kickstart timetable, and official IIM/IIT exam specifications.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              900: '#1e3a8a',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Menlo', 'Monaco', 'Courier New', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: #0b0f19;
+      color: #e2e8f0;
+    }
+    .glass-nav {
+      background: rgba(11, 15, 25, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #0f172a; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    @media print {
+      body { background-color: #ffffff; color: #000000; }
+      .no-print { display: none !important; }
+      .glass-nav { position: static; background: #ffffff; border: none; }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-amber-500 selection:text-black">
+
+  <!-- Sticky Top Navigation -->
+  <header class="sticky top-0 z-40 w-full border-b border-slate-800 glass-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="w-9 h-9 rounded-xl bg-slate-800 border border-slate-700 hover:border-amber-500 flex items-center justify-center text-slate-300 hover:text-white transition-all" title="Back to Master Dashboard">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+        </a>
+        <div>
+          <span class="font-bold text-white text-base tracking-tight block">CAT 2026 Strategic Master Roadmap</span>
+          <span class="text-xs text-amber-400 font-mono flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+            Empirical Syllabus &amp; High-Yield Topic Architecture
+          </span>
+        </div>
+      </div>
+
+      <!-- Quick Nav Links -->
+      <nav class="hidden md:flex items-center gap-2 text-xs font-semibold text-slate-300">
+        <a href="#structure" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 hover:text-white transition-all">Test Pattern</a>
+        <a href="#loop" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 hover:text-white transition-all">4-Step Loop</a>
+        <a href="#varc" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 hover:text-white transition-all">VARC (24 Qs)</a>
+        <a href="#dilr" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 hover:text-white transition-all">DILR (22 Qs)</a>
+        <a href="#qa" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 hover:text-white transition-all">QA (22 Qs)</a>
+        <a href="#timetable" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 hover:text-white transition-all">10-Day Kickstart</a>
+        <a href="#official" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 hover:text-white transition-all text-amber-400">Official IIM/IIT Facts</a>
+        <a href="#links" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 hover:text-white transition-all">Resources</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <button onclick="window.print()" class="no-print hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium border border-slate-700 transition-all">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+          <span>Print / PDF</span>
+        </button>
+        <a href="index.html" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-slate-950 font-bold text-xs transition-all">
+          <span>Hub</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+
+    <!-- Hero Header Banner -->
+    <section class="rounded-3xl bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 border border-slate-800 p-6 sm:p-10 relative overflow-hidden shadow-2xl">
+      <div class="absolute -right-20 -top-20 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      
+      <div class="max-w-4xl space-y-4 relative z-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider">
+          <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+          CAT 2026 Strategic Preparation Plan
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+          Every Topic You Must Cover for <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-300 to-yellow-500">CAT 2026</span>
+        </h1>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          CAT is not 15 school subjects. It is strictly <strong>THREE sections</strong>. Every single question on exam day sits inside one of three 40-minute boxes. No grammar paper, no spoken English, no Class 12 calculus.
+        </p>
+
+        <!-- Golden Rule Callout -->
+        <div class="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-200 text-xs sm:text-sm font-medium flex items-start gap-3">
+          <svg class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <div>
+            <strong class="text-white">The Golden Rule:</strong> Start Monday with <strong>Arithmetic Percentages + 1 Daily RC + 1 Table DILR set</strong>. Do not jump to Geometry or Para Jumbles in week 1.
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Strip -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8 pt-6 border-t border-slate-800/80 relative z-10">
+        <div class="p-3.5 rounded-xl bg-slate-800/40 border border-slate-800">
+          <div class="text-xs text-slate-400">Total Questions</div>
+          <div class="text-2xl font-black text-white mt-0.5">66 <span class="text-xs font-normal text-slate-400">Qs</span></div>
+          <div class="text-[11px] text-slate-500">24 VARC + 22 DILR + 22 QA</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-800/40 border border-slate-800">
+          <div class="text-xs text-slate-400">Total Duration</div>
+          <div class="text-2xl font-black text-amber-400 mt-0.5">120 <span class="text-xs font-normal text-slate-400">Min</span></div>
+          <div class="text-[11px] text-slate-500">40 Min Locked per Section</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-800/40 border border-slate-800">
+          <div class="text-xs text-slate-400">Marking Scheme</div>
+          <div class="text-2xl font-black text-emerald-400 mt-0.5">+3 / -1</div>
+          <div class="text-[11px] text-slate-500">0 penalty on Non-MCQ (TITA)</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-800/40 border border-slate-800">
+          <div class="text-xs text-slate-400">Target Percentile</div>
+          <div class="text-2xl font-black text-blue-400 mt-0.5">93–96%ile</div>
+          <div class="text-[11px] text-slate-500">DoMS IITs + CAP IIMs</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 0: Official IIM / IIT CAT Syllabus Truth & Facts -->
+    <section id="official" class="rounded-2xl bg-gradient-to-br from-slate-900 to-slate-950 border border-amber-500/30 p-6 sm:p-8 space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <div class="text-amber-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-amber-400"></span> Official Specification Analysis
+          </div>
+          <h2 class="text-2xl font-extrabold text-white tracking-tight mt-1">
+            Does IIM or IIT Publish an Official CAT Syllabus?
+          </h2>
+        </div>
+        <span class="text-xs font-mono px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 self-start sm:self-auto">Official Fact Check</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+        <div class="p-5 rounded-xl bg-slate-800/50 border border-slate-800 space-y-3">
+          <div class="font-bold text-white flex items-center gap-2">
+            <span class="w-6 h-6 rounded-lg bg-red-500/20 text-red-400 flex items-center justify-center text-xs">✕</span>
+            The Reality: No Prescribed Chapter List
+          </div>
+          <p class="text-slate-300 leading-relaxed text-xs sm:text-sm">
+            Neither the conducting <strong>IIMs (Ahmedabad, Calcutta, Bangalore, Lucknow, etc.)</strong> nor participating <strong>IITs (Bombay, Delhi, Madras, Kharagpur, Roorkee, Kanpur)</strong> publish an official textbook or chapter-wise syllabus for CAT. Any website claiming an "Official Chapter Syllabus" is publishing an unofficial compilation.
+          </p>
+          <div class="text-xs text-slate-400 pt-1">
+            What IIM officially publishes: The <strong>CAT Information Bulletin &amp; Test Structure</strong> specifying section names, question count, and 40-minute sectional windows.
+          </div>
+        </div>
+
+        <div class="p-5 rounded-xl bg-slate-800/50 border border-slate-800 space-y-3">
+          <div class="font-bold text-white flex items-center gap-2">
+            <span class="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs">✓</span>
+            The Empirical Syllabus (2017–2025 Past Papers)
+          </div>
+          <p class="text-slate-300 leading-relaxed text-xs sm:text-sm">
+            Because CAT strictly tests aptitude rather than memorization, the real syllabus is derived through <strong>empirical analysis of actual CAT papers from 2017 through 2025</strong>. Every question in this roadmap is categorized directly from past examination slots.
+          </p>
+          <div class="text-xs text-emerald-400 pt-1 flex items-center gap-1.5 font-mono">
+            <span>●</span> Class 8–10 NCERT Math foundation + Reading Comprehension + Unconventional DILR sets.
+          </div>
+        </div>
+      </div>
+
+      <!-- IIT MBA vs IIM Reality for Engineers -->
+      <div class="p-5 rounded-xl bg-slate-900 border border-slate-800 space-y-3">
+        <h3 class="text-sm font-bold text-white flex items-center gap-2">
+          <span>🏛️</span> IIT Management Schools &amp; CAT Cutoff Truth for Engineers
+        </h3>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          IIT management departments (e.g. <strong>DoMS IIT Madras, DMS IIT Delhi, SJMSOM IIT Bombay, VGSoM IIT Kharagpur, DoMS IIT Roorkee, IME IIT Kanpur</strong>) admit candidates exclusively through CAT scores. Because IITs place high value on technical undergraduate degrees (B.Tech CSE), your engineering foundation gives you an advantage in their shortlisting criteria compared to older IIMs that penalize Class 12 percentages.
+        </p>
+        <div class="flex flex-wrap gap-2 pt-2 text-[11px] font-mono">
+          <a href="https://doms.iitm.ac.in" target="_blank" rel="noreferrer" class="px-2.5 py-1 rounded bg-slate-800 text-blue-400 hover:text-white border border-slate-700">DoMS IIT Madras ↗</a>
+          <a href="https://dms.iitd.ac.in" target="_blank" rel="noreferrer" class="px-2.5 py-1 rounded bg-slate-800 text-blue-400 hover:text-white border border-slate-700">DMS IIT Delhi ↗</a>
+          <a href="https://www.som.iitb.ac.in" target="_blank" rel="noreferrer" class="px-2.5 py-1 rounded bg-slate-800 text-blue-400 hover:text-white border border-slate-700">SJMSOM IIT Bombay ↗</a>
+          <a href="https://som.iitkgp.ac.in" target="_blank" rel="noreferrer" class="px-2.5 py-1 rounded bg-slate-800 text-blue-400 hover:text-white border border-slate-700">VGSoM IIT Kharagpur ↗</a>
+          <a href="https://ms.iitr.ac.in" target="_blank" rel="noreferrer" class="px-2.5 py-1 rounded bg-slate-800 text-blue-400 hover:text-white border border-slate-700">DoMS IIT Roorkee ↗</a>
+          <a href="https://www.iitk.ac.in/ime/" target="_blank" rel="noreferrer" class="px-2.5 py-1 rounded bg-slate-800 text-blue-400 hover:text-white border border-slate-700">IME IIT Kanpur ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: Test Structure Table -->
+    <section id="structure" class="space-y-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-xl font-bold text-white flex items-center gap-2">
+            <span>⏱️</span> Official Test Architecture (66 Questions • 120 Minutes)
+          </h2>
+          <p class="text-xs text-slate-400">Strict 40-minute timer per section. You cannot switch between sections.</p>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-900/60">
+        <table class="w-full text-left text-sm text-slate-300">
+          <thead class="bg-slate-900 border-b border-slate-800 text-xs uppercase tracking-wider text-slate-400 font-semibold">
+            <tr>
+              <th class="py-3.5 px-4">Section</th>
+              <th class="py-3.5 px-4">Full Name</th>
+              <th class="py-3.5 px-4 text-center">Questions</th>
+              <th class="py-3.5 px-4 text-center">Time</th>
+              <th class="py-3.5 px-6">What It Really Tests</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800/60 text-xs sm:text-sm">
+            <tr class="hover:bg-slate-800/30 transition-colors">
+              <td class="py-4 px-4 font-mono font-bold text-blue-400">VARC</td>
+              <td class="py-4 px-4 font-semibold text-white">Verbal Ability &amp; Reading Comprehension</td>
+              <td class="py-4 px-4 text-center font-mono font-bold text-white">24</td>
+              <td class="py-4 px-4 text-center font-mono text-amber-400">40 min</td>
+              <td class="py-4 px-6 text-slate-300">Can you comprehend complex, dense English passages and deduce the author's nuanced perspective under timed pressure?</td>
+            </tr>
+            <tr class="hover:bg-slate-800/30 transition-colors">
+              <td class="py-4 px-4 font-mono font-bold text-emerald-400">DILR</td>
+              <td class="py-4 px-4 font-semibold text-white">Data Interpretation &amp; Logical Reasoning</td>
+              <td class="py-4 px-4 text-center font-mono font-bold text-white">22</td>
+              <td class="py-4 px-4 text-center font-mono text-amber-400">40 min</td>
+              <td class="py-4 px-6 text-slate-300">Can you filter unstructured constraints, select 2 solvable sets out of 4–5, and execute accurate caselet deductions?</td>
+            </tr>
+            <tr class="hover:bg-slate-800/30 transition-colors">
+              <td class="py-4 px-4 font-mono font-bold text-purple-400">QA</td>
+              <td class="py-4 px-4 font-semibold text-white">Quantitative Ability</td>
+              <td class="py-4 px-4 text-center font-mono font-bold text-white">22</td>
+              <td class="py-4 px-4 text-center font-mono text-amber-400">40 min</td>
+              <td class="py-4 px-6 text-slate-300">Can you apply Class 8–10 fundamental mathematical principles inside twisted, deceptively worded word problems?</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECTION 2: 4-Step Practice Loop -->
+    <section id="loop" class="rounded-2xl bg-slate-900/60 border border-slate-800 p-6 sm:p-8 space-y-6">
+      <div>
+        <div class="text-emerald-400 text-xs font-bold uppercase tracking-wider">The Execution Blueprint</div>
+        <h2 class="text-2xl font-extrabold text-white tracking-tight mt-1">
+          The Universal 4-Step Study Loop (For Every Single Topic)
+        </h2>
+        <p class="text-xs text-slate-400 mt-1">Do NOT watch 10 videos and call it study. Follow this strict sequence:</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="p-5 rounded-xl bg-slate-800/50 border border-slate-700/60 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 font-black flex items-center justify-center text-sm">1</span>
+            <span class="text-xs font-mono text-slate-400">30–40 Min</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">Learn the Core Concept</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Watch ONE targeted video of THAT topic only (e.g. 2IIM or Rodha English). Never binge multiple topics in one session.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-xl bg-slate-800/50 border border-slate-700/60 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 font-black flex items-center justify-center text-sm">2</span>
+            <span class="text-xs font-mono text-slate-400">30 Min</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">Solve Foundational Easy</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Solve 15–25 untimed Level of Difficulty 1 (LOD 1) questions without a stopwatch to build clean muscle memory.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-xl bg-slate-800/50 border border-slate-700/60 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 font-black flex items-center justify-center text-sm">3</span>
+            <span class="text-xs font-mono text-slate-400">30 Min</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">Solve Exam-Like PYQs</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Tackle 10–15 mixed CAT previous-year questions from that specific topic (CAT 2017–2025 papers on 2IIM/Cracku).
+          </p>
+        </div>
+
+        <div class="p-5 rounded-xl bg-slate-800/50 border border-slate-700/60 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="w-8 h-8 rounded-lg bg-purple-500/20 text-purple-400 font-black flex items-center justify-center text-sm">4</span>
+            <span class="text-xs font-mono text-slate-400">10 Min</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">Log Mistakes in Error Log</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Document precisely <em>why</em> you missed the question (calculation slip, concept gap, or trap option). That is the real study.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Detailed Syllabus Accordions & Topic Checklist -->
+    <section class="space-y-8">
+      <div>
+        <div class="text-blue-400 text-xs font-bold uppercase tracking-wider">Empirical Breakdown</div>
+        <h2 class="text-2xl font-extrabold text-white tracking-tight mt-1">Section-by-Section Complete Topic Architecture</h2>
+        <p class="text-xs text-slate-400 mt-1">Check off topics as you master them (progress automatically saved in browser).</p>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-bold text-slate-300">Topic Mastery Progress:</span>
+          <span id="progressText" class="text-xs font-mono font-bold text-amber-400">0 / 27 Completed</span>
+        </div>
+        <div class="w-full sm:w-64 bg-slate-800 h-2.5 rounded-full overflow-hidden">
+          <div id="progressBar" class="bg-gradient-to-r from-amber-500 to-emerald-400 h-full w-0 transition-all duration-300"></div>
+        </div>
+      </div>
+
+      <!-- SECTION 1: VARC (24 Questions) -->
+      <div id="varc" class="rounded-2xl border border-slate-800 bg-slate-900/80 overflow-hidden">
+        <div class="p-5 sm:p-6 border-b border-slate-800 bg-slate-900 flex items-center justify-between flex-wrap gap-2">
+          <div>
+            <span class="px-2.5 py-0.5 rounded text-xs font-bold bg-blue-500/20 text-blue-400 border border-blue-500/30">SECTION 1</span>
+            <h3 class="text-xl font-bold text-white mt-1">Verbal Ability &amp; Reading Comprehension (24 Questions)</h3>
+            <p class="text-xs text-slate-400 mt-0.5">RC is the real exam (~16 Qs, 4 passages). VA is 6–8 high-accuracy questions.</p>
+          </div>
+          <span class="text-xs font-mono text-slate-400">40 Minutes Locked</span>
+        </div>
+
+        <div class="p-6 space-y-6">
+          <!-- Part A: Reading Comprehension -->
+          <div class="space-y-3">
+            <h4 class="text-sm font-bold text-blue-400 uppercase tracking-wider flex items-center gap-2">
+              <span>📖</span> Part A: Reading Comprehension (~16 Questions, 4 Passages)
+            </h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Each passage is 400–700 words with 4 questions. Topics CAT loves: <strong>philosophy, psychology, economics, history, sociology, biology, art &amp; culture</strong>. Question types: Main idea, Author's tone, Inference, "Which option is supported", "Which is NOT true". There is no grammar chapter list here; the syllabus is the muscle of analytical reading.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs">
+              <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+                <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="varc-1" onchange="updateProgress()">
+                <div>
+                  <div class="font-bold text-white">RC Method Once</div>
+                  <div class="text-slate-400 text-[11px]">Gejo Speaks YouTube (VARC1000 Lesson 1: How wrong answers are created)</div>
+                </div>
+              </label>
+              <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+                <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="varc-2" onchange="updateProgress()">
+                <div>
+                  <div class="font-bold text-white">Second Method Video</div>
+                  <div class="text-slate-400 text-[11px]">Bodhee Prep: How to break down and read dense RC passages</div>
+                </div>
+              </label>
+              <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+                <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="varc-3" onchange="updateProgress()">
+                <div>
+                  <div class="font-bold text-white">Daily Timed RC</div>
+                  <div class="text-slate-400 text-[11px]">1 timed RC every single day on Cracku Daily Target or 2IIM</div>
+                </div>
+              </label>
+              <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+                <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="varc-4" onchange="updateProgress()">
+                <div>
+                  <div class="font-bold text-white">Reading Habit Stamina</div>
+                  <div class="text-slate-400 text-[11px]">Aeon Essays (aeon.co) + The Hindu Editorial (45 min daily)</div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Part B: Verbal Ability -->
+          <div class="space-y-3 pt-4 border-t border-slate-800">
+            <h4 class="text-sm font-bold text-blue-400 uppercase tracking-wider flex items-center gap-2">
+              <span>✍️</span> Part B: Verbal Ability (~8 Questions)
+            </h4>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+              <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+                <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="va-1" onchange="updateProgress()">
+                <div>
+                  <div class="font-bold text-white flex items-center gap-2">
+                    <span>Para Summary</span>
+                    <span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300">Must Cover • Wk 2</span>
+                  </div>
+                  <div class="text-slate-400 text-[11px]">4 options. Which sentence best captures paragraph core? (PYQs on 2IIM)</div>
+                </div>
+              </label>
+
+              <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+                <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="va-2" onchange="updateProgress()">
+                <div>
+                  <div class="font-bold text-white flex items-center gap-2">
+                    <span>Para Completion / Sentence Insertion</span>
+                    <span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300">Must Cover</span>
+                  </div>
+                  <div class="text-slate-400 text-[11px]">A sentence is missing. Where does it fit best? (2IIM PYQs)</div>
+                </div>
+              </label>
+
+              <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+                <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="va-3" onchange="updateProgress()">
+                <div>
+                  <div class="font-bold text-white flex items-center gap-2">
+                    <span>Odd Sentence Out</span>
+                    <span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300">Must Cover</span>
+                  </div>
+                  <div class="text-slate-400 text-[11px]">4–5 sentences. Identify the one sentence outside the narrative thread.</div>
+                </div>
+              </label>
+
+              <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+                <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="va-4" onchange="updateProgress()">
+                <div>
+                  <div class="font-bold text-white flex items-center gap-2">
+                    <span>Para Jumbles (TITA)</span>
+                    <span class="text-[10px] px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300">Start Later</span>
+                  </div>
+                  <div class="text-slate-400 text-[11px]">Reorder 4–5 sentences without options. Zero negative penalty.</div>
+                </div>
+              </label>
+            </div>
+            <div class="p-2.5 rounded-lg bg-red-500/10 border border-red-500/20 text-[11px] text-red-300 flex items-center gap-2">
+              <span>🚫</span> <strong>Skip as a syllabus:</strong> Direct grammar worksheets, idioms, and 1000-word vocabulary lists. CAT does not ask direct vocab MCQs anymore.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 2: DILR (22 Questions) -->
+      <div id="dilr" class="rounded-2xl border border-slate-800 bg-slate-900/80 overflow-hidden">
+        <div class="p-5 sm:p-6 border-b border-slate-800 bg-slate-900 flex items-center justify-between flex-wrap gap-2">
+          <div>
+            <span class="px-2.5 py-0.5 rounded text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">SECTION 2</span>
+            <h3 class="text-xl font-bold text-white mt-1">Data Interpretation &amp; Logical Reasoning (22 Questions)</h3>
+            <p class="text-xs text-slate-400 mt-0.5">Paper presents 4 or 5 SETS. Your entire goal is to identify and complete 2 CLEAN sets (90+ percentile benchmark).</p>
+          </div>
+          <span class="text-xs font-mono text-slate-400">40 Minutes Locked</span>
+        </div>
+
+        <div class="p-6 space-y-4">
+          <!-- 12-Minute Rule Box -->
+          <div class="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs flex items-start gap-2.5">
+            <span class="text-base">⚡</span>
+            <div>
+              <strong>The Golden 12-Minute DILR Rule:</strong> Give yourself 12 minutes per set. If the set's logic matrix does not open cleanly within 6–7 minutes, <strong>STOP and mark SKIP</strong>. Do not get emotionally attached to a stubborn set.
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs">
+            <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+              <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="dilr-1" onchange="updateProgress()">
+              <div>
+                <div class="font-bold text-white flex items-center gap-1.5">
+                  <span>Tables &amp; Caselets</span>
+                  <span class="text-[10px] px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono">Week 1</span>
+                </div>
+                <div class="text-slate-400 text-[11px] mt-0.5">A table of raw figures or paragraph caselet with 4 questions. CAT 2017–19 PYQs.</div>
+              </div>
+            </label>
+
+            <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+              <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="dilr-2" onchange="updateProgress()">
+              <div>
+                <div class="font-bold text-white flex items-center gap-1.5">
+                  <span>Bar / Line / Pie Charts</span>
+                  <span class="text-[10px] px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono">Week 1–2</span>
+                </div>
+                <div class="text-slate-400 text-[11px] mt-0.5">Classic graphical DI, sometimes two dual-axis charts mixed. 2IIM PYQs.</div>
+              </div>
+            </label>
+
+            <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+              <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="dilr-3" onchange="updateProgress()">
+              <div>
+                <div class="font-bold text-white flex items-center gap-1.5">
+                  <span>Linear &amp; Circular Arrangements</span>
+                  <span class="text-[10px] px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono">Week 2</span>
+                </div>
+                <div class="text-slate-400 text-[11px] mt-0.5">People in rows/circles with condition constraints. Cracku arrangement sets.</div>
+              </div>
+            </label>
+
+            <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+              <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="dilr-4" onchange="updateProgress()">
+              <div>
+                <div class="font-bold text-white flex items-center gap-1.5">
+                  <span>Games &amp; Tournaments</span>
+                  <span class="text-[10px] px-1.5 py-0.2 rounded bg-blue-500/20 text-blue-300 font-mono">Week 2–3</span>
+                </div>
+                <div class="text-slate-400 text-[11px] mt-0.5">Round-robin, knockout points tables. Extremely frequent in recent CAT papers.</div>
+              </div>
+            </label>
+
+            <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+              <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="dilr-5" onchange="updateProgress()">
+              <div>
+                <div class="font-bold text-white flex items-center gap-1.5">
+                  <span>Venn Diagrams &amp; Set Theory</span>
+                  <span class="text-[10px] px-1.5 py-0.2 rounded bg-blue-500/20 text-blue-300 font-mono">Week 3</span>
+                </div>
+                <div class="text-slate-400 text-[11px] mt-0.5">3 &amp; 4 overlapping sets (maxima/minima). Rodha English / 2IIM.</div>
+              </div>
+            </label>
+
+            <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+              <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="dilr-6" onchange="updateProgress()">
+              <div>
+                <div class="font-bold text-white flex items-center gap-1.5">
+                  <span>Scheduling &amp; Time Slots</span>
+                  <span class="text-[10px] px-1.5 py-0.2 rounded bg-blue-500/20 text-blue-300 font-mono">Week 3–4</span>
+                </div>
+                <div class="text-slate-400 text-[11px] mt-0.5">Who works which shift, order of delivery, meeting slot allocations.</div>
+              </div>
+            </label>
+
+            <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+              <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="dilr-7" onchange="updateProgress()">
+              <div>
+                <div class="font-bold text-white flex items-center gap-1.5">
+                  <span>Routes, Networks &amp; Flow Maps</span>
+                  <span class="text-[10px] px-1.5 py-0.2 rounded bg-purple-500/20 text-purple-300 font-mono">Week 4–5</span>
+                </div>
+                <div class="text-slate-400 text-[11px] mt-0.5">Pipeline capacities, transit bottlenecks, shortest paths between nodes.</div>
+              </div>
+            </label>
+
+            <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+              <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="dilr-8" onchange="updateProgress()">
+              <div>
+                <div class="font-bold text-white flex items-center gap-1.5">
+                  <span>Puzzles, Grouping &amp; Distribution</span>
+                  <span class="text-[10px] px-1.5 py-0.2 rounded bg-purple-500/20 text-purple-300 font-mono">Week 4–5</span>
+                </div>
+                <div class="text-slate-400 text-[11px] mt-0.5">Assign items with multiple strict criteria &amp; conditional boundaries.</div>
+              </div>
+            </label>
+
+            <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+              <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="dilr-9" onchange="updateProgress()">
+              <div>
+                <div class="font-bold text-white flex items-center gap-1.5">
+                  <span>Quant-Based Mixed Caselets</span>
+                  <span class="text-[10px] px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 font-mono">After Arithmetic</span>
+                </div>
+                <div class="text-slate-400 text-[11px] mt-0.5">DI sets reliant on ratios, profit, algebraic equations (CAT 2022–2025).</div>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 3: QA (22 Questions) -->
+      <div id="qa" class="rounded-2xl border border-slate-800 bg-slate-900/80 overflow-hidden">
+        <div class="p-5 sm:p-6 border-b border-slate-800 bg-slate-900 flex items-center justify-between flex-wrap gap-2">
+          <div>
+            <span class="px-2.5 py-0.5 rounded text-xs font-bold bg-purple-500/20 text-purple-400 border border-purple-500/30">SECTION 3</span>
+            <h3 class="text-xl font-bold text-white mt-1">Quantitative Ability (22 Questions)</h3>
+            <p class="text-xs text-slate-400 mt-0.5">Strict Class 8–10 math applied with deceptive wording. Follow the high-yield progression order.</p>
+          </div>
+          <span class="text-xs font-mono text-slate-400">40 Minutes Locked</span>
+        </div>
+
+        <div class="p-6 space-y-6">
+
+          <!-- Area A: Arithmetic -->
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <h4 class="text-sm font-bold text-amber-400 uppercase tracking-wider flex items-center gap-2">
+                <span>⚡</span> A. Arithmetic (8 to 10 Questions • Highest Weight • Start Here)
+              </h4>
+              <span class="text-[11px] font-mono text-slate-400">Arun Sharma LOD 1 + LOD 2</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+              <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+                <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="qa-arith-1" onchange="updateProgress()">
+                <div>
+                  <div class="font-bold text-white">Percentages</div>
+                  <div class="text-slate-400 text-[11px]">% change, successive %, base shift (Wk 1)</div>
+                </div>
+              </label>
+
+              <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+                <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="qa-arith-2" onchange="updateProgress()">
+                <div>
+                  <div class="font-bold text-white">Profit, Loss &amp; Discount</div>
+                  <div class="text-slate-400 text-[11px]">CP, SP, marked price, successive discounts (Wk 1)</div>
+                </div>
+              </label>
+
+              <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+                <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="qa-arith-3" onchange="updateProgress()">
+                <div>
+                  <div class="font-bold text-white">Ratio, Proportion &amp; Var</div>
+                  <div class="text-slate-400 text-[11px]">a:b, partnership profit shares (Wk 1)</div>
+                </div>
+              </label>
+
+              <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+                <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="qa-arith-4" onchange="updateProgress()">
+                <div>
+                  <div class="font-bold text-white">Averages &amp; Weighted Avg</div>
+                  <div class="text-slate-400 text-[11px]">Combined average, deviation method (Wk 1)</div>
+                </div>
+              </label>
+
+              <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+                <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="qa-arith-5" onchange="updateProgress()">
+                <div>
+                  <div class="font-bold text-white">Mixtures &amp; Alligation</div>
+                  <div class="text-slate-400 text-[11px]">Cross method, repeated replacement (Wk 2)</div>
+                </div>
+              </label>
+
+              <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+                <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="qa-arith-6" onchange="updateProgress()">
+                <div>
+                  <div class="font-bold text-white">Time, Speed &amp; Distance</div>
+                  <div class="text-slate-400 text-[11px]">Trains, boats, relative speed, races (Wk 2)</div>
+                </div>
+              </label>
+
+              <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+                <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="qa-arith-7" onchange="updateProgress()">
+                <div>
+                  <div class="font-bold text-white">Time &amp; Work</div>
+                  <div class="text-slate-400 text-[11px]">Pipes, cisterns, efficiency, wages (Wk 2)</div>
+                </div>
+              </label>
+
+              <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+                <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="qa-arith-8" onchange="updateProgress()">
+                <div>
+                  <div class="font-bold text-white">Simple &amp; Compound Int</div>
+                  <div class="text-slate-400 text-[11px]">SI, CI, difference formulas, installments (Wk 2)</div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Area B: Algebra -->
+          <div class="space-y-3 pt-4 border-t border-slate-800">
+            <h4 class="text-sm font-bold text-purple-400 uppercase tracking-wider flex items-center gap-2">
+              <span>📐</span> B. Algebra (5 to 7 Questions • Second Priority)
+            </h4>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs">
+              <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+                <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="qa-alg-1" onchange="updateProgress()">
+                <div>
+                  <div class="font-bold text-white">Linear Equations</div>
+                  <div class="text-slate-400 text-[11px]">Word problems, integer solutions (Wk 3)</div>
+                </div>
+              </label>
+
+              <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+                <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="qa-alg-2" onchange="updateProgress()">
+                <div>
+                  <div class="font-bold text-white">Quadratic Equations</div>
+                  <div class="text-slate-400 text-[11px]">Roots, discriminant, sum &amp; product of roots (Wk 3)</div>
+                </div>
+              </label>
+
+              <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+                <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="qa-alg-3" onchange="updateProgress()">
+                <div>
+                  <div class="font-bold text-white">Inequalities &amp; Modulus</div>
+                  <div class="text-slate-400 text-[11px]">Wavy curve, allowable intervals, |x| (Wk 3)</div>
+                </div>
+              </label>
+
+              <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+                <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="qa-alg-4" onchange="updateProgress()">
+                <div>
+                  <div class="font-bold text-white">Functions &amp; Graphs</div>
+                  <div class="text-slate-400 text-[11px]">f(x), composite functions, transformations (Wk 4)</div>
+                </div>
+              </label>
+
+              <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+                <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="qa-alg-5" onchange="updateProgress()">
+                <div>
+                  <div class="font-bold text-white">Logarithms</div>
+                  <div class="text-slate-400 text-[11px]">Log rules, base change, domain restrictions (Wk 4)</div>
+                </div>
+              </label>
+
+              <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+                <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="qa-alg-6" onchange="updateProgress()">
+                <div>
+                  <div class="font-bold text-white">Sequences &amp; Series</div>
+                  <div class="text-slate-400 text-[11px]">AP, GP, HP, telescoping sums (Wk 4)</div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Area C: Geometry & Mensuration -->
+          <div class="space-y-3 pt-4 border-t border-slate-800">
+            <h4 class="text-sm font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-2">
+              <span>📏</span> C. Geometry &amp; Mensuration (3 to 5 Questions)
+            </h4>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+              <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+                <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="qa-geom-1" onchange="updateProgress()">
+                <div>
+                  <div class="font-bold text-white">Triangles (Highest Weight)</div>
+                  <div class="text-slate-400 text-[11px]">Similarity, Pythagoras, medians, incentre/circumcentre (Wk 5)</div>
+                </div>
+              </label>
+
+              <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+                <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="qa-geom-2" onchange="updateProgress()">
+                <div>
+                  <div class="font-bold text-white">Circles</div>
+                  <div class="text-slate-400 text-[11px]">Chords, tangents, cyclic quads, secant theorems (Wk 5)</div>
+                </div>
+              </label>
+
+              <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+                <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="qa-geom-3" onchange="updateProgress()">
+                <div>
+                  <div class="font-bold text-white">Polygons &amp; Mensuration 3D</div>
+                  <div class="text-slate-400 text-[11px]">Cylinders, cones, spheres, coordinate basics (Wk 5)</div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Area D & E: Number Systems & Modern Math -->
+          <div class="space-y-3 pt-4 border-t border-slate-800">
+            <h4 class="text-sm font-bold text-slate-400 uppercase tracking-wider flex items-center gap-2">
+              <span>🔢</span> D &amp; E. Number Systems (2–4 Qs) &amp; Modern Math (1–2 Qs • Do Last)
+            </h4>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+              <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+                <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="qa-num-1" onchange="updateProgress()">
+                <div>
+                  <div class="font-bold text-white">Factors, LCM/HCF &amp; Remainders</div>
+                  <div class="text-slate-400 text-[11px]">Number of factors, Euler's theorem, unit digits, surds (Wk 4)</div>
+                </div>
+              </label>
+
+              <label class="p-3 rounded-lg bg-slate-800/50 border border-slate-700/60 flex items-start gap-3 cursor-pointer hover:bg-slate-800">
+                <input type="checkbox" class="topic-check mt-0.5 rounded text-amber-500 focus:ring-0" data-topic="qa-mod-1" onchange="updateProgress()">
+                <div>
+                  <div class="font-bold text-white">P&amp;C and Probability (Basic)</div>
+                  <div class="text-slate-400 text-[11px]">Selections, arrangements, basic probability (Week 6 only, 2 days max)</div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: 10-Day Kickstart Timetable -->
+    <section id="timetable" class="space-y-4">
+      <div>
+        <div class="text-amber-400 text-xs font-bold uppercase tracking-wider">Exact Schedule</div>
+        <h2 class="text-2xl font-extrabold text-white tracking-tight mt-1">Your Exact First 10 Practice Days</h2>
+        <p class="text-xs text-slate-400 mt-0.5">Follow this day-by-day protocol without deviation to install irreversible momentum.</p>
+      </div>
+
+      <div class="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-900/60">
+        <table class="w-full text-left text-sm text-slate-300">
+          <thead class="bg-slate-900 border-b border-slate-800 text-xs uppercase tracking-wider text-slate-400 font-semibold">
+            <tr>
+              <th class="py-3 px-4 w-16 text-center">Day</th>
+              <th class="py-3 px-4 w-32">Date</th>
+              <th class="py-3 px-6">What You Open</th>
+              <th class="py-3 px-6">Exact Practice Target</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800/60 text-xs sm:text-sm">
+            <tr class="hover:bg-slate-800/30">
+              <td class="py-3.5 px-4 text-center font-mono font-bold text-slate-400">0</td>
+              <td class="py-3.5 px-4 font-mono text-slate-300">Sat 12 Sep</td>
+              <td class="py-3.5 px-6 font-semibold text-white">Register on iimcat.ac.in • Accounts on 2IIM + Cracku</td>
+              <td class="py-3.5 px-6 text-slate-400">Aeon/Hindu reading 45 min. No problem practice today.</td>
+            </tr>
+            <tr class="hover:bg-slate-800/30">
+              <td class="py-3.5 px-4 text-center font-mono font-bold text-amber-400">1</td>
+              <td class="py-3.5 px-4 font-mono text-slate-300">Sun 13 Sep</td>
+              <td class="py-3.5 px-6 font-semibold text-white">1 Full Diagnostic Mock (Cracku / Rodha / 2IIM)</td>
+              <td class="py-3.5 px-6 text-slate-300 font-medium">120 min mock + 90 min "What is weak?" diagnostic log.</td>
+            </tr>
+            <tr class="hover:bg-slate-800/30 bg-amber-500/5">
+              <td class="py-3.5 px-4 text-center font-mono font-bold text-emerald-400">2</td>
+              <td class="py-3.5 px-4 font-mono text-slate-300">Mon 14 Sep</td>
+              <td class="py-3.5 px-6 font-semibold text-white">Percentages (2IIM video &rarr; practice questions)</td>
+              <td class="py-3.5 px-6 text-emerald-300 font-medium">25 easy % questions + 1 timed RC + 1 table DILR set.</td>
+            </tr>
+            <tr class="hover:bg-slate-800/30">
+              <td class="py-3.5 px-4 text-center font-mono font-bold text-slate-400">3</td>
+              <td class="py-3.5 px-4 font-mono text-slate-300">Tue 15 Sep</td>
+              <td class="py-3.5 px-6 font-semibold text-white">Profit &amp; Loss (Finish registration by 5 PM)</td>
+              <td class="py-3.5 px-6 text-slate-300">25 PLD questions + 1 RC + 1 DI chart set.</td>
+            </tr>
+            <tr class="hover:bg-slate-800/30">
+              <td class="py-3.5 px-4 text-center font-mono font-bold text-slate-400">4</td>
+              <td class="py-3.5 px-4 font-mono text-slate-300">Wed 16 Sep</td>
+              <td class="py-3.5 px-6 font-semibold text-white">Ratio &amp; Proportion</td>
+              <td class="py-3.5 px-6 text-slate-300">25 ratio questions + 1 RC + 8 para-summary exercises.</td>
+            </tr>
+            <tr class="hover:bg-slate-800/30">
+              <td class="py-3.5 px-4 text-center font-mono font-bold text-slate-400">5</td>
+              <td class="py-3.5 px-4 font-mono text-slate-300">Thu 17 Sep</td>
+              <td class="py-3.5 px-6 font-semibold text-white">Averages &amp; Weighted Averages</td>
+              <td class="py-3.5 px-6 text-slate-300">25 average questions + 1 RC + 1 arrangement DILR set.</td>
+            </tr>
+            <tr class="hover:bg-slate-800/30">
+              <td class="py-3.5 px-4 text-center font-mono font-bold text-slate-400">6</td>
+              <td class="py-3.5 px-4 font-mono text-slate-300">Fri 18 Sep</td>
+              <td class="py-3.5 px-6 font-semibold text-white">Mixed Arithmetic Review (All 4 Chapters)</td>
+              <td class="py-3.5 px-6 text-slate-300">30 mixed questions + 1 RC + update error log.</td>
+            </tr>
+            <tr class="hover:bg-slate-800/30">
+              <td class="py-3.5 px-4 text-center font-mono font-bold text-slate-400">7</td>
+              <td class="py-3.5 px-4 font-mono text-slate-300">Sat 19 Sep</td>
+              <td class="py-3.5 px-6 font-semibold text-white">QA Sectional Test (40 Min timed)</td>
+              <td class="py-3.5 px-6 text-slate-300">Review every missed question without skipping.</td>
+            </tr>
+            <tr class="hover:bg-slate-800/30">
+              <td class="py-3.5 px-4 text-center font-mono font-bold text-slate-400">8</td>
+              <td class="py-3.5 px-4 font-mono text-slate-300">Sun 20 Sep</td>
+              <td class="py-3.5 px-6 font-semibold text-white">Light Mock or 2 Sectionals</td>
+              <td class="py-3.5 px-6 text-slate-300">Repair weakest arithmetic chapter. Do not start new book.</td>
+            </tr>
+            <tr class="hover:bg-slate-800/30">
+              <td class="py-3.5 px-4 text-center font-mono font-bold text-slate-400">9–10</td>
+              <td class="py-3.5 px-4 font-mono text-slate-300">21–22 Sep</td>
+              <td class="py-3.5 px-6 font-semibold text-white">Mixtures &amp; Alligation, then Time-Speed-Distance</td>
+              <td class="py-3.5 px-6 text-slate-300">Same loop: video &rarr; 25 Qs &rarr; 1 RC &rarr; 1 DILR set.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECTION 5: Where Do I Click Directory -->
+    <section id="links" class="rounded-2xl bg-slate-900/60 border border-slate-800 p-6 sm:p-8 space-y-6">
+      <div>
+        <div class="text-blue-400 text-xs font-bold uppercase tracking-wider">Curated Portals</div>
+        <h2 class="text-2xl font-extrabold text-white tracking-tight mt-1">Official &amp; Top Free Practice Portals</h2>
+        <p class="text-xs text-slate-400 mt-1">Direct links to official examination sites, video lectures, and previous year repositories.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
+        <!-- 1. Official CAT -->
+        <a href="https://iimcat.ac.in" target="_blank" rel="noreferrer" class="p-4 rounded-xl bg-slate-800/60 border border-slate-700 hover:border-amber-500 transition-all flex flex-col justify-between space-y-3 group">
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-white group-hover:text-amber-400 transition-colors">Official IIM CAT Portal</span>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono">Exam Portal</span>
+            </div>
+            <p class="text-slate-400 mt-1 text-[11px]">Official registration, notification bulletin, admit card, and official exam mocks.</p>
+          </div>
+          <div class="text-amber-400 font-mono text-[11px] flex items-center gap-1">iimcat.ac.in ↗</div>
+        </a>
+
+        <!-- 2. 2IIM Past Papers -->
+        <a href="https://online.2iim.com/CAT-question-paper/" target="_blank" rel="noreferrer" class="p-4 rounded-xl bg-slate-800/60 border border-slate-700 hover:border-blue-500 transition-all flex flex-col justify-between space-y-3 group">
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-white group-hover:text-blue-400 transition-colors">2IIM Past Papers Repository</span>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-mono">2017–2025 PYQs</span>
+            </div>
+            <p class="text-slate-400 mt-1 text-[11px]">All real past exam questions with high-quality English video and text solutions.</p>
+          </div>
+          <div class="text-blue-400 font-mono text-[11px] flex items-center gap-1">online.2iim.com ↗</div>
+        </a>
+
+        <!-- 3. Cracku Daily Targets -->
+        <a href="https://cracku.in/free-cat-preparation" target="_blank" rel="noreferrer" class="p-4 rounded-xl bg-slate-800/60 border border-slate-700 hover:border-emerald-500 transition-all flex flex-col justify-between space-y-3 group">
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-white group-hover:text-emerald-400 transition-colors">Cracku Free Preparation</span>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono">Daily Targets</span>
+            </div>
+            <p class="text-slate-400 mt-1 text-[11px]">Daily timed targets (1 RC, 1 DILR set, 5 Quant questions) with national percentiles.</p>
+          </div>
+          <div class="text-emerald-400 font-mono text-[11px] flex items-center gap-1">cracku.in ↗</div>
+        </a>
+
+        <!-- 4. Gejo Speaks VARC -->
+        <a href="https://www.youtube.com/@GejoSpeaks" target="_blank" rel="noreferrer" class="p-4 rounded-xl bg-slate-800/60 border border-slate-700 hover:border-red-500 transition-all flex flex-col justify-between space-y-3 group">
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-white group-hover:text-red-400 transition-colors">Gejo Speaks (VARC1000)</span>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-red-500/20 text-red-300 font-mono">YouTube</span>
+            </div>
+            <p class="text-slate-400 mt-1 text-[11px]">The gold standard for VARC comprehension mechanics and trap option elimination.</p>
+          </div>
+          <div class="text-red-400 font-mono text-[11px] flex items-center gap-1">youtube.com/@GejoSpeaks ↗</div>
+        </a>
+
+        <!-- 5. 2IIM YouTube -->
+        <a href="https://www.youtube.com/@2iimcat" target="_blank" rel="noreferrer" class="p-4 rounded-xl bg-slate-800/60 border border-slate-700 hover:border-red-500 transition-all flex flex-col justify-between space-y-3 group">
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-white group-hover:text-red-400 transition-colors">2IIM CAT (English Lectures)</span>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-red-500/20 text-red-300 font-mono">QA + DILR</span>
+            </div>
+            <p class="text-slate-400 mt-1 text-[11px]">Pure concept walkthroughs in English by Rajesh Balasubramanian (4-time 100%iler).</p>
+          </div>
+          <div class="text-red-400 font-mono text-[11px] flex items-center gap-1">youtube.com/@2iimcat ↗</div>
+        </a>
+
+        <!-- 6. Bodhee Prep -->
+        <a href="https://www.youtube.com/@Bodhee_Prep" target="_blank" rel="noreferrer" class="p-4 rounded-xl bg-slate-800/60 border border-slate-700 hover:border-red-500 transition-all flex flex-col justify-between space-y-3 group">
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-white group-hover:text-red-400 transition-colors">Bodhee Prep</span>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-red-500/20 text-red-300 font-mono">RC Mechanics</span>
+            </div>
+            <p class="text-slate-400 mt-1 text-[11px]">Systematic passage structure breakdowns, tone detection, and inference handling.</p>
+          </div>
+          <div class="text-red-400 font-mono text-[11px] flex items-center gap-1">youtube.com/@Bodhee_Prep ↗</div>
+        </a>
+
+        <!-- 7. Rodha English -->
+        <a href="https://www.youtube.com/@RODHACATPreparation-InEnglish" target="_blank" rel="noreferrer" class="p-4 rounded-xl bg-slate-800/60 border border-slate-700 hover:border-red-500 transition-all flex flex-col justify-between space-y-3 group">
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-white group-hover:text-red-400 transition-colors">Rodha CAT (In English)</span>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-red-500/20 text-red-300 font-mono">Quant &amp; LRDI</span>
+            </div>
+            <p class="text-slate-400 mt-1 text-[11px]">Exhaustive problem-solving playlists by Ravi Prakash in clear English.</p>
+          </div>
+          <div class="text-red-400 font-mono text-[11px] flex items-center gap-1">youtube.com/@RODHACATPreparation-InEnglish ↗</div>
+        </a>
+
+        <!-- 8. Aeon Essays -->
+        <a href="https://aeon.co" target="_blank" rel="noreferrer" class="p-4 rounded-xl bg-slate-800/60 border border-slate-700 hover:border-purple-500 transition-all flex flex-col justify-between space-y-3 group">
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-white group-hover:text-purple-400 transition-colors">Aeon Essays</span>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 font-mono">Reading Muscle</span>
+            </div>
+            <p class="text-slate-400 mt-1 text-[11px]">Dense philosophical, psychological, and historical long-form essays matching CAT tone.</p>
+          </div>
+          <div class="text-purple-400 font-mono text-[11px] flex items-center gap-1">aeon.co ↗</div>
+        </a>
+
+        <!-- 9. The Hindu Editorial -->
+        <a href="https://www.thehindu.com/opinion/editorial/" target="_blank" rel="noreferrer" class="p-4 rounded-xl bg-slate-800/60 border border-slate-700 hover:border-blue-500 transition-all flex flex-col justify-between space-y-3 group">
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-white group-hover:text-blue-400 transition-colors">The Hindu Editorials</span>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-mono">Daily Habit</span>
+            </div>
+            <p class="text-slate-400 mt-1 text-[11px]">Socio-economic policy arguments and editorial opinion pieces for speed comprehension.</p>
+          </div>
+          <div class="text-blue-400 font-mono text-[11px] flex items-center gap-1">thehindu.com/opinion/editorial ↗</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION 6: What You Can Ignore -->
+    <section class="rounded-2xl bg-red-500/5 border border-red-500/20 p-6 sm:p-8 space-y-4">
+      <div class="flex items-center gap-2 text-red-400 font-bold text-sm uppercase tracking-wider">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+        <span>High-Impact Time Savers: What to Actively Ignore</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs text-slate-300">
+        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+          <div class="font-bold text-white">1. Group Discussions &amp; Interviews</div>
+          <p class="text-slate-400 text-[11px] mt-1">Spoken English, GDs, essays, and SOPs are for interview calls AFTER November. Zero points inside the CAT exam hall.</p>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+          <div class="font-bold text-white">2. Grammar Worksheets &amp; Vocab Lists</div>
+          <p class="text-slate-400 text-[11px] mt-1">Direct grammar rules and memorizing 1000 flashcards are almost never tested directly in modern CAT papers.</p>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+          <div class="font-bold text-white">3. Advanced Calculus &amp; Trig Identities</div>
+          <p class="text-slate-400 text-[11px] mt-1">Class 11–12 integration, differential calculus, and trigonometry identities do NOT belong in CAT Quantitative Aptitude.</p>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+          <div class="font-bold text-white">4. Hoarding 5 Different Quant Books</div>
+          <p class="text-slate-400 text-[11px] mt-1">One comprehensive book (Arun Sharma LOD 1 &amp; 2) + CAT 2017–2025 actual papers is more than enough.</p>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+          <div class="font-bold text-white">5. DILR Overwhelm in Week 1</div>
+          <p class="text-slate-400 text-[11px] mt-1">Do not attempt to master complex tournament tables on day one. Clean numerical tables + 1 arrangement family is ideal.</p>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+          <div class="font-bold text-white">6. Olympiad Tricks &amp; Rare Theorems</div>
+          <p class="text-slate-400 text-[11px] mt-1">Skip hyper-complex number theory tricks, tough 3D geometry coordinate theorems, and LOD 3 edge cases.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 bg-[#090d16] py-8 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 space-y-2">
+      <div class="flex justify-center items-center gap-4 text-slate-400">
+        <a href="index.html" class="hover:text-amber-400 transition-colors">Dashboard Hub</a>
+        <span>•</span>
+        <a href="german_universities_evaluation.html" class="hover:text-blue-400 transition-colors">German Unis Roadmap</a>
+        <span>•</span>
+        <a href="typescript_curriculum.html" class="hover:text-indigo-400 transition-colors">TypeScript Curriculum</a>
+        <span>•</span>
+        <a href="https://iimcat.ac.in" target="_blank" rel="noreferrer" class="hover:text-amber-400 transition-colors">Official IIM CAT</a>
+      </div>
+      <p>&copy; 2026 Lakshay Nagpal. Strategic Academic &amp; Engineering Roadmap.</p>
+    </div>
+  </footer>
+
+  <!-- Interactive Checklist Script with LocalStorage Persistence -->
+  <script>
+    const STORAGE_KEY = 'cat2026_topics_state';
+
+    function loadSavedProgress() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+        document.querySelectorAll('.topic-check').forEach(cb => {
+          const id = cb.getAttribute('data-topic');
+          if (saved[id]) cb.checked = true;
+        });
+      } catch (e) {}
+      updateProgress(false);
+    }
+
+    function updateProgress(save = true) {
+      const all = document.querySelectorAll('.topic-check');
+      const checked = document.querySelectorAll('.topic-check:checked');
+      const total = all.length;
+      const count = checked.length;
+      const pct = Math.round((count / total) * 100);
+
+      document.getElementById('progressText').innerText = `${count} / ${total} Completed (${pct}%)`;
+      document.getElementById('progressBar').style.width = `${pct}%`;
+
+      if (save) {
+        const state = {};
+        all.forEach(cb => {
+          const id = cb.getAttribute('data-topic');
+          state[id] = cb.checked;
+        });
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadSavedProgress);
+  </script>
+</body>
+</html>
