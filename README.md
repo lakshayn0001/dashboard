@@ -8,7 +8,9 @@ Interactive developer portal and admissions roadmap hosted on GitHub Pages. Cent
 
 ## 📂 Featured Portals & Documents
 
-| ⚡ **DSA Master Tracker & Pattern Guide** | Interactive algorithmic preparation engine with 240+ curated LeetCode problems across 25 patterns, direct problem links, company priority tags (Google, Meta, Amazon), expandable mental models, and persistent LocalStorage progress tracking. | [`dsa_master_tracker.html`](dsa_master_tracker.html) |
+| Portal / Module | Description | Quick Link |
+| --- | --- | --- |
+| ⚡ **DSA Problem Library & Tracker** | Complete in-dashboard library and dedicated tracker with 247 curated LeetCode problems across 25 patterns, direct problem links, company priority tags (Google, Meta, Amazon), expandable mental models, and persistent LocalStorage progress tracking. | [`dsa_master_tracker.html`](dsa_master_tracker.html) / [`index.html#dsa-library`](index.html#dsa-library) |
 | 🧠 **Engineering Learning Hub** | Scalable engineering platform featuring Track 1: Production TypeScript (10 levels, 73 drills), alongside structured tracks for Distributed System Design, Cloud & DevOps Infrastructure, and Applied AI Systems. | [`learning_hub.html`](learning_hub.html) |
 | 🇩🇪 **German Universities Postgraduate Analysis** | Comprehensive roadmap evaluating public €0-tuition Master of Science vs. private MBAs, ECTS requirements (~70 ECTS match), German grade benchmark (2.47 'Gut'), APS verification, and EU Blue Card pathways. | [`german_universities_evaluation.html`](german_universities_evaluation.html) |
 | 🐯 **CAT 2026 Strategic Master Roadmap & Empirical Syllabus** | Full 3-section preparation plan (VARC 24 Qs, DILR 22 Qs, QA 22 Qs), 4-step daily loop, 10-day timetable, interactive topic checklist, free English lecture links, and official IIM & IIT facts. | [`cat_2026_syllabus_roadmap.html`](cat_2026_syllabus_roadmap.html) |

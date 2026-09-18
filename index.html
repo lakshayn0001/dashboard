@@ -92,10 +92,15 @@
             <span class="text-lg">🏠</span>
             <span>Master Dashboard</span>
           </a>
-          <a href="dsa_master_tracker.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
+          <a href="#dsa-library" onclick="toggleSidebar(false)" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
             <span class="text-lg">⚡</span>
-            <span>DSA Master Tracker</span>
+            <span>DSA Problem Library</span>
             <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono">240+ LC</span>
+          </a>
+          <a href="dsa_master_tracker.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
+            <span class="text-lg">📊</span>
+            <span>DSA Master Tracker (Full)</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 font-mono">Dedicated</span>
           </a>
           <a href="learning_hub.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all group text-sm font-medium">
             <span class="text-lg">🧠</span>
@@ -171,33 +176,30 @@
   <header class="sticky top-0 z-50 w-full border-b border-slate-800 glass-nav shadow-lg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <button onclick="toggleSidebar(true)" class="p-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 hover:border-blue-500/50 transition-all flex items-center gap-2" title="Toggle Navigation Menu">
+        <button onclick="toggleSidebar(true)" class="p-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 hover:border-blue-500/50 transition-all flex items-center gap-2 cursor-pointer shadow-sm" title="Open Navigation Menu">
           <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-          <span class="text-xs font-semibold hidden sm:inline">Menu</span>
+          <span class="text-xs font-bold text-white hidden sm:inline">Menu</span>
         </button>
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-black text-white text-lg shadow-md shadow-blue-500/20">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-black text-white text-lg shadow-md shadow-blue-500/20 shrink-0">
           LN
         </div>
         <div>
           <span class="font-bold text-white text-base tracking-tight block">Lakshay Nagpal</span>
           <span class="text-xs text-slate-400 font-mono flex items-center gap-1.5">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            Full-Stack Engineer &amp; Masters Aspirant
+            Full-Stack Engineer &amp; Control Center
           </span>
         </div>
       </div>
 
-      <!-- Quick Action Badges / Links -->
-      <nav class="hidden lg:flex items-center gap-2 text-xs font-semibold text-slate-300">
-        <a href="dsa_master_tracker.html" class="px-2.5 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/20 transition-all flex items-center gap-1">
-          <span>⚡</span> DSA Tracker (240+)
+      <!-- Quick Action Badges & Direct Shortcuts -->
+      <nav class="hidden md:flex items-center gap-2 text-xs font-semibold">
+        <a href="#dsa-library" class="px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/20 transition-all flex items-center gap-1.5 shadow-sm">
+          <span>⚡</span> DSA Library (240+)
         </a>
-        <a href="learning_hub.html" class="px-2.5 py-1.5 rounded-lg bg-blue-500/10 border border-blue-500/30 text-blue-400 hover:bg-blue-500/20 transition-all flex items-center gap-1">
+        <a href="learning_hub.html" class="px-3 py-1.5 rounded-lg bg-blue-500/10 border border-blue-500/30 text-blue-400 hover:bg-blue-500/20 transition-all flex items-center gap-1.5 shadow-sm">
           <span>🧠</span> Learning Hub
         </a>
-        <a href="german_universities_evaluation.html" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 hover:text-white transition-all text-slate-300">🇩🇪 German Unis</a>
-        <a href="cat_2026_syllabus_roadmap.html" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 hover:text-white transition-all text-amber-400">🐯 CAT 2026</a>
-        <a href="typescript_curriculum.html" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 hover:text-white transition-all text-slate-300">📘 TypeScript</a>
       </nav>
 
       <div class="flex items-center gap-2">
@@ -325,9 +327,12 @@
         </div>
 
         <div class="pt-8 border-t border-slate-800/80 mt-6 flex flex-wrap items-center gap-3">
-          <a href="dsa_master_tracker.html" class="flex-1 min-w-[160px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm shadow-md shadow-emerald-500/20 transition-all">
-            <span>Launch DSA Tracker</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          <a href="#dsa-library" class="flex-1 min-w-[170px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm shadow-md shadow-emerald-500/20 transition-all">
+            <span>Explore 240+ Questions Below</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+          </a>
+          <a href="dsa_master_tracker.html" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-emerald-400 font-semibold text-sm transition-all" title="Launch Dedicated Standalone Tracker">
+            <span>Full Tracker ↗</span>
           </a>
           <button onclick="openPreview('dsa_master_tracker.html', 'DSA Master Tracker')" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-sm transition-all">
             <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
@@ -680,6 +685,106 @@
 
     </section>
 
+    <!-- Dedicated DSA Problem Library Section (240+ LeetCode Questions with Direct Links & Helping Approaches) -->
+    <section id="dsa-library" class="rounded-2xl bg-gradient-to-b from-slate-900 via-slate-900/90 to-slate-950 border border-emerald-500/40 p-6 sm:p-8 space-y-6 shadow-2xl">
+      <!-- Section Header -->
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-800">
+        <div class="space-y-2">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+            <span>⚡</span> 240+ LeetCode Problem Library &amp; Thinking Approaches
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight flex items-center gap-3">
+            <span>DSA Question Bank &amp; Direct Links</span>
+            <span class="text-xs font-mono font-normal px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">25 Patterns</span>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-400 max-w-3xl leading-relaxed">
+            Directly browse and solve every curated LeetCode problem. Each card features direct problem URLs, Big-Tech tags (Google, Meta, Amazon, Microsoft, Uber), checkbox persistence via <code class="text-emerald-300 bg-slate-800 px-1 py-0.5 rounded text-[11px]">localStorage</code>, and expandable <strong class="text-slate-200">"Helping Approach / How to Think"</strong> mental models with optimal time/space complexities and interview traps.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 shrink-0">
+          <button onclick="playAudioSummary(this, 'DSA Problem Library Overview', 'DSA Problem Library: Contains 247 curated LeetCode problems organized across 25 high-yield patterns. Each problem has direct links to LeetCode, company interview focus tags, and an expandable helping approach drawer with intuition, algorithm steps, optimal time complexity, and interview traps to avoid.')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 hover:border-emerald-500/50 text-xs font-semibold transition-all">
+            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+            <span class="audio-label" data-default-label="Listen DSA Guide (25s)">Listen DSA Guide (25s)</span>
+          </button>
+          <a href="dsa_master_tracker.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-lg shadow-emerald-500/20 transition-all">
+            <span>Full Standalone Tracker ↗</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Live Statistics Ribbon -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800 text-center">
+          <div class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Total Solved</div>
+          <div class="text-xl font-black text-emerald-400 mt-0.5"><span id="libSolvedCount">0</span> <span class="text-xs font-normal text-slate-500">/ <span id="libTotalCount">247</span></span></div>
+          <div class="w-full bg-slate-800 rounded-full h-1.5 mt-2 overflow-hidden">
+            <div id="libOverallBar" class="bg-emerald-400 h-1.5 rounded-full transition-all duration-300" style="width: 0%"></div>
+          </div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800 text-center">
+          <div class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Easy Questions</div>
+          <div class="text-xl font-black text-emerald-400 mt-0.5"><span id="libEasySolved">0</span> <span class="text-xs font-normal text-slate-500">/ <span id="libEasyTotal">60</span></span></div>
+          <div class="text-[11px] text-slate-500 font-mono mt-1" id="libEasyPct">0% Complete</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800 text-center">
+          <div class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Medium Questions</div>
+          <div class="text-xl font-black text-amber-400 mt-0.5"><span id="libMedSolved">0</span> <span class="text-xs font-normal text-slate-500">/ <span id="libMedTotal">158</span></span></div>
+          <div class="text-[11px] text-slate-500 font-mono mt-1" id="libMedPct">0% Complete</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800 text-center">
+          <div class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Hard Questions</div>
+          <div class="text-xl font-black text-rose-400 mt-0.5"><span id="libHardSolved">0</span> <span class="text-xs font-normal text-slate-500">/ <span id="libHardTotal">29</span></span></div>
+          <div class="text-[11px] text-slate-500 font-mono mt-1" id="libHardPct">0% Complete</div>
+        </div>
+      </div>
+
+      <!-- Real-Time Search & Pattern Filters -->
+      <div class="space-y-3 pt-2">
+        <div class="flex flex-col sm:flex-row gap-2.5">
+          <div class="relative flex-grow">
+            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </div>
+            <input type="text" id="libSearchInput" oninput="filterLibProblems()" placeholder="Search 240+ questions: Two Sum, #121, sliding window, Google, dynamic programming, BFS..." class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-950/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all">
+          </div>
+
+          <div class="flex items-center gap-2 overflow-x-auto shrink-0">
+            <!-- Difficulty Filters -->
+            <button onclick="setLibDiffFilter('ALL', this)" class="lib-diff-btn active px-3 py-2 rounded-xl text-xs font-bold bg-emerald-600 text-white transition-all">All Diff</button>
+            <button onclick="setLibDiffFilter('Easy', this)" class="lib-diff-btn px-3 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-emerald-400 hover:bg-slate-700 transition-all">Easy</button>
+            <button onclick="setLibDiffFilter('Medium', this)" class="lib-diff-btn px-3 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-amber-400 hover:bg-slate-700 transition-all">Medium</button>
+            <button onclick="setLibDiffFilter('Hard', this)" class="lib-diff-btn px-3 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-rose-400 hover:bg-slate-700 transition-all">Hard</button>
+
+            <!-- Status Filters -->
+            <button onclick="setLibStatusFilter('ALL', this)" class="lib-status-btn active px-3 py-2 rounded-xl text-xs font-bold bg-slate-700 text-white transition-all">All Status</button>
+            <button onclick="setLibStatusFilter('UNSOLVED', this)" class="lib-status-btn px-3 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all">To Solve</button>
+            <button onclick="setLibStatusFilter('SOLVED', this)" class="lib-status-btn px-3 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-emerald-400 hover:bg-slate-700 transition-all">Solved</button>
+          </div>
+        </div>
+
+        <!-- 25 Algorithmic Topic Filter Tabs (Scrollable) -->
+        <div class="flex items-center gap-1.5 overflow-x-auto pb-2 scrollbar-thin" id="libTopicTabs">
+          <!-- Topic tabs populated dynamically by JS -->
+        </div>
+      </div>
+
+      <!-- Problem Matching Counter & Quick Actions -->
+      <div class="flex items-center justify-between text-xs text-slate-400 px-1">
+        <span>Showing <strong id="libVisibleCount" class="text-white font-mono">247</strong> problems matching filters</span>
+        <div class="flex items-center gap-3">
+          <button onclick="expandAllApproaches()" class="text-emerald-400 hover:text-emerald-300 font-semibold cursor-pointer">Expand All Approaches</button>
+          <span>•</span>
+          <button onclick="collapseAllApproaches()" class="text-slate-400 hover:text-slate-300 font-semibold cursor-pointer">Collapse All</button>
+        </div>
+      </div>
+
+      <!-- Problems Dynamic Cards Grid -->
+      <div id="libProblemsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-3.5 pt-2">
+        <!-- Rendered by JavaScript -->
+      </div>
+    </section>
+
     <!-- GitHub Pages Deployment Notice & Instructions Callout -->
     <section class="rounded-2xl bg-slate-900/60 border border-slate-800 p-6 sm:p-8">
       <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -778,9 +883,28 @@
     </div>
   </div>
 
+  <!-- Load Problem Database -->
+  <script src="dsa_problems_data.js"></script>
+
   <!-- Interactive Scripts -->
   <script>
-    // Search Filtering Function
+    // Navigation Sidebar Toggle
+    function toggleSidebar(open) {
+      const drawer = document.getElementById('sideNavDrawer');
+      const backdrop = document.getElementById('sidebarBackdrop');
+      if (!drawer) return;
+      if (open) {
+        drawer.classList.remove('-translate-x-full');
+        if (backdrop) backdrop.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      } else {
+        drawer.classList.add('-translate-x-full');
+        if (backdrop) backdrop.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Search Filtering Function for Resource Showcase Cards
     function filterCards() {
       const q = document.getElementById('searchInput').value.toLowerCase().trim();
       const cards = document.querySelectorAll('.resource-card');
@@ -812,6 +936,18 @@
           card.style.display = 'none';
         }
       });
+
+      const dsaSection = document.getElementById('dsa-library');
+      if (dsaSection) {
+        if (cat === 'all' || cat === 'dsa') {
+          dsaSection.style.display = 'block';
+          if (cat === 'dsa') {
+            dsaSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        } else {
+          dsaSection.style.display = 'none';
+        }
+      }
     }
 
     // In-Page Preview Modal Controls
@@ -834,15 +970,366 @@
     function closePreview() {
       const modal = document.getElementById('previewModal');
       const iframe = document.getElementById('previewIframe');
-      modal.classList.add('hidden');
-      iframe.src = 'about:blank';
-      document.body.style.overflow = 'auto';
+      if (modal) modal.classList.add('hidden');
+      if (iframe) iframe.src = 'about:blank';
+      document.body.style.overflow = '';
     }
 
     // Keyboard ESC listener
     window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closePreview();
+      if (e.key === 'Escape') {
+        closePreview();
+        toggleSidebar(false);
+      }
     });
+
+    // ==========================================
+    // DSA PROBLEM LIBRARY INTERACTIVE CONTROLLER
+    // ==========================================
+    const DSA_STORAGE_KEY = 'lakshay_dsa_tracker_v1';
+    let dsaLibState = { solved: {}, starred: {}, notes: {} };
+    let libSelectedTopic = 'ALL';
+    let libSelectedDiff = 'ALL';
+    let libSelectedStatus = 'ALL';
+
+    function loadDsaLibState() {
+      try {
+        const saved = localStorage.getItem(DSA_STORAGE_KEY);
+        if (saved) {
+          dsaLibState = JSON.parse(saved);
+          if (!dsaLibState.solved) dsaLibState.solved = {};
+          if (!dsaLibState.starred) dsaLibState.starred = {};
+        }
+      } catch (e) {
+        console.error('Error loading DSA state:', e);
+      }
+    }
+
+    function saveDsaLibState() {
+      try {
+        localStorage.setItem(DSA_STORAGE_KEY, JSON.stringify(dsaLibState));
+        updateDsaLibStats();
+      } catch (e) {
+        console.error('Error saving DSA state:', e);
+      }
+    }
+
+    function initDsaLibrary() {
+      loadDsaLibState();
+      renderLibTopicTabs();
+      renderLibProblems();
+      updateDsaLibStats();
+    }
+
+    // Render topic tabs from window.DSA_TOPICS_DATA
+    function renderLibTopicTabs() {
+      const container = document.getElementById('libTopicTabs');
+      if (!container || !window.DSA_TOPICS_DATA) return;
+
+      container.innerHTML = `
+        <button onclick="setLibTopic('ALL', this)" class="lib-topic-tab active px-3 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap bg-emerald-600 text-white transition-all cursor-pointer">
+          All Patterns (${window.DSA_PROBLEMS_LIST ? window.DSA_PROBLEMS_LIST.length : 247})
+        </button>
+      `;
+
+      window.DSA_TOPICS_DATA.forEach(t => {
+        const btn = document.createElement('button');
+        btn.onclick = () => setLibTopic(t.topic, btn);
+        btn.className = 'lib-topic-tab px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition-all cursor-pointer';
+        btn.innerText = `${t.topic} (${t.problems.length})`;
+        container.appendChild(btn);
+      });
+    }
+
+    function setLibTopic(topic, btn) {
+      libSelectedTopic = topic;
+      document.querySelectorAll('.lib-topic-tab').forEach(b => {
+        b.classList.remove('bg-emerald-600', 'text-white', 'active', 'font-bold');
+        b.classList.add('bg-slate-800', 'text-slate-300', 'font-semibold');
+      });
+      btn.classList.remove('bg-slate-800', 'text-slate-300');
+      btn.classList.add('bg-emerald-600', 'text-white', 'active', 'font-bold');
+      renderLibProblems();
+    }
+
+    function setLibDiffFilter(diff, btn) {
+      libSelectedDiff = diff;
+      document.querySelectorAll('.lib-diff-btn').forEach(b => {
+        b.classList.remove('bg-emerald-600', 'text-white', 'active');
+        b.classList.add('bg-slate-800');
+        if (b.innerText.includes('Easy')) b.classList.add('text-emerald-400');
+        else if (b.innerText.includes('Medium')) b.classList.add('text-amber-400');
+        else if (b.innerText.includes('Hard')) b.classList.add('text-rose-400');
+        else b.classList.add('text-slate-300');
+      });
+      btn.classList.remove('bg-slate-800', 'text-emerald-400', 'text-amber-400', 'text-rose-400', 'text-slate-300');
+      btn.classList.add('bg-emerald-600', 'text-white', 'active');
+      renderLibProblems();
+    }
+
+    function setLibStatusFilter(status, btn) {
+      libSelectedStatus = status;
+      document.querySelectorAll('.lib-status-btn').forEach(b => {
+        b.classList.remove('bg-slate-700', 'text-white', 'active');
+        b.classList.add('bg-slate-800');
+        if (b.innerText.includes('Solved')) b.classList.add('text-emerald-400');
+        else b.classList.add('text-slate-300');
+      });
+      btn.classList.remove('bg-slate-800', 'text-slate-300', 'text-emerald-400');
+      btn.classList.add('bg-slate-700', 'text-white', 'active');
+      renderLibProblems();
+    }
+
+    function filterLibProblems() {
+      renderLibProblems();
+    }
+
+    // Render problem cards matching search, topic, diff, and status
+    function renderLibProblems() {
+      const container = document.getElementById('libProblemsContainer');
+      const countEl = document.getElementById('libVisibleCount');
+      if (!container || !window.DSA_PROBLEMS_LIST) return;
+
+      const q = (document.getElementById('libSearchInput')?.value || '').toLowerCase().trim();
+
+      const matched = window.DSA_PROBLEMS_LIST.filter(p => {
+        const isSolved = !!dsaLibState.solved[p.id];
+
+        // 1. Topic filter
+        if (libSelectedTopic !== 'ALL' && p.topic !== libSelectedTopic) return false;
+
+        // 2. Difficulty filter
+        if (libSelectedDiff !== 'ALL' && p.diff !== libSelectedDiff) return false;
+
+        // 3. Status filter
+        if (libSelectedStatus === 'SOLVED' && !isSolved) return false;
+        if (libSelectedStatus === 'UNSOLVED' && isSolved) return false;
+
+        // 4. Search query
+        if (q) {
+          const hay = `${p.title} ${p.lc} ${p.slug} ${p.topic} ${p.pattern} ${p.companies.join(' ')} ${p.mental}`.toLowerCase();
+          if (!hay.includes(q)) return false;
+        }
+
+        return true;
+      });
+
+      if (countEl) countEl.innerText = matched.length;
+
+      if (matched.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full p-8 rounded-xl bg-slate-950/60 border border-slate-800 text-center space-y-2">
+            <div class="text-2xl">🔍</div>
+            <div class="text-sm font-semibold text-white">No DSA problems matched your filters</div>
+            <p class="text-xs text-slate-500">Try clearing the search query or resetting difficulty and topic filters.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = '';
+      matched.forEach(p => {
+        const isSolved = !!dsaLibState.solved[p.id];
+
+        let diffBadge = 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30';
+        if (p.diff === 'Medium') diffBadge = 'bg-amber-500/10 text-amber-400 border-amber-500/30';
+        if (p.diff === 'Hard') diffBadge = 'bg-rose-500/10 text-rose-400 border-rose-500/30';
+
+        const companiesHtml = p.companies.slice(0, 3).map(c =>
+          `<span class="px-1.5 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300 font-mono">${c}</span>`
+        ).join('');
+
+        const card = document.createElement('div');
+        card.id = `libCard_${p.id}`;
+        card.className = `p-4 rounded-xl border transition-all duration-200 ${isSolved ? 'bg-emerald-950/20 border-emerald-500/40' : 'bg-slate-950/70 border-slate-800 hover:border-slate-700'}`;
+
+        card.innerHTML = `
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex items-start gap-2.5 flex-grow min-w-0">
+              <input type="checkbox" ${isSolved ? 'checked' : ''} onchange="toggleLibSolved(${p.id}, this.checked)" class="mt-1 w-4 h-4 rounded text-emerald-500 focus:ring-0 focus:ring-offset-0 bg-slate-900 border-slate-700 cursor-pointer shrink-0">
+              <div class="min-w-0 flex-grow">
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <span class="text-xs font-mono font-bold text-slate-400">#${p.lc}</span>
+                  <a href="${p.url}" target="_blank" rel="noreferrer" class="font-bold text-sm text-white hover:text-emerald-400 transition-colors inline-flex items-center gap-1.5 group truncate" title="Open on LeetCode: ${p.title}">
+                    <span class="${isSolved ? 'line-through text-slate-400' : ''}">${p.title}</span>
+                    <svg class="w-3.5 h-3.5 text-slate-500 group-hover:text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                  </a>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-1.5 mt-1.5">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold border ${diffBadge}">${p.diff}</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] bg-slate-900 text-slate-300 border border-slate-800 font-mono">${p.pattern}</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] bg-slate-900/80 text-blue-300 border border-blue-500/20 font-mono">${p.topic}</span>
+                  ${companiesHtml}
+                </div>
+              </div>
+            </div>
+
+            <!-- Action buttons -->
+            <div class="flex items-center gap-1.5 shrink-0">
+              <a href="${p.url}" target="_blank" rel="noreferrer" class="px-2.5 py-1 rounded-lg bg-emerald-600/15 hover:bg-emerald-600 border border-emerald-500/30 text-emerald-300 hover:text-white text-xs font-semibold inline-flex items-center gap-1 transition-all" title="Direct LeetCode problem link">
+                <span>Solve</span>
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+              <button onclick="toggleApproach(${p.id})" id="approachToggleBtn_${p.id}" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-medium inline-flex items-center gap-1 transition-all cursor-pointer" title="View mental model and complexity">
+                <span>💡 Approach</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Expandable Helping Approach Drawer -->
+          <div id="approachDrawer_${p.id}" class="approach-drawer hidden mt-3 p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2 text-xs">
+            <div>
+              <span class="text-emerald-400 font-bold uppercase tracking-wider text-[10px] block">💡 Intuition &amp; Mental Model</span>
+              <p class="text-slate-300 mt-0.5 leading-relaxed">${p.mental}</p>
+            </div>
+            <div>
+              <span class="text-blue-400 font-bold uppercase tracking-wider text-[10px] block">🛠️ Algorithm &amp; Strategy</span>
+              <p class="text-slate-300 mt-0.5 leading-relaxed">${p.algo}</p>
+            </div>
+            <div class="flex flex-wrap items-center justify-between gap-2 pt-1 border-t border-slate-800/80">
+              <div class="flex items-center gap-3">
+                <span class="text-slate-400">Time: <strong class="text-emerald-400 font-mono">${p.tc}</strong></span>
+                <span class="text-slate-400">Space: <strong class="text-blue-400 font-mono">${p.sc}</strong></span>
+              </div>
+              <a href="${p.url}" target="_blank" rel="noreferrer" class="text-[11px] text-emerald-400 hover:underline inline-flex items-center gap-1">
+                <span>Open ${p.title} on LeetCode</span>
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            </div>
+            <div class="p-2 rounded bg-amber-500/10 border border-amber-500/20 text-amber-300 text-[11px]">
+              <strong>⚠️ Interview Trap:</strong> ${p.trap}
+            </div>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    function toggleLibSolved(id, isChecked) {
+      if (isChecked) {
+        dsaLibState.solved[id] = true;
+      } else {
+        delete dsaLibState.solved[id];
+      }
+      saveDsaLibState();
+
+      const card = document.getElementById(`libCard_${id}`);
+      if (card) {
+        if (isChecked) {
+          card.classList.add('bg-emerald-950/20', 'border-emerald-500/40');
+          card.classList.remove('bg-slate-950/70', 'border-slate-800');
+          const title = card.querySelector('a span');
+          if (title) title.classList.add('line-through', 'text-slate-400');
+        } else {
+          card.classList.remove('bg-emerald-950/20', 'border-emerald-500/40');
+          card.classList.add('bg-slate-950/70', 'border-slate-800');
+          const title = card.querySelector('a span');
+          if (title) title.classList.remove('line-through', 'text-slate-400');
+        }
+      }
+    }
+
+    function toggleApproach(id) {
+      const drawer = document.getElementById(`approachDrawer_${id}`);
+      const btn = document.getElementById(`approachToggleBtn_${id}`);
+      if (!drawer) return;
+
+      if (drawer.classList.contains('hidden')) {
+        drawer.classList.remove('hidden');
+        if (btn) {
+          btn.classList.add('bg-emerald-600', 'text-white');
+          btn.classList.remove('bg-slate-800', 'text-slate-300');
+        }
+      } else {
+        drawer.classList.add('hidden');
+        if (btn) {
+          btn.classList.remove('bg-emerald-600', 'text-white');
+          btn.classList.add('bg-slate-800', 'text-slate-300');
+        }
+      }
+    }
+
+    function expandAllApproaches() {
+      document.querySelectorAll('.approach-drawer').forEach(d => d.classList.remove('hidden'));
+      document.querySelectorAll('[id^="approachToggleBtn_"]').forEach(b => {
+        b.classList.add('bg-emerald-600', 'text-white');
+        b.classList.remove('bg-slate-800', 'text-slate-300');
+      });
+    }
+
+    function collapseAllApproaches() {
+      document.querySelectorAll('.approach-drawer').forEach(d => d.classList.add('hidden'));
+      document.querySelectorAll('[id^="approachToggleBtn_"]').forEach(b => {
+        b.classList.remove('bg-emerald-600', 'text-white');
+        b.classList.add('bg-slate-800', 'text-slate-300');
+      });
+    }
+
+    function updateDsaLibStats() {
+      if (!window.DSA_PROBLEMS_LIST) return;
+      const total = window.DSA_PROBLEMS_LIST.length;
+      let solvedCount = 0;
+      let easySolved = 0, medSolved = 0, hardSolved = 0;
+      let easyTotal = 0, medTotal = 0, hardTotal = 0;
+
+      window.DSA_PROBLEMS_LIST.forEach(p => {
+        const isSolved = !!dsaLibState.solved[p.id];
+        if (p.diff === 'Easy') {
+          easyTotal++;
+          if (isSolved) easySolved++;
+        } else if (p.diff === 'Medium') {
+          medTotal++;
+          if (isSolved) medSolved++;
+        } else if (p.diff === 'Hard') {
+          hardTotal++;
+          if (isSolved) hardSolved++;
+        }
+        if (isSolved) solvedCount++;
+      });
+
+      const overallPct = total > 0 ? Math.round((solvedCount / total) * 100) : 0;
+      const easyPct = easyTotal > 0 ? Math.round((easySolved / easyTotal) * 100) : 0;
+      const medPct = medTotal > 0 ? Math.round((medSolved / medTotal) * 100) : 0;
+      const hardPct = hardTotal > 0 ? Math.round((hardSolved / hardTotal) * 100) : 0;
+
+      const solvedEl = document.getElementById('libSolvedCount');
+      const totalEl = document.getElementById('libTotalCount');
+      const barEl = document.getElementById('libOverallBar');
+      if (solvedEl) solvedEl.innerText = solvedCount;
+      if (totalEl) totalEl.innerText = total;
+      if (barEl) barEl.style.width = `${overallPct}%`;
+
+      const easySolvedEl = document.getElementById('libEasySolved');
+      const easyTotalEl = document.getElementById('libEasyTotal');
+      const easyPctEl = document.getElementById('libEasyPct');
+      if (easySolvedEl) easySolvedEl.innerText = easySolved;
+      if (easyTotalEl) easyTotalEl.innerText = easyTotal;
+      if (easyPctEl) easyPctEl.innerText = `${easyPct}% Complete`;
+
+      const medSolvedEl = document.getElementById('libMedSolved');
+      const medTotalEl = document.getElementById('libMedTotal');
+      const medPctEl = document.getElementById('libMedPct');
+      if (medSolvedEl) medSolvedEl.innerText = medSolved;
+      if (medTotalEl) medTotalEl.innerText = medTotal;
+      if (medPctEl) medPctEl.innerText = `${medPct}% Complete`;
+
+      const hardSolvedEl = document.getElementById('libHardSolved');
+      const hardTotalEl = document.getElementById('libHardTotal');
+      const hardPctEl = document.getElementById('libHardPct');
+      if (hardSolvedEl) hardSolvedEl.innerText = hardSolved;
+      if (hardTotalEl) hardTotalEl.innerText = hardTotal;
+      if (hardPctEl) hardPctEl.innerText = `${hardPct}% Complete`;
+    }
+
+    // Initialize DSA library when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initDsaLibrary);
+    } else {
+      initDsaLibrary();
+    }
+
 
     // Copy File Link Helper
     function copyFileLink(fileName) {

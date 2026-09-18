@@ -9309,6 +9309,13 @@ const DSA_PROBLEMS_LIST = [
     "algo": "Each Trie node maintains top-3 hot sentences sorted by frequency descending then ASCII ascending. '#' ends input and updates frequency.",
     "tc": "O(P + 3 log 3)",
     "sc": "O(Total Sentences)",
-    "trap": "Tiebreaker: identical frequencies sort by ASCII alphabetical order."
   }
 ];
+
+if (typeof window !== 'undefined') {
+  window.DSA_TOPICS_DATA = DSA_TOPICS_DATA;
+  window.DSA_PROBLEMS_LIST = DSA_PROBLEMS_LIST;
+}
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { DSA_TOPICS_DATA, DSA_PROBLEMS_LIST };
+}
