@@ -6,60 +6,90 @@
   <title>German Universities Postgraduate Analysis | Lakshay Nagpal</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* 50% Light (Canvas) | 30% Dark (Anchors & Headers) | 20% Analytical Accents */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
     html { scroll-behavior: smooth; }
-    ::-webkit-scrollbar { width: 8px; height: 8px; }
-    ::-webkit-scrollbar-track { background: #e2e8f0; }
-    ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #64748b; }
 
-    /* 50% Light Canvas Surfaces */
     body {
-      background-color: #f1f5f9; /* Soothing Slate-100 Canvas */
-      color: #0f172a;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: #e9eee4;
+      background-image: 
+        radial-gradient(at 12% 15%, rgba(162, 188, 146, 0.35) 0%, transparent 55%),
+        radial-gradient(at 88% 82%, rgba(138, 168, 122, 0.28) 0%, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(215, 226, 206, 0.25) 0%, transparent 60%);
+      color: #1a2517;
+      min-height: 100vh;
     }
 
-    .card-light {
-      background-color: #ffffff;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+    /* Ambient Liquid Refraction Orbs */
+    .droplet-orb-1 {
+      position: fixed;
+      top: -100px;
+      left: 18%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(125, 160, 110, 0.32) 0%, rgba(125, 160, 110, 0) 70%);
+      filter: blur(60px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .droplet-orb-2 {
+      position: fixed;
+      bottom: -100px;
+      right: 6%;
+      width: 540px;
+      height: 540px;
+      background: radial-gradient(circle, rgba(168, 190, 145, 0.35) 0%, rgba(168, 190, 145, 0) 70%);
+      filter: blur(70px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .droplet-orb-3 {
+      position: fixed;
+      top: 40%;
+      left: 45%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(95, 132, 85, 0.22) 0%, rgba(95, 132, 85, 0) 70%);
+      filter: blur(55px);
+      pointer-events: none;
+      z-index: 0;
     }
 
-    /* 30% Dark Structural Elements */
-    .card-dark {
-      background-color: #0f172a; /* Deep Midnight Slate */
-      color: #ffffff;
-      border: 1px solid #1e293b;
+    /* Light Liquid Glass Water Droplet Effect */
+    .glass-droplet {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(246, 250, 242, 0.75) 100%);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 
+        inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 1),
+        inset 0 -1px 2px 0 rgba(90, 115, 80, 0.08),
+        0 14px 34px -10px rgba(45, 65, 36, 0.10),
+        0 2px 8px -2px rgba(45, 65, 36, 0.05);
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-droplet::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 8%; right: 8%;
+      height: 1.5px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.95), transparent);
+      pointer-events: none;
+    }
+    .glass-droplet:hover {
+      transform: translateY(-2px);
+      box-shadow: 
+        inset 0 2px 2px 0 rgba(255, 255, 255, 1),
+        0 20px 42px -10px rgba(50, 75, 40, 0.14),
+        0 4px 12px -2px rgba(45, 65, 36, 0.08);
+      border-color: rgba(120, 150, 105, 0.4);
     }
 
-    .header-dark {
-      background-color: #0b1120;
-      border-bottom: 1px solid #1e293b;
-    }
-
-    /* 20% Analytical Color Accents */
-    .badge-safe {
-      background-color: #ecfdf5;
-      color: #065f46;
-      border: 1px solid #6ee7b7;
-    }
-    .badge-real {
-      background-color: #eff6ff;
-      color: #1e40af;
-      border: 1px solid #93c5fd;
-    }
-    .badge-ambi {
-      background-color: #fffbeb;
-      color: #92400e;
-      border: 1px solid #fcd34d;
-    }
-    .badge-priv {
-      background-color: #faf5ff;
-      color: #6b21a8;
-      border: 1px solid #d8b4fe;
-    }
+    /* Navigation & Sidebar */
     .glass-droplet-sidebar {
-      background: rgba(246, 250, 242, 0.96);
+      background: rgba(246, 250, 242, 0.95);
       backdrop-filter: blur(28px) saturate(190%);
       -webkit-backdrop-filter: blur(28px) saturate(190%);
       border-right: 1px solid rgba(135, 160, 122, 0.25);
@@ -67,6 +97,17 @@
         inset -1px 0 1px 0 rgba(255, 255, 255, 0.85),
         4px 0 24px rgba(45, 65, 36, 0.06);
     }
+    .glass-droplet-nav {
+      background: rgba(246, 250, 242, 0.88);
+      backdrop-filter: blur(24px) saturate(190%);
+      -webkit-backdrop-filter: blur(24px) saturate(190%);
+      border-bottom: 1px solid rgba(135, 160, 122, 0.25);
+      box-shadow: 
+        inset 0 -1px 1px 0 rgba(255, 255, 255, 0.85),
+        0 4px 20px rgba(45, 65, 36, 0.06);
+    }
+
+    /* Droplet Pills */
     .droplet-pill {
       background: linear-gradient(135deg, #ffffff 0%, #f4f7f0 100%);
       backdrop-filter: blur(14px);
@@ -78,15 +119,55 @@
       color: #24331e;
       transition: all 0.2s ease;
     }
+    .droplet-pill:hover {
+      border-color: rgba(90, 125, 75, 0.5);
+      box-shadow: 
+        inset 0 1.5px 1.5px 0 #ffffff,
+        0 4px 12px rgba(45, 65, 36, 0.12);
+      transform: translateY(-1px);
+    }
+
+    /* Analytical Badges */
+    .badge-safe {
+      background-color: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+    }
+    .badge-real {
+      background-color: #eff6ff;
+      color: #1e40af;
+      border: 1px solid #bfdbfe;
+    }
+    .badge-ambi {
+      background-color: #fffbeb;
+      color: #92400e;
+      border: 1px solid #fde68a;
+    }
+    .badge-priv {
+      background-color: #faf5ff;
+      color: #6b21a8;
+      border: 1px solid #e9d5ff;
+    }
+
+    /* Custom Scrollbars */
+    ::-webkit-scrollbar { width: 7px; height: 7px; }
+    ::-webkit-scrollbar-track { background: #e0e6d8; }
+    ::-webkit-scrollbar-thumb { background: #96af8c; border-radius: 4px; border: 1px solid rgba(255,255,255,0.7); }
+    ::-webkit-scrollbar-thumb:hover { background: #738f68; }
   </style>
 </head>
-<body class="antialiased min-h-screen">
+<body class="selection:bg-blue-600 selection:text-white flex flex-col relative overflow-x-hidden">
 
-  <!-- Side Navigation Drawer Backdrop -->
-  <div id="sidebarBackdrop" onclick="toggleSidebar(false)" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden transition-opacity duration-300"></div>
+  <!-- Ambient liquid orbs for light glass refraction -->
+  <div class="droplet-orb-1"></div>
+  <div class="droplet-orb-2"></div>
+  <div class="droplet-orb-3"></div>
 
-  <!-- Side Navigation Drawer -->
-  <aside id="sideNavDrawer" class="fixed top-0 left-0 bottom-0 w-80 max-w-[85vw] glass-droplet-sidebar z-50 transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col shadow-2xl backdrop-blur-2xl">
+  <!-- Mobile-only backdrop for small screens (< lg) -->
+  <div id="sidebarBackdrop" onclick="toggleSidebar(false)" class="fixed inset-0 bg-stone-900/40 backdrop-blur-sm z-20 hidden lg:hidden transition-opacity duration-300"></div>
+
+  <!-- Persistent Left Side Navigation (Always Open on Desktop) -->
+  <aside id="sideNavDrawer" class="w-72 fixed inset-y-0 left-0 z-30 flex flex-col glass-droplet-sidebar transition-transform duration-300 -translate-x-full lg:translate-x-0">
     <div class="p-5 border-b border-stone-300/60 flex items-center justify-between">
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-500 to-purple-600 flex items-center justify-center font-black text-white text-lg shadow-md droplet-pill">
@@ -100,7 +181,7 @@
           <span class="text-xs text-stone-600 font-mono block">German Master Roadmap</span>
         </div>
       </div>
-      <button onclick="toggleSidebar(false)" class="p-2 rounded-lg text-stone-500 hover:text-stone-900 hover:bg-stone-200 transition-all" title="Close Menu">
+      <button onclick="toggleSidebar(false)" class="lg:hidden p-1.5 rounded-lg text-stone-500 hover:text-stone-900 hover:bg-stone-200 transition-all" title="Close Menu">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
       </button>
     </div>
@@ -198,76 +279,78 @@
     </div>
   </aside>
 
+  <!-- Main Content Wrapper (Beside Permanent Sidebar on Desktop) -->
+  <div class="lg:pl-72 flex flex-col min-h-screen relative z-10">
 
-  <!-- [30% DARK COMPONENT] Sticky Top Navigation -->
-  <header class="header-dark sticky top-0 z-50 text-white shadow-xl backdrop-blur-md bg-[#0b1120]/95 border-b border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
-      <div class="flex items-center gap-3">
-                <button onclick="toggleSidebar(true)" class="p-2 rounded-xl bg-slate-800 border border-slate-700 hover:border-blue-500 text-slate-300 hover:text-white transition-all flex items-center gap-1.5" title="Toggle Navigation Menu">
-          <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-          <span class="text-xs font-semibold hidden sm:inline">Menu</span>
-        </button>
-        <a href="index.html" class="w-9 h-9 rounded-xl bg-slate-800 border border-slate-700 hover:border-blue-500 flex items-center justify-center text-slate-300 hover:text-white transition-all flex-shrink-0" title="Back to Master Dashboard">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-        </a>
-        <div>
-          <div class="flex items-center gap-2">
-            <span class="text-sm sm:text-base font-extrabold tracking-tight text-white block">German Postgraduate Roadmap</span>
-            <span class="hidden sm:inline-flex px-2 py-0.5 text-[10px] font-bold rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-mono">
-              70.56% &rarr; 2.47 German Grade
-            </span>
+    <!-- Sticky Top Glass Navigation Bar (No Menu Button on Desktop) -->
+    <header class="sticky top-0 z-20 w-full glass-droplet-nav">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <button onclick="toggleSidebar(true)" class="lg:hidden p-2 rounded-xl bg-white/90 hover:bg-stone-100 text-stone-700 hover:text-stone-950 border border-stone-300 transition-all flex items-center gap-1.5 cursor-pointer shadow-sm" title="Toggle Navigation Menu">
+            <svg class="w-4 h-4 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            <span class="text-xs font-semibold">Menu</span>
+          </button>
+          <a href="index.html" class="w-9 h-9 rounded-xl bg-white/80 border border-stone-300 hover:border-blue-500 flex items-center justify-center text-stone-700 hover:text-stone-950 transition-all flex-shrink-0 shadow-sm" title="Back to Master Dashboard">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+          </a>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-sm sm:text-base font-extrabold tracking-tight text-stone-900 block">German Postgraduate Roadmap</span>
+              <span class="hidden sm:inline-flex px-2 py-0.5 text-[10px] font-bold rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300 font-mono">
+                70.56% &rarr; 2.47 German Grade
+              </span>
+            </div>
+            <span class="text-[11px] text-stone-600 font-mono hidden md:block">Lakshay Nagpal · B.Tech CSE Consecutive Admission</span>
           </div>
-          <span class="text-[11px] text-slate-400 font-mono hidden md:block">Lakshay Nagpal · B.Tech CSE Consecutive Admission</span>
+        </div>
+        
+        <!-- Cross-page & Section Links -->
+        <nav class="hidden lg:flex items-center gap-1.5 text-xs font-semibold text-stone-700">
+          <a href="index.html" class="px-2.5 py-1.5 rounded-lg hover:bg-stone-200/70 hover:text-stone-950 transition-all">🏠 Hub</a>
+          <a href="cat_2026_syllabus_roadmap.html" class="px-2.5 py-1.5 rounded-lg hover:bg-stone-200/70 hover:text-stone-950 transition-all text-amber-800 font-semibold">🐯 CAT 2026</a>
+          <a href="typescript_curriculum.html" class="px-2.5 py-1.5 rounded-lg hover:bg-stone-200/70 hover:text-stone-950 transition-all">⚡ TS Guide</a>
+          <span class="text-stone-400">|</span>
+          <a href="#profile" class="px-2 py-1.5 rounded-lg hover:bg-stone-200/70 hover:text-stone-950 transition-colors">Profile</a>
+          <a href="#degrees" class="px-2 py-1.5 rounded-lg hover:bg-stone-200/70 hover:text-stone-950 transition-colors">MSc vs MBA</a>
+          <a href="#universities" class="px-2 py-1.5 rounded-lg hover:bg-stone-200/70 hover:text-stone-950 transition-colors">Universities</a>
+          <a href="#costs" class="px-2 py-1.5 rounded-lg hover:bg-stone-200/70 hover:text-stone-950 transition-colors">Costs</a>
+          <a href="#transition" class="px-2 py-1.5 rounded-lg hover:bg-stone-200/70 hover:text-stone-950 transition-colors">Careers</a>
+          <a href="#qa" class="px-2.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold transition-all shadow-sm">Q&amp;A</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <a href="https://www.linkedin.com/in/lakshay-nagpal-1a2a0134a/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0a66c2] hover:bg-[#004182] text-white text-xs font-semibold shadow-sm transition-all" title="LinkedIn Profile">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z"/></svg>
+            <span class="hidden sm:inline">LinkedIn</span>
+          </a>
+          <a href="index.html" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-stone-900 hover:bg-stone-800 text-white font-bold text-xs shadow-sm transition-all">
+            <span>Hub</span>
+          </a>
         </div>
       </div>
-      
-      <!-- Cross-page & Section Links -->
-      <nav class="hidden lg:flex items-center gap-1.5 text-xs font-semibold text-slate-300">
-        <a href="index.html" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 hover:text-white transition-all text-slate-400 hover:text-white">🏠 Hub</a>
-        <a href="cat_2026_syllabus_roadmap.html" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 hover:text-white transition-all text-amber-400 font-semibold">🐯 CAT 2026</a>
-        <a href="typescript_curriculum.html" class="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 hover:text-white transition-all text-slate-400 hover:text-white">⚡ TS Guide</a>
-        <span class="text-slate-700">|</span>
-        <a href="#profile" class="px-2 py-1.5 rounded-lg hover:bg-slate-800 hover:text-white transition-colors">Profile</a>
-        <a href="#degrees" class="px-2 py-1.5 rounded-lg hover:bg-slate-800 hover:text-white transition-colors">MSc vs MBA</a>
-        <a href="#universities" class="px-2 py-1.5 rounded-lg hover:bg-slate-800 hover:text-white transition-colors">Universities</a>
-        <a href="#costs" class="px-2 py-1.5 rounded-lg hover:bg-slate-800 hover:text-white transition-colors">Costs</a>
-        <a href="#transition" class="px-2 py-1.5 rounded-lg hover:bg-slate-800 hover:text-white transition-colors">Careers</a>
-        <a href="#qa" class="px-2.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-bold transition-all shadow-sm">Q&amp;A</a>
-      </nav>
-
-      <div class="flex items-center gap-2">
-        <a href="https://www.linkedin.com/in/lakshay-nagpal-1a2a0134a/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0a66c2] hover:bg-[#004182] text-white text-xs font-semibold shadow-sm shadow-[#0a66c2]/30 transition-all" title="LinkedIn Profile">
-          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z"/></svg>
-          <span class="hidden sm:inline">LinkedIn</span>
-        </a>
-        <a href="index.html" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs border border-slate-700 transition-all">
-          <span>Hub</span>
-        </a>
-      </div>
-    </div>
-  </header>
+    </header>
 
   <!-- [50% LIGHT CANVAS] Main Content Container -->
   <main class="max-w-7xl mx-auto px-6 py-10 space-y-14">
 
-    <!-- [30% DARK COMPONENT] Executive Summary Hero -->
-    <section id="executive-summary" class="card-dark rounded-2xl p-8 shadow-xl relative overflow-hidden">
+    <!-- Executive Summary Hero (Liquid Glass Droplet) -->
+    <section id="executive-summary" class="glass-droplet rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden">
       <div class="absolute -right-24 -top-24 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
       
       <div class="flex items-start justify-between flex-wrap gap-4 relative z-10">
         <div>
-          <div class="text-blue-400 text-xs font-extrabold uppercase tracking-wider mb-1 flex items-center gap-1.5">
-            <span class="w-2 h-2 rounded-full bg-blue-400"></span> Core Decision Architecture
+          <div class="text-blue-800 text-xs font-extrabold uppercase tracking-wider mb-1 flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-blue-600"></span> Core Decision Architecture
           </div>
-          <h2 class="text-2xl font-extrabold tracking-tight text-white">
+          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-stone-900">
             High-Impact Technical M.Sc. &gt; High-Debt Private MBA
           </h2>
-          <p class="text-slate-300 text-sm mt-1 max-w-3xl leading-relaxed">
+          <p class="text-stone-700 text-sm sm:text-base mt-2 max-w-3xl leading-relaxed">
             Your B.Tech in CSE gives you a <strong>consecutive degree advantage</strong> in Germany. You can access a world-class, <strong>€0-tuition Master of Science</strong> that qualifies you directly for high-paying AI/software engineering roles and fast-tracked permanent residency under the EU Blue Card.
           </p>
         </div>
         <div class="flex items-center gap-2 flex-wrap">
-          <button onclick="playAudioSummary(this, 'German Higher Education Strategic Verdict', 'Executive Summary: Your B.Tech in Computer Science gives you a consecutive degree advantage in Germany. You qualify for tuition-free public Master of Science programs that preserve your software engineering foundation while adding 40 to 60 credits in AI and machine learning. A technical Master of Science is vastly superior to high-debt private MBAs, leading directly to high-paying engineering roles and EU Blue Card residency.')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 border border-blue-500/40 text-xs font-semibold transition-all">
+          <button onclick="playAudioSummary(this, 'German Higher Education Strategic Verdict', 'Executive Summary: Your B.Tech in Computer Science gives you a consecutive degree advantage in Germany. You qualify for tuition-free public Master of Science programs that preserve your software engineering foundation while adding 40 to 60 credits in AI and machine learning. A technical Master of Science is vastly superior to high-debt private MBAs, leading directly to high-paying engineering roles and EU Blue Card residency.')" class="audio-brief-btn droplet-pill inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold text-blue-900 border border-blue-300 hover:bg-blue-50/80 shadow-sm transition-all">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
             <span class="audio-label" data-default-label="Listen Brief (25s)">Listen Brief (25s)</span>
           </button>
@@ -276,52 +359,51 @@
         </div>
       </div>
 
-      <!-- 3 Takeaway Cards inside the Dark Hero -->
+      <!-- 3 Takeaway Cards inside the Droplet Hero -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 relative z-10">
-        <div class="p-6 rounded-xl border border-slate-700/80 bg-[#162035] hover:border-blue-500 transition-all">
-          <div class="text-blue-400 font-bold text-xs uppercase tracking-wider mb-2 flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span> 1. Degree Sweet Spot
+        <div class="p-6 rounded-2xl border border-stone-300/70 bg-white/80 hover:border-blue-500/80 hover:bg-white transition-all shadow-sm">
+          <div class="text-blue-800 font-bold text-xs uppercase tracking-wider mb-2 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span> 1. Degree Sweet Spot
           </div>
-          <h3 class="text-lg font-bold text-white">M.Sc. Computer Science (AI Track)</h3>
-          <p class="text-sm text-slate-300 mt-2 leading-relaxed">
+          <h3 class="text-lg font-bold text-stone-900">M.Sc. Computer Science (AI Track)</h3>
+          <p class="text-sm text-stone-700 mt-2 leading-relaxed">
             Preserves 100% of your software engineering foundation while allowing 40–60 ECTS in Machine Learning, Deep Learning, and Distributed Systems. <strong>Zero tuition fee at public universities.</strong>
           </p>
         </div>
 
-        <div class="p-6 rounded-xl border border-slate-700/80 bg-[#162035] hover:border-emerald-500 transition-all">
-          <div class="text-emerald-400 font-bold text-xs uppercase tracking-wider mb-2 flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> 2. Admission Positioning
+        <div class="p-6 rounded-2xl border border-stone-300/70 bg-white/80 hover:border-emerald-500/80 hover:bg-white transition-all shadow-sm">
+          <div class="text-emerald-800 font-bold text-xs uppercase tracking-wider mb-2 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> 2. Admission Positioning
           </div>
-          <h3 class="text-lg font-bold text-white">High Chances at 2.5–2.7 Cutoff Unis</h3>
-          <p class="text-sm text-slate-300 mt-2 leading-relaxed">
+          <h3 class="text-lg font-bold text-stone-900">High Chances at 2.5–2.7 Cutoff Unis</h3>
+          <p class="text-sm text-stone-700 mt-2 leading-relaxed">
             Your 2.47 grade comfortably clears benchmark programs like <strong>University of Passau</strong> (cutoff 2.7), <strong>University of Siegen</strong> (no NC), and <strong>TH Deggendorf</strong> (aptitude test based).
           </p>
         </div>
 
-        <div class="p-6 rounded-xl border border-slate-700/80 bg-[#162035] hover:border-purple-500 transition-all">
-          <div class="text-purple-400 font-bold text-xs uppercase tracking-wider mb-2 flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span> 3. Career Progression
+        <div class="p-6 rounded-2xl border border-stone-300/70 bg-white/80 hover:border-purple-500/80 hover:bg-white transition-all shadow-sm">
+          <div class="text-purple-800 font-bold text-xs uppercase tracking-wider mb-2 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-purple-600"></span> 3. Career Progression
           </div>
-          <h3 class="text-lg font-bold text-white">Full-Stack &rarr; Applied AI / MLOps</h3>
-          <p class="text-sm text-slate-300 mt-2 leading-relaxed">
+          <h3 class="text-lg font-bold text-stone-900">Full-Stack &rarr; Applied AI / MLOps</h3>
+          <p class="text-sm text-stone-700 mt-2 leading-relaxed">
             Do not restart as an academic statistician. Companies in Munich, Berlin, and Frankfurt are actively seeking engineers who can <strong>ship and scale AI models</strong> in production using Docker, Kubernetes, and FastAPI.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- [50% LIGHT COMPONENT] Profile & Bavarian Grade Audit -->
+    <!-- Profile & Bavarian Grade Audit -->
     <section id="profile" class="space-y-6">
       <div class="flex items-start justify-between gap-4 flex-wrap">
         <div>
-          <h2 class="text-2xl font-bold tracking-tight text-slate-900 flex items-center gap-2.5">
-            <!-- [20% ACCENT] Green Icon -->
-            <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <h2 class="text-2xl font-bold tracking-tight text-stone-900 flex items-center gap-2.5">
+            <svg class="w-6 h-6 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             Academic Profile Audit &amp; ECTS Conversion
           </h2>
-          <p class="text-slate-600 text-sm">German admission committees perform a strict quantitative audit of your undergraduate transcript using the Bavarian formula.</p>
+          <p class="text-stone-600 text-sm">German admission committees perform a strict quantitative audit of your undergraduate transcript using the Bavarian formula.</p>
         </div>
-        <button onclick="playAudioSummary(this, 'Academic Profile & Bavarian Grade Audit', 'Profile Audit: Using the German Bavarian formula, your 70.56% B.Tech aggregate converts to 2.47, which falls inside the German Gut or good classification. This clears the 2.5 and 2.7 grade cutoffs enforced by top state universities. Your transcript demonstrates approximately 70 ECTS in core computer science, 26 ECTS in mathematics, and 18 ECTS in AI and data topics, satisfying consecutive entry rules.')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-300 text-xs font-semibold transition-all shadow-sm">
+        <button onclick="playAudioSummary(this, 'Academic Profile & Bavarian Grade Audit', 'Profile Audit: Using the German Bavarian formula, your 70.56% B.Tech aggregate converts to 2.47, which falls inside the German Gut or good classification. This clears the 2.5 and 2.7 grade cutoffs enforced by top state universities. Your transcript demonstrates approximately 70 ECTS in core computer science, 26 ECTS in mathematics, and 18 ECTS in AI and data topics, satisfying consecutive entry rules.')" class="audio-brief-btn droplet-pill inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 text-xs font-semibold shadow-sm transition-all">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
           <span class="audio-label" data-default-label="Listen Brief (25s)">Listen Brief (25s)</span>
         </button>
@@ -329,96 +411,95 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <!-- Bavarian Formula Card -->
-        <div class="card-light p-6 rounded-2xl space-y-4">
-          <h3 class="font-bold text-base text-slate-900 flex items-center justify-between">
+        <div class="glass-droplet p-6 rounded-2xl space-y-4 shadow-sm">
+          <h3 class="font-bold text-base text-stone-900 flex items-center justify-between">
             Bavarian Grade Conversion
             <span class="text-xs px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-mono font-bold">Standard</span>
           </h3>
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 font-mono text-xs space-y-2">
-            <div class="text-emerald-700 font-bold">Formula: Grade = 1 + 3 &times; [(Nmax - Nd) / (Nmax - Nmin)]</div>
-            <div class="text-slate-600">• Nmax = 100% | Nmin = 40%</div>
-            <div class="text-slate-600">• Your Aggregate = 70.56% (3810 / 5400)</div>
-            <div class="text-slate-900 font-bold pt-2 border-t border-slate-200 text-sm">
+          <div class="p-4 rounded-xl bg-white/90 border border-stone-300/70 font-mono text-xs space-y-2">
+            <div class="text-emerald-800 font-bold">Formula: Grade = 1 + 3 &times; [(Nmax - Nd) / (Nmax - Nmin)]</div>
+            <div class="text-stone-600">• Nmax = 100% | Nmin = 40%</div>
+            <div class="text-stone-600">• Your Aggregate = 70.56% (3810 / 5400)</div>
+            <div class="text-stone-900 font-bold pt-2 border-t border-stone-200 text-sm">
               Converted Result = 1 + 3 &times; (29.44 / 60) = <span class="text-emerald-700 font-extrabold text-base">2.47 ("Gut")</span>
             </div>
           </div>
-          <p class="text-xs text-slate-600 leading-relaxed">
+          <p class="text-xs text-stone-600 leading-relaxed">
             In Germany, <strong>1.0</strong> is top honors and <strong>4.0</strong> is the passing mark. Your <strong>2.47</strong> sits inside the "Gut" band and clears the 2.5 and 2.7 cutoffs enforced by top state universities.
           </p>
         </div>
 
         <!-- ECTS Modules Breakdown -->
-        <div class="card-light p-6 rounded-2xl space-y-4 lg:col-span-2">
-          <h3 class="font-bold text-base text-slate-900">Transcript Subject Modules (MDU Rohtak &rarr; ECTS Estimate)</h3>
+        <div class="glass-droplet p-6 rounded-2xl space-y-4 lg:col-span-2 shadow-sm">
+          <h3 class="font-bold text-base text-stone-900">Transcript Subject Modules (MDU Rohtak &rarr; ECTS Estimate)</h3>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+            <div class="p-4 rounded-xl bg-white/90 border border-stone-300/70 space-y-2">
               <div class="flex items-center justify-between">
                 <span class="text-xs font-bold uppercase text-blue-700">Core CS Modules</span>
                 <span class="text-xs font-extrabold px-2 py-0.5 rounded bg-blue-100 text-blue-800">~70 ECTS</span>
               </div>
-              <ul class="text-xs text-slate-700 space-y-1.5 pt-1">
-                <li>• Python: <strong class="text-slate-900 font-bold">88/100</strong></li>
-                <li>• Data Structures: <strong class="text-slate-900 font-bold">82/100</strong></li>
-                <li>• OOP &amp; Web Tech: <strong class="text-slate-900 font-bold">80 / 80</strong></li>
-                <li>• Operating Systems: <strong class="text-slate-900 font-bold">76/100</strong></li>
-                <li>• Comp Architecture: <strong class="text-slate-900 font-bold">76/100</strong></li>
-                <li>• Networks / DAA: <strong class="text-slate-900 font-bold">79 / 66</strong></li>
+              <ul class="text-xs text-stone-700 space-y-1.5 pt-1">
+                <li>• Python: <strong class="text-stone-900 font-bold">88/100</strong></li>
+                <li>• Data Structures: <strong class="text-stone-900 font-bold">82/100</strong></li>
+                <li>• OOP &amp; Web Tech: <strong class="text-stone-900 font-bold">80 / 80</strong></li>
+                <li>• Operating Systems: <strong class="text-stone-900 font-bold">76/100</strong></li>
+                <li>• Comp Architecture: <strong class="text-stone-900 font-bold">76/100</strong></li>
+                <li>• Networks / DAA: <strong class="text-stone-900 font-bold">79 / 66</strong></li>
               </ul>
-              <div class="text-[11px] text-emerald-700 font-bold pt-2 border-t border-slate-200">Satisfies 100% of CS entry rules</div>
+              <div class="text-[11px] text-emerald-800 font-bold pt-2 border-t border-stone-200">Satisfies 100% of CS entry rules</div>
             </div>
 
-            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+            <div class="p-4 rounded-xl bg-white/90 border border-stone-300/70 space-y-2">
               <div class="flex items-center justify-between">
                 <span class="text-xs font-bold uppercase text-purple-700">Mathematics</span>
                 <span class="text-xs font-extrabold px-2 py-0.5 rounded bg-purple-100 text-purple-800">~26 ECTS</span>
               </div>
-              <ul class="text-xs text-slate-700 space-y-1.5 pt-1">
-                <li>• Mathematics-I: <strong class="text-slate-900 font-bold">50/100</strong></li>
-                <li>• Mathematics-II: <strong class="text-slate-900 font-bold">72/100</strong></li>
-                <li>• Mathematics-III: <strong class="text-slate-900 font-bold">79/100</strong></li>
-                <li>• Discrete Maths: <strong class="text-slate-900 font-bold">69/100</strong></li>
+              <ul class="text-xs text-stone-700 space-y-1.5 pt-1">
+                <li>• Mathematics-I: <strong class="text-stone-900 font-bold">50/100</strong></li>
+                <li>• Mathematics-II: <strong class="text-stone-900 font-bold">72/100</strong></li>
+                <li>• Mathematics-III: <strong class="text-stone-900 font-bold">79/100</strong></li>
+                <li>• Discrete Maths: <strong class="text-stone-900 font-bold">69/100</strong></li>
               </ul>
-              <div class="text-[11px] text-blue-700 font-bold pt-2 border-t border-slate-200">Meets applied CS math rules</div>
+              <div class="text-[11px] text-blue-800 font-bold pt-2 border-t border-stone-200">Meets applied CS math rules</div>
             </div>
 
-            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+            <div class="p-4 rounded-xl bg-white/90 border border-stone-300/70 space-y-2">
               <div class="flex items-center justify-between">
-                <span class="text-xs font-bold uppercase text-amber-700">AI &amp; Data Topics</span>
-                <span class="text-xs font-extrabold px-2 py-0.5 rounded bg-amber-100 text-amber-800">~18 ECTS</span>
+                <span class="text-xs font-bold uppercase text-amber-800">AI &amp; Data Topics</span>
+                <span class="text-xs font-extrabold px-2 py-0.5 rounded bg-amber-100 text-amber-900">~18 ECTS</span>
               </div>
-              <ul class="text-xs text-slate-700 space-y-1.5 pt-1">
-                <li>• Artificial Intelligence: <strong class="text-slate-900 font-bold">69/100</strong></li>
-                <li>• Big Data Analytics: <strong class="text-slate-900 font-bold">68/100</strong></li>
-                <li>• Machine Learning: <strong class="text-slate-900 font-bold">52/100</strong></li>
-                <li>• Data Science: <strong class="text-slate-900 font-bold">52/100</strong></li>
+              <ul class="text-xs text-stone-700 space-y-1.5 pt-1">
+                <li>• Artificial Intelligence: <strong class="text-stone-900 font-bold">69/100</strong></li>
+                <li>• Big Data Analytics: <strong class="text-stone-900 font-bold">68/100</strong></li>
+                <li>• Machine Learning: <strong class="text-stone-900 font-bold">52/100</strong></li>
+                <li>• Data Science: <strong class="text-stone-900 font-bold">52/100</strong></li>
               </ul>
-              <div class="text-[11px] text-emerald-700 font-bold pt-2 border-t border-slate-200">Satisfies HAW prerequisites (e.g. DIT)</div>
+              <div class="text-[11px] text-emerald-800 font-bold pt-2 border-t border-stone-200">Satisfies HAW prerequisites (e.g. DIT)</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- [50% LIGHT COMPONENT with 30% DARK HEADER] Degree Comparison Table -->
+    <!-- Degree Comparison Table -->
     <section id="degrees" class="space-y-6">
       <div class="flex items-start justify-between gap-4 flex-wrap">
         <div>
-          <h2 class="text-2xl font-bold tracking-tight text-slate-900 flex items-center gap-2.5">
+          <h2 class="text-2xl font-bold tracking-tight text-stone-900 flex items-center gap-2.5">
             <svg class="w-6 h-6 text-purple-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
             MSc vs MBA vs Specialized Degrees
           </h2>
-          <p class="text-slate-600 text-sm">Comparing degree formats by technical depth, tuition cost, visa sponsorship, and employer demand.</p>
+          <p class="text-stone-600 text-sm">Comparing degree formats by technical depth, tuition cost, visa sponsorship, and employer demand.</p>
         </div>
-        <button onclick="playAudioSummary(this, 'MSc vs MBA Degree Comparison', 'Degree Comparison: An M.Sc. in Computer Science with an AI track or an M.Sc. in AI Engineering provides the highest profile match and employer demand with zero tuition at public universities. In contrast, private MBAs cost between 20,000 and 50,000 euros and carry low technical respect among German engineering recruiters.')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-purple-50 hover:bg-purple-100 text-purple-700 border border-purple-300 text-xs font-semibold transition-all shadow-sm">
+        <button onclick="playAudioSummary(this, 'MSc vs MBA Degree Comparison', 'Degree Comparison: An M.Sc. in Computer Science with an AI track or an M.Sc. in AI Engineering provides the highest profile match and employer demand with zero tuition at public universities. In contrast, private MBAs cost between 20,000 and 50,000 euros and carry low technical respect among German engineering recruiters.')" class="audio-brief-btn droplet-pill inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-purple-50 hover:bg-purple-100 text-purple-800 border border-purple-300 text-xs font-semibold shadow-sm transition-all">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
           <span class="audio-label" data-default-label="Listen Brief (20s)">Listen Brief (20s)</span>
         </button>
       </div>
 
-      <div class="overflow-x-auto card-light rounded-2xl shadow-sm">
+      <div class="overflow-x-auto glass-droplet rounded-2xl shadow-sm border border-stone-300/70">
         <table class="w-full text-left text-sm">
-          <!-- 30% Dark Header Table Banner -->
-          <thead class="bg-[#0f172a] text-xs uppercase text-white font-bold">
+          <thead class="bg-stone-200/80 text-xs uppercase text-stone-900 font-bold border-b border-stone-300/70">
             <tr>
               <th class="py-4 px-4">Degree Program</th>
               <th class="py-4 px-4">Profile Match</th>
@@ -428,84 +509,84 @@
               <th class="py-4 px-4">Strategic Verdict</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-slate-200 font-medium">
-            <tr class="hover:bg-slate-50 transition-colors">
-              <td class="py-3.5 px-4 font-bold text-slate-900">M.Sc. in Computer Science (AI Track)</td>
+          <tbody class="divide-y divide-stone-200/70 font-medium text-stone-800">
+            <tr class="hover:bg-white/60 transition-colors">
+              <td class="py-3.5 px-4 font-bold text-stone-900">M.Sc. in Computer Science (AI Track)</td>
               <td class="py-3.5 px-4"><span class="badge-safe px-2.5 py-0.5 rounded-full text-xs font-extrabold">9.5 / 10</span></td>
-              <td class="py-3.5 px-4 text-emerald-700 font-bold">Very High</td>
-              <td class="py-3.5 px-4 font-mono text-xs text-slate-800">€0 (Public)</td>
-              <td class="py-3.5 px-4 text-emerald-700 font-bold">Highest</td>
-              <td class="py-3.5 px-4 text-xs font-bold text-emerald-700">Top Choice (100% credit match &amp; maximum career flexibility)</td>
+              <td class="py-3.5 px-4 text-emerald-800 font-bold">Very High</td>
+              <td class="py-3.5 px-4 font-mono text-xs text-stone-800">€0 (Public)</td>
+              <td class="py-3.5 px-4 text-emerald-800 font-bold">Highest</td>
+              <td class="py-3.5 px-4 text-xs font-bold text-emerald-800">Top Choice (100% credit match &amp; maximum career flexibility)</td>
             </tr>
-            <tr class="hover:bg-slate-50 transition-colors">
-              <td class="py-3.5 px-4 font-bold text-slate-900">M.Sc. in AI / AI Engineering</td>
+            <tr class="hover:bg-white/60 transition-colors">
+              <td class="py-3.5 px-4 font-bold text-stone-900">M.Sc. in AI / AI Engineering</td>
               <td class="py-3.5 px-4"><span class="badge-safe px-2.5 py-0.5 rounded-full text-xs font-extrabold">9.0 / 10</span></td>
-              <td class="py-3.5 px-4 text-emerald-700 font-bold">High</td>
-              <td class="py-3.5 px-4 font-mono text-xs text-slate-800">€0 - €1,000/yr (Public)</td>
-              <td class="py-3.5 px-4 text-emerald-700 font-bold">Very High</td>
-              <td class="py-3.5 px-4 text-xs font-bold text-emerald-700">Top Choice (Direct bridge to AI Engineer roles)</td>
+              <td class="py-3.5 px-4 text-emerald-800 font-bold">High</td>
+              <td class="py-3.5 px-4 font-mono text-xs text-stone-800">€0 - €1,000/yr (Public)</td>
+              <td class="py-3.5 px-4 text-emerald-800 font-bold">Very High</td>
+              <td class="py-3.5 px-4 text-xs font-bold text-emerald-800">Top Choice (Direct bridge to AI Engineer roles)</td>
             </tr>
-            <tr class="hover:bg-slate-50 transition-colors">
-              <td class="py-3.5 px-4 font-bold text-slate-900">M.Sc. in Software Engineering</td>
+            <tr class="hover:bg-white/60 transition-colors">
+              <td class="py-3.5 px-4 font-bold text-stone-900">M.Sc. in Software Engineering</td>
               <td class="py-3.5 px-4"><span class="badge-safe px-2.5 py-0.5 rounded-full text-xs font-extrabold">9.0 / 10</span></td>
-              <td class="py-3.5 px-4 text-emerald-700 font-bold">High</td>
-              <td class="py-3.5 px-4 font-mono text-xs text-slate-800">€0 (Public)</td>
-              <td class="py-3.5 px-4 text-emerald-700 font-bold">Very High</td>
-              <td class="py-3.5 px-4 text-xs font-bold text-blue-700">Strong Alternative (Guaranteed safe admission path)</td>
+              <td class="py-3.5 px-4 text-emerald-800 font-bold">High</td>
+              <td class="py-3.5 px-4 font-mono text-xs text-stone-800">€0 (Public)</td>
+              <td class="py-3.5 px-4 text-emerald-800 font-bold">Very High</td>
+              <td class="py-3.5 px-4 text-xs font-bold text-blue-800">Strong Alternative (Guaranteed safe admission path)</td>
             </tr>
-            <tr class="hover:bg-slate-50 transition-colors">
-              <td class="py-3.5 px-4 font-bold text-slate-900">M.Sc. in Data Science</td>
+            <tr class="hover:bg-white/60 transition-colors">
+              <td class="py-3.5 px-4 font-bold text-stone-900">M.Sc. in Data Science</td>
               <td class="py-3.5 px-4"><span class="badge-real px-2.5 py-0.5 rounded-full text-xs font-extrabold">7.5 / 10</span></td>
-              <td class="py-3.5 px-4 text-sky-700 font-bold">Math Heavy</td>
-              <td class="py-3.5 px-4 font-mono text-xs text-slate-800">€0 (Public)</td>
-              <td class="py-3.5 px-4 text-sky-700 font-bold">High</td>
-              <td class="py-3.5 px-4 text-xs text-slate-600">Viable in CS faculties; math faculties demand pure statistics proofs</td>
+              <td class="py-3.5 px-4 text-sky-800 font-bold">Math Heavy</td>
+              <td class="py-3.5 px-4 font-mono text-xs text-stone-800">€0 (Public)</td>
+              <td class="py-3.5 px-4 text-sky-800 font-bold">High</td>
+              <td class="py-3.5 px-4 text-xs text-stone-600">Viable in CS faculties; math faculties demand pure statistics proofs</td>
             </tr>
-            <tr class="hover:bg-slate-50 transition-colors">
-              <td class="py-3.5 px-4 font-bold text-slate-900">M.Sc. in Business Analytics / IS</td>
+            <tr class="hover:bg-white/60 transition-colors">
+              <td class="py-3.5 px-4 font-bold text-stone-900">M.Sc. in Business Analytics / IS</td>
               <td class="py-3.5 px-4"><span class="badge-ambi px-2.5 py-0.5 rounded-full text-xs font-extrabold">6.5 / 10</span></td>
-              <td class="py-3.5 px-4 text-amber-700 font-bold">Medium</td>
-              <td class="py-3.5 px-4 font-mono text-xs text-slate-800">€0 (Pub) / €25k (Priv)</td>
-              <td class="py-3.5 px-4 text-amber-700 font-bold">Moderate</td>
-              <td class="py-3.5 px-4 text-xs text-slate-600">Secondary; lower initial technical salary ceilings</td>
+              <td class="py-3.5 px-4 text-amber-800 font-bold">Medium</td>
+              <td class="py-3.5 px-4 font-mono text-xs text-stone-800">€0 (Pub) / €25k (Priv)</td>
+              <td class="py-3.5 px-4 text-amber-800 font-bold">Moderate</td>
+              <td class="py-3.5 px-4 text-xs text-stone-600">Secondary; lower initial technical salary ceilings</td>
             </tr>
             <tr class="hover:bg-rose-50/60 transition-colors bg-rose-50/30">
               <td class="py-3.5 px-4 font-bold text-rose-800">MBA in AI / Technology</td>
               <td class="py-3.5 px-4"><span class="px-2.5 py-0.5 rounded-full text-xs font-extrabold bg-rose-100 text-rose-800 border border-rose-300">4.0 / 10</span></td>
-              <td class="py-3.5 px-4 text-rose-700 font-bold">Low</td>
+              <td class="py-3.5 px-4 text-rose-800 font-bold">Low</td>
               <td class="py-3.5 px-4 font-mono text-xs text-rose-800 font-bold">€20k - €50k+ (Private)</td>
-              <td class="py-3.5 px-4 text-rose-700 font-bold">Low (for engineers)</td>
-              <td class="py-3.5 px-4 text-xs font-bold text-rose-700">Not Recommended (Expensive, low technical respect in Germany)</td>
+              <td class="py-3.5 px-4 text-rose-800 font-bold">Low (for engineers)</td>
+              <td class="py-3.5 px-4 text-xs font-bold text-rose-800">Not Recommended (Expensive, low technical respect in Germany)</td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- [50% LIGHT COMPONENT] University Shortlist with Interactive Filters -->
+    <!-- Target German University Shortlist with Interactive Filters -->
     <section id="universities" class="space-y-6">
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
           <div class="flex items-center gap-3 flex-wrap">
-            <h2 class="text-2xl font-bold tracking-tight text-slate-900 flex items-center gap-2.5">
-              <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+            <h2 class="text-2xl font-bold tracking-tight text-stone-900 flex items-center gap-2.5">
+              <svg class="w-6 h-6 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
               Target German University Shortlist
             </h2>
-            <button onclick="playAudioSummary(this, 'Target German University Shortlist', 'University Shortlist: Top safe options include University of Passau and University of Siegen with zero tuition fees and cutoffs that your 2.47 grade comfortably meets, plus Deggendorf Institute of Technology with its practical aptitude test. Realistic and ambitious options include Hildesheim, Frankfurt UAS, and Saarland University for deep AI research.')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 text-xs font-semibold transition-all shadow-sm">
+            <button onclick="playAudioSummary(this, 'Target German University Shortlist', 'University Shortlist: Top safe options include University of Passau and University of Siegen with zero tuition fees and cutoffs that your 2.47 grade comfortably meets, plus Deggendorf Institute of Technology with its practical aptitude test. Realistic and ambitious options include Hildesheim, Frankfurt UAS, and Saarland University for deep AI research.')" class="audio-brief-btn droplet-pill inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 text-xs font-semibold transition-all shadow-sm">
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
               <span class="audio-label" data-default-label="Listen Brief (25s)">Listen Brief (25s)</span>
             </button>
           </div>
-          <p class="text-slate-600 text-sm mt-1">Curated and classified specifically for your 2.47 German grade, B.Tech CSE credits, and career goals.</p>
+          <p class="text-stone-600 text-sm mt-1">Curated and classified specifically for your 2.47 German grade, B.Tech CSE credits, and career goals.</p>
         </div>
 
         <!-- Filter Buttons -->
         <div class="flex items-center gap-2 overflow-x-auto text-xs font-bold">
-          <button onclick="filterUnis('all')" class="filter-btn active px-4 py-2 rounded-xl bg-[#0f172a] text-white shadow-md transition-all">All (10)</button>
-          <button onclick="filterUnis('safe')" class="filter-btn px-4 py-2 rounded-xl bg-white border border-slate-300 text-slate-700 hover:border-emerald-500 hover:text-emerald-700 transition-all">Safer Matches</button>
-          <button onclick="filterUnis('realistic')" class="filter-btn px-4 py-2 rounded-xl bg-white border border-slate-300 text-slate-700 hover:border-blue-500 hover:text-blue-700 transition-all">Realistic Matches</button>
-          <button onclick="filterUnis('ambitious')" class="filter-btn px-4 py-2 rounded-xl bg-white border border-slate-300 text-slate-700 hover:border-amber-500 hover:text-amber-800 transition-all">Ambitious Reach</button>
-          <button onclick="filterUnis('private')" class="filter-btn px-4 py-2 rounded-xl bg-white border border-slate-300 text-slate-700 hover:border-purple-500 hover:text-purple-700 transition-all">Private Options</button>
+          <button onclick="filterUnis('all')" class="filter-btn active px-4 py-2 rounded-xl bg-stone-900 text-white shadow-md transition-all">All (10)</button>
+          <button onclick="filterUnis('safe')" class="filter-btn px-4 py-2 rounded-xl bg-white/80 border border-stone-300 text-stone-700 hover:border-emerald-500 hover:text-emerald-800 transition-all">Safer Matches</button>
+          <button onclick="filterUnis('realistic')" class="filter-btn px-4 py-2 rounded-xl bg-white/80 border border-stone-300 text-stone-700 hover:border-blue-500 hover:text-blue-800 transition-all">Realistic Matches</button>
+          <button onclick="filterUnis('ambitious')" class="filter-btn px-4 py-2 rounded-xl bg-white/80 border border-stone-300 text-stone-700 hover:border-amber-500 hover:text-amber-800 transition-all">Ambitious Reach</button>
+          <button onclick="filterUnis('private')" class="filter-btn px-4 py-2 rounded-xl bg-white/80 border border-stone-300 text-stone-700 hover:border-purple-500 hover:text-purple-800 transition-all">Private Options</button>
         </div>
       </div>
 
@@ -513,281 +594,280 @@
       <div id="uni-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
         <!-- Univ of Passau - CS -->
-        <div class="uni-card card-light p-6 rounded-2xl space-y-4 hover:border-emerald-500 hover:shadow-md transition-all" data-cat="safe">
+        <div class="uni-card glass-droplet p-6 rounded-2xl space-y-4 hover:border-emerald-500 hover:shadow-md transition-all shadow-sm" data-cat="safe">
           <div class="flex items-start justify-between">
             <div>
               <span class="badge-safe px-3 py-1 rounded-full text-xs font-bold">High Match (Safe)</span>
-              <h3 class="text-xl font-bold text-slate-900 mt-2">University of Passau</h3>
-              <p class="text-xs text-blue-700 font-semibold">M.Sc. Computer Science (100% English)</p>
+              <h3 class="text-xl font-bold text-stone-900 mt-2">University of Passau</h3>
+              <p class="text-xs text-blue-800 font-semibold">M.Sc. Computer Science (100% English)</p>
             </div>
             <div class="text-right font-mono text-xs">
               <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 font-extrabold text-sm">€0 Tuition</span>
-              <div class="text-slate-500 mt-1">€126.90 / sem</div>
+              <div class="text-stone-500 mt-1">€126.90 / sem</div>
             </div>
           </div>
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-2">
-            <div class="flex justify-between"><span class="text-slate-500">Location:</span> <span class="text-slate-900 font-bold">Passau, Bavaria</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Min Grade:</span> <span class="text-emerald-700 font-bold">2.7 (Your 2.47 safely qualifies)</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Prerequisite:</span> <span class="text-slate-900 font-medium">&ge; 110 ECTS in Computer Science</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Language:</span> <span class="text-slate-900 font-medium">IELTS 6.5 / TOEFL 87</span></div>
+          <div class="p-4 rounded-xl bg-white/90 border border-stone-300/70 text-xs space-y-2">
+            <div class="flex justify-between"><span class="text-stone-500">Location:</span> <span class="text-stone-900 font-bold">Passau, Bavaria</span></div>
+            <div class="flex justify-between"><span class="text-stone-500">Min Grade:</span> <span class="text-emerald-800 font-bold">2.7 (Your 2.47 safely qualifies)</span></div>
+            <div class="flex justify-between"><span class="text-stone-500">Prerequisite:</span> <span class="text-stone-900 font-medium">&ge; 110 ECTS in Computer Science</span></div>
+            <div class="flex justify-between"><span class="text-stone-500">Language:</span> <span class="text-stone-900 font-medium">IELTS 6.5 / TOEFL 87</span></div>
           </div>
-          <p class="text-xs text-slate-600 leading-relaxed">
+          <p class="text-xs text-stone-600 leading-relaxed">
             Passau has explicitly opted out of non-EU tuition fees. Your 4-year B.Tech covers all CS course requirements, and your grade clears the 2.7 benchmark.
           </p>
-          <div class="pt-2 border-t border-slate-200 flex justify-between items-center text-xs">
-            <span class="text-slate-500 font-medium">Careers: AI SWE, Full-Stack AI</span>
-            <a href="https://www.uni-passau.de/en/msc-computer-science" target="_blank" class="text-blue-600 font-bold hover:text-blue-800 hover:underline flex items-center gap-1">Official Portal &rarr;</a>
+          <div class="pt-2 border-t border-stone-200 flex justify-between items-center text-xs">
+            <span class="text-stone-500 font-medium">Careers: AI SWE, Full-Stack AI</span>
+            <a href="https://www.uni-passau.de/en/msc-computer-science" target="_blank" class="text-blue-700 font-bold hover:text-blue-900 hover:underline flex items-center gap-1">Official Portal &rarr;</a>
           </div>
         </div>
 
         <!-- Univ of Passau - AI Engineering -->
-        <div class="uni-card card-light p-6 rounded-2xl space-y-4 hover:border-blue-500 hover:shadow-md transition-all" data-cat="realistic">
+        <div class="uni-card glass-droplet p-6 rounded-2xl space-y-4 hover:border-blue-500 hover:shadow-md transition-all shadow-sm" data-cat="realistic">
           <div class="flex items-start justify-between">
             <div>
               <span class="badge-real px-3 py-1 rounded-full text-xs font-bold">Realistic Match</span>
-              <h3 class="text-xl font-bold text-slate-900 mt-2">University of Passau</h3>
-              <p class="text-xs text-blue-700 font-semibold">M.Sc. Artificial Intelligence Engineering</p>
+              <h3 class="text-xl font-bold text-stone-900 mt-2">University of Passau</h3>
+              <p class="text-xs text-blue-800 font-semibold">M.Sc. Artificial Intelligence Engineering</p>
             </div>
             <div class="text-right font-mono text-xs">
               <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 font-extrabold text-sm">€0 Tuition</span>
-              <div class="text-slate-500 mt-1">€126.90 / sem</div>
+              <div class="text-stone-500 mt-1">€126.90 / sem</div>
             </div>
           </div>
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-2">
-            <div class="flex justify-between"><span class="text-slate-500">Location:</span> <span class="text-slate-900 font-bold">Passau, Bavaria</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Min Grade:</span> <span class="text-emerald-700 font-bold">2.7 (Satisfied)</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Prerequisite:</span> <span class="text-slate-900 font-medium">&ge; 120 ECTS in CS+Math (&ge;35 in Math/Theory)</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Language:</span> <span class="text-slate-900 font-medium">IELTS 6.5 / TOEFL 87</span></div>
+          <div class="p-4 rounded-xl bg-white/90 border border-stone-300/70 text-xs space-y-2">
+            <div class="flex justify-between"><span class="text-stone-500">Location:</span> <span class="text-stone-900 font-bold">Passau, Bavaria</span></div>
+            <div class="flex justify-between"><span class="text-stone-500">Min Grade:</span> <span class="text-emerald-800 font-bold">2.7 (Satisfied)</span></div>
+            <div class="flex justify-between"><span class="text-stone-500">Prerequisite:</span> <span class="text-stone-900 font-medium">&ge; 120 ECTS in CS+Math (&ge;35 in Math/Theory)</span></div>
+            <div class="flex justify-between"><span class="text-stone-500">Language:</span> <span class="text-stone-900 font-medium">IELTS 6.5 / TOEFL 87</span></div>
           </div>
-          <p class="text-xs text-slate-600 leading-relaxed">
+          <p class="text-xs text-stone-600 leading-relaxed">
             Grade requirement is satisfied. Math/theory credit evaluation is on the threshold (~26 ECTS vs 35 ECTS), but your software engineering and discrete math coursework position you well for review.
           </p>
-          <div class="pt-2 border-t border-slate-200 flex justify-between items-center text-xs">
-            <span class="text-slate-500 font-medium">Careers: AI Engineer, MLOps</span>
-            <a href="https://www.uni-passau.de/en/msc-ai-engineering" target="_blank" class="text-blue-600 font-bold hover:text-blue-800 hover:underline flex items-center gap-1">Official Portal &rarr;</a>
+          <div class="pt-2 border-t border-stone-200 flex justify-between items-center text-xs">
+            <span class="text-stone-500 font-medium">Careers: AI Engineer, MLOps</span>
+            <a href="https://www.uni-passau.de/en/msc-ai-engineering" target="_blank" class="text-blue-700 font-bold hover:text-blue-900 hover:underline flex items-center gap-1">Official Portal &rarr;</a>
           </div>
         </div>
 
         <!-- Univ of Siegen -->
-        <div class="uni-card card-light p-6 rounded-2xl space-y-4 hover:border-emerald-500 hover:shadow-md transition-all" data-cat="safe">
+        <div class="uni-card glass-droplet p-6 rounded-2xl space-y-4 hover:border-emerald-500 hover:shadow-md transition-all shadow-sm" data-cat="safe">
           <div class="flex items-start justify-between">
             <div>
               <span class="badge-safe px-3 py-1 rounded-full text-xs font-bold">High Match (Safe)</span>
-              <h3 class="text-xl font-bold text-slate-900 mt-2">University of Siegen</h3>
-              <p class="text-xs text-blue-700 font-semibold">M.Sc. Computer Science (Intelligent Systems)</p>
+              <h3 class="text-xl font-bold text-stone-900 mt-2">University of Siegen</h3>
+              <p class="text-xs text-blue-800 font-semibold">M.Sc. Computer Science (Intelligent Systems)</p>
             </div>
             <div class="text-right font-mono text-xs">
               <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 font-extrabold text-sm">€0 Tuition</span>
-              <div class="text-slate-500 mt-1">~€310 / sem (NRW Pass)</div>
+              <div class="text-stone-500 mt-1">~€310 / sem (NRW Pass)</div>
             </div>
           </div>
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-2">
-            <div class="flex justify-between"><span class="text-slate-500">Location:</span> <span class="text-slate-900 font-bold">Siegen, NRW</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Cutoff:</span> <span class="text-emerald-700 font-bold">No general NC (Evaluates transcript buckets)</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Prerequisite:</span> <span class="text-slate-900 font-medium">~30 ECTS Prog, ~10 Theory, ~15 Comp Eng</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Language:</span> <span class="text-slate-900 font-medium">IELTS 6.5 / TOEFL 88</span></div>
+          <div class="p-4 rounded-xl bg-white/90 border border-stone-300/70 text-xs space-y-2">
+            <div class="flex justify-between"><span class="text-stone-500">Location:</span> <span class="text-stone-900 font-bold">Siegen, NRW</span></div>
+            <div class="flex justify-between"><span class="text-stone-500">Cutoff:</span> <span class="text-emerald-800 font-bold">No general NC (Evaluates transcript buckets)</span></div>
+            <div class="flex justify-between"><span class="text-stone-500">Prerequisite:</span> <span class="text-stone-900 font-medium">~30 ECTS Prog, ~10 Theory, ~15 Comp Eng</span></div>
+            <div class="flex justify-between"><span class="text-stone-500">Language:</span> <span class="text-stone-900 font-medium">IELTS 6.5 / TOEFL 88</span></div>
           </div>
-          <p class="text-xs text-slate-600 leading-relaxed">
+          <p class="text-xs text-stone-600 leading-relaxed">
             Your B.Tech syllabus directly matches their four structural buckets: Computer Engineering (COA/Microprocessors), Programming (Python/OOP), Practical CS, and Theoretical CS.
           </p>
-          <div class="pt-2 border-t border-slate-200 flex justify-between items-center text-xs">
-            <span class="text-slate-500 font-medium">Careers: Intelligent Systems, Cloud SWE</span>
-            <a href="https://www.eti.uni-siegen.de/dekanat/studium/msc-cs.html.en" target="_blank" class="text-blue-600 font-bold hover:text-blue-800 hover:underline flex items-center gap-1">Official Portal &rarr;</a>
+          <div class="pt-2 border-t border-stone-200 flex justify-between items-center text-xs">
+            <span class="text-stone-500 font-medium">Careers: Intelligent Systems, Cloud SWE</span>
+            <a href="https://www.eti.uni-siegen.de/dekanat/studium/msc-cs.html.en" target="_blank" class="text-blue-700 font-bold hover:text-blue-900 hover:underline flex items-center gap-1">Official Portal &rarr;</a>
           </div>
         </div>
-
         <!-- TH Deggendorf (DIT) -->
-        <div class="uni-card card-light p-6 rounded-2xl space-y-4 hover:border-emerald-500 hover:shadow-md transition-all" data-cat="safe">
+        <div class="uni-card glass-droplet p-6 rounded-2xl space-y-4 hover:border-emerald-500 hover:shadow-md transition-all shadow-sm" data-cat="safe">
           <div class="flex items-start justify-between">
             <div>
               <span class="badge-safe px-3 py-1 rounded-full text-xs font-bold">High Match (Aptitude Test)</span>
-              <h3 class="text-xl font-bold text-slate-900 mt-2">Deggendorf Institute of Technology</h3>
-              <p class="text-xs text-blue-700 font-semibold">M.Sc. Artificial Intelligence &amp; Data Science</p>
+              <h3 class="text-xl font-bold text-stone-900 mt-2">Deggendorf Institute of Technology</h3>
+              <p class="text-xs text-blue-800 font-semibold">M.Sc. Artificial Intelligence &amp; Data Science</p>
             </div>
             <div class="text-right font-mono text-xs">
               <span class="px-2.5 py-1 rounded-full bg-blue-100 text-blue-800 font-bold">€500 Service Fee</span>
-              <div class="text-slate-500 mt-1">€82 student fee / sem</div>
+              <div class="text-stone-500 mt-1">€82 student fee / sem</div>
             </div>
           </div>
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-2">
-            <div class="flex justify-between"><span class="text-slate-500">Location:</span> <span class="text-slate-900 font-bold">Deggendorf, Bavaria</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Prerequisite:</span> <span class="text-emerald-700 font-bold">&ge; 18 ECTS in AI / Data Science (Met)</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Selection:</span> <span class="text-slate-900 font-medium">Online technical test (Math, OOP, AI concepts)</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Language:</span> <span class="text-slate-900 font-medium">IELTS 5.5+ / TOEFL 72+ (B2)</span></div>
+          <div class="p-4 rounded-xl bg-white/90 border border-stone-300/70 text-xs space-y-2">
+            <div class="flex justify-between"><span class="text-stone-500">Location:</span> <span class="text-stone-900 font-bold">Deggendorf, Bavaria</span></div>
+            <div class="flex justify-between"><span class="text-stone-500">Prerequisite:</span> <span class="text-emerald-800 font-bold">&ge; 18 ECTS in AI / Data Science (Met)</span></div>
+            <div class="flex justify-between"><span class="text-stone-500">Selection:</span> <span class="text-stone-900 font-medium">Online technical test (Math, OOP, AI concepts)</span></div>
+            <div class="flex justify-between"><span class="text-stone-500">Language:</span> <span class="text-stone-900 font-medium">IELTS 5.5+ / TOEFL 72+ (B2)</span></div>
           </div>
-          <p class="text-xs text-slate-600 leading-relaxed">
+          <p class="text-xs text-stone-600 leading-relaxed">
             Your marks in AI (69), Big Data (68), ML (52), and Data Science (52) exceed their 18 ECTS requirement. Passing the online coding and math test secures your admission.
           </p>
-          <div class="pt-2 border-t border-slate-200 flex justify-between items-center text-xs">
-            <span class="text-slate-500 font-medium">Careers: Applied AI Engineer, MLOps</span>
-            <a href="https://www.th-deg.de/aid-m-en" target="_blank" class="text-blue-600 font-bold hover:text-blue-800 hover:underline flex items-center gap-1">Official Portal &rarr;</a>
+          <div class="pt-2 border-t border-stone-200 flex justify-between items-center text-xs">
+            <span class="text-stone-500 font-medium">Careers: Applied AI Engineer, MLOps</span>
+            <a href="https://www.th-deg.de/aid-m-en" target="_blank" class="text-blue-700 font-bold hover:text-blue-900 hover:underline flex items-center gap-1">Official Portal &rarr;</a>
           </div>
         </div>
 
         <!-- Univ of Hildesheim -->
-        <div class="uni-card card-light p-6 rounded-2xl space-y-4 hover:border-blue-500 hover:shadow-md transition-all" data-cat="realistic">
+        <div class="uni-card glass-droplet p-6 rounded-2xl space-y-4 hover:border-blue-500 hover:shadow-md transition-all shadow-sm" data-cat="realistic">
           <div class="flex items-start justify-between">
             <div>
               <span class="badge-real px-3 py-1 rounded-full text-xs font-bold">Realistic Match (Elite ML Lab)</span>
-              <h3 class="text-xl font-bold text-slate-900 mt-2">University of Hildesheim</h3>
-              <p class="text-xs text-blue-700 font-semibold">M.Sc. Data Analytics (ISMLL Lab)</p>
+              <h3 class="text-xl font-bold text-stone-900 mt-2">University of Hildesheim</h3>
+              <p class="text-xs text-blue-800 font-semibold">M.Sc. Data Analytics (ISMLL Lab)</p>
             </div>
             <div class="text-right font-mono text-xs">
               <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 font-extrabold text-sm">€0 Tuition</span>
-              <div class="text-slate-500 mt-1">~€395 / sem (Transit Pass)</div>
+              <div class="text-stone-500 mt-1">~€395 / sem (Transit Pass)</div>
             </div>
           </div>
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-2">
-            <div class="flex justify-between"><span class="text-slate-500">Location:</span> <span class="text-slate-900 font-bold">Hildesheim (near Hanover)</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Selection:</span> <span class="text-slate-900 font-medium">Holistic local NC evaluation</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Flexibility:</span> <span class="text-emerald-700 font-medium">Allows conditional bridge modules if minor gaps exist</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Language:</span> <span class="text-slate-900 font-medium">IELTS 6.0 / TOEFL 61 (or signed MOI)</span></div>
+          <div class="p-4 rounded-xl bg-white/90 border border-stone-300/70 text-xs space-y-2">
+            <div class="flex justify-between"><span class="text-stone-500">Location:</span> <span class="text-stone-900 font-bold">Hildesheim (near Hanover)</span></div>
+            <div class="flex justify-between"><span class="text-stone-500">Selection:</span> <span class="text-stone-900 font-medium">Holistic local NC evaluation</span></div>
+            <div class="flex justify-between"><span class="text-stone-500">Flexibility:</span> <span class="text-emerald-800 font-medium">Allows conditional bridge modules if minor gaps exist</span></div>
+            <div class="flex justify-between"><span class="text-stone-500">Language:</span> <span class="text-stone-900 font-medium">IELTS 6.0 / TOEFL 61 (or signed MOI)</span></div>
           </div>
-          <p class="text-xs text-slate-600 leading-relaxed">
+          <p class="text-xs text-stone-600 leading-relaxed">
             Prof. Lars Schmidt-Thieme's ISMLL is renowned for machine learning research. The faculty evaluates applications holistically and admits students with strong coding fundamentals.
           </p>
-          <div class="pt-2 border-t border-slate-200 flex justify-between items-center text-xs">
-            <span class="text-slate-500 font-medium">Careers: ML Engineer, Data Scientist</span>
-            <a href="https://www.ismll.uni-hildesheim.de/da/" target="_blank" class="text-blue-600 font-bold hover:text-blue-800 hover:underline flex items-center gap-1">Official Portal &rarr;</a>
+          <div class="pt-2 border-t border-stone-200 flex justify-between items-center text-xs">
+            <span class="text-stone-500 font-medium">Careers: ML Engineer, Data Scientist</span>
+            <a href="https://www.ismll.uni-hildesheim.de/da/" target="_blank" class="text-blue-700 font-bold hover:text-blue-900 hover:underline flex items-center gap-1">Official Portal &rarr;</a>
           </div>
         </div>
 
         <!-- Frankfurt UAS -->
-        <div class="uni-card card-light p-6 rounded-2xl space-y-4 hover:border-blue-500 hover:shadow-md transition-all" data-cat="realistic">
+        <div class="uni-card glass-droplet p-6 rounded-2xl space-y-4 hover:border-blue-500 hover:shadow-md transition-all shadow-sm" data-cat="realistic">
           <div class="flex items-start justify-between">
             <div>
               <span class="badge-real px-3 py-1 rounded-full text-xs font-bold">Realistic Match (FinTech Hub)</span>
-              <h3 class="text-xl font-bold text-slate-900 mt-2">Frankfurt UAS</h3>
-              <p class="text-xs text-blue-700 font-semibold">M.Sc. High Integrity Systems</p>
+              <h3 class="text-xl font-bold text-stone-900 mt-2">Frankfurt UAS</h3>
+              <p class="text-xs text-blue-800 font-semibold">M.Sc. High Integrity Systems</p>
             </div>
             <div class="text-right font-mono text-xs">
               <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 font-extrabold text-sm">€0 Tuition</span>
-              <div class="text-slate-500 mt-1">~€380 / sem (RMV Pass)</div>
+              <div class="text-stone-500 mt-1">~€380 / sem (RMV Pass)</div>
             </div>
           </div>
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-2">
-            <div class="flex justify-between"><span class="text-slate-500">Location:</span> <span class="text-slate-900 font-bold">Frankfurt am Main, Hesse</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Grade Range:</span> <span class="text-emerald-700 font-bold">1.9 - 2.5 Special Qualification Procedure</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Advantage:</span> <span class="text-slate-900 font-medium">Evaluates professional experience and IT projects</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Language:</span> <span class="text-slate-900 font-medium">IELTS 6.0 / TOEFL 79</span></div>
+          <div class="p-4 rounded-xl bg-white/90 border border-stone-300/70 text-xs space-y-2">
+            <div class="flex justify-between"><span class="text-stone-500">Location:</span> <span class="text-stone-900 font-bold">Frankfurt am Main, Hesse</span></div>
+            <div class="flex justify-between"><span class="text-stone-500">Grade Range:</span> <span class="text-emerald-800 font-bold">1.9 - 2.5 Special Qualification Procedure</span></div>
+            <div class="flex justify-between"><span class="text-stone-500">Advantage:</span> <span class="text-stone-900 font-medium">Evaluates professional experience and IT projects</span></div>
+            <div class="flex justify-between"><span class="text-stone-500">Language:</span> <span class="text-stone-900 font-medium">IELTS 6.0 / TOEFL 79</span></div>
           </div>
-          <p class="text-xs text-slate-600 leading-relaxed">
+          <p class="text-xs text-stone-600 leading-relaxed">
             Your 2.47 grade falls within the 1.9–2.5 special evaluation window. Submitting your full-stack engineering portfolio and bachelor thesis gives you a strong competitive advantage.
           </p>
-          <div class="pt-2 border-t border-slate-200 flex justify-between items-center text-xs">
-            <span class="text-slate-500 font-medium">Careers: Distributed Systems, Cloud Architect</span>
-            <a href="https://www.frankfurt-university.de/de/studium/master-studiengange/high-integrity-systems-msc/fuer-studieninteressierte/" target="_blank" class="text-blue-600 font-bold hover:text-blue-800 hover:underline flex items-center gap-1">Official Portal &rarr;</a>
+          <div class="pt-2 border-t border-stone-200 flex justify-between items-center text-xs">
+            <span class="text-stone-500 font-medium">Careers: Distributed Systems, Cloud Architect</span>
+            <a href="https://www.frankfurt-university.de/de/studium/master-studiengange/high-integrity-systems-msc/fuer-studieninteressierte/" target="_blank" class="text-blue-700 font-bold hover:text-blue-900 hover:underline flex items-center gap-1">Official Portal &rarr;</a>
           </div>
         </div>
 
         <!-- TU Dortmund -->
-        <div class="uni-card card-light p-6 rounded-2xl space-y-4 hover:border-blue-500 hover:shadow-md transition-all" data-cat="realistic">
+        <div class="uni-card glass-droplet p-6 rounded-2xl space-y-4 hover:border-blue-500 hover:shadow-md transition-all shadow-sm" data-cat="realistic">
           <div class="flex items-start justify-between">
             <div>
               <span class="badge-real px-3 py-1 rounded-full text-xs font-bold">Realistic Match (Task Based)</span>
-              <h3 class="text-xl font-bold text-slate-900 mt-2">TU Dortmund University</h3>
-              <p class="text-xs text-blue-700 font-semibold">M.Sc. Data Science</p>
+              <h3 class="text-xl font-bold text-stone-900 mt-2">TU Dortmund University</h3>
+              <p class="text-xs text-blue-800 font-semibold">M.Sc. Data Science</p>
             </div>
             <div class="text-right font-mono text-xs">
               <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 font-extrabold text-sm">€0 Tuition</span>
-              <div class="text-slate-500 mt-1">~€340 / sem (NRW Pass)</div>
+              <div class="text-stone-500 mt-1">~€340 / sem (NRW Pass)</div>
             </div>
           </div>
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-2">
-            <div class="flex justify-between"><span class="text-slate-500">Location:</span> <span class="text-slate-900 font-bold">Dortmund, NRW</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Cutoff:</span> <span class="text-emerald-700 font-bold">Grade &le; 2.7 (NC-Free if report passes)</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Requirement:</span> <span class="text-slate-900 font-medium">Submission of Statistical Aptitude Report</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Language:</span> <span class="text-slate-900 font-medium">English-taught, no German needed</span></div>
+          <div class="p-4 rounded-xl bg-white/90 border border-stone-300/70 text-xs space-y-2">
+            <div class="flex justify-between"><span class="text-stone-500">Location:</span> <span class="text-stone-900 font-bold">Dortmund, NRW</span></div>
+            <div class="flex justify-between"><span class="text-stone-500">Cutoff:</span> <span class="text-emerald-800 font-bold">Grade &le; 2.7 (NC-Free if report passes)</span></div>
+            <div class="flex justify-between"><span class="text-stone-500">Requirement:</span> <span class="text-stone-900 font-medium">Submission of Statistical Aptitude Report</span></div>
+            <div class="flex justify-between"><span class="text-stone-500">Language:</span> <span class="text-stone-900 font-medium">English-taught, no German needed</span></div>
           </div>
-          <p class="text-xs text-slate-600 leading-relaxed">
+          <p class="text-xs text-stone-600 leading-relaxed">
             Your grade satisfies the 2.7 mark. Admission hinges on successfully completing the Faculty of Statistics technical report tasks.
           </p>
-          <div class="pt-2 border-t border-slate-200 flex justify-between items-center text-xs">
-            <span class="text-slate-500 font-medium">Careers: Data Scientist, Analytics Engineer</span>
-            <a href="https://statistik.tu-dortmund.de/en/studies/degrees/data-science-msc/admission/" target="_blank" class="text-blue-600 font-bold hover:text-blue-800 hover:underline flex items-center gap-1">Official Portal &rarr;</a>
+          <div class="pt-2 border-t border-stone-200 flex justify-between items-center text-xs">
+            <span class="text-stone-500 font-medium">Careers: Data Scientist, Analytics Engineer</span>
+            <a href="https://statistik.tu-dortmund.de/en/studies/degrees/data-science-msc/admission/" target="_blank" class="text-blue-700 font-bold hover:text-blue-900 hover:underline flex items-center gap-1">Official Portal &rarr;</a>
           </div>
         </div>
 
         <!-- Saarland University -->
-        <div class="uni-card card-light p-6 rounded-2xl space-y-4 hover:border-amber-500 hover:shadow-md transition-all" data-cat="ambitious">
+        <div class="uni-card glass-droplet p-6 rounded-2xl space-y-4 hover:border-amber-500 hover:shadow-md transition-all shadow-sm" data-cat="ambitious">
           <div class="flex items-start justify-between">
             <div>
               <span class="badge-ambi px-3 py-1 rounded-full text-xs font-bold">Ambitious Reach (Top Tier AI)</span>
-              <h3 class="text-xl font-bold text-slate-900 mt-2">Saarland University</h3>
-              <p class="text-xs text-blue-700 font-semibold">M.Sc. Data Science &amp; AI (DSAI)</p>
+              <h3 class="text-xl font-bold text-stone-900 mt-2">Saarland University</h3>
+              <p class="text-xs text-blue-800 font-semibold">M.Sc. Data Science &amp; AI (DSAI)</p>
             </div>
             <div class="text-right font-mono text-xs">
               <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 font-extrabold text-sm">€0 Tuition</span>
-              <div class="text-slate-500 mt-1">~€320 / sem</div>
+              <div class="text-stone-500 mt-1">~€320 / sem</div>
             </div>
           </div>
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-2">
-            <div class="flex justify-between"><span class="text-slate-500">Location:</span> <span class="text-slate-900 font-bold">Saarbrücken, Saarland</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Affiliation:</span> <span class="text-slate-900 font-medium">DFKI &amp; Max Planck Institute for Informatics</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Criteria:</span> <span class="text-amber-800 font-medium">Rigorous theoretical CS proofs &amp; stochastics</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Language:</span> <span class="text-slate-900 font-medium">IELTS 7.0 / C1 English + 2 LORs</span></div>
+          <div class="p-4 rounded-xl bg-white/90 border border-stone-300/70 text-xs space-y-2">
+            <div class="flex justify-between"><span class="text-stone-500">Location:</span> <span class="text-stone-900 font-bold">Saarbrücken, Saarland</span></div>
+            <div class="flex justify-between"><span class="text-stone-500">Affiliation:</span> <span class="text-stone-900 font-medium">DFKI &amp; Max Planck Institute for Informatics</span></div>
+            <div class="flex justify-between"><span class="text-stone-500">Criteria:</span> <span class="text-amber-900 font-medium">Rigorous theoretical CS proofs &amp; stochastics</span></div>
+            <div class="flex justify-between"><span class="text-stone-500">Language:</span> <span class="text-stone-900 font-medium">IELTS 7.0 / C1 English + 2 LORs</span></div>
           </div>
-          <p class="text-xs text-slate-600 leading-relaxed">
+          <p class="text-xs text-stone-600 leading-relaxed">
             World-class AI research powerhouse. Selection is mathematically rigorous and highly competitive. Suitable as an ambitious reach alongside safer public options.
           </p>
-          <div class="pt-2 border-t border-slate-200 flex justify-between items-center text-xs">
-            <span class="text-slate-500 font-medium">Careers: Core AI Research, Deep Learning</span>
-            <a href="https://saarland-informatics-campus.de/en/computerscience-programs/data-science-and-artificial-intelligence-master/" target="_blank" class="text-blue-600 font-bold hover:text-blue-800 hover:underline flex items-center gap-1">Official Portal &rarr;</a>
+          <div class="pt-2 border-t border-stone-200 flex justify-between items-center text-xs">
+            <span class="text-stone-500 font-medium">Careers: Core AI Research, Deep Learning</span>
+            <a href="https://saarland-informatics-campus.de/en/computerscience-programs/data-science-and-artificial-intelligence-master/" target="_blank" class="text-blue-700 font-bold hover:text-blue-900 hover:underline flex items-center gap-1">Official Portal &rarr;</a>
           </div>
         </div>
 
         <!-- Frankfurt School of Finance & Mgmt (Private) -->
-        <div class="uni-card card-light p-6 rounded-2xl space-y-4 hover:border-purple-500 hover:shadow-md transition-all" data-cat="private">
+        <div class="uni-card glass-droplet p-6 rounded-2xl space-y-4 hover:border-purple-500 hover:shadow-md transition-all shadow-sm" data-cat="private">
           <div class="flex items-start justify-between">
             <div>
               <span class="badge-priv px-3 py-1 rounded-full text-xs font-bold">Private (Elite Business School)</span>
-              <h3 class="text-xl font-bold text-slate-900 mt-2">Frankfurt School of Finance</h3>
-              <p class="text-xs text-purple-700 font-semibold">Master in Applied Data Science &amp; AI</p>
+              <h3 class="text-xl font-bold text-stone-900 mt-2">Frankfurt School of Finance</h3>
+              <p class="text-xs text-purple-800 font-semibold">Master in Applied Data Science &amp; AI</p>
             </div>
             <div class="text-right font-mono text-xs">
               <span class="px-2.5 py-1 rounded-full bg-purple-100 text-purple-800 font-extrabold text-sm">€35,500 Total</span>
-              <div class="text-slate-500 mt-1">Private Tuition</div>
+              <div class="text-stone-500 mt-1">Private Tuition</div>
             </div>
           </div>
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-2">
-            <div class="flex justify-between"><span class="text-slate-500">Location:</span> <span class="text-slate-900 font-bold">Frankfurt am Main</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Standing:</span> <span class="text-slate-900 font-medium">Premier private school for European banking &amp; consulting</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Selection:</span> <span class="text-slate-900 font-medium">Internal Admission Test / GMAT + Interview</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Language:</span> <span class="text-slate-900 font-medium">IELTS 7.0 / TOEFL 90</span></div>
+          <div class="p-4 rounded-xl bg-white/90 border border-stone-300/70 text-xs space-y-2">
+            <div class="flex justify-between"><span class="text-stone-500">Location:</span> <span class="text-stone-900 font-bold">Frankfurt am Main</span></div>
+            <div class="flex justify-between"><span class="text-stone-500">Standing:</span> <span class="text-stone-900 font-medium">Premier private school for European banking &amp; consulting</span></div>
+            <div class="flex justify-between"><span class="text-stone-500">Selection:</span> <span class="text-stone-900 font-medium">Internal Admission Test / GMAT + Interview</span></div>
+            <div class="flex justify-between"><span class="text-stone-500">Language:</span> <span class="text-stone-900 font-medium">IELTS 7.0 / TOEFL 90</span></div>
           </div>
-          <p class="text-xs text-slate-600 leading-relaxed">
+          <p class="text-xs text-stone-600 leading-relaxed">
             High admission feasibility if you pass their admission test, with direct pipelines into banking, consulting, and FinTech. The main drawback is the €35,500 tuition fee.
           </p>
-          <div class="pt-2 border-t border-slate-200 flex justify-between items-center text-xs">
-            <span class="text-slate-500 font-medium">Careers: AI Strategy Consultant, FinTech Data Lead</span>
+          <div class="pt-2 border-t border-stone-200 flex justify-between items-center text-xs">
+            <span class="text-stone-500 font-medium">Careers: AI Strategy Consultant, FinTech Data Lead</span>
             <a href="https://www.frankfurt-school.de/en/home/programmes/master/applied-data-science" target="_blank" class="text-purple-700 font-bold hover:text-purple-900 hover:underline flex items-center gap-1">Official Portal &rarr;</a>
           </div>
         </div>
 
         <!-- ESMT Berlin (Private) -->
-        <div class="uni-card card-light p-6 rounded-2xl space-y-4 hover:border-purple-500 hover:shadow-md transition-all" data-cat="private">
+        <div class="uni-card glass-droplet p-6 rounded-2xl space-y-4 hover:border-purple-500 hover:shadow-md transition-all shadow-sm" data-cat="private">
           <div class="flex items-start justify-between">
             <div>
               <span class="badge-priv px-3 py-1 rounded-full text-xs font-bold">Private (Corporate Network)</span>
-              <h3 class="text-xl font-bold text-slate-900 mt-2">ESMT Berlin</h3>
-              <p class="text-xs text-purple-700 font-semibold">Master in Analytics &amp; Artificial Intelligence</p>
+              <h3 class="text-xl font-bold text-stone-900 mt-2">ESMT Berlin</h3>
+              <p class="text-xs text-purple-800 font-semibold">Master in Analytics &amp; Artificial Intelligence</p>
             </div>
             <div class="text-right font-mono text-xs">
               <span class="px-2.5 py-1 rounded-full bg-purple-100 text-purple-800 font-extrabold text-sm">€36,000 Total</span>
-              <div class="text-slate-500 mt-1">Private Tuition</div>
+              <div class="text-stone-500 mt-1">Private Tuition</div>
             </div>
           </div>
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-2">
-            <div class="flex justify-between"><span class="text-slate-500">Location:</span> <span class="text-slate-900 font-bold">Berlin</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Corporate Network:</span> <span class="text-slate-900 font-medium">Founded by Bosch, Siemens, McKinsey</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Target Profile:</span> <span class="text-slate-900 font-medium">0 - 3 years experience, high quantitative aptitude</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Language:</span> <span class="text-slate-900 font-medium">IELTS 7.0 / TOEFL 100</span></div>
+          <div class="p-4 rounded-xl bg-white/90 border border-stone-300/70 text-xs space-y-2">
+            <div class="flex justify-between"><span class="text-stone-500">Location:</span> <span class="text-stone-900 font-bold">Berlin</span></div>
+            <div class="flex justify-between"><span class="text-stone-500">Corporate Network:</span> <span class="text-stone-900 font-medium">Founded by Bosch, Siemens, McKinsey</span></div>
+            <div class="flex justify-between"><span class="text-stone-500">Target Profile:</span> <span class="text-stone-900 font-medium">0 - 3 years experience, high quantitative aptitude</span></div>
+            <div class="flex justify-between"><span class="text-stone-500">Language:</span> <span class="text-stone-900 font-medium">IELTS 7.0 / TOEFL 100</span></div>
           </div>
-          <p class="text-xs text-slate-600 leading-relaxed">
+          <p class="text-xs text-stone-600 leading-relaxed">
             One of the few private business schools with genuine elite standing in Germany. Provides a bridge to venture-backed startups and consulting, but requires substantial private capital.
           </p>
-          <div class="pt-2 border-t border-slate-200 flex justify-between items-center text-xs">
-            <span class="text-slate-500 font-medium">Careers: Technical PM, AI Product Lead</span>
+          <div class="pt-2 border-t border-stone-200 flex justify-between items-center text-xs">
+            <span class="text-stone-500 font-medium">Careers: Technical PM, AI Product Lead</span>
             <a href="https://degrees.esmt.berlin/master-analytics-ai" target="_blank" class="text-purple-700 font-bold hover:text-purple-900 hover:underline flex items-center gap-1">Official Portal &rarr;</a>
           </div>
         </div>
@@ -799,384 +879,385 @@
     <section id="costs" class="space-y-6">
       <div class="flex items-start justify-between gap-4 flex-wrap">
         <div>
-          <h2 class="text-2xl font-bold tracking-tight text-slate-900 flex items-center gap-2.5">
+          <h2 class="text-2xl font-bold tracking-tight text-stone-900 flex items-center gap-2.5">
             <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             Comprehensive Cost Analysis (2026/27 Intake)
           </h2>
-          <p class="text-slate-600 text-sm">German student visa requirements, statutory blocked account limits, and real-world living expenses.</p>
+          <p class="text-stone-600 text-sm">German student visa requirements, statutory blocked account limits, and real-world living expenses.</p>
         </div>
-        <button onclick="playAudioSummary(this, 'Tuition, Blocked Account & Living Costs', 'Financial Analysis: The statutory visa blocked account requirement is 11,904 euros per year, or 992 euros per month. A full 2-year public master degree total outlay is approximately 22,400 euros, which can be significantly offset by working student jobs paying 1,100 to 1,500 euros monthly for 20 hours per week.')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-300 text-xs font-semibold transition-all shadow-sm">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+        <button onclick="playAudioSummary(this, 'Tuition, Blocked Account & Living Costs', 'Financial Analysis: The statutory visa blocked account requirement is 11,904 euros per year, or 992 euros per month. A full 2-year public master degree total outlay is approximately 22,400 euros, which can be significantly offset by working student jobs paying 1,100 to 1,500 euros monthly for 20 hours per week.')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-stone-200/80 hover:bg-stone-300 text-stone-800 border border-stone-300/80 text-xs font-semibold transition-all shadow-sm">
+          <svg class="w-3.5 h-3.5 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
           <span class="audio-label" data-default-label="Listen Brief (25s)">Listen Brief (25s)</span>
         </button>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Statutory Blocked Account (Dark Anchor Card) -->
-        <div class="card-dark p-6 rounded-2xl space-y-3 shadow-lg">
-          <div class="text-xs font-bold uppercase tracking-wider text-sky-400">Statutory Federal Requirement</div>
-          <h3 class="text-3xl font-extrabold font-mono text-white">€11,904 <span class="text-xs font-normal text-slate-400">/ year</span></h3>
-          <p class="text-xs text-slate-300 leading-relaxed">
+        <!-- Statutory Blocked Account -->
+        <div class="glass-droplet p-6 rounded-2xl space-y-3 shadow-sm border border-sky-300/80 bg-sky-50/60">
+          <div class="text-xs font-bold uppercase tracking-wider text-sky-800">Statutory Federal Requirement</div>
+          <h3 class="text-3xl font-extrabold font-mono text-stone-900">€11,904 <span class="text-xs font-normal text-stone-500">/ year</span></h3>
+          <p class="text-xs text-stone-600 leading-relaxed">
             Mandatory deposit in a registered <strong>Blocked Account (*Sperrkonto*)</strong>. Allows you to withdraw <strong>€992 per month</strong> for living costs.
           </p>
-          <div class="p-3 rounded-xl bg-[#162035] border border-slate-700 text-[11px] text-slate-300">
-            Recommended transfer: <strong class="text-white font-bold">€12,100</strong> to buffer against bank transfer and currency conversion fees.
+          <div class="p-3 rounded-xl bg-white/80 border border-sky-200 text-[11px] text-stone-700">
+            Recommended transfer: <strong class="text-sky-900 font-bold">€12,100</strong> to buffer against bank transfer and currency conversion fees.
           </div>
         </div>
 
-        <!-- Public University Total Cost (Light Card with Emerald Accent) -->
-        <div class="card-light p-6 rounded-2xl border-emerald-300 bg-emerald-50/50 space-y-3 shadow-sm">
+        <!-- Public University Total Cost -->
+        <div class="glass-droplet p-6 rounded-2xl border border-emerald-300/80 bg-emerald-50/60 space-y-3 shadow-sm">
           <div class="text-xs font-bold uppercase tracking-wider text-emerald-800">Total 2-Year Public Degree Outlay</div>
           <h3 class="text-3xl font-extrabold font-mono text-emerald-800">~€22,400</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
+          <p class="text-xs text-stone-600 leading-relaxed">
             Includes €0 tuition + €800 total semester fees + €21,600 living expenses across 24 months (Passau, Siegen, or Deggendorf).
           </p>
-          <div class="p-3 rounded-xl bg-white border border-emerald-200 text-[11px] text-emerald-800 font-semibold">
+          <div class="p-3 rounded-xl bg-white/80 border border-emerald-200 text-[11px] text-emerald-800 font-semibold">
             Offset by Working Student earnings: €1,100–€1,500/month (20 hrs/week) during semesters.
           </div>
         </div>
 
-        <!-- Private University Total Cost (Light Card with Purple Accent) -->
-        <div class="card-light p-6 rounded-2xl border-purple-300 bg-purple-50/50 space-y-3 shadow-sm">
+        <!-- Private University Total Cost -->
+        <div class="glass-droplet p-6 rounded-2xl border border-purple-300/80 bg-purple-50/60 space-y-3 shadow-sm">
           <div class="text-xs font-bold uppercase tracking-wider text-purple-800">Total 2-Year Private Degree Outlay</div>
           <h3 class="text-3xl font-extrabold font-mono text-purple-800">~€62,000</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
+          <p class="text-xs text-stone-600 leading-relaxed">
             Includes €35,500–€36,000 tuition + €26,000 living costs (Frankfurt/Berlin). High debt load with no guaranteed technical advantage.
           </p>
-          <div class="p-3 rounded-xl bg-white border border-purple-200 text-[11px] text-purple-800 font-semibold">
+          <div class="p-3 rounded-xl bg-white/80 border border-purple-200 text-[11px] text-purple-800 font-semibold">
             Requires significant upfront personal capital or commercial student loans.
           </div>
         </div>
       </div>
 
       <!-- Monthly Living Cost Breakdown Table -->
-      <div class="card-light p-6 rounded-2xl space-y-4 shadow-sm">
-        <h3 class="font-bold text-base text-slate-900">Realistic Monthly Living Expenses Breakdown</h3>
+      <div class="glass-droplet p-6 rounded-2xl space-y-4 shadow-sm">
+        <h3 class="font-bold text-base text-stone-900">Realistic Monthly Living Expenses Breakdown</h3>
         <div class="grid grid-cols-2 sm:grid-cols-5 gap-4 text-center">
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
-            <span class="text-xs text-slate-500">Rent (WG Room)</span>
-            <div class="font-extrabold text-base text-slate-900 mt-1">€320 - €550</div>
+          <div class="p-4 rounded-xl bg-white/80 border border-stone-200/80 shadow-xs">
+            <span class="text-xs text-stone-500">Rent (WG Room)</span>
+            <div class="font-extrabold text-base text-stone-900 mt-1">€320 - €550</div>
           </div>
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
-            <span class="text-xs text-slate-500">Health Insurance</span>
-            <div class="font-extrabold text-base text-slate-900 mt-1">€125 - €130</div>
+          <div class="p-4 rounded-xl bg-white/80 border border-stone-200/80 shadow-xs">
+            <span class="text-xs text-stone-500">Health Insurance</span>
+            <div class="font-extrabold text-base text-stone-900 mt-1">€125 - €130</div>
           </div>
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
-            <span class="text-xs text-slate-500">Groceries &amp; Food</span>
-            <div class="font-extrabold text-base text-slate-900 mt-1">€200 - €250</div>
+          <div class="p-4 rounded-xl bg-white/80 border border-stone-200/80 shadow-xs">
+            <span class="text-xs text-stone-500">Groceries &amp; Food</span>
+            <div class="font-extrabold text-base text-stone-900 mt-1">€200 - €250</div>
           </div>
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
-            <span class="text-xs text-slate-500">Transit / Mobilticket</span>
-            <div class="font-extrabold text-base text-emerald-700 mt-1">Included in Fee</div>
+          <div class="p-4 rounded-xl bg-white/80 border border-stone-200/80 shadow-xs">
+            <span class="text-xs text-stone-500">Transit / Mobilticket</span>
+            <div class="font-extrabold text-base text-emerald-800 mt-1">Included in Fee</div>
           </div>
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
-            <span class="text-xs text-slate-500">Internet &amp; GEZ Tax</span>
-            <div class="font-extrabold text-base text-slate-900 mt-1">€40 - €50</div>
+          <div class="p-4 rounded-xl bg-white/80 border border-stone-200/80 shadow-xs">
+            <span class="text-xs text-stone-500">Internet &amp; GEZ Tax</span>
+            <div class="font-extrabold text-base text-stone-900 mt-1">€40 - €50</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- [50% LIGHT COMPONENT] Career Transition Pathways -->
+    <!-- Career Transition Pathways -->
     <section id="transition" class="space-y-6">
       <div class="flex items-start justify-between gap-4 flex-wrap">
         <div>
-          <h2 class="text-2xl font-bold tracking-tight text-slate-900 flex items-center gap-2.5">
-            <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+          <h2 class="text-2xl font-bold tracking-tight text-stone-900 flex items-center gap-2.5">
+            <svg class="w-6 h-6 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
             Career Transition Pathways for Lakshay Nagpal
           </h2>
-          <p class="text-slate-600 text-sm">How your current full-stack software foundation evolves into high-value German engineering roles.</p>
+          <p class="text-stone-600 text-sm">How your current full-stack software foundation evolves into high-value German engineering roles.</p>
         </div>
-        <button onclick="playAudioSummary(this, 'Career Transition Pathways & Salaries', 'Career Pathways: The lowest resistance and highest return path is transitioning from Full-Stack Developer to Applied AI Engineer or MLOps Engineer. German market starting salaries range from 60,000 to 75,000 euros, rising to 80,000 to 100,000 euros at mid-level, comfortably exceeding the EU Blue Card threshold.')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-300 text-xs font-semibold transition-all shadow-sm">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+        <button onclick="playAudioSummary(this, 'Career Transition Pathways & Salaries', 'Career Pathways: The lowest resistance and highest return path is transitioning from Full-Stack Developer to Applied AI Engineer or MLOps Engineer. German market starting salaries range from 60,000 to 75,000 euros, rising to 80,000 to 100,000 euros at mid-level, comfortably exceeding the EU Blue Card threshold.')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-stone-200/80 hover:bg-stone-300 text-stone-800 border border-stone-300/80 text-xs font-semibold transition-all shadow-sm">
+          <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
           <span class="audio-label" data-default-label="Listen Brief (25s)">Listen Brief (25s)</span>
         </button>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Pathway 1: AI Engineer -->
-        <div class="card-light p-6 rounded-2xl space-y-3 hover:border-emerald-500 hover:shadow-md transition-all">
+        <div class="glass-droplet p-6 rounded-2xl space-y-3 hover:shadow-md transition-all">
           <div class="flex items-center justify-between">
-            <h3 class="font-bold text-lg text-slate-900">Full-Stack SWE &rarr; Applied AI Engineer</h3>
+            <h3 class="font-bold text-lg text-stone-900">Full-Stack SWE &rarr; Applied AI Engineer</h3>
             <span class="badge-safe px-3 py-0.5 rounded-full text-xs font-bold">Lowest Resistance / Highest ROI</span>
           </div>
-          <p class="text-xs text-slate-600 leading-relaxed">
+          <p class="text-xs text-stone-600 leading-relaxed">
             Integrates open-source LLMs, builds Retrieval-Augmented Generation (RAG) architectures, optimizes vector search, and wraps complex inference models in high-performance web APIs.
           </p>
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-2">
-            <div><strong class="text-slate-900">Skills You Already Have:</strong> Python, REST APIs, Databases, Web Frameworks, Clean Architecture</div>
+          <div class="p-4 rounded-xl bg-white/80 border border-stone-200/80 text-xs space-y-2">
+            <div><strong class="text-stone-900">Skills You Already Have:</strong> Python, REST APIs, Databases, Web Frameworks, Clean Architecture</div>
             <div><strong class="text-emerald-700 font-bold">Skills to Add:</strong> LangChain, LlamaIndex, Vector DBs (Qdrant/Pinecone), PyTorch Fine-tuning</div>
-            <div><strong class="text-blue-700 font-bold">German Market Salary:</strong> €60,000 - €72,000 (Entry) | €78,000 - €95,000 (Mid)</div>
+            <div><strong class="text-emerald-900 font-bold">German Market Salary:</strong> €60,000 - €72,000 (Entry) | €78,000 - €95,000 (Mid)</div>
           </div>
         </div>
 
         <!-- Pathway 2: MLOps Engineer -->
-        <div class="card-light p-6 rounded-2xl space-y-3 hover:border-emerald-500 hover:shadow-md transition-all">
+        <div class="glass-droplet p-6 rounded-2xl space-y-3 hover:shadow-md transition-all">
           <div class="flex items-center justify-between">
-            <h3 class="font-bold text-lg text-slate-900">Full-Stack SWE &rarr; MLOps Engineer</h3>
+            <h3 class="font-bold text-lg text-stone-900">Full-Stack SWE &rarr; MLOps Engineer</h3>
             <span class="badge-safe px-3 py-0.5 rounded-full text-xs font-bold">Highest Industry Scarcity</span>
           </div>
-          <p class="text-xs text-slate-600 leading-relaxed">
+          <p class="text-xs text-stone-600 leading-relaxed">
             Bridges data science models and enterprise production infrastructure. Sets up automated retraining, model registries, data validation, and containerized deployment pipelines.
           </p>
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-2">
-            <div><strong class="text-slate-900">Skills You Already Have:</strong> Linux systems, Git, backend design, deployment awareness</div>
+          <div class="p-4 rounded-xl bg-white/80 border border-stone-200/80 text-xs space-y-2">
+            <div><strong class="text-stone-900">Skills You Already Have:</strong> Linux systems, Git, backend design, deployment awareness</div>
             <div><strong class="text-emerald-700 font-bold">Skills to Add:</strong> Docker, Kubernetes, MLflow, Kubeflow, automated CI/CD for ML</div>
-            <div><strong class="text-blue-700 font-bold">German Market Salary:</strong> €62,000 - €75,000 (Entry) | €80,000 - €100,000 (Mid)</div>
+            <div><strong class="text-emerald-900 font-bold">German Market Salary:</strong> €62,000 - €75,000 (Entry) | €80,000 - €100,000 (Mid)</div>
           </div>
         </div>
 
         <!-- Pathway 3: Data Engineer -->
-        <div class="card-light p-6 rounded-2xl space-y-3 hover:border-blue-500 hover:shadow-md transition-all">
+        <div class="glass-droplet p-6 rounded-2xl space-y-3 hover:shadow-md transition-all">
           <div class="flex items-center justify-between">
-            <h3 class="font-bold text-lg text-slate-900">Full-Stack SWE &rarr; Data Infrastructure Engineer</h3>
+            <h3 class="font-bold text-lg text-stone-900">Full-Stack SWE &rarr; Data Infrastructure Engineer</h3>
             <span class="badge-real px-3 py-0.5 rounded-full text-xs font-bold">High Stability</span>
           </div>
-          <p class="text-xs text-slate-600 leading-relaxed">
+          <p class="text-xs text-stone-600 leading-relaxed">
             Builds scalable distributed data pipelines, streaming architectures (Kafka), and automated data lake warehouses for enterprise analytics and model training.
           </p>
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-2">
-            <div><strong class="text-slate-900">Skills You Already Have:</strong> SQL, Python, Relational DBs, distributed design basics</div>
+          <div class="p-4 rounded-xl bg-white/80 border border-stone-200/80 text-xs space-y-2">
+            <div><strong class="text-stone-900">Skills You Already Have:</strong> SQL, Python, Relational DBs, distributed design basics</div>
             <div><strong class="text-emerald-700 font-bold">Skills to Add:</strong> Apache Spark, Kafka, Airflow, Snowflake/BigQuery</div>
-            <div><strong class="text-blue-700 font-bold">German Market Salary:</strong> €58,000 - €68,000 (Entry) | €75,000 - €90,000 (Mid)</div>
+            <div><strong class="text-emerald-900 font-bold">German Market Salary:</strong> €58,000 - €68,000 (Entry) | €75,000 - €90,000 (Mid)</div>
           </div>
         </div>
 
         <!-- Pathway 4: Core Data Scientist -->
-        <div class="card-light p-6 rounded-2xl space-y-3 hover:border-amber-500 hover:shadow-md transition-all">
+        <div class="glass-droplet p-6 rounded-2xl space-y-3 hover:shadow-md transition-all">
           <div class="flex items-center justify-between">
-            <h3 class="font-bold text-lg text-slate-900">Full-Stack SWE &rarr; Pure Research Data Scientist</h3>
+            <h3 class="font-bold text-lg text-stone-900">Full-Stack SWE &rarr; Pure Research Data Scientist</h3>
             <span class="badge-ambi px-3 py-0.5 rounded-full text-xs font-bold">High Difficulty / Saturated</span>
           </div>
-          <p class="text-xs text-slate-600 leading-relaxed">
+          <p class="text-xs text-stone-600 leading-relaxed">
             Hypothesis testing, mathematical proofs, experimental model creation. Faces direct competition from PhDs in pure mathematics, physics, and statistics.
           </p>
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-2">
-            <div><strong class="text-slate-900">Skills You Already Have:</strong> Python, NumPy basics, standard algorithms</div>
+          <div class="p-4 rounded-xl bg-white/80 border border-stone-200/80 text-xs space-y-2">
+            <div><strong class="text-stone-900">Skills You Already Have:</strong> Python, NumPy basics, standard algorithms</div>
             <div><strong class="text-amber-800 font-bold">Skills to Add:</strong> Advanced stochastic calculus, measure theory, deep mathematical proofs</div>
-            <div><strong class="text-blue-700 font-bold">German Market Salary:</strong> €58,000 - €68,000 (Entry)</div>
+            <div><strong class="text-emerald-900 font-bold">German Market Salary:</strong> €58,000 - €68,000 (Entry)</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- [50% LIGHT with 30% DARK NUMBERED BADGES] Strategic Q&A -->
+    <!-- Strategic Q&A -->
     <section id="qa" class="space-y-6">
       <div class="flex items-start justify-between gap-4 flex-wrap">
         <div>
-          <h2 class="text-2xl font-bold tracking-tight text-slate-900 flex items-center gap-2.5">
-            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <h2 class="text-2xl font-bold tracking-tight text-stone-900 flex items-center gap-2.5">
+            <svg class="w-6 h-6 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             16 Strategic Answers Tailored to Your Profile
           </h2>
-          <p class="text-slate-600 text-sm">Clear, evidence-based answers to key decision points for your German master's journey.</p>
+          <p class="text-stone-600 text-sm">Clear, evidence-based answers to key decision points for your German master's journey.</p>
         </div>
-        <button onclick="playAudioSummary(this, 'Strategic Q&A Overview', 'Strategic Q&A: Key takeaways highlight that an M.Sc. in Computer Science with an AI focus gives you maximum career flexibility, qualifying you for both core software engineering and high-demand AI roles. Step one is securing your APS certificate immediately and scoring 7.0 or higher on IELTS Academic.')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 text-xs font-semibold transition-all shadow-sm">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+        <button onclick="playAudioSummary(this, 'Strategic Q&A Overview', 'Strategic Q&A: Key takeaways highlight that an M.Sc. in Computer Science with an AI focus gives you maximum career flexibility, qualifying you for both core software engineering and high-demand AI roles. Step one is securing your APS certificate immediately and scoring 7.0 or higher on IELTS Academic.')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-stone-200/80 hover:bg-stone-300 text-stone-800 border border-stone-300/80 text-xs font-semibold transition-all shadow-sm">
+          <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
           <span class="audio-label" data-default-label="Listen Brief (20s)">Listen Brief (20s)</span>
         </button>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="card-light p-5 rounded-xl space-y-2">
+        <div class="glass-droplet p-5 rounded-xl space-y-2 shadow-xs hover:shadow-md transition-all">
           <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-[#0f172a] text-white flex items-center justify-center text-xs font-bold">1</span>
-            <h4 class="font-bold text-sm text-blue-700">Which postgraduate degree is most compatible?</h4>
+            <span class="w-6 h-6 rounded-full bg-stone-900 text-white flex items-center justify-center text-xs font-bold">1</span>
+            <h4 class="font-bold text-sm text-stone-900">Which postgraduate degree is most compatible?</h4>
           </div>
-          <p class="text-xs text-slate-700 leading-relaxed pl-8">
+          <p class="text-xs text-stone-700 leading-relaxed pl-8">
             <strong>M.Sc. in Computer Science (with an AI track)</strong> or an <strong>M.Sc. in AI Engineering</strong>. It builds seamlessly on your B.Tech CSE credits and guarantees smooth ECTS recognition.
           </p>
         </div>
 
-        <div class="card-light p-5 rounded-xl space-y-2">
+        <div class="glass-droplet p-5 rounded-xl space-y-2 shadow-xs hover:shadow-md transition-all">
           <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-[#0f172a] text-white flex items-center justify-center text-xs font-bold">2</span>
-            <h4 class="font-bold text-sm text-blue-700">MSc vs MBA: What are the key trade-offs?</h4>
+            <span class="w-6 h-6 rounded-full bg-stone-900 text-white flex items-center justify-center text-xs font-bold">2</span>
+            <h4 class="font-bold text-sm text-stone-900">MSc vs MBA: What are the key trade-offs?</h4>
           </div>
-          <p class="text-xs text-slate-700 leading-relaxed pl-8">
+          <p class="text-xs text-stone-700 leading-relaxed pl-8">
             M.Sc. offers <strong>€0 tuition</strong>, high technical credibility, and satisfies EU Blue Card shortage job criteria. An MBA costs €20k–€50k and is less respected by German technical engineering employers.
           </p>
         </div>
 
-        <div class="card-light p-5 rounded-xl space-y-2">
+        <div class="glass-droplet p-5 rounded-xl space-y-2 shadow-xs hover:shadow-md transition-all">
           <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-[#0f172a] text-white flex items-center justify-center text-xs font-bold">3</span>
-            <h4 class="font-bold text-sm text-blue-700">Which specialization should I investigate first?</h4>
+            <span class="w-6 h-6 rounded-full bg-stone-900 text-white flex items-center justify-center text-xs font-bold">3</span>
+            <h4 class="font-bold text-sm text-stone-900">Which specialization should I investigate first?</h4>
           </div>
-          <p class="text-xs text-slate-700 leading-relaxed pl-8">
+          <p class="text-xs text-stone-700 leading-relaxed pl-8">
             <strong>AI Engineering &amp; MLOps</strong>. It merges your software engineering foundation with production ML pipelines, making you immediately employable in Germany.
           </p>
         </div>
 
-        <div class="card-light p-5 rounded-xl space-y-2">
+        <div class="glass-droplet p-5 rounded-xl space-y-2 shadow-xs hover:shadow-md transition-all">
           <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-[#0f172a] text-white flex items-center justify-center text-xs font-bold">4</span>
-            <h4 class="font-bold text-sm text-blue-700">Which specializations should I avoid?</h4>
+            <span class="w-6 h-6 rounded-full bg-stone-900 text-white flex items-center justify-center text-xs font-bold">4</span>
+            <h4 class="font-bold text-sm text-stone-900">Which specializations should I avoid?</h4>
           </div>
-          <p class="text-xs text-slate-700 leading-relaxed pl-8">
+          <p class="text-xs text-stone-700 leading-relaxed pl-8">
             Avoid <strong>pure Mathematical Statistics</strong> (which strictly demands pure math proofs) and generic <strong>Private-College MBAs</strong> (which lack technical substance and market respect).
           </p>
         </div>
 
-        <div class="card-light p-5 rounded-xl space-y-2">
+        <div class="glass-droplet p-5 rounded-xl space-y-2 shadow-xs hover:shadow-md transition-all">
           <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-[#0f172a] text-white flex items-center justify-center text-xs font-bold">5</span>
-            <h4 class="font-bold text-sm text-blue-700">Which public universities should I research first?</h4>
+            <span class="w-6 h-6 rounded-full bg-stone-900 text-white flex items-center justify-center text-xs font-bold">5</span>
+            <h4 class="font-bold text-sm text-stone-900">Which public universities should I research first?</h4>
           </div>
-          <p class="text-xs text-slate-700 leading-relaxed pl-8">
+          <p class="text-xs text-stone-700 leading-relaxed pl-8">
             <strong>University of Passau</strong> (M.Sc. CS &amp; M.Sc. AI Engineering), <strong>University of Siegen</strong> (M.Sc. CS), and <strong>TH Deggendorf</strong> (M.Sc. AI &amp; Data Science).
           </p>
         </div>
 
-        <div class="card-light p-5 rounded-xl space-y-2">
+        <div class="glass-droplet p-5 rounded-xl space-y-2 shadow-xs hover:shadow-md transition-all">
           <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-[#0f172a] text-white flex items-center justify-center text-xs font-bold">6</span>
-            <h4 class="font-bold text-sm text-blue-700">Which private universities are worth considering?</h4>
+            <span class="w-6 h-6 rounded-full bg-stone-900 text-white flex items-center justify-center text-xs font-bold">6</span>
+            <h4 class="font-bold text-sm text-stone-900">Which private universities are worth considering?</h4>
           </div>
-          <p class="text-xs text-slate-700 leading-relaxed pl-8">
+          <p class="text-xs text-stone-700 leading-relaxed pl-8">
             Only elite institutions like <strong>Frankfurt School</strong> or <strong>ESMT Berlin</strong> if you target FinTech/strategy. Treat options like IU or GISMA strictly as last-resort backups.
           </p>
         </div>
 
-        <div class="card-light p-5 rounded-xl space-y-2">
+        <div class="glass-droplet p-5 rounded-xl space-y-2 shadow-xs hover:shadow-md transition-all">
           <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-[#0f172a] text-white flex items-center justify-center text-xs font-bold">7</span>
-            <h4 class="font-bold text-sm text-blue-700">Which programs have the strongest eligibility match?</h4>
+            <span class="w-6 h-6 rounded-full bg-stone-900 text-white flex items-center justify-center text-xs font-bold">7</span>
+            <h4 class="font-bold text-sm text-stone-900">Which programs have the strongest eligibility match?</h4>
           </div>
-          <p class="text-xs text-slate-700 leading-relaxed pl-8">
+          <p class="text-xs text-stone-700 leading-relaxed pl-8">
             <strong>University of Passau (M.Sc. CS)</strong>: Your 2.47 grade clears the 2.7 cutoff, and your B.Tech covers the required 110 ECTS in Computer Science.
           </p>
         </div>
 
-        <div class="card-light p-5 rounded-xl space-y-2">
+        <div class="glass-droplet p-5 rounded-xl space-y-2 shadow-xs hover:shadow-md transition-all">
           <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-[#0f172a] text-white flex items-center justify-center text-xs font-bold">8</span>
-            <h4 class="font-bold text-sm text-blue-700">Which programs should be considered ambitious?</h4>
+            <span class="w-6 h-6 rounded-full bg-stone-900 text-white flex items-center justify-center text-xs font-bold">8</span>
+            <h4 class="font-bold text-sm text-stone-900">Which programs should be considered ambitious?</h4>
           </div>
-          <p class="text-xs text-slate-700 leading-relaxed pl-8">
+          <p class="text-xs text-stone-700 leading-relaxed pl-8">
             <strong>Saarland University (M.Sc. DSAI)</strong> and <strong>FAU Erlangen-Nürnberg</strong>. Both have world-class research reputations with rigorous entrance tests and theoretical filtering.
           </p>
         </div>
 
-        <div class="card-light p-5 rounded-xl space-y-2">
+        <div class="glass-droplet p-5 rounded-xl space-y-2 shadow-xs hover:shadow-md transition-all">
           <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-[#0f172a] text-white flex items-center justify-center text-xs font-bold">9</span>
-            <h4 class="font-bold text-sm text-blue-700">Which programs are realistic?</h4>
+            <span class="w-6 h-6 rounded-full bg-stone-900 text-white flex items-center justify-center text-xs font-bold">9</span>
+            <h4 class="font-bold text-sm text-stone-900">Which programs are realistic?</h4>
           </div>
-          <p class="text-xs text-slate-700 leading-relaxed pl-8">
+          <p class="text-xs text-stone-700 leading-relaxed pl-8">
             <strong>University of Passau (M.Sc. AI Engineering)</strong>, <strong>University of Hildesheim (M.Sc. Data Analytics)</strong>, and <strong>Frankfurt UAS (M.Sc. High Integrity Systems)</strong>.
           </p>
         </div>
 
-        <div class="card-light p-5 rounded-xl space-y-2">
+        <div class="glass-droplet p-5 rounded-xl space-y-2 shadow-xs hover:shadow-md transition-all">
           <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-[#0f172a] text-white flex items-center justify-center text-xs font-bold">10</span>
-            <h4 class="font-bold text-sm text-blue-700">Best bridge between SWE and AI/Data?</h4>
+            <span class="w-6 h-6 rounded-full bg-stone-900 text-white flex items-center justify-center text-xs font-bold">10</span>
+            <h4 class="font-bold text-sm text-stone-900">Best bridge between SWE and AI/Data?</h4>
           </div>
-          <p class="text-xs text-slate-700 leading-relaxed pl-8">
+          <p class="text-xs text-stone-700 leading-relaxed pl-8">
             <strong>M.Sc. AI Engineering at Passau</strong> and <strong>M.Sc. High Integrity Systems at Frankfurt UAS</strong>, which balance software systems architecture with intelligent data modules.
           </p>
         </div>
 
-        <div class="card-light p-5 rounded-xl space-y-2">
+        <div class="glass-droplet p-5 rounded-xl space-y-2 shadow-xs hover:shadow-md transition-all">
           <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-[#0f172a] text-white flex items-center justify-center text-xs font-bold">11</span>
-            <h4 class="font-bold text-sm text-blue-700">Strongest research opportunities?</h4>
+            <span class="w-6 h-6 rounded-full bg-stone-900 text-white flex items-center justify-center text-xs font-bold">11</span>
+            <h4 class="font-bold text-sm text-stone-900">Strongest research opportunities?</h4>
           </div>
-          <p class="text-xs text-slate-700 leading-relaxed pl-8">
+          <p class="text-xs text-stone-700 leading-relaxed pl-8">
             <strong>Saarland University</strong> (integrated with DFKI and Max Planck) and <strong>University of Hildesheim</strong> (Prof. Schmidt-Thieme's ISMLL Lab).
           </p>
         </div>
 
-        <div class="card-light p-5 rounded-xl space-y-2">
+        <div class="glass-droplet p-5 rounded-xl space-y-2 shadow-xs hover:shadow-md transition-all">
           <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-[#0f172a] text-white flex items-center justify-center text-xs font-bold">12</span>
-            <h4 class="font-bold text-sm text-blue-700">Strongest industry relevance?</h4>
+            <span class="w-6 h-6 rounded-full bg-stone-900 text-white flex items-center justify-center text-xs font-bold">12</span>
+            <h4 class="font-bold text-sm text-stone-900">Strongest industry relevance?</h4>
           </div>
-          <p class="text-xs text-slate-700 leading-relaxed pl-8">
+          <p class="text-xs text-stone-700 leading-relaxed pl-8">
             <strong>Frankfurt UAS</strong> (direct access to the Frankfurt banking and data center corridor) and <strong>TH Deggendorf / Passau</strong> (Bavarian automotive &amp; IoT network).
           </p>
         </div>
 
-        <div class="card-light p-5 rounded-xl space-y-2">
+        <div class="glass-droplet p-5 rounded-xl space-y-2 shadow-xs hover:shadow-md transition-all">
           <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-[#0f172a] text-white flex items-center justify-center text-xs font-bold">13</span>
-            <h4 class="font-bold text-sm text-blue-700">What skills should I prepare beforehand?</h4>
+            <span class="w-6 h-6 rounded-full bg-stone-900 text-white flex items-center justify-center text-xs font-bold">13</span>
+            <h4 class="font-bold text-sm text-stone-900">What skills should I prepare beforehand?</h4>
           </div>
-          <p class="text-xs text-slate-700 leading-relaxed pl-8">
+          <p class="text-xs text-stone-700 leading-relaxed pl-8">
             Refresh <strong>Linear Algebra, Multivariate Calculus, and Probability</strong> for entrance tests; gain practical experience with <strong>PyTorch, Docker, and FastAPI/LangChain</strong> for Working Student jobs.
           </p>
         </div>
 
-        <div class="card-light p-5 rounded-xl space-y-2">
+        <div class="glass-droplet p-5 rounded-xl space-y-2 shadow-xs hover:shadow-md transition-all">
           <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-[#0f172a] text-white flex items-center justify-center text-xs font-bold">14</span>
-            <h4 class="font-bold text-sm text-blue-700">What is the recommended application strategy?</h4>
+            <span class="w-6 h-6 rounded-full bg-stone-900 text-white flex items-center justify-center text-xs font-bold">14</span>
+            <h4 class="font-bold text-sm text-stone-900">What is the recommended application strategy?</h4>
           </div>
-          <p class="text-xs text-slate-700 leading-relaxed pl-8">
+          <p class="text-xs text-stone-700 leading-relaxed pl-8">
             Apply to <strong>2–3 Safer public</strong>, <strong>3 Realistic public</strong>, and <strong>1–2 Ambitious reach</strong> universities. Apply for your APS certificate immediately and aim for an IELTS of &ge; 7.0.
           </p>
         </div>
 
-        <div class="card-light p-5 rounded-xl space-y-2">
+        <div class="glass-droplet p-5 rounded-xl space-y-2 shadow-xs hover:shadow-md transition-all">
           <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-[#0f172a] text-white flex items-center justify-center text-xs font-bold">15</span>
-            <h4 class="font-bold text-sm text-blue-700">What should my approximate budget be?</h4>
+            <span class="w-6 h-6 rounded-full bg-stone-900 text-white flex items-center justify-center text-xs font-bold">15</span>
+            <h4 class="font-bold text-sm text-stone-900">What should my approximate budget be?</h4>
           </div>
-          <p class="text-xs text-slate-700 leading-relaxed pl-8">
+          <p class="text-xs text-stone-700 leading-relaxed pl-8">
             <strong>~€22,400 total for 2 years</strong> at a public university. This covers your blocked account (€11,904/yr) and is partially offset by Working Student earnings (€1,100–€1,500/mo).
           </p>
         </div>
 
-        <div class="card-light p-5 rounded-xl space-y-2">
+        <div class="glass-droplet p-5 rounded-xl space-y-2 shadow-xs hover:shadow-md transition-all">
           <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-[#0f172a] text-white flex items-center justify-center text-xs font-bold">16</span>
-            <h4 class="font-bold text-sm text-blue-700">Most flexible degree/career combination?</h4>
+            <span class="w-6 h-6 rounded-full bg-stone-900 text-white flex items-center justify-center text-xs font-bold">16</span>
+            <h4 class="font-bold text-sm text-stone-900">Most flexible degree/career combination?</h4>
           </div>
-          <p class="text-xs text-slate-700 leading-relaxed pl-8">
+          <p class="text-xs text-stone-700 leading-relaxed pl-8">
             <strong>M.Sc. in Computer Science (AI Track) &rarr; Full-Stack AI Engineer</strong>. This combination qualifies you for both traditional software engineering roles and specialized AI/ML positions.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- [30% DARK COMPONENT] Strategic Takeaway Banner -->
-    <section class="p-8 rounded-2xl bg-gradient-to-br from-[#0b1120] to-[#1e293b] border border-slate-700 text-white space-y-4 shadow-xl relative overflow-hidden">
-      <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider bg-blue-500/20 text-blue-300 border border-blue-400/30 px-3 py-1 rounded-full w-max">
+    <!-- Strategic Takeaway Banner -->
+    <section class="glass-droplet p-8 rounded-2xl bg-gradient-to-br from-white/95 via-stone-50/90 to-emerald-50/50 border border-stone-300/80 text-stone-900 space-y-4 shadow-lg relative overflow-hidden">
+      <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-900 border border-emerald-300 px-3 py-1 rounded-full w-max">
         Strategic Verdict for Lakshay Nagpal
       </div>
-      <h3 class="text-2xl font-extrabold text-white">Elevate Your Software Engineering Foundation — Do Not Reset It.</h3>
-      <p class="text-sm text-slate-300 leading-relaxed max-w-4xl">
+      <h3 class="text-2xl font-extrabold text-stone-950">Elevate Your Software Engineering Foundation — Do Not Reset It.</h3>
+      <p class="text-sm text-stone-700 leading-relaxed max-w-4xl">
         Your highest-conviction path is pursuing a tuition-free <strong>M.Sc. in Computer Science (with an AI focus)</strong> or an <strong>M.Sc. in AI Engineering</strong> at public institutions like <strong>University of Passau</strong>, <strong>University of Siegen</strong>, and <strong>TH Deggendorf</strong>. This approach guarantees zero tuition debt, aligns cleanly with your 4-year B.Tech CSE credits, and places you on the fastest, most reliable path to high-earning AI engineering roles and an EU Blue Card in Germany.
       </p>
-      <div class="pt-4 flex flex-wrap gap-4 text-xs font-bold">
-        <span class="px-3.5 py-2 rounded-xl bg-black/40 border border-slate-700 text-slate-200">Step 1: Secure APS Certificate</span>
-        <span class="px-3.5 py-2 rounded-xl bg-black/40 border border-slate-700 text-slate-200">Step 2: Score 7.0+ on IELTS Academic</span>
-        <span class="px-3.5 py-2 rounded-xl bg-black/40 border border-slate-700 text-slate-200">Step 3: Submit Early to Passau &amp; Siegen</span>
+      <div class="pt-2 flex flex-wrap gap-3 text-xs font-bold">
+        <span class="px-3.5 py-2 rounded-xl bg-white/90 border border-stone-300 text-stone-800 shadow-xs">Step 1: Secure APS Certificate</span>
+        <span class="px-3.5 py-2 rounded-xl bg-white/90 border border-stone-300 text-stone-800 shadow-xs">Step 2: Score 7.0+ on IELTS Academic</span>
+        <span class="px-3.5 py-2 rounded-xl bg-white/90 border border-stone-300 text-stone-800 shadow-xs">Step 3: Submit Early to Passau &amp; Siegen</span>
       </div>
     </section>
 
   </main>
+  </div>
 
   <!-- Floating Bottom Audio Controller Bar -->
-  <div id="floatingAudioBar" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden max-w-xl w-[92%] sm:w-auto px-4 py-2.5 rounded-2xl bg-slate-900/95 border border-blue-500/40 shadow-2xl backdrop-blur-xl flex items-center justify-between gap-4 transition-all">
+  <div id="floatingAudioBar" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden max-w-xl w-[92%] sm:w-auto px-4 py-2.5 rounded-2xl glass-droplet bg-white/95 border border-stone-300/90 shadow-2xl text-stone-900 flex items-center justify-between gap-4 transition-all">
     <div class="flex items-center gap-3 overflow-hidden">
       <!-- Animated equalizer bars -->
-      <div class="flex items-end gap-0.5 h-4 w-4 text-blue-400">
-        <span class="w-1 bg-blue-400 rounded-full animate-bounce h-2"></span>
-        <span class="w-1 bg-blue-400 rounded-full animate-bounce h-4" style="animation-delay: 0.15s"></span>
-        <span class="w-1 bg-blue-400 rounded-full animate-bounce h-3" style="animation-delay: 0.3s"></span>
+      <div class="flex items-end gap-0.5 h-4 w-4 text-emerald-700">
+        <span class="w-1 bg-emerald-600 rounded-full animate-bounce h-2"></span>
+        <span class="w-1 bg-emerald-600 rounded-full animate-bounce h-4" style="animation-delay: 0.15s"></span>
+        <span class="w-1 bg-emerald-600 rounded-full animate-bounce h-3" style="animation-delay: 0.3s"></span>
       </div>
       <div class="truncate">
-        <div id="audioPlayerTitle" class="text-xs font-bold text-white truncate">Playing Audio Summary</div>
-        <div id="audioPlayerStatus" class="text-[11px] text-slate-400">Narrating brief...</div>
+        <div id="audioPlayerTitle" class="text-xs font-bold text-stone-900 truncate">Playing Audio Summary</div>
+        <div id="audioPlayerStatus" class="text-[11px] text-stone-500">Narrating brief...</div>
       </div>
     </div>
     <div class="flex items-center gap-2 flex-shrink-0">
-      <button onclick="toggleAudioPlayback()" id="audioPlayPauseBtn" class="p-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white transition-all" title="Pause / Resume">
+      <button onclick="toggleAudioPlayback()" id="audioPlayPauseBtn" class="p-1.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white transition-all" title="Pause / Resume">
         <svg id="pauseIcon" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/></svg>
         <svg id="playIcon" class="w-4 h-4 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
       </button>
-      <button onclick="stopAudioSummary()" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-all" title="Stop Audio">
+      <button onclick="stopAudioSummary()" class="p-1.5 rounded-lg bg-stone-200 hover:bg-stone-300 text-stone-700 hover:text-stone-900 transition-all" title="Stop Audio">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
       </button>
     </div>
@@ -1187,11 +1268,11 @@
     function filterUnis(category) {
       // Update button active state
       document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.classList.remove('bg-[#0f172a]', 'text-white', 'shadow-md');
-        btn.classList.add('bg-white', 'text-slate-700');
+        btn.classList.remove('bg-stone-900', 'text-white', 'shadow-sm');
+        btn.classList.add('bg-white/80', 'text-stone-700');
       });
-      event.target.classList.remove('bg-white', 'text-slate-700');
-      event.target.classList.add('bg-[#0f172a]', 'text-white', 'shadow-md');
+      event.target.classList.remove('bg-white/80', 'text-stone-700');
+      event.target.classList.add('bg-stone-900', 'text-white', 'shadow-sm');
 
       // Filter cards
       const cards = document.querySelectorAll('.uni-card');
