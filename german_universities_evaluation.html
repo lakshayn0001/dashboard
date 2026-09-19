@@ -155,6 +155,7 @@
     ::-webkit-scrollbar-thumb { background: #96af8c; border-radius: 4px; border: 1px solid rgba(255,255,255,0.7); }
     ::-webkit-scrollbar-thumb:hover { background: #738f68; }
   </style>
+  <script src="assets/js/active-tracker.js"></script>
 </head>
 <body class="selection:bg-blue-600 selection:text-white flex flex-col relative overflow-x-hidden">
 
@@ -599,7 +600,7 @@
       <div id="uni-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
         <!-- Univ of Passau - CS -->
-        <div class="uni-card glass-droplet p-6 rounded-2xl space-y-4 hover:border-emerald-500 hover:shadow-md transition-all shadow-sm" data-cat="safe">
+        <div data-selectable-card="true" class="uni-card glass-droplet p-6 rounded-2xl space-y-4 hover:border-emerald-500 hover:shadow-md transition-all shadow-sm" data-cat="safe">
           <div class="flex items-start justify-between">
             <div>
               <span class="badge-safe px-3 py-1 rounded-full text-xs font-bold">High Match (Safe)</span>
@@ -627,7 +628,7 @@
         </div>
 
         <!-- Univ of Passau - AI Engineering -->
-        <div class="uni-card glass-droplet p-6 rounded-2xl space-y-4 hover:border-blue-500 hover:shadow-md transition-all shadow-sm" data-cat="realistic">
+        <div data-selectable-card="true" class="uni-card glass-droplet p-6 rounded-2xl space-y-4 hover:border-blue-500 hover:shadow-md transition-all shadow-sm" data-cat="realistic">
           <div class="flex items-start justify-between">
             <div>
               <span class="badge-real px-3 py-1 rounded-full text-xs font-bold">Realistic Match</span>
@@ -655,7 +656,7 @@
         </div>
 
         <!-- Univ of Siegen -->
-        <div class="uni-card glass-droplet p-6 rounded-2xl space-y-4 hover:border-emerald-500 hover:shadow-md transition-all shadow-sm" data-cat="safe">
+        <div data-selectable-card="true" class="uni-card glass-droplet p-6 rounded-2xl space-y-4 hover:border-emerald-500 hover:shadow-md transition-all shadow-sm" data-cat="safe">
           <div class="flex items-start justify-between">
             <div>
               <span class="badge-safe px-3 py-1 rounded-full text-xs font-bold">High Match (Safe)</span>
@@ -682,7 +683,7 @@
           </div>
         </div>
         <!-- TH Deggendorf (DIT) -->
-        <div class="uni-card glass-droplet p-6 rounded-2xl space-y-4 hover:border-emerald-500 hover:shadow-md transition-all shadow-sm" data-cat="safe">
+        <div data-selectable-card="true" class="uni-card glass-droplet p-6 rounded-2xl space-y-4 hover:border-emerald-500 hover:shadow-md transition-all shadow-sm" data-cat="safe">
           <div class="flex items-start justify-between">
             <div>
               <span class="badge-safe px-3 py-1 rounded-full text-xs font-bold">High Match (Aptitude Test)</span>
@@ -710,7 +711,7 @@
         </div>
 
         <!-- Univ of Hildesheim -->
-        <div class="uni-card glass-droplet p-6 rounded-2xl space-y-4 hover:border-blue-500 hover:shadow-md transition-all shadow-sm" data-cat="realistic">
+        <div data-selectable-card="true" class="uni-card glass-droplet p-6 rounded-2xl space-y-4 hover:border-blue-500 hover:shadow-md transition-all shadow-sm" data-cat="realistic">
           <div class="flex items-start justify-between">
             <div>
               <span class="badge-real px-3 py-1 rounded-full text-xs font-bold">Realistic Match (Elite ML Lab)</span>
@@ -738,7 +739,7 @@
         </div>
 
         <!-- Frankfurt UAS -->
-        <div class="uni-card glass-droplet p-6 rounded-2xl space-y-4 hover:border-blue-500 hover:shadow-md transition-all shadow-sm" data-cat="realistic">
+        <div data-selectable-card="true" class="uni-card glass-droplet p-6 rounded-2xl space-y-4 hover:border-blue-500 hover:shadow-md transition-all shadow-sm" data-cat="realistic">
           <div class="flex items-start justify-between">
             <div>
               <span class="badge-real px-3 py-1 rounded-full text-xs font-bold">Realistic Match (FinTech Hub)</span>
@@ -766,7 +767,7 @@
         </div>
 
         <!-- TU Dortmund -->
-        <div class="uni-card glass-droplet p-6 rounded-2xl space-y-4 hover:border-blue-500 hover:shadow-md transition-all shadow-sm" data-cat="realistic">
+        <div data-selectable-card="true" class="uni-card glass-droplet p-6 rounded-2xl space-y-4 hover:border-blue-500 hover:shadow-md transition-all shadow-sm" data-cat="realistic">
           <div class="flex items-start justify-between">
             <div>
               <span class="badge-real px-3 py-1 rounded-full text-xs font-bold">Realistic Match (Task Based)</span>
@@ -794,7 +795,7 @@
         </div>
 
         <!-- Saarland University -->
-        <div class="uni-card glass-droplet p-6 rounded-2xl space-y-4 hover:border-amber-500 hover:shadow-md transition-all shadow-sm" data-cat="ambitious">
+        <div data-selectable-card="true" class="uni-card glass-droplet p-6 rounded-2xl space-y-4 hover:border-amber-500 hover:shadow-md transition-all shadow-sm" data-cat="ambitious">
           <div class="flex items-start justify-between">
             <div>
               <span class="badge-ambi px-3 py-1 rounded-full text-xs font-bold">Ambitious Reach (Top Tier AI)</span>
@@ -822,7 +823,7 @@
         </div>
 
         <!-- Frankfurt School of Finance & Mgmt (Private) -->
-        <div class="uni-card glass-droplet p-6 rounded-2xl space-y-4 hover:border-purple-500 hover:shadow-md transition-all shadow-sm" data-cat="private">
+        <div data-selectable-card="true" class="uni-card glass-droplet p-6 rounded-2xl space-y-4 hover:border-purple-500 hover:shadow-md transition-all shadow-sm" data-cat="private">
           <div class="flex items-start justify-between">
             <div>
               <span class="badge-priv px-3 py-1 rounded-full text-xs font-bold">Private (Elite Business School)</span>
@@ -850,7 +851,7 @@
         </div>
 
         <!-- ESMT Berlin (Private) -->
-        <div class="uni-card glass-droplet p-6 rounded-2xl space-y-4 hover:border-purple-500 hover:shadow-md transition-all shadow-sm" data-cat="private">
+        <div data-selectable-card="true" class="uni-card glass-droplet p-6 rounded-2xl space-y-4 hover:border-purple-500 hover:shadow-md transition-all shadow-sm" data-cat="private">
           <div class="flex items-start justify-between">
             <div>
               <span class="badge-priv px-3 py-1 rounded-full text-xs font-bold">Private (Corporate Network)</span>
