@@ -2,12 +2,22 @@
   "branch": "unknown",
   "dmat_status": "unknown",
   "tasks": {
-    "cat_registration": "pending",
+    "cat_registration": "done",
     "anabin_h_plus_check": "pending",
     "dmat_status_check": "pending",
     "passau_interactive_guide": "pending",
     "mdu_moi_ranking_email": "pending",
     "compute_cs_credit_share": "pending"
+  },
+  "cat_test_cities": "5 preferences submitted",
+  "cat_registration_detail": {
+    "status": "done",
+    "paid_on": "2026-09-02",
+    "form_submitted": true,
+    "admit_card": "pending",
+    "admit_card_expected": "early Nov 2026",
+    "verify_url": "https://iimcat.ac.in",
+    "verify": true
   },
   "mocks": [],
   "notes": "[2026-09-20 22:55 IST] Planner additions locked: 160-char summary; 48h official deadline = priority-1 morning block (+\u226430m); Target: alerts; night=status-only + top3."

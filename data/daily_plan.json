@@ -1,14 +1,29 @@
 {
   "date": "2026-09-21",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-09-20T14:37:44.245Z",
+  "generated_at": "2026-09-20T17:28:39.342Z",
   "generated_by": "grok",
-  "summary": "Day 3 of 72 \u2014 Percentages Mastery: Multipliers & Successive Changes. Lock percentage multipliers & successive change formulas; CL MyZone RC Module 1 drill; 2 linear arrangement DILR sets. Mon job batch: 8\u201310 tailored applications. Official: CAT registration closes Tue 22 Sep, 5:00 PM IST. Germany Sept items remain personal targets until marked done in status.",
+  "summary": "Day 3: lock percentage multipliers & successive changes; CL RC Module 1; 2 linear DILR sets; Mon 8\u201310 job apps; Germany Sept targets (Anabin/dMAT/Passau/MDU).",
   "urgent_alerts": [
     {
-      "title": "CAT 2026 Registration Close",
-      "deadline": "Tue 22 Sep, 5:00 PM IST",
-      "action": "If not already submitted: finish CAT 2026 registration on iimcat.ac.in (6 city preferences + \u20b92,700 Gen fee) before 5:00 PM IST Tuesday."
+      "title": "Target: Anabin H+ Check for MDU Rohtak",
+      "deadline": "Tue 22 Sep, 11:59 PM IST",
+      "action": "Verify MDU H+ on anabin.kmk.org; save PDF confirmation."
+    },
+    {
+      "title": "Target: dMAT Status Check",
+      "deadline": "Tue 22 Sep, 11:59 PM IST",
+      "action": "Check aps-india.de/dmat & g.a.s.t.; if closed, lock Winter 2027/28 branch."
+    },
+    {
+      "title": "Target: Run Passau Interactive Guide",
+      "deadline": "Tue 22 Sep, 11:59 PM IST",
+      "action": "Confirm Passau M.Sc. CS/AI application route (direct vs uni-assist; no VPD)."
+    },
+    {
+      "title": "Target: Email MDU for MOI & Cohort Ranking",
+      "deadline": "Tue 22 Sep, 11:59 PM IST",
+      "action": "Request 100% English MOI letter + cohort ranking certificate from MDU Registrar."
     }
   ],
   "blocks": [
@@ -32,7 +47,7 @@
       "end": "09:00",
       "title": "Job \u2014 Mon application batch (8\u201310)",
       "stream": "job",
-      "details": "Monday batch day: submit 8\u201310 tailored applications (Full-Stack / SDE). Use profile cold-email drafts only as copy-paste after your review \u2014 do not auto-send. Prefer Instahyre, LinkedIn, Wellfound, Naukri, Cutshort.",
+      "details": "Monday batch: 8\u201310 tailored Full-Stack/SDE applications. Review drafts before send \u2014 no auto-send. Instahyre, LinkedIn, Wellfound, Naukri, Cutshort.",
       "links": [
         "profile.html#cold-email",
         "https://www.instahyre.com",
@@ -85,17 +100,16 @@
       "id": "block-germany-targets",
       "start": "14:30",
       "end": "15:30",
-      "title": "Germany \u2014 pending personal targets (+ CAT reg if needed)",
+      "title": "Germany \u2014 September personal targets",
       "stream": "germany",
-      "details": "Personal TARGETS (not official deadlines), still pending in status: Anabin H+ PDF for MDU; dMAT status check (if closed \u2192 prefer Winter 2027/28); Passau interactive guide; MDU MOI + cohort-ranking email. English bar: IELTS 5.5 (B2) OR 100% English MOI \u2014 not 6.5. Also confirm CAT registration status before tomorrow 5:00 PM. Passau summer freeze N/A while branch=unknown.",
+      "details": "Pending TARGETS (not official deadlines): Anabin H+ PDF; dMAT status (if closed \u2192 Winter 2027/28); Passau interactive guide; MDU MOI + cohort-ranking email. English bar: IELTS 5.5 (B2) OR 100% English MOI \u2014 not 6.5. Passau summer freeze N/A while branch=unknown. CAT registration already done \u2014 skip.",
       "links": [
         "deadlines_calendar.html#prerequisite-tasks",
         "https://anabin.kmk.org",
         "https://aps-india.de/dmat",
-        "https://www.uni-passau.de/en/apply",
-        "https://iimcat.ac.in"
+        "https://www.uni-passau.de/en/apply"
       ],
-      "priority": 1,
+      "priority": 2,
       "notify_before_min": 10,
       "verify": true
     },
@@ -143,10 +157,9 @@
       "end": "22:15",
       "title": "Evening wind-down",
       "stream": "rest",
-      "details": "Quick peek at Day 4 (P&L + Marked Price) only if energy left. Sleep by 22:30. Confirm CAT registration checklist for tomorrow.",
+      "details": "Optional peek at Day 4 (P&L + Marked Price). Sleep by 22:30. Admit card: pending / expected early Nov \u2014 VERIFY later on iimcat.ac.in (not today).",
       "links": [
-        "cat_2026_syllabus_roadmap.html#day-4",
-        "https://iimcat.ac.in"
+        "cat_2026_syllabus_roadmap.html#day-4"
       ],
       "priority": 3,
       "notify_before_min": 10,
@@ -162,21 +175,18 @@
     "rest": 45
   },
   "assumptions": [
-    "prompts/grok_daily.md still missing on main; followed the planner rules provided in chat on 2026-09-20.",
-    "status.json read from grok-plan (not yet on main) and will be published to main with this plan.",
-    "No done tasks in status \u2192 all Germany targets + cat_registration still pending.",
-    "status.notes empty \u2192 no missed-block carry-over from 2026-09-20.",
-    "No mock scores \u2192 no weakest-section +30 min.",
-    "status.branch=unknown \u2192 Passau summer freeze not applied.",
-    "Monday \u2192 job stream uses application batch (8\u201310), not triage-only."
+    "cat_registration=done (paid 2026-09-02, form submitted); admit card pending early Nov \u2014 VERIFY on iimcat.ac.in when released.",
+    "cat_test_cities=5 preferences submitted.",
+    "No CAT registration alert or block in this plan.",
+    "Four Sept Germany items still pending \u2192 Target: urgent_alerts.",
+    "branch=unknown, dmat_status=unknown \u2192 no Passau summer freeze.",
+    "Monday \u2192 job application batch 8\u201310."
   ],
   "warnings": [
-    "prompts/grok_daily.md is still 404 on main \u2014 please add it so future runs read the repo SoT.",
-    "Extra fields generated_by/assumptions/warnings/needs_user_input exceed data/daily_plan.schema.json additionalProperties:false; dashboard fetch is fine, Actions schema check may need updating."
+    "Admit card not yet available; expected early Nov \u2014 do not treat as actionable today."
   ],
   "needs_user_input": [
-    "Mark tasks done in status.json after completing them (especially cat_registration before Tue 5 PM).",
-    "Set status.branch to summer or winter after dMAT check.",
-    "Add prompts/grok_daily.md to main so the planner prompt lives in-repo."
+    "After Germany target work, mark each done in status (anabin_h_plus_check, dmat_status_check, passau_interactive_guide, mdu_moi_ranking_email).",
+    "Set status.branch to summer or winter once dMAT path is clear."
   ]
 }
