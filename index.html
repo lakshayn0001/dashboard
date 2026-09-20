@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lakshay Nagpal | Engineering &amp; Academic Control Center</title>
-  <meta name="description" content="Centralized developer hub and academic admissions roadmap for Lakshay Nagpal - German Master's Evaluations, 240+ DSA LeetCode Tracker, Production TypeScript Curriculum, and Full-Stack Showcase.">
+  <title>Lakshay's Daily Cockpit | Personal Execution Dashboard</title>
+  <meta name="description" content="Personal daily execution cockpit for Lakshay Nagpal - CAT 2026, German MSc Prep, DSA LeetCode Tracker, and Software Engineering.">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -35,7 +35,7 @@
     }
   </script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap');
     
     body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -71,21 +71,10 @@
       pointer-events: none;
       z-index: 0;
     }
-    .droplet-orb-3 {
-      position: fixed;
-      top: 40%;
-      left: 45%;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(95, 132, 85, 0.22) 0%, rgba(95, 132, 85, 0) 70%);
-      filter: blur(55px);
-      pointer-events: none;
-      z-index: 0;
-    }
 
     /* Light Liquid Glass Water Droplet Effect */
     .glass-droplet {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(246, 250, 242, 0.72) 100%);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.90) 0%, rgba(246, 250, 242, 0.75) 100%);
       backdrop-filter: blur(24px) saturate(180%);
       -webkit-backdrop-filter: blur(24px) saturate(180%);
       border: 1px solid rgba(255, 255, 255, 0.95);
@@ -95,7 +84,7 @@
         0 14px 34px -10px rgba(45, 65, 36, 0.10),
         0 2px 8px -2px rgba(45, 65, 36, 0.05);
       position: relative;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .glass-droplet::after {
       content: '';
@@ -105,18 +94,23 @@
       background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.95), transparent);
       pointer-events: none;
     }
-    .glass-droplet:hover {
-      transform: translateY(-3px);
-      box-shadow: 
-        inset 0 2px 2px 0 rgba(255, 255, 255, 1),
-        0 22px 42px -10px rgba(50, 75, 40, 0.15),
-        0 4px 12px -2px rgba(45, 65, 36, 0.08);
-      border-color: rgba(120, 150, 105, 0.4);
+
+    .glass-droplet-card {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(135, 160, 122, 0.30);
+      box-shadow: 0 4px 16px -2px rgba(45, 65, 36, 0.06);
+      transition: all 0.2s ease;
+    }
+    .glass-droplet-card:hover {
+      border-color: rgba(90, 130, 75, 0.5);
+      box-shadow: 0 8px 24px -4px rgba(45, 65, 36, 0.12);
+      transform: translateY(-2px);
     }
 
     /* Sidebar & Navigation */
     .glass-droplet-sidebar {
-      background: rgba(246, 250, 242, 0.94);
+      background: rgba(246, 250, 242, 0.95);
       backdrop-filter: blur(28px) saturate(190%);
       -webkit-backdrop-filter: blur(28px) saturate(190%);
       border-right: 1px solid rgba(135, 160, 122, 0.25);
@@ -125,7 +119,7 @@
         4px 0 24px rgba(45, 65, 36, 0.06);
     }
     .glass-droplet-nav {
-      background: rgba(246, 250, 242, 0.88);
+      background: rgba(246, 250, 242, 0.90);
       backdrop-filter: blur(24px) saturate(190%);
       -webkit-backdrop-filter: blur(24px) saturate(190%);
       border-bottom: 1px solid rgba(135, 160, 122, 0.25);
@@ -138,7 +132,6 @@
     .droplet-pill {
       background: linear-gradient(135deg, #ffffff 0%, #f4f7f0 100%);
       backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
       border: 1px solid rgba(110, 140, 95, 0.28);
       box-shadow: 
         inset 0 1px 1px 0 #ffffff,
@@ -148,992 +141,516 @@
     }
     .droplet-pill:hover {
       border-color: rgba(90, 125, 75, 0.5);
-      box-shadow: 
-        inset 0 1.5px 1.5px 0 #ffffff,
-        0 4px 12px rgba(45, 65, 36, 0.12);
       transform: translateY(-1px);
     }
 
-    /* Form Inputs */
-    .olive-input {
-      background-color: rgba(255, 255, 255, 0.95);
-      border: 1px solid rgba(115, 145, 100, 0.35);
-      color: #192516;
-      box-shadow: inset 0 1px 2px rgba(45, 65, 36, 0.04);
-      transition: all 0.2s ease;
-    }
-    .olive-input:focus {
-      border-color: #4a6839;
-      box-shadow: 0 0 0 3px rgba(95, 135, 75, 0.2);
-      outline: none;
-    }
-
     /* Scrollbars */
-    ::-webkit-scrollbar { width: 7px; height: 7px; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-track { background: #e0e6d8; }
-    ::-webkit-scrollbar-thumb { background: #96af8c; border-radius: 4px; border: 1px solid rgba(255,255,255,0.7); }
+    ::-webkit-scrollbar-thumb { background: #96af8c; border-radius: 3px; }
     ::-webkit-scrollbar-thumb:hover { background: #738f68; }
   </style>
-  <script src="assets/js/active-tracker.js"></script>
 </head>
 <body class="selection:bg-emerald-600 selection:text-white flex flex-col relative overflow-x-hidden">
 
   <!-- Ambient liquid orbs for light glass refraction -->
   <div class="droplet-orb-1"></div>
   <div class="droplet-orb-2"></div>
-  <div class="droplet-orb-3"></div>
 
   <!-- Mobile-only backdrop for small screens (< lg) -->
   <div id="sidebarBackdrop" onclick="toggleSidebar(false)" class="fixed inset-0 bg-stone-900/40 backdrop-blur-sm z-20 hidden lg:hidden transition-opacity duration-300"></div>
 
-  <!-- Persistent Left Side Navigation (Always Open on Desktop) -->
-  <aside id="sideNavDrawer" class="w-72 fixed inset-y-0 left-0 z-30 flex flex-col glass-droplet-sidebar transition-transform duration-300 -translate-x-full lg:translate-x-0">
-    <div class="p-5 border-b border-stone-300/60 flex items-center justify-between">
+  <!-- Persistent Left Side Navigation (Desktop Permanent) -->
+  <aside id="sideNavDrawer" class="w-64 fixed inset-y-0 left-0 z-30 flex flex-col glass-droplet-sidebar transition-transform duration-300 -translate-x-full lg:translate-x-0">
+    <div class="p-4 border-b border-stone-300/60 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 via-teal-600 to-olive-700 flex items-center justify-center font-black text-white text-lg shadow-md droplet-pill">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-600 via-teal-600 to-olive-700 flex items-center justify-center font-black text-white text-base shadow-sm">
           LN
         </div>
         <div>
-          <div class="font-bold text-stone-900 text-sm tracking-tight flex items-center gap-1.5">
-            <span>Lakshay Nagpal</span>
-          </div>
-          <span class="text-xs text-stone-600 font-mono block">Control Center</span>
+          <div class="font-black text-stone-900 text-sm tracking-tight">Lakshay Nagpal</div>
+          <span class="text-[11px] text-emerald-800 font-mono font-semibold">Daily Cockpit</span>
         </div>
       </div>
-      <!-- Close button visible only on mobile -->
-      <button onclick="toggleSidebar(false)" class="lg:hidden p-1.5 rounded-lg text-stone-500 hover:text-stone-900 hover:bg-stone-200 transition-all" title="Close Menu">
+      <button onclick="toggleSidebar(false)" class="lg:hidden p-1.5 rounded-lg text-stone-500 hover:text-stone-900 hover:bg-stone-200" title="Close Menu">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
       </button>
     </div>
 
-    <div class="flex-grow overflow-y-auto py-4 px-3 space-y-6">
-      <!-- Group 1: Core Portals -->
+    <div class="flex-grow overflow-y-auto py-3 px-2 space-y-4 text-xs font-medium">
+      <!-- Daily Engine -->
       <div>
-        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Core Portals</div>
-        <div class="mt-2 space-y-1">
-          <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-emerald-100/90 text-emerald-950 border border-emerald-300 transition-all group text-sm font-bold shadow-sm">
-            <span class="text-lg">🏠</span>
-            <span>Master Dashboard</span>
+        <div class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-stone-500">Live Execution</div>
+        <div class="mt-1 space-y-0.5">
+          <a href="#section-daily-plan" class="flex items-center gap-2.5 px-2.5 py-2 rounded-xl bg-emerald-100/90 text-emerald-950 font-bold border border-emerald-300/80 shadow-2xs">
+            <span>📅</span>
+            <span>Today's Agenda</span>
+            <span class="ml-auto text-[9px] px-1.5 py-0.5 rounded-full bg-emerald-200 text-emerald-900 font-mono font-bold">Active</span>
           </a>
-          <a href="#section-daily-plan" class="flex items-center gap-3 px-3 py-2 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-base">📅</span>
-            <span>Today's Plan</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 font-mono font-bold">Live</span>
-          </a>
-          <a href="profile.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-lg">👤</span>
-            <span>Candidate Profile</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-mono font-bold">Resume &amp; Bio</span>
-          </a>
-          <a href="learning_hub.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-lg">🧠</span>
-            <span>Learning Hub</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-mono">6 Tracks (Track 0 to 5)</span>
-          </a>
-          <a href="dsa_master_tracker.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-lg">⚡</span>
-            <span>DSA Master Tracker</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-mono">240+ LC</span>
-          </a>
-          <a href="typescript_curriculum.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-lg">📘</span>
-            <span>TypeScript Curriculum</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-800 font-mono">17.6K Lines</span>
+          <a href="deadlines_calendar.html" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/60 transition-all">
+            <span>⏰</span>
+            <span>Master Deadlines</span>
           </a>
         </div>
       </div>
 
-      <!-- Group 2: Higher Education -->
+      <!-- Core Prep Tracks -->
       <div>
-        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Higher Education &amp; Admissions</div>
-        <div class="mt-2 space-y-1">
-          <a href="deadlines_calendar.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-lg">📅</span>
-            <span>Deadlines &amp; Calendar</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-red-100 text-red-800 font-mono">2026–27</span>
+        <div class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-stone-500">Preparation Portals</div>
+        <div class="mt-1 space-y-0.5">
+          <a href="cat_2026_syllabus_roadmap.html" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/60 transition-all">
+            <span>🐯</span>
+            <span>CAT 2026 Roadmap</span>
           </a>
-          <a href="german_universities_evaluation.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-lg">🇩🇪</span>
-            <span>German Universities</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-mono">Tuition-Free</span>
+          <a href="https://myzone.careerlauncher.com/login.jsp" target="_blank" rel="noreferrer" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-amber-900 bg-amber-50 hover:bg-amber-100 border border-amber-200 font-semibold transition-all">
+            <span>🎓</span>
+            <span>CL MyZone (VARC)</span>
+            <span class="ml-auto text-[9px] font-mono">↗</span>
           </a>
-          <a href="cat_2026_syllabus_roadmap.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-lg">🐯</span>
-            <span>CAT 2026 Strategy</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 font-mono">IIM/IIT</span>
+          <a href="german_universities_evaluation.html" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/60 transition-all">
+            <span>🇩🇪</span>
+            <span>German MSc Engine</span>
           </a>
-          <a href="https://myzone.careerlauncher.com/login.jsp" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2 rounded-xl bg-amber-50/90 hover:bg-amber-100/90 text-amber-900 border border-amber-300/80 font-semibold transition-all group text-xs shadow-2xs">
-            <span class="text-base">🎓</span>
-            <span class="truncate">CL MyZone (VARC)</span>
-            <span class="ml-auto text-[9px] px-1.5 py-0.5 rounded-full font-bold bg-emerald-100 text-emerald-800 border border-emerald-300 font-mono">Enrolled ↗</span>
+          <a href="dsa_master_tracker.html" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/60 transition-all">
+            <span>⚡</span>
+            <span>DSA Master (247 Qs)</span>
+          </a>
+          <a href="learning_hub.html" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/60 transition-all">
+            <span>🧠</span>
+            <span>Engineering Hub (6 Tracks)</span>
+          </a>
+          <a href="typescript_curriculum.html" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/60 transition-all">
+            <span>📘</span>
+            <span>TypeScript Guide</span>
           </a>
         </div>
       </div>
 
-      <!-- Group 3: Professional Dossier -->
+      <!-- Resumes & Outbound -->
       <div>
-        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Professional Dossier</div>
-        <div class="mt-2 space-y-1">
-          <a href="resume.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-base">📄</span>
+        <div class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-stone-500">Resumes &amp; Outreach</div>
+        <div class="mt-1 space-y-0.5">
+          <a href="resume.html" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/60 transition-all">
+            <span>📄</span>
             <span>Original Resume</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-stone-200 text-stone-800 font-mono">Full-Stack</span>
           </a>
-          <a href="Lakshay_Nagpal_CV.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-base">🇩🇪</span>
-            <span>German Companies CV</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-900 font-mono">Blue Card</span>
+          <a href="Lakshay_Nagpal_CV.html" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/60 transition-all">
+            <span>🇩🇪</span>
+            <span>German CV (Blue Card)</span>
           </a>
-          <a href="https://drive.google.com/file/d/15GwnY6jhijyzTbYt-QVjesA7c4dnuHzE/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 px-3 py-2 rounded-xl text-emerald-800 hover:text-emerald-950 hover:bg-emerald-50 transition-all group text-sm font-semibold">
-            <span class="text-base">📥</span>
-            <span>Download German PDF</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300 font-mono">Drive ↗</span>
+          <a href="https://drive.google.com/file/d/15GwnY6jhijyzTbYt-QVjesA7c4dnuHzE/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-emerald-800 hover:bg-emerald-50 font-semibold transition-all">
+            <span>📥</span>
+            <span>German PDF (Drive)</span>
           </a>
-          <a href="#projects" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-lg">💻</span>
-            <span>Cloud Projects</span>
-          </a>
-          <a href="https://lakshayn0001.github.io/Portfolio/" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-lg">🌐</span>
-            <span>Developer Portfolio</span>
-            <svg class="w-3.5 h-3.5 text-stone-400 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Group 4: Connect -->
-      <div>
-        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Connect</div>
-        <div class="mt-2 space-y-1">
-          <a href="https://www.linkedin.com/in/lakshay-nagpal-1a2a0134a/" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <svg class="w-4 h-4 text-[#0a66c2] fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z"/></svg>
-            <span>LinkedIn Profile</span>
-          </a>
-          <a href="https://github.com/lakshayn0001/dashboard" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <svg class="w-4 h-4 text-stone-600 fill-current" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
-            <span>GitHub Repository</span>
+          <a href="profile.html#cold-email" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/60 transition-all">
+            <span>✉️</span>
+            <span>Cold Email Generator</span>
           </a>
         </div>
       </div>
     </div>
 
-    <div class="p-4 border-t border-stone-300/60 text-[11px] text-stone-600 flex items-center justify-between">
-      <span>Immediate Joiner / 0 Days</span>
-      <span class="text-emerald-800 font-mono font-bold">B.Tech 70.56%</span>
+    <div class="p-3 border-t border-stone-300/60 text-[11px] text-stone-500 flex items-center justify-between">
+      <span class="font-mono">Daily Target: 6.0h</span>
+      <span class="text-emerald-700 font-mono font-bold">Strict Budget</span>
     </div>
   </aside>
 
-  <!-- Main Content Wrapper (Beside Permanent Sidebar on Desktop) -->
-  <div class="lg:pl-72 flex flex-col min-h-screen relative z-10">
+  <!-- Main Content Area -->
+  <div class="lg:pl-64 flex flex-col min-h-screen relative z-10">
 
-    <!-- Sticky Top Glass Navigation Bar (No Menu Button on Desktop) -->
+    <!-- Top Sticky Header -->
     <header class="sticky top-0 z-20 w-full glass-droplet-nav">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
+        
+        <!-- Left: Brand / Title -->
         <div class="flex items-center gap-3">
-          <!-- Mobile Drawer Trigger ONLY on <lg screens -->
-          <button onclick="toggleSidebar(true)" class="lg:hidden p-2 rounded-xl bg-white/90 hover:bg-stone-100 text-stone-700 hover:text-stone-950 border border-stone-300 transition-all flex items-center gap-1.5 cursor-pointer shadow-sm" title="Open Navigation Menu">
+          <button onclick="toggleSidebar(true)" class="lg:hidden p-1.5 rounded-lg bg-white/90 text-stone-700 border border-stone-300" title="Open Navigation Menu">
             <svg class="w-5 h-5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-            <span class="text-xs font-semibold">Menu</span>
           </button>
-
           <div class="flex items-center gap-2">
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse"></span>
-            <span class="text-xs sm:text-sm font-bold text-stone-900 tracking-tight">Full-Stack Software Engineer &amp; Control Center</span>
-            <span class="text-xs font-mono text-stone-500 hidden md:inline">• Immediate Joiner (0 Days)</span>
+            <span class="text-sm font-black text-stone-900 tracking-tight">Personal Command Cockpit</span>
           </div>
         </div>
 
+        <!-- Right: Time & Quick Controls -->
         <div class="flex items-center gap-2">
-          <a href="profile.html" class="droplet-pill px-3 py-1.5 rounded-xl text-stone-800 hover:text-stone-950 text-xs font-semibold inline-flex items-center gap-1.5 transition-all">
-            <span>👤</span>
-            <span class="hidden sm:inline">Profile</span>
-          </a>
-          <a href="learning_hub.html" class="droplet-pill px-3 py-1.5 rounded-xl text-stone-800 hover:text-stone-950 text-xs font-semibold inline-flex items-center gap-1.5 transition-all">
-            <span>🧠</span>
-            <span class="hidden sm:inline">Learning Hub</span>
-          </a>
-          <a href="learning_hub.html#dsa-track" class="droplet-pill px-3 py-1.5 rounded-xl text-emerald-800 hover:text-emerald-950 text-xs font-semibold inline-flex items-center gap-1.5 transition-all">
-            <span>⚡</span>
-            <span class="hidden sm:inline">DSA Library</span>
-          </a>
-          <a href="https://www.linkedin.com/in/lakshay-nagpal-1a2a0134a/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#0a66c2] hover:bg-[#004182] text-white text-xs font-semibold shadow-sm transition-all" title="LinkedIn Profile">
-            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z"/></svg>
-            <span class="hidden sm:inline">LinkedIn</span>
-          </a>
-          <a href="https://github.com/lakshayn0001" target="_blank" rel="noreferrer" class="p-2 rounded-xl bg-white hover:bg-stone-100 text-stone-700 hover:text-stone-950 border border-stone-300 transition-all droplet-pill shadow-sm" title="GitHub Profile">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
-          </a>
-          <a href="https://lakshayn0001.github.io/Portfolio/" target="_blank" rel="noreferrer" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-semibold shadow-sm transition-all">
-            <span>Portfolio</span>
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-          </a>
+          <!-- Real-Time IST Clock -->
+          <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-stone-900 text-white font-mono text-xs font-bold shadow-xs">
+            <span class="text-stone-400 text-[10px]">IST</span>
+            <span id="liveClockIST">--:--:--</span>
+          </div>
+
+          <!-- Notification Trigger -->
+          <button id="btnToggleNotifications" onclick="enableNotifications()" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-white hover:bg-stone-100 text-stone-800 text-xs font-semibold border border-stone-300 shadow-2xs transition-all cursor-pointer" title="Enable browser notifications">
+            <span id="notifIcon">🔔</span>
+            <span id="notifBtnLabel" class="hidden sm:inline">Alerts</span>
+          </button>
+
+          <!-- Calendar Export -->
+          <button onclick="downloadTodayICS()" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-semibold shadow-2xs transition-all cursor-pointer" title="Download today's .ics with reminders">
+            <span>📥</span>
+            <span class="hidden sm:inline">.ics</span>
+          </button>
+
+          <!-- Refresh -->
+          <button onclick="loadDailyPlan(true)" class="p-1.5 rounded-xl bg-white hover:bg-stone-100 text-stone-700 border border-stone-300 text-xs font-semibold shadow-2xs transition-all cursor-pointer" title="Refresh plan data">
+            🔄
+          </button>
         </div>
+
       </div>
     </header>
 
-    <!-- Hero & Executive Overview -->
-    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
-
-      <section class="glass-droplet rounded-3xl p-6 sm:p-10 text-center space-y-4 border border-stone-300/80 shadow-lg">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-300 bg-emerald-100 text-emerald-900 text-xs font-bold uppercase tracking-wider">
-          <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
-          Engineering &amp; Academic Executive Launchpad
-        </div>
-        <h1 class="text-3xl sm:text-5xl font-black text-stone-900 tracking-tight leading-tight">
-          Engineering &amp; Academic <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-800 via-teal-700 to-olive-800">Control Center</span>
-        </h1>
-        <p class="max-w-2xl mx-auto text-stone-700 text-sm sm:text-base leading-relaxed">
-          Unified portal hosting the <strong>240+ LeetCode DSA Question Bank with Thinking Approaches</strong>, the German Universities Postgraduate Admission Engine, the CAT 2026 Strategic Master Roadmap, the 17,600+ curriculum lines Production TypeScript Guide, and cloud production services.
-        </p>
-
-        <div class="pt-2 flex justify-center">
-          <button onclick="playAudioSummary(this, 'Executive Hub Overview', 'Welcome to Lakshay Nagpal\'s Engineering and Academic Control Center. This centralized portal brings together your strategic admission roadmap for tuition-free German Master of Science programs, the CAT 2026 preparation syllabus targeting IITs and CAP IIMs, an interactive 240-plus DSA Problem Library with thinking models, the 17,600-line TypeScript curriculum, and your DIN 5008 German Lebenslauf.')" class="audio-brief-btn inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white hover:bg-stone-100 border border-stone-300 hover:border-emerald-600 text-stone-800 text-xs font-semibold shadow-sm transition-all">
-            <svg class="w-4 h-4 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-            <span class="audio-label" data-default-label="Listen Hub Brief (35s)">Listen Hub Brief (35s)</span>
-          </button>
-        </div>
-
-        <!-- Key Profile Metric Highlights -->
-        <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 max-w-5xl mx-auto pt-6">
-          <div class="glass-droplet p-4 rounded-2xl text-center shadow-sm">
-            <div class="text-xs font-bold text-stone-600">German Benchmark</div>
-            <div class="text-xl sm:text-2xl font-black text-emerald-800 mt-1">2.47 <span class="text-xs font-normal text-stone-500">("Gut")</span></div>
-            <div class="text-[11px] text-stone-500 mt-0.5">B.Tech 70.56% (MDU)</div>
-          </div>
-          <div class="glass-droplet p-4 rounded-2xl text-center shadow-sm">
-            <div class="text-xs font-bold text-stone-600">Core CS Match</div>
-            <div class="text-xl sm:text-2xl font-black text-blue-800 mt-1">~70 ECTS</div>
-            <div class="text-[11px] text-stone-500 mt-0.5">Direct M.Sc. Eligibility</div>
-          </div>
-          <div class="glass-droplet p-4 rounded-2xl text-center shadow-sm">
-            <div class="text-xs font-bold text-stone-600">CAT 2026 Target</div>
-            <div class="text-xl sm:text-2xl font-black text-amber-800 mt-1">93–96%ile</div>
-            <div class="text-[11px] text-stone-500 mt-0.5">DoMS IITs + CAP IIMs</div>
-          </div>
-          <div class="glass-droplet p-4 rounded-2xl text-center shadow-sm">
-            <div class="text-xs font-bold text-stone-600">TypeScript Mastery</div>
-            <div class="text-xl sm:text-2xl font-black text-indigo-800 mt-1">17,600+</div>
-            <div class="text-[11px] text-stone-500 mt-0.5">Curriculum Lines</div>
-          </div>
-          <div class="glass-droplet p-4 rounded-2xl text-center col-span-2 sm:col-span-1 shadow-sm">
-            <div class="text-xs font-bold text-stone-600">Notice Period</div>
-            <div class="text-xl sm:text-2xl font-black text-emerald-800 mt-1">0 Days</div>
-            <div class="text-[11px] text-stone-500 mt-0.5">Immediate Joiner</div>
-          </div>
-        </div>
-
-        <!-- Live Search & Category Filter Toolbar -->
-        <div class="max-w-3xl mx-auto pt-6 flex flex-col sm:flex-row gap-2.5">
-          <div class="relative flex-grow">
-            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-stone-400">
-              <svg class="w-4 h-4 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-            </div>
-            <input type="text" id="searchInput" oninput="filterCards()" placeholder="Search universities, CAT syllabus, ECTS, generics, AST, DILR, Socket.IO, Passau..." class="w-full pl-10 pr-4 py-2.5 rounded-xl olive-input text-sm">
-          </div>
-          <div class="flex items-center gap-1.5 overflow-x-auto justify-center shrink-0">
-            <button onclick="setFilter('all', this)" class="filter-tag active px-3 py-2 rounded-xl text-xs font-bold bg-emerald-700 text-white transition-all shadow-sm">All Resources (7)</button>
-            <button onclick="setFilter('engineering', this)" class="filter-tag px-3 py-2 rounded-xl text-xs font-semibold bg-white text-stone-700 hover:text-stone-950 hover:bg-stone-100 border border-stone-300 transition-all">Engineering (3)</button>
-            <button onclick="setFilter('academics', this)" class="filter-tag px-3 py-2 rounded-xl text-xs font-semibold bg-white text-stone-700 hover:text-stone-950 hover:bg-stone-100 border border-stone-300 transition-all">Academics (2)</button>
-            <button onclick="setFilter('dossier', this)" class="filter-tag px-3 py-2 rounded-xl text-xs font-semibold bg-white text-stone-700 hover:text-stone-950 hover:bg-stone-100 border border-stone-300 transition-all">Dossier (2)</button>
-          </div>
-        </div>
-      </section>
+    <!-- Main Command Body -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 space-y-6">
 
       <!-- ========================================================================= -->
-      <!-- TODAY'S PLAN & NOTIFICATIONS SYSTEM (LIVE 6.0H SCHEDULE & NOW/NEXT)       -->
+      <!-- 1. URGENT STATUTORY DEADLINES BANNER (Only shows when deadlines <= 7 days) -->
       <!-- ========================================================================= -->
-      <section id="section-daily-plan" class="glass-droplet rounded-3xl p-6 sm:p-8 space-y-6 border border-emerald-600/30 shadow-md">
+      <div id="urgentAlertsBanner" aria-live="polite" class="hidden p-4 rounded-2xl bg-red-50/95 border-2 border-red-500/80 text-red-950 space-y-2.5 shadow-sm">
+        <div class="flex items-center justify-between gap-2 border-b border-red-200 pb-2">
+          <div class="flex items-center gap-2 font-black text-xs uppercase tracking-wider text-red-900">
+            <span class="w-2.5 h-2.5 rounded-full bg-red-600 animate-ping"></span>
+            <span>🚨 Critical Action Required (Next 7 Days)</span>
+          </div>
+          <span id="urgentAlertsCountBadge" class="px-2 py-0.5 rounded-full text-[10px] font-mono font-black bg-red-200 text-red-950">0 Alerts</span>
+        </div>
+        <div id="urgentAlertsList" class="space-y-2">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+      <!-- Stale Plan Notice (if plan date is not today) -->
+      <div id="stalePlanWarning" class="hidden p-3 rounded-xl bg-amber-50 border border-amber-300 text-amber-950 text-xs flex items-center justify-between gap-3 shadow-2xs">
+        <div class="flex items-center gap-2">
+          <span>⚠️</span>
+          <span>Showing plan for <strong id="stalePlanDate" class="font-mono"></strong> (Today in IST: <strong id="staleCurrentDate" class="font-mono"></strong>).</span>
+        </div>
+        <button onclick="loadDailyPlan(true)" class="px-2 py-0.5 rounded bg-amber-200 hover:bg-amber-300 text-amber-950 font-bold text-[11px]">Sync</button>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- 2. TODAY'S DIRECTIVE & LIVE FOCUS ENGINE (NOW / NEXT)                      -->
+      <!-- ========================================================================= -->
+      <section id="section-daily-plan" class="glass-droplet rounded-2xl p-5 sm:p-6 space-y-5 border border-stone-300/80 shadow-sm">
         
-        <!-- Header & Action Controls -->
-        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-stone-200/80 pb-5">
+        <!-- Directive Title Bar -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-stone-200/80 pb-4">
           <div>
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 text-xs font-bold uppercase tracking-wider border border-emerald-300">
-              <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
-              Live Execution Engine · 6.0h Daily Budget
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-bold uppercase tracking-wider text-emerald-800 font-mono" id="planDateBadge">Today's Directive</span>
+              <span class="text-xs text-stone-400">•</span>
+              <span class="text-xs font-mono text-stone-500">6.0h Budget Max</span>
             </div>
-            <h2 class="text-2xl sm:text-3xl font-black text-stone-950 tracking-tight mt-1 flex items-center gap-2">
-              <span>📅</span> Today's Plan &amp; Notifications
-            </h2>
-            <p class="text-xs sm:text-sm text-stone-600 mt-1" id="dailyPlanSubtitle">
-              Loading daily schedule from <code class="px-1.5 py-0.5 rounded bg-stone-100 font-mono text-[11px]">data/daily_plan.json</code>...
-            </p>
+            <h1 id="planSummaryTitle" class="text-lg sm:text-xl font-black text-stone-900 tracking-tight mt-0.5">
+              Loading daily plan...
+            </h1>
           </div>
-
-          <!-- Top Action Buttons -->
-          <div class="flex flex-wrap items-center gap-2">
-            <!-- Notification Toggle Button -->
-            <button id="btnToggleNotifications" onclick="enableNotifications()" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-stone-900 hover:bg-stone-800 text-white text-xs font-bold shadow-sm transition-all cursor-pointer" title="Enable browser alerts for upcoming blocks">
-              <span id="notifIcon">🔔</span>
-              <span id="notifBtnLabel">Enable Alerts</span>
-            </button>
-
-            <!-- Download ICS Button -->
-            <button onclick="downloadTodayICS()" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold shadow-sm transition-all cursor-pointer" title="Download RFC 5545 iCalendar file with VALARM reminders">
-              <span>📥</span>
-              <span>Download .ics</span>
-            </button>
-
-            <!-- Refresh Button -->
-            <button onclick="loadDailyPlan(true)" class="p-2 rounded-xl bg-white hover:bg-stone-100 text-stone-700 border border-stone-300 text-xs font-semibold shadow-2xs transition-all cursor-pointer" title="Reload plan data">
-              🔄
-            </button>
+          <div class="flex items-center gap-2">
+            <span id="dailyPlanSourceBadge" class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-stone-100 text-stone-700 border border-stone-200">
+              Grok / Context
+            </span>
           </div>
         </div>
 
-        <!-- Stale Plan Warning Banner (Shown if plan date != today in Asia/Kolkata) -->
-        <div id="stalePlanWarning" class="hidden p-4 rounded-2xl bg-amber-50 border border-amber-300 text-amber-950 text-xs flex items-start gap-3 shadow-xs">
-          <span class="text-lg shrink-0">⚠️</span>
-          <div class="space-y-1">
-            <strong class="font-bold block text-sm">Plan Date Notice</strong>
-            <p id="stalePlanText" class="leading-relaxed">
-              Showing plan for <span id="stalePlanDate" class="font-mono font-bold"></span>. Today in IST is <span id="staleCurrentDate" class="font-mono font-bold"></span>. You can trigger the daily workflow to generate today's schedule.
-            </p>
-          </div>
-        </div>
-
-        <!-- Urgent Alerts Banner (aria-live="polite") -->
-        <div id="urgentAlertsBanner" aria-live="polite" class="hidden p-4 sm:p-5 rounded-2xl bg-red-50/90 border-2 border-red-400/80 text-red-950 space-y-3 shadow-xs">
-          <div class="flex items-center justify-between gap-2 border-b border-red-200/80 pb-2.5">
-            <div class="flex items-center gap-2 font-bold text-xs uppercase tracking-wider text-red-800">
-              <span class="w-2.5 h-2.5 rounded-full bg-red-600 animate-ping"></span>
-              <span>🚨 Critical Statutory Deadlines &amp; Urgent Audits (Next 7 Days)</span>
-            </div>
-            <span id="urgentAlertsCountBadge" class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-red-200 text-red-900">0 Alerts</span>
-          </div>
-          <div id="urgentAlertsList" class="space-y-2">
-            <!-- Populated dynamically -->
-          </div>
-        </div>
-
-        <!-- Now / Next Live Status & Countdown Hero Widget -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <!-- Live Pulse: NOW / NEXT / PROGRESS (3 Column Grid) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           
-          <!-- Now & Next Card (Span 2) -->
-          <div class="lg:col-span-2 p-5 rounded-2xl bg-white/90 border border-stone-300/80 space-y-4 shadow-sm flex flex-col justify-between">
-            <div class="flex items-center justify-between gap-2 border-b border-stone-200 pb-3">
-              <div class="flex items-center gap-2">
-                <span class="text-base">⚡</span>
-                <span class="text-xs font-bold uppercase tracking-wider text-stone-700">Real-Time Schedule Status</span>
+          <!-- Card 1: NOW ACTIVE -->
+          <div id="nowCardContainer" class="p-4 rounded-xl bg-emerald-50/90 border border-emerald-300 space-y-2 shadow-2xs flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-emerald-700 text-white flex items-center gap-1 shadow-2xs">
+                  <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span> NOW ACTIVE
+                </span>
+                <span id="nowTimerBadge" class="text-[10px] font-mono font-bold text-emerald-950">--</span>
               </div>
-              <div class="flex items-center gap-2">
-                <span class="text-[11px] font-mono text-stone-500 font-semibold">IST:</span>
-                <span id="liveClockIST" class="text-xs font-mono font-extrabold text-stone-900 bg-stone-100 px-2 py-0.5 rounded border border-stone-200">--:--:--</span>
+              <div id="nowBlockTitle" class="text-sm font-black text-emerald-950 mt-2 line-clamp-2">
+                Scanning current block...
               </div>
+              <p id="nowBlockDetails" class="text-xs text-emerald-800 mt-1 line-clamp-2 leading-relaxed">
+                Check schedule below.
+              </p>
             </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <!-- Active Block (NOW) -->
-              <div class="p-3.5 rounded-xl bg-emerald-50/80 border border-emerald-300/80 space-y-1.5" id="nowCardContainer">
-                <div class="flex items-center justify-between">
-                  <span class="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-emerald-600 text-white flex items-center gap-1 shadow-2xs">
-                    <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span> NOW
-                  </span>
-                  <span id="nowTimerBadge" class="text-[10px] font-mono font-bold text-emerald-900">--</span>
-                </div>
-                <div id="nowBlockTitle" class="text-sm font-black text-emerald-950 truncate">No active block right now</div>
-                <p id="nowBlockDetails" class="text-xs text-emerald-800 line-clamp-2 leading-relaxed">Check upcoming block in timeline.</p>
-              </div>
-
-              <!-- Next Block (UPCOMING) -->
-              <div class="p-3.5 rounded-xl bg-amber-50/80 border border-amber-300/80 space-y-1.5" id="nextCardContainer">
-                <div class="flex items-center justify-between">
-                  <span class="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-amber-600 text-white shadow-2xs">
-                    NEXT UP
-                  </span>
-                  <span id="nextTimerBadge" class="text-[10px] font-mono font-bold text-amber-900">--</span>
-                </div>
-                <div id="nextBlockTitle" class="text-sm font-black text-amber-950 truncate">No upcoming blocks</div>
-                <p id="nextBlockDetails" class="text-xs text-amber-800 line-clamp-2 leading-relaxed">All scheduled blocks for today are finished.</p>
-              </div>
-            </div>
-
-            <!-- Countdown Ticker Bar -->
-            <div class="pt-1 flex items-center justify-between text-xs bg-stone-50 p-2.5 rounded-xl border border-stone-200">
-              <span class="text-stone-600 font-medium" id="countdownLabel">Countdown to next block:</span>
-              <span id="countdownTimer" class="font-mono font-black text-stone-900 text-sm">--m --s</span>
+            <div class="pt-2 border-t border-emerald-200/80 flex items-center justify-between text-[11px] font-mono">
+              <span class="text-emerald-700 font-bold">Countdown:</span>
+              <span id="nowCountdown" class="font-extrabold text-emerald-950">--:--</span>
             </div>
           </div>
 
-          <!-- Daily Overview & Progress Card (Span 1) -->
-          <div class="p-5 rounded-2xl bg-white/90 border border-stone-300/80 space-y-3.5 shadow-sm flex flex-col justify-between">
-            <div class="flex items-center justify-between border-b border-stone-200 pb-2.5">
-              <span class="text-xs font-bold uppercase tracking-wider text-stone-700">Today's Progress</span>
-              <span id="dailyProgressFraction" class="text-xs font-mono font-extrabold text-emerald-800">0 / 0 Done</span>
+          <!-- Card 2: NEXT UP -->
+          <div id="nextCardContainer" class="p-4 rounded-xl bg-amber-50/90 border border-amber-300 space-y-2 shadow-2xs flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-amber-600 text-white shadow-2xs">
+                  NEXT UP
+                </span>
+                <span id="nextTimerBadge" class="text-[10px] font-mono font-bold text-amber-950">--</span>
+              </div>
+              <div id="nextBlockTitle" class="text-sm font-black text-amber-950 mt-2 line-clamp-2">
+                Checking upcoming task...
+              </div>
+              <p id="nextBlockDetails" class="text-xs text-amber-800 mt-1 line-clamp-2 leading-relaxed">
+                Next scheduled focus block.
+              </p>
+            </div>
+            <div class="pt-2 border-t border-amber-200/80 flex items-center justify-between text-[11px] font-mono">
+              <span class="text-amber-700 font-bold">Starts In:</span>
+              <span id="nextCountdown" class="font-extrabold text-amber-950">--:--</span>
+            </div>
+          </div>
+
+          <!-- Card 3: DAILY PROGRESS & STREAM BUDGET -->
+          <div class="p-4 rounded-xl bg-white border border-stone-300 space-y-2.5 shadow-2xs flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between border-b border-stone-100 pb-1.5">
+                <span class="text-xs font-bold uppercase tracking-wider text-stone-700">Daily Execution</span>
+                <span id="dailyProgressFraction" class="text-xs font-mono font-extrabold text-emerald-800">0 / 0 Done</span>
+              </div>
+              
+              <!-- Progress Bar -->
+              <div class="space-y-1 mt-2">
+                <div class="w-full h-2.5 bg-stone-100 rounded-full overflow-hidden border border-stone-200">
+                  <div id="dailyProgressBarInner" class="h-full bg-gradient-to-r from-emerald-600 to-teal-600 transition-all duration-300" style="width: 0%;"></div>
+                </div>
+                <div class="flex justify-between text-[10px] font-mono text-stone-500 font-semibold">
+                  <span>Tasks Finished</span>
+                  <span id="dailyProgressPercent">0%</span>
+                </div>
+              </div>
             </div>
 
-            <!-- Progress Bar -->
-            <div class="space-y-1">
-              <div class="w-full h-3 bg-stone-200 rounded-full overflow-hidden border border-stone-300">
-                <div id="dailyProgressBarInner" class="h-full bg-gradient-to-r from-emerald-600 to-teal-500 transition-all duration-300" style="width: 0%;"></div>
-              </div>
-              <div class="flex justify-between text-[10px] font-mono text-stone-500 font-semibold">
-                <span>Completed Tasks</span>
-                <span id="dailyProgressPercent">0%</span>
-              </div>
-            </div>
-
-            <!-- Stream Totals Breakdown -->
-            <div class="space-y-1.5 pt-1">
-              <div class="text-[11px] font-bold text-stone-600">Planned Load (6.0h Budget):</div>
-              <div id="streamTotalsContainer" class="flex flex-wrap gap-1.5">
-                <!-- Populated dynamically with stream pill badges -->
+            <!-- Stream Budget Allocation Pills -->
+            <div>
+              <div class="text-[10px] font-bold text-stone-500 mb-1 uppercase tracking-wider">Planned Load Breakdown:</div>
+              <div id="streamTotalsContainer" class="flex flex-wrap gap-1">
+                <!-- Dynamically populated -->
               </div>
             </div>
           </div>
+
         </div>
 
-        <!-- Timeline Section -->
+        <!-- Chronological Execution Timeline & Checkable Tasks -->
         <div class="space-y-3 pt-2">
           <div class="flex items-center justify-between">
-            <h3 class="text-sm font-bold uppercase tracking-wider text-stone-800 flex items-center gap-2">
-              <span>📋</span> Chronological Execution Timeline
-            </h3>
-            <span class="text-xs text-stone-500 font-mono">Mark items as completed to persist</span>
-          </div>
-
-          <!-- Dynamic Blocks Timeline List -->
-          <div id="dailyPlanBlocksList" class="space-y-3">
-            <!-- Populated dynamically via renderDailyPlan() -->
+            <h2 class="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-stone-800 flex items-center gap-1.5">
+              <span>📋</span> Today's Checklist &amp; Timeline
+            </h2>
+            <span class="text-[11px] text-stone-500 font-mono">Check off completed blocks</span>
           </div>
 
           <!-- Loading State -->
-          <div id="dailyPlanLoading" class="p-8 text-center bg-white/70 rounded-2xl border border-stone-200 space-y-2">
-            <div class="w-6 h-6 border-2 border-emerald-600 border-t-transparent rounded-full animate-spin mx-auto"></div>
+          <div id="dailyPlanLoading" class="p-8 text-center bg-white/70 rounded-xl border border-stone-200 space-y-2">
+            <div class="w-5 h-5 border-2 border-emerald-600 border-t-transparent rounded-full animate-spin mx-auto"></div>
             <p class="text-xs font-semibold text-stone-600">Loading daily plan...</p>
           </div>
 
           <!-- Error State -->
-          <div id="dailyPlanError" class="hidden p-6 text-center bg-red-50 rounded-2xl border border-red-200 space-y-2 text-red-900 text-xs">
-            <span class="text-2xl block">⚠️</span>
+          <div id="dailyPlanError" class="hidden p-6 text-center bg-red-50 rounded-xl border border-red-200 space-y-2 text-red-900 text-xs">
+            <span class="text-xl block">⚠️</span>
             <strong>Unable to load daily plan</strong>
-            <p class="text-stone-600">Could not fetch <code class="font-mono">data/daily_plan.json</code>.</p>
-            <button onclick="loadDailyPlan(true)" class="px-3 py-1.5 rounded-lg bg-red-700 text-white font-bold cursor-pointer">Retry</button>
+            <p class="text-stone-600">Could not read <code class="font-mono">data/daily_plan.json</code>.</p>
+            <button onclick="loadDailyPlan(true)" class="px-3 py-1 rounded-lg bg-red-700 text-white font-bold cursor-pointer">Retry</button>
+          </div>
+
+          <!-- Dynamic Blocks Timeline List -->
+          <div id="dailyPlanBlocksList" class="space-y-2.5">
+            <!-- Populated dynamically via renderDailyPlan() -->
           </div>
         </div>
 
       </section>
 
       <!-- ========================================================================= -->
-      <!-- SECTION A: CORE SOFTWARE ENGINEERING & PRACTICE                           -->
+      <!-- 3. MY 6 WORKSPACE LAUNCHPADS (One-Click Access to All Systems)            -->
       <!-- ========================================================================= -->
-      <section class="space-y-4" id="section-engineering">
-        <div class="flex items-center gap-2 px-1">
-          <span class="text-base font-bold text-stone-900">⚡ Core Software Engineering &amp; Problem Solving</span>
-          <span class="text-xs px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-mono font-semibold">3 Portals</span>
+      <section class="space-y-3">
+        <div class="flex items-center justify-between px-1">
+          <h2 class="text-sm font-extrabold uppercase tracking-wider text-stone-800 flex items-center gap-1.5">
+            <span>🚀</span> Core Workspaces &amp; Engines
+          </h2>
+          <span class="text-xs text-stone-500 font-mono">Instant Jump</span>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-
-          <!-- Card 1: DSA Master Tracker & Problem Library -->
-          <span id="dsa-library" class="relative -top-24 block invisible pointer-events-none"></span>
-          <article id="dsa-portal" data-selectable-card="true" data-track-key="dashboard-dsa-portal" data-category="engineering" data-keywords="dsa leetcode patterns algorithms arrays sliding window two pointers prefix sum binary search trees graphs dynamic programming monotonic stack faang tracking questions dropdown" class="resource-card glass-droplet rounded-2xl border border-emerald-600/40 p-6 sm:p-8 flex flex-col justify-between shadow-md">
-            <div class="space-y-4">
-              <div class="flex items-start justify-between gap-3 flex-wrap">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-100 border border-emerald-300 text-emerald-900 text-xs font-bold uppercase tracking-wider">
-                  <span>⚡</span> 240+ LeetCode Pattern Tracker
-                </div>
-                <div class="flex items-center gap-2">
-                  <button onclick="playAudioSummary(this, 'DSA Master Tracker Overview', 'DSA Master Tracker: Features over 240 carefully curated LeetCode problems organized across 25 algorithmic patterns. Includes mental models and optimal thinking approaches for each question, company focus tags for Google, Meta, and Amazon, interactive checkmark progress, and local browser persistence.')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 hover:bg-emerald-200 text-emerald-900 border border-emerald-300 text-xs font-semibold transition-all">
-                    <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                    <span class="audio-label" data-default-label="Audio Brief (20s)">Audio Brief (20s)</span>
-                  </button>
-                  <span class="text-xs font-mono font-bold text-emerald-900 bg-emerald-100 px-2.5 py-1 rounded-md border border-emerald-300">247 Qs</span>
-                </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+          
+          <!-- Portal 1: CAT 2026 Strategy & Syllabus -->
+          <div class="glass-droplet-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between space-y-3">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-900 border border-amber-300 font-mono">
+                  🐯 CAT 2026
+                </span>
+                <span class="text-[11px] font-mono font-bold text-amber-900">72 Days • 14 Mocks</span>
               </div>
-
-              <div>
-                <h2 class="text-2xl font-extrabold text-stone-900 tracking-tight flex items-center gap-2">
-                  DSA Master Tracker &amp; Problem Library
-                </h2>
-                <p class="text-stone-700 text-sm mt-2 leading-relaxed">
-                  Targeted mastery of <strong class="text-stone-900">240+ curated problems</strong> across 25 algorithmic patterns. Features direct problem links, company priority mappings (Google, Meta, Amazon, Microsoft, Uber), and an expandable <em>"Helping Approach / How to Think"</em> breakdown with optimal time/space complexities and interview traps.
-                </p>
-              </div>
-
-              <div class="flex flex-wrap gap-2 pt-1">
-                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">🎯 25 Core Patterns (Sliding Window, Prefix Sum, DP)</span>
-                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">🏢 FAANG &amp; Tier-1 Company Tags</span>
-                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">💾 LocalStorage Progress Persistence</span>
-                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">💡 Intuition &amp; Mental Model Drawer</span>
-              </div>
+              <h3 class="font-black text-stone-900 text-sm">Strategic Master Roadmap</h3>
+              <p class="text-xs text-stone-600 leading-relaxed">
+                Day-by-day timetable (Sep 19 – Nov 29), high-yield Arithmetic &amp; Algebra QA, Rodha DILR sets, and Sectional mock analysis.
+              </p>
             </div>
-
-            <div class="pt-6 border-t border-stone-200 mt-6 flex flex-wrap items-center gap-3">
-              <a href="learning_hub.html#dsa-track" class="flex-1 min-w-[200px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-sm shadow-sm transition-all">
-                <span>Explore 240+ Questions in Learning Hub ↗</span>
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            <div class="pt-2 border-t border-stone-200/80 flex items-center gap-2">
+              <a href="cat_2026_syllabus_roadmap.html" class="flex-1 text-center py-2 px-3 rounded-xl bg-amber-700 hover:bg-amber-800 text-white font-bold text-xs transition-all shadow-2xs">
+                Open Roadmap ↗
               </a>
-              <a href="dsa_master_tracker.html" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-white hover:bg-stone-100 text-emerald-800 font-semibold text-sm border border-stone-300 shadow-sm transition-all" title="Launch Dedicated Standalone Tracker">
-                <span>Full Tracker ↗</span>
-              </a>
-              <button onclick="openPreview('dsa_master_tracker.html', 'DSA Master Tracker')" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-white hover:bg-stone-100 text-stone-700 font-semibold text-sm border border-stone-300 shadow-sm transition-all">
-                <svg class="w-4 h-4 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                <span>Preview</span>
-              </button>
-            </div>
-          </article>
-
-          <!-- Card 2: Engineering Learning Hub -->
-          <article id="learning-portal" data-selectable-card="true" data-track-key="dashboard-learning-portal" data-category="engineering" data-keywords="learning hub curriculum engineering architecture system design devops docker kubernetes ai rag database postgresql typescript" class="resource-card glass-droplet rounded-2xl border border-blue-600/40 p-6 sm:p-8 flex flex-col justify-between shadow-md">
-            <div class="space-y-4">
-              <div class="flex items-start justify-between gap-3 flex-wrap">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-100 border border-blue-300 text-blue-900 text-xs font-bold uppercase tracking-wider">
-                  <span>🧠</span> Modular Curriculum &amp; Architecture
-                </div>
-                <div class="flex items-center gap-2">
-                  <button onclick="playAudioSummary(this, 'Learning Hub Overview', 'Engineering Learning Hub: Modular curriculum tracks spanning TypeScript Mastery, Distributed System Design, Cloud and DevOps, Applied AI, and High-Performance Databases. Engineered to bridge the gap between syntax and production architecture.')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-100 hover:bg-blue-200 text-blue-900 border border-blue-300 text-xs font-semibold transition-all">
-                    <svg class="w-3.5 h-3.5 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                    <span class="audio-label" data-default-label="Audio Brief (25s)">Audio Brief (25s)</span>
-                  </button>
-                  <span class="text-xs font-mono font-bold text-blue-900 bg-blue-100 px-2.5 py-1 rounded-md border border-blue-300">Active Hub</span>
-                </div>
-              </div>
-
-              <div>
-                <h2 class="text-2xl font-extrabold text-stone-900 tracking-tight flex items-center gap-2">
-                  Engineering Learning Hub
-                </h2>
-                <p class="text-stone-700 text-sm mt-2 leading-relaxed">
-                  Comprehensive continuous learning center organizing 6 structured engineering tracks (Track 0 to 5): DSA Problem Library, Production TypeScript, Distributed Systems, Cloud &amp; DevOps Infrastructure, Applied AI Systems, and Database Engineering.
-                </p>
-              </div>
-
-              <div class="flex flex-wrap gap-2 pt-1">
-                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">Track 0: DSA Problem Library (240+ LC)</span>
-                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">Track 1: Production TypeScript (17.6K Lines)</span>
-                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">Track 2: System Design &amp; Architecture</span>
-                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">Track 3: Cloud &amp; DevOps (Docker, K8s)</span>
-                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">Track 4: Applied AI &amp; LLM Systems</span>
-                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">Track 5: Database Engineering (SQL &amp; Internals)</span>
-              </div>
-            </div>
-
-            <div class="pt-6 border-t border-stone-200 mt-6 flex flex-wrap items-center gap-3">
-              <a href="learning_hub.html" class="flex-1 min-w-[170px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-semibold text-sm shadow-sm transition-all">
-                <span>Open Learning Hub</span>
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-              </a>
-              <button onclick="openPreview('learning_hub.html', 'Engineering Learning Hub')" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-white hover:bg-stone-100 text-stone-700 font-semibold text-sm border border-stone-300 shadow-sm transition-all">
-                <svg class="w-4 h-4 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                <span>Preview</span>
-              </button>
-            </div>
-          </article>
-
-          <!-- Card 3: Production TypeScript Curriculum -->
-          <article id="ts-guide" data-selectable-card="true" data-track-key="dashboard-ts-guide" data-category="engineering" data-keywords="typescript curriculum guide production drills nextjs react zod generics conditional types ast compiler" class="resource-card glass-droplet rounded-2xl border border-indigo-600/40 p-6 sm:p-8 flex flex-col justify-between shadow-md lg:col-span-2">
-            <div class="space-y-4">
-              <div class="flex items-start justify-between gap-3 flex-wrap">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-indigo-100 border border-indigo-300 text-indigo-900 text-xs font-bold uppercase tracking-wider">
-                  <span>📘</span> 17,600+ Lines Curriculum
-                </div>
-                <div class="flex items-center gap-2">
-                  <button onclick="playAudioSummary(this, 'TypeScript Curriculum Overview', 'Production TypeScript Guide: Covers 10 progressive mastery levels, 79 core topics, 100-plus hands-on practice drills, and 10 production labs spanning Next.js, React 19, Zod schemas, and advanced type architectures.')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-100 hover:bg-indigo-200 text-indigo-900 border border-indigo-300 text-xs font-semibold transition-all">
-                    <svg class="w-3.5 h-3.5 text-indigo-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                    <span class="audio-label" data-default-label="Audio Brief (25s)">Audio Brief (25s)</span>
-                  </button>
-                  <span class="text-xs font-mono font-bold text-indigo-900 bg-indigo-100 px-2.5 py-1 rounded-md border border-indigo-300">10 Levels • 79 Topics • 100+ Drills</span>
-                </div>
-              </div>
-
-              <div>
-                <h2 class="text-2xl font-extrabold text-stone-900 tracking-tight flex items-center gap-2">
-                  Production TypeScript &amp; Architecture Curriculum
-                </h2>
-                <p class="text-stone-700 text-sm mt-2 leading-relaxed">
-                  Enterprise-grade guide containing over 17,600 lines of comprehensive documentation &amp; curriculum, progressive challenges from strict type foundations to type-level metaprogramming, and zero-compromise production architectures.
-                </p>
-              </div>
-
-              <div class="flex flex-wrap gap-2 pt-1">
-                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">Level 1–4: Beginner, Intermediate, Advanced &amp; Expert Internals</span>
-                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">Level 5–10: React/Next.js, Node, API Safety, Production, Testing &amp; Interviews</span>
-                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">10 Production Labs &amp; 100+ Drills</span>
-              </div>
-            </div>
-
-            <div class="pt-6 border-t border-stone-200 mt-6 flex flex-wrap items-center gap-3">
-              <a href="typescript_curriculum.html" class="flex-1 min-w-[200px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-700 hover:bg-indigo-800 text-white font-semibold text-sm shadow-sm transition-all">
-                <span>Launch TypeScript Curriculum</span>
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-              </a>
-              <button onclick="openPreview('typescript_curriculum.html', 'Production TypeScript Curriculum')" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-white hover:bg-stone-100 text-stone-700 font-semibold text-sm border border-stone-300 shadow-sm transition-all">
-                <svg class="w-4 h-4 text-indigo-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                <span>Preview</span>
-              </button>
-            </div>
-          </article>
-
-        </div>
-      </section>
-
-      <!-- ========================================================================= -->
-      <!-- SECTION B: HIGHER EDUCATION & ADMISSIONS STRATEGY                         -->
-      <!-- ========================================================================= -->
-      <section class="space-y-4" id="section-academics">
-        <div class="flex items-center gap-2 px-1">
-          <span class="text-base font-bold text-stone-900">🎓 Higher Education &amp; Admissions Strategy</span>
-          <span class="text-xs px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-mono font-semibold">2 Roadmaps</span>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-
-          <!-- Card 4: German Universities Evaluation -->
-          <article id="german-portal" data-selectable-card="true" data-track-key="dashboard-german-portal" data-category="academics" data-keywords="germany master masters university universities passau siegen deggendorf hildesheim ects aps blue card tum tu9 rwth dortmund frankfurt tu berlin daad" class="resource-card glass-droplet rounded-2xl border border-stone-300/80 p-6 sm:p-8 flex flex-col justify-between shadow-md">
-            <div class="space-y-4">
-              <div class="flex items-start justify-between gap-3 flex-wrap">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-100 border border-emerald-300 text-emerald-900 text-xs font-bold uppercase tracking-wider">
-                  <span>🇩🇪</span> M.Sc. Admissions Engine (2026/27)
-                </div>
-                <div class="flex items-center gap-2">
-                  <button onclick="playAudioSummary(this, 'German Universities Strategic Roadmap', 'German Universities Roadmap: This analysis evaluates your 70.56% B.Tech degree, converting to a German 2.47 Gut. With approximately 70 ECTS in core computer science, you are directly eligible for tuition-free Master of Science degrees at public universities like Passau, Siegen, and TH Deggendorf.')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 hover:bg-emerald-200 text-emerald-900 border border-emerald-300 text-xs font-semibold transition-all">
-                    <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                    <span class="audio-label" data-default-label="Audio Brief (20s)">Audio Brief (20s)</span>
-                  </button>
-                  <span class="text-xs font-mono font-bold text-stone-700 bg-stone-100 px-2.5 py-1 rounded-md border border-stone-300">€0 Tuition</span>
-                </div>
-              </div>
-
-              <div>
-                <h2 class="text-2xl font-extrabold text-stone-900 tracking-tight flex items-center gap-2">
-                  German Universities Postgraduate Evaluation
-                </h2>
-                <p class="text-stone-700 text-sm mt-2 leading-relaxed">
-                  Exhaustive analysis comparing consecutive <strong class="text-stone-900">€0-tuition M.Sc. Computer Science</strong> vs. private MBAs. Features an interactive filter for Safe, Realistic, and Ambitious universities, exact ECTS matching criteria, and EU Blue Card residency pathways.
-                </p>
-              </div>
-
-              <div class="flex flex-wrap gap-2 pt-1">
-                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">🎯 Passau (Cutoff 2.7 - Strong Match)</span>
-                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">🏛️ Siegen (No NC / Direct Eligible)</span>
-                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">⚙️ TH Deggendorf (Aptitude Exam)</span>
-                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">📑 Complete APS &amp; Blocked Account Guide</span>
-              </div>
-            </div>
-
-            <div class="pt-6 border-t border-stone-200 mt-6 flex flex-wrap items-center gap-3">
-              <a href="german_universities_evaluation.html" class="flex-1 min-w-[170px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-sm shadow-sm transition-all">
-                <span>Open German Engine</span>
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-              </a>
-              <button onclick="openPreview('german_universities_evaluation.html', 'German Universities Evaluation')" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-white hover:bg-stone-100 text-stone-700 font-semibold text-sm border border-stone-300 shadow-sm transition-all">
-                <svg class="w-4 h-4 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                <span>Preview</span>
-              </button>
-            </div>
-          </article>
-
-          <!-- Card 5: CAT 2026 Strategy Roadmap -->
-          <article id="cat-portal" data-selectable-card="true" data-track-key="dashboard-cat-portal" data-category="academics" data-keywords="cat 2026 iim iit doms sjmsom fms quant dilr varc arithmetic algebra geometry mba syllabus strategy roadmap" class="resource-card glass-droplet rounded-2xl border border-stone-300/80 p-6 sm:p-8 flex flex-col justify-between shadow-md">
-            <div class="space-y-4">
-              <div class="flex items-start justify-between gap-3 flex-wrap">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-amber-100 border border-amber-300 text-amber-900 text-xs font-bold uppercase tracking-wider">
-                  <span>🐯</span> CAT 2026 Master Strategy
-                </div>
-                <div class="flex items-center gap-2">
-                  <button onclick="playAudioSummary(this, 'CAT 2026 Strategic Master Roadmap', 'CAT 2026 Strategy: Targeting 93 to 96 percentile for premier IIT management programs and CAP IIMs. Covers the 140-hour Quantitative Aptitude engine with Arithmetic and Algebra prioritization, structured DILR caselets, and weekly milestone tracking.')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 hover:bg-amber-200 text-amber-900 border border-amber-300 text-xs font-semibold transition-all">
-                    <svg class="w-3.5 h-3.5 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                    <span class="audio-label" data-default-label="Audio Brief (20s)">Audio Brief (20s)</span>
-                  </button>
-                  <span class="text-xs font-mono font-bold text-amber-900 bg-amber-100 px-2.5 py-1 rounded-md border border-amber-300">93–96%ile</span>
-                </div>
-              </div>
-
-              <div>
-                <h2 class="text-2xl font-extrabold text-stone-900 tracking-tight flex items-center gap-2">
-                  CAT 2026 Strategic Master Roadmap
-                </h2>
-                <p class="text-stone-700 text-sm mt-2 leading-relaxed">
-                  Engineered preparation roadmap prioritizing high-yield sections: Arithmetic &amp; Algebra (historical core of QA • 13–17 of 22 Qs), structured DILR frameworks, and daily editorial reading for VARC targeting IIT Delhi, Madras, and FMS Delhi.
-                </p>
-              </div>
-
-              <div class="flex flex-wrap gap-2 pt-1">
-                <span class="px-2.5 py-1 rounded-md bg-amber-50 border border-amber-300 text-xs text-amber-950 font-bold shadow-xs">⭐ Enrolled: Career Launcher VARC Course</span>
-                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">Target: DoMS IIT Delhi / Madras / Roorkee</span>
-                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">140-Hour QA Syllabus with Topic Weightages</span>
-                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">Weekly Milestones &amp; Mock Test Schedule</span>
-              </div>
-            </div>
-
-            <div class="pt-6 border-t border-stone-200 mt-6 flex flex-wrap items-center gap-3">
-              <a href="cat_2026_syllabus_roadmap.html" class="flex-1 min-w-[170px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-amber-700 hover:bg-amber-800 text-white font-semibold text-sm shadow-sm transition-all">
-                <span>Open CAT Roadmap</span>
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-              </a>
-              <a href="https://myzone.careerlauncher.com/login.jsp" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-900 font-semibold text-sm border border-amber-300 shadow-sm transition-all" title="Login to Career Launcher MyZone">
-                <span class="text-xs">🎓</span>
-                <span>CL MyZone</span>
-              </a>
-              <button onclick="openPreview('cat_2026_syllabus_roadmap.html', 'CAT 2026 Syllabus & Roadmap')" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-white hover:bg-stone-100 text-stone-700 font-semibold text-sm border border-stone-300 shadow-sm transition-all">
-                <svg class="w-4 h-4 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                <span>Preview</span>
-              </button>
-            </div>
-          </article>
-
-        </div>
-      </section>
-
-      <!-- ========================================================================= -->
-      <!-- SECTION C: PROFESSIONAL DOSSIER & CLOUD ENGINEERING                      -->
-      <!-- ========================================================================= -->
-      <section class="space-y-4" id="section-dossier">
-        <div class="flex items-center gap-2 px-1">
-          <span class="text-base font-bold text-stone-900">💼 Professional Dossier &amp; Cloud Work</span>
-          <span class="text-xs px-2 py-0.5 rounded-full bg-stone-200 text-stone-800 font-mono font-semibold">2 Portals</span>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-
-          <!-- Card 6: Dual-Track Professional Resumes -->
-          <article id="lebenslauf" data-selectable-card="true" data-track-key="dashboard-lebenslauf" data-category="dossier" data-keywords="resume cv fullstack engineer experience skills education lakshay nagpal pdf download german companies" class="resource-card glass-droplet rounded-2xl border border-stone-300/80 p-6 sm:p-8 flex flex-col justify-between shadow-md">
-            <div class="space-y-4">
-              <div class="flex items-start justify-between gap-3 flex-wrap">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-stone-200 border border-stone-300 text-stone-900 text-xs font-bold uppercase tracking-wider">
-                  <span>📄</span> Professional Resumes
-                </div>
-                <div class="flex items-center gap-2">
-                  <button onclick="playAudioSummary(this, 'Resumes Overview', 'Professional Resumes: Access both the Original Full-Stack Resume for Indian and global tech roles, and the German Companies CV tailored for EU Blue Card, Anabin H+ verification, and DACH scale-ups.')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-200 hover:bg-stone-300 text-stone-900 border border-stone-300 text-xs font-semibold transition-all">
-                    <svg class="w-3.5 h-3.5 text-stone-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                    <span class="audio-label" data-default-label="Audio Brief (15s)">Audio Brief (15s)</span>
-                  </button>
-                  <span class="text-xs font-mono font-bold text-stone-700 bg-stone-100 px-2.5 py-1 rounded-md border border-stone-300">2 Formats</span>
-                </div>
-              </div>
-
-              <div>
-                <h2 class="text-2xl font-extrabold text-stone-900 tracking-tight flex items-center gap-2">
-                  Software Engineering Resumes (Dual-Track)
-                </h2>
-                <p class="text-stone-700 text-sm mt-2 leading-relaxed">
-                  Two verified 1-page curriculum vitae optimized for specific hiring markets:
-                </p>
-              </div>
-
-              <!-- Two Resume Options Grid -->
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-                <!-- Option 1: Original Resume -->
-                <div class="p-3.5 rounded-xl bg-white/90 border border-stone-200 space-y-2 flex flex-col justify-between shadow-2xs">
-                  <div>
-                    <div class="flex items-center justify-between">
-                      <span class="text-xs font-bold text-stone-900">📄 Original Resume</span>
-                      <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-stone-100 text-stone-700 border border-stone-200">Full-Stack</span>
-                    </div>
-                    <p class="text-[11px] text-stone-600 mt-1 leading-relaxed">
-                      Optimized for Indian product companies &amp; global remote roles. Highlights React 19, Next.js, Node.js, TypeScript, PostgreSQL, and algorithmic DSA.
-                    </p>
-                  </div>
-                  <div class="flex items-center gap-2 pt-2 border-t border-stone-100">
-                    <a href="resume.html" class="flex-1 text-center py-1.5 px-2 rounded-lg bg-stone-800 hover:bg-stone-900 text-white text-xs font-semibold transition-all">
-                      View Web
-                    </a>
-                    <a href="assets/Lakshay_Nagpal_Resume_Original.pdf" download="Lakshay_Nagpal_Resume.pdf" class="py-1.5 px-2.5 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-semibold border border-stone-300 transition-all" title="Download PDF">
-                      PDF 📥
-                    </a>
-                  </div>
-                </div>
-
-                <!-- Option 2: German Companies CV -->
-                <div class="p-3.5 rounded-xl bg-blue-50/60 border border-blue-200 space-y-2 flex flex-col justify-between shadow-2xs">
-                  <div>
-                    <div class="flex items-center justify-between">
-                      <span class="text-xs font-bold text-blue-950">🇩🇪 German Companies CV</span>
-                      <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-900 border border-blue-300">Blue Card</span>
-                    </div>
-                    <p class="text-[11px] text-stone-600 mt-1 leading-relaxed">
-                      Optimized for German tech scale-ups (Berlin/Munich). Highlights EU Blue Card (§18g AufenthG), Anabin H+, Bavarian grade (~2.4 "Gut"), and CEFR languages.
-                    </p>
-                  </div>
-                  <div class="flex items-center gap-2 pt-2 border-t border-blue-100">
-                    <a href="Lakshay_Nagpal_CV.html" class="flex-1 text-center py-1.5 px-2 rounded-lg bg-blue-900 hover:bg-blue-950 text-white text-xs font-semibold transition-all">
-                      View Web
-                    </a>
-                    <a href="https://drive.google.com/file/d/15GwnY6jhijyzTbYt-QVjesA7c4dnuHzE/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="py-1.5 px-2.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-semibold transition-all" title="Google Drive PDF">
-                      Drive ↗
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="pt-4 border-t border-stone-200 mt-4 flex flex-wrap items-center justify-between gap-3 text-xs">
-              <span class="text-stone-500 font-medium">Both versions reflect verified OATI enterprise experience &amp; live production apps.</span>
-              <div class="flex items-center gap-2">
-                <a href="https://drive.google.com/file/d/15GwnY6jhijyzTbYt-QVjesA7c4dnuHzE/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-emerald-800 hover:underline font-bold">
-                  📥 Download German PDF
-                </a>
-                <span>·</span>
-                <a href="assets/Lakshay_Nagpal_Resume_Original.pdf" download="Lakshay_Nagpal_Resume.pdf" class="text-blue-800 hover:underline font-bold">
-                  📥 Download Original PDF
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 7: Cloud Production Projects & Microservices -->
-          <article id="projects" data-selectable-card="true" data-track-key="dashboard-projects" data-category="dossier" data-keywords="projects cloud portfolio live microservices docker nextjs redis tailwind postgresql" class="resource-card glass-droplet rounded-2xl border border-stone-300/80 p-6 sm:p-8 flex flex-col justify-between shadow-md">
-            <div class="space-y-4">
-              <div class="flex items-start justify-between gap-3 flex-wrap">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-stone-200 border border-stone-300 text-stone-900 text-xs font-bold uppercase tracking-wider">
-                  <span>💻</span> Production Cloud Services
-                </div>
-                <div class="flex items-center gap-2">
-                  <button onclick="playAudioSummary(this, 'Cloud Projects Overview', 'Projects Showcase: Production full-stack services including high-concurrency Node and TypeScript backends, Redis caching tiers, Docker containers, and Next.js frontend architectures.')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-200 hover:bg-stone-300 text-stone-900 border border-stone-300 text-xs font-semibold transition-all">
-                    <svg class="w-3.5 h-3.5 text-stone-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                    <span class="audio-label" data-default-label="Audio Brief (15s)">Audio Brief (15s)</span>
-                  </button>
-                  <span class="text-xs font-mono font-bold text-stone-700 bg-stone-100 px-2.5 py-1 rounded-md border border-stone-300">Live Apps</span>
-                </div>
-              </div>
-
-              <div>
-                <h2 class="text-2xl font-extrabold text-stone-900 tracking-tight flex items-center gap-2">
-                  Cloud Production Projects &amp; Live Web Applications
-                </h2>
-                <p class="text-stone-700 text-sm mt-2 leading-relaxed">
-                  End-to-end deployed production web applications demonstrating WebSocket event pipelines, PostgreSQL/Prisma database indexing, Gemini AI data analysis, and microservice integration:
-                </p>
-              </div>
-
-              <!-- Two Featured Live Apps in Card 7 -->
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
-                <div class="p-3.5 rounded-xl bg-white/90 border border-stone-300 space-y-1.5 shadow-sm">
-                  <div class="flex items-center justify-between">
-                    <span class="font-bold text-xs text-stone-900">💬 Real-Time Chat App</span>
-                    <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold">Next.js 16 + Socket.IO</span>
-                  </div>
-                  <p class="text-[11px] text-stone-600 leading-snug">
-                    PostgreSQL/Prisma, room presence, optimized indexed message retrieval.
-                  </p>
-                  <div class="flex items-center gap-2 pt-1">
-                    <a href="https://chat-application-blush-phi.vercel.app/" target="_blank" rel="noreferrer" class="text-xs font-bold text-emerald-800 hover:text-emerald-950 underline">Live App ↗</a>
-                    <span class="text-stone-300">•</span>
-                    <a href="https://github.com/lakshayn0001/Chat-Application" target="_blank" rel="noreferrer" class="text-xs font-medium text-stone-600 hover:text-stone-900 underline">GitHub ↗</a>
-                  </div>
-                </div>
-
-                <div class="p-3.5 rounded-xl bg-white/90 border border-stone-300 space-y-1.5 shadow-sm">
-                  <div class="flex items-center justify-between">
-                    <span class="font-bold text-xs text-stone-900">📊 AI Data Analyst</span>
-                    <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-blue-100 text-blue-800 font-bold">React + Gemini AI</span>
-                  </div>
-                  <p class="text-[11px] text-stone-600 leading-snug">
-                    Multer CSV streaming, natural-language to DB queries &amp; interactive charts.
-                  </p>
-                  <div class="flex items-center gap-2 pt-1">
-                    <a href="https://ai-data-analyst-dashboard-orcin.vercel.app/" target="_blank" rel="noreferrer" class="text-xs font-bold text-blue-800 hover:text-blue-950 underline">Live App ↗</a>
-                    <span class="text-stone-300">•</span>
-                    <a href="https://github.com/lakshayn0001/AI_Data_Analyst_Dashboard" target="_blank" rel="noreferrer" class="text-xs font-medium text-stone-600 hover:text-stone-900 underline">GitHub ↗</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flex flex-wrap gap-2 pt-1">
-                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">WebSocket Concurrency</span>
-                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">PostgreSQL / Prisma</span>
-                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">Gemini AI Queries</span>
-              </div>
-            </div>
-
-            <div class="pt-6 border-t border-stone-200 mt-6 flex flex-wrap items-center gap-3">
-              <a href="profile.html#cold-email" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-xs shadow-sm transition-all">
-                <span>✉️ Cold Email Generator ↗</span>
-              </a>
-              <a href="https://lakshayn0001.github.io/Portfolio/" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-900 font-semibold text-xs border border-stone-300 shadow-sm transition-all">
-                <span>Live Portfolio ↗</span>
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-              </a>
-              <a href="https://github.com/lakshayn0001" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-white hover:bg-stone-100 text-stone-700 font-semibold text-xs border border-stone-300 shadow-sm transition-all">
-                <span>GitHub ↗</span>
+              <a href="https://myzone.careerlauncher.com/login.jsp" target="_blank" rel="noreferrer" class="py-2 px-3 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-950 font-bold text-xs border border-amber-300 transition-all" title="CL MyZone Login">
+                CL Portal ↗
               </a>
             </div>
-          </article>
+          </div>
+
+          <!-- Portal 2: German Universities Master of Science -->
+          <div class="glass-droplet-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between space-y-3">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-blue-100 text-blue-900 border border-blue-300 font-mono">
+                  🇩🇪 Germany M.Sc.
+                </span>
+                <span class="text-[11px] font-mono font-bold text-blue-900">€0 Public Tuition</span>
+              </div>
+              <h3 class="font-black text-stone-900 text-sm">Postgraduate Admissions Engine</h3>
+              <p class="text-xs text-stone-600 leading-relaxed">
+                Passau 2/3 credit rule, ~70 CS ECTS alignment, Anabin H+ verification, and Bavarian grade benchmark (2.47 'Gut').
+              </p>
+            </div>
+            <div class="pt-2 border-t border-stone-200/80 flex items-center gap-2">
+              <a href="german_universities_evaluation.html" class="flex-1 text-center py-2 px-3 rounded-xl bg-blue-800 hover:bg-blue-900 text-white font-bold text-xs transition-all shadow-2xs">
+                Admissions Engine ↗
+              </a>
+              <a href="deadlines_calendar.html" class="py-2 px-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold text-xs border border-stone-300 transition-all" title="Deadlines">
+                Deadlines ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- Portal 3: DSA Master Tracker (247 LeetCode) -->
+          <div class="glass-droplet-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between space-y-3">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-900 border border-emerald-300 font-mono">
+                  ⚡ DSA Master
+                </span>
+                <span class="text-[11px] font-mono font-bold text-emerald-900">247 Curated Qs</span>
+              </div>
+              <h3 class="font-black text-stone-900 text-sm">LeetCode Problem Bank</h3>
+              <p class="text-xs text-stone-600 leading-relaxed">
+                25 algorithmic patterns with expandable mental models ("Helping Approach / Intuition"), company tags, and localStorage checklist.
+              </p>
+            </div>
+            <div class="pt-2 border-t border-stone-200/80 flex items-center gap-2">
+              <a href="dsa_master_tracker.html" class="flex-1 text-center py-2 px-3 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs transition-all shadow-2xs">
+                Open DSA Tracker ↗
+              </a>
+              <a href="learning_hub.html#dsa-track" class="py-2 px-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold text-xs border border-stone-300 transition-all" title="Track 0 in Hub">
+                Track 0 ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- Portal 4: Engineering Learning Hub -->
+          <div class="glass-droplet-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between space-y-3">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-indigo-100 text-indigo-900 border border-indigo-300 font-mono">
+                  🧠 Learning Hub
+                </span>
+                <span class="text-[11px] font-mono font-bold text-indigo-900">6 Tracks</span>
+              </div>
+              <h3 class="font-black text-stone-900 text-sm">Engineering Architecture</h3>
+              <p class="text-xs text-stone-600 leading-relaxed">
+                Production TypeScript (17.6K lines), Distributed System Design, Cloud &amp; DevOps (Docker/K8s), Applied AI, and Database Internals.
+              </p>
+            </div>
+            <div class="pt-2 border-t border-stone-200/80 flex items-center gap-2">
+              <a href="learning_hub.html" class="flex-1 text-center py-2 px-3 rounded-xl bg-indigo-700 hover:bg-indigo-800 text-white font-bold text-xs transition-all shadow-2xs">
+                Launch Hub ↗
+              </a>
+              <a href="typescript_curriculum.html" class="py-2 px-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold text-xs border border-stone-300 transition-all" title="TypeScript Guide">
+                TS Guide ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- Portal 5: Dual Resumes & Outreach -->
+          <div class="glass-droplet-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between space-y-3">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-stone-200 text-stone-800 border border-stone-300 font-mono">
+                  📄 Resumes
+                </span>
+                <span class="text-[11px] font-mono font-bold text-stone-700">Dual-Track</span>
+              </div>
+              <h3 class="font-black text-stone-900 text-sm">Full-Stack &amp; German CV</h3>
+              <p class="text-xs text-stone-600 leading-relaxed">
+                Original resume (React 19 / Node / TypeScript) and German DIN A4 CV detailing EU Blue Card eligibility (§18g AufenthG) and Bavarian grade.
+              </p>
+            </div>
+            <div class="pt-2 border-t border-stone-200/80 flex items-center gap-2">
+              <a href="https://drive.google.com/file/d/15GwnY6jhijyzTbYt-QVjesA7c4dnuHzE/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="flex-1 text-center py-2 px-3 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-xs transition-all shadow-2xs">
+                German PDF 📥
+              </a>
+              <a href="assets/Lakshay_Nagpal_Resume_Original.pdf" download="Lakshay_Nagpal_Resume.pdf" class="py-2 px-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold text-xs border border-stone-300 transition-all" title="Original PDF">
+                Original 📥
+              </a>
+            </div>
+          </div>
+
+          <!-- Portal 6: Active Cloud Projects & Demos -->
+          <div class="glass-droplet-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between space-y-3">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-purple-100 text-purple-900 border border-purple-300 font-mono">
+                  💻 Live Demos
+                </span>
+                <span class="text-[11px] font-mono font-bold text-purple-900">2 Production Apps</span>
+              </div>
+              <h3 class="font-black text-stone-900 text-sm">Cloud Microservices</h3>
+              <p class="text-xs text-stone-600 leading-relaxed">
+                Next.js 16 Real-Time Chat App (Socket.IO &amp; PostgreSQL/Prisma) and AI Data Analyst Dashboard with Gemini AI &amp; CSV streaming.
+              </p>
+            </div>
+            <div class="pt-2 border-t border-stone-200/80 flex items-center gap-2">
+              <a href="https://chat-application-blush-phi.vercel.app/" target="_blank" rel="noreferrer" class="flex-1 text-center py-2 px-3 rounded-xl bg-stone-900 hover:bg-stone-800 text-white font-bold text-xs transition-all shadow-2xs">
+                Chat App ↗
+              </a>
+              <a href="https://ai-data-analyst-dashboard-orcin.vercel.app/" target="_blank" rel="noreferrer" class="flex-1 text-center py-2 px-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-900 font-bold text-xs border border-stone-300 transition-all">
+                AI Analyst ↗
+              </a>
+            </div>
+          </div>
 
         </div>
       </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="mt-auto border-t border-stone-300/70 bg-[#e4eae0] py-8 text-center text-xs text-stone-600">
-      <div class="max-w-7xl mx-auto px-4 space-y-2">
-        <div class="flex justify-center items-center gap-4 text-stone-700">
-          <a href="learning_hub.html" class="hover:text-emerald-800 transition-colors font-semibold">Learning Hub</a>
+    <!-- Clean Minimal Footer -->
+    <footer class="mt-auto border-t border-stone-300/70 bg-[#e4eae0]/70 py-4 text-center text-xs text-stone-600">
+      <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <span class="font-mono">Lakshay Nagpal · Personal Execution Cockpit</span>
+        <div class="flex items-center gap-3 text-stone-600 text-[11px]">
+          <a href="cat_2026_syllabus_roadmap.html" class="hover:text-stone-950 font-semibold">CAT Roadmap</a>
           <span>•</span>
-          <a href="dsa_master_tracker.html" class="hover:text-emerald-800 transition-colors font-semibold">DSA Tracker</a>
+          <a href="german_universities_evaluation.html" class="hover:text-stone-950 font-semibold">German MSc</a>
           <span>•</span>
-          <a href="https://github.com/lakshayn0001" target="_blank" rel="noreferrer" class="hover:text-emerald-800 transition-colors">GitHub</a>
+          <a href="dsa_master_tracker.html" class="hover:text-stone-950 font-semibold">DSA Tracker</a>
           <span>•</span>
-          <a href="https://lakshayn0001.github.io/Portfolio/" target="_blank" rel="noreferrer" class="hover:text-emerald-800 transition-colors">Developer Portfolio</a>
-          <span>•</span>
-          <a href="mailto:lakshayn0001@gmail.com" class="hover:text-emerald-800 transition-colors">Contact</a>
+          <a href="https://github.com/lakshayn0001/dashboard" target="_blank" rel="noreferrer" class="hover:text-stone-950 font-semibold">GitHub Repo</a>
         </div>
-        <p>&copy; 2026 Lakshay Nagpal. Engineering &amp; Academic Control Center • Configured for GitHub Pages deployment.</p>
       </div>
     </footer>
 
-  </div> <!-- End Main Content Wrapper (lg:pl-72) -->
-
-  <!-- Interactive Fullscreen / In-Page Preview Modal -->
-  <div id="previewModal" class="fixed inset-0 z-50 hidden bg-stone-900/60 backdrop-blur-md flex flex-col items-center justify-center p-2 sm:p-6">
-    <div class="bg-white border border-stone-300 rounded-2xl w-full max-w-6xl h-[92vh] flex flex-col shadow-2xl overflow-hidden">
-      <!-- Modal Header -->
-      <div class="px-5 py-3.5 border-b border-stone-200 bg-stone-50 flex items-center justify-between gap-4">
-        <div class="flex items-center gap-2.5 overflow-hidden">
-          <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse"></span>
-          <span id="previewTitle" class="font-bold text-sm sm:text-base text-stone-900 truncate">Preview</span>
-          <span id="previewUrlBadge" class="hidden sm:inline-block font-mono text-[11px] text-stone-600 bg-stone-200 px-2 py-0.5 rounded"></span>
-        </div>
-        <div class="flex items-center gap-2">
-          <a id="previewExternalLink" href="#" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-semibold transition-all">
-            <span>Open in Tab</span>
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-          </a>
-          <button onclick="closePreview()" class="p-1.5 rounded-lg bg-stone-200 hover:bg-stone-300 text-stone-700 hover:text-stone-950 transition-all" title="Close (Esc)">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-          </button>
-        </div>
-      </div>
-      <!-- Modal Iframe Container -->
-      <div class="flex-grow w-full h-full bg-white relative">
-        <iframe id="previewIframe" src="about:blank" class="w-full h-full border-0"></iframe>
-      </div>
-    </div>
   </div>
 
   <!-- Toast Notification -->
   <div id="toast" class="fixed bottom-6 right-6 z-50 hidden px-4 py-2.5 rounded-xl bg-stone-900 text-white text-xs font-semibold shadow-xl flex items-center gap-2">
-    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-    <span id="toastMsg">Link copied to clipboard!</span>
+    <span class="text-emerald-400">✓</span>
+    <span id="toastMsg">Action completed!</span>
   </div>
 
-  <!-- Floating Bottom Audio Controller Bar -->
-  <div id="floatingAudioBar" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden max-w-xl w-[92%] sm:w-auto px-4 py-2.5 rounded-2xl bg-white/95 border border-stone-300 shadow-2xl backdrop-blur-xl flex items-center justify-between gap-4 transition-all">
-    <div class="flex items-center gap-3 overflow-hidden">
-      <!-- Animated equalizer bars -->
-      <div class="flex items-end gap-0.5 h-4 w-4 text-emerald-700">
-        <span class="w-1 bg-emerald-600 rounded-full animate-bounce h-2"></span>
-        <span class="w-1 bg-emerald-600 rounded-full animate-bounce h-4" style="animation-delay: 0.15s"></span>
-        <span class="w-1 bg-emerald-600 rounded-full animate-bounce h-3" style="animation-delay: 0.3s"></span>
-      </div>
-      <div class="truncate">
-        <div id="audioPlayerTitle" class="text-xs font-bold text-stone-900 truncate">Playing Audio Summary</div>
-        <div id="audioPlayerStatus" class="text-[11px] text-emerald-800">Narrating brief...</div>
-      </div>
-    </div>
-    <div class="flex items-center gap-2 flex-shrink-0">
-      <button onclick="toggleAudioPlayback()" id="audioPlayPauseBtn" class="p-1.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white transition-all" title="Pause / Resume">
-        <svg id="pauseIcon" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/></svg>
-        <svg id="playIcon" class="w-4 h-4 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-      </button>
-      <button onclick="stopAudioSummary()" class="p-1.5 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-600 hover:text-stone-950 transition-all" title="Stop Audio">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-      </button>
-    </div>
-  </div>
-
-  <!-- Interactive Scripts -->
+  <!-- Interactive JavaScript Engine -->
   <script>
     // Navigation Sidebar Toggle
     function toggleSidebar(open) {
@@ -1151,226 +668,22 @@
       }
     }
 
-    // Search Filtering Function for Resource Showcase Cards
-    function filterCards() {
-      const q = document.getElementById('searchInput').value.toLowerCase().trim();
-      const cards = document.querySelectorAll('.resource-card');
-      cards.forEach(card => {
-        const text = (card.getAttribute('data-keywords') || '') + ' ' + card.innerText.toLowerCase();
-        if (!q || text.includes(q)) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-
-    // Category Filter Function
-    function setFilter(cat, btn) {
-      document.querySelectorAll('.filter-tag').forEach(b => {
-        b.classList.remove('bg-emerald-700', 'text-white');
-        b.classList.add('bg-white', 'text-stone-700');
-      });
-      btn.classList.remove('bg-white', 'text-stone-700');
-      btn.classList.add('bg-emerald-700', 'text-white');
-
-      const cards = document.querySelectorAll('.resource-card');
-      cards.forEach(card => {
-        const cCat = card.getAttribute('data-category');
-        if (cat === 'all' || cCat === cat) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-
-    // In-Page Preview Modal Controls
-    function openPreview(url, title) {
-      const modal = document.getElementById('previewModal');
-      const iframe = document.getElementById('previewIframe');
-      const titleEl = document.getElementById('previewTitle');
-      const badgeEl = document.getElementById('previewUrlBadge');
-      const externalLink = document.getElementById('previewExternalLink');
-
-      titleEl.innerText = title;
-      badgeEl.innerText = url;
-      externalLink.href = url;
-      iframe.src = url;
-
-      modal.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closePreview() {
-      const modal = document.getElementById('previewModal');
-      const iframe = document.getElementById('previewIframe');
-      if (modal) modal.classList.add('hidden');
-      if (iframe) iframe.src = 'about:blank';
-      document.body.style.overflow = '';
-    }
-
     // Keyboard ESC listener
     window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        closePreview();
-        toggleSidebar(false);
-      }
+      if (e.key === 'Escape') toggleSidebar(false);
     });
-
-    // Copy File Link Helper
-    function copyFileLink(fileName) {
-      const fullUrl = new URL(fileName, window.location.href).href;
-      navigator.clipboard.writeText(fullUrl).then(() => {
-        showToast(`Copied link to ${fileName}`);
-      }).catch(() => {
-        showToast(`Link: ${fullUrl}`);
-      });
-    }
 
     function showToast(msg) {
       const toast = document.getElementById('toast');
       const toastMsg = document.getElementById('toastMsg');
+      if (!toast || !toastMsg) return;
       toastMsg.innerText = msg;
       toast.classList.remove('hidden');
-      setTimeout(() => {
-        toast.classList.add('hidden');
-      }, 2500);
-    }
-
-    // Web Speech Synthesis Audio Brief Engine (Female Voice Model)
-    let currentUtterance = null;
-    let activeAudioBtn = null;
-
-    function getFemaleVoice() {
-      const voices = window.speechSynthesis.getVoices();
-      if (!voices || voices.length === 0) return null;
-
-      const enVoices = voices.filter(v => v.lang && v.lang.startsWith('en'));
-      const pool = enVoices.length > 0 ? enVoices : voices;
-
-      let found = pool.find(v => /female/i.test(v.name));
-      if (found) return found;
-
-      const femaleNames = [
-        'Samantha', 'Victoria', 'Karen', 'Zira', 'Jenny', 'Aria', 'Ava', 'Allison',
-        'Susan', 'Moira', 'Tessa', 'Fiona', 'Veena', 'Google UK English Female',
-        'Google US English', 'Microsoft Zira', 'Microsoft Jenny', 'Microsoft Aria',
-        'en-US-Neural2-F', 'en-GB-Neural2-F'
-      ];
-      found = pool.find(v => femaleNames.some(fn => v.name.includes(fn)));
-      if (found) return found;
-
-      const maleNames = ['Daniel', 'Alex', 'David', 'George', 'Fred', 'Mark', 'Guy', 'Tom', 'Oliver', 'James'];
-      found = pool.find(v => !maleNames.some(mn => v.name.includes(mn)));
-      return found || pool[0];
-    }
-
-    if ('speechSynthesis' in window) {
-      window.speechSynthesis.onvoiceschanged = () => {
-        window.speechSynthesis.getVoices();
-      };
-    }
-
-    function playAudioSummary(btn, title, text) {
-      if (!('speechSynthesis' in window)) {
-        alert('Text-to-speech audio is not supported in this browser.');
-        return;
-      }
-
-      if (window.speechSynthesis.speaking && activeAudioBtn === btn) {
-        toggleAudioPlayback();
-        return;
-      }
-
-      stopAudioSummary();
-
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.rate = 1.0;
-      utterance.pitch = 1.06; // Articulate, natural female pitch
-
-      const femaleVoice = getFemaleVoice();
-      if (femaleVoice) utterance.voice = femaleVoice;
-
-      utterance.onstart = () => {
-        activeAudioBtn = btn;
-        if (btn) {
-          btn.classList.add('ring-2', 'ring-emerald-500', 'bg-emerald-700', 'text-white');
-          const label = btn.querySelector('.audio-label');
-          if (label) label.innerText = 'Playing...';
-        }
-        const bar = document.getElementById('floatingAudioBar');
-        const titleEl = document.getElementById('audioPlayerTitle');
-        const statusEl = document.getElementById('audioPlayerStatus');
-        if (bar) bar.classList.remove('hidden');
-        if (titleEl) titleEl.innerText = title;
-        if (statusEl) statusEl.innerText = 'Narrating brief summary (Female Voice)...';
-        showPlayIcon(false);
-      };
-
-      utterance.onend = () => {
-        stopAudioSummary();
-      };
-
-      utterance.onerror = () => {
-        stopAudioSummary();
-      };
-
-      currentUtterance = utterance;
-      window.speechSynthesis.speak(utterance);
-    }
-
-    function toggleAudioPlayback() {
-      if (!window.speechSynthesis.speaking) return;
-      if (window.speechSynthesis.paused) {
-        window.speechSynthesis.resume();
-        showPlayIcon(false);
-        if (activeAudioBtn) {
-          const label = activeAudioBtn.querySelector('.audio-label');
-          if (label) label.innerText = 'Playing...';
-        }
-        const statusEl = document.getElementById('audioPlayerStatus');
-        if (statusEl) statusEl.innerText = 'Narrating brief summary...';
-      } else {
-        window.speechSynthesis.pause();
-        showPlayIcon(true);
-        if (activeAudioBtn) {
-          const label = activeAudioBtn.querySelector('.audio-label');
-          if (label) label.innerText = 'Paused';
-        }
-        const statusEl = document.getElementById('audioPlayerStatus');
-        if (statusEl) statusEl.innerText = 'Paused (click to resume)';
-      }
-    }
-
-    function showPlayIcon(isPaused) {
-      const pauseIcon = document.getElementById('pauseIcon');
-      const playIcon = document.getElementById('playIcon');
-      if (pauseIcon && playIcon) {
-        if (isPaused) {
-          pauseIcon.classList.add('hidden');
-          playIcon.classList.remove('hidden');
-        } else {
-          pauseIcon.classList.remove('hidden');
-          playIcon.classList.add('hidden');
-        }
-      }
-    }
-
-    function stopAudioSummary() {
-      window.speechSynthesis.cancel();
-      if (activeAudioBtn) {
-        activeAudioBtn.classList.remove('ring-2', 'ring-emerald-500', 'bg-emerald-700', 'text-white');
-        const label = activeAudioBtn.querySelector('.audio-label');
-        if (label) label.innerText = label.getAttribute('data-default-label') || 'Audio Brief (20s)';
-        activeAudioBtn = null;
-      }
-      const bar = document.getElementById('floatingAudioBar');
-      if (bar) bar.classList.add('hidden');
+      setTimeout(() => toast.classList.add('hidden'), 2500);
     }
 
     // =========================================================================
-    // DAILY PLAN & NOTIFICATIONS ENGINE (data/daily_plan.json)
+    // DAILY PLAN ENGINE (Loads data/daily_plan.json via same-origin fetch)
     // =========================================================================
     let currentDailyPlan = null;
     let dailyPlanTimerInterval = null;
@@ -1406,7 +719,9 @@
     async function loadDailyPlan(forceReload = false) {
       const loadingEl = document.getElementById('dailyPlanLoading');
       const errorEl = document.getElementById('dailyPlanError');
-      const subtitleEl = document.getElementById('dailyPlanSubtitle');
+      const summaryTitle = document.getElementById('planSummaryTitle');
+      const planDateBadge = document.getElementById('planDateBadge');
+      const sourceBadge = document.getElementById('dailyPlanSourceBadge');
 
       if (loadingEl) loadingEl.classList.remove('hidden');
       if (errorEl) errorEl.classList.add('hidden');
@@ -1420,9 +735,15 @@
 
         renderDailyPlan(plan);
         if (loadingEl) loadingEl.classList.add('hidden');
-        if (subtitleEl) {
-          const genTime = plan.generated_at ? new Date(plan.generated_at).toLocaleTimeString('en-IN', { timeZone: 'Asia/Kolkata' }) : '04:30 AM';
-          subtitleEl.innerHTML = `Plan for <strong class="text-stone-900 font-mono">${plan.date}</strong> · Generated at ${genTime} IST`;
+
+        if (summaryTitle && plan.summary) {
+          summaryTitle.innerText = plan.summary;
+        }
+        if (planDateBadge) {
+          planDateBadge.innerText = `${plan.date} Directive`;
+        }
+        if (sourceBadge && plan.generated_by) {
+          sourceBadge.innerText = `Plan Engine: ${plan.generated_by.toUpperCase()}`;
         }
 
         if (dailyPlanTimerInterval) clearInterval(dailyPlanTimerInterval);
@@ -1461,19 +782,19 @@
 
       if (plan.urgent_alerts && plan.urgent_alerts.length > 0) {
         if (alertsBanner) alertsBanner.classList.remove('hidden');
-        if (alertsBadge) alertsBadge.innerText = `${plan.urgent_alerts.length} Alert${plan.urgent_alerts.length > 1 ? 's' : ''}`;
+        if (alertsBadge) alertsBadge.innerText = `${plan.urgent_alerts.length} Urgent Alert${plan.urgent_alerts.length > 1 ? 's' : ''}`;
         if (alertsList) {
           alertsList.innerHTML = plan.urgent_alerts.map(a => `
-            <div class="p-3 rounded-xl bg-white/90 border border-red-300 flex flex-col sm:flex-row sm:items-center justify-between gap-2 shadow-2xs">
+            <div class="p-3 rounded-xl bg-white/95 border border-red-300 flex flex-col sm:flex-row sm:items-center justify-between gap-2 shadow-2xs">
               <div class="space-y-0.5">
-                <div class="font-bold text-red-950 text-xs sm:text-sm flex items-center gap-1.5">
+                <div class="font-black text-red-950 text-xs sm:text-sm flex items-center gap-1.5">
                   <span>📌</span>
                   <span>${escapeHtml(a.title)}</span>
                 </div>
-                <p class="text-[11px] text-stone-700 leading-relaxed">${escapeHtml(a.action)}</p>
+                <p class="text-xs text-stone-700 leading-relaxed">${escapeHtml(a.action)}</p>
               </div>
-              <span class="shrink-0 text-[10px] font-mono font-bold bg-red-100 text-red-900 border border-red-300 px-2.5 py-1 rounded-lg self-start sm:self-center">
-                Due: ${escapeHtml(a.deadline)}
+              <span class="shrink-0 text-[11px] font-mono font-bold bg-red-100 text-red-900 border border-red-300 px-2.5 py-1 rounded-lg self-start sm:self-center">
+                Deadline: ${escapeHtml(a.deadline)}
               </span>
             </div>
           `).join('');
@@ -1486,18 +807,18 @@
       const totalsContainer = document.getElementById('streamTotalsContainer');
       if (totalsContainer && plan.totals_by_stream_min) {
         const streamBadges = {
-          cat: { bg: 'bg-amber-100', text: 'text-amber-900', label: '🐯 CAT Prep' },
+          cat: { bg: 'bg-amber-100', text: 'text-amber-900', label: '🐯 CAT' },
           dsa: { bg: 'bg-emerald-100', text: 'text-emerald-900', label: '⚡ DSA' },
-          job: { bg: 'bg-teal-100', text: 'text-teal-900', label: '💼 Job Outreach' },
+          job: { bg: 'bg-teal-100', text: 'text-teal-900', label: '💼 Job' },
           germany: { bg: 'bg-blue-100', text: 'text-blue-900', label: '🇩🇪 Germany' },
           health: { bg: 'bg-purple-100', text: 'text-purple-900', label: '🏃 Health' },
-          rest: { bg: 'bg-stone-100', text: 'text-stone-800', label: '☕ Break' }
+          rest: { bg: 'bg-stone-100', text: 'text-stone-800', label: '☕ Rest' }
         };
 
         totalsContainer.innerHTML = Object.entries(plan.totals_by_stream_min).map(([st, min]) => {
           const cfg = streamBadges[st] || { bg: 'bg-stone-100', text: 'text-stone-800', label: st.toUpperCase() };
           return `
-            <span class="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold ${cfg.bg} ${cfg.text} border border-stone-200">
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold ${cfg.bg} ${cfg.text} border border-stone-200">
               ${cfg.label}: ${min}m
             </span>
           `;
@@ -1546,17 +867,18 @@
           <div class="flex flex-wrap items-center gap-1.5 pt-1">
             ${b.links.map(l => {
               const isExt = l.startsWith('http');
-              const label = l.includes('cat_2026') ? 'CAT Roadmap'
-                          : l.includes('dsa') ? 'DSA Tracker'
-                          : l.includes('deadlines') ? 'Deadlines Portal'
+              const label = l.includes('cat_2026') ? 'CAT Roadmap ↗'
+                          : l.includes('dsa') ? 'DSA Tracker ↗'
+                          : l.includes('deadlines') ? 'Deadlines ↗'
                           : l.includes('careerlauncher') ? 'CL MyZone ↗'
                           : l.includes('instahyre') ? 'Instahyre ↗'
                           : l.includes('anabin') ? 'Anabin KMK ↗'
                           : l.includes('aps-india') ? 'APS India ↗'
                           : l.includes('uni-passau') ? 'Uni Passau ↗'
+                          : l.includes('profile') ? 'Cold Email ↗'
                           : 'Resource ↗';
               return `
-                <a href="${escapeHtml(l)}" ${isExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="px-2 py-0.5 rounded-lg text-[10px] font-semibold bg-stone-100 hover:bg-emerald-100 text-stone-700 hover:text-emerald-900 border border-stone-200 transition-all">
+                <a href="${escapeHtml(l)}" ${isExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="px-2 py-0.5 rounded-md text-[10px] font-semibold bg-stone-100 hover:bg-emerald-100 text-stone-800 hover:text-emerald-950 border border-stone-200 transition-all">
                   ${label}
                 </a>
               `;
@@ -1565,13 +887,13 @@
         ` : '';
 
         return `
-          <div id="block-card-${b.id}" class="timeline-block-card p-4 sm:p-5 rounded-2xl bg-white/95 border border-stone-300/80 shadow-xs transition-all space-y-2.5 ${isDone ? 'opacity-70 bg-stone-50/70' : ''}">
+          <div id="block-card-${b.id}" class="timeline-block-card p-3.5 sm:p-4 rounded-xl bg-white border border-stone-300/80 shadow-2xs transition-all space-y-2 ${isDone ? 'opacity-65 bg-stone-50/80' : ''}">
             <div class="flex items-start justify-between gap-3">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="check-${b.id}" onchange="toggleBlockCompleted('${b.id}')" ${isDone ? 'checked' : ''} class="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 text-emerald-600 rounded border-stone-300 focus:ring-emerald-500 cursor-pointer">
                 <div>
                   <div class="flex items-center gap-2 flex-wrap">
-                    <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase border ${stClass}">
+                    <span class="px-2 py-0.5 rounded text-[9px] font-mono font-bold uppercase border ${stClass}">
                       ${b.stream.toUpperCase()}
                     </span>
                     <span class="text-xs font-mono font-extrabold text-stone-900">
@@ -1580,20 +902,20 @@
                     <span class="text-[10px] font-mono text-stone-500">
                       (${dur}m)
                     </span>
-                    <span id="badge-now-${b.id}" class="hidden px-2 py-0.5 rounded-full text-[10px] font-black uppercase bg-emerald-600 text-white animate-pulse">
+                    <span id="badge-now-${b.id}" class="hidden px-2 py-0.5 rounded-full text-[9px] font-black uppercase bg-emerald-700 text-white animate-pulse">
                       NOW
                     </span>
-                    <span id="badge-next-${b.id}" class="hidden px-2 py-0.5 rounded-full text-[10px] font-black uppercase bg-amber-600 text-white">
+                    <span id="badge-next-${b.id}" class="hidden px-2 py-0.5 rounded-full text-[9px] font-black uppercase bg-amber-600 text-white">
                       NEXT
                     </span>
-                    ${b.verify ? '<span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-orange-100 text-orange-900 border border-orange-300">VERIFY</span>' : ''}
+                    ${b.verify ? '<span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-orange-100 text-orange-900 border border-orange-300">VERIFY</span>' : ''}
                   </div>
-                  <h4 class="text-sm sm:text-base font-extrabold text-stone-900 mt-1 ${isDone ? 'line-through text-stone-400' : ''}">
+                  <h3 class="text-sm font-black text-stone-900 mt-1 ${isDone ? 'line-through text-stone-400' : ''}">
                     ${escapeHtml(b.title)}
-                  </h4>
+                  </h3>
                 </div>
               </div>
-              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold border shrink-0 ${pClass}">
+              <span class="px-2 py-0.5 rounded text-[9px] font-mono font-bold border shrink-0 ${pClass}">
                 P${b.priority}
               </span>
             </div>
@@ -1683,6 +1005,7 @@
       const nowTitle = document.getElementById('nowBlockTitle');
       const nowDetails = document.getElementById('nowBlockDetails');
       const nowTimerBadge = document.getElementById('nowTimerBadge');
+      const nowCountdown = document.getElementById('nowCountdown');
       const nowContainer = document.getElementById('nowCardContainer');
 
       if (activeBlock) {
@@ -1693,19 +1016,22 @@
 
         if (nowTitle) nowTitle.innerText = activeBlock.title;
         if (nowDetails) nowDetails.innerText = activeBlock.details;
-        if (nowTimerBadge) nowTimerBadge.innerText = `Ends in ${rMin}m ${rSec}s`;
-        if (nowContainer) nowContainer.className = "p-3.5 rounded-xl bg-emerald-100/90 border-2 border-emerald-500 shadow-sm space-y-1.5";
+        if (nowTimerBadge) nowTimerBadge.innerText = `${rMin}m ${rSec}s left`;
+        if (nowCountdown) nowCountdown.innerText = `${rMin}m ${rSec}s`;
+        if (nowContainer) nowContainer.className = "p-4 rounded-xl bg-emerald-100/90 border-2 border-emerald-600 shadow-xs space-y-2 flex flex-col justify-between";
       } else {
         if (nowTitle) nowTitle.innerText = "No active block right now";
-        if (nowDetails) nowDetails.innerText = "Check upcoming block in timeline or take a planned rest window.";
+        if (nowDetails) nowDetails.innerText = "Check next task or take a planned rest/meal break.";
         if (nowTimerBadge) nowTimerBadge.innerText = "Rest / Transition";
-        if (nowContainer) nowContainer.className = "p-3.5 rounded-xl bg-stone-100/90 border border-stone-200 space-y-1.5 opacity-80";
+        if (nowCountdown) nowCountdown.innerText = "--";
+        if (nowContainer) nowContainer.className = "p-4 rounded-xl bg-stone-100 border border-stone-200 space-y-2 opacity-80 flex flex-col justify-between";
       }
 
       // Update Next Card
       const nextTitle = document.getElementById('nextBlockTitle');
       const nextDetails = document.getElementById('nextBlockDetails');
       const nextTimerBadge = document.getElementById('nextTimerBadge');
+      const nextCountdown = document.getElementById('nextCountdown');
 
       if (nextBlock) {
         const startSec = timeStringToMinutes(nextBlock.start) * 60;
@@ -1714,35 +1040,14 @@
         const uSec = untilSec % 60;
 
         if (nextTitle) nextTitle.innerText = nextBlock.title;
-        if (nextDetails) nextDetails.innerText = `Starts at ${nextBlock.start} (${uMin}m ${uSec}s left): ${nextBlock.details}`;
+        if (nextDetails) nextDetails.innerText = `Starts at ${nextBlock.start}: ${nextBlock.details}`;
         if (nextTimerBadge) nextTimerBadge.innerText = `In ${uMin}m ${uSec}s`;
+        if (nextCountdown) nextCountdown.innerText = `${uMin}m ${uSec}s`;
       } else {
         if (nextTitle) nextTitle.innerText = "All blocks concluded";
-        if (nextDetails) nextDetails.innerText = "All scheduled blocks for today are finished. Rest & family time.";
+        if (nextDetails) nextDetails.innerText = "Great work! All scheduled blocks for today are done.";
         if (nextTimerBadge) nextTimerBadge.innerText = "Done for today";
-      }
-
-      // Countdown Bar
-      const cdLabel = document.getElementById('countdownLabel');
-      const cdTimer = document.getElementById('countdownTimer');
-
-      if (activeBlock) {
-        const endSec = timeStringToMinutes(activeBlock.end) * 60;
-        const rem = Math.max(0, endSec - currentSeconds);
-        const rm = Math.floor(rem / 60);
-        const rs = rem % 60;
-        if (cdLabel) cdLabel.innerText = `Active Block (${activeBlock.stream.toUpperCase()}) ends in:`;
-        if (cdTimer) cdTimer.innerText = `${rm}m ${rs}s`;
-      } else if (nextBlock) {
-        const startSec = timeStringToMinutes(nextBlock.start) * 60;
-        const rem = Math.max(0, startSec - currentSeconds);
-        const rm = Math.floor(rem / 60);
-        const rs = rem % 60;
-        if (cdLabel) cdLabel.innerText = `Next Block (${nextBlock.start}) starts in:`;
-        if (cdTimer) cdTimer.innerText = `${rm}m ${rs}s`;
-      } else {
-        if (cdLabel) cdLabel.innerText = "Day Complete:";
-        if (cdTimer) cdTimer.innerText = "00m 00s";
+        if (nextCountdown) nextCountdown.innerText = "00:00";
       }
 
       // Update badges in timeline list
@@ -1754,15 +1059,15 @@
         if (activeBlock && activeBlock.id === b.id) {
           if (nowBadge) nowBadge.classList.remove('hidden');
           if (nextBadge) nextBadge.classList.add('hidden');
-          if (card) card.classList.add('ring-2', 'ring-emerald-500', 'bg-emerald-50/30');
+          if (card) card.classList.add('ring-2', 'ring-emerald-500', 'bg-emerald-50/40');
         } else if (nextBlock && nextBlock.id === b.id) {
           if (nowBadge) nowBadge.classList.add('hidden');
           if (nextBadge) nextBadge.classList.remove('hidden');
-          if (card) card.classList.remove('ring-2', 'ring-emerald-500', 'bg-emerald-50/30');
+          if (card) card.classList.remove('ring-2', 'ring-emerald-500', 'bg-emerald-50/40');
         } else {
           if (nowBadge) nowBadge.classList.add('hidden');
           if (nextBadge) nextBadge.classList.add('hidden');
-          if (card) card.classList.remove('ring-2', 'ring-emerald-500', 'bg-emerald-50/30');
+          if (card) card.classList.remove('ring-2', 'ring-emerald-500', 'bg-emerald-50/40');
         }
       });
     }
@@ -1781,14 +1086,14 @@
         if (permission === 'granted') {
           showToast('Notifications enabled! You will receive alerts before each block.');
           try {
-            new Notification("Daily Planner Active", {
-              body: "Browser alerts are now active for today's schedule.",
+            new Notification("Daily Cockpit Alerts Active", {
+              body: "Desktop alerts will remind you at the start of each study block.",
               icon: "assets/lakshay_photo.jpg"
             });
           } catch (e) {}
           startNotificationLoop();
         } else if (permission === 'denied') {
-          showToast('Notifications were denied in browser permissions.');
+          showToast('Notifications are blocked in your browser settings.');
         }
       });
     }
@@ -1801,17 +1106,17 @@
 
       const perm = permission || (('Notification' in window) ? Notification.permission : 'default');
       if (perm === 'granted') {
-        btn.className = "inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-800 text-white text-xs font-bold shadow-sm transition-all cursor-pointer";
+        btn.className = "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-emerald-800 text-white text-xs font-bold shadow-2xs transition-all cursor-pointer";
         if (icon) icon.innerText = "✅";
-        label.innerText = "Alerts Active";
+        label.innerText = "Alerts On";
       } else if (perm === 'denied') {
-        btn.className = "inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-stone-200 text-stone-500 text-xs font-semibold shadow-2xs transition-all cursor-not-allowed";
+        btn.className = "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-stone-200 text-stone-500 text-xs font-semibold cursor-not-allowed";
         if (icon) icon.innerText = "🔕";
-        label.innerText = "Alerts Blocked";
+        label.innerText = "Blocked";
       } else {
-        btn.className = "inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-stone-900 hover:bg-stone-800 text-white text-xs font-bold shadow-sm transition-all cursor-pointer";
+        btn.className = "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-white hover:bg-stone-100 text-stone-800 text-xs font-semibold border border-stone-300 shadow-2xs transition-all cursor-pointer";
         if (icon) icon.innerText = "🔔";
-        label.innerText = "Enable Alerts";
+        label.innerText = "Alerts";
       }
     }
 
@@ -1833,7 +1138,7 @@
         const leadMin = b.notify_before_min || 10;
         const triggerMin = startMin - leadMin;
 
-        // Trigger if within 1 minute of trigger window
+        // Lead reminder
         if (currentMinutes >= triggerMin && currentMinutes < startMin) {
           const sessionKey = `notified_${currentDailyPlan.date}_${b.id}_lead`;
           if (!sessionStorage.getItem(sessionKey)) {
@@ -1845,7 +1150,7 @@
           }
         }
 
-        // Trigger right at start
+        // Start reminder
         if (currentMinutes === startMin) {
           const sessionKey = `notified_${currentDailyPlan.date}_${b.id}_start`;
           if (!sessionStorage.getItem(sessionKey)) {
@@ -1874,16 +1179,15 @@
       const month = dateParts[1];
       const day = dateParts[2];
       const dateCompact = `${year}${month}${day}`;
-
       const nowUtc = new Date().toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
 
       let ics = [
         'BEGIN:VCALENDAR',
         'VERSION:2.0',
-        'PRODID:-//Lakshay Nagpal//Daily Planner//EN',
+        'PRODID:-//Lakshay Nagpal//Daily Cockpit//EN',
         'CALSCALE:GREGORIAN',
         'METHOD:PUBLISH',
-        'X-WR-CALNAME:Lakshay Daily Plan (' + plan.date + ')',
+        'X-WR-CALNAME:Lakshay Daily Agenda (' + plan.date + ')',
         'X-WR-TIMEZONE:Asia/Kolkata',
         'BEGIN:VTIMEZONE',
         'TZID:Asia/Kolkata',
@@ -1938,7 +1242,7 @@
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
 
-      showToast(`Downloaded ${plan.date} calendar (.ics) with VALARMs!`);
+      showToast(`Exported ${plan.date} calendar with reminders!`);
     }
 
     function escapeHtml(text) {
@@ -1951,7 +1255,7 @@
         .replace(/'/g, '&#039;');
     }
 
-    // Auto-initialize daily plan and notification state on window load
+    // Initialize on window load
     window.addEventListener('DOMContentLoaded', () => {
       loadDailyPlan();
       updateNotificationButtonState();
