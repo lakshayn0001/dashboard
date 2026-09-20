@@ -391,13 +391,13 @@
         <!-- Real-time Status Pills -->
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full lg:w-auto">
           <!-- CAT Registration Close -->
-          <div class="p-4 rounded-2xl bg-amber-500/10 border border-amber-600/30 flex flex-col justify-between">
+          <div class="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-600/30 flex flex-col justify-between">
             <div class="flex items-center justify-between">
-              <span class="text-[10px] font-mono font-bold text-amber-800 uppercase tracking-wider">CAT Reg Close</span>
-              <span class="px-1.5 py-0.5 rounded text-[9px] font-extrabold bg-red-100 text-red-800 border border-red-300">CRITICAL</span>
+              <span class="text-[10px] font-mono font-bold text-emerald-800 uppercase tracking-wider">CAT Registration</span>
+              <span class="px-1.5 py-0.5 rounded text-[9px] font-extrabold bg-emerald-100 text-emerald-800 border border-emerald-300">COMPLETED</span>
             </div>
-            <div class="mt-2 text-2xl font-black text-amber-950 font-mono" id="cat-reg-countdown">2 Days</div>
-            <div class="text-[11px] text-stone-600 mt-0.5 font-medium">22 Sep 2026, 5 PM</div>
+            <div class="mt-2 text-2xl font-black text-emerald-950 font-mono" id="cat-reg-countdown">Completed</div>
+            <div class="text-[11px] text-stone-600 mt-0.5 font-medium">2 Sep 2026 (₹2,700)</div>
           </div>
 
           <!-- CAT 2026 Exam Day -->
@@ -472,20 +472,20 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="deadlines-grid">
 
         <!-- 1. CAT Registration Deadline -->
-        <div class="deadline-card glass-droplet rounded-2xl p-5 space-y-3.5 border-l-4 border-l-red-600" data-category="cat clash">
+        <div class="deadline-card glass-droplet rounded-2xl p-5 space-y-3.5 border-l-4 border-l-emerald-600 bg-emerald-50/20" data-category="cat">
           <div class="flex items-start justify-between gap-3">
             <div class="flex items-center gap-2.5">
-              <input type="checkbox" id="check-cat-reg" onchange="toggleTask('check-cat-reg')" class="w-4 h-4 text-amber-600 rounded border-stone-300 focus:ring-amber-500 cursor-pointer">
+              <input type="checkbox" id="check-cat-reg" checked disabled class="w-4 h-4 text-emerald-600 rounded border-stone-300 focus:ring-emerald-500 cursor-not-allowed">
               <div>
-                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-red-700 bg-red-100 px-2 py-0.5 rounded border border-red-200">
-                  EXTENDED DEADLINE · CRITICAL
+                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-200">
+                  COMPLETED 2 SEP 2026
                 </span>
-                <h4 class="text-base font-extrabold text-stone-900 mt-1">CAT 2026 Registration Close</h4>
+                <h4 class="text-base font-extrabold text-stone-900 mt-1">CAT 2026 Registration</h4>
               </div>
             </div>
-            <a href="https://iimcat.ac.in" target="_blank" rel="noopener noreferrer" class="verify-badge" title="Verify on official IIM CAT portal">
-              <span class="pulse-dot"></span>
-              <span>VERIFY</span>
+            <a href="https://iimcat.ac.in" target="_blank" rel="noopener noreferrer" class="verify-badge border-emerald-300 text-emerald-800 bg-emerald-50" title="Verify on official IIM CAT portal">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+              <span>VERIFIED</span>
               <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
             </a>
           </div>
@@ -493,21 +493,21 @@
           <div class="grid grid-cols-2 gap-2 text-xs font-mono bg-stone-100/70 p-2.5 rounded-xl border border-stone-200">
             <div>
               <span class="text-stone-500 block text-[10px]">Official Date:</span>
-              <strong class="text-stone-900">22 Sep 2026, 5:00 PM IST</strong>
+              <strong class="text-stone-900">02 Sep 2026</strong>
             </div>
             <div>
-              <span class="text-stone-500 block text-[10px]">Lead Time Left:</span>
-              <strong class="text-red-700 font-bold">2 Days Remaining</strong>
+              <span class="text-stone-500 block text-[10px]">Status:</span>
+              <strong class="text-emerald-700 font-bold">Payment Success (₹2,700)</strong>
             </div>
           </div>
 
           <p class="text-xs text-stone-700 leading-relaxed">
-            Registration deadline extended from 15 Sep to 22 Sep 2026, 5:00 PM IST. Ensure application form, exam city preferences (6 choices), category details, and application fee payment (₹2,700 for General / NC-OBC; ₹1,350 for SC / ST / PwD) are submitted before the 5 PM cutoff.
+            CAT 2026 application form submitted with payment success (₹2,700 General) and 5 test-city preferences locked. Check the email used on the CAT form for confirmation updates. Next milestone: Admit card release expected in early November.
           </p>
 
           <div class="pt-2 border-t border-stone-200 flex items-center justify-between text-[11px] font-mono text-stone-500">
             <span>Portal: <a href="https://iimcat.ac.in" target="_blank" class="text-blue-700 underline font-semibold">iimcat.ac.in</a></span>
-            <span class="text-amber-800 font-bold">Fee: ₹2,700 Gen / ₹1,350 Reserved</span>
+            <span class="text-emerald-800 font-bold">Status: Submitted &amp; Paid (5 test-city preferences)</span>
           </div>
         </div>
 
@@ -1241,7 +1241,7 @@
             <div class="p-3 rounded-xl bg-amber-50/70 border border-amber-200 space-y-1">
               <strong class="text-amber-900 block font-mono">🐯 CAT Stream (3.5 hrs/day):</strong>
               <p class="text-stone-700 leading-relaxed">
-                <strong>22 Sep (5 PM IST):</strong> Final CAT Registration &amp; Fee payment (₹2,700 General / OBC; ₹1,350 SC / ST / PwD) on <a href="https://iimcat.ac.in" target="_blank" class="text-blue-700 underline font-semibold">iimcat.ac.in</a>. Diagnostic Mock 1; prepare for 68-question format (VARC 24, DILR 22, QA 22; 120 min).
+                <strong>CAT Preparation:</strong> Registration complete (submitted 2 Sep 2026, ₹2,700 fee paid, 5 test-city preferences locked). Check the email used on the CAT form for confirmation updates. Diagnostic Mock 1; prepare for 68-question format (VARC 24, DILR 22, QA 22; 120 min). Next milestone: Admit card release expected in early November.
               </p>
             </div>
             <div class="p-3 rounded-xl bg-red-50/70 border border-red-200 space-y-1">
@@ -2068,7 +2068,6 @@
     }
 
     function initCountdowns() {
-      const regDays = calculateDaysRemaining('2026-09-22T17:00:00+05:30');
       const examDays = calculateDaysRemaining('2026-11-29T08:30:00+05:30');
       const passauDays = calculateDaysRemaining('2026-12-15T18:00:00+01:00');
 
@@ -2076,7 +2075,7 @@
       const examEl = document.getElementById('cat-exam-countdown');
       const passauEl = document.getElementById('passau-countdown');
 
-      if (regEl) regEl.textContent = regDays > 0 ? regDays + ' Days' : (regDays === 0 ? 'Today (5 PM)' : 'Closed');
+      if (regEl) regEl.textContent = 'Completed';
       if (examEl) examEl.textContent = examDays > 0 ? examDays + ' Days' : (examDays === 0 ? 'Today' : 'Completed');
       if (passauEl) passauEl.textContent = passauDays > 0 ? passauDays + ' Days' : (passauDays === 0 ? 'Today' : 'Closed');
     }

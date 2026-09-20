@@ -4,11 +4,7 @@
   "generated_at": "2026-09-20T13:44:37.890Z",
   "summary": "Day 2 of 72 (Diagnostic Error Log Deep-Dive + Fraction-to-Percentage Chart): Complete a 3-hour forensic post-mortem of Day 1 Diagnostic. Classify every lost mark into Conceptual Gap, Misread Trap, or Time Exhaustion.",
   "urgent_alerts": [
-    {
-      "title": "CAT 2026 Registration Close",
-      "deadline": "22 Sep 2026, 5:00 PM IST",
-      "action": "Submit CAT 2026 registration, 6 city preferences, and fee payment (₹2,700 Gen) before 5:00 PM cutoff."
-    },
+
     {
       "title": "dMAT Status Check (aps-india.de/dmat & g.a.s.t.)",
       "deadline": "2026-09-22T23:59:59+05:30",

@@ -90,13 +90,16 @@
   "deadlines": [
     {
       "id": "cat_registration_close",
-      "title": "CAT 2026 Registration Close",
-      "datetime_ist": "2026-09-22T17:00:00+05:30",
+      "title": "CAT 2026 Registration Complete",
+      "datetime_ist": "2026-09-02T23:59:59+05:30",
       "source_url": "https://iimcat.ac.in",
       "verified": true,
-      "urgent": true,
-      "action": "Submit CAT 2026 registration, 6 city preferences, and fee payment (₹2,700 Gen) before 5:00 PM cutoff.",
-      "source": "deadlines_calendar.html:482"
+      "urgent": false,
+      "done": true,
+      "status": "completed",
+      "completed_date": "2026-09-02",
+      "action": "Registration complete (submitted 2 Sep 2026, ₹2,700 fee paid, 5 test-city preferences locked). Next milestone: admit card release (expected early Nov, verify on iimcat.ac.in).",
+      "source": "deadlines_calendar.html:474"
     },
     {
       "id": "dmat_status_check",
@@ -162,10 +165,11 @@
       "id": "cat_admit_card_release",
       "title": "CAT 2026 Admit Card Release",
       "datetime_ist": "2026-11-05T23:59:59+05:30",
+      "expected": "early Nov",
       "source_url": "https://iimcat.ac.in",
       "verified": false,
       "urgent": false,
-      "action": "Download CAT admit card from iimcat.ac.in, note allocated slot (Slot 1, 2, or 3), and align mock tests with slot timing.",
+      "action": "Download CAT 2026 admit card on iimcat.ac.in (expected early Nov, verify on iimcat.ac.in). Note allocated slot (Slot 1, 2, or 3), and align mock tests with slot timing.",
       "source": "deadlines_calendar.html:671"
     },
     {
@@ -274,7 +278,7 @@
     },
     "target_roles": [
       "Full-Stack Software Engineer",
-      "Software Developer – Integration"
+      "Software Integrator"
     ],
     "primary_platforms": [
       "Instahyre",
@@ -312,7 +316,7 @@
         "dilr": "Solve 1 Linear Seating Arrangement set from CAT 2022 Slot 1 (strictly timed: 12 minutes). Review solution on 2IIM.",
         "quant": "Master the 1/1 to 1/25 Percentage-to-Fraction conversion table. Solve 15 introductory percentage multiplier drills from Rodha."
       },
-      "source": "cat_2026_syllabus_roadmap.html:2115"
+      "source": "cat_2026_syllabus_roadmap.html:2116"
     },
     "2026-09-20": {
       "day_index": 2,
@@ -325,7 +329,7 @@
         "dilr": "Solve 1 Matrix Grid logic set from Anastasis DILR 200 Sets (Set 1). Write down the grid setup protocol in your DILR journal.",
         "quant": "Solve 20 Percentage Change & Successive Percentage Change problems from Rodha Quant Playlist. Verify multiplier shortcuts."
       },
-      "source": "cat_2026_syllabus_roadmap.html:2204"
+      "source": "cat_2026_syllabus_roadmap.html:2205"
     },
     "2026-09-21": {
       "day_index": 3,
@@ -338,7 +342,7 @@
         "dilr": "Linear Arrangements 1 (Single Row, all facing North). Solve 2 sets from Rodha DILR Playlist. Focus on definite vs conditional clues.",
         "quant": "Percentages LOD 1 & LOD 2: 25 questions covering Net Price change, A is x% more than B, and income-expenditure splits."
       },
-      "source": "cat_2026_syllabus_roadmap.html:2316"
+      "source": "cat_2026_syllabus_roadmap.html:2317"
     },
     "2026-09-22": {
       "day_index": 4,
@@ -351,7 +355,7 @@
         "dilr": "Linear Arrangements 2 (Facing North & South mixed). Solve Anastasis Shankar Set 2 & Set 3. Note down arrow direction notation.",
         "quant": "25 Questions on Profit, Loss & Discount: Successive discounts, Buy 3 Get 1 Free equivalents, and mark-up percentages."
       },
-      "source": "cat_2026_syllabus_roadmap.html:2405"
+      "source": "cat_2026_syllabus_roadmap.html:2406"
     },
     "2026-09-23": {
       "day_index": 5,
@@ -364,7 +368,7 @@
         "dilr": "Two-Row Linear Seating (North-facing row opposite South-facing row). Solve 2 sets from Elites Grid DILR Playlist.",
         "quant": "Dishonest Merchant & Faulty Balances: 15 questions + Simple Interest & Compound Interest basic formulas & 2-year difference formula."
       },
-      "source": "cat_2026_syllabus_roadmap.html:2498"
+      "source": "cat_2026_syllabus_roadmap.html:2499"
     },
     "2026-09-24": {
       "day_index": 6,
@@ -377,7 +381,7 @@
         "dilr": "Matrix Grid with 3 Variables (e.g. Person, City, Profession). Solve Anastasis Shankar Set 4. Master cross-elimination tick/cross tables.",
         "quant": "20 Questions on CI installments and multi-year rate changes. Verify formulas using Cracku QA Formula Cheat Sheet."
       },
-      "source": "cat_2026_syllabus_roadmap.html:2587"
+      "source": "cat_2026_syllabus_roadmap.html:2588"
     },
     "2026-09-25": {
       "day_index": 7,
@@ -390,7 +394,7 @@
         "dilr": "Matrix Grid with 4 Variables (Person, Car, City, Pet). Solve 1 challenging set from CAT 2021 Slot 2 on 2IIM.",
         "quant": "25 Questions on Ratios, Direct/Inverse Variations, and Coin/Denomination division problems."
       },
-      "source": "cat_2026_syllabus_roadmap.html:2676"
+      "source": "cat_2026_syllabus_roadmap.html:2677"
     },
     "2026-09-26": {
       "day_index": 8,
@@ -403,7 +407,7 @@
         "dilr": "Linear Arrangements with Numerical Conditions (e.g. sum of ages of adjacent persons is odd). Anastasis Shankar Set 5.",
         "quant": "15 Partnership questions + 15 basic mixture ratio problems. Understand the concept of pure component concentration."
       },
-      "source": "cat_2026_syllabus_roadmap.html:2765"
+      "source": "cat_2026_syllabus_roadmap.html:2766"
     },
     "2026-09-27": {
       "day_index": 9,
@@ -416,7 +420,7 @@
         "dilr": "Timed DILR 2-Set Challenge (solve 2 arrangement sets back-to-back in 25 minutes). Grade yourself with Anastasis solutions.",
         "quant": "Timed 30-Question Arithmetic Blitz (Percentages, P&L, Ratios, SI-CI) in 60 minutes. Log any formula hesitation."
       },
-      "source": "cat_2026_syllabus_roadmap.html:2854"
+      "source": "cat_2026_syllabus_roadmap.html:2855"
     },
     "2026-09-28": {
       "day_index": 10,
@@ -429,7 +433,7 @@
         "dilr": "Circular Arrangements 1 (All facing center, 6 to 8 people). Solve 2 sets from Rodha DILR. Watch for relative left/right cues.",
         "quant": "25 Questions on Alligations & Repeated Dilution: Q = Q0(1 - x/V)^n formula mastery and dual-alloy melting ratios."
       },
-      "source": "cat_2026_syllabus_roadmap.html:2966"
+      "source": "cat_2026_syllabus_roadmap.html:2967"
     },
     "2026-09-29": {
       "day_index": 11,
@@ -442,7 +446,7 @@
         "dilr": "Circular Arrangements 2 (Facing inward and outward mixed). Solve Anastasis Shankar Set 6 & Set 7.",
         "quant": "25 Questions on Averages: Batting averages, student age replacements, and consecutive integer sets averages."
       },
-      "source": "cat_2026_syllabus_roadmap.html:3055"
+      "source": "cat_2026_syllabus_roadmap.html:3056"
     },
     "2026-09-30": {
       "day_index": 12,
@@ -455,7 +459,7 @@
         "dilr": "Circular Arrangements with Variable Attributes (e.g. 6 people, 6 colors, facing alternating in/out). Anastasis Set 8.",
         "quant": "20 Questions on TSD proportionality: Late by 10 mins vs early by 5 mins problems and meeting points on straight line."
       },
-      "source": "cat_2026_syllabus_roadmap.html:3144"
+      "source": "cat_2026_syllabus_roadmap.html:3145"
     },
     "2026-10-01": {
       "day_index": 13,
@@ -468,7 +472,7 @@
         "dilr": "Distribution & Selection Logic (Team formation under constraints: If A is selected, B cannot be selected). Rodha DILR.",
         "quant": "25 Questions on Trains crossing poles, moving men, and bridges of length L. Focus on unit conversions (km/h to m/s)."
       },
-      "source": "cat_2026_syllabus_roadmap.html:3233"
+      "source": "cat_2026_syllabus_roadmap.html:3234"
     },
     "2026-10-02": {
       "day_index": 14,
@@ -481,7 +485,7 @@
         "dilr": "Anastasis Shankar Set 9 & Set 10: Multi-stage selection games and condition-dependent seating grids.",
         "quant": "20 Questions on Boats & Streams + 15 Questions on Circular Tracks (L/(u-v) vs LCM of individual lap times)."
       },
-      "source": "cat_2026_syllabus_roadmap.html:3322"
+      "source": "cat_2026_syllabus_roadmap.html:3323"
     },
     "2026-10-03": {
       "day_index": 15,
@@ -494,7 +498,7 @@
         "dilr": "Timed 1-Set Sprint: CAT 2020 Slot 1 Arrangement Set on 2IIM. Complete and check video explanation within 20 mins.",
         "quant": "15 Escalator questions (Walking up an ascending escalator) + 10 Linear Race Head-Start problems (Distance vs Time starts)."
       },
-      "source": "cat_2026_syllabus_roadmap.html:3411"
+      "source": "cat_2026_syllabus_roadmap.html:3412"
     },
     "2026-10-04": {
       "day_index": 16,
@@ -507,7 +511,7 @@
         "dilr": "Anastasis Shankar Set 11 & Set 12 (Review complete logic deductions and table layout efficiencies).",
         "quant": "Re-attempt all 10 toughest TSD questions from the past week without looking at hints or solutions."
       },
-      "source": "cat_2026_syllabus_roadmap.html:3500"
+      "source": "cat_2026_syllabus_roadmap.html:3501"
     },
     "2026-10-05": {
       "day_index": 17,
@@ -520,7 +524,7 @@
         "dilr": "Distribution Logic 2 (Grid assignment with multiple negative conditions: X cannot have Y or Z). Anastasis Set 13.",
         "quant": "25 Questions on Time & Work basics: A and B work together, B is 50% more efficient than A, work completed in fractions."
       },
-      "source": "cat_2026_syllabus_roadmap.html:3612"
+      "source": "cat_2026_syllabus_roadmap.html:3613"
     },
     "2026-10-06": {
       "day_index": 18,
@@ -533,7 +537,7 @@
         "dilr": "Distribution Logic 3: Conditional selections and team formation. Anastasis Shankar Set 14 & Set 15.",
         "quant": "25 Questions on Alternate Days work cycles and (m1 x d1 x h1 / w1) = (m2 x d2 x h2 / w2) work equivalency formulas."
       },
-      "source": "cat_2026_syllabus_roadmap.html:3701"
+      "source": "cat_2026_syllabus_roadmap.html:3702"
     },
     "2026-10-07": {
       "day_index": 19,
@@ -546,7 +550,7 @@
         "dilr": "Binary Logic 1: Truth Tellers, Liars & Alternators introduction. Learn statement pairing and contradiction testing from Rodha.",
         "quant": "20 Questions on Pipes & Cisterns: Alternating pipe openings, leakage emptying time, and fraction of cistern filled."
       },
-      "source": "cat_2026_syllabus_roadmap.html:3790"
+      "source": "cat_2026_syllabus_roadmap.html:3791"
     },
     "2026-10-08": {
       "day_index": 20,
@@ -559,7 +563,7 @@
         "dilr": "Binary Logic 2: 3-Person Statements (Who is guilty / who tells the truth?). Anastasis Shankar Set 16 & Set 17.",
         "quant": "25 Actual Past CAT Arithmetic Questions (TSD, Work, P&L, Mixtures, Percentages) on 2IIM. Score at least 18/25 correct."
       },
-      "source": "cat_2026_syllabus_roadmap.html:3879"
+      "source": "cat_2026_syllabus_roadmap.html:3880"
     },
     "2026-10-09": {
       "day_index": 21,
@@ -572,7 +576,7 @@
         "dilr": "Take Full DILR Sectional Drill (40 mins, 4 Sets / 20–22 Qs). Practice picking the 2 easiest sets within the first 6 minutes.",
         "quant": "Take Full QA Sectional Test (40 mins, 22 Qs). Strict discipline: attempt ONLY Arithmetic questions you know 100%."
       },
-      "source": "cat_2026_syllabus_roadmap.html:3968"
+      "source": "cat_2026_syllabus_roadmap.html:3969"
     },
     "2026-10-10": {
       "day_index": 22,
@@ -585,7 +589,7 @@
         "dilr": "Review DILR Sectional: Re-solve unattempted sets without timer. Determine if layout clues were missed.",
         "quant": "Review QA Sectional: Verify every calculation error. Re-solve missed questions using alternative ratio methods."
       },
-      "source": "cat_2026_syllabus_roadmap.html:4057"
+      "source": "cat_2026_syllabus_roadmap.html:4058"
     },
     "2026-10-11": {
       "day_index": 23,
@@ -598,7 +602,7 @@
         "dilr": "Benchmark Mock 1 - Section 2: DILR 40 mins. Select 2 sets, aim for 8–10 clean questions with 100% accuracy.",
         "quant": "Benchmark Mock 1 - Section 3: QA 40 mins. Harvest 8–10 Arithmetic questions. Target zero negative marks."
       },
-      "source": "cat_2026_syllabus_roadmap.html:4146"
+      "source": "cat_2026_syllabus_roadmap.html:4147"
     },
     "2026-10-12": {
       "day_index": 24,
@@ -611,7 +615,7 @@
         "dilr": "Quant-Based Reasoning 1: Numerical puzzle grids where cell values satisfy linear sum equations. Rodha DILR.",
         "quant": "25 Questions on Linear Equations: Word problems, cost of pens & notebooks equations, and non-negative integer solutions."
       },
-      "source": "cat_2026_syllabus_roadmap.html:4258"
+      "source": "cat_2026_syllabus_roadmap.html:4259"
     },
     "2026-10-13": {
       "day_index": 25,
@@ -624,7 +628,7 @@
         "dilr": "Quant-Based Reasoning 2: Target scores, currency note combinations, and exchange logic. Anastasis Set 18 & 19.",
         "quant": "20 Questions on Special Integral Equations: Finding the number of integral pairs (x, y) satisfying 7x + 11y = 500."
       },
-      "source": "cat_2026_syllabus_roadmap.html:4347"
+      "source": "cat_2026_syllabus_roadmap.html:4348"
     },
     "2026-10-14": {
       "day_index": 26,
@@ -637,7 +641,7 @@
         "dilr": "Games & Tournaments 1: Round Robin Tournaments, matches played, points table logic (Win=2, Draw=1, Loss=0).",
         "quant": "25 Questions on Quadratic Equations: Forming quadratics from roots, symmetric expressions (alpha^2 + beta^2)."
       },
-      "source": "cat_2026_syllabus_roadmap.html:4436"
+      "source": "cat_2026_syllabus_roadmap.html:4437"
     },
     "2026-10-15": {
       "day_index": 27,
@@ -650,7 +654,7 @@
         "dilr": "Games & Tournaments 2: Knockout Tournaments, seeded players, number of matches to determine champion, upsets.",
         "quant": "20 Questions on Maximum/Minimum value of quadratic expressions, range of quadratic rational functions (ax^2+bx+c)/(dx^2+ex+f)."
       },
-      "source": "cat_2026_syllabus_roadmap.html:4525"
+      "source": "cat_2026_syllabus_roadmap.html:4526"
     },
     "2026-10-16": {
       "day_index": 28,
@@ -663,7 +667,7 @@
         "dilr": "Games & Tournaments 3: Multi-stage tournaments (Group stage followed by Knockouts). Anastasis Set 20.",
         "quant": "20 Questions on Remainder Theorem, Factor Theorem, and sum/product of roots of cubic equations."
       },
-      "source": "cat_2026_syllabus_roadmap.html:4614"
+      "source": "cat_2026_syllabus_roadmap.html:4615"
     },
     "2026-10-17": {
       "day_index": 29,
@@ -676,7 +680,7 @@
         "dilr": "Solve 1 Tournament set from CAT 2021 Slot 1 on 2IIM. Compare your grid layout with 2IIM video walkthrough.",
         "quant": "Timed 25-Question Algebra Blitz (Linear, Quadratic, Polynomials) in 50 minutes. Log any algebraic manipulation errors."
       },
-      "source": "cat_2026_syllabus_roadmap.html:4703"
+      "source": "cat_2026_syllabus_roadmap.html:4704"
     },
     "2026-10-18": {
       "day_index": 30,
@@ -689,7 +693,7 @@
         "dilr": "Anastasis Shankar Set 21 & Set 22: Advanced ranking and numerical reasoning puzzles.",
         "quant": "CAT 2022 Slot 1 QA: Solve all 22 questions un-timed on 2IIM. Review shortcut solutions and smart eliminations."
       },
-      "source": "cat_2026_syllabus_roadmap.html:4792"
+      "source": "cat_2026_syllabus_roadmap.html:4793"
     },
     "2026-10-19": {
       "day_index": 31,
@@ -702,7 +706,7 @@
         "dilr": "Scheduling & Timetabling Puzzles 1: Shift allocations, meeting slots, and overlapping time window logic.",
         "quant": "25 Questions on Inequalities: (x-a)(x-b)/(x-c) > 0, quadratic inequalities, and finding integer values satisfying range."
       },
-      "source": "cat_2026_syllabus_roadmap.html:4904"
+      "source": "cat_2026_syllabus_roadmap.html:4905"
     },
     "2026-10-20": {
       "day_index": 32,
@@ -715,7 +719,7 @@
         "dilr": "Scheduling & Timetabling Puzzles 2: Multi-room event scheduling under presenter availability constraints.",
         "quant": "20 Questions on Modulus: Solving |x-2| + |x-5| = 7 and graphing |x| functions to find minimum values."
       },
-      "source": "cat_2026_syllabus_roadmap.html:4993"
+      "source": "cat_2026_syllabus_roadmap.html:4994"
     },
     "2026-10-21": {
       "day_index": 33,
@@ -728,7 +732,7 @@
         "dilr": "Critical Path / Project Networks: Activity nodes, earliest start time, latest finish time, float calculations.",
         "quant": "20 Questions on AM-GM Inequality applications: Minimum value of x + 1/x, product maximization under sum constraint."
       },
-      "source": "cat_2026_syllabus_roadmap.html:5082"
+      "source": "cat_2026_syllabus_roadmap.html:5083"
     },
     "2026-10-22": {
       "day_index": 34,
@@ -741,7 +745,7 @@
         "dilr": "Venn Diagrams 1: 2-Set and 3-Set basic Venn formulas (Union, Intersection, Exactly one, Exactly two).",
         "quant": "25 Questions on Functions: Domain of sqrt(f(x)), evaluating nested functions f(f(f(x))), and Even/Odd symmetry."
       },
-      "source": "cat_2026_syllabus_roadmap.html:5171"
+      "source": "cat_2026_syllabus_roadmap.html:5172"
     },
     "2026-10-23": {
       "day_index": 35,
@@ -754,7 +758,7 @@
         "dilr": "Venn Diagrams 2: Maxima & Minima in 3-set and 4-set Venn diagrams. Anastasis Shankar Set 23 & Set 24.",
         "quant": "20 Questions on Functional Equations and Periodicity of Functions. Verify shortcut patterns on Cracku Cheat Sheet."
       },
-      "source": "cat_2026_syllabus_roadmap.html:5260"
+      "source": "cat_2026_syllabus_roadmap.html:5261"
     },
     "2026-10-24": {
       "day_index": 36,
@@ -767,7 +771,7 @@
         "dilr": "CAT 2020 Slot 2 Venn Diagram Set: Solve under 12-minute exam timer. Compare your visual representation with 2IIM.",
         "quant": "Timed 15-Question Algebra Quiz (Inequalities, Modulus, Functions) in 35 minutes. Aim for 80%+ accuracy."
       },
-      "source": "cat_2026_syllabus_roadmap.html:5349"
+      "source": "cat_2026_syllabus_roadmap.html:5350"
     },
     "2026-10-25": {
       "day_index": 37,
@@ -780,7 +784,7 @@
         "dilr": "Benchmark Mock 2 - Section 2: DILR 40 mins. Rapid 5-min scan. Attempt best 2 sets (8–10 Qs).",
         "quant": "Benchmark Mock 2 - Section 3: QA 40 mins. Scan entire section in 3 mins. Harvest 10–12 Arithmetic/Algebra Qs."
       },
-      "source": "cat_2026_syllabus_roadmap.html:5438"
+      "source": "cat_2026_syllabus_roadmap.html:5439"
     },
     "2026-10-26": {
       "day_index": 38,
@@ -793,7 +797,7 @@
         "dilr": "Data Interpretation Core: Fast fraction-to-percentage conversions in tables. Anastasis DILR Set 25.",
         "quant": "25 Questions on Logarithms: Simplifying nested log expressions, solving log equations, and base-change mechanics."
       },
-      "source": "cat_2026_syllabus_roadmap.html:5550"
+      "source": "cat_2026_syllabus_roadmap.html:5551"
     },
     "2026-10-27": {
       "day_index": 39,
@@ -806,7 +810,7 @@
         "dilr": "DI Tables with Missing Data: Formulate balance equations across rows and columns. Anastasis Set 26.",
         "quant": "20 Questions on Logarithmic Inequalities and number of digits in large powers. Review formulas on Cracku."
       },
-      "source": "cat_2026_syllabus_roadmap.html:5639"
+      "source": "cat_2026_syllabus_roadmap.html:5640"
     },
     "2026-10-28": {
       "day_index": 40,
@@ -819,7 +823,7 @@
         "dilr": "DI Line Graphs & Multiple Bar Charts: Growth rate comparisons without full manual division. Anastasis Set 27.",
         "quant": "25 Questions on AP: Sum of n terms, arithmetic means inserted between numbers, and AP word problems."
       },
-      "source": "cat_2026_syllabus_roadmap.html:5728"
+      "source": "cat_2026_syllabus_roadmap.html:5729"
     },
     "2026-10-29": {
       "day_index": 41,
@@ -832,7 +836,7 @@
         "dilr": "DI Pie Charts: Converting percentages to degrees (3.6 degrees = 1%) and multiple pie charts comparison.",
         "quant": "20 Questions on GP: Infinite series bouncing ball problems, geometric mean insertion, and GP inequalities."
       },
-      "source": "cat_2026_syllabus_roadmap.html:5817"
+      "source": "cat_2026_syllabus_roadmap.html:5818"
     },
     "2026-10-30": {
       "day_index": 42,
@@ -845,7 +849,7 @@
         "dilr": "DI Combined Pie Chart + Data Table: Anastasis Shankar Set 28 & Set 29.",
         "quant": "20 Questions on Special Series, telescoping 1/(n(n+1)) sums, and Arithmetico-Geometric Progressions."
       },
-      "source": "cat_2026_syllabus_roadmap.html:5906"
+      "source": "cat_2026_syllabus_roadmap.html:5907"
     },
     "2026-10-31": {
       "day_index": 43,
@@ -858,7 +862,7 @@
         "dilr": "Solve 4 DI sets from CAT 2022 Slot 2 & Slot 3 on 2IIM. Compare calculation methods with 2IIM videos.",
         "quant": "20 Questions on mixed Algebra (Logs, AP-GP, Quadratics) to consolidate Phase 2 skills."
       },
-      "source": "cat_2026_syllabus_roadmap.html:5995"
+      "source": "cat_2026_syllabus_roadmap.html:5996"
     },
     "2026-11-01": {
       "day_index": 44,
@@ -871,7 +875,7 @@
         "dilr": "CAT 2023 Slot 2 DILR: Solve all 4 sets untimed on 2IIM. Record structural takeaways in DILR journal.",
         "quant": "Consolidate Algebra Formula Sheet. Review all formulas for logs, progressions, and quadratics on Cracku."
       },
-      "source": "cat_2026_syllabus_roadmap.html:6084"
+      "source": "cat_2026_syllabus_roadmap.html:6085"
     },
     "2026-11-02": {
       "day_index": 45,
@@ -884,7 +888,7 @@
         "dilr": "Radar Charts & Bubble Scatter Plots: Interpreting multi-axis spider charts and bubble radii. Anastasis Set 30.",
         "quant": "25 Questions on Triangles basics: Finding angles, allowable integer third side counts, and obtuse/acute angle tests."
       },
-      "source": "cat_2026_syllabus_roadmap.html:6196"
+      "source": "cat_2026_syllabus_roadmap.html:6197"
     },
     "2026-11-03": {
       "day_index": 46,
@@ -897,7 +901,7 @@
         "dilr": "Matrix Seating with Mathematical Logic: Anastasis Shankar Set 31 & Set 32.",
         "quant": "25 Questions on Similar Triangles, median dividing area into equal halves, and Apollonius Theorem."
       },
-      "source": "cat_2026_syllabus_roadmap.html:6285"
+      "source": "cat_2026_syllabus_roadmap.html:6286"
     },
     "2026-11-04": {
       "day_index": 47,
@@ -910,7 +914,7 @@
         "dilr": "Routes & Networks / Flow Diagrams 1: Pipe flow with capacity bottlenecks and source-to-sink pathways.",
         "quant": "20 Questions on Triangle Centers and area coordinates. Verify incenter angle formulas (90 + A/2) on Cracku."
       },
-      "source": "cat_2026_syllabus_roadmap.html:6374"
+      "source": "cat_2026_syllabus_roadmap.html:6375"
     },
     "2026-11-05": {
       "day_index": 48,
@@ -923,7 +927,7 @@
         "dilr": "Routes & Networks / Flow Diagrams 2: Intermediate node transfer costs and shortest path algorithms.",
         "quant": "25 Questions on Circle theorems: Tangent-Secant theorem (PT^2 = PA x PB), intersecting chords inside circle (PA x PB = PC x PD)."
       },
-      "source": "cat_2026_syllabus_roadmap.html:6463"
+      "source": "cat_2026_syllabus_roadmap.html:6464"
     },
     "2026-11-06": {
       "day_index": 49,
@@ -936,7 +940,7 @@
         "dilr": "Unconventional / Miscellaneous DILR Logic: Word puzzles, matrix cryptarithms, and symbol substitution games.",
         "quant": "20 Questions on Cyclic Quads and Common Tangents: sqrt(d^2 - (r1-r2)^2) vs sqrt(d^2 - (r1+r2)^2)."
       },
-      "source": "cat_2026_syllabus_roadmap.html:6552"
+      "source": "cat_2026_syllabus_roadmap.html:6553"
     },
     "2026-11-07": {
       "day_index": 50,
@@ -949,7 +953,7 @@
         "dilr": "Anastasis Shankar Set 33 & Set 34: Multi-constraint seating and order deduction puzzles under timed pressure.",
         "quant": "20 Questions on Polygons: Interior angle sum (n-2)*180, number of diagonals n(n-3)/2, and Hexagon area formulas."
       },
-      "source": "cat_2026_syllabus_roadmap.html:6641"
+      "source": "cat_2026_syllabus_roadmap.html:6642"
     },
     "2026-11-08": {
       "day_index": 51,
@@ -962,7 +966,7 @@
         "dilr": "Benchmark Mock 3 - Section 2: DILR 40 mins. Select best 2 sets in first 5 mins. Guarantee 100% accuracy on 8 questions.",
         "quant": "Benchmark Mock 3 - Section 3: QA 40 mins. Harvest 12 questions from Arithmetic + Algebra + 1 Geometry."
       },
-      "source": "cat_2026_syllabus_roadmap.html:6730"
+      "source": "cat_2026_syllabus_roadmap.html:6731"
     },
     "2026-11-09": {
       "day_index": 52,
@@ -975,7 +979,7 @@
         "dilr": "Caselet DI & Reasoning: Text-heavy paragraphs containing numerical relations without tables. Anastasis Set 35.",
         "quant": "20 Questions on 3D Mensuration: Melting cylinders into spheres, cutting cones at height h, volume ratios."
       },
-      "source": "cat_2026_syllabus_roadmap.html:6842"
+      "source": "cat_2026_syllabus_roadmap.html:6843"
     },
     "2026-11-10": {
       "day_index": 53,
@@ -988,7 +992,7 @@
         "dilr": "Ranking & Order Puzzles: Greater than / Less than chain deductions. Anastasis Shankar Set 36 & Set 37.",
         "quant": "20 Questions on Coordinate Geometry: Area of triangle with coordinates, distance from point to line |ax0+by0+c|/sqrt(a^2+b^2)."
       },
-      "source": "cat_2026_syllabus_roadmap.html:6931"
+      "source": "cat_2026_syllabus_roadmap.html:6932"
     },
     "2026-11-11": {
       "day_index": 54,
@@ -1001,7 +1005,7 @@
         "dilr": "Quant-Based DILR: Maximizing or minimizing output based on algebraic conditions. Rodha DILR.",
         "quant": "8–10 Questions on Heights & Distances and 30°-60°-90° right triangle applications. Strictly skip all higher trigonometric identities."
       },
-      "source": "cat_2026_syllabus_roadmap.html:7020"
+      "source": "cat_2026_syllabus_roadmap.html:7021"
     },
     "2026-11-12": {
       "day_index": 55,
@@ -1014,7 +1018,7 @@
         "dilr": "Missing Value DI Tables: Row/column constraints and linear bounds. Anastasis Shankar Set 38.",
         "quant": "25 Questions on P&C basics: Forming words with restricted letters, forming digits with/without repetition."
       },
-      "source": "cat_2026_syllabus_roadmap.html:7109"
+      "source": "cat_2026_syllabus_roadmap.html:7110"
     },
     "2026-11-13": {
       "day_index": 56,
@@ -1027,7 +1031,7 @@
         "dilr": "Selection DI Sets: Matrix matching with probability or selection rules. Anastasis Set 39.",
         "quant": "20 Questions on Circular Permutations, Necklace problems (n-1)!/2, and identical coin distribution (n+r-1)C(r-1)."
       },
-      "source": "cat_2026_syllabus_roadmap.html:7198"
+      "source": "cat_2026_syllabus_roadmap.html:7199"
     },
     "2026-11-14": {
       "day_index": 57,
@@ -1040,7 +1044,7 @@
         "dilr": "Solve 1 complete DILR slot simulation from CAT 2022 Slot 3 (4 sets in 40 mins) on 2IIM.",
         "quant": "20 Questions on Probability: At least one head/six, drawing colored balls with/without replacement, and fair coin tosses."
       },
-      "source": "cat_2026_syllabus_roadmap.html:7287"
+      "source": "cat_2026_syllabus_roadmap.html:7288"
     },
     "2026-11-15": {
       "day_index": 58,
@@ -1053,7 +1057,7 @@
         "dilr": "Benchmark Mock 4 - Section 2: DILR 40 mins. Perfect 2-set execution (8–10 questions without a single error).",
         "quant": "Benchmark Mock 4 - Section 3: QA 40 mins. Execute 3-round scan: Round 1 (easy 7 Qs), Round 2 (medium 5 Qs)."
       },
-      "source": "cat_2026_syllabus_roadmap.html:7376"
+      "source": "cat_2026_syllabus_roadmap.html:7377"
     },
     "2026-11-16": {
       "day_index": 59,
@@ -1066,7 +1070,7 @@
         "dilr": "CAT 2021 Slot 1 DILR Set 1 & Set 2: Solve under 12-minute timer on 2IIM. Check alternate notation.",
         "quant": "25 Questions on Divisibility Rules & Factorization: Number of even/odd factors, number of factors coprime to 10."
       },
-      "source": "cat_2026_syllabus_roadmap.html:7488"
+      "source": "cat_2026_syllabus_roadmap.html:7489"
     },
     "2026-11-17": {
       "day_index": 60,
@@ -1079,7 +1083,7 @@
         "dilr": "CAT 2021 Slot 2 DILR Set 1 & Set 2: Solve on 2IIM. Refine case-elimination speed.",
         "quant": "20 Questions on Remainder Theorems: Finding remainders of large powers (e.g. 2^100 mod 7) and binomial theorem remainders."
       },
-      "source": "cat_2026_syllabus_roadmap.html:7577"
+      "source": "cat_2026_syllabus_roadmap.html:7578"
     },
     "2026-11-18": {
       "day_index": 61,
@@ -1092,7 +1096,7 @@
         "dilr": "CAT 2022 Slot 1 DILR Set 1 & Set 2: Solve on 2IIM. Practice zero-roughwork table tracking.",
         "quant": "20 Questions on Unit Digits, Trailing Zeroes in n! (Legendre's Formula [n/5] + [n/25] + ...), and base-n numbers."
       },
-      "source": "cat_2026_syllabus_roadmap.html:7666"
+      "source": "cat_2026_syllabus_roadmap.html:7667"
     },
     "2026-11-19": {
       "day_index": 62,
@@ -1105,7 +1109,7 @@
         "dilr": "CAT 2022 Slot 2 DILR Set 1 & Set 2: Anastasis Shankar Set 41 & Set 42 walkthrough.",
         "quant": "20 Questions on HCF-LCM models and successive division remainder problems."
       },
-      "source": "cat_2026_syllabus_roadmap.html:7755"
+      "source": "cat_2026_syllabus_roadmap.html:7756"
     },
     "2026-11-20": {
       "day_index": 63,
@@ -1118,7 +1122,7 @@
         "dilr": "Deconstruct all 4 sets of CAT 2023 Slot 1 DILR. Note down which set had the cleanest entry condition.",
         "quant": "Deconstruct all 22 questions of CAT 2023 Slot 1 QA. Confirm that 9 questions were straightforward Arithmetic/Algebra."
       },
-      "source": "cat_2026_syllabus_roadmap.html:7844"
+      "source": "cat_2026_syllabus_roadmap.html:7845"
     },
     "2026-11-21": {
       "day_index": 64,
@@ -1131,7 +1135,7 @@
         "dilr": "CAT 2023 Slot 2 DILR: Solve the best 2 sets on Anastasis Shankar channel.",
         "quant": "Solve 15 selected Arithmetic & Algebra questions from CAT 2023 Slot 2 & 3. Note step savings."
       },
-      "source": "cat_2026_syllabus_roadmap.html:7933"
+      "source": "cat_2026_syllabus_roadmap.html:7934"
     },
     "2026-11-22": {
       "day_index": 65,
@@ -1144,7 +1148,7 @@
         "dilr": "Rapidly evaluate 4 DILR sets: identify the set with highest data clarity within 4 minutes. Anastasis Shankar.",
         "quant": "Rapidly scan 22 QA questions from CAT 2022 Slot 3. Pick exactly 9 questions to attempt in 30 minutes. Solve them."
       },
-      "source": "cat_2026_syllabus_roadmap.html:8022"
+      "source": "cat_2026_syllabus_roadmap.html:8023"
     },
     "2026-11-23": {
       "day_index": 66,
@@ -1157,7 +1161,7 @@
         "dilr": "Solve 1 moderate arrangement DILR set from Anastasis Shankar. Reinforce clean notation habits.",
         "quant": "Review entire Cracku CAT QA Formula Cheat Sheet from first page to last. Recite all geometry & algebra identities."
       },
-      "source": "cat_2026_syllabus_roadmap.html:8134"
+      "source": "cat_2026_syllabus_roadmap.html:8135"
     },
     "2026-11-24": {
       "day_index": 67,
@@ -1170,7 +1174,7 @@
         "dilr": "Final Mock 5 - Section 2: DILR 40 mins. Lock down 2 clean sets (8–10 questions). Zero panic.",
         "quant": "Final Mock 5 - Section 3: QA 40 mins. Execute 9–11 high-accuracy Arithmetic & Algebra questions."
       },
-      "source": "cat_2026_syllabus_roadmap.html:8223"
+      "source": "cat_2026_syllabus_roadmap.html:8224"
     },
     "2026-11-25": {
       "day_index": 68,
@@ -1183,7 +1187,7 @@
         "dilr": "Review DILR Mock 5: Congratulate yourself on successful set selection. No new tough sets today.",
         "quant": "Review QA Mock 5: Verify calculations. Re-read the formula sheet one more time."
       },
-      "source": "cat_2026_syllabus_roadmap.html:8312"
+      "source": "cat_2026_syllabus_roadmap.html:8313"
     },
     "2026-11-26": {
       "day_index": 69,
@@ -1196,7 +1200,7 @@
         "dilr": "DILR Tactical Plan: 40 Mins = 5 mins scan/rank 4 sets + 16 mins Set 1 + 16 mins Set 2 + 3 mins check.",
         "quant": "QA Tactical Plan: 40 Mins = Round 1 (18 mins, 6 easy Qs) + Round 2 (18 mins, 4 medium Qs) + 4 mins buffer."
       },
-      "source": "cat_2026_syllabus_roadmap.html:8401"
+      "source": "cat_2026_syllabus_roadmap.html:8402"
     },
     "2026-11-27": {
       "day_index": 70,
@@ -1209,7 +1213,7 @@
         "dilr": "Map out exam center route on Google Maps. Plan to arrive at center 90 minutes before gate closure time.",
         "quant": "Pack transparent water bottle, original photo ID card, admit card, and 2 identical passport photographs. Sleep by 10:30 PM."
       },
-      "source": "cat_2026_syllabus_roadmap.html:8490"
+      "source": "cat_2026_syllabus_roadmap.html:8491"
     },
     "2026-11-28": {
       "day_index": 71,
@@ -1222,7 +1226,7 @@
         "dilr": "Take a relaxing evening walk. Stay off social media and telegram groups to avoid exam anxiety contagion.",
         "quant": "Eat light nutritious dinner. Double check alarm clock and travel arrangements. Sleep soundly by 10:00 PM."
       },
-      "source": "cat_2026_syllabus_roadmap.html:8579"
+      "source": "cat_2026_syllabus_roadmap.html:8580"
     },
     "2026-11-29": {
       "day_index": 72,
@@ -1235,7 +1239,7 @@
         "dilr": "DILR Section (40 Mins): Pick the 2 cleanest sets. Read clues twice before writing. Bank 20–24 clean marks.",
         "quant": "QA Section (40 Mins): Harvest Arithmetic & Algebra gems. Skip lengthy questions instantly. Bank 22–26 marks."
       },
-      "source": "cat_2026_syllabus_roadmap.html:8668"
+      "source": "cat_2026_syllabus_roadmap.html:8669"
     }
   }
 }

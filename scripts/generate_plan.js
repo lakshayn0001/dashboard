@@ -49,6 +49,8 @@ function getDeadlinesWithin7Days(deadlines, targetDateStr) {
   const oneDayAgo = new Date(targetDate.getTime() - 1 * 24 * 60 * 60 * 1000);
 
   return deadlines.filter(d => {
+    // Never show completed deadlines or cat_registration_close on any date
+    if (d.done || d.status === 'completed' || d.id === 'cat_registration_close') return false;
     if (!d.datetime_ist) return false;
     const deadlineDate = new Date(d.datetime_ist);
     return deadlineDate >= oneDayAgo && deadlineDate <= sevenDaysLater;

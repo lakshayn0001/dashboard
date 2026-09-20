@@ -151,13 +151,16 @@ const contextData = {
   deadlines: [
     {
       id: 'cat_registration_close',
-      title: 'CAT 2026 Registration Close',
-      datetime_ist: '2026-09-22T17:00:00+05:30',
+      title: 'CAT 2026 Registration Complete',
+      datetime_ist: '2026-09-02T23:59:59+05:30',
       source_url: 'https://iimcat.ac.in',
       verified: true,
-      urgent: true,
-      action: 'Submit CAT 2026 registration, 6 city preferences, and fee payment (₹2,700 Gen) before 5:00 PM cutoff.',
-      source: 'deadlines_calendar.html:482'
+      urgent: false,
+      done: true,
+      status: 'completed',
+      completed_date: '2026-09-02',
+      action: 'Registration complete (submitted 2 Sep 2026, ₹2,700 fee paid, 5 test-city preferences locked). Next milestone: admit card release (expected early Nov, verify on iimcat.ac.in).',
+      source: 'deadlines_calendar.html:474'
     },
     {
       id: 'dmat_status_check',
@@ -223,10 +226,11 @@ const contextData = {
       id: 'cat_admit_card_release',
       title: 'CAT 2026 Admit Card Release',
       datetime_ist: '2026-11-05T23:59:59+05:30',
+      expected: 'early Nov',
       source_url: 'https://iimcat.ac.in',
       verified: false,
       urgent: false,
-      action: 'Download CAT admit card from iimcat.ac.in, note allocated slot (Slot 1, 2, or 3), and align mock tests with slot timing.',
+      action: 'Download CAT 2026 admit card on iimcat.ac.in (expected early Nov, verify on iimcat.ac.in). Note allocated slot (Slot 1, 2, or 3), and align mock tests with slot timing.',
       source: 'deadlines_calendar.html:671'
     },
     {
@@ -330,7 +334,7 @@ const contextData = {
       monday_wednesday_batch: '08:15 – 09:00 AM: 8–10 tailored submissions (15–20/wk total)',
       tue_thu_fri_triage: '08:15 – 09:00 AM: Recruiter triage (replies, availability, interview scheduling)'
     },
-    target_roles: ['Full-Stack Software Engineer', 'Software Developer – Integration'],
+    target_roles: ['Full-Stack Software Engineer', 'Software Integrator'],
     primary_platforms: ['Instahyre', 'LinkedIn Jobs', 'Wellfound', 'Naukri', 'Cutshort'],
     candidate_advantage: 'Immediate Joiner (0 Days Notice)',
     weekly_screen_target: 2,

@@ -1,29 +1,28 @@
 {
   "date": "2026-09-21",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-09-20T17:28:39.342Z",
-  "generated_by": "grok",
-  "summary": "Day 3: lock percentage multipliers & successive changes; CL RC Module 1; 2 linear DILR sets; Mon 8\u201310 job apps; Germany Sept targets (Anabin/dMAT/Passau/MDU).",
+  "generated_at": "2026-09-20T17:44:52.748Z",
+  "summary": "Day 3 of 72 (Percentages Mastery: Multipliers & Successive Changes): Lock down base-change formulas (x% increase followed by y% decrease) and linear seating deductions.",
   "urgent_alerts": [
     {
-      "title": "Target: Anabin H+ Check for MDU Rohtak",
-      "deadline": "Tue 22 Sep, 11:59 PM IST",
-      "action": "Verify MDU H+ on anabin.kmk.org; save PDF confirmation."
+      "title": "dMAT Status Check (aps-india.de/dmat & g.a.s.t.)",
+      "deadline": "2026-09-22T23:59:59+05:30",
+      "action": "Check if dMAT registration is closed, exempt, or scheduled for next sitting; if closed, lock Winter 2027/28 branch."
     },
     {
-      "title": "Target: dMAT Status Check",
-      "deadline": "Tue 22 Sep, 11:59 PM IST",
-      "action": "Check aps-india.de/dmat & g.a.s.t.; if closed, lock Winter 2027/28 branch."
+      "title": "Anabin H+ Check for MDU Rohtak",
+      "deadline": "2026-09-22T23:59:59+05:30",
+      "action": "Verify MDU H+ institutional status and B.Tech CSE degree recognition on anabin.kmk.org; save PDF confirmation."
     },
     {
-      "title": "Target: Run Passau Interactive Guide",
-      "deadline": "Tue 22 Sep, 11:59 PM IST",
-      "action": "Confirm Passau M.Sc. CS/AI application route (direct vs uni-assist; no VPD)."
+      "title": "Run Passau Interactive Guide",
+      "deadline": "2026-09-22T23:59:59+05:30",
+      "action": "Run Passau interactive application guide for M.Sc. CS/AI to confirm application route (direct portal vs uni-assist; no VPD)."
     },
     {
-      "title": "Target: Email MDU for MOI & Cohort Ranking",
-      "deadline": "Tue 22 Sep, 11:59 PM IST",
-      "action": "Request 100% English MOI letter + cohort ranking certificate from MDU Registrar."
+      "title": "Email MDU for MOI Letter & Cohort Ranking Doc",
+      "deadline": "2026-09-22T23:59:59+05:30",
+      "action": "Send email to MDU Rohtak Registrar requesting 100% English Medium-of-Instruction letter and official cohort ranking certificate."
     }
   ],
   "blocks": [
@@ -31,9 +30,9 @@
       "id": "block-dsa",
       "start": "07:30",
       "end": "08:15",
-      "title": "DSA \u2014 2 LeetCode problems",
+      "title": "DSA Algorithmic Problem Solving (2 Problems)",
       "stream": "dsa",
-      "details": "1 Medium + 1 Easy/Review from DSA Master Tracker. Approach + edges before code.",
+      "details": "Solve 2 curated LeetCode problems (1 Medium + 1 Easy/Review) from the 247-problem DSA Tracker. Focus on algorithmic clarity and edge cases.",
       "links": [
         "dsa_master_tracker.html"
       ],
@@ -42,42 +41,29 @@
       "verify": false
     },
     {
-      "id": "block-job-batch",
+      "id": "block-job",
       "start": "08:15",
       "end": "09:00",
-      "title": "Job \u2014 Mon application batch (8\u201310)",
+      "title": "Dedicated Job Outreach Application Batch",
       "stream": "job",
-      "details": "Monday batch: 8\u201310 tailored Full-Stack/SDE applications. Review drafts before send \u2014 no auto-send. Instahyre, LinkedIn, Wellfound, Naukri, Cutshort.",
+      "details": "Dedicated morning batch: Submit 8–10 tailored applications on Instahyre and LinkedIn Jobs. Target Series A–C tech and European remote roles highlighting Immediate Joiner status.",
       "links": [
         "profile.html#cold-email",
-        "https://www.instahyre.com",
-        "https://www.linkedin.com/jobs/",
-        "https://wellfound.com/jobs"
+        "https://www.instahyre.com"
       ],
-      "priority": 1,
+      "priority": 2,
       "notify_before_min": 10,
-      "verify": false
-    },
-    {
-      "id": "block-breakfast",
-      "start": "09:00",
-      "end": "09:30",
-      "title": "Breakfast",
-      "stream": "health",
-      "details": "Breakfast; no study tabs.",
-      "links": [],
-      "priority": 3,
-      "notify_before_min": 5,
       "verify": false
     },
     {
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 3 \u2014 Percentages + Linear Arrangements",
+      "title": "CAT Day 3: QA & DILR Focus",
       "stream": "cat",
-      "details": "Mission: Lock down base-change formulas (x% increase followed by y% decrease) and linear seating deductions. Quant: Percentages LOD 1 & LOD 2: 25 questions covering Net Price change, A is x% more than B, and income-expenditure splits. DILR: Linear Arrangements 1 (Single Row, all facing North). Solve 2 sets from Rodha DILR Playlist. Focus on definite vs conditional clues.",
+      "details": "QA: Percentages LOD 1 & LOD 2: 25 questions covering Net Price change, A is x% more than B, and income-expenditure splits.. DILR: Linear Arrangements 1 (Single Row, all facing North). Solve 2 sets from Rodha DILR Playlist. Focus on definite vs conditional clues..",
       "links": [
+        "cat_2026_syllabus_roadmap.html",
         "cat_2026_syllabus_roadmap.html#day-3"
       ],
       "priority": 1,
@@ -85,24 +71,12 @@
       "verify": false
     },
     {
-      "id": "block-lunch",
-      "start": "12:00",
-      "end": "13:00",
-      "title": "Lunch break",
-      "stream": "health",
-      "details": "Lunch + short reset.",
-      "links": [],
-      "priority": 3,
-      "notify_before_min": 5,
-      "verify": false
-    },
-    {
-      "id": "block-germany-targets",
+      "id": "block-germany-admin",
       "start": "14:30",
       "end": "15:30",
-      "title": "Germany \u2014 September personal targets",
+      "title": "Germany Academic Admin & Prerequisite Audits",
       "stream": "germany",
-      "details": "Pending TARGETS (not official deadlines): Anabin H+ PDF; dMAT status (if closed \u2192 Winter 2027/28); Passau interactive guide; MDU MOI + cohort-ranking email. English bar: IELTS 5.5 (B2) OR 100% English MOI \u2014 not 6.5. Passau summer freeze N/A while branch=unknown. CAT registration already done \u2014 skip.",
+      "details": "Zero-fee audit tasks: Check Anabin H+ status for MDU, audit dMAT status on aps-india.de/dmat, review Passau interactive guide checklist, and email MDU for 100% English MOI letter.",
       "links": [
         "deadlines_calendar.html#prerequisite-tasks",
         "https://anabin.kmk.org",
@@ -114,54 +88,17 @@
       "verify": true
     },
     {
-      "id": "block-tea",
-      "start": "15:30",
-      "end": "16:00",
-      "title": "Tea / transition",
-      "stream": "health",
-      "details": "Tea break before VARC.",
-      "links": [],
-      "priority": 3,
-      "notify_before_min": 5,
-      "verify": false
-    },
-    {
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 3 \u2014 VARC RC Module 1 drill",
+      "title": "CAT Day 3: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "CL MyZone VARC: Complete RC Module 1 Practice Drill 1 (2 Passages, 8 Questions under 18 mins). Track accuracy. Track accuracy; log misses (Conceptual Gap / Misread Trap / Time Exhaustion).",
+      "details": "CL MyZone VARC: Complete RC Module 1 Practice Drill 1 (2 Passages, 8 Questions under 18 mins). Track accuracy. Maintain error log on Career Launcher MyZone.",
       "links": [
+        "cat_2026_syllabus_roadmap.html",
         "cat_2026_syllabus_roadmap.html#day-3"
       ],
       "priority": 1,
-      "notify_before_min": 10,
-      "verify": false
-    },
-    {
-      "id": "block-exercise",
-      "start": "18:00",
-      "end": "18:45",
-      "title": "Exercise / walk",
-      "stream": "health",
-      "details": "45 min walk or workout.",
-      "links": [],
-      "priority": 3,
-      "notify_before_min": 5,
-      "verify": false
-    },
-    {
-      "id": "block-wind-down",
-      "start": "21:30",
-      "end": "22:15",
-      "title": "Evening wind-down",
-      "stream": "rest",
-      "details": "Optional peek at Day 4 (P&L + Marked Price). Sleep by 22:30. Admit card: pending / expected early Nov \u2014 VERIFY later on iimcat.ac.in (not today).",
-      "links": [
-        "cat_2026_syllabus_roadmap.html#day-4"
-      ],
-      "priority": 3,
       "notify_before_min": 10,
       "verify": false
     }
@@ -169,24 +106,7 @@
   "totals_by_stream_min": {
     "dsa": 45,
     "job": 45,
-    "health": 165,
     "cat": 210,
-    "germany": 60,
-    "rest": 45
-  },
-  "assumptions": [
-    "cat_registration=done (paid 2026-09-02, form submitted); admit card pending early Nov \u2014 VERIFY on iimcat.ac.in when released.",
-    "cat_test_cities=5 preferences submitted.",
-    "No CAT registration alert or block in this plan.",
-    "Four Sept Germany items still pending \u2192 Target: urgent_alerts.",
-    "branch=unknown, dmat_status=unknown \u2192 no Passau summer freeze.",
-    "Monday \u2192 job application batch 8\u201310."
-  ],
-  "warnings": [
-    "Admit card not yet available; expected early Nov \u2014 do not treat as actionable today."
-  ],
-  "needs_user_input": [
-    "After Germany target work, mark each done in status (anabin_h_plus_check, dmat_status_check, passau_interactive_guide, mdu_moi_ranking_email).",
-    "Set status.branch to summer or winter once dMAT path is clear."
-  ]
+    "germany": 60
+  }
 }
