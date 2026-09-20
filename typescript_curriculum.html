@@ -579,12 +579,12 @@
 
     /* Two-Column App Layout */
     .layout {
-      max-width: 1600px;
+      max-width: 1720px;
       margin: 16px auto 0;
-      padding: 0 24px 60px;
+      padding: 0 24px 80px;
       display: grid;
-      grid-template-columns: 290px minmax(0, 1fr);
-      gap: 28px;
+      grid-template-columns: 310px minmax(0, 1fr);
+      gap: 32px;
       align-items: start;
     }
     @media (max-width: 1100px) {
@@ -1094,7 +1094,7 @@
 /* Topic Breakdown Grid */
 .topic-sections-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 16px;
   margin-top: 18px;
 }
@@ -2009,11 +2009,11 @@
   <div class="droplet-orb-2"></div>
   <div class="droplet-orb-3"></div>
 
-  <!-- Mobile-only backdrop for small screens (< lg) -->
-  <div id="sidebarBackdrop" onclick="toggleSidebar(false)" class="fixed inset-0 bg-stone-900/40 backdrop-blur-sm z-20 hidden lg:hidden transition-opacity duration-300"></div>
+  <!-- Backdrop for slide-over drawer -->
+  <div id="sidebarBackdrop" onclick="toggleSidebar(false)" class="fixed inset-0 bg-stone-900/40 backdrop-blur-sm z-40 hidden transition-opacity duration-300"></div>
 
-  <!-- Persistent Left Side Navigation (Always Open on Desktop) -->
-  <aside id="sideNavDrawer" class="w-72 fixed inset-y-0 left-0 z-30 flex flex-col glass-droplet-sidebar transition-transform duration-300 -translate-x-full lg:translate-x-0">
+  <!-- On-Demand Left Side Navigation Drawer (Opens via Menu/Portals button) -->
+  <aside id="sideNavDrawer" class="w-72 fixed inset-y-0 left-0 z-50 flex flex-col glass-droplet-sidebar transition-transform duration-300 -translate-x-full shadow-2xl">
     <div class="p-5 border-b border-stone-300/60 flex items-center justify-between">
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 via-teal-600 to-olive-700 flex items-center justify-center font-black text-white text-lg shadow-md droplet-pill">
@@ -2027,8 +2027,8 @@
           <span class="text-xs text-stone-600 font-mono block">Control Center</span>
         </div>
       </div>
-      <!-- Close button visible only on mobile -->
-      <button onclick="toggleSidebar(false)" class="lg:hidden p-1.5 rounded-lg text-stone-500 hover:text-stone-900 hover:bg-stone-200 transition-all" title="Close Menu">
+      <!-- Close button -->
+      <button onclick="toggleSidebar(false)" class="p-1.5 rounded-lg text-stone-500 hover:text-stone-900 hover:bg-stone-200 transition-all cursor-pointer" title="Close Menu">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
       </button>
     </div>
@@ -2137,67 +2137,66 @@
     </div>
   </aside>
 
-  <!-- Main Content Wrapper (Beside Permanent Sidebar on Desktop) -->
-  <div class="lg:pl-72 flex flex-col min-h-screen relative z-10">
+  <!-- Main Content Wrapper (Full Width with Single Curriculum Sidebar) -->
+  <div class="flex flex-col min-h-screen relative z-10 w-full">
 
     <!-- Sticky Top Glass Navigation Bar -->
-    <header class="sticky top-0 z-20 w-full glass-droplet-nav">
-      <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+    <header class="sticky top-0 z-30 w-full glass-droplet-nav shadow-xs">
+      <div class="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
         
-        <div class="flex items-center gap-3">
-          <!-- Mobile Drawer Trigger ONLY on <lg screens -->
-          <button onclick="toggleSidebar(true)" class="lg:hidden p-2 rounded-xl bg-white/90 hover:bg-stone-100 text-stone-700 hover:text-stone-950 border border-stone-300 transition-all flex items-center gap-1.5 cursor-pointer shadow-sm" title="Open Navigation Menu">
-            <svg class="w-5 h-5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-            <span class="text-xs font-semibold">Menu</span>
+        <!-- Left: Quick Navigation & Branding -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <a href="index.html" class="p-2 rounded-xl bg-white/90 hover:bg-stone-100 text-stone-700 hover:text-stone-950 border border-stone-300 transition-all flex items-center gap-1.5 cursor-pointer shadow-2xs font-semibold text-xs" title="Return to Daily Cockpit">
+            <span>⚡</span>
+            <span class="hidden sm:inline">Daily Cockpit</span>
+          </a>
+          <button onclick="toggleSidebar(true)" class="p-2 rounded-xl bg-white/90 hover:bg-stone-100 text-stone-700 hover:text-stone-950 border border-stone-300 transition-all flex items-center gap-1.5 cursor-pointer shadow-2xs font-semibold text-xs" title="Open All Portals Drawer">
+            <svg class="w-4 h-4 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            <span class="hidden md:inline">Portals</span>
           </button>
 
-          <a href="typescript_curriculum.html" class="flex items-center gap-2.5">
+          <div class="flex items-center gap-2 pl-2 border-l border-stone-300/80">
             <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-emerald-700 via-teal-700 to-olive-800 flex items-center justify-center text-white font-mono font-black text-sm droplet-pill shadow-sm">
               TS
             </div>
             <div>
               <div class="font-bold text-stone-900 text-sm sm:text-base tracking-tight flex items-center gap-2">
                 <span>TypeScript Curriculum</span>
-                <span class="hidden md:inline px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">79 Topics</span>
+                <span class="hidden sm:inline px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">79 Topics</span>
               </div>
               <span class="text-[10px] text-emerald-800 font-mono hidden sm:block">Production &amp; 2–5 YOE Mastery</span>
             </div>
-          </a>
+          </div>
         </div>
 
-        <!-- Global progress indicator -->
-        <div class="progress-container hidden sm:flex">
-          <span class="text-stone-700 font-bold">Progress:</span>
-          <div class="progress-bar-bg">
+        <!-- Center: Global progress indicator -->
+        <div class="progress-container hidden lg:flex items-center gap-2">
+          <span class="text-stone-700 font-bold text-xs">Progress:</span>
+          <div class="progress-bar-bg w-36">
             <div class="progress-bar-fill" id="global-progress-bar"></div>
           </div>
-          <span id="global-progress-text" class="font-mono text-emerald-800 font-bold">0%</span>
+          <span id="global-progress-text" class="font-mono text-emerald-800 font-bold text-xs">0%</span>
         </div>
 
-        <div class="nav-actions">
+        <!-- Right: Actions -->
+        <div class="flex items-center gap-2">
           <button onclick="openCompilerPlayground()" class="btn btn-primary shadow-sm" title="Open Interactive TypeScript Compiler & Practice Studio (Cmd+K / Ctrl+K)">
             <span>⚡</span>
-            <span>Compiler Studio</span>
+            <span class="hidden sm:inline">Compiler Studio</span>
+            <kbd class="hidden md:inline text-[9px] px-1.5 py-0.5 rounded bg-emerald-900/40 text-emerald-200 font-mono ml-1">⌘K</kbd>
           </button>
-          <a href="learning_hub.html" class="droplet-pill px-3 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 text-xs font-semibold hidden md:inline-flex items-center gap-1.5 transition-all">
-            <span>🧠</span>
-            <span>Learning Hub</span>
-          </a>
-          <a href="dsa_master_tracker.html" class="droplet-pill px-3 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 text-xs font-semibold hidden md:inline-flex items-center gap-1.5 transition-all">
+          <a href="dsa_master_tracker.html" class="droplet-pill px-3 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 text-xs font-semibold hidden xl:inline-flex items-center gap-1.5 transition-all">
             <span>⚡</span>
             <span>DSA Tracker</span>
           </a>
           <button class="btn" onclick="toggleTheme()" id="theme-btn" title="Toggle Light/Dark Theme">
-            <span id="theme-icon">🌙</span> <span id="theme-label">Dark</span>
+            <span id="theme-icon">🌙</span> <span id="theme-label" class="hidden sm:inline">Dark</span>
           </button>
-          <button class="btn" onclick="expandAll()" title="Expand All Code & Sections">
+          <button class="btn hidden sm:inline-flex" onclick="expandAll()" title="Expand All Code & Sections">
             Expand All
           </button>
-          <button class="btn" onclick="collapseAll()" title="Collapse All Code">
+          <button class="btn hidden sm:inline-flex" onclick="collapseAll()" title="Collapse All Code">
             Collapse All
-          </button>
-          <button class="btn hidden sm:inline-flex" onclick="window.print()" title="Print to PDF or Paper">
-            🖨️ Print
           </button>
         </div>
       </div>
@@ -2524,6 +2523,18 @@
 <!-- Main App Layout (Sticky Sidebar + Content) -->
 <div class="layout">
   <aside class="sidebar">
+    <!-- Quick Portal Switcher Strip -->
+    <div class="p-2 mb-3 rounded-xl bg-emerald-50/90 border border-emerald-200/80 flex items-center justify-between shadow-2xs">
+      <a href="index.html" class="flex items-center gap-1.5 text-xs font-bold text-emerald-950 hover:text-emerald-700 transition-colors">
+        <span>⚡</span>
+        <span>Daily Cockpit</span>
+      </a>
+      <button onclick="toggleSidebar(true)" class="flex items-center gap-1 text-[11px] font-semibold text-stone-600 hover:text-stone-900 px-2 py-0.5 rounded-lg hover:bg-stone-200/60 transition-all cursor-pointer" title="Open All Portals Menu">
+        <span>☰</span>
+        <span>Portals</span>
+      </button>
+    </div>
+
     <div class="sidebar-header">
       <h3>Curriculum Map</h3>
       <button class="btn" style="padding: 2px 6px; font-size: 10.5px;" onclick="resetAllProgress()">Reset</button>
