@@ -1,0 +1,14 @@
+{
+  "branch": "unknown",
+  "dmat_status": "unknown",
+  "tasks": {
+    "cat_registration": "pending",
+    "anabin_h_plus_check": "pending",
+    "dmat_status_check": "pending",
+    "passau_interactive_guide": "pending",
+    "mdu_moi_ranking_email": "pending",
+    "compute_cs_credit_share": "pending"
+  },
+  "mocks": [],
+  "notes": ""
+}
