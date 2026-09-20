@@ -230,28 +230,30 @@
       <div>
         <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Core Portals</div>
         <div class="mt-2 space-y-1">
-          <a href="index.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-base">📅</span>
-            <span>Daily Cockpit</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-mono font-bold">Today</span>
-          </a>
           <a href="dsa_master_tracker.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-emerald-100/90 text-emerald-950 border border-emerald-300 transition-all group text-sm font-bold shadow-sm">
             <span class="text-lg">⚡</span>
             <span>DSA Master Tracker</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-200/80 text-emerald-900 font-mono">247 Qs</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-200/80 text-emerald-900 font-mono">240+ LC</span>
           </a>
-          <a href="learning_hub.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-base">🧠</span>
-            <span>Learning Hub</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-mono">6 Tracks</span>
-          </a>
-          <a href="typescript_curriculum.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-base">📘</span>
-            <span>TypeScript Guide</span>
-          </a>
-          <a href="profile.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-base">👤</span>
+          <a href="profile.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
+            <span class="text-lg">👤</span>
             <span>Candidate Profile</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-mono font-bold">Resume &amp; Bio</span>
+          </a>
+          <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 font-medium transition-all group text-sm">
+            <span class="text-lg">⚡</span>
+            <span>Daily Cockpit</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-mono font-bold">Today</span>
+          </a>
+          <a href="learning_hub.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
+            <span class="text-lg">🧠</span>
+            <span>Learning Hub</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-mono">6 Tracks (Track 0 to 5)</span>
+          </a>
+          <a href="typescript_curriculum.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
+            <span class="text-lg">📘</span>
+            <span>TypeScript Curriculum</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-800 font-mono">17.6K Lines</span>
           </a>
         </div>
       </div>
@@ -402,8 +404,13 @@
           Targeted mastery of <strong>240+ curated LeetCode problems</strong> covering the 25 core algorithmic patterns required for Google, Meta, Amazon, Microsoft, and Uber. Every single problem features direct problem links, company priority tags, and an expandable <em>"Helping Approach / How to Think"</em> mental model.
         </p>
 
-        <!-- Action Buttons -->
+        <!-- Audio Summary Button -->
         <div class="pt-2 flex flex-wrap items-center gap-3">
+          <button onclick="playAudioSummary(this, 'DSA Tracker Overview', 'Welcome to Lakshay Nagpal\'s Data Structures and Algorithms Master Tracker. This portal covers over 240 curated LeetCode problems across 25 algorithmic patterns, designed for top-tier software engineering interviews. Rather than solving a thousand random problems, focus on core pattern recognition: sliding window, prefix sums, binary search on answers, two pointers, graphs, dynamic programming, and monotonic stacks. All progress is saved automatically to your local browser.')" class="audio-brief-btn inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 hover:bg-stone-100 border border-stone-300/80 text-stone-800 text-xs font-semibold shadow-sm transition-all">
+            <svg class="w-4 h-4 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+            <span class="audio-label" data-default-label="Listen Audio Brief (40s)">Listen Audio Brief (40s)</span>
+          </button>
+
           <button onclick="exportProgress()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white/90 hover:bg-stone-100 text-stone-800 text-xs font-medium border border-stone-300/80 shadow-sm transition-all">
             <svg class="w-3.5 h-3.5 text-stone-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
             <span>Export Progress</span>
@@ -751,7 +758,29 @@
     </div>
   </div>
 
-
+  <!-- Floating Audio Player Bar -->
+  <div id="floatingAudioBar" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 hidden max-w-md w-[92%] bg-white/95 border border-emerald-500/40 rounded-2xl shadow-2xl p-3.5 backdrop-blur-xl transition-all text-stone-900">
+    <div class="flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2.5 overflow-hidden">
+        <div class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-700 shrink-0">
+          <span class="animate-pulse">🎙️</span>
+        </div>
+        <div class="truncate">
+          <div id="audioPlayerTitle" class="text-xs font-bold text-stone-900 truncate">DSA Master Overview</div>
+          <div id="audioPlayerStatus" class="text-[10px] text-emerald-800 truncate">Narrating brief summary (Female Voice)...</div>
+        </div>
+      </div>
+      <div class="flex items-center gap-2 shrink-0">
+        <button onclick="toggleAudioPlayback()" class="p-2 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-800 transition-all" title="Play/Pause">
+          <svg id="pauseIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <svg id="playIcon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        </button>
+        <button onclick="stopAudioSummary()" class="p-2 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-500 hover:text-stone-900 transition-all" title="Close Audio">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="mt-auto border-t border-stone-300/70 bg-stone-100/80 py-8">
@@ -935,6 +964,9 @@
               <span class="text-xs font-bold text-emerald-800 font-mono topic-solved-count">${topicSolved}</span>
               <span class="text-xs text-stone-500 font-mono">/ ${topicTotal} solved (${topicPct}%)</span>
             </div>
+            <button onclick="listenTopicBrief('${topicObj.topic}')" class="p-1.5 rounded-lg bg-white/90 hover:bg-stone-100 text-stone-600 hover:text-emerald-800 border border-stone-300/80 transition-all shadow-sm" title="Listen Topic Brief">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+            </button>
           </div>
         `;
         topicSection.appendChild(header);
@@ -1234,6 +1266,135 @@
         renderTopicsAndProblems();
         updateStats();
       }
+    }
+
+    // TTS Audio Engine (Female Voice Model)
+    let currentUtterance = null;
+    let activeAudioBtn = null;
+
+    function getFemaleVoice() {
+      const voices = window.speechSynthesis.getVoices();
+      if (!voices || voices.length === 0) return null;
+      const enVoices = voices.filter(v => v.lang && v.lang.startsWith('en'));
+      const pool = enVoices.length > 0 ? enVoices : voices;
+
+      let found = pool.find(v => /female/i.test(v.name));
+      if (found) return found;
+
+      const femaleNames = [
+        'Samantha', 'Victoria', 'Karen', 'Zira', 'Jenny', 'Aria', 'Ava', 'Allison',
+        'Susan', 'Moira', 'Tessa', 'Fiona', 'Veena', 'Google UK English Female',
+        'Google US English', 'Microsoft Zira', 'Microsoft Jenny', 'Microsoft Aria'
+      ];
+      found = pool.find(v => femaleNames.some(fn => v.name.includes(fn)));
+      if (found) return found;
+
+      const maleNames = ['Daniel', 'Alex', 'David', 'George', 'Fred', 'Mark', 'Guy', 'Tom', 'Oliver', 'James'];
+      found = pool.find(v => !maleNames.some(mn => v.name.includes(mn)));
+      return found || pool[0];
+    }
+
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+      };
+    }
+
+    function playAudioSummary(btn, title, text) {
+      if (!('speechSynthesis' in window)) {
+        alert('Text-to-speech audio is not supported in this browser.');
+        return;
+      }
+
+      if (window.speechSynthesis.speaking && activeAudioBtn === btn) {
+        toggleAudioPlayback();
+        return;
+      }
+
+      stopAudioSummary();
+
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = 1.0;
+      utterance.pitch = 1.06; // Articulate, natural female pitch
+
+      const femaleVoice = getFemaleVoice();
+      if (femaleVoice) utterance.voice = femaleVoice;
+
+      utterance.onstart = () => {
+        activeAudioBtn = btn;
+        if (btn) {
+          btn.classList.add('ring-2', 'ring-emerald-400', 'bg-emerald-600', 'text-white');
+          const label = btn.querySelector('.audio-label');
+          if (label) label.innerText = 'Playing...';
+        }
+        const bar = document.getElementById('floatingAudioBar');
+        const titleEl = document.getElementById('audioPlayerTitle');
+        const statusEl = document.getElementById('audioPlayerStatus');
+        if (bar) bar.classList.remove('hidden');
+        if (titleEl) titleEl.innerText = title;
+        if (statusEl) statusEl.innerText = 'Narrating brief summary (Female Voice)...';
+        showPlayIcon(false);
+      };
+
+      utterance.onend = () => { stopAudioSummary(); };
+      utterance.onerror = () => { stopAudioSummary(); };
+
+      currentUtterance = utterance;
+      window.speechSynthesis.speak(utterance);
+    }
+
+    function listenTopicBrief(topicName) {
+      const topicObj = DSA_TOPICS_DATA.find(t => t.topic === topicName);
+      if (!topicObj) return;
+      const text = `Overview of ${topicObj.topic}. ${topicObj.description}. Contains ${topicObj.problems.length} high-yield problems. Focus on mastering the key patterns and edge cases.`;
+      playAudioSummary(null, `${topicName} Brief`, text);
+    }
+
+    function toggleAudioPlayback() {
+      if (!window.speechSynthesis.speaking) return;
+      if (window.speechSynthesis.paused) {
+        window.speechSynthesis.resume();
+        showPlayIcon(false);
+        if (activeAudioBtn) {
+          const label = activeAudioBtn.querySelector('.audio-label');
+          if (label) label.innerText = 'Playing...';
+        }
+        document.getElementById('audioPlayerStatus').innerText = 'Narrating brief summary...';
+      } else {
+        window.speechSynthesis.pause();
+        showPlayIcon(true);
+        if (activeAudioBtn) {
+          const label = activeAudioBtn.querySelector('.audio-label');
+          if (label) label.innerText = 'Paused';
+        }
+        document.getElementById('audioPlayerStatus').innerText = 'Paused (click to resume)';
+      }
+    }
+
+    function showPlayIcon(isPaused) {
+      const pauseIcon = document.getElementById('pauseIcon');
+      const playIcon = document.getElementById('playIcon');
+      if (pauseIcon && playIcon) {
+        if (isPaused) {
+          pauseIcon.classList.add('hidden');
+          playIcon.classList.remove('hidden');
+        } else {
+          pauseIcon.classList.remove('hidden');
+          playIcon.classList.add('hidden');
+        }
+      }
+    }
+
+    function stopAudioSummary() {
+      window.speechSynthesis.cancel();
+      if (activeAudioBtn) {
+        activeAudioBtn.classList.remove('ring-2', 'ring-emerald-400', 'bg-emerald-600', 'text-white');
+        const label = activeAudioBtn.querySelector('.audio-label');
+        if (label) label.innerText = label.getAttribute('data-default-label') || 'Listen Audio Brief';
+        activeAudioBtn = null;
+      }
+      const bar = document.getElementById('floatingAudioBar');
+      if (bar) bar.classList.add('hidden');
     }
   </script>
 </body>

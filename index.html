@@ -190,6 +190,11 @@
             <span>Today's Agenda</span>
             <span class="ml-auto text-[9px] px-1.5 py-0.5 rounded-full bg-emerald-200 text-emerald-900 font-mono font-bold">Active</span>
           </a>
+          <a href="#section-master-todos" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/60 transition-all font-semibold">
+            <span>✅</span>
+            <span>All Things To Do</span>
+            <span id="sidebarTodoBadge" class="ml-auto text-[9px] px-1.5 py-0.5 rounded-full bg-stone-200 text-stone-700 font-mono font-bold">23 Items</span>
+          </a>
           <a href="deadlines_calendar.html" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/60 transition-all">
             <span>⏰</span>
             <span>Master Deadlines</span>
@@ -362,8 +367,12 @@
               Loading daily plan...
             </h1>
           </div>
-          <div class="flex items-center gap-2">
-            <span id="dailyPlanSourceBadge" class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-stone-100 text-stone-700 border border-stone-200">
+          <div class="flex items-center gap-2 flex-wrap">
+            <button onclick="playDailyAudioBrief()" id="btnDailyAudioBrief" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-100 hover:bg-emerald-200 text-emerald-900 border border-emerald-300 text-xs font-bold transition-all shadow-2xs cursor-pointer" title="Listen to Today's Morning Audio Briefing">
+              <span>🎙️</span>
+              <span id="dailyAudioBriefLabel">Listen Daily Brief (40s)</span>
+            </button>
+            <span id="dailyPlanSourceBadge" class="text-[10px] font-mono font-bold px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200">
               Grok / Context
             </span>
           </div>
@@ -474,6 +483,434 @@
           <div id="dailyPlanBlocksList" class="space-y-2.5">
             <!-- Populated dynamically via renderDailyPlan() -->
           </div>
+        </div>
+
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- 2.5 MASTER EXECUTION MATRIX: EVERYTHING I HAVE TO DO                      -->
+      <!-- ========================================================================= -->
+      <section id="section-master-todos" class="glass-droplet rounded-2xl p-5 sm:p-6 space-y-5 border border-stone-300/80 shadow-sm">
+        
+        <!-- Header: Title, Global Progress, Audio Brief, Reset -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-stone-200/80">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-900 border border-emerald-300 font-mono">
+                ✅ Single Source of Truth
+              </span>
+              <span id="masterTodoGlobalBadge" class="text-xs font-mono font-bold text-emerald-800">
+                0 / 23 Completed
+              </span>
+            </div>
+            <h2 class="text-lg font-black text-stone-900 tracking-tight">
+              Master Execution Matrix: Everything I Have To Do
+            </h2>
+            <p class="text-xs text-stone-600">
+              Your comprehensive 6-pillar action roadmap. Check items off as you conquer them — progress automatically saves to your device.
+            </p>
+          </div>
+
+          <!-- Progress Bar & Actions -->
+          <div class="flex flex-col sm:items-end gap-2 flex-shrink-0">
+            <div class="flex items-center gap-2">
+              <button id="btnMasterAudioBrief" onclick="playMasterTodosAudioBrief(this)" class="audio-brief-btn px-3 py-1.5 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-950 font-bold text-xs border border-amber-300 flex items-center gap-1.5 transition-all shadow-2xs cursor-pointer" title="Listen to audio briefing of all tasks">
+                <span>🎧</span>
+                <span class="audio-label" data-default-label="Listen Brief (45s)">Listen Brief (45s)</span>
+              </button>
+              <button onclick="resetMasterTodos()" class="px-2.5 py-1.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 font-bold text-xs border border-stone-300 transition-all cursor-pointer" title="Reset all checked items to uncompleted">
+                <span>🔄 Reset</span>
+              </button>
+            </div>
+            <!-- Progress Bar -->
+            <div class="w-full sm:w-56 space-y-1">
+              <div class="flex justify-between text-[11px] font-mono text-stone-600">
+                <span>Completion</span>
+                <span id="masterTodoPercentText" class="font-bold text-emerald-800">0%</span>
+              </div>
+              <div class="h-2 w-full bg-stone-200 rounded-full overflow-hidden">
+                <div id="masterTodoProgressBar" class="h-full bg-emerald-600 rounded-full transition-all duration-300" style="width: 0%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter Category Tabs -->
+        <div class="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs font-semibold no-scrollbar">
+          <button onclick="filterMasterTodos('all', this)" class="master-filter-btn px-3 py-1.5 rounded-xl bg-emerald-800 text-white font-bold transition-all shadow-2xs whitespace-nowrap cursor-pointer" data-filter="all">
+            All (23)
+          </button>
+          <button onclick="filterMasterTodos('today', this)" class="master-filter-btn px-3 py-1.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 font-medium transition-all border border-stone-200 whitespace-nowrap cursor-pointer" data-filter="today">
+            📅 Today's Agenda (4)
+          </button>
+          <button onclick="filterMasterTodos('cat', this)" class="master-filter-btn px-3 py-1.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 font-medium transition-all border border-stone-200 whitespace-nowrap cursor-pointer" data-filter="cat">
+            🐯 CAT 2026 (5)
+          </button>
+          <button onclick="filterMasterTodos('germany', this)" class="master-filter-btn px-3 py-1.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 font-medium transition-all border border-stone-200 whitespace-nowrap cursor-pointer" data-filter="germany">
+            🇩🇪 Germany MSc (5)
+          </button>
+          <button onclick="filterMasterTodos('dsa', this)" class="master-filter-btn px-3 py-1.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 font-medium transition-all border border-stone-200 whitespace-nowrap cursor-pointer" data-filter="dsa">
+            ⚡ DSA 247 (4)
+          </button>
+          <button onclick="filterMasterTodos('tech', this)" class="master-filter-btn px-3 py-1.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 font-medium transition-all border border-stone-200 whitespace-nowrap cursor-pointer" data-filter="tech">
+            💻 Full-Stack (3)
+          </button>
+          <button onclick="filterMasterTodos('jobs', this)" class="master-filter-btn px-3 py-1.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 font-medium transition-all border border-stone-200 whitespace-nowrap cursor-pointer" data-filter="jobs">
+            🎯 Job Outreach (3)
+          </button>
+        </div>
+
+        <!-- 6 Category Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+          <!-- Category 1: Today's Non-Negotiable Routine -->
+          <div class="category-card p-4 rounded-xl bg-white/80 border border-stone-200/90 shadow-2xs space-y-3" data-category-card="today">
+            <div class="flex items-center justify-between pb-2 border-b border-stone-100">
+              <div class="flex items-center gap-2">
+                <span class="text-base">📅</span>
+                <span class="font-extrabold text-stone-900 text-xs uppercase tracking-wide">Today's Non-Negotiable Routine</span>
+              </div>
+              <span class="cat-counter text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 font-bold" data-card-cat="today">0/4 Done</span>
+            </div>
+            <div class="space-y-2">
+              
+              <label class="master-todo-item flex items-start gap-2.5 p-2.5 rounded-lg bg-stone-50/80 hover:bg-stone-100/90 border border-stone-200 transition-all cursor-pointer group" data-category="today">
+                <input type="checkbox" data-todo-id="todo-today-varc" onchange="toggleMasterTodo(this)" class="master-todo-check mt-0.5 w-4 h-4 rounded text-emerald-600 border-stone-300 focus:ring-emerald-500 cursor-pointer">
+                <div class="flex-grow min-w-0">
+                  <div class="flex items-center justify-between gap-1">
+                    <span class="todo-title text-xs font-bold text-stone-900 group-hover:text-stone-950 transition-all">Morning VARC Article + CL Daily RC Drill</span>
+                    <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-amber-100 text-amber-900 flex-shrink-0">45m</span>
+                  </div>
+                  <p class="todo-desc text-[11px] text-stone-500 mt-0.5">Read 1 long-form Aeon/The Guardian essay &amp; solve 1 timed RC passage on CL MyZone.</p>
+                </div>
+              </label>
+
+              <label class="master-todo-item flex items-start gap-2.5 p-2.5 rounded-lg bg-stone-50/80 hover:bg-stone-100/90 border border-stone-200 transition-all cursor-pointer group" data-category="today">
+                <input type="checkbox" data-todo-id="todo-today-qa" onchange="toggleMasterTodo(this)" class="master-todo-check mt-0.5 w-4 h-4 rounded text-emerald-600 border-stone-300 focus:ring-emerald-500 cursor-pointer">
+                <div class="flex-grow min-w-0">
+                  <div class="flex items-center justify-between gap-1">
+                    <span class="todo-title text-xs font-bold text-stone-900 group-hover:text-stone-950 transition-all">Afternoon High-Yield QA Practice (20-30 Qs)</span>
+                    <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-emerald-100 text-emerald-900 flex-shrink-0">90m</span>
+                  </div>
+                  <p class="todo-desc text-[11px] text-stone-500 mt-0.5">Focus on Arithmetic &amp; Algebra core problem sets under strict per-question timer.</p>
+                </div>
+              </label>
+
+              <label class="master-todo-item flex items-start gap-2.5 p-2.5 rounded-lg bg-stone-50/80 hover:bg-stone-100/90 border border-stone-200 transition-all cursor-pointer group" data-category="today">
+                <input type="checkbox" data-todo-id="todo-today-dilr" onchange="toggleMasterTodo(this)" class="master-todo-check mt-0.5 w-4 h-4 rounded text-emerald-600 border-stone-300 focus:ring-emerald-500 cursor-pointer">
+                <div class="flex-grow min-w-0">
+                  <div class="flex items-center justify-between gap-1">
+                    <span class="todo-title text-xs font-bold text-stone-900 group-hover:text-stone-950 transition-all">Evening DILR Caselet Set (2 Sets)</span>
+                    <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-blue-100 text-blue-900 flex-shrink-0">60m</span>
+                  </div>
+                  <p class="todo-desc text-[11px] text-stone-500 mt-0.5">Tackle 2 arrangement/matrix sets from Rodha or CL portal without early hints.</p>
+                </div>
+              </label>
+
+              <label class="master-todo-item flex items-start gap-2.5 p-2.5 rounded-lg bg-stone-50/80 hover:bg-stone-100/90 border border-stone-200 transition-all cursor-pointer group" data-category="today">
+                <input type="checkbox" data-todo-id="todo-today-dsa" onchange="toggleMasterTodo(this)" class="master-todo-check mt-0.5 w-4 h-4 rounded text-emerald-600 border-stone-300 focus:ring-emerald-500 cursor-pointer">
+                <div class="flex-grow min-w-0">
+                  <div class="flex items-center justify-between gap-1">
+                    <span class="todo-title text-xs font-bold text-stone-900 group-hover:text-stone-950 transition-all">Night LeetCode / DSA Problems (2 Qs)</span>
+                    <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-purple-100 text-purple-900 flex-shrink-0">60m</span>
+                  </div>
+                  <p class="todo-desc text-[11px] text-stone-500 mt-0.5">Solve 1 Medium Two-Pointers/Binary Search and 1 Tree/Graph question in TypeScript/Python.</p>
+                </div>
+              </label>
+
+            </div>
+          </div>
+
+          <!-- Category 2: CAT 2026 Strategic Execution -->
+          <div class="category-card p-4 rounded-xl bg-white/80 border border-stone-200/90 shadow-2xs space-y-3" data-category-card="cat">
+            <div class="flex items-center justify-between pb-2 border-b border-stone-100">
+              <div class="flex items-center gap-2">
+                <span class="text-base">🐯</span>
+                <span class="font-extrabold text-stone-900 text-xs uppercase tracking-wide">CAT 2026 Strategic Execution</span>
+              </div>
+              <span class="cat-counter text-[10px] font-mono px-2 py-0.5 rounded bg-amber-100 text-amber-900 font-bold" data-card-cat="cat">0/5 Done</span>
+            </div>
+            <div class="space-y-2">
+
+              <label class="master-todo-item flex items-start gap-2.5 p-2.5 rounded-lg bg-stone-50/80 hover:bg-stone-100/90 border border-stone-200 transition-all cursor-pointer group" data-category="cat">
+                <input type="checkbox" data-todo-id="todo-cat-mock" onchange="toggleMasterTodo(this)" class="master-todo-check mt-0.5 w-4 h-4 rounded text-emerald-600 border-stone-300 focus:ring-emerald-500 cursor-pointer">
+                <div class="flex-grow min-w-0">
+                  <div class="flex items-center justify-between gap-1">
+                    <span class="todo-title text-xs font-bold text-stone-900 group-hover:text-stone-950 transition-all">Weekly Full-Length Proctored Mock Test</span>
+                    <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-amber-100 text-amber-900 flex-shrink-0">Sun 10AM</span>
+                  </div>
+                  <p class="todo-desc text-[11px] text-stone-500 mt-0.5">Complete a 2-hour 66-question test under real test conditions every Sunday morning.</p>
+                </div>
+              </label>
+
+              <label class="master-todo-item flex items-start gap-2.5 p-2.5 rounded-lg bg-stone-50/80 hover:bg-stone-100/90 border border-stone-200 transition-all cursor-pointer group" data-category="cat">
+                <input type="checkbox" data-todo-id="todo-cat-analysis" onchange="toggleMasterTodo(this)" class="master-todo-check mt-0.5 w-4 h-4 rounded text-emerald-600 border-stone-300 focus:ring-emerald-500 cursor-pointer">
+                <div class="flex-grow min-w-0">
+                  <div class="flex items-center justify-between gap-1">
+                    <span class="todo-title text-xs font-bold text-stone-900 group-hover:text-stone-950 transition-all">In-Depth Mock Analysis &amp; Mistake Notebook</span>
+                    <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-red-100 text-red-900 flex-shrink-0">Essential</span>
+                  </div>
+                  <p class="todo-desc text-[11px] text-stone-500 mt-0.5">Log every unattempted &amp; negative-marked question; categorize silly vs concept errors.</p>
+                </div>
+              </label>
+
+              <label class="master-todo-item flex items-start gap-2.5 p-2.5 rounded-lg bg-stone-50/80 hover:bg-stone-100/90 border border-stone-200 transition-all cursor-pointer group" data-category="cat">
+                <input type="checkbox" data-todo-id="todo-cat-arithmetic" onchange="toggleMasterTodo(this)" class="master-todo-check mt-0.5 w-4 h-4 rounded text-emerald-600 border-stone-300 focus:ring-emerald-500 cursor-pointer">
+                <div class="flex-grow min-w-0">
+                  <div class="flex items-center justify-between gap-1">
+                    <span class="todo-title text-xs font-bold text-stone-900 group-hover:text-stone-950 transition-all">Arithmetic Mastery (Phase-1 Foundation)</span>
+                    <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-stone-200 text-stone-800 flex-shrink-0">Core QA</span>
+                  </div>
+                  <p class="todo-desc text-[11px] text-stone-500 mt-0.5">Percentages, Profit &amp; Loss, Ratio &amp; Proportion, Time-Speed-Distance, and Work problems.</p>
+                </div>
+              </label>
+
+              <label class="master-todo-item flex items-start gap-2.5 p-2.5 rounded-lg bg-stone-50/80 hover:bg-stone-100/90 border border-stone-200 transition-all cursor-pointer group" data-category="cat">
+                <input type="checkbox" data-todo-id="todo-cat-algebra" onchange="toggleMasterTodo(this)" class="master-todo-check mt-0.5 w-4 h-4 rounded text-emerald-600 border-stone-300 focus:ring-emerald-500 cursor-pointer">
+                <div class="flex-grow min-w-0">
+                  <div class="flex items-center justify-between gap-1">
+                    <span class="todo-title text-xs font-bold text-stone-900 group-hover:text-stone-950 transition-all">Algebra &amp; Number Systems (Phase-2)</span>
+                    <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-stone-200 text-stone-800 flex-shrink-0">High Weight</span>
+                  </div>
+                  <p class="todo-desc text-[11px] text-stone-500 mt-0.5">Solve Linear/Quadratic Equations, Polynomials, Modulus, Inequalities, and Logarithms.</p>
+                </div>
+              </label>
+
+              <label class="master-todo-item flex items-start gap-2.5 p-2.5 rounded-lg bg-stone-50/80 hover:bg-stone-100/90 border border-stone-200 transition-all cursor-pointer group" data-category="cat">
+                <input type="checkbox" data-todo-id="todo-cat-dilr-sets" onchange="toggleMasterTodo(this)" class="master-todo-check mt-0.5 w-4 h-4 rounded text-emerald-600 border-stone-300 focus:ring-emerald-500 cursor-pointer">
+                <div class="flex-grow min-w-0">
+                  <div class="flex items-center justify-between gap-1">
+                    <span class="todo-title text-xs font-bold text-stone-900 group-hover:text-stone-950 transition-all">DILR 100-Set Benchmark Challenge</span>
+                    <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-amber-100 text-amber-900 flex-shrink-0">Target: 100</span>
+                  </div>
+                  <p class="todo-desc text-[11px] text-stone-500 mt-0.5">Solve 100 sets across Linear/Circular Arrangements, Matrix Grids, and Games &amp; Tournaments.</p>
+                </div>
+              </label>
+
+            </div>
+          </div>
+
+          <!-- Category 3: German M.Sc. Winter 2026 Admissions -->
+          <div class="category-card p-4 rounded-xl bg-white/80 border border-stone-200/90 shadow-2xs space-y-3" data-category-card="germany">
+            <div class="flex items-center justify-between pb-2 border-b border-stone-100">
+              <div class="flex items-center gap-2">
+                <span class="text-base">🇩🇪</span>
+                <span class="font-extrabold text-stone-900 text-xs uppercase tracking-wide">German M.Sc. Winter 2026 Admissions</span>
+              </div>
+              <span class="cat-counter text-[10px] font-mono px-2 py-0.5 rounded bg-blue-100 text-blue-900 font-bold" data-card-cat="germany">0/5 Done</span>
+            </div>
+            <div class="space-y-2">
+
+              <label class="master-todo-item flex items-start gap-2.5 p-2.5 rounded-lg bg-stone-50/80 hover:bg-stone-100/90 border border-stone-200 transition-all cursor-pointer group" data-category="germany">
+                <input type="checkbox" data-todo-id="todo-ger-aps" onchange="toggleMasterTodo(this)" class="master-todo-check mt-0.5 w-4 h-4 rounded text-emerald-600 border-stone-300 focus:ring-emerald-500 cursor-pointer">
+                <div class="flex-grow min-w-0">
+                  <div class="flex items-center justify-between gap-1">
+                    <span class="todo-title text-xs font-bold text-stone-900 group-hover:text-stone-950 transition-all">Submit APS India Dossier &amp; Fee Payment</span>
+                    <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-red-100 text-red-900 flex-shrink-0">Bottleneck</span>
+                  </div>
+                  <p class="todo-desc text-[11px] text-stone-500 mt-0.5">Register on aps-india.info, pay fee, courier notarized B.Tech documents to New Delhi.</p>
+                </div>
+              </label>
+
+              <label class="master-todo-item flex items-start gap-2.5 p-2.5 rounded-lg bg-stone-50/80 hover:bg-stone-100/90 border border-stone-200 transition-all cursor-pointer group" data-category="germany">
+                <input type="checkbox" data-todo-id="todo-ger-transcripts" onchange="toggleMasterTodo(this)" class="master-todo-check mt-0.5 w-4 h-4 rounded text-emerald-600 border-stone-300 focus:ring-emerald-500 cursor-pointer">
+                <div class="flex-grow min-w-0">
+                  <div class="flex items-center justify-between gap-1">
+                    <span class="todo-title text-xs font-bold text-stone-900 group-hover:text-stone-950 transition-all">Collect Official MDU Rohtak Degree Transcripts</span>
+                    <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-blue-100 text-blue-900 flex-shrink-0">MDU Rohtak</span>
+                  </div>
+                  <p class="todo-desc text-[11px] text-stone-500 mt-0.5">Obtain sealed official transcripts for 8 semesters (3810/5400, 70.56% aggregate).</p>
+                </div>
+              </label>
+
+              <label class="master-todo-item flex items-start gap-2.5 p-2.5 rounded-lg bg-stone-50/80 hover:bg-stone-100/90 border border-stone-200 transition-all cursor-pointer group" data-category="germany">
+                <input type="checkbox" data-todo-id="todo-ger-lors" onchange="toggleMasterTodo(this)" class="master-todo-check mt-0.5 w-4 h-4 rounded text-emerald-600 border-stone-300 focus:ring-emerald-500 cursor-pointer">
+                <div class="flex-grow min-w-0">
+                  <div class="flex items-center justify-between gap-1">
+                    <span class="todo-title text-xs font-bold text-stone-900 group-hover:text-stone-950 transition-all">Secure 2 Academic Letters of Recommendation</span>
+                    <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-stone-200 text-stone-800 flex-shrink-0">2 LoRs</span>
+                  </div>
+                  <p class="todo-desc text-[11px] text-stone-500 mt-0.5">Request signed institutional recommendation letters from CSE HOD and senior professors.</p>
+                </div>
+              </label>
+
+              <label class="master-todo-item flex items-start gap-2.5 p-2.5 rounded-lg bg-stone-50/80 hover:bg-stone-100/90 border border-stone-200 transition-all cursor-pointer group" data-category="germany">
+                <input type="checkbox" data-todo-id="todo-ger-ielts" onchange="toggleMasterTodo(this)" class="master-todo-check mt-0.5 w-4 h-4 rounded text-emerald-600 border-stone-300 focus:ring-emerald-500 cursor-pointer">
+                <div class="flex-grow min-w-0">
+                  <div class="flex items-center justify-between gap-1">
+                    <span class="todo-title text-xs font-bold text-stone-900 group-hover:text-stone-950 transition-all">Register &amp; Prepare for IELTS Academic</span>
+                    <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-amber-100 text-amber-900 flex-shrink-0">Band 7.5+</span>
+                  </div>
+                  <p class="todo-desc text-[11px] text-stone-500 mt-0.5">Book IELTS Academic exam; target minimum 7.5 overall with no section under 6.5.</p>
+                </div>
+              </label>
+
+              <label class="master-todo-item flex items-start gap-2.5 p-2.5 rounded-lg bg-stone-50/80 hover:bg-stone-100/90 border border-stone-200 transition-all cursor-pointer group" data-category="germany">
+                <input type="checkbox" data-todo-id="todo-ger-sop" onchange="toggleMasterTodo(this)" class="master-todo-check mt-0.5 w-4 h-4 rounded text-emerald-600 border-stone-300 focus:ring-emerald-500 cursor-pointer">
+                <div class="flex-grow min-w-0">
+                  <div class="flex items-center justify-between gap-1">
+                    <span class="todo-title text-xs font-bold text-stone-900 group-hover:text-stone-950 transition-all">Finalize German Research Statement of Purpose</span>
+                    <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-purple-100 text-purple-900 flex-shrink-0">SOP</span>
+                  </div>
+                  <p class="todo-desc text-[11px] text-stone-500 mt-0.5">Craft 2-page academic SOP connecting B.Tech CSE coursework to target MSc programs.</p>
+                </div>
+              </label>
+
+            </div>
+          </div>
+
+          <!-- Category 4: DSA & Algorithmic Problem Solving -->
+          <div class="category-card p-4 rounded-xl bg-white/80 border border-stone-200/90 shadow-2xs space-y-3" data-category-card="dsa">
+            <div class="flex items-center justify-between pb-2 border-b border-stone-100">
+              <div class="flex items-center gap-2">
+                <span class="text-base">⚡</span>
+                <span class="font-extrabold text-stone-900 text-xs uppercase tracking-wide">DSA &amp; Algorithmic Problem Solving</span>
+              </div>
+              <span class="cat-counter text-[10px] font-mono px-2 py-0.5 rounded bg-amber-100 text-amber-900 font-bold" data-card-cat="dsa">0/4 Done</span>
+            </div>
+            <div class="space-y-2">
+
+              <label class="master-todo-item flex items-start gap-2.5 p-2.5 rounded-lg bg-stone-50/80 hover:bg-stone-100/90 border border-stone-200 transition-all cursor-pointer group" data-category="dsa">
+                <input type="checkbox" data-todo-id="todo-dsa-arrays" onchange="toggleMasterTodo(this)" class="master-todo-check mt-0.5 w-4 h-4 rounded text-emerald-600 border-stone-300 focus:ring-emerald-500 cursor-pointer">
+                <div class="flex-grow min-w-0">
+                  <div class="flex items-center justify-between gap-1">
+                    <span class="todo-title text-xs font-bold text-stone-900 group-hover:text-stone-950 transition-all">Arrays, Two Pointers &amp; Sliding Window</span>
+                    <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-stone-200 text-stone-800 flex-shrink-0">15 Patterns</span>
+                  </div>
+                  <p class="todo-desc text-[11px] text-stone-500 mt-0.5">Revise 3Sum, Kadane's, Trapping Rain Water, and Longest Substring Without Repeating.</p>
+                </div>
+              </label>
+
+              <label class="master-todo-item flex items-start gap-2.5 p-2.5 rounded-lg bg-stone-50/80 hover:bg-stone-100/90 border border-stone-200 transition-all cursor-pointer group" data-category="dsa">
+                <input type="checkbox" data-todo-id="todo-dsa-bs" onchange="toggleMasterTodo(this)" class="master-todo-check mt-0.5 w-4 h-4 rounded text-emerald-600 border-stone-300 focus:ring-emerald-500 cursor-pointer">
+                <div class="flex-grow min-w-0">
+                  <div class="flex items-center justify-between gap-1">
+                    <span class="todo-title text-xs font-bold text-stone-900 group-hover:text-stone-950 transition-all">Binary Search on Answer Space</span>
+                    <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-amber-100 text-amber-900 flex-shrink-0">Striver A-Z</span>
+                  </div>
+                  <p class="todo-desc text-[11px] text-stone-500 mt-0.5">Master Book Allocation, Painter's Partition, Aggressive Cows, and Capacity to Ship.</p>
+                </div>
+              </label>
+
+              <label class="master-todo-item flex items-start gap-2.5 p-2.5 rounded-lg bg-stone-50/80 hover:bg-stone-100/90 border border-stone-200 transition-all cursor-pointer group" data-category="dsa">
+                <input type="checkbox" data-todo-id="todo-dsa-trees" onchange="toggleMasterTodo(this)" class="master-todo-check mt-0.5 w-4 h-4 rounded text-emerald-600 border-stone-300 focus:ring-emerald-500 cursor-pointer">
+                <div class="flex-grow min-w-0">
+                  <div class="flex items-center justify-between gap-1">
+                    <span class="todo-title text-xs font-bold text-stone-900 group-hover:text-stone-950 transition-all">Binary Trees &amp; Graph Traversals</span>
+                    <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-blue-100 text-blue-900 flex-shrink-0">BFS/DFS</span>
+                  </div>
+                  <p class="todo-desc text-[11px] text-stone-500 mt-0.5">Implement LCA, Diameter, Kahn's Topological Sort, and Dijkstra's algorithm.</p>
+                </div>
+              </label>
+
+              <label class="master-todo-item flex items-start gap-2.5 p-2.5 rounded-lg bg-stone-50/80 hover:bg-stone-100/90 border border-stone-200 transition-all cursor-pointer group" data-category="dsa">
+                <input type="checkbox" data-todo-id="todo-dsa-dp" onchange="toggleMasterTodo(this)" class="master-todo-check mt-0.5 w-4 h-4 rounded text-emerald-600 border-stone-300 focus:ring-emerald-500 cursor-pointer">
+                <div class="flex-grow min-w-0">
+                  <div class="flex items-center justify-between gap-1">
+                    <span class="todo-title text-xs font-bold text-stone-900 group-hover:text-stone-950 transition-all">Dynamic Programming 20 Core Sub-Problems</span>
+                    <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-purple-100 text-purple-900 flex-shrink-0">DP Mastery</span>
+                  </div>
+                  <p class="todo-desc text-[11px] text-stone-500 mt-0.5">Solve 0/1 Knapsack, Longest Common Subsequence, Longest Increasing Subsequence, and Coin Change.</p>
+                </div>
+              </label>
+
+            </div>
+          </div>
+
+          <!-- Category 5: Full-Stack & Systems Architecture -->
+          <div class="category-card p-4 rounded-xl bg-white/80 border border-stone-200/90 shadow-2xs space-y-3" data-category-card="tech">
+            <div class="flex items-center justify-between pb-2 border-b border-stone-100">
+              <div class="flex items-center gap-2">
+                <span class="text-base">💻</span>
+                <span class="font-extrabold text-stone-900 text-xs uppercase tracking-wide">Full-Stack &amp; Systems Architecture</span>
+              </div>
+              <span class="cat-counter text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 font-bold" data-card-cat="tech">0/3 Done</span>
+            </div>
+            <div class="space-y-2">
+
+              <label class="master-todo-item flex items-start gap-2.5 p-2.5 rounded-lg bg-stone-50/80 hover:bg-stone-100/90 border border-stone-200 transition-all cursor-pointer group" data-category="tech">
+                <input type="checkbox" data-todo-id="todo-tech-ts" onchange="toggleMasterTodo(this)" class="master-todo-check mt-0.5 w-4 h-4 rounded text-emerald-600 border-stone-300 focus:ring-emerald-500 cursor-pointer">
+                <div class="flex-grow min-w-0">
+                  <div class="flex items-center justify-between gap-1">
+                    <span class="todo-title text-xs font-bold text-stone-900 group-hover:text-stone-950 transition-all">TypeScript Production Deep-Dive</span>
+                    <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-blue-100 text-blue-900 flex-shrink-0">79 Modules</span>
+                  </div>
+                  <p class="todo-desc text-[11px] text-stone-500 mt-0.5">Master conditional types, template literal types, AST transforms, and decorators.</p>
+                </div>
+              </label>
+
+              <label class="master-todo-item flex items-start gap-2.5 p-2.5 rounded-lg bg-stone-50/80 hover:bg-stone-100/90 border border-stone-200 transition-all cursor-pointer group" data-category="tech">
+                <input type="checkbox" data-todo-id="todo-tech-portfolio" onchange="toggleMasterTodo(this)" class="master-todo-check mt-0.5 w-4 h-4 rounded text-emerald-600 border-stone-300 focus:ring-emerald-500 cursor-pointer">
+                <div class="flex-grow min-w-0">
+                  <div class="flex items-center justify-between gap-1">
+                    <span class="todo-title text-xs font-bold text-stone-900 group-hover:text-stone-950 transition-all">Event-Driven Distributed Microservices Project</span>
+                    <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-emerald-100 text-emerald-900 flex-shrink-0">Architecture</span>
+                  </div>
+                  <p class="todo-desc text-[11px] text-stone-500 mt-0.5">Build scalable backend with Kafka, Redis cache, Postgres, and Docker Compose orchestration.</p>
+                </div>
+              </label>
+
+              <label class="master-todo-item flex items-start gap-2.5 p-2.5 rounded-lg bg-stone-50/80 hover:bg-stone-100/90 border border-stone-200 transition-all cursor-pointer group" data-category="tech">
+                <input type="checkbox" data-todo-id="todo-tech-system-design" onchange="toggleMasterTodo(this)" class="master-todo-check mt-0.5 w-4 h-4 rounded text-emerald-600 border-stone-300 focus:ring-emerald-500 cursor-pointer">
+                <div class="flex-grow min-w-0">
+                  <div class="flex items-center justify-between gap-1">
+                    <span class="todo-title text-xs font-bold text-stone-900 group-hover:text-stone-950 transition-all">System Design &amp; Architectural Showcase</span>
+                    <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-stone-200 text-stone-800 flex-shrink-0">Docs &amp; CI/CD</span>
+                  </div>
+                  <p class="todo-desc text-[11px] text-stone-500 mt-0.5">Document rate limiting, caching topologies, failovers, and complete CI/CD GitHub deploy.</p>
+                </div>
+              </label>
+
+            </div>
+          </div>
+
+          <!-- Category 6: Outbound Job Outreach & Career Mobility -->
+          <div class="category-card p-4 rounded-xl bg-white/80 border border-stone-200/90 shadow-2xs space-y-3" data-category-card="jobs">
+            <div class="flex items-center justify-between pb-2 border-b border-stone-100">
+              <div class="flex items-center gap-2">
+                <span class="text-base">🎯</span>
+                <span class="font-extrabold text-stone-900 text-xs uppercase tracking-wide">Outbound Job Outreach &amp; Career Mobility</span>
+              </div>
+              <span class="cat-counter text-[10px] font-mono px-2 py-0.5 rounded bg-purple-100 text-purple-900 font-bold" data-card-cat="jobs">0/3 Done</span>
+            </div>
+            <div class="space-y-2">
+
+              <label class="master-todo-item flex items-start gap-2.5 p-2.5 rounded-lg bg-stone-50/80 hover:bg-stone-100/90 border border-stone-200 transition-all cursor-pointer group" data-category="jobs">
+                <input type="checkbox" data-todo-id="todo-jobs-resumes" onchange="toggleMasterTodo(this)" class="master-todo-check mt-0.5 w-4 h-4 rounded text-emerald-600 border-stone-300 focus:ring-emerald-500 cursor-pointer">
+                <div class="flex-grow min-w-0">
+                  <div class="flex items-center justify-between gap-1">
+                    <span class="todo-title text-xs font-bold text-stone-900 group-hover:text-stone-950 transition-all">Keep Dual ATS Resumes Synchronized</span>
+                    <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-purple-100 text-purple-900 flex-shrink-0">Dual Resumes</span>
+                  </div>
+                  <p class="todo-desc text-[11px] text-stone-500 mt-0.5">Align Full-Stack and Backend resumes with verified B.Tech marks (70.56%) and tech achievements.</p>
+                </div>
+              </label>
+
+              <label class="master-todo-item flex items-start gap-2.5 p-2.5 rounded-lg bg-stone-50/80 hover:bg-stone-100/90 border border-stone-200 transition-all cursor-pointer group" data-category="jobs">
+                <input type="checkbox" data-todo-id="todo-jobs-pipeline" onchange="toggleMasterTodo(this)" class="master-todo-check mt-0.5 w-4 h-4 rounded text-emerald-600 border-stone-300 focus:ring-emerald-500 cursor-pointer">
+                <div class="flex-grow min-w-0">
+                  <div class="flex items-center justify-between gap-1">
+                    <span class="todo-title text-xs font-bold text-stone-900 group-hover:text-stone-950 transition-all">Weekly 10 Curated Applications</span>
+                    <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-emerald-100 text-emerald-900 flex-shrink-0">10/Week</span>
+                  </div>
+                  <p class="todo-desc text-[11px] text-stone-500 mt-0.5">Apply to 10 verified target companies matching full-stack/backend tech profile.</p>
+                </div>
+              </label>
+
+              <label class="master-todo-item flex items-start gap-2.5 p-2.5 rounded-lg bg-stone-50/80 hover:bg-stone-100/90 border border-stone-200 transition-all cursor-pointer group" data-category="jobs">
+                <input type="checkbox" data-todo-id="todo-jobs-linkedin" onchange="toggleMasterTodo(this)" class="master-todo-check mt-0.5 w-4 h-4 rounded text-emerald-600 border-stone-300 focus:ring-emerald-500 cursor-pointer">
+                <div class="flex-grow min-w-0">
+                  <div class="flex items-center justify-between gap-1">
+                    <span class="todo-title text-xs font-bold text-stone-900 group-hover:text-stone-950 transition-all">Weekly 5 Targeted LinkedIn Outreach Notes</span>
+                    <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-blue-100 text-blue-900 flex-shrink-0">5/Week</span>
+                  </div>
+                  <p class="todo-desc text-[11px] text-stone-500 mt-0.5">Send personalized messages to hiring managers, engineering leads, or founders.</p>
+                </div>
+              </label>
+
+            </div>
+          </div>
+
         </div>
 
       </section>
@@ -667,6 +1104,31 @@
   <div id="toast" class="fixed bottom-6 right-6 z-50 hidden px-4 py-2.5 rounded-xl bg-stone-900 text-white text-xs font-semibold shadow-xl flex items-center gap-2">
     <span class="text-emerald-400">✓</span>
     <span id="toastMsg">Action completed!</span>
+  </div>
+
+  <!-- Floating Bottom Audio Controller Bar -->
+  <div id="floatingAudioBar" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden max-w-xl w-[92%] sm:w-auto px-4 py-2.5 rounded-2xl glass-droplet bg-white/95 border border-stone-300/90 shadow-2xl text-stone-900 flex items-center justify-between gap-4 transition-all">
+    <div class="flex items-center gap-3 overflow-hidden">
+      <!-- Animated equalizer bars -->
+      <div class="flex items-end gap-0.5 h-4 w-4 text-emerald-700">
+        <span class="w-1 bg-emerald-600 rounded-full animate-bounce h-2"></span>
+        <span class="w-1 bg-emerald-600 rounded-full animate-bounce h-4" style="animation-delay: 0.15s"></span>
+        <span class="w-1 bg-emerald-600 rounded-full animate-bounce h-3" style="animation-delay: 0.3s"></span>
+      </div>
+      <div class="truncate">
+        <div id="audioPlayerTitle" class="text-xs font-bold text-stone-900 truncate">Playing Audio Briefing</div>
+        <div id="audioPlayerStatus" class="text-[11px] text-stone-500">Narrating brief (Female Voice)...</div>
+      </div>
+    </div>
+    <div class="flex items-center gap-2 flex-shrink-0">
+      <button onclick="toggleAudioPlayback()" id="audioPlayPauseBtn" class="p-1.5 rounded-lg bg-emerald-800 hover:bg-emerald-900 text-white transition-all cursor-pointer" title="Pause / Resume">
+        <svg id="pauseIcon" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/></svg>
+        <svg id="playIcon" class="w-4 h-4 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+      <button onclick="stopAudioSummary()" class="p-1.5 rounded-lg bg-stone-200 hover:bg-stone-300 text-stone-700 hover:text-stone-900 transition-all cursor-pointer" title="Stop Audio">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
   </div>
 
   <!-- Interactive JavaScript Engine -->
@@ -1274,9 +1736,313 @@
         .replace(/'/g, '&#039;');
     }
 
+    // =========================================================================
+    // Master Execution Matrix (To-Dos) Engine
+    // =========================================================================
+    const STORAGE_KEY_MASTER_TODOS = 'lakshay_master_todos_v1';
+
+    function loadMasterTodosState() {
+      let saved = {};
+      try {
+        saved = JSON.parse(localStorage.getItem(STORAGE_KEY_MASTER_TODOS) || '{}');
+      } catch (e) {
+        saved = {};
+      }
+
+      document.querySelectorAll('.master-todo-check').forEach(cb => {
+        const id = cb.getAttribute('data-todo-id');
+        if (id && saved[id]) {
+          cb.checked = true;
+        } else {
+          cb.checked = false;
+        }
+        applyTodoVisual(cb);
+      });
+
+      updateMasterTodosProgress();
+    }
+
+    function toggleMasterTodo(checkbox) {
+      let saved = {};
+      try {
+        saved = JSON.parse(localStorage.getItem(STORAGE_KEY_MASTER_TODOS) || '{}');
+      } catch (e) {
+        saved = {};
+      }
+
+      const id = checkbox.getAttribute('data-todo-id');
+      if (id) {
+        if (checkbox.checked) {
+          saved[id] = true;
+        } else {
+          delete saved[id];
+        }
+        try {
+          localStorage.setItem(STORAGE_KEY_MASTER_TODOS, JSON.stringify(saved));
+        } catch (e) {}
+      }
+
+      applyTodoVisual(checkbox);
+      updateMasterTodosProgress();
+    }
+
+    function applyTodoVisual(checkbox) {
+      const item = checkbox.closest('.master-todo-item');
+      if (!item) return;
+      const title = item.querySelector('.todo-title');
+      if (checkbox.checked) {
+        item.classList.add('bg-emerald-50/60', 'border-emerald-300');
+        item.classList.remove('bg-stone-50/80');
+        if (title) title.classList.add('line-through', 'text-stone-400');
+      } else {
+        item.classList.remove('bg-emerald-50/60', 'border-emerald-300');
+        item.classList.add('bg-stone-50/80');
+        if (title) title.classList.remove('line-through', 'text-stone-400');
+      }
+    }
+
+    function updateMasterTodosProgress() {
+      const allChecks = document.querySelectorAll('.master-todo-check');
+      const total = allChecks.length;
+      let completed = 0;
+
+      const catCounts = {
+        today: { total: 0, done: 0 },
+        cat: { total: 0, done: 0 },
+        germany: { total: 0, done: 0 },
+        dsa: { total: 0, done: 0 },
+        tech: { total: 0, done: 0 },
+        jobs: { total: 0, done: 0 }
+      };
+
+      allChecks.forEach(cb => {
+        const item = cb.closest('.master-todo-item');
+        const cat = item ? item.getAttribute('data-category') : null;
+        if (cat && catCounts[cat]) {
+          catCounts[cat].total++;
+          if (cb.checked) catCounts[cat].done++;
+        }
+        if (cb.checked) completed++;
+      });
+
+      const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
+
+      const globalBadge = document.getElementById('masterTodoGlobalBadge');
+      if (globalBadge) globalBadge.innerText = `${completed} / ${total} Completed`;
+
+      const percentText = document.getElementById('masterTodoPercentText');
+      if (percentText) percentText.innerText = `${percent}%`;
+
+      const progressBar = document.getElementById('masterTodoProgressBar');
+      if (progressBar) progressBar.style.width = `${percent}%`;
+
+      const sidebarBadge = document.getElementById('sidebarTodoBadge');
+      if (sidebarBadge) {
+        const left = total - completed;
+        sidebarBadge.innerText = left === 0 ? 'All Done! 🎉' : `${left} Remaining`;
+        if (left === 0) {
+          sidebarBadge.className = 'ml-auto text-[9px] px-1.5 py-0.5 rounded-full bg-emerald-200 text-emerald-900 font-mono font-bold';
+        } else {
+          sidebarBadge.className = 'ml-auto text-[9px] px-1.5 py-0.5 rounded-full bg-stone-200 text-stone-700 font-mono font-bold';
+        }
+      }
+
+      Object.keys(catCounts).forEach(cat => {
+        const counterEl = document.querySelector(`.cat-counter[data-card-cat="${cat}"]`);
+        if (counterEl) {
+          counterEl.innerText = `${catCounts[cat].done}/${catCounts[cat].total} Done`;
+        }
+      });
+    }
+
+    function filterMasterTodos(filterName, btn) {
+      document.querySelectorAll('.master-filter-btn').forEach(b => {
+        b.classList.remove('bg-emerald-800', 'text-white', 'font-bold');
+        b.classList.add('bg-stone-100', 'text-stone-700', 'font-medium');
+      });
+      if (btn) {
+        btn.classList.add('bg-emerald-800', 'text-white', 'font-bold');
+        btn.classList.remove('bg-stone-100', 'text-stone-700', 'font-medium');
+      }
+
+      document.querySelectorAll('.category-card').forEach(card => {
+        const cat = card.getAttribute('data-category-card');
+        if (filterName === 'all' || cat === filterName) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    function resetMasterTodos() {
+      if (!confirm('Are you sure you want to reset all to-dos to uncompleted?')) return;
+      localStorage.removeItem(STORAGE_KEY_MASTER_TODOS);
+      loadMasterTodosState();
+      showToast('Master To-Dos reset successfully!');
+    }
+
+    // =========================================================================
+    // Web Speech Synthesis Audio Brief Engine (Female Voice Model)
+    // =========================================================================
+    let currentUtterance = null;
+    let activeAudioBtn = null;
+
+    function getFemaleVoice() {
+      const voices = window.speechSynthesis.getVoices();
+      if (!voices || voices.length === 0) return null;
+
+      const enVoices = voices.filter(v => v.lang && v.lang.startsWith('en'));
+      const pool = enVoices.length > 0 ? enVoices : voices;
+
+      let found = pool.find(v => /female/i.test(v.name));
+      if (found) return found;
+
+      const femaleNames = [
+        'Samantha', 'Victoria', 'Karen', 'Zira', 'Jenny', 'Aria', 'Ava', 'Allison',
+        'Susan', 'Moira', 'Tessa', 'Fiona', 'Veena', 'Google UK English Female',
+        'Google US English', 'Microsoft Zira', 'Microsoft Jenny', 'Microsoft Aria',
+        'en-US-Neural2-F', 'en-GB-Neural2-F'
+      ];
+      found = pool.find(v => femaleNames.some(fn => v.name.includes(fn)));
+      if (found) return found;
+
+      const maleNames = ['Daniel', 'Alex', 'David', 'George', 'Fred', 'Mark', 'Guy', 'Tom', 'Oliver', 'James'];
+      found = pool.find(v => !maleNames.some(mn => v.name.includes(mn)));
+      return found || pool[0];
+    }
+
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+      };
+    }
+
+    function playAudioSummary(btn, title, text) {
+      if (!('speechSynthesis' in window)) {
+        alert('Text-to-speech audio is not supported in this browser.');
+        return;
+      }
+
+      if (window.speechSynthesis.speaking && activeAudioBtn === btn) {
+        toggleAudioPlayback();
+        return;
+      }
+
+      stopAudioSummary();
+
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = 1.0;
+      utterance.pitch = 1.06;
+
+      const femaleVoice = getFemaleVoice();
+      if (femaleVoice) utterance.voice = femaleVoice;
+
+      utterance.onstart = () => {
+        activeAudioBtn = btn;
+        if (btn) {
+          btn.classList.add('ring-2', 'ring-emerald-400', 'bg-emerald-700', 'text-white');
+          const label = btn.querySelector('.audio-label');
+          if (label) label.innerText = 'Playing...';
+        }
+        const bar = document.getElementById('floatingAudioBar');
+        const titleEl = document.getElementById('audioPlayerTitle');
+        const statusEl = document.getElementById('audioPlayerStatus');
+        if (bar) bar.classList.remove('hidden');
+        if (titleEl) titleEl.innerText = title;
+        if (statusEl) statusEl.innerText = 'Narrating brief (Female Voice)...';
+        showAudioPlayIcon(false);
+      };
+
+      utterance.onend = () => {
+        stopAudioSummary();
+      };
+
+      utterance.onerror = () => {
+        stopAudioSummary();
+      };
+
+      currentUtterance = utterance;
+      window.speechSynthesis.speak(utterance);
+    }
+
+    function playDailyAudioBrief(btn) {
+      const title = "Daily Cockpit Briefing";
+      let text = "Good morning Lakshay. Here is your daily cockpit agenda. ";
+      
+      if (window.currentDailyPlan && window.currentDailyPlan.blocks && window.currentDailyPlan.blocks.length > 0) {
+        text += `For ${window.currentDailyPlan.dayOfWeek || 'today'}, your theme is ${window.currentDailyPlan.theme || 'Focused Execution'}. `;
+        text += `You have ${window.currentDailyPlan.blocks.length} structured focus blocks scheduled: `;
+        window.currentDailyPlan.blocks.forEach((b, idx) => {
+          text += `Block ${idx + 1}: ${b.time}, ${b.title}, concentrating on ${b.stream.toUpperCase()}. `;
+        });
+        text += "Execute each block with full intensity and log your progress. Have an unstoppable day.";
+      } else {
+        text += "Your daily schedule focuses on four core pillars: start with your morning verbal ability and reading comprehension drill on Career Launcher MyZone. Transition into your afternoon quantitative aptitude sprint tackling arithmetic and algebra. Dedicate your evening to solving two full DILR arrangement sets. And close out your night with algorithmic problem solving and system development. Stay disciplined and conquer each block.";
+      }
+
+      playAudioSummary(btn, title, text);
+    }
+
+    function playMasterTodosAudioBrief(btn) {
+      const title = "Master To-Dos Briefing";
+      const text = "Here is your master operational briefing, Lakshay. Across your six core pillars, you have twenty-three actionable targets. First, your non-negotiable daily rhythm: complete your morning VARC article and CL reading comprehension drill, followed by afternoon arithmetic or algebra problem sets, evening DILR caselets, and night DSA practice. Second, for CAT 2026, keep your Sunday mock test sacrosanct, maintain your mistake notebook, and master high-yield arithmetic and algebra. Third, for your German Master's applications, your critical path is submitting your APS India dossier, requesting official transcripts from MDU Rohtak, securing two academic recommendation letters, and preparing for IELTS band 7.5. Fourth, maintain momentum on your 247 DSA roadmap across arrays, binary search, trees, and dynamic programming. Fifth, advance your TypeScript production deep-dive and distributed microservices architecture. And sixth, keep your dual resumes ATS-optimized and deploy your weekly outbound outreach. Execute step-by-step with relentless consistency.";
+      playAudioSummary(btn, title, text);
+    }
+
+    function toggleAudioPlayback() {
+      if (!window.speechSynthesis.speaking) return;
+      if (window.speechSynthesis.paused) {
+        window.speechSynthesis.resume();
+        showAudioPlayIcon(false);
+        if (activeAudioBtn) {
+          const label = activeAudioBtn.querySelector('.audio-label');
+          if (label) label.innerText = 'Playing...';
+        }
+        const statusEl = document.getElementById('audioPlayerStatus');
+        if (statusEl) statusEl.innerText = 'Narrating brief...';
+      } else {
+        window.speechSynthesis.pause();
+        showAudioPlayIcon(true);
+        if (activeAudioBtn) {
+          const label = activeAudioBtn.querySelector('.audio-label');
+          if (label) label.innerText = 'Paused';
+        }
+        const statusEl = document.getElementById('audioPlayerStatus');
+        if (statusEl) statusEl.innerText = 'Paused (click to resume)';
+      }
+    }
+
+    function showAudioPlayIcon(isPaused) {
+      const pauseIcon = document.getElementById('pauseIcon');
+      const playIcon = document.getElementById('playIcon');
+      if (pauseIcon && playIcon) {
+        if (isPaused) {
+          pauseIcon.classList.add('hidden');
+          playIcon.classList.remove('hidden');
+        } else {
+          pauseIcon.classList.remove('hidden');
+          playIcon.classList.add('hidden');
+        }
+      }
+    }
+
+    function stopAudioSummary() {
+      window.speechSynthesis.cancel();
+      if (activeAudioBtn) {
+        activeAudioBtn.classList.remove('ring-2', 'ring-emerald-400', 'bg-emerald-700', 'text-white');
+        const label = activeAudioBtn.querySelector('.audio-label');
+        if (label) label.innerText = label.getAttribute('data-default-label') || 'Listen Brief';
+        activeAudioBtn = null;
+      }
+      const bar = document.getElementById('floatingAudioBar');
+      if (bar) bar.classList.add('hidden');
+    }
+
     // Initialize on window load
     window.addEventListener('DOMContentLoaded', () => {
       loadDailyPlan();
+      loadMasterTodosState();
       updateNotificationButtonState();
       if ('Notification' in window && Notification.permission === 'granted') {
         startNotificationLoop();
