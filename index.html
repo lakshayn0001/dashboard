@@ -243,6 +243,11 @@
       <div>
         <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Higher Education &amp; Admissions</div>
         <div class="mt-2 space-y-1">
+          <a href="deadlines_calendar.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
+            <span class="text-lg">📅</span>
+            <span>Deadlines &amp; Calendar</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-red-100 text-red-800 font-mono">2026–27</span>
+          </a>
           <a href="german_universities_evaluation.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
             <span class="text-lg">🇩🇪</span>
             <span>German Universities</span>
@@ -432,6 +437,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
           <!-- Card 1: DSA Master Tracker & Problem Library -->
+          <span id="dsa-library" class="relative -top-24 block invisible pointer-events-none"></span>
           <article id="dsa-portal" data-selectable-card="true" data-track-key="dashboard-dsa-portal" data-category="engineering" data-keywords="dsa leetcode patterns algorithms arrays sliding window two pointers prefix sum binary search trees graphs dynamic programming monotonic stack faang tracking questions dropdown" class="resource-card glass-droplet rounded-2xl border border-emerald-600/40 p-6 sm:p-8 flex flex-col justify-between shadow-md">
             <div class="space-y-4">
               <div class="flex items-start justify-between gap-3 flex-wrap">
@@ -500,7 +506,7 @@
                   Engineering Learning Hub
                 </h2>
                 <p class="text-stone-700 text-sm mt-2 leading-relaxed">
-                  Comprehensive continuous learning center organizing structured engineering tracks: Production TypeScript, Distributed Systems, Cloud &amp; DevOps Infrastructure, and Applied AI Systems.
+                  Comprehensive continuous learning center organizing structured engineering tracks: Production TypeScript, Distributed Systems, Cloud &amp; DevOps Infrastructure, Applied AI Systems, and Database Engineering.
                 </p>
               </div>
 
@@ -509,6 +515,7 @@
                 <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">Track 2: System Design &amp; Architecture</span>
                 <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">Track 3: Cloud &amp; DevOps (Docker, K8s)</span>
                 <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">Track 4: Applied AI &amp; LLM Systems</span>
+                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">Track 5: Database Engineering (SQL &amp; Internals)</span>
               </div>
             </div>
 
@@ -532,11 +539,11 @@
                   <span>📘</span> 14,000+ Lines Curriculum
                 </div>
                 <div class="flex items-center gap-2">
-                  <button onclick="playAudioSummary(this, 'TypeScript Curriculum Overview', 'Production TypeScript Guide: Covers 10 progressive mastery levels, 73 interactive code drills, and 10 production labs spanning Next.js 15, React 19, Zod schemas, and compiler diagnostic internals.')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-100 hover:bg-indigo-200 text-indigo-900 border border-indigo-300 text-xs font-semibold transition-all">
+                  <button onclick="playAudioSummary(this, 'TypeScript Curriculum Overview', 'Production TypeScript Guide: Covers 10 progressive mastery levels, 73 core topics, 100-plus hands-on practice drills, and 10 production labs spanning Next.js, React 19, Zod schemas, and compiler diagnostic internals.')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-100 hover:bg-indigo-200 text-indigo-900 border border-indigo-300 text-xs font-semibold transition-all">
                     <svg class="w-3.5 h-3.5 text-indigo-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
                     <span class="audio-label" data-default-label="Audio Brief (25s)">Audio Brief (25s)</span>
                   </button>
-                  <span class="text-xs font-mono font-bold text-indigo-900 bg-indigo-100 px-2.5 py-1 rounded-md border border-indigo-300">10 Levels • 73 Drills</span>
+                  <span class="text-xs font-mono font-bold text-indigo-900 bg-indigo-100 px-2.5 py-1 rounded-md border border-indigo-300">10 Levels • 79 Topics • 100+ Drills</span>
                 </div>
               </div>
 
@@ -545,14 +552,14 @@
                   Production TypeScript &amp; Architecture Curriculum
                 </h2>
                 <p class="text-stone-700 text-sm mt-2 leading-relaxed">
-                  Enterprise-grade guide containing over 14,000 lines of code, progressive challenges from strict type foundations to type-level metaprogramming, AST transformations, and zero-compromise production architectures.
+                  Enterprise-grade guide containing over 14,000 lines of comprehensive documentation &amp; curriculum, progressive challenges from strict type foundations to type-level metaprogramming, AST transformations, and zero-compromise production architectures.
                 </p>
               </div>
 
               <div class="flex flex-wrap gap-2 pt-1">
-                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">Level 1–5: Strict Mode, Discriminated Unions, Generics</span>
-                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">Level 6–10: Branded Types, Next.js 15, Zod, Compiler AST</span>
-                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">10 Production Engineering Labs</span>
+                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">Level 1–4: Beginner, Intermediate, Advanced &amp; Expert Internals</span>
+                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">Level 5–10: React/Next.js, Node, API Safety, Production, Testing &amp; Interviews</span>
+                <span class="px-2.5 py-1 rounded-md bg-white border border-stone-300 text-xs text-stone-700 font-medium shadow-sm">10 Production Labs &amp; 100+ Drills</span>
               </div>
             </div>
 
@@ -648,7 +655,7 @@
                   CAT 2026 Strategic Master Roadmap
                 </h2>
                 <p class="text-stone-700 text-sm mt-2 leading-relaxed">
-                  Engineered preparation roadmap prioritizing high-yield sections: Arithmetic &amp; Algebra (75%+ of QA), structured DILR frameworks, and daily editorial reading for VARC targeting IIT Delhi, Bombay, and CAP IIMs.
+                  Engineered preparation roadmap prioritizing high-yield sections: Arithmetic &amp; Algebra (~60–75% of QA • 13–17 of 22 Qs), structured DILR frameworks, and daily editorial reading for VARC targeting IIT Delhi, Madras, and FMS Delhi.
                 </p>
               </div>
 

@@ -1,702 +1,806 @@
-<!doctype html>
-<html lang="en" data-theme="light">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-theme="light">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Ultimate Production TypeScript Curriculum & Interview Mastery Guide for Full-Stack Engineers">
-<title>TypeScript Full-Stack Curriculum &amp; Interview Mastery</title>
-<style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ultimate Production TypeScript Curriculum & Interview Mastery Guide for Full-Stack Engineers - React 19, Next.js 16/15, Node.js, Express, PostgreSQL, 79 Topics, and 125 Technical Interview Q&As.">
+  <title>TypeScript Full-Stack Curriculum &amp; Interview Mastery | Lakshay Nagpal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            olive: {
+              50: '#f5f7f2',
+              100: '#e9eee4',
+              200: '#d7e2ce',
+              300: '#becfb3',
+              400: '#9fb791',
+              500: '#7e9c6f',
+              600: '#628053',
+              700: '#4d6540',
+              800: '#3d5133',
+              900: '#2a3823',
+              950: '#172213',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Menlo', 'Monaco', 'Courier New', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
-:root {
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-  
-  /* Light Theme Palette */
-  --bg: #f8fafc;
-  --panel: #ffffff;
-  --panel-card: #ffffff;
-  --panel-muted: #f1f5f9;
-  --text-main: #0f172a;
-  --text-body: #334155;
-  --text-muted: #64748b;
-  --text-subtle: #94a3b8;
-  --border: #e2e8f0;
-  --border-subtle: #edf2f7;
-  
-  --primary: #3178c6;
-  --primary-hover: #235a96;
-  --primary-light: #eff6ff;
-  --primary-border: #bfdbfe;
-  
-  --accent-purple: #7c3aed;
-  --accent-purple-light: #f5f3ff;
-  --accent-emerald: #059669;
-  --accent-emerald-light: #ecfdf5;
-  --accent-amber: #d97706;
-  --accent-amber-light: #fffbeb;
-  --accent-rose: #e11d48;
-  --accent-rose-light: #fff1f2;
-  
-  --code-bg: #0d1117;
-  --code-header: #161b22;
-  --code-text: #e6edf3;
-  --code-comment: #8b949e;
-  --code-keyword: #ff7b72;
-  --code-type: #79c0ff;
-  --code-string: #a5d6ff;
-  --code-function: #d2a8ff;
-  --code-number: #79c0ff;
-  --code-operator: #ff7b72;
-  
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0 10px 25px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
-  --radius-xl: 20px;
-  --header-height: 70px;
-}
+    :root {
+      --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', Menlo, Monaco, monospace;
+      
+      /* Matte Olive Liquid Glass Theme Palette */
+      --bg: #e9eee4;
+      --panel: rgba(255, 255, 255, 0.92);
+      --panel-card: rgba(255, 255, 255, 0.88);
+      --panel-muted: rgba(246, 250, 242, 0.88);
+      --text-main: #1a2517;
+      --text-body: #2d3e29;
+      --text-muted: #5a7350;
+      --text-subtle: #789669;
+      --border: rgba(135, 160, 122, 0.35);
+      --border-subtle: rgba(135, 160, 122, 0.22);
+      
+      --primary: #2d6a4f;
+      --primary-hover: #1b4332;
+      --primary-light: rgba(45, 106, 79, 0.08);
+      --primary-border: rgba(45, 106, 79, 0.25);
+      
+      --ts-blue: #3178c6;
+      --ts-blue-light: #eff6ff;
+      --ts-blue-border: #bfdbfe;
+      
+      --accent-purple: #6d28d9;
+      --accent-purple-light: rgba(109, 40, 217, 0.08);
+      --accent-emerald: #059669;
+      --accent-emerald-light: rgba(5, 150, 105, 0.1);
+      --accent-amber: #d97706;
+      --accent-amber-light: rgba(217, 119, 6, 0.1);
+      --accent-rose: #dc2626;
+      --accent-rose-light: rgba(220, 38, 38, 0.08);
+      
+      --code-bg: #0d1410;
+      --code-header: #141f19;
+      --code-text: #e6edf3;
+      --code-comment: #869688;
+      --code-keyword: #ff7b72;
+      --code-type: #79c0ff;
+      --code-string: #a5d6ff;
+      --code-function: #d2a8ff;
+      --code-number: #79c0ff;
+      --code-operator: #ff7b72;
+      
+      --shadow-sm: 0 1px 3px 0 rgba(45, 65, 36, 0.06);
+      --shadow-md: 0 4px 12px -2px rgba(45, 65, 36, 0.08), 0 2px 6px -1px rgba(45, 65, 36, 0.04);
+      --shadow-lg: 0 14px 34px -10px rgba(45, 65, 36, 0.12), 0 4px 12px -2px rgba(45, 65, 36, 0.06);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-xl: 24px;
+      --header-height: 68px;
+    }
 
-[data-theme="dark"] {
-  --bg: #0b0f17;
-  --panel: #111827;
-  --panel-card: #151d2e;
-  --panel-muted: #1e293b;
-  --text-main: #f8fafc;
-  --text-body: #cbd5e1;
-  --text-muted: #94a3b8;
-  --text-subtle: #64748b;
-  --border: #1e293b;
-  --border-subtle: #162032;
-  
-  --primary: #38bdf8;
-  --primary-hover: #0ea5e9;
-  --primary-light: rgba(56, 189, 248, 0.1);
-  --primary-border: rgba(56, 189, 248, 0.25);
-  
-  --accent-purple: #a855f7;
-  --accent-purple-light: rgba(168, 85, 247, 0.1);
-  --accent-emerald: #10b981;
-  --accent-emerald-light: rgba(16, 185, 129, 0.1);
-  --accent-amber: #f59e0b;
-  --accent-amber-light: rgba(245, 158, 11, 0.1);
-  --accent-rose: #f43f5e;
-  --accent-rose-light: rgba(244, 63, 94, 0.1);
-  
-  --code-bg: #090d16;
-  --code-header: #101624;
-  --code-text: #e2e8f0;
-  
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.5);
-}
+    [data-theme="dark"] {
+      --bg: #111a12;
+      --panel: rgba(23, 34, 25, 0.94);
+      --panel-card: rgba(27, 40, 29, 0.90);
+      --panel-muted: rgba(18, 27, 20, 0.88);
+      --text-main: #f4f7f2;
+      --text-body: #d7e2ce;
+      --text-muted: #9fb791;
+      --text-subtle: #628053;
+      --border: rgba(135, 160, 122, 0.28);
+      --border-subtle: rgba(135, 160, 122, 0.18);
+      
+      --primary: #52b788;
+      --primary-hover: #74c69d;
+      --primary-light: rgba(82, 183, 136, 0.12);
+      --primary-border: rgba(82, 183, 136, 0.3);
+      
+      --ts-blue: #38bdf8;
+      --ts-blue-light: rgba(56, 189, 248, 0.12);
+      --ts-blue-border: rgba(56, 189, 248, 0.3);
+      
+      --accent-purple: #a855f7;
+      --accent-purple-light: rgba(168, 85, 247, 0.12);
+      --accent-emerald: #10b981;
+      --accent-emerald-light: rgba(16, 185, 129, 0.12);
+      --accent-amber: #f59e0b;
+      --accent-amber-light: rgba(245, 158, 11, 0.12);
+      --accent-rose: #f43f5e;
+      --accent-rose-light: rgba(244, 63, 94, 0.12);
+      
+      --code-bg: #090f0c;
+      --code-header: #101813;
+      --code-text: #e2e8f0;
+      
+      --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 14px 34px -10px rgba(0, 0, 0, 0.5);
+    }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 15px; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 15px; }
 
-body {
-  background-color: var(--bg);
-  color: var(--text-body);
-  font-family: var(--font-sans);
-  line-height: 1.65;
-  letter-spacing: -0.01em;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transition: background-color 0.25s ease, color 0.25s ease;
-}
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: #e9eee4;
+      background-image: 
+        radial-gradient(at 12% 15%, rgba(162, 188, 146, 0.35) 0%, transparent 55%),
+        radial-gradient(at 88% 82%, rgba(138, 168, 122, 0.28) 0%, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(215, 226, 206, 0.25) 0%, transparent 60%);
+      color: var(--text-body);
+      min-height: 100vh;
+      line-height: 1.65;
+      letter-spacing: -0.01em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transition: background-color 0.25s ease, color 0.25s ease;
+      position: relative;
+    }
+    [data-theme="dark"] body {
+      background-color: #111a12;
+      background-image: 
+        radial-gradient(at 12% 15%, rgba(45, 75, 40, 0.35) 0%, transparent 55%),
+        radial-gradient(at 88% 82%, rgba(35, 60, 32, 0.28) 0%, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(20, 35, 20, 0.25) 0%, transparent 60%);
+    }
 
-/* Scrollbar */
-::-webkit-scrollbar { width: 8px; height: 8px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: var(--text-subtle); }
+    /* Ambient Liquid Refraction Orbs */
+    .droplet-orb-1 {
+      position: fixed;
+      top: -100px;
+      left: 18%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(125, 160, 110, 0.32) 0%, rgba(125, 160, 110, 0) 70%);
+      filter: blur(60px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .droplet-orb-2 {
+      position: fixed;
+      bottom: -100px;
+      right: 6%;
+      width: 540px;
+      height: 540px;
+      background: radial-gradient(circle, rgba(168, 190, 145, 0.35) 0%, rgba(168, 190, 145, 0) 70%);
+      filter: blur(70px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .droplet-orb-3 {
+      position: fixed;
+      top: 40%;
+      left: 45%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(95, 132, 85, 0.22) 0%, rgba(95, 132, 85, 0) 70%);
+      filter: blur(55px);
+      pointer-events: none;
+      z-index: 0;
+    }
 
-a { color: var(--primary); text-decoration: none; transition: color 0.15s; }
-a:hover { text-decoration: underline; }
+    /* Light Liquid Glass Water Droplet Effect */
+    .glass-droplet {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(246, 250, 242, 0.76) 100%);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 
+        inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 1),
+        inset 0 -1px 2px 0 rgba(90, 115, 80, 0.08),
+        0 14px 34px -10px rgba(45, 65, 36, 0.10),
+        0 2px 8px -2px rgba(45, 65, 36, 0.05);
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    [data-theme="dark"] .glass-droplet {
+      background: linear-gradient(135deg, rgba(27, 40, 29, 0.88) 0%, rgba(18, 27, 20, 0.82) 100%);
+      border-color: rgba(135, 160, 122, 0.3);
+      box-shadow: 
+        inset 0 1.5px 1.5px 0 rgba(135, 160, 122, 0.2),
+        0 14px 34px -10px rgba(0, 0, 0, 0.4);
+    }
+    .glass-droplet::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 8%; right: 8%;
+      height: 1.5px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.95), transparent);
+      pointer-events: none;
+    }
+    .glass-droplet-sidebar {
+      background: rgba(246, 250, 242, 0.94);
+      backdrop-filter: blur(28px) saturate(190%);
+      -webkit-backdrop-filter: blur(28px) saturate(190%);
+      border-right: 1px solid rgba(135, 160, 122, 0.25);
+      box-shadow: 
+        inset -1px 0 1px 0 rgba(255, 255, 255, 0.85),
+        4px 0 24px rgba(45, 65, 36, 0.06);
+    }
+    [data-theme="dark"] .glass-droplet-sidebar {
+      background: rgba(18, 27, 20, 0.95);
+      border-color: rgba(135, 160, 122, 0.25);
+      box-shadow: 4px 0 24px rgba(0, 0, 0, 0.3);
+    }
+    .glass-droplet-nav {
+      background: rgba(246, 250, 242, 0.88);
+      backdrop-filter: blur(24px) saturate(190%);
+      -webkit-backdrop-filter: blur(24px) saturate(190%);
+      border-bottom: 1px solid rgba(135, 160, 122, 0.25);
+      box-shadow: 
+        inset 0 -1px 1px 0 rgba(255, 255, 255, 0.85),
+        0 4px 20px rgba(45, 65, 36, 0.06);
+    }
+    [data-theme="dark"] .glass-droplet-nav {
+      background: rgba(18, 27, 20, 0.90);
+      border-color: rgba(135, 160, 122, 0.25);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    .droplet-pill {
+      background: linear-gradient(135deg, #ffffff 0%, #f4f7f0 100%);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(110, 140, 95, 0.28);
+      box-shadow: 
+        inset 0 1px 1px 0 #ffffff,
+        0 2px 6px rgba(45, 65, 36, 0.08);
+      color: #24331e;
+      transition: all 0.2s ease;
+    }
+    [data-theme="dark"] .droplet-pill {
+      background: linear-gradient(135deg, rgba(35, 52, 38, 0.9) 0%, rgba(24, 36, 26, 0.9) 100%);
+      border-color: rgba(135, 160, 122, 0.3);
+      color: #f4f7f2;
+    }
+    .droplet-pill:hover {
+      border-color: rgba(90, 125, 75, 0.5);
+      box-shadow: 
+        inset 0 1.5px 1.5px 0 #ffffff,
+        0 4px 12px rgba(45, 65, 36, 0.12);
+      transform: translateY(-1px);
+    }
 
-/* Top Sticky Navigation Bar */
-.top-nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  transition: background-color 0.25s, border-color 0.25s;
-}
-[data-theme="dark"] .top-nav {
-  background: rgba(17, 24, 39, 0.85);
-}
-.nav-inner {
-  max-width: 1480px;
-  margin: 0 auto;
-  padding: 10px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-.brand-group {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.ts-logo {
-  width: 32px;
-  height: 32px;
-  background: #3178c6;
-  color: white;
-  font-family: var(--font-mono);
-  font-weight: 800;
-  font-size: 17px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 7px;
-  box-shadow: 0 2px 8px rgba(49, 120, 198, 0.35);
-  user-select: none;
-}
-.nav-title {
-  font-weight: 750;
-  font-size: 15px;
-  color: var(--text-main);
-  letter-spacing: -0.02em;
-}
-.nav-badge {
-  font-size: 11px;
-  font-weight: 600;
-  padding: 3px 8px;
-  border-radius: 999px;
-  background: var(--primary-light);
-  color: var(--primary);
-  border: 1px solid var(--primary-border);
-}
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 7px; height: 7px; }
+    ::-webkit-scrollbar-track { background: #e0e6d8; }
+    ::-webkit-scrollbar-thumb { background: #96af8c; border-radius: 4px; border: 1px solid rgba(255,255,255,0.7); }
+    ::-webkit-scrollbar-thumb:hover { background: #738f68; }
 
-/* Global Progress Indicator */
-.progress-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text-muted);
-}
-.progress-bar-bg {
-  width: 120px;
-  height: 8px;
-  background: var(--border);
-  border-radius: 999px;
-  overflow: hidden;
-}
-.progress-bar-fill {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, var(--primary), var(--accent-purple));
-  border-radius: 999px;
-  transition: width 0.3s ease;
-}
+    a { color: var(--primary); text-decoration: none; transition: color 0.15s; }
+    a:hover { text-decoration: underline; }
 
-/* Action Buttons */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 7px 13px;
-  font-size: 12.5px;
-  font-weight: 600;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  border: 1px solid var(--border);
-  background: var(--panel);
-  color: var(--text-main);
-  transition: all 0.15s ease;
-  font-family: inherit;
-}
-.btn:hover {
-  background: var(--panel-muted);
-  border-color: var(--text-subtle);
-}
-.btn-primary {
-  background: var(--primary);
-  color: white;
-  border-color: var(--primary);
-}
-.btn-primary:hover {
-  background: var(--primary-hover);
-  color: white;
-}
-.btn-icon {
-  padding: 7px 10px;
-}
+    /* Top Sticky Navigation Bar */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(246, 250, 242, 0.88);
+      backdrop-filter: blur(24px) saturate(190%);
+      -webkit-backdrop-filter: blur(24px) saturate(190%);
+      border-bottom: 1px solid var(--border);
+      transition: background-color 0.25s, border-color 0.25s;
+    }
+    [data-theme="dark"] .top-nav {
+      background: rgba(18, 27, 20, 0.90);
+    }
+    .nav-inner {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .ts-logo {
+      width: 34px;
+      height: 34px;
+      background: linear-gradient(135deg, #2d6a4f 0%, #1b4332 100%);
+      color: white;
+      font-family: var(--font-mono);
+      font-weight: 800;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9px;
+      box-shadow: 0 2px 8px rgba(45, 106, 79, 0.3);
+      user-select: none;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+    .nav-title {
+      font-weight: 750;
+      font-size: 15px;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+    .nav-badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--primary-light);
+      color: var(--primary);
+      border: 1px solid var(--primary-border);
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
 
-/* Hero Section */
-.hero {
-  position: relative;
-  background: linear-gradient(135deg, #0b111e 0%, #152035 50%, #1b3558 100%);
-  color: #ffffff;
-  padding: 56px 24px 44px;
-  overflow: hidden;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-.hero::before {
-  content: "";
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(49, 120, 198, 0.28) 0%, transparent 70%);
-  right: -100px;
-  top: -150px;
-  pointer-events: none;
-}
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(124, 58, 237, 0.2) 0%, transparent 70%);
-  left: -80px;
-  bottom: -120px;
-  pointer-events: none;
-}
-.hero-content {
-  max-width: 1480px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-.hero-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #93c5fd;
-  margin-bottom: 12px;
-  background: rgba(147, 197, 253, 0.1);
-  padding: 4px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(147, 197, 253, 0.2);
-}
-.hero h1 {
-  font-size: clamp(32px, 4.5vw, 56px);
-  font-weight: 850;
-  line-height: 1.08;
-  letter-spacing: -0.04em;
-  margin-bottom: 16px;
-  background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.hero p {
-  font-size: clamp(15px, 1.4vw, 17.5px);
-  color: #cbd5e1;
-  max-width: 860px;
-  line-height: 1.7;
-  margin-bottom: 26px;
-}
-.hero-stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 14px;
-  margin-top: 30px;
-  max-width: 1050px;
-}
-.hero-stat-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius-md);
-  padding: 14px 18px;
-  backdrop-filter: blur(8px);
-  transition: transform 0.2s, background 0.2s;
-}
-.hero-stat-card:hover {
-  transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.08);
-}
-.hero-stat-num {
-  font-size: 26px;
-  font-weight: 850;
-  letter-spacing: -0.03em;
-  color: #ffffff;
-  line-height: 1.1;
-}
-.hero-stat-desc {
-  font-size: 11.5px;
-  color: #94a3b8;
-  margin-top: 3px;
-  font-weight: 500;
-}
+    /* Global Progress Indicator */
+    .progress-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .progress-bar-bg {
+      width: 120px;
+      height: 8px;
+      background: var(--border);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #2d6a4f, #059669);
+      border-radius: 999px;
+      transition: width 0.3s ease;
+    }
 
-/* Master Visual Graphics Hub */
-.graphics-hub {
-  max-width: 1480px;
-  margin: 32px auto 0;
-  padding: 0 24px;
-}
-.hub-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-.hub-title-group h2 {
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  color: var(--text-main);
-}
-.hub-title-group p {
-  font-size: 13.5px;
-  color: var(--text-muted);
-}
-.graphics-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
-  gap: 24px;
-}
-@media (max-width: 768px) {
-  .graphics-grid { grid-template-columns: 1fr; }
-}
-.graphic-card {
-  background: var(--panel-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.graphic-card:hover {
-  box-shadow: var(--shadow-lg);
-  border-color: var(--primary-border);
-}
-.graphic-header {
-  padding: 16px 20px;
-  border-bottom: 1px solid var(--border);
-  background: var(--panel-muted);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.graphic-title {
-  font-size: 14.5px;
-  font-weight: 750;
-  color: var(--text-main);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.graphic-tag {
-  font-size: 10.5px;
-  font-weight: 700;
-  text-transform: uppercase;
-  padding: 2px 7px;
-  border-radius: 4px;
-  background: var(--primary-light);
-  color: var(--primary);
-  border: 1px solid var(--primary-border);
-}
-.graphic-body {
-  padding: 20px;
-  background: var(--panel);
-  overflow-x: auto;
-}
+    /* Action Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--text-main);
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+    .btn:hover {
+      background: var(--panel-muted);
+      border-color: var(--text-subtle);
+      transform: translateY(-1px);
+    }
+    .btn-primary {
+      background: #2d6a4f;
+      color: white;
+      border-color: #2d6a4f;
+    }
+    .btn-primary:hover {
+      background: #1b4332;
+      color: white;
+    }
+    .btn-icon {
+      padding: 6px 9px;
+    }
 
-/* Two-Column App Layout */
-.layout {
-  max-width: 1480px;
-  margin: 32px auto 0;
-  padding: 0 24px 60px;
-  display: grid;
-  grid-template-columns: 310px minmax(0, 1fr);
-  gap: 32px;
-  align-items: start;
-}
-@media (max-width: 1040px) {
-  .layout { grid-template-columns: 1fr; }
-}
+    /* Two-Column App Layout */
+    .layout {
+      max-width: 1600px;
+      margin: 16px auto 0;
+      padding: 0 24px 60px;
+      display: grid;
+      grid-template-columns: 290px minmax(0, 1fr);
+      gap: 28px;
+      align-items: start;
+    }
+    @media (max-width: 1100px) {
+      .layout { grid-template-columns: 1fr; }
+    }
 
-/* Sticky Sidebar */
-.sidebar {
-  position: sticky;
-  top: calc(var(--header-height) + 12px);
-  max-height: calc(100vh - var(--header-height) - 30px);
-  overflow-y: auto;
-  background: var(--panel-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 18px;
-  box-shadow: var(--shadow-md);
-}
-.sidebar-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 14px;
-}
-.sidebar-header h3 {
-  font-size: 14px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--text-muted);
-}
-.search-wrapper {
-  position: relative;
-  margin-bottom: 14px;
-}
-.search-input {
-  width: 100%;
-  padding: 9px 12px 9px 34px;
-  font-size: 13px;
-  font-family: inherit;
-  background: var(--panel-muted);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  color: var(--text-main);
-  outline: none;
-  transition: all 0.15s;
-}
-.search-input:focus {
-  border-color: var(--primary);
-  background: var(--panel);
-  box-shadow: 0 0 0 3px var(--primary-light);
-}
-.search-icon {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--text-subtle);
-  pointer-events: none;
-}
-.filter-tabs {
-  display: flex;
-  gap: 6px;
-  margin-bottom: 14px;
-  overflow-x: auto;
-  padding-bottom: 4px;
-}
-.filter-tab {
-  font-size: 11px;
-  font-weight: 600;
-  padding: 4px 8px;
-  border-radius: 4px;
-  background: var(--panel-muted);
-  color: var(--text-muted);
-  cursor: pointer;
-  border: 1px solid transparent;
-  white-space: nowrap;
-}
-.filter-tab.active {
-  background: var(--primary);
-  color: white;
-}
-.nav-menu {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-.nav-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 7px 10px;
-  border-radius: var(--radius-sm);
-  font-size: 12.5px;
-  color: var(--text-body);
-  font-weight: 550;
-  transition: all 0.15s;
-}
-.nav-item:hover {
-  background: var(--panel-muted);
-  color: var(--primary);
-  text-decoration: none;
-}
-.nav-item.active {
-  background: var(--primary-light);
-  color: var(--primary);
-  font-weight: 700;
-}
-.nav-item-num {
-  font-size: 10px;
-  font-family: var(--font-mono);
-  color: var(--text-subtle);
-  background: var(--panel-muted);
-  padding: 1px 5px;
-  border-radius: 3px;
-}
-.nav-item.active .nav-item-num {
-  background: var(--primary);
-  color: white;
-}
+    /* Sticky Sidebar */
+    .sidebar {
+      position: sticky;
+      top: calc(var(--header-height) + 12px);
+      max-height: calc(100vh - var(--header-height) - 30px);
+      overflow-y: auto;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(135, 160, 122, 0.35);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      box-shadow: 
+        inset 0 1px 1px rgba(255, 255, 255, 0.9),
+        0 10px 25px -4px rgba(45, 65, 36, 0.08);
+    }
+    [data-theme="dark"] .sidebar {
+      background: rgba(22, 33, 24, 0.92);
+      border-color: rgba(135, 160, 122, 0.25);
+    }
+    .sidebar-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+    .sidebar-header h3 {
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+    }
+    .search-wrapper {
+      position: relative;
+      margin-bottom: 14px;
+    }
+    .search-input {
+      width: 100%;
+      padding: 8px 12px 8px 34px;
+      font-size: 12.5px;
+      font-family: inherit;
+      background: var(--panel-muted);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text-main);
+      outline: none;
+      transition: all 0.15s;
+    }
+    .search-input:focus {
+      border-color: #2d6a4f;
+      background: var(--panel);
+      box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.15);
+    }
+    .search-icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-subtle);
+      pointer-events: none;
+      font-size: 12px;
+    }
+    .filter-tabs {
+      display: flex;
+      gap: 5px;
+      margin-bottom: 14px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+    .filter-tab {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 6px;
+      background: var(--panel-muted);
+      color: var(--text-muted);
+      cursor: pointer;
+      border: 1px solid var(--border-subtle);
+      white-space: nowrap;
+      transition: all 0.15s;
+    }
+    .filter-tab.active {
+      background: #2d6a4f;
+      color: white;
+      border-color: #2d6a4f;
+    }
+    .nav-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .nav-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6.5px 10px;
+      border-radius: var(--radius-sm);
+      font-size: 12px;
+      color: var(--text-body);
+      font-weight: 550;
+      transition: all 0.15s;
+    }
+    .nav-item:hover {
+      background: var(--panel-muted);
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .nav-item.active {
+      background: var(--primary-light);
+      color: var(--primary);
+      font-weight: 750;
+      border-left: 3px solid var(--primary);
+    }
+    .nav-item-num {
+      font-size: 10px;
+      font-family: var(--font-mono);
+      color: var(--text-subtle);
+      background: var(--panel-muted);
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+    .nav-item.active .nav-item-num {
+      background: #2d6a4f;
+      color: white;
+    }
 
-/* Sections & Level Containers */
-.section-container {
-  background: var(--panel-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-md);
-  margin-bottom: 36px;
-  overflow: hidden;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-.section-container:hover {
-  border-color: rgba(49, 120, 198, 0.3);
-}
-.section-header {
-  padding: 22px 28px;
-  background: linear-gradient(90deg, var(--panel-muted) 0%, var(--panel) 100%);
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-.section-title-wrap {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-.level-badge-num {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  background: var(--primary);
-  color: white;
-  font-size: 17px;
-  font-weight: 850;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(49, 120, 198, 0.25);
-  font-family: var(--font-mono);
-}
-.level-title-group h2 {
-  font-size: 24px;
-  font-weight: 800;
-  color: var(--text-main);
-  letter-spacing: -0.03em;
-  line-height: 1.2;
-}
-.level-title-group .level-eyebrow {
-  font-size: 11px;
-  font-weight: 750;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--primary);
-}
-.section-body {
-  padding: 24px 28px 32px;
-}
-.level-goal-card {
-  background: var(--primary-light);
-  border: 1px solid var(--primary-border);
-  border-radius: var(--radius-md);
-  padding: 14px 18px;
-  margin-bottom: 24px;
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-}
-.goal-icon {
-  color: var(--primary);
-  font-size: 18px;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-.goal-text {
-  font-size: 13.5px;
-  font-weight: 500;
-  color: var(--text-main);
-  line-height: 1.55;
-}
+    /* Sections & Level Containers */
+    .section-container {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.90) 0%, rgba(248, 252, 245, 0.82) 100%);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(135, 160, 122, 0.35);
+      border-radius: var(--radius-xl);
+      box-shadow: 
+        inset 0 1px 1px rgba(255, 255, 255, 0.95),
+        0 12px 30px -8px rgba(45, 65, 36, 0.08);
+      margin-bottom: 36px;
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    [data-theme="dark"] .section-container {
+      background: linear-gradient(135deg, rgba(26, 38, 28, 0.90) 0%, rgba(18, 27, 20, 0.85) 100%);
+      border-color: rgba(135, 160, 122, 0.25);
+    }
+    .section-container:hover {
+      border-color: rgba(45, 106, 79, 0.4);
+    }
+    .section-header {
+      padding: 20px 28px;
+      background: linear-gradient(90deg, var(--panel-muted) 0%, var(--panel) 100%);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .section-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .level-badge-num {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #2d6a4f 0%, #1b4332 100%);
+      color: white;
+      font-size: 16px;
+      font-weight: 850;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(45, 106, 79, 0.3);
+      font-family: var(--font-mono);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    .level-title-group h2 {
+      font-size: 23px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+    }
+    .level-title-group .level-eyebrow {
+      font-size: 11px;
+      font-weight: 750;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--primary);
+    }
+    .section-body {
+      padding: 24px 28px 32px;
+    }
+    .level-goal-card {
+      background: var(--primary-light);
+      border: 1px solid var(--primary-border);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .goal-icon {
+      color: var(--primary);
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .goal-text {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--text-main);
+      line-height: 1.55;
+    }
 
-/* Topic Articles */
-.topic-card {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  margin-bottom: 22px;
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  transition: all 0.2s ease;
-}
-.topic-card:hover {
-  border-color: var(--text-subtle);
-  box-shadow: var(--shadow-md);
-}
-.topic-card-header {
-  padding: 16px 20px;
-  background: var(--panel-muted);
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-.topic-card-header h3 {
-  font-size: 16.5px;
-  font-weight: 750;
-  color: var(--text-main);
-  letter-spacing: -0.02em;
-}
-.topic-controls {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.topic-completed-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 11px;
-  font-weight: 600;
-  padding: 4px 8px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: var(--panel);
-  color: var(--text-muted);
-  cursor: pointer;
-  user-select: none;
-  transition: all 0.15s;
-}
-.topic-completed-toggle.checked {
-  background: var(--accent-emerald-light);
-  color: var(--accent-emerald);
-  border-color: var(--accent-emerald);
-}
-.topic-body {
-  padding: 20px;
-}
+    /* Topic Articles */
+    .topic-card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(135, 160, 122, 0.3);
+      border-radius: var(--radius-lg);
+      margin-bottom: 22px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(45, 65, 36, 0.04);
+      transition: all 0.2s ease;
+    }
+    [data-theme="dark"] .topic-card {
+      background: rgba(24, 35, 26, 0.92);
+      border-color: rgba(135, 160, 122, 0.22);
+    }
+    .topic-card:hover {
+      border-color: rgba(45, 106, 79, 0.45);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-1px);
+    }
+    .topic-card-header {
+      padding: 16px 20px;
+      background: var(--panel-muted);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .topic-card-header h3 {
+      font-size: 16px;
+      font-weight: 750;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+    .topic-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .topic-completed-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--text-muted);
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.15s;
+    }
+    .topic-completed-toggle.checked {
+      background: var(--accent-emerald-light);
+      color: var(--accent-emerald);
+      border-color: var(--accent-emerald);
+    }
+    .topic-body {
+      padding: 20px;
+    }
 
-/* Production Code Example Block */
-.code-box {
-  margin-bottom: 20px;
-  border-radius: var(--radius-md);
-  background: var(--code-bg);
-  border: 1px solid #30363d;
-  overflow: hidden;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-}
-.code-box-header {
-  padding: 8px 14px;
-  background: var(--code-header);
-  border-bottom: 1px solid #21262d;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+    /* Production Code Example Block */
+    .code-box {
+      margin-bottom: 20px;
+      border-radius: var(--radius-md);
+      background: var(--code-bg);
+      border: 1px solid rgba(135, 160, 122, 0.25);
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    }
+    .code-box-header {
+      padding: 8px 14px;
+      background: var(--code-header);
+      border-bottom: 1px solid #21262d;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Master Visual Graphics Hub */
+    .graphics-hub {
+      max-width: 1600px;
+      margin: 20px auto 0;
+      padding: 0 24px;
+    }
+    .hub-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+    }
+    .hub-title-group h2 {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text-main);
+    }
+    .hub-title-group p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .graphics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+      gap: 20px;
+    }
+    @media (max-width: 768px) {
+      .graphics-grid { grid-template-columns: 1fr; }
+    }
+    .graphic-card {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(135, 160, 122, 0.35);
+      border-radius: var(--radius-lg);
+      box-shadow: 
+        inset 0 1px 1px rgba(255, 255, 255, 0.9),
+        0 10px 25px -4px rgba(45, 65, 36, 0.08);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    [data-theme="dark"] .graphic-card {
+      background: rgba(24, 35, 26, 0.90);
+      border-color: rgba(135, 160, 122, 0.25);
+    }
+    .graphic-card:hover {
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(45, 106, 79, 0.4);
+    }
+    .graphic-header {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      background: var(--panel-muted);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .graphic-title {
+      font-size: 13.5px;
+      font-weight: 750;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .graphic-tag {
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: var(--primary-light);
+      color: var(--primary);
+      border: 1px solid var(--primary-border);
+    }
+    .graphic-body {
+      padding: 18px;
+      background: var(--panel);
+      overflow-x: auto;
+    }
 .code-lang {
   font-size: 11px;
   font-family: var(--font-mono);
@@ -1476,111 +1580,261 @@ a:hover { text-decoration: underline; }
   border-left: 3px solid var(--accent-purple);
 }
 
+
 </style>
   <script src="assets/js/active-tracker.js"></script>
 </head>
-<body>
+<body class="selection:bg-emerald-600 selection:text-white flex flex-col relative overflow-x-hidden">
 
-<!-- Top Navigation Bar -->
-<header class="top-nav">
-  <div class="nav-inner">
-    <div class="brand-group">
-      <a href="index.html" style="text-decoration: none;">
-        <div class="ts-logo">TS</div>
-      </a>
+  <!-- Ambient liquid orbs for light glass refraction -->
+  <div class="droplet-orb-1"></div>
+  <div class="droplet-orb-2"></div>
+  <div class="droplet-orb-3"></div>
+
+  <!-- Mobile-only backdrop for small screens (< lg) -->
+  <div id="sidebarBackdrop" onclick="toggleSidebar(false)" class="fixed inset-0 bg-stone-900/40 backdrop-blur-sm z-20 hidden lg:hidden transition-opacity duration-300"></div>
+
+  <!-- Persistent Left Side Navigation (Always Open on Desktop) -->
+  <aside id="sideNavDrawer" class="w-72 fixed inset-y-0 left-0 z-30 flex flex-col glass-droplet-sidebar transition-transform duration-300 -translate-x-full lg:translate-x-0">
+    <div class="p-5 border-b border-stone-300/60 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 via-teal-600 to-olive-700 flex items-center justify-center font-black text-white text-lg shadow-md droplet-pill">
+          LN
+        </div>
+        <div>
+          <div class="font-bold text-stone-900 text-sm tracking-tight flex items-center gap-1.5">
+            <span>Lakshay Nagpal</span>
+            <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">VERIFIED</span>
+          </div>
+          <span class="text-xs text-stone-600 font-mono block">Control Center</span>
+        </div>
+      </div>
+      <!-- Close button visible only on mobile -->
+      <button onclick="toggleSidebar(false)" class="lg:hidden p-1.5 rounded-lg text-stone-500 hover:text-stone-900 hover:bg-stone-200 transition-all" title="Close Menu">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+
+    <div class="flex-grow overflow-y-auto py-4 px-3 space-y-6">
+      <!-- Group 1: Core Portals -->
       <div>
-        <div class="nav-title">TypeScript Full-Stack Curriculum</div>
+        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Core Portals</div>
+        <div class="mt-2 space-y-1">
+          <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
+            <span class="text-lg">🏠</span>
+            <span>Master Dashboard</span>
+          </a>
+          <a href="profile.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
+            <span class="text-lg">👤</span>
+            <span>Candidate Profile</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-mono font-bold">Resume &amp; Bio</span>
+          </a>
+          <a href="learning_hub.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
+            <span class="text-lg">🧠</span>
+            <span>Learning Hub</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-mono">5 Tracks + DSA</span>
+          </a>
+          <a href="dsa_master_tracker.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
+            <span class="text-lg">⚡</span>
+            <span>DSA Master Tracker</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-mono">240+ LC</span>
+          </a>
+          <a href="typescript_curriculum.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-emerald-100/90 text-emerald-950 border border-emerald-300 transition-all group text-sm font-bold shadow-sm">
+            <span class="text-lg">📘</span>
+            <span>TypeScript Curriculum</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-200/80 text-emerald-900 font-mono font-bold">Active · 79 Topics</span>
+          </a>
+        </div>
       </div>
-      <span class="nav-badge">Production &amp; 2–5 YOE</span>
+
+      <!-- Group 2: Higher Education & Admissions -->
+      <div>
+        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Higher Education &amp; Admissions</div>
+        <div class="mt-2 space-y-1">
+          <a href="deadlines_calendar.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
+            <span class="text-lg">📅</span>
+            <span>Deadlines &amp; Calendar</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-red-100 text-red-800 font-mono">2026–27</span>
+          </a>
+          <a href="german_universities_evaluation.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
+            <span class="text-lg">🇩🇪</span>
+            <span>German Universities</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-mono">Tuition-Free</span>
+          </a>
+          <a href="cat_2026_syllabus_roadmap.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
+            <span class="text-lg">🐯</span>
+            <span>CAT 2026 Strategy</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 font-mono">IIM/IIT</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Group 3: Professional Dossier -->
+      <div>
+        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Professional Dossier</div>
+        <div class="mt-2 space-y-1">
+          <a href="lebenslauf_de.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
+            <span class="text-lg">📄</span>
+            <span>Lebenslauf (German CV)</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-stone-200 text-stone-800 font-mono">DIN 5008</span>
+          </a>
+          <a href="https://lakshayn0001.github.io/Portfolio/" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
+            <span class="text-lg">🌐</span>
+            <span>Developer Portfolio</span>
+            <svg class="w-3.5 h-3.5 text-stone-400 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Group 4: Connect -->
+      <div>
+        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Connect</div>
+        <div class="mt-2 space-y-1">
+          <a href="https://www.linkedin.com/in/lakshay-nagpal-1a2a0134a/" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
+            <svg class="w-4 h-4 text-[#0a66c2] fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z"/></svg>
+            <span>LinkedIn Profile</span>
+          </a>
+          <a href="https://github.com/lakshayn0001/dashboard" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
+            <svg class="w-4 h-4 text-stone-600 fill-current" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
+            <span>GitHub Repository</span>
+          </a>
+        </div>
+      </div>
     </div>
 
-    <div class="progress-container">
-      <span>Progress:</span>
-      <div class="progress-bar-bg">
-        <div class="progress-bar-fill" id="global-progress-bar"></div>
-      </div>
-      <span id="global-progress-text">0%</span>
+    <div class="p-4 border-t border-stone-300/60 text-[11px] text-stone-600 flex items-center justify-between">
+      <span>Immediate Joiner / 0 Days</span>
+      <span class="text-emerald-800 font-mono font-bold">B.Tech 70.56%</span>
     </div>
+  </aside>
 
-    <div class="nav-actions">
-      <a href="profile.html" class="btn" style="text-decoration:none;" title="Lakshay Nagpal Profile &amp; Resume">
-        👤 Profile
-      </a>
-      <a href="index.html" class="btn" style="text-decoration:none;" title="Back to Master Dashboard">
-        🏠 Hub
-      </a>
-      <a href="dsa_master_tracker.html" class="btn" style="text-decoration:none;" title="DSA Master Tracker">
-        ⚡ DSA Tracker
-      </a>
-      <a href="learning_hub.html" class="btn" style="text-decoration:none;" title="Engineering Learning Hub">
-        🧠 Learning Hub
-      </a>
-      <a href="german_universities_evaluation.html" class="btn" style="text-decoration:none;" title="German Universities Roadmap">
-        🇩🇪 German Unis
-      </a>
-      <a href="cat_2026_syllabus_roadmap.html" class="btn" style="text-decoration:none;" title="CAT 2026 Master Roadmap">
-        🐯 CAT 2026
-      </a>
-      <a href="https://www.linkedin.com/in/lakshay-nagpal-1a2a0134a/" target="_blank" rel="noreferrer" class="btn" style="background:#0a66c2; color:white; border-color:#0a66c2; text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-weight:600;" title="Lakshay Nagpal on LinkedIn">
-        <svg style="width:14px; height:14px; fill:currentColor;" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z"/></svg>
-        <span>LinkedIn</span>
-      </a>
-      <button class="btn" onclick="toggleTheme()" id="theme-btn" title="Toggle Light/Dark Theme">
-        <span id="theme-icon">🌙</span> <span id="theme-label">Dark</span>
-      </button>
-      <button class="btn" onclick="window.print()" title="Print to PDF or Paper">
-        🖨️ Print
-      </button>
-      <button class="btn btn-primary" onclick="expandAll()" title="Expand All Code & Sections">
-        Expand All
-      </button>
-      <button class="btn" onclick="collapseAll()" title="Collapse All Code">
-        Collapse All
-      </button>
-    </div>
-  </div>
-</header>
+  <!-- Main Content Wrapper (Beside Permanent Sidebar on Desktop) -->
+  <div class="lg:pl-72 flex flex-col min-h-screen relative z-10">
 
-<!-- Hero Section -->
-<section class="hero">
-  <div class="hero-content">
-    <div class="hero-tag">Full-Stack Engineering · Production Ready</div>
-    <h1>TypeScript Curriculum<br>for Full-Stack Engineers</h1>
-    <p>
-      Beginner → Expert · React 19 / Next.js 15 App Router + Node / Express + PostgreSQL.
-      Engineered for real-world production type safety, zero-any discipline, and comprehensive 2–5 YOE technical interview mastery.
-    </p>
+    <!-- Sticky Top Glass Navigation Bar -->
+    <header class="sticky top-0 z-20 w-full glass-droplet-nav">
+      <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+        
+        <div class="flex items-center gap-3">
+          <!-- Mobile Drawer Trigger ONLY on <lg screens -->
+          <button onclick="toggleSidebar(true)" class="lg:hidden p-2 rounded-xl bg-white/90 hover:bg-stone-100 text-stone-700 hover:text-stone-950 border border-stone-300 transition-all flex items-center gap-1.5 cursor-pointer shadow-sm" title="Open Navigation Menu">
+            <svg class="w-5 h-5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            <span class="text-xs font-semibold">Menu</span>
+          </button>
 
-    <div class="hero-stats">
-      <div class="hero-stat-card">
-        <div class="hero-stat-num">10</div>
-        <div class="hero-stat-desc">Core Curriculum Levels</div>
-      </div>
-      <div class="hero-stat-card">
-        <div class="hero-stat-num">73</div>
-        <div class="hero-stat-desc">Topics &amp; Drills</div>
-      </div>
-      <div class="hero-stat-card">
-        <div class="hero-stat-num">10</div>
-        <div class="hero-stat-desc">Section Mastery Labs</div>
-      </div>
-      <div class="hero-stat-card">
-        <div class="hero-stat-num">125</div>
-        <div class="hero-stat-desc">Interview Questions &amp; Answers</div>
-      </div>
-      <div class="hero-stat-card">
-        <div class="hero-stat-num">100+</div>
-        <div class="hero-stat-desc">Hands-On Practice Drills</div>
-      </div>
-      <div class="hero-stat-card">
-        <div class="hero-stat-num">10</div>
-        <div class="hero-stat-desc">Production Project Blueprints</div>
-      </div>
-    </div>
-  </div>
-</section>
+          <a href="typescript_curriculum.html" class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-emerald-700 via-teal-700 to-olive-800 flex items-center justify-center text-white font-mono font-black text-sm droplet-pill shadow-sm">
+              TS
+            </div>
+            <div>
+              <div class="font-bold text-stone-900 text-sm sm:text-base tracking-tight flex items-center gap-2">
+                <span>TypeScript Curriculum</span>
+                <span class="hidden md:inline px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">79 Topics</span>
+              </div>
+              <span class="text-[10px] text-emerald-800 font-mono hidden sm:block">Production &amp; 2–5 YOE Mastery</span>
+            </div>
+          </a>
+        </div>
 
-<!-- Visual Graphics Hub -->
+        <!-- Global progress indicator -->
+        <div class="progress-container hidden sm:flex">
+          <span class="text-stone-700 font-bold">Progress:</span>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="global-progress-bar"></div>
+          </div>
+          <span id="global-progress-text" class="font-mono text-emerald-800 font-bold">0%</span>
+        </div>
+
+        <div class="nav-actions">
+          <a href="learning_hub.html" class="droplet-pill px-3 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 text-xs font-semibold hidden md:inline-flex items-center gap-1.5 transition-all">
+            <span>🧠</span>
+            <span>Learning Hub</span>
+          </a>
+          <a href="dsa_master_tracker.html" class="droplet-pill px-3 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 text-xs font-semibold hidden md:inline-flex items-center gap-1.5 transition-all">
+            <span>⚡</span>
+            <span>DSA Tracker</span>
+          </a>
+          <button class="btn" onclick="toggleTheme()" id="theme-btn" title="Toggle Light/Dark Theme">
+            <span id="theme-icon">🌙</span> <span id="theme-label">Dark</span>
+          </button>
+          <button class="btn" onclick="expandAll()" title="Expand All Code & Sections">
+            Expand All
+          </button>
+          <button class="btn" onclick="collapseAll()" title="Collapse All Code">
+            Collapse All
+          </button>
+          <button class="btn hidden sm:inline-flex" onclick="window.print()" title="Print to PDF or Paper">
+            🖨️ Print
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="glass-droplet rounded-3xl p-6 sm:p-10 relative overflow-hidden shadow-lg border border-stone-300/80 my-6 mx-4 sm:mx-6 lg:mx-8">
+      <div class="max-w-5xl space-y-4 relative z-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-900 text-xs font-bold uppercase tracking-wider">
+          <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+          Full-Stack Engineering · Production Ready Mastery
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-black text-stone-900 tracking-tight leading-tight">
+          TypeScript <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-800 via-teal-700 to-olive-800">Master Curriculum</span>
+        </h1>
+        <p class="text-stone-700 text-sm sm:text-base leading-relaxed">
+          Beginner → Expert · React 19 (v19.3) / Next.js 16 (v16.3) &amp; Next.js 15 (LTS) App Router + Node / Express + PostgreSQL.
+          Engineered for real-world production type safety, zero-any discipline, and comprehensive 2–5 YOE technical interview mastery.
+        </p>
+
+        <div class="pt-2 flex flex-wrap items-center gap-3">
+          <button onclick="playAudioSummary(this, 'TypeScript Curriculum Overview', 'Welcome to Lakshay Nagpal\'s comprehensive TypeScript Master Curriculum. This guide spans 10 structured levels across 79 in-depth topics, featuring hands-on drills for React 19, Next.js 16 and 15 App Router, Node.js backend type safety, and 125 technical interview questions and answers.')" class="audio-brief-btn inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 hover:bg-stone-100 border border-stone-300 hover:border-emerald-600 text-stone-800 text-xs font-semibold shadow-sm transition-all">
+            <svg class="w-4 h-4 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+            <span class="audio-label" data-default-label="Listen Curriculum Overview (40s)">Listen Curriculum Overview (40s)</span>
+          </button>
+
+          <a href="#section-0" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold shadow-sm transition-all">
+            <span>Start Level 1: Beginner</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </a>
+
+          <a href="#section-4" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-blue-700 hover:bg-blue-800 text-white text-xs font-bold shadow-sm transition-all">
+            <span>React 19 &amp; Next.js 16</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+
+          <a href="#section-14" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-amber-700 hover:bg-amber-800 text-white text-xs font-bold shadow-sm transition-all">
+            <span>125 Interview Q&amp;As</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 pt-4">
+          <div class="droplet-pill p-3 rounded-2xl text-center">
+            <div class="text-xl sm:text-2xl font-black text-stone-900 font-mono">10</div>
+            <div class="text-[11px] text-stone-600 font-medium">Core Levels</div>
+          </div>
+          <div class="droplet-pill p-3 rounded-2xl text-center">
+            <div class="text-xl sm:text-2xl font-black text-emerald-800 font-mono">79</div>
+            <div class="text-[11px] text-stone-600 font-medium">Topics &amp; Drills</div>
+          </div>
+          <div class="droplet-pill p-3 rounded-2xl text-center">
+            <div class="text-xl sm:text-2xl font-black text-blue-800 font-mono">10</div>
+            <div class="text-[11px] text-stone-600 font-medium">Mastery Labs</div>
+          </div>
+          <div class="droplet-pill p-3 rounded-2xl text-center">
+            <div class="text-xl sm:text-2xl font-black text-purple-800 font-mono">125</div>
+            <div class="text-[11px] text-stone-600 font-medium">Interview Q&amp;As</div>
+          </div>
+          <div class="droplet-pill p-3 rounded-2xl text-center">
+            <div class="text-xl sm:text-2xl font-black text-amber-800 font-mono">100+</div>
+            <div class="text-[11px] text-stone-600 font-medium">Practice Drills</div>
+          </div>
+          <div class="droplet-pill p-3 rounded-2xl text-center">
+            <div class="text-xl sm:text-2xl font-black text-red-800 font-mono">10</div>
+            <div class="text-[11px] text-stone-600 font-medium">Project Blueprints</div>
+          </div>
+        </div>
+      </div>
+    </section>
 <section class="graphics-hub">
   <div class="hub-header">
     <div class="hub-title-group">
@@ -1850,7 +2104,7 @@ a:hover { text-decoration: underline; }
     </div>
 
     <nav class="nav-menu" id="sidebar-nav">
-      <a href="#section-0" class="nav-item"><span>Level 1 · Beginner</span><span class="nav-item-num">13</span></a><a href="#section-1" class="nav-item"><span>Level 2 · Intermediate</span><span class="nav-item-num">12</span></a><a href="#section-2" class="nav-item"><span>Level 3 · Advanced</span><span class="nav-item-num">16</span></a><a href="#section-3" class="nav-item"><span>Level 4 · Expert / Type-System Internals</span><span class="nav-item-num">7</span></a><a href="#section-4" class="nav-item"><span>Level 5 · React + TypeScript</span><span class="nav-item-num">6</span></a><a href="#section-5" class="nav-item"><span>Level 6 · Node.js + TypeScript</span><span class="nav-item-num">5</span></a><a href="#section-6" class="nav-item"><span>Level 7 · Backend / API Type Safety</span><span class="nav-item-num">5</span></a><a href="#section-7" class="nav-item"><span>Level 8 · Production TypeScript</span><span class="nav-item-num">5</span></a><a href="#section-8" class="nav-item"><span>Level 9 · Testing</span><span class="nav-item-num">3</span></a><a href="#section-9" class="nav-item"><span>Level 10 · Interview Preparation</span><span class="nav-item-num">1</span></a><a href="#section-10" class="nav-item"><span>Appendix A · Checklist</span><span class="nav-item-num">★</span></a><a href="#section-11" class="nav-item"><span>Appendix B · Learning Order</span><span class="nav-item-num">★</span></a><a href="#section-12" class="nav-item"><span>Appendix C · 30-60-90 Roadmap</span><span class="nav-item-num">★</span></a><a href="#section-13" class="nav-item"><span>Appendix D · 100+ Drills</span><span class="nav-item-num">★</span></a><a href="#section-14" class="nav-item"><span>Appendix E · 125 Interview Q&As</span><span class="nav-item-num">★</span></a><a href="#section-15" class="nav-item"><span>Appendix F · 10 Projects</span><span class="nav-item-num">★</span></a><a href="#section-16" class="nav-item"><span>Appendix G · Mastery Final</span><span class="nav-item-num">★</span></a>
+      <a href="#section-0" class="nav-item"><span>Level 1 · Beginner</span><span class="nav-item-num">13</span></a><a href="#section-1" class="nav-item"><span>Level 2 · Intermediate</span><span class="nav-item-num">12</span></a><a href="#section-2" class="nav-item"><span>Level 3 · Advanced</span><span class="nav-item-num">16</span></a><a href="#section-3" class="nav-item"><span>Level 4 · Expert / Type-System Internals</span><span class="nav-item-num">7</span></a><a href="#section-4" class="nav-item"><span>Level 5 · React + TypeScript</span><span class="nav-item-num">6</span></a><a href="#section-5" class="nav-item"><span>Level 6 · Node.js + TypeScript</span><span class="nav-item-num">5</span></a><a href="#section-6" class="nav-item"><span>Level 7 · Backend / API Type Safety</span><span class="nav-item-num">5</span></a><a href="#section-7" class="nav-item"><span>Level 8 · Production TypeScript</span><span class="nav-item-num">5</span></a><a href="#section-8" class="nav-item"><span>Level 9 · Testing</span><span class="nav-item-num">6</span></a><a href="#section-9" class="nav-item"><span>Level 10 · Interview Preparation</span><span class="nav-item-num">4</span></a><a href="#section-10" class="nav-item"><span>Appendix A · Checklist</span><span class="nav-item-num">★</span></a><a href="#section-11" class="nav-item"><span>Appendix B · Learning Order</span><span class="nav-item-num">★</span></a><a href="#section-12" class="nav-item"><span>Appendix C · 30-60-90 Roadmap</span><span class="nav-item-num">★</span></a><a href="#section-13" class="nav-item"><span>Appendix D · 100+ Drills</span><span class="nav-item-num">★</span></a><a href="#section-14" class="nav-item"><span>Appendix E · 125 Interview Q&As</span><span class="nav-item-num">★</span></a><a href="#section-15" class="nav-item"><span>Appendix F · 10 Projects</span><span class="nav-item-num">★</span></a><a href="#section-16" class="nav-item"><span>Appendix G · Mastery Final</span><span class="nav-item-num">★</span></a>
     </nav>
   </aside>
 
@@ -2297,13 +2551,17 @@ type GeoPoint = readonly [number, number, string];
 const office: GeoPoint = [28.6139, 77.2090, &quot;New Delhi&quot;];
 // office[0] = 30.0; // ❌ COMPILE ERROR: Cannot assign to read only property
 
-// 3. React hook style return tuple:
-function useToggle(initial: boolean): readonly [boolean, () =&gt; void] {
-  let state = initial;
-  const toggle = () =&gt; { state = !state; };
-  return [state, toggle] as const;
+// 3. React hook returning a typed tuple [state, toggleAction]:
+import { useState, useCallback } from &quot;react&quot;;
+
+function useToggle(initial: boolean = false): readonly [boolean, () =&gt; void] {
+  const [value, setValue] = useState&lt;boolean&gt;(initial);
+  const toggle = useCallback(() =&gt; {
+    setValue((prev) =&gt; !prev);
+  }, []);
+  return [value, toggle] as const;
 }</code></pre>
-      <div class="code-caption">Tuples encode fixed positions and length; &#x27;readonly&#x27; ensures state cannot be mutated by accidental .push() or indexing.</div>
+      <div class="code-caption">Tuples encode fixed positions and length; &#x27;as const&#x27; with useState ensures a typed immutable [boolean, () =&gt; void] return.</div>
     </div>
 
     <div class="topic-sections-grid">
@@ -3074,39 +3332,68 @@ console.log(item.toFixed(2));</code></pre>
     
     <div class="code-box">
       <div class="code-box-header">
-        <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Production-Ready tsconfig.json Configuration</div>
+        <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · (A) Next.js App vs (B) Node Library tsconfig.json</div>
         <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
       </div>
-      <pre><code>{
-  &quot;compilerOptions&quot;: {
-    /* Strict Type-Checking Family */
-    &quot;strict&quot;: true,                         /* Enables strictNullChecks, noImplicitAny, etc. */
-    &quot;noUncheckedIndexedAccess&quot;: true,       /* arr[0] is typed as T | undefined */
-    &quot;exactOptionalPropertyTypes&quot;: true,     /* { x?: string } does not accept undefined */
-
-    /* Module &amp; Target Settings */
-    &quot;target&quot;: &quot;ES2022&quot;,
-    &quot;module&quot;: &quot;NodeNext&quot;,
-    &quot;moduleResolution&quot;: &quot;NodeNext&quot;,
-    &quot;isolatedModules&quot;: true,                /* Required for Vite/Babel/Next.js */
-
-    /* Emit &amp; Build Behavior */
-    &quot;noEmit&quot;: true,                         /* Type-check only; bundler emits JS */
-    &quot;skipLibCheck&quot;: true                    /* Skip type checking of declaration files */
+      <pre><code>// ==============================================================
+// CONFIG A: Next.js Application (Type-Check Only; Turbopack Bundles)
+// ==============================================================
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,                         /* Bundler handles JS output */
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",          /* Modern bundler resolution (TS 5.0+) */
+    "resolveJsonModule": true,
+    "isolatedModules": true,                /* Required for single-file transpilers */
+    "jsx": "preserve",                      /* React handles JSX during build */
+    "incremental": true,
+    "plugins": [{ "name": "next" }],
+    "paths": { "@/*": ["./src/*"] },
+    "noUncheckedIndexedAccess": true
   },
-  &quot;include&quot;: [&quot;src/**/*&quot;]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
+
+// ==============================================================
+// CONFIG B: Node.js Library / Package (Compiles &amp; Emits JS + .d.ts)
+// ==============================================================
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",                   /* Native Node.js ESM module format */
+    "moduleResolution": "NodeNext",         /* Enforces explicit .js import extensions */
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "declaration": true,                    /* Emit .d.ts declaration files for consumers */
+    "declarationMap": true,                 /* Source maps for types (jump-to-definition) */
+    "sourceMap": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "skipLibCheck": true,
+    "noEmit": false                         /* tsc MUST emit JavaScript and declarations */
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "**/*.test.ts"]
 }</code></pre>
-      <div class="code-caption">strict: true enables the essential safety flags; adding noUncheckedIndexedAccess makes array lookups honest about returning undefined.</div>
+      <div class="code-caption">Next.js uses moduleResolution: 'bundler' with noEmit: true; Node libraries use module/moduleResolution: 'NodeNext' with noEmit: false and declaration: true.</div>
     </div>
 
     <div class="topic-sections-grid">
       <div class="topic-info-block">
         <h4>Key Subtopics</h4>
-        <ul class="topic-list"><li>include/exclude</li><li>rootDir/outDir</li><li>target, lib, module</li><li>strict family</li><li>noEmit vs emit</li><li>skipLibCheck</li></ul>
+        <ul class="topic-list"><li>moduleResolution: bundler vs NodeNext</li><li>noEmit: true (Apps) vs declaration: true (Libs)</li><li>target and lib choices</li><li>strict family</li><li>exactOptionalPropertyTypes</li><li>noUncheckedIndexedAccess</li></ul>
       </div>
       <div class="topic-info-block">
         <h4>What You Need To Understand</h4>
-        <ul class="topic-list"><li>strict: true turns on the important safety flags.</li><li>Apps often use noEmit and let Next/Vite emit.</li><li>skipLibCheck skips typechecking .d.ts of dependencies (common, pragmatic).</li></ul>
+        <ul class="topic-list"><li>Apps use 'bundler' resolution because Webpack/Turbopack handle file imports.</li><li>Libraries need 'NodeNext' to support Node's native ESM rules and must emit .d.ts.</li><li>noEmit: true in a library prevents publishing any code to npm.</li></ul>
       </div>
       <div class="topic-info-block">
         <h4>Why It Is Important</h4>
@@ -3939,7 +4226,12 @@ function formatValue(v: number | string): string {
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Parameter Properties &amp; Runtime Private (#field)</div>
         <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
       </div>
-      <pre><code>interface Repository&lt;T&gt; {
+      <pre><code>interface DatabaseConfig {
+  connectionUrl: string;
+  encryptionKey: string;
+}
+
+interface Repository&lt;T&gt; {
   findById(id: string): Promise&lt;T | null&gt;;
   save(item: T): Promise&lt;void&gt;;
 }
@@ -3951,21 +4243,24 @@ class UserRepository implements Repository&lt;{ id: string; name: string }&gt; {
   // JavaScript runtime privacy (cannot be inspected or cast away):
   #encryptionKey: string;
 
-  // Parameter property shorthand creates and initializes field:
-  constructor(public readonly tableName: string, connectionUrl: string) {
-    this.connectionUrl = connectionUrl;
-    this.#encryptionKey = &quot;secret_key_123&quot;;
+  // Dependencies and credentials injected via typed configuration:
+  constructor(
+    public readonly tableName: string,
+    config: DatabaseConfig
+  ) {
+    this.connectionUrl = config.connectionUrl;
+    this.#encryptionKey = config.encryptionKey;
   }
 
   async findById(id: string) {
-    return { id, name: &quot;Alice&quot; };
+    return { id, name: "Alice" };
   }
 
   async save(item: { id: string; name: string }) {
     console.log(`Saved ${item.name} into ${this.tableName}`);
   }
 }</code></pre>
-      <div class="code-caption">TS &#x27;private&#x27; is only checked at compile time and can be bypassed; JS &#x27;#field&#x27; provides true runtime encapsulation.</div>
+      <div class="code-caption">TS 'private' is only checked at compile time and can be bypassed; JS '#field' provides true runtime encapsulation; credentials injected via config.</div>
     </div>
 
     <div class="topic-sections-grid">
@@ -7977,11 +8272,11 @@ export function Select&lt;T&gt;({ items, getLabel, onSelect }: SelectProps&lt;T&
     
     <div class="code-box">
       <div class="code-box-header">
-        <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Next.js 15 Async Params &amp; Server Component Typing</div>
+        <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Next.js 16 (Current) &amp; 15 (LTS) Async Params &amp; Server Components</div>
         <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
       </div>
       <pre><code>// app/users/[id]/page.tsx
-// In Next.js 15, params and searchParams are asynchronous Promises!
+// In Next.js 15 and 16, params and searchParams are asynchronous Promises!
 type PageProps = {
   params: Promise&lt;{ id: string }&gt;;
   searchParams: Promise&lt;{ tab?: string }&gt;;
@@ -7998,11 +8293,11 @@ export default async function UserProfilePage({ params, searchParams }: PageProp
   return (
     &lt;div&gt;
       &lt;h1&gt;{user.name}&lt;/h1&gt;
-      &lt;p&gt;Active Tab: {tab ?? &quot;overview&quot;}&lt;/p&gt;
+      &lt;p&gt;Active Tab: {tab ?? "overview"}&lt;/p&gt;
     &lt;/div&gt;
   );
 }</code></pre>
-      <div class="code-caption">Next.js 15 treats page &#x27;params&#x27; and &#x27;searchParams&#x27; as Promises; Server Components can execute typed server queries directly.</div>
+      <div class="code-caption">Next.js 15 &amp; 16 treat page &#x27;params&#x27; and &#x27;searchParams&#x27; as Promises; Server Components can execute typed server queries directly.</div>
     </div>
 
     <div class="topic-sections-grid">
@@ -8012,7 +8307,7 @@ export default async function UserProfilePage({ params, searchParams }: PageProp
       </div>
       <div class="topic-info-block">
         <h4>What You Need To Understand</h4>
-        <ul class="topic-list"><li>Server Components can use Node types; Client Components cannot import server modules.</li><li>Params are Promises in Next.js 15+.</li><li>Server actions are functions with real argument types plus runtime validation.</li></ul>
+        <ul class="topic-list"><li>Server Components can use Node types; Client Components cannot import server modules.</li><li>Params and searchParams are Promises in Next.js 15 (LTS) and Next.js 16 (current stable).</li><li>Server actions are functions with real argument types plus runtime validation.</li></ul>
       </div>
       <div class="topic-info-block">
         <h4>Why It Is Important</h4>
@@ -8042,7 +8337,7 @@ export default async function UserProfilePage({ params, searchParams }: PageProp
     <div class="topic-drill-card">
       <div class="topic-drill-top">
         <span class="topic-drill-badge">⚡ Quick Assessment Drill</span>
-        <div class="topic-drill-prompt"><strong>Checkpoint Challenge:</strong> Type a Next.js 15 page component accepting asynchronous dynamic route params.</div>
+        <div class="topic-drill-prompt"><strong>Checkpoint Challenge:</strong> Type a Next.js 15/16 page component accepting asynchronous dynamic route params.</div>
       </div>
       <details class="topic-drill-details">
         <summary class="topic-drill-summary">💡 Reveal Model Solution &amp; Explanation</summary>
@@ -8055,7 +8350,7 @@ export default async function Page({ params }: Props) {
   const { id } = await params;
   return &lt;h1&gt;Product: {id}&lt;/h1&gt;;
 }</code></pre>
-          <div class="topic-drill-expl"><strong>Explanation:</strong> In Next.js 15, route params are Promises that must be resolved asynchronously.</div>
+          <div class="topic-drill-expl"><strong>Explanation:</strong> In Next.js 15 and 16, route params are Promises that must be resolved asynchronously.</div>
         </div>
       </details>
     </div>
@@ -10421,7 +10716,7 @@ jobs:
       </div>
     </div>
     <div style="font-size: 12px; font-weight: 700; color: var(--text-muted);">
-      3 Topics
+      6 Topics
     </div>
   </div>
   <div class="section-body">
@@ -10723,6 +11018,351 @@ requireString(123);</code></pre>
   </div>
 </article>
 
+<article class="topic-card" id="topic-9.4" data-priority="core" data-diff="intermediate">
+  <div class="topic-card-header">
+    <h3>9.4 Contract Testing &amp; Mock Service Worker (MSW v2) Type Safety</h3>
+    <div class="topic-controls">
+      <button class="topic-completed-toggle" onclick="toggleTopicDone('9.4')" id="btn-done-9.4">
+        <span>✓</span> Mark Done
+      </button>
+    </div>
+  </div>
+  <div class="topic-body">
+    <div class="code-box">
+      <div class="code-box-header">
+        <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · MSW v2 Strictly Typed Request Handlers</div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+      <pre><code>import { http, HttpResponse } from "msw";
+
+// Shared contract types from @workspace/contracts
+export interface UserProfileDto {
+  id: string;
+  email: string;
+  role: "admin" | "member";
+}
+
+// MSW v2 typed handler: http.get&lt;PathParams, RequestBodyType, ResponseBodyType, Path&gt;
+export const handlers = [
+  http.get&lt;{ id: string }, never, UserProfileDto | { error: string }&gt;(
+    "/api/users/:id",
+    ({ params }) =&gt; {
+      const { id } = params; // Strongly typed as string
+
+      if (id === "404") {
+        return HttpResponse.json({ error: "User not found" }, { status: 404 });
+      }
+
+      return HttpResponse.json({
+        id,
+        email: "engineer@company.com",
+        role: "member"
+      });
+    }
+  )
+];</code></pre>
+      <div class="code-caption">Mock Service Worker v2 intercepts at the network layer while enforcing strict types on parameters, request bodies, and JSON responses.</div>
+    </div>
+
+    <div class="topic-sections-grid">
+      <div class="topic-info-block">
+        <h4>Key Subtopics</h4>
+        <ul class="topic-list"><li>MSW v2 HttpResponse.json&lt;T&gt;</li><li>Network-level mocking vs module mock</li><li>PathParams and RequestBody generics</li><li>Contract drift prevention</li><li>Shared DTO re-use</li></ul>
+      </div>
+      <div class="topic-info-block">
+        <h4>What You Need To Understand</h4>
+        <ul class="topic-list"><li>MSW intercepts real fetch/XHR calls, meaning components use real production networking code.</li><li>Explicitly passing generic parameters to http.get/http.post ensures mocks fail compilation when backend contracts change.</li><li>Never cast handler responses with as any; let HttpResponse.json enforce the DTO.</li></ul>
+      </div>
+      <div class="topic-info-block">
+        <h4>Why It Is Important</h4>
+        <ul class="topic-list"><li>Eliminates subtle disparities between fake unit-test mocks and real backend API payloads in integration tests.</li></ul>
+      </div>
+      <div class="topic-info-block">
+        <h4>Practical Coding Exercises</h4>
+        <ul class="topic-list"><li>Type an MSW v2 POST handler accepting CreateUserCommand and returning UserResponseDto.</li><li>Add an error response union and assert status code exhaustiveness.</li></ul>
+      </div>
+      <div class="topic-info-block">
+        <h4>Real-World Production Scenarios</h4>
+        <ul class="topic-list"><li>Full-stack monorepos sharing TypeScript types between Next.js frontend and Express/NestJS backend.</li></ul>
+      </div>
+      <div class="topic-info-block">
+        <h4>Common Junior Mistakes</h4>
+        <ul class="topic-list"><li>Mocking global fetch directly with vi.fn() instead of using network-level interceptors.</li><li>Allowing mocked response shapes to drift out of sync with backend database models.</li></ul>
+      </div>
+    </div>
+
+    <div style="margin-top: 16px; background: var(--panel-muted); padding: 12px 16px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+      <h4 style="font-size: 11px; font-weight: 800; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;">Target Interview Questions</h4>
+      <ul class="topic-list"><li>Why is MSW preferred over global fetch mocking in TypeScript React testing?</li><li>How do you prevent contract drift between backend endpoints and frontend mocks?</li></ul>
+    </div>
+
+    <!-- Topic Quick Practice Drill -->
+    <div class="topic-drill-card">
+      <div class="topic-drill-top">
+        <span class="topic-drill-badge">⚡ Quick Assessment Drill</span>
+        <div class="topic-drill-prompt"><strong>Checkpoint Challenge:</strong> Write an MSW v2 http.get handler returning a typed ApiResponse&lt;User&gt; using HttpResponse.json.</div>
+      </div>
+      <details class="topic-drill-details">
+        <summary class="topic-drill-summary">💡 Reveal Model Solution &amp; Explanation</summary>
+        <div class="topic-drill-content">
+          <pre><code>import { http, HttpResponse } from "msw";
+
+type User = { id: string; name: string };
+type ApiResponse&lt;T&gt; = { data: T; success: true };
+
+export const getUserHandler = http.get&lt;{ id: string }, never, ApiResponse&lt;User&gt;&gt;(
+  "/api/users/:id",
+  ({ params }) =&gt; {
+    return HttpResponse.json({
+      success: true,
+      data: { id: params.id, name: "Ada Lovelace" }
+    });
+  }
+);</code></pre>
+          <div class="topic-drill-expl"><strong>Explanation:</strong> Passing the response type as the third generic parameter ensures HttpResponse.json validates the payload at compile time.</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="meta-chip-row">
+      <span class="chip chip-core"><span class="chip-label">Priority:</span> <span class="chip-val">Core</span></span>
+      <span class="chip"><span class="chip-label">Difficulty:</span> <span class="chip-val">Intermediate</span></span>
+      <span class="chip"><span class="chip-label">Prerequisites:</span> <span class="chip-val">9.1, 7.1</span></span>
+      <span class="chip"><span class="chip-label">Status:</span> <span class="chip-val">Current / relevant</span></span>
+    </div>
+  </div>
+</article>
+
+<article class="topic-card" id="topic-9.5" data-priority="core" data-diff="advanced">
+  <div class="topic-card-header">
+    <h3>9.5 End-to-End Type Safety with Playwright Test Fixtures</h3>
+    <div class="topic-controls">
+      <button class="topic-completed-toggle" onclick="toggleTopicDone('9.5')" id="btn-done-9.5">
+        <span>✓</span> Mark Done
+      </button>
+    </div>
+  </div>
+  <div class="topic-body">
+    <div class="code-box">
+      <div class="code-box-header">
+        <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Custom Playwright Fixtures &amp; Typed Page Objects</div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+      <pre><code>import { test as base, expect, Page } from "@playwright/test";
+
+// Typed Page Object Model (POM):
+export class DashboardPage {
+  constructor(private readonly page: Page) {}
+
+  async getMetricValue(metricName: "mrr" | "churn" | "users"): Promise&lt;string&gt; {
+    const locator = this.page.locator(`[data-metric="${metricName}"]`);
+    return (await locator.textContent()) ?? "";
+  }
+}
+
+// Declare Custom Fixture Types:
+type AppFixtures = {
+  dashboardPage: DashboardPage;
+  authToken: string;
+};
+
+// Extend base test with typed fixtures:
+export const test = base.extend&lt;AppFixtures&gt;({
+  authToken: async ({}, use) =&gt; {
+    const token = "mock-jwt-auth-session-token";
+    await use(token);
+  },
+  dashboardPage: async ({ page }, use) =&gt; {
+    const dashboard = new DashboardPage(page);
+    await use(dashboard);
+  }
+});
+
+export { expect };</code></pre>
+      <div class="code-caption">Playwright's test.extend embeds typed custom fixtures and Page Object Models directly into test runner signatures.</div>
+    </div>
+
+    <div class="topic-sections-grid">
+      <div class="topic-info-block">
+        <h4>Key Subtopics</h4>
+        <ul class="topic-list"><li>test.extend&lt;CustomFixtures&gt;</li><li>Page Object Models (POM) with TS</li><li>Locator typing &amp; assertions</li><li>StorageState and auth typing</li><li>Worker-scoped vs test-scoped fixtures</li></ul>
+      </div>
+      <div class="topic-info-block">
+        <h4>What You Need To Understand</h4>
+        <ul class="topic-list"><li>Playwright fixtures provide dependency injection: tests only request the fixtures they need.</li><li>test.extend propagates strict types into test parameters automatically without manual type hints in individual test cases.</li><li>Avoid loose string selectors; encapsulate selector logic inside typed POM methods.</li></ul>
+      </div>
+      <div class="topic-info-block">
+        <h4>Why It Is Important</h4>
+        <ul class="topic-list"><li>Large enterprise test suites become brittle and unmaintainable without typed page models and reusable setup fixtures.</li></ul>
+      </div>
+      <div class="topic-info-block">
+        <h4>Practical Coding Exercises</h4>
+        <ul class="topic-list"><li>Build a LoginPage POM with typed fillLoginForm(data: LoginFormValues) method.</li><li>Create an authenticated test fixture that automatically seeds an isolated database tenant.</li></ul>
+      </div>
+      <div class="topic-info-block">
+        <h4>Real-World Production Scenarios</h4>
+        <ul class="topic-list"><li>End-to-end CI validation pipelines for Next.js e-commerce and SaaS platforms.</li></ul>
+      </div>
+      <div class="topic-info-block">
+        <h4>Common Junior Mistakes</h4>
+        <ul class="topic-list"><li>Hardcoding locators repeatedly in raw test specs.</li><li>Creating un-typed global state between tests instead of using isolated fixtures.</li></ul>
+      </div>
+    </div>
+
+    <div style="margin-top: 16px; background: var(--panel-muted); padding: 12px 16px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+      <h4 style="font-size: 11px; font-weight: 800; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;">Target Interview Questions</h4>
+      <ul class="topic-list"><li>How does Playwright test.extend achieve dependency injection with full type safety?</li><li>What is the architectural advantage of Page Object Models in TypeScript?</li></ul>
+    </div>
+
+    <!-- Topic Quick Practice Drill -->
+    <div class="topic-drill-card">
+      <div class="topic-drill-top">
+        <span class="topic-drill-badge">⚡ Quick Assessment Drill</span>
+        <div class="topic-drill-prompt"><strong>Checkpoint Challenge:</strong> Extend Playwright base test with a custom fixture authedUser: { token: string; email: string }.</div>
+      </div>
+      <details class="topic-drill-details">
+        <summary class="topic-drill-summary">💡 Reveal Model Solution &amp; Explanation</summary>
+        <div class="topic-drill-content">
+          <pre><code>import { test as base } from "@playwright/test";
+
+type UserFixture = {
+  authedUser: { token: string; email: string };
+};
+
+export const test = base.extend&lt;UserFixture&gt;({
+  authedUser: async ({}, use) =&gt; {
+    await use({ token: "tok_123", email: "admin@test.local" });
+  }
+});</code></pre>
+          <div class="topic-drill-expl"><strong>Explanation:</strong> base.extend carries the UserFixture type directly into all test({ authedUser }) callback signatures.</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="meta-chip-row">
+      <span class="chip chip-important"><span class="chip-label">Priority:</span> <span class="chip-val">Important</span></span>
+      <span class="chip"><span class="chip-label">Difficulty:</span> <span class="chip-val">Advanced</span></span>
+      <span class="chip"><span class="chip-label">Prerequisites:</span> <span class="chip-val">9.1, 2.6</span></span>
+      <span class="chip"><span class="chip-label">Status:</span> <span class="chip-val">Current / relevant</span></span>
+    </div>
+  </div>
+</article>
+
+<article class="topic-card" id="topic-9.6" data-priority="optional" data-diff="advanced">
+  <div class="topic-card-header">
+    <h3>9.6 Property-Based &amp; Invariant Testing with Fast-Check</h3>
+    <div class="topic-controls">
+      <button class="topic-completed-toggle" onclick="toggleTopicDone('9.6')" id="btn-done-9.6">
+        <span>✓</span> Mark Done
+      </button>
+    </div>
+  </div>
+  <div class="topic-body">
+    <div class="code-box">
+      <div class="code-box-header">
+        <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Fast-Check Invariants &amp; Serialization Laws</div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+      <pre><code>import { describe, it, expect } from "vitest";
+import * as fc from "fast-check";
+
+interface MoneyTransfer {
+  amount: number;
+  sourceCurrency: "USD" | "EUR" | "GBP";
+  targetCurrency: "USD" | "EUR" | "GBP";
+}
+
+// Arbitrary Generator matching the TypeScript interface:
+const transferArbitrary: fc.Arbitrary&lt;MoneyTransfer&gt; = fc.record({
+  amount: fc.double({ min: 0.01, max: 1_000_000, noNaN: true }),
+  sourceCurrency: fc.constantFrom("USD", "EUR", "GBP"),
+  targetCurrency: fc.constantFrom("USD", "EUR", "GBP")
+});
+
+function serializeTransfer(t: MoneyTransfer): string {
+  return JSON.stringify(t);
+}
+
+function deserializeTransfer(s: string): MoneyTransfer {
+  return JSON.parse(s) as MoneyTransfer;
+}
+
+describe("Transfer Invariants", () => {
+  it("satisfies round-trip serialization invariant: deserialize(serialize(x)) === x", () => {
+    fc.assert(
+      fc.property(transferArbitrary, (transfer) => {
+        const roundTripped = deserializeTransfer(serializeTransfer(transfer));
+        expect(roundTripped).toEqual(transfer);
+      }),
+      { numRuns: 100 }
+    );
+  });
+});</code></pre>
+      <div class="code-caption">Property-based testing tests invariants against hundreds of auto-generated random edge cases (e.g. unicode, negative zeros, boundaries).</div>
+    </div>
+
+    <div class="topic-sections-grid">
+      <div class="topic-info-block">
+        <h4>Key Subtopics</h4>
+        <ul class="topic-list"><li>fast-check integration with Vitest</li><li>fc.record / fc.string / fc.array</li><li>Algebraic invariants (idempotency, round-trips)</li><li>Shrinking failed test cases</li><li>Domain model invariant assertions</li></ul>
+      </div>
+      <div class="topic-info-block">
+        <h4>What You Need To Understand</h4>
+        <ul class="topic-list"><li>Unit tests verify known examples; property tests verify universal invariants across generative sets.</li><li>fast-check automatically shrinks failing inputs to the minimal reproducing case (e.g. empty string or 0).</li><li>TypeScript types guide arbitrary generator constructions.</li></ul>
+      </div>
+      <div class="topic-info-block">
+        <h4>Why It Is Important</h4>
+        <ul class="topic-list"><li>Uncovers edge-case bugs in parsers, crypto algorithms, currency converters, and distributed consensus logic.</li></ul>
+      </div>
+      <div class="topic-info-block">
+        <h4>Practical Coding Exercises</h4>
+        <ul class="topic-list"><li>Write a property test proving Array.prototype.reverse is an involution (reverse(reverse(x)) == x).</li><li>Verify a custom URL query-param parser never crashes on malformed unicode strings.</li></ul>
+      </div>
+      <div class="topic-info-block">
+        <h4>Real-World Production Scenarios</h4>
+        <ul class="topic-list"><li>Fintech calculation engines, cryptographic token validators, and complex data migration scripts.</li></ul>
+      </div>
+      <div class="topic-info-block">
+        <h4>Common Junior Mistakes</h4>
+        <ul class="topic-list"><li>Writing assertions that merely mirror the implementation rather than verifying universal mathematical properties.</li><li>Using Math.random() in tests instead of deterministic seeded generators with shrinking.</li></ul>
+      </div>
+    </div>
+
+    <div style="margin-top: 16px; background: var(--panel-muted); padding: 12px 16px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+      <h4 style="font-size: 11px; font-weight: 800; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;">Target Interview Questions</h4>
+      <ul class="topic-list"><li>What is property-based testing and when does it outperform example-based unit tests?</li><li>How does input shrinking work in property testing libraries like fast-check?</li></ul>
+    </div>
+
+    <!-- Topic Quick Practice Drill -->
+    <div class="topic-drill-card">
+      <div class="topic-drill-top">
+        <span class="topic-drill-badge">⚡ Quick Assessment Drill</span>
+        <div class="topic-drill-prompt"><strong>Checkpoint Challenge:</strong> Write a fast-check property verifying string concatenation associativity: (a + b) + c === a + (b + c).</div>
+      </div>
+      <details class="topic-drill-details">
+        <summary class="topic-drill-summary">💡 Reveal Model Solution &amp; Explanation</summary>
+        <div class="topic-drill-content">
+          <pre><code>import * as fc from "fast-check";
+
+fc.assert(
+  fc.property(fc.string(), fc.string(), fc.string(), (a, b, c) =&gt; {
+    return (a + b) + c === a + (b + c);
+  })
+);</code></pre>
+          <div class="topic-drill-expl"><strong>Explanation:</strong> fast-check generates diverse strings including empty strings, control characters, and unicode to prove algebraic associativity.</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="meta-chip-row">
+      <span class="chip chip-optional"><span class="chip-label">Priority:</span> <span class="chip-val">Optional</span></span>
+      <span class="chip"><span class="chip-label">Difficulty:</span> <span class="chip-val">Advanced</span></span>
+      <span class="chip"><span class="chip-label">Prerequisites:</span> <span class="chip-val">9.1, 3.1</span></span>
+      <span class="chip"><span class="chip-label">Status:</span> <span class="chip-val">Current / relevant</span></span>
+    </div>
+  </div>
+</article>
+
     
     <!-- LEVEL 9 COMPREHENSIVE MASTERY LAB -->
     <div class="level-assessment-box" id="assessment-lvl-9">
@@ -10898,7 +11538,7 @@ console.log(admin.role); // &quot;admin&quot;, all other fields fully populated!
       </div>
     </div>
     <div style="font-size: 12px; font-weight: 700; color: var(--text-muted);">
-      1 Topics
+      4 Topics
     </div>
   </div>
   <div class="section-body">
@@ -10998,6 +11638,300 @@ type SeniorState =
       <span class="chip chip-core"><span class="chip-label">Priority:</span> <span class="chip-val">Core</span></span>
       <span class="chip"><span class="chip-label">Difficulty:</span> <span class="chip-val">Intermediate</span></span>
       <span class="chip"><span class="chip-label">Prerequisites:</span> <span class="chip-val">Levels 1–7 Core topics</span></span>
+      <span class="chip"><span class="chip-label">Status:</span> <span class="chip-val">Current / relevant</span></span>
+    </div>
+  </div>
+</article>
+
+<article class="topic-card" id="topic-10.2" data-priority="core" data-diff="advanced">
+  <div class="topic-card-header">
+    <h3>10.2 Whiteboard Live-Coding: Implementing Utility Types from Scratch</h3>
+    <div class="topic-controls">
+      <button class="topic-completed-toggle" onclick="toggleTopicDone('10.2')" id="btn-done-10.2">
+        <span>✓</span> Mark Done
+      </button>
+    </div>
+  </div>
+  <div class="topic-body">
+    <div class="code-box">
+      <div class="code-box-header">
+        <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Live-Coding Built-in Utility Types</div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+      <pre><code>// 1. Reimplementing Pick&lt;T, K&gt;:
+type MyPick&lt;T, K extends keyof T&gt; = {
+  [P in K]: T[P];
+};
+
+// 2. Reimplementing Omit&lt;T, K&gt; using Exclude:
+type MyExclude&lt;T, U&gt; = T extends U ? never : T;
+type MyOmit&lt;T, K extends keyof any&gt; = MyPick&lt;T, MyExclude&lt;keyof T, K&gt;&gt;;
+
+// 3. Reimplementing ReturnType&lt;T&gt; using infer:
+type MyReturnType&lt;T extends (...args: any[]) =&gt; any&gt; =
+  T extends (...args: any[]) =&gt; infer R ? R : never;
+
+// 4. Recursive DeepReadonly&lt;T&gt;:
+type DeepReadonly&lt;T&gt; = T extends (...args: any[]) =&gt; any
+  ? T
+  : T extends object
+  ? { readonly [K in keyof T]: DeepReadonly&lt;T[K]&gt; }
+  : T;</code></pre>
+      <div class="code-caption">Live-coding standard utility types tests deep familiarity with mapped types, distributive conditional types, key filtering, and the infer keyword.</div>
+    </div>
+
+    <div class="topic-sections-grid">
+      <div class="topic-info-block">
+        <h4>Key Subtopics</h4>
+        <ul class="topic-list"><li>Mapped types [P in K]</li><li>Indexed access T[P]</li><li>Conditional type distribution</li><li>Type inference with infer</li><li>Recursion limits in TypeScript</li></ul>
+      </div>
+      <div class="topic-info-block">
+        <h4>What You Need To Understand</h4>
+        <ul class="topic-list"><li>Interviewers test whether you memorize syntax or grasp how keyof, mapped types, and distributive conditionals interact.</li><li>Always constrain keys: K extends keyof T prevents passing invalid key names into Pick.</li><li>Distributive behavior: naked type variables in conditional types distribute across unions; wrap in tuples [T] extends [never] to prevent distribution.</li></ul>
+      </div>
+      <div class="topic-info-block">
+        <h4>Why It Is Important</h4>
+        <ul class="topic-list"><li>Common live-pairing interview hurdle at top tier tech companies and high-growth startups.</li></ul>
+      </div>
+      <div class="topic-info-block">
+        <h4>Practical Coding Exercises</h4>
+        <ul class="topic-list"><li>Implement MyParameters&lt;T&gt; using infer.</li><li>Implement Flatten&lt;T&gt; that extracts elements from nested arrays.</li><li>Implement DeepPartial&lt;T&gt; for patch payloads.</li></ul>
+      </div>
+      <div class="topic-info-block">
+        <h4>Real-World Production Scenarios</h4>
+        <ul class="topic-list"><li>Internal design systems, database query builders, SDK contract transformations.</li></ul>
+      </div>
+      <div class="topic-info-block">
+        <h4>Common Junior Mistakes</h4>
+        <ul class="topic-list"><li>Forgetting extends keyof T constraints on keys.</li><li>Failing to handle function signatures or arrays in recursive mapped types.</li></ul>
+      </div>
+    </div>
+
+    <div style="margin-top: 16px; background: var(--panel-muted); padding: 12px 16px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+      <h4 style="font-size: 11px; font-weight: 800; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;">Target Interview Questions</h4>
+      <ul class="topic-list"><li>How is Omit implemented in terms of Pick and Exclude?</li><li>How does the infer keyword work in conditional types?</li></ul>
+    </div>
+
+    <!-- Topic Quick Practice Drill -->
+    <div class="topic-drill-card">
+      <div class="topic-drill-top">
+        <span class="topic-drill-badge">⚡ Quick Assessment Drill</span>
+        <div class="topic-drill-prompt"><strong>Checkpoint Challenge:</strong> Implement MyAwaited&lt;T&gt; that unwraps Promise types recursively using infer.</div>
+      </div>
+      <details class="topic-drill-details">
+        <summary class="topic-drill-summary">💡 Reveal Model Solution &amp; Explanation</summary>
+        <div class="topic-drill-content">
+          <pre><code>type MyAwaited&lt;T&gt; =
+  T extends PromiseLike&lt;infer U&gt; ? MyAwaited&lt;U&gt; : T;
+
+// Verification:
+type Test1 = MyAwaited&lt;Promise&lt;Promise&lt;string&gt;&gt;&gt;; // string</code></pre>
+          <div class="topic-drill-expl"><strong>Explanation:</strong> Uses recursive conditional types with PromiseLike&lt;infer U&gt; to unpack nested promises down to the underlying value type.</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="meta-chip-row">
+      <span class="chip chip-core"><span class="chip-label">Priority:</span> <span class="chip-val">Core</span></span>
+      <span class="chip"><span class="chip-label">Difficulty:</span> <span class="chip-val">Advanced</span></span>
+      <span class="chip"><span class="chip-label">Prerequisites:</span> <span class="chip-val">3.4, 3.10, 3.11</span></span>
+      <span class="chip"><span class="chip-label">Status:</span> <span class="chip-val">Current / relevant</span></span>
+    </div>
+  </div>
+</article>
+
+<article class="topic-card" id="topic-10.3" data-priority="core" data-diff="intermediate">
+  <div class="topic-card-header">
+    <h3>10.3 Architectural System Defense: Migrating JS Monoliths to Strict TypeScript</h3>
+    <div class="topic-controls">
+      <button class="topic-completed-toggle" onclick="toggleTopicDone('10.3')" id="btn-done-10.3">
+        <span>✓</span> Mark Done
+      </button>
+    </div>
+  </div>
+  <div class="topic-body">
+    <div class="code-box">
+      <div class="code-box-header">
+        <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Incremental Migration Strategy &amp; Gating</div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+      <pre><code>// PHASE 1: Zero-code changes, opt-in JSDoc validation:
+// @ts-check
+/**
+ * @param {string} userId
+ * @param {{ amount: number }} payload
+ * @returns {Promise&lt;boolean&gt;}
+ */
+export async function chargeCustomer(userId, payload) {
+  return true;
+}
+
+// PHASE 2: Introduce tsconfig with allowJs + checkJs:
+// tsconfig.json: { "compilerOptions": { "allowJs": true, "noEmit": true } }
+
+// PHASE 3: CI Anti-Regression Gate:
+// Lock existing errors with typecheck threshold to guarantee zero new errors:
+// "scripts": {
+//   "check:types": "tsc --noEmit",
+//   "check:strict": "tsc -p tsconfig.strict.json"
+// }</code></pre>
+      <div class="code-caption">Migrating legacy codebases requires a phased, automated pipeline: JSDoc opt-in → allowJs/checkJs → leaf-to-root TS migration → strict CI thresholds.</div>
+    </div>
+
+    <div class="topic-sections-grid">
+      <div class="topic-info-block">
+        <h4>Key Subtopics</h4>
+        <ul class="topic-list"><li>allowJs &amp; checkJs</li><li>Leaf-to-root migration strategy</li><li>JSDoc @ts-check annotations</li><li>CI error budgeting &amp; gating</li><li>tsconfig project references</li></ul>
+      </div>
+      <div class="topic-info-block">
+        <h4>What You Need To Understand</h4>
+        <ul class="topic-list"><li>Never attempt a 'big bang' migration; product features must ship continuously during migration.</li><li>Migrate leaf utilities and shared types first, followed by middleware and core business logic, and finally UI components.</li><li>Enforce no-explicit-any with ESLint rules on newly authored .ts/.tsx files while leaving legacy .js untouched.</li></ul>
+      </div>
+      <div class="topic-info-block">
+        <h4>Why It Is Important</h4>
+        <ul class="topic-list"><li>Senior engineering candidates are evaluated on real-world refactoring strategy, risk mitigation, and team productivity trade-offs.</li></ul>
+      </div>
+      <div class="topic-info-block">
+        <h4>Practical Coding Exercises</h4>
+        <ul class="topic-list"><li>Formulate a 4-phase rollout plan for a 150k-line JavaScript monorepo.</li><li>Configure an ESLint rule set that flags 'any' only in files with @strict-types headers.</li></ul>
+      </div>
+      <div class="topic-info-block">
+        <h4>Real-World Production Scenarios</h4>
+        <ul class="topic-list"><li>Converting legacy Express backends or create-react-app codebases into strict Next.js monorepos.</li></ul>
+      </div>
+      <div class="topic-info-block">
+        <h4>Common Junior Mistakes</h4>
+        <ul class="topic-list"><li>Proposing to rewrite everything in TypeScript from scratch.</li><li>Running 'tsc --init' on day one and getting 4,000 errors that block developer PRs.</li></ul>
+      </div>
+    </div>
+
+    <div style="margin-top: 16px; background: var(--panel-muted); padding: 12px 16px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+      <h4 style="font-size: 11px; font-weight: 800; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;">Target Interview Questions</h4>
+      <ul class="topic-list"><li>How do you migrate a large production JavaScript repository to TypeScript without halting feature delivery?</li><li>What role does allowJs and checkJs play in incremental adoption?</li></ul>
+    </div>
+
+    <!-- Topic Quick Practice Drill -->
+    <div class="topic-drill-card">
+      <div class="topic-drill-top">
+        <span class="topic-drill-badge">⚡ Quick Assessment Drill</span>
+        <div class="topic-drill-prompt"><strong>Checkpoint Challenge:</strong> Describe the ideal order of files to convert when migrating leaf-to-root.</div>
+      </div>
+      <details class="topic-drill-details">
+        <summary class="topic-drill-summary">💡 Reveal Model Solution &amp; Explanation</summary>
+        <div class="topic-drill-content">
+          <pre><code>1. Pure utility functions and mathematical helpers (zero internal dependencies).
+2. Shared domain models and DTO interfaces.
+3. Database and external API client abstraction layers.
+4. Business services and orchestration handlers.
+5. Controllers, route handlers, and top-level UI components.</code></pre>
+          <div class="topic-drill-expl"><strong>Explanation:</strong> Leaf-to-root migration avoids circular dependencies and ensures types flow naturally upwards without relying on temporary 'any' casts.</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="meta-chip-row">
+      <span class="chip chip-core"><span class="chip-label">Priority:</span> <span class="chip-val">Core</span></span>
+      <span class="chip"><span class="chip-label">Difficulty:</span> <span class="chip-val">Intermediate</span></span>
+      <span class="chip"><span class="chip-label">Prerequisites:</span> <span class="chip-val">1.13, 8.1</span></span>
+      <span class="chip"><span class="chip-label">Status:</span> <span class="chip-val">Current / relevant</span></span>
+    </div>
+  </div>
+</article>
+
+<article class="topic-card" id="topic-10.4" data-priority="important" data-diff="advanced">
+  <div class="topic-card-header">
+    <h3>10.4 Compiler Performance Profiling &amp; Diagnostic Troubleshooting</h3>
+    <div class="topic-controls">
+      <button class="topic-completed-toggle" onclick="toggleTopicDone('10.4')" id="btn-done-10.4">
+        <span>✓</span> Mark Done
+      </button>
+    </div>
+  </div>
+  <div class="topic-body">
+    <div class="code-box">
+      <div class="code-box-header">
+        <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Compiler Diagnostics &amp; Union Explosion Prevention</div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+      <pre><code>// 1. Diagnostic profiling command:
+// tsc --diagnostics --generateTrace traceDir
+// Analyze traces with @typescript/analyze-trace or Chrome DevTools (chrome://tracing)
+
+// ❌ COMPILE SLOWDOWN: Cartesian Union Explosion
+type HttpMethod = "GET" | "POST" | "PUT" | "DELETE" | "PATCH";
+type Status = "200" | "201" | "400" | "401" | "403" | "404" | "500";
+type Action = "view" | "create" | "update" | "delete" | "audit";
+// Combining unions can generate tens of thousands of subtypes in deeply nested generics!
+
+// ✅ OPTIMIZED: Non-Distributive Tuple Conditional check:
+type IsUnionString&lt;T&gt; = [T] extends [string]
+  ? { ok: true }
+  : { ok: false };
+
+// 2. Prevent deep type instantiation error (TS2589):
+// Add iteration fuel counters or base-case short-circuits.</code></pre>
+      <div class="code-caption">Profile compiler bottlenecks using --generateTrace and prevent union explosion and runaway recursive instantiation.</div>
+    </div>
+
+    <div class="topic-sections-grid">
+      <div class="topic-info-block">
+        <h4>Key Subtopics</h4>
+        <ul class="topic-list"><li>tsc --diagnostics &amp; --extendedDiagnostics</li><li>--generateTrace &amp; analyze-trace</li><li>TS2589: Type instantiation excessively deep</li><li>Union explosion &amp; Cartesian products</li><li>Non-distributive checks [T] extends [U]</li></ul>
+      </div>
+      <div class="topic-info-block">
+        <h4>What You Need To Understand</h4>
+        <ul class="topic-list"><li>Slow IDE autocompletion or CI builds are usually caused by combinatorial union explosion or deeply nested conditional types.</li><li>Wrapping type parameters in 1-element tuples [T] prevents expensive distributive branching across union members.</li><li>Prefer simple interface lookups over deep recursive conditional types in hot code paths.</li></ul>
+      </div>
+      <div class="topic-info-block">
+        <h4>Why It Is Important</h4>
+        <ul class="topic-list"><li>Essential knowledge for senior/staff engineers maintaining monorepos with hundreds of developers where compiler lag slows down CI.</li></ul>
+      </div>
+      <div class="topic-info-block">
+        <h4>Practical Coding Exercises</h4>
+        <ul class="topic-list"><li>Generate and read a traceDir file using tsc --generateTrace.</li><li>Refactor an exponentially slow type helper to use indexed lookups.</li></ul>
+      </div>
+      <div class="topic-info-block">
+        <h4>Real-World Production Scenarios</h4>
+        <ul class="topic-list"><li>Optimizing large monorepo type-checking time from 5 minutes down to 30 seconds.</li></ul>
+      </div>
+      <div class="topic-info-block">
+        <h4>Common Junior Mistakes</h4>
+        <ul class="topic-list"><li>Creating massive Cartesian unions of strings instead of structured objects or enums.</li><li>Ignoring TS2589 errors and using // @ts-ignore instead of fixing recursion.</li></ul>
+      </div>
+    </div>
+
+    <div style="margin-top: 16px; background: var(--panel-muted); padding: 12px 16px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+      <h4 style="font-size: 11px; font-weight: 800; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;">Target Interview Questions</h4>
+      <ul class="topic-list"><li>How do you identify which file or type helper is slowing down the TypeScript compiler?</li><li>What is union explosion and how do you prevent conditional types from distributing?</li></ul>
+    </div>
+
+    <!-- Topic Quick Practice Drill -->
+    <div class="topic-drill-card">
+      <div class="topic-drill-top">
+        <span class="topic-drill-badge">⚡ Quick Assessment Drill</span>
+        <div class="topic-drill-prompt"><strong>Checkpoint Challenge:</strong> Write a non-distributive conditional type that checks if T is exactly any union without splitting.</div>
+      </div>
+      <details class="topic-drill-details">
+        <summary class="topic-drill-summary">💡 Reveal Model Solution &amp; Explanation</summary>
+        <div class="topic-drill-content">
+          <pre><code>// Wrapping T and U in 1-element tuples disables distributive conditional behavior:
+type IsNonDistributive&lt;T, U&gt; = [T] extends [U] ? true : false;
+
+// Contrast:
+type Distributive&lt;T&gt; = T extends any ? T[] : never;
+type TestDist = Distributive&lt;string | number&gt;; // string[] | number[]
+
+type NonDist&lt;T&gt; = [T] extends [any] ? T[] : never;
+type TestNonDist = NonDist&lt;string | number&gt;; // (string | number)[]</code></pre>
+          <div class="topic-drill-expl"><strong>Explanation:</strong> Wrapping in [T] extends [any] treats the union as a single atomic unit, eliminating combinatorial branch explosion.</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="meta-chip-row">
+      <span class="chip chip-important"><span class="chip-label">Priority:</span> <span class="chip-val">Important</span></span>
+      <span class="chip"><span class="chip-label">Difficulty:</span> <span class="chip-val">Advanced</span></span>
+      <span class="chip"><span class="chip-label">Prerequisites:</span> <span class="chip-val">3.10, 8.1</span></span>
       <span class="chip"><span class="chip-label">Status:</span> <span class="chip-val">Current / relevant</span></span>
     </div>
   </div>
@@ -14356,14 +15290,184 @@ export type CheckoutState = CartState | ShippingState | PaymentState | Confirmed
   </main>
 </div>
 
-<footer style="text-align: center; padding: 40px 20px; font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border); margin-top: 60px;">
-  TypeScript Full-Stack Curriculum · Fully offline, self-contained interactive reference · Designed for Lakshay Nagpal
-</footer>
+    <!-- Floating Audio Player Bar -->
+    <div id="floatingAudioBar" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 hidden max-w-md w-[92%] bg-white/95 border border-stone-300 rounded-2xl shadow-2xl p-3.5 backdrop-blur-xl transition-all">
+      <div class="flex items-center justify-between gap-3">
+        <div class="flex items-center gap-2.5 overflow-hidden">
+          <div class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-800 shrink-0">
+            <span class="animate-pulse">🎙️</span>
+          </div>
+          <div class="truncate">
+            <div id="audioPlayerTitle" class="text-xs font-bold text-stone-900 truncate">TypeScript Curriculum Overview</div>
+            <div id="audioPlayerStatus" class="text-[10px] text-emerald-700 truncate">Narrating brief overview...</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 shrink-0">
+          <button onclick="toggleAudioPlayback()" class="p-2 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-800 transition-all" title="Play/Pause">
+            <svg id="pauseIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <svg id="playIcon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </button>
+          <button onclick="stopAudioSummary()" class="p-2 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-600 hover:text-stone-900 transition-all" title="Close Audio">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
 
-<!-- Floating Toast -->
-<div class="toast" id="toast">Code copied to clipboard!</div>
+    <!-- Suite Footer -->
+    <footer class="mt-auto border-t border-stone-300/70 bg-[#e4eae0] py-8 text-center text-xs text-stone-600">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-2">
+        <div class="flex flex-wrap justify-center items-center gap-4 text-stone-700">
+          <a href="index.html" class="hover:text-emerald-800 transition-colors font-semibold">Master Dashboard</a>
+          <span>•</span>
+          <a href="learning_hub.html" class="hover:text-emerald-800 transition-colors font-semibold">Engineering Learning Hub</a>
+          <span>•</span>
+          <a href="dsa_master_tracker.html" class="hover:text-emerald-800 transition-colors font-semibold">DSA Tracker</a>
+          <span>•</span>
+          <a href="deadlines_calendar.html" class="hover:text-emerald-800 transition-colors font-semibold">Deadlines &amp; Calendar</a>
+          <span>•</span>
+          <a href="https://github.com/lakshayn0001/dashboard" target="_blank" rel="noreferrer" class="hover:text-emerald-800 transition-colors">GitHub</a>
+          <span>•</span>
+          <a href="https://www.linkedin.com/in/lakshay-nagpal-1a2a0134a/" target="_blank" rel="noreferrer" class="hover:text-emerald-800 transition-colors">LinkedIn</a>
+        </div>
+        <p class="text-stone-500 text-[11px] pt-1">
+          TypeScript Full-Stack Curriculum &amp; Interview Mastery · Production Reference &amp; Portfolio for Lakshay Nagpal
+        </p>
+      </div>
+    </footer>
+  </div><!-- /lg:pl-72 -->
 
-<script>
+  <!-- Floating Toast -->
+  <div class="toast" id="toast">Code copied to clipboard!</div>
+
+  <script>
+
+    function toggleSidebar(open) {
+      const drawer = document.getElementById('sideNavDrawer');
+      const backdrop = document.getElementById('sidebarBackdrop');
+      if (!drawer) return;
+      if (open) {
+        drawer.classList.remove('-translate-x-full');
+        if (backdrop) backdrop.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      } else {
+        drawer.classList.add('-translate-x-full');
+        if (backdrop) backdrop.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        toggleSidebar(false);
+      }
+    });
+
+    let activeAudioBtn = null;
+    let currentUtterance = null;
+
+    function getFemaleVoice() {
+      if (!('speechSynthesis' in window)) return null;
+      const voices = window.speechSynthesis.getVoices();
+      const preferred = ['Samantha', 'Karen', 'Victoria', 'Moira', 'Tessa', 'Google US English', 'Zira', 'Jenny', 'Microsoft Zira'];
+      for (const name of preferred) {
+        const v = voices.find(voice => voice.name.includes(name) || (voice.name.toLowerCase().includes('female') && voice.lang.startsWith('en')));
+        if (v) return v;
+      }
+      return voices.find(v => v.lang.startsWith('en')) || null;
+    }
+
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.onvoiceschanged = () => { getFemaleVoice(); };
+    }
+
+    function playAudioSummary(btn, title, text) {
+      if (!('speechSynthesis' in window)) {
+        alert('Text-to-speech audio is not supported in this browser.');
+        return;
+      }
+      if (window.speechSynthesis.speaking && activeAudioBtn === btn) {
+        toggleAudioPlayback();
+        return;
+      }
+      stopAudioSummary();
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = 1.0;
+      utterance.pitch = 1.06;
+      const femaleVoice = getFemaleVoice();
+      if (femaleVoice) utterance.voice = femaleVoice;
+
+      utterance.onstart = () => {
+        activeAudioBtn = btn;
+        if (btn) {
+          btn.classList.add('ring-2', 'ring-emerald-500', 'bg-emerald-700', 'text-white');
+          const label = btn.querySelector('.audio-label');
+          if (label) label.innerText = 'Playing...';
+        }
+        const bar = document.getElementById('floatingAudioBar');
+        const titleEl = document.getElementById('audioPlayerTitle');
+        const statusEl = document.getElementById('audioPlayerStatus');
+        if (bar) bar.classList.remove('hidden');
+        if (titleEl) titleEl.innerText = title;
+        if (statusEl) statusEl.innerText = 'Narrating brief overview...';
+        showPlayIcon(false);
+      };
+      utterance.onend = () => { stopAudioSummary(); };
+      utterance.onerror = () => { stopAudioSummary(); };
+      currentUtterance = utterance;
+      window.speechSynthesis.speak(utterance);
+    }
+
+    function toggleAudioPlayback() {
+      if (!window.speechSynthesis.speaking) return;
+      if (window.speechSynthesis.paused) {
+        window.speechSynthesis.resume();
+        showPlayIcon(false);
+        if (activeAudioBtn) {
+          const label = activeAudioBtn.querySelector('.audio-label');
+          if (label) label.innerText = 'Playing...';
+        }
+        const statusEl = document.getElementById('audioPlayerStatus');
+        if (statusEl) statusEl.innerText = 'Narrating brief overview...';
+      } else {
+        window.speechSynthesis.pause();
+        showPlayIcon(true);
+        if (activeAudioBtn) {
+          const label = activeAudioBtn.querySelector('.audio-label');
+          if (label) label.innerText = 'Paused';
+        }
+        const statusEl = document.getElementById('audioPlayerStatus');
+        if (statusEl) statusEl.innerText = 'Paused (click to resume)';
+      }
+    }
+
+    function showPlayIcon(isPaused) {
+      const pauseIcon = document.getElementById('pauseIcon');
+      const playIcon = document.getElementById('playIcon');
+      if (pauseIcon && playIcon) {
+        if (isPaused) {
+          pauseIcon.classList.add('hidden');
+          playIcon.classList.remove('hidden');
+        } else {
+          pauseIcon.classList.remove('hidden');
+          playIcon.classList.add('hidden');
+        }
+      }
+    }
+
+    function stopAudioSummary() {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      if (activeAudioBtn) {
+        activeAudioBtn.classList.remove('ring-2', 'ring-emerald-500', 'bg-emerald-700', 'text-white');
+        const label = activeAudioBtn.querySelector('.audio-label');
+        if (label) label.innerText = label.getAttribute('data-default-label') || 'Listen Curriculum Overview (40s)';
+        activeAudioBtn = null;
+      }
+      const bar = document.getElementById('floatingAudioBar');
+      if (bar) bar.classList.add('hidden');
+    }
+
 
 // --- QUIZ ASSESSMENT & LOCAL STORAGE PERSISTENCE ---
 function getQuizState() {
@@ -14737,6 +15841,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initScrollSpy();
   restoreQuizState();
 });
-</script>
+
+  </script>
 </body>
 </html>

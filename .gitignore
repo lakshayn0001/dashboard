@@ -18,6 +18,8 @@ __pycache__/
 .DS_Store
 .vscode/
 .idea/
+.chrome_tmp/
+*.docx
 
 # Internal bot systems and candidate notes
 multi-bot-system/

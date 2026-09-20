@@ -1,0 +1,1827 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deadlines &amp; Master Calendar 2026–2027 | Lakshay Nagpal</title>
+  <meta name="description" content="Official verified deadlines, clash analysis, week-by-week execution roadmap, and time allocation schedule for CAT 2026, German University admissions (Passau M.Sc. CS), dMAT, APS India, English MOI, and Full-Stack SDE job search.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              900: '#1e3a8a',
+            },
+            germany: {
+              50: '#fef2f2',
+              100: '#fee2e2',
+              500: '#ef4444',
+              700: '#b91c1c',
+            },
+            cat: {
+              50: '#fffbeb',
+              100: '#fef3c7',
+              500: '#f59e0b',
+              700: '#b45309',
+            },
+            job: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              500: '#22c55e',
+              700: '#15803d',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Menlo', 'Monaco', 'Courier New', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: #e9eee4;
+      background-image: 
+        radial-gradient(at 12% 15%, rgba(162, 188, 146, 0.35) 0%, transparent 55%),
+        radial-gradient(at 88% 82%, rgba(138, 168, 122, 0.28) 0%, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(215, 226, 206, 0.25) 0%, transparent 60%);
+      color: #1a2517;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Ambient Liquid Refraction Orbs */
+    .droplet-orb-1 {
+      position: fixed;
+      top: -100px;
+      left: 18%;
+      width: 520px;
+      height: 520px;
+      background: radial-gradient(circle, rgba(125, 160, 110, 0.32) 0%, rgba(125, 160, 110, 0) 70%);
+      filter: blur(60px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .droplet-orb-2 {
+      position: fixed;
+      bottom: -100px;
+      right: 6%;
+      width: 560px;
+      height: 560px;
+      background: radial-gradient(circle, rgba(168, 190, 145, 0.35) 0%, rgba(168, 190, 145, 0) 70%);
+      filter: blur(70px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .droplet-orb-3 {
+      position: fixed;
+      top: 45%;
+      left: 42%;
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(95, 132, 85, 0.22) 0%, rgba(95, 132, 85, 0) 70%);
+      filter: blur(55px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Glass Droplet Surfaces */
+    .glass-droplet {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(246, 250, 242, 0.78) 100%);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 
+        inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 1),
+        inset 0 -1px 2px 0 rgba(90, 115, 80, 0.08),
+        0 14px 34px -10px rgba(45, 65, 36, 0.10),
+        0 2px 8px -2px rgba(45, 65, 36, 0.05);
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-droplet::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 8%; right: 8%;
+      height: 1.5px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.95), transparent);
+      pointer-events: none;
+    }
+
+    .glass-droplet-nav {
+      background: rgba(246, 250, 242, 0.88);
+      backdrop-filter: blur(24px) saturate(190%);
+      -webkit-backdrop-filter: blur(24px) saturate(190%);
+      border-bottom: 1px solid rgba(135, 160, 122, 0.25);
+      box-shadow: 
+        inset 0 -1px 1px 0 rgba(255, 255, 255, 0.85),
+        0 4px 20px rgba(45, 65, 36, 0.06);
+    }
+    .glass-droplet-sidebar {
+      background: rgba(246, 250, 242, 0.96);
+      backdrop-filter: blur(28px) saturate(190%);
+      -webkit-backdrop-filter: blur(28px) saturate(190%);
+      border-right: 1px solid rgba(135, 160, 122, 0.28);
+      box-shadow: 
+        inset -1px 0 1px 0 rgba(255, 255, 255, 0.9),
+        4px 0 24px rgba(45, 65, 36, 0.08);
+    }
+
+    /* Droplet Pills */
+    .droplet-pill {
+      background: linear-gradient(135deg, #ffffff 0%, #f4f7f0 100%);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(110, 140, 95, 0.28);
+      box-shadow: 
+        inset 0 1px 1px 0 #ffffff,
+        0 2px 6px rgba(45, 65, 36, 0.08);
+      color: #24331e;
+      transition: all 0.2s ease;
+    }
+    .droplet-pill:hover {
+      border-color: rgba(90, 125, 75, 0.5);
+      box-shadow: 
+        inset 0 1.5px 1.5px 0 #ffffff,
+        0 4px 12px rgba(45, 65, 36, 0.12);
+      transform: translateY(-1px);
+    }
+
+    /* VERIFY badge with animated glow */
+    .verify-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.2rem 0.625rem;
+      border-radius: 9999px;
+      font-size: 0.6875rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+      color: #c2410c;
+      border: 1px solid #fdba74;
+      box-shadow: 0 1px 3px rgba(234, 88, 12, 0.15);
+      transition: all 0.2s ease;
+    }
+    .verify-badge:hover {
+      background: linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%);
+      border-color: #f97316;
+      color: #9a3412;
+      box-shadow: 0 2px 6px rgba(234, 88, 12, 0.25);
+      transform: translateY(-1px);
+    }
+
+    .pulse-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #ea580c;
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.3); }
+    }
+
+    /* Custom Scrollbars */
+    ::-webkit-scrollbar { width: 7px; height: 7px; }
+    ::-webkit-scrollbar-track { background: #e0e6d8; }
+    ::-webkit-scrollbar-thumb { background: #96af8c; border-radius: 4px; border: 1px solid rgba(255,255,255,0.7); }
+    ::-webkit-scrollbar-thumb:hover { background: #738f68; }
+  </style>
+</head>
+<body class="selection:bg-blue-600 selection:text-white flex flex-col relative overflow-x-hidden">
+
+  <!-- Ambient liquid orbs for glass refraction -->
+  <div class="droplet-orb-1"></div>
+  <div class="droplet-orb-2"></div>
+  <div class="droplet-orb-3"></div>
+
+  <!-- Mobile-only backdrop (< lg) -->
+  <div id="sidebarBackdrop" onclick="toggleSidebar(false)" class="fixed inset-0 bg-stone-900/40 backdrop-blur-sm z-20 hidden lg:hidden transition-opacity duration-300"></div>
+
+  <!-- Persistent Left Side Navigation -->
+  <aside id="sideNavDrawer" class="w-72 fixed inset-y-0 left-0 z-30 flex flex-col glass-droplet-sidebar transition-transform duration-300 -translate-x-full lg:translate-x-0">
+    <div class="p-5 border-b border-stone-300/60 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-600 via-orange-500 to-red-600 flex items-center justify-center font-black text-white text-lg shadow-md droplet-pill">
+          📅
+        </div>
+        <div>
+          <div class="font-bold text-stone-900 text-sm tracking-tight flex items-center gap-1.5">
+            <span>Deadlines &amp; Plan</span>
+            <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-900 border border-amber-300">2026–27</span>
+          </div>
+          <span class="text-xs text-stone-600 font-mono block">Lakshay Nagpal · SDE</span>
+        </div>
+      </div>
+      <button onclick="toggleSidebar(false)" class="lg:hidden p-1.5 rounded-lg text-stone-500 hover:text-stone-900 hover:bg-stone-200 transition-all" title="Close Menu">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+
+    <div class="flex-grow overflow-y-auto py-4 px-3 space-y-6">
+      <div>
+        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Core Portals</div>
+        <div class="mt-2 space-y-1">
+          <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 font-medium transition-all group text-sm">
+            <span class="text-lg">🏠</span>
+            <span>Master Dashboard</span>
+          </a>
+          <a href="deadlines_calendar.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-amber-500/15 border border-amber-600/30 text-amber-950 font-bold transition-all group text-sm shadow-sm">
+            <span class="text-lg">📅</span>
+            <span>Deadlines &amp; Calendar</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-amber-200 text-amber-900 font-mono font-bold">Active</span>
+          </a>
+          <a href="cat_2026_syllabus_roadmap.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 font-medium transition-all group text-sm">
+            <span class="text-lg">🐯</span>
+            <span>CAT 2026 Roadmap</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 font-mono font-bold">29 Nov</span>
+          </a>
+          <a href="german_universities_evaluation.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 font-medium transition-all group text-sm">
+            <span class="text-lg">🇩🇪</span>
+            <span>German Universities</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-red-100 text-red-800 font-mono font-bold">15 Dec</span>
+          </a>
+          <a href="dsa_master_tracker.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 font-medium transition-all group text-sm">
+            <span class="text-lg">⚡</span>
+            <span>DSA Master Tracker</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-mono">247 LC</span>
+          </a>
+          <a href="learning_hub.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 font-medium transition-all group text-sm">
+            <span class="text-lg">🧠</span>
+            <span>Learning Hub</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-mono">5 Tracks + DSA</span>
+          </a>
+          <a href="typescript_curriculum.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 font-medium transition-all group text-sm">
+            <span class="text-lg">📘</span>
+            <span>TypeScript Curriculum</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-800 font-mono">79 Topics</span>
+          </a>
+          <a href="lebenslauf_de.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 font-medium transition-all group text-sm">
+            <span class="text-lg">📄</span>
+            <span>German Lebenslauf</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-stone-200 text-stone-800 font-mono font-bold">DIN 5008</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Section Anchor Links -->
+      <div>
+        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">On This Page</div>
+        <div class="mt-2 space-y-1 text-xs">
+          <a href="#quick-stats" class="block px-3 py-1.5 rounded-lg text-stone-600 hover:text-stone-900 hover:bg-stone-200/50 transition-all font-medium">⚡ Countdown &amp; Urgent Status</a>
+          <a href="#official-deadlines" class="block px-3 py-1.5 rounded-lg text-stone-600 hover:text-stone-900 hover:bg-stone-200/50 transition-all font-medium">🏛️ Official Verified Deadlines</a>
+          <a href="#prerequisite-tasks" class="block px-3 py-1.5 rounded-lg text-stone-600 hover:text-stone-900 hover:bg-stone-200/50 transition-all font-medium">📋 German Prerequisite Tasks</a>
+          <a href="#clash-analysis" class="block px-3 py-1.5 rounded-lg text-stone-600 hover:text-stone-900 hover:bg-stone-200/50 transition-all font-medium">⚔️ Clash &amp; dMAT Decision Branch</a>
+          <a href="#week-by-week" class="block px-3 py-1.5 rounded-lg text-stone-600 hover:text-stone-900 hover:bg-stone-200/50 transition-all font-medium">🗓️ 14-Week Action Blueprint</a>
+          <a href="#daily-allocation" class="block px-3 py-1.5 rounded-lg text-stone-600 hover:text-stone-900 hover:bg-stone-200/50 transition-all font-medium">⏰ Daily Time Allocation Matrix</a>
+        </div>
+      </div>
+
+      <!-- Candidate Metadata Card -->
+      <div class="p-3.5 rounded-2xl bg-stone-100/80 border border-stone-300/80 space-y-2 text-xs">
+        <div class="font-bold text-stone-800 flex items-center justify-between">
+          <span>Candidate Profile</span>
+          <span class="text-[10px] text-emerald-800 font-mono font-bold bg-emerald-100 px-1.5 py-0.5 rounded">0 Days Notice</span>
+        </div>
+        <div class="text-stone-600 text-[11px] space-y-1">
+          <div><strong>B.Tech CS:</strong> 70.56% (MDU Rohtak)</div>
+          <div><strong>German Grade:</strong> Task: Use Passau grade converter (top-70% route needs MDU rank doc)</div>
+          <div><strong>CS Credit Share:</strong> Task: Compute from MDU scheme (Passau rule: ~two-thirds)</div>
+          <div><strong>Target Role:</strong> Full-Stack SDE (React 19 / Next.js 16)</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Top Glass Bar -->
+  <header class="sticky top-0 z-20 glass-droplet-nav px-4 sm:px-8 py-3.5 flex items-center justify-between lg:pl-80">
+    <div class="flex items-center gap-3">
+      <button onclick="toggleSidebar(true)" class="lg:hidden p-2 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/60 transition-all" title="Open Navigation Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono font-bold text-amber-800 bg-amber-100/90 border border-amber-300/80 px-2 py-0.5 rounded-md">
+            OFFICIAL VERIFIED TRACKER
+          </span>
+          <span class="hidden sm:inline-block text-xs font-mono text-stone-500">Today: 20 Sep 2026</span>
+        </div>
+        <h1 class="text-base sm:text-lg font-black text-stone-900 tracking-tight flex items-center gap-2 mt-0.5">
+          <span>Deadlines &amp; Calendar</span>
+          <span class="text-xs font-normal text-stone-600">· Dual-Track Preparation &amp; Job Search</span>
+        </h1>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-2 sm:gap-3">
+      <a href="cat_2026_syllabus_roadmap.html" class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl droplet-pill text-xs font-bold text-amber-900">
+        <span>🐯 CAT Roadmap</span>
+      </a>
+      <a href="german_universities_evaluation.html" class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl droplet-pill text-xs font-bold text-red-900">
+        <span>🇩🇪 Passau Evaluation</span>
+      </a>
+      <button onclick="resetAllTaskStatuses()" class="p-2 rounded-xl text-stone-600 hover:text-stone-900 hover:bg-stone-200/60 transition-all text-xs flex items-center gap-1 font-mono" title="Reset Stored Checkboxes">
+        <span>↺</span> <span class="hidden sm:inline">Reset Checks</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="lg:pl-72 flex-grow p-4 sm:p-8 space-y-10 max-w-7xl mx-auto w-full relative z-10">
+
+    <!-- ========================================================================= -->
+    <!-- HERO SECTION & LIVE COUNTDOWNS                                            -->
+    <!-- ========================================================================= -->
+    <section id="quick-stats" class="glass-droplet rounded-3xl p-6 sm:p-8 space-y-6">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        <div class="space-y-2 max-w-2xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-900 border border-amber-300">
+            <span class="pulse-dot"></span>
+            <span>Time-Critical Action Required</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-black text-stone-900 tracking-tight">
+            Strategic Master Calendar &amp; Clash Resolution
+          </h2>
+          <p class="text-xs sm:text-sm text-stone-700 leading-relaxed">
+            Centralized intelligence hub synchronizing CAT 2026, German University Masters (Passau M.Sc. CS Summer 2027 / Winter 2027/28 branch), dMAT and APS India verification, English MOI certification, Passau direct application route, and full-stack software engineering job hunt. Every official date contains a verified outbound source link.
+          </p>
+        </div>
+
+        <!-- Real-time Status Pills -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full lg:w-auto">
+          <!-- CAT Registration Close -->
+          <div class="p-4 rounded-2xl bg-amber-500/10 border border-amber-600/30 flex flex-col justify-between">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-mono font-bold text-amber-800 uppercase tracking-wider">CAT Reg Close</span>
+              <span class="px-1.5 py-0.5 rounded text-[9px] font-extrabold bg-red-100 text-red-800 border border-red-300">CRITICAL</span>
+            </div>
+            <div class="mt-2 text-2xl font-black text-amber-950 font-mono" id="cat-reg-countdown">2 Days</div>
+            <div class="text-[11px] text-stone-600 mt-0.5 font-medium">22 Sep 2026, 5 PM</div>
+          </div>
+
+          <!-- CAT 2026 Exam Day -->
+          <div class="p-4 rounded-2xl bg-blue-500/10 border border-blue-600/30 flex flex-col justify-between">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-mono font-bold text-blue-800 uppercase tracking-wider">CAT Exam</span>
+              <span class="px-1.5 py-0.5 rounded text-[9px] font-extrabold bg-blue-100 text-blue-800 border border-blue-300">D-DAY</span>
+            </div>
+            <div class="mt-2 text-2xl font-black text-blue-950 font-mono" id="cat-exam-countdown">70 Days</div>
+            <div class="text-[11px] text-stone-600 mt-0.5 font-medium">29 Nov 2026 (Sun)</div>
+          </div>
+
+          <!-- Passau Deadline -->
+          <div class="p-4 rounded-2xl bg-red-500/10 border border-red-600/30 flex flex-col justify-between col-span-2 sm:col-span-1">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-mono font-bold text-red-800 uppercase tracking-wider">Passau M.Sc.</span>
+              <span class="px-1.5 py-0.5 rounded text-[9px] font-extrabold bg-red-100 text-red-800 border border-red-300">TARGET</span>
+            </div>
+            <div class="mt-2 text-2xl font-black text-red-950 font-mono" id="passau-countdown">86 Days</div>
+            <div class="text-[11px] text-stone-600 mt-0.5 font-medium">15 Dec 2026</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Interactive Category Filter -->
+      <div class="pt-4 border-t border-stone-300/60 flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-1.5 text-xs font-bold text-stone-600">
+          <span>Filter View:</span>
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+          <button onclick="filterCalendar('all', this)" class="calendar-filter-btn active px-3 py-1.5 rounded-xl text-xs font-bold bg-stone-900 text-white shadow-sm transition-all">
+            All Events (10)
+          </button>
+          <button onclick="filterCalendar('cat', this)" class="calendar-filter-btn px-3 py-1.5 rounded-xl text-xs font-bold droplet-pill text-amber-900 hover:bg-amber-100 transition-all">
+            🐯 CAT 2026 (4)
+          </button>
+          <button onclick="filterCalendar('germany', this)" class="calendar-filter-btn px-3 py-1.5 rounded-xl text-xs font-bold droplet-pill text-red-900 hover:bg-red-100 transition-all">
+            🇩🇪 Germany / Masters (4)
+          </button>
+          <button onclick="filterCalendar('job', this)" class="calendar-filter-btn px-3 py-1.5 rounded-xl text-xs font-bold droplet-pill text-emerald-900 hover:bg-emerald-100 transition-all">
+            💼 Job Search &amp; SWE (2)
+          </button>
+          <button onclick="filterCalendar('clash', this)" class="calendar-filter-btn px-3 py-1.5 rounded-xl text-xs font-bold droplet-pill text-purple-900 hover:bg-purple-100 transition-all">
+            ⚔️ Critical Clashes (4)
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 1: MASTER VERIFIED DEADLINES TABLE & CARDS                        -->
+    <!-- ========================================================================= -->
+    <section id="official-deadlines" class="space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+        <div>
+          <h3 class="text-xl font-black text-stone-900 tracking-tight flex items-center gap-2">
+            <span>🏛️ Official Verified Deadlines &amp; Portals</span>
+            <span class="text-xs px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-900 font-bold border border-emerald-300">
+              Live Source Validation
+            </span>
+          </h3>
+          <p class="text-xs text-stone-600">
+            Click any <span class="text-orange-700 font-bold">VERIFY</span> badge to inspect the live admission portal and confirm requirements directly at the authoritative root URL.
+          </p>
+        </div>
+        <div class="text-xs font-mono text-stone-500">
+          Persistent Checklist: <span id="completed-count" class="font-bold text-stone-800">0</span> / <span id="total-count">10</span> Marked
+        </div>
+      </div>
+
+      <!-- Grid of Deadline Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="deadlines-grid">
+
+        <!-- 1. CAT Registration Deadline -->
+        <div class="deadline-card glass-droplet rounded-2xl p-5 space-y-3.5 border-l-4 border-l-red-600" data-category="cat clash">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex items-center gap-2.5">
+              <input type="checkbox" id="check-cat-reg" onchange="toggleTask('check-cat-reg')" class="w-4 h-4 text-amber-600 rounded border-stone-300 focus:ring-amber-500 cursor-pointer">
+              <div>
+                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-red-700 bg-red-100 px-2 py-0.5 rounded border border-red-200">
+                  EXTENDED DEADLINE · CRITICAL
+                </span>
+                <h4 class="text-base font-extrabold text-stone-900 mt-1">CAT 2026 Registration Close</h4>
+              </div>
+            </div>
+            <a href="https://iimcat.ac.in" target="_blank" rel="noopener noreferrer" class="verify-badge" title="Verify on official IIM CAT portal">
+              <span class="pulse-dot"></span>
+              <span>VERIFY</span>
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2 text-xs font-mono bg-stone-100/70 p-2.5 rounded-xl border border-stone-200">
+            <div>
+              <span class="text-stone-500 block text-[10px]">Official Date:</span>
+              <strong class="text-stone-900">22 Sep 2026, 5:00 PM IST</strong>
+            </div>
+            <div>
+              <span class="text-stone-500 block text-[10px]">Lead Time Left:</span>
+              <strong class="text-red-700 font-bold">2 Days Remaining</strong>
+            </div>
+          </div>
+
+          <p class="text-xs text-stone-700 leading-relaxed">
+            Registration deadline extended from 15 Sep to 22 Sep 2026, 5:00 PM IST. Ensure application form, exam city preferences (6 choices), category details, and application fee payment (₹2,700 for General / NC-OBC; ₹1,350 for SC / ST / PwD) are submitted before the 5 PM cutoff.
+          </p>
+
+          <div class="pt-2 border-t border-stone-200 flex items-center justify-between text-[11px] font-mono text-stone-500">
+            <span>Portal: <a href="https://iimcat.ac.in" target="_blank" class="text-blue-700 underline font-semibold">iimcat.ac.in</a></span>
+            <span class="text-amber-800 font-bold">Fee: ₹2,700 Gen / ₹1,350 Reserved</span>
+          </div>
+        </div>
+
+        <!-- 2. APS India Verification Certificate -->
+        <div class="deadline-card glass-droplet rounded-2xl p-5 space-y-3.5 border-l-4 border-l-amber-600" data-category="germany clash">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex items-center gap-2.5">
+              <input type="checkbox" id="check-aps" onchange="toggleTask('check-aps')" class="w-4 h-4 text-amber-600 rounded border-stone-300 focus:ring-amber-500 cursor-pointer">
+              <div>
+                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-800 bg-amber-100 px-2 py-0.5 rounded border border-amber-200">
+                  MANDATORY FOR GERMAN VISA / ADMISSION
+                </span>
+                <h4 class="text-base font-extrabold text-stone-900 mt-1">APS India Certificate Initiation</h4>
+              </div>
+            </div>
+            <a href="https://aps-india.de/dmat" target="_blank" rel="noopener noreferrer" class="verify-badge" title="Verify on official APS India portal">
+              <span class="pulse-dot"></span>
+              <span>VERIFY</span>
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2 text-xs font-mono bg-stone-100/70 p-2.5 rounded-xl border border-stone-200">
+            <div>
+              <span class="text-stone-500 block text-[10px]">Action Target:</span>
+              <strong class="text-stone-900">Initiate by 25 Sep 2026</strong>
+            </div>
+            <div>
+              <span class="text-stone-500 block text-[10px]">Processing Lead Time:</span>
+              <strong class="text-amber-800 font-bold">4 to 8 Weeks</strong>
+            </div>
+          </div>
+
+          <p class="text-xs text-stone-700 leading-relaxed">
+            Akademische Prüfstelle (APS) certification is mandatory for Indian applicants. Involves verification of MDU Rohtak marksheets (Semesters 1–8: 3810/5400, 70.56%), DigiLocker consent, and professor verification. <strong>Important:</strong> Check dMAT requirement below if APS verification was started on/after 29 June 2026 in an affected field.
+          </p>
+
+          <div class="pt-2 border-t border-stone-200 flex items-center justify-between text-[11px] font-mono text-stone-500">
+            <span>Portal: <a href="https://aps-india.de/dmat" target="_blank" class="text-blue-700 underline font-semibold">aps-india.de/dmat</a></span>
+            <span class="text-stone-800 font-bold">Fee: ₹18,000 INR</span>
+          </div>
+        </div>
+
+        <!-- 3. MDU Medium-of-Instruction (MOI) Letter -->
+        <div class="deadline-card glass-droplet rounded-2xl p-5 space-y-3.5 border-l-4 border-l-blue-600" data-category="germany">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex items-center gap-2.5">
+              <input type="checkbox" id="check-ielts" onchange="toggleTask('check-ielts')" class="w-4 h-4 text-blue-600 rounded border-stone-300 focus:ring-blue-500 cursor-pointer">
+              <div>
+                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-800 bg-blue-100 px-2 py-0.5 rounded border border-blue-200">
+                  PRIMARY PROFICIENCY ROUTE · CONDITIONAL BACKUP
+                </span>
+                <h4 class="text-base font-extrabold text-stone-900 mt-1">MDU English Medium-of-Instruction Letter</h4>
+              </div>
+            </div>
+            <a href="https://www.uni-passau.de/en/apply" target="_blank" rel="noopener noreferrer" class="verify-badge" title="Verify on official Passau University portal">
+              <span class="pulse-dot"></span>
+              <span>VERIFY</span>
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2 text-xs font-mono bg-stone-100/70 p-2.5 rounded-xl border border-stone-200">
+            <div>
+              <span class="text-stone-500 block text-[10px]">Primary Action:</span>
+              <strong class="text-stone-900">Request MDU MOI Letter</strong>
+            </div>
+            <div>
+              <span class="text-stone-500 block text-[10px]">Equivalence Standard:</span>
+              <strong class="text-blue-800 font-bold">100% English MOI = B2 (IELTS 5.5 = B2)</strong>
+            </div>
+          </div>
+
+          <p class="text-xs text-stone-700 leading-relaxed">
+            Passau accepts 100% English Medium of Instruction (MOI) stated on official institutional documents to fulfill its CEFR Level B2 English proficiency requirement (for comparison, IELTS 5.5 = B2). <strong>Task:</strong> Request an official MDU Rohtak MOI certificate stating the degree was taught 100% in English. Book IELTS only if the MDU MOI certificate fails or if another university specifically mandates IELTS.
+          </p>
+
+          <div class="pt-2 border-t border-stone-200 flex items-center justify-between text-[11px] font-mono text-stone-500">
+            <span>Portal: <a href="https://www.uni-passau.de/en/apply" target="_blank" class="text-blue-700 underline font-semibold">uni-passau.de/en/apply</a></span>
+            <span class="text-stone-800 font-bold">Rule: MOI First / IELTS Backup</span>
+          </div>
+        </div>
+
+        <!-- 4. dMAT & German Track Decision Branch -->
+        <div class="deadline-card glass-droplet rounded-2xl p-5 space-y-3.5 border-l-4 border-l-purple-600" data-category="germany clash">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex items-center gap-2.5">
+              <input type="checkbox" id="check-uni-assist" onchange="toggleTask('check-uni-assist')" class="w-4 h-4 text-purple-600 rounded border-stone-300 focus:ring-purple-500 cursor-pointer">
+              <div>
+                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-purple-800 bg-purple-100 px-2 py-0.5 rounded border border-purple-200">
+                  APS PREREQUISITE · DECISION BRANCH (VERIFY)
+                </span>
+                <h4 class="text-base font-extrabold text-stone-900 mt-1">dMAT Test &amp; Germany Track Decision</h4>
+              </div>
+            </div>
+            <a href="https://aps-india.de/dmat" target="_blank" rel="noopener noreferrer" class="verify-badge" title="Verify on official APS India dMAT portal">
+              <span class="pulse-dot"></span>
+              <span>VERIFY</span>
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2 text-xs font-mono bg-stone-100/70 p-2.5 rounded-xl border border-stone-200">
+            <div>
+              <span class="text-stone-500 block text-[10px]">Registration Status:</span>
+              <strong class="text-red-700 font-bold">Reportedly Closed 15 Sep (VERIFY)</strong>
+            </div>
+            <div>
+              <span class="text-stone-500 block text-[10px]">Test / Certificate:</span>
+              <strong class="text-purple-800 font-bold">Test 26 Sep · Cert 12 Oct (VERIFY)</strong>
+            </div>
+          </div>
+
+          <p class="text-xs text-stone-700 leading-relaxed">
+            dMAT is required for APS if the degree is in an affected field and APS was started on/after 29 June 2026 (<a href="https://aps-india.de/dmat" target="_blank" class="text-blue-700 underline font-semibold">aps-india.de/dmat</a>). Fee €150 via g.a.s.t. Note: Passau does not use uni-assist VPD.
+          </p>
+
+          <div class="p-3 rounded-xl bg-purple-50/80 border border-purple-200 text-xs text-stone-800 space-y-1">
+            <strong class="text-purple-950 block font-mono">⚡ Decision Branch:</strong>
+            <p class="text-[11px] leading-relaxed text-stone-700">
+              <strong>If dMAT is not possible:</strong> Move Germany track to Winter 2027/28. This completely removes the 15 Dec clash and allows 100% focus on CAT 2026 and SWE jobs.<br>
+              <strong>If dMAT is possible / exempt:</strong> Proceed with Passau Summer 2027 application (1 Nov – 15 Dec).
+            </p>
+          </div>
+
+          <div class="pt-2 border-t border-stone-200 flex items-center justify-between text-[11px] font-mono text-stone-500">
+            <span>Portal: <a href="https://aps-india.de/dmat" target="_blank" class="text-blue-700 underline font-semibold">aps-india.de/dmat</a></span>
+            <span class="text-stone-800 font-bold">Fee: €150 via g.a.s.t. (VERIFY)</span>
+          </div>
+        </div>
+
+        <!-- 5. CAT Admit Card Release -->
+        <div class="deadline-card glass-droplet rounded-2xl p-5 space-y-3.5 border-l-4 border-l-stone-600" data-category="cat">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex items-center gap-2.5">
+              <input type="checkbox" id="check-admit-card" onchange="toggleTask('check-admit-card')" class="w-4 h-4 text-stone-600 rounded border-stone-300 focus:ring-stone-500 cursor-pointer">
+              <div>
+                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-stone-800 bg-stone-200 px-2 py-0.5 rounded border border-stone-300">
+                  TEST CENTER ALLOCATION
+                </span>
+                <h4 class="text-base font-extrabold text-stone-900 mt-1">CAT 2026 Admit Card Release</h4>
+              </div>
+            </div>
+            <a href="https://iimcat.ac.in" target="_blank" rel="noopener noreferrer" class="verify-badge" title="Verify on official IIM CAT portal">
+              <span class="pulse-dot"></span>
+              <span>VERIFY</span>
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2 text-xs font-mono bg-stone-100/70 p-2.5 rounded-xl border border-stone-200">
+            <div>
+              <span class="text-stone-500 block text-[10px]">Official Date:</span>
+              <strong class="text-stone-900">05 Nov 2026</strong>
+            </div>
+            <div>
+              <span class="text-stone-500 block text-[10px]">Key Objective:</span>
+              <strong class="text-stone-900">Slot 1, 2, or 3 Timing</strong>
+            </div>
+          </div>
+
+          <p class="text-xs text-stone-700 leading-relaxed">
+            Download admit card from candidate login on iimcat.ac.in. Align mock test timings with your allocated slot: Slot 1 (8:30 AM – 10:30 AM), Slot 2 (12:30 PM – 2:30 PM), or Slot 3 (4:30 PM – 6:30 PM). Verify venue address, transit routes, and physical ID proof requirements.
+          </p>
+
+          <div class="pt-2 border-t border-stone-200 flex items-center justify-between text-[11px] font-mono text-stone-500">
+            <span>Portal: <a href="https://iimcat.ac.in" target="_blank" class="text-blue-700 underline font-semibold">iimcat.ac.in</a></span>
+            <span class="text-stone-800 font-bold">Print: 2 Color Copies</span>
+          </div>
+        </div>
+
+        <!-- 6. CAT 2026 Exam Day -->
+        <div class="deadline-card glass-droplet rounded-2xl p-5 space-y-3.5 border-l-4 border-l-blue-700" data-category="cat clash">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex items-center gap-2.5">
+              <input type="checkbox" id="check-cat-exam" onchange="toggleTask('check-cat-exam')" class="w-4 h-4 text-blue-600 rounded border-stone-300 focus:ring-blue-500 cursor-pointer">
+              <div>
+                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-800 bg-blue-100 px-2 py-0.5 rounded border border-blue-200">
+                  NATIONAL EXAM · 3 SLOTS
+                </span>
+                <h4 class="text-base font-extrabold text-stone-900 mt-1">CAT 2026 Examination Day</h4>
+              </div>
+            </div>
+            <a href="https://iimcat.ac.in" target="_blank" rel="noopener noreferrer" class="verify-badge" title="Verify on official IIM CAT portal">
+              <span class="pulse-dot"></span>
+              <span>VERIFY</span>
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2 text-xs font-mono bg-stone-100/70 p-2.5 rounded-xl border border-stone-200">
+            <div>
+              <span class="text-stone-500 block text-[10px]">Official Exam Date:</span>
+              <strong class="text-stone-900">29 Nov 2026 (Sunday)</strong>
+            </div>
+            <div>
+              <span class="text-stone-500 block text-[10px]">Structure:</span>
+              <strong class="text-blue-900 font-bold">68 Questions · 120 Mins</strong>
+            </div>
+          </div>
+
+          <p class="text-xs text-stone-700 leading-relaxed">
+            National computer-based examination: 68 questions in 120 minutes across 3 sections—VARC (24 Qs, 40 min), DILR (22 Qs, 40 min), and QA (22 Qs, 40 min). Strict sectional timers with no cross-section switching during the test.
+          </p>
+
+          <div class="pt-2 border-t border-stone-200 flex items-center justify-between text-[11px] font-mono text-stone-500">
+            <span>Pattern: 68 Qs (VARC 24, DILR 22, QA 22)</span>
+            <span class="text-stone-800 font-bold">Reporting: 1 hr before slot</span>
+          </div>
+        </div>
+
+        <!-- 7. Passau M.Sc. CS Application Deadline -->
+        <div class="deadline-card glass-droplet rounded-2xl p-5 space-y-3.5 border-l-4 border-l-red-700" data-category="germany clash">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex items-center gap-2.5">
+              <input type="checkbox" id="check-passau-app" onchange="toggleTask('check-passau-app')" class="w-4 h-4 text-red-600 rounded border-stone-300 focus:ring-red-500 cursor-pointer">
+              <div>
+                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-red-800 bg-red-100 px-2 py-0.5 rounded border border-red-200">
+                  SUMMER WINDOW (1 NOV – 15 DEC) · ALL APPLICANTS
+                </span>
+                <h4 class="text-base font-extrabold text-stone-900 mt-1">Passau M.Sc. Computer Science Deadline</h4>
+              </div>
+            </div>
+            <a href="https://www.uni-passau.de/en/apply" target="_blank" rel="noopener noreferrer" class="verify-badge" title="Verify on official Passau University portal">
+              <span class="pulse-dot"></span>
+              <span>VERIFY</span>
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2 text-xs font-mono bg-stone-100/70 p-2.5 rounded-xl border border-stone-200">
+            <div>
+              <span class="text-stone-500 block text-[10px]">Official Cutoff Date:</span>
+              <strong class="text-red-900">15 Dec 2026</strong>
+            </div>
+            <div>
+              <span class="text-stone-500 block text-[10px]">Application Window:</span>
+              <strong class="text-stone-900">01 Nov – 15 Dec 2026</strong>
+            </div>
+          </div>
+
+          <p class="text-xs text-stone-700 leading-relaxed">
+            Summer window runs 1 Nov – 15 Dec for all applicants. <strong>Passau does not use uni-assist VPD</strong>; the application route depends on Passau's interactive guide (<a href="https://www.uni-passau.de/en/apply" target="_blank" class="text-blue-700 underline font-semibold">uni-passau.de/en/apply</a>).
+          </p>
+
+          <div class="text-[11px] bg-stone-100/80 p-2.5 rounded-xl border border-stone-200 text-stone-700 space-y-1">
+            <div>• <strong>Credit share task:</strong> Compute CS-related credit share from MDU credit scheme (Passau's rule is about two-thirds).</div>
+            <div>• <strong>Grade converter task:</strong> Use Passau's grade converter; the top-70% route needs an MDU ranking document (VERIFY).</div>
+            <div>• <strong>FIM rule:</strong> Choose ONE of M.Sc. CS or AI Engineering (only one FIM programme allowed).</div>
+            <div>• <strong>Abstract &amp; Link:</strong> Submit final-year project abstract with link.</div>
+            <div>• <strong>Anabin &amp; MOI:</strong> Anabin H+ check for MDU; submit 100% English MOI letter (IELTS 5.5 = B2 backup).</div>
+          </div>
+
+          <div class="pt-2 border-t border-stone-200 flex items-center justify-between text-[11px] font-mono text-stone-500">
+            <span>Portal: <a href="https://www.uni-passau.de/en/apply" target="_blank" class="text-blue-700 underline font-semibold">uni-passau.de/en/apply</a></span>
+            <span class="text-emerald-800 font-bold">Tuition: €0 / Sem (Free)</span>
+          </div>
+        </div>
+
+        <!-- 8. CAT 2026 Results & Scorecard -->
+        <div class="deadline-card glass-droplet rounded-2xl p-5 space-y-3.5 border-l-4 border-l-emerald-600" data-category="cat">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex items-center gap-2.5">
+              <input type="checkbox" id="check-cat-results" onchange="toggleTask('check-cat-results')" class="w-4 h-4 text-emerald-600 rounded border-stone-300 focus:ring-emerald-500 cursor-pointer">
+              <div>
+                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-200">
+                  OFFICIAL SCORECARD RELEASE (VERIFY)
+                </span>
+                <h4 class="text-base font-extrabold text-stone-900 mt-1">CAT 2026 Results &amp; Percentiles</h4>
+              </div>
+            </div>
+            <a href="https://iimcat.ac.in" target="_blank" rel="noopener noreferrer" class="verify-badge" title="Verify on official IIM CAT portal">
+              <span class="pulse-dot"></span>
+              <span>VERIFY</span>
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2 text-xs font-mono bg-stone-100/70 p-2.5 rounded-xl border border-stone-200">
+            <div>
+              <span class="text-stone-500 block text-[10px]">Expected Date:</span>
+              <strong class="text-stone-900">First week of Jan 2027</strong>
+            </div>
+            <div>
+              <span class="text-stone-500 block text-[10px]">Authority:</span>
+              <strong class="text-emerald-900 font-bold">VERIFY on iimcat.ac.in</strong>
+            </div>
+          </div>
+
+          <p class="text-xs text-stone-700 leading-relaxed">
+            Official CAT percentile scorecards are published in the first week of Jan 2027 on <a href="https://iimcat.ac.in" target="_blank" class="text-blue-700 underline font-semibold">iimcat.ac.in</a> (VERIFY on iimcat.ac.in). Used by IIMs and non-IIM institutions for WAT-PI interview shortlists.
+          </p>
+
+          <div class="pt-2 border-t border-stone-200 flex items-center justify-between text-[11px] font-mono text-stone-500">
+            <span>Portal: <a href="https://iimcat.ac.in" target="_blank" class="text-blue-700 underline font-semibold">iimcat.ac.in</a></span>
+            <span class="text-stone-800 font-bold">Validity: 1 Year</span>
+          </div>
+        </div>
+
+        <!-- 9. Full-Stack SWE Weekly Applications -->
+        <div class="deadline-card glass-droplet rounded-2xl p-5 space-y-3.5 border-l-4 border-l-teal-600" data-category="job">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex items-center gap-2.5">
+              <input type="checkbox" id="check-job-outreach" onchange="toggleTask('check-job-outreach')" class="w-4 h-4 text-teal-600 rounded border-stone-300 focus:ring-teal-500 cursor-pointer">
+              <div>
+                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-teal-800 bg-teal-100 px-2 py-0.5 rounded border border-teal-200">
+                  RECURRING WEEKLY CADENCE
+                </span>
+                <h4 class="text-base font-extrabold text-stone-900 mt-1">Full-Stack SWE Applications &amp; Outreach</h4>
+              </div>
+            </div>
+            <a href="https://www.instahyre.com" target="_blank" rel="noopener noreferrer" class="verify-badge" title="Verify on Instahyre job portal">
+              <span class="pulse-dot"></span>
+              <span>VERIFY</span>
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2 text-xs font-mono bg-stone-100/70 p-2.5 rounded-xl border border-stone-200">
+            <div>
+              <span class="text-stone-500 block text-[10px]">Target Cadence:</span>
+              <strong class="text-stone-900">15–20 Applications / Week</strong>
+            </div>
+            <div>
+              <span class="text-stone-500 block text-[10px]">Candidate Advantage:</span>
+              <strong class="text-teal-900 font-bold">Immediate Joiner (0 Days)</strong>
+            </div>
+          </div>
+
+          <p class="text-xs text-stone-700 leading-relaxed">
+            Maintain active candidate visibility on Instahyre, Wellfound, LinkedIn, and Naukri. Focus on Series A–C tech startups and remote European companies hiring Next.js 16, TypeScript, Node.js, and PostgreSQL full-stack engineers. Timebox to Monday and Wednesday mornings to protect CAT preparation hours.
+          </p>
+
+          <div class="pt-2 border-t border-stone-200 flex items-center justify-between text-[11px] font-mono text-stone-500">
+            <span>Platforms: Instahyre / LinkedIn / Wellfound</span>
+            <span class="text-teal-900 font-bold">Target: 2 Screens / Week</span>
+          </div>
+        </div>
+
+        <!-- 10. DSA & System Design Maintenance -->
+        <div class="deadline-card glass-droplet rounded-2xl p-5 space-y-3.5 border-l-4 border-l-emerald-700" data-category="job">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex items-center gap-2.5">
+              <input type="checkbox" id="check-dsa-maint" onchange="toggleTask('check-dsa-maint')" class="w-4 h-4 text-emerald-600 rounded border-stone-300 focus:ring-emerald-500 cursor-pointer">
+              <div>
+                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-200">
+                  INTERVIEW READINESS
+                </span>
+                <h4 class="text-base font-extrabold text-stone-900 mt-1">Daily DSA Maintenance (2 Problems / Day)</h4>
+              </div>
+            </div>
+            <a href="dsa_master_tracker.html" class="verify-badge" title="Open internal DSA tracker">
+              <span class="pulse-dot"></span>
+              <span>TRACKER</span>
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2 text-xs font-mono bg-stone-100/70 p-2.5 rounded-xl border border-stone-200">
+            <div>
+              <span class="text-stone-500 block text-[10px]">Curated Library:</span>
+              <strong class="text-stone-900">247 Problems in Tracker</strong>
+            </div>
+            <div>
+              <span class="text-stone-500 block text-[10px]">Time Commitment:</span>
+              <strong class="text-emerald-900 font-bold">45 Mins / Day (Morning)</strong>
+            </div>
+          </div>
+
+          <p class="text-xs text-stone-700 leading-relaxed">
+            Keep algorithmic problem-solving instincts razor-sharp for unexpected technical screening rounds. Focus on 60 Easy + 158 Medium problems (Two Pointers, Sliding Window, Trees, and Dynamic Programming) using the in-dashboard <a href="dsa_master_tracker.html" class="text-blue-700 underline font-bold">DSA Master Tracker</a>.
+          </p>
+
+          <div class="pt-2 border-t border-stone-200 flex items-center justify-between text-[11px] font-mono text-stone-500">
+            <span>Stack: TypeScript / Python</span>
+            <span class="text-stone-800 font-bold">Difficulty: Medium / Hard</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 1B: GERMAN TRACK PREREQUISITE TASKS & VERIFICATION                -->
+    <!-- ========================================================================= -->
+    <section id="prerequisite-tasks" class="glass-droplet rounded-3xl p-6 sm:p-8 space-y-6 border border-red-400/30">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-2xl bg-red-100 border border-red-300 flex items-center justify-center text-2xl">
+          📋
+        </div>
+        <div>
+          <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-red-200 text-red-900 border border-red-300">
+            Prerequisite Action Items
+          </span>
+          <h3 class="text-xl sm:text-2xl font-black text-stone-900 tracking-tight mt-0.5">
+            German Track Prerequisite Tasks &amp; Document Verification
+          </h3>
+        </div>
+      </div>
+      <p class="text-xs sm:text-sm text-stone-700 leading-relaxed">
+        Specific action items and institutional verifications required for the University of Passau and APS India. Complete each task and mark the checkbox to track progress.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+        <!-- Task 1: Credit Share Computation -->
+        <div class="p-4 rounded-2xl bg-white/90 border border-stone-300 shadow-sm space-y-2 task-card">
+          <div class="flex items-start justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <input type="checkbox" id="check-task-credit-share" onchange="toggleTask('check-task-credit-share')" class="w-4 h-4 text-red-600 rounded border-stone-300 focus:ring-red-500 cursor-pointer">
+              <strong class="text-xs font-bold text-stone-900">Task: Compute CS Credit Share</strong>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-100 text-amber-900 font-bold">~2/3 Rule</span>
+          </div>
+          <p class="text-[11px] text-stone-600 leading-relaxed">
+            Compute CS-related credit share from MDU credit scheme. Passau's admission regulations require about two-thirds of the undergraduate degree curriculum to be in CS-related subjects (approx. 110 ECTS equivalent). Map all 8 semesters of MDU Rohtak marksheets against this standard.
+          </p>
+          <div class="pt-1 text-[10px] font-mono text-stone-500">Benchmark: ~Two-Thirds of Degree Credits</div>
+        </div>
+
+        <!-- Task 2: Grade Converter & Ranking Document -->
+        <div class="p-4 rounded-2xl bg-white/90 border border-stone-300 shadow-sm space-y-2 task-card">
+          <div class="flex items-start justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <input type="checkbox" id="check-task-grade-converter" onchange="toggleTask('check-task-grade-converter')" class="w-4 h-4 text-red-600 rounded border-stone-300 focus:ring-red-500 cursor-pointer">
+              <strong class="text-xs font-bold text-stone-900">Task: Grade Converter &amp; Ranking</strong>
+            </div>
+            <a href="https://www.uni-passau.de/en/apply" target="_blank" class="verify-badge text-[10px]" title="Verify on Passau portal">
+              <span class="pulse-dot"></span>
+              <span>VERIFY</span>
+            </a>
+          </div>
+          <p class="text-[11px] text-stone-600 leading-relaxed">
+            Use Passau's official grade converter to calculate German equivalent grade from MDU Rohtak aggregate marks (3810 / 5400, 70.56%). Note: The alternative top-70% cohort admission route requires an official MDU ranking document or percentile certificate (VERIFY).
+          </p>
+          <div class="pt-1 text-[10px] font-mono text-stone-500">Tool: Passau Grade Converter (uni-passau.de/en/apply)</div>
+        </div>
+
+        <!-- Task 3: Request MDU MOI Letter -->
+        <div class="p-4 rounded-2xl bg-white/90 border border-stone-300 shadow-sm space-y-2 task-card">
+          <div class="flex items-start justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <input type="checkbox" id="check-task-moi-letter" onchange="toggleTask('check-task-moi-letter')" class="w-4 h-4 text-blue-600 rounded border-stone-300 focus:ring-blue-500 cursor-pointer">
+              <strong class="text-xs font-bold text-stone-900">Task: Request MDU MOI Letter</strong>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-100 text-blue-900 font-bold">100% MOI</span>
+          </div>
+          <p class="text-[11px] text-stone-600 leading-relaxed">
+            Request an official Medium-of-Instruction (MOI) letter from MDU Rohtak. Passau accepts official documents certifying 100% English MOI for CEFR B2 proficiency (for comparison, IELTS 5.5 = B2). Book IELTS only if this letter fails or another target university specifically requires it.
+          </p>
+          <div class="pt-1 text-[10px] font-mono text-stone-500">Status: Request from MDU Registrar · IELTS Backup Only</div>
+        </div>
+
+        <!-- Task 4: Final-Year Project Abstract with Link -->
+        <div class="p-4 rounded-2xl bg-white/90 border border-stone-300 shadow-sm space-y-2 task-card">
+          <div class="flex items-start justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <input type="checkbox" id="check-task-project-abstract" onchange="toggleTask('check-task-project-abstract')" class="w-4 h-4 text-emerald-600 rounded border-stone-300 focus:ring-emerald-500 cursor-pointer">
+              <strong class="text-xs font-bold text-stone-900">Task: Final-Year Project Abstract</strong>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 font-bold">Project-III</span>
+          </div>
+          <p class="text-[11px] text-stone-600 leading-relaxed">
+            Prepare final-year project abstract with link for the Passau application. Collate a concise technical abstract, source code repository link, and project report from MDU Semester 8 Project-III (score: 83/100). Host live demo / documentation.
+          </p>
+          <div class="pt-1 text-[10px] font-mono text-stone-500">Requirement: Abstract + Public Repository / Demo Link</div>
+        </div>
+
+        <!-- Task 5: Anabin Database H+ Check for MDU -->
+        <div class="p-4 rounded-2xl bg-white/90 border border-stone-300 shadow-sm space-y-2 task-card">
+          <div class="flex items-start justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <input type="checkbox" id="check-task-anabin-mdu" onchange="toggleTask('check-task-anabin-mdu')" class="w-4 h-4 text-stone-600 rounded border-stone-300 focus:ring-stone-500 cursor-pointer">
+              <strong class="text-xs font-bold text-stone-900">Task: Anabin H+ Check for MDU</strong>
+            </div>
+            <a href="https://anabin.kmk.org" target="_blank" rel="noopener noreferrer" class="verify-badge text-[10px]" title="Verify on official Anabin KMK database">
+              <span class="pulse-dot"></span>
+              <span>VERIFY</span>
+            </a>
+          </div>
+          <p class="text-[11px] text-stone-600 leading-relaxed">
+            Verify Maharshi Dayanand University (MDU Rohtak) status on the German Anabin database (<a href="https://anabin.kmk.org" target="_blank" class="text-blue-700 underline font-semibold">anabin.kmk.org</a>). Confirm institutional recognition is "H+" and B.Tech 4-year degree is recognized equivalent ("Entspricht"). Print PDF confirmation.
+          </p>
+          <div class="pt-1 text-[10px] font-mono text-stone-500">Portal: anabin.kmk.org (VERIFY)</div>
+        </div>
+
+        <!-- Task 6: Choose ONE FIM Programme -->
+        <div class="p-4 rounded-2xl bg-white/90 border border-stone-300 shadow-sm space-y-2 task-card">
+          <div class="flex items-start justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <input type="checkbox" id="check-task-fim-program" onchange="toggleTask('check-task-fim-program')" class="w-4 h-4 text-purple-600 rounded border-stone-300 focus:ring-purple-500 cursor-pointer">
+              <strong class="text-xs font-bold text-stone-900">Task: Choose ONE FIM Programme</strong>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-100 text-purple-900 font-bold">FIM Rule</span>
+          </div>
+          <p class="text-[11px] text-stone-600 leading-relaxed">
+            Choose ONE of M.Sc. Computer Science or M.Sc. Artificial Intelligence Engineering. Passau's Faculty of Computer Science and Mathematics (FIM) strictly allows applicants to apply for only ONE FIM master's programme per semester. Dual applications within FIM are rejected.
+          </p>
+          <div class="pt-1 text-[10px] font-mono text-stone-500">Choice: M.Sc. CS vs. M.Sc. AI Engineering</div>
+        </div>
+
+        <!-- Task 7: dMAT Verification & Decision Branch -->
+        <div class="p-4 rounded-2xl bg-white/90 border border-stone-300 shadow-sm space-y-2 task-card md:col-span-2 lg:col-span-3">
+          <div class="flex items-start justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <input type="checkbox" id="check-task-dmat-branch" onchange="toggleTask('check-task-dmat-branch')" class="w-4 h-4 text-red-600 rounded border-stone-300 focus:ring-red-500 cursor-pointer">
+              <strong class="text-xs font-bold text-stone-900">Task: dMAT Verification &amp; Track Decision Branch</strong>
+            </div>
+            <a href="https://aps-india.de/dmat" target="_blank" class="verify-badge text-[10px]" title="Verify on official APS India dMAT page">
+              <span class="pulse-dot"></span>
+              <span>VERIFY</span>
+            </a>
+          </div>
+          <p class="text-[11px] text-stone-600 leading-relaxed">
+            Verify dMAT requirement at <a href="https://aps-india.de/dmat" target="_blank" class="text-blue-700 underline font-semibold">aps-india.de/dmat</a>: mandatory for APS if the degree is in an affected field and APS was started on/after 29 June 2026. Registration reportedly closed 15 Sep, test 26 Sep, certificate 12 Oct, EUR 150 via g.a.s.t. (VERIFY).
+          </p>
+          <div class="p-2.5 rounded-xl bg-amber-50 border border-amber-200 text-xs text-stone-800">
+            <strong>Decision Branch:</strong> If dMAT registration is closed or test cannot be taken, <strong>move Germany track to Winter 2027/28</strong>. This immediately removes the 15 Dec 2026 clash, allowing 100% focus on CAT 2026 and SWE jobs.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 2: THE CLASH ANALYSIS & dMAT DECISION BRANCH                      -->
+    <!-- ========================================================================= -->
+    <section id="clash-analysis" class="glass-droplet rounded-3xl p-6 sm:p-8 space-y-6 border border-red-500/30">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-2xl bg-red-100 border border-red-300 flex items-center justify-center text-2xl">
+          ⚔️
+        </div>
+        <div>
+          <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-red-200 text-red-900 border border-red-300">
+            Critical Risk &amp; Strategy Analysis
+          </span>
+          <h3 class="text-xl sm:text-2xl font-black text-stone-900 tracking-tight mt-0.5">
+            The Clash Resolution &amp; dMAT Decision Branch
+          </h3>
+        </div>
+      </div>
+
+      <!-- Decision Branch Visual Banner -->
+      <div class="p-5 rounded-2xl bg-gradient-to-r from-purple-50 via-amber-50 to-emerald-50 border border-stone-300/80 space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-mono font-bold uppercase tracking-wider text-purple-900">Strategic Decision Framework</span>
+          <span class="verify-badge text-[10px]">VERIFY ON APS-INDIA.DE/DMAT</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+          <div class="p-4 rounded-xl bg-white/95 border border-purple-300 shadow-sm space-y-2">
+            <div class="font-bold text-purple-950 flex items-center gap-1.5">
+              <span>🌿 BRANCH A: dMAT Not Possible → Move to Winter 2027/28</span>
+            </div>
+            <p class="text-stone-700 text-[11px] leading-relaxed">
+              If dMAT is required and registration was closed on 15 Sep 2026 (or test on 26 Sep cannot be completed), <strong>move Germany admission to Winter Semester 2027/28</strong>.<br>
+              <strong>Major Benefit:</strong> This <strong>entirely eliminates the 15 Dec 2026 clash</strong>! Lakshay avoids double-tracking in Nov/Dec, dedicates 100% focus to CAT 2026 (29 Nov) and SWE job applications, and completes dMAT &amp; APS calmly in spring 2027 for the Winter 2027/28 intake.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white/95 border border-emerald-300 shadow-sm space-y-2">
+            <div class="font-bold text-emerald-950 flex items-center gap-1.5">
+              <span>🚀 BRANCH B: dMAT Feasible / Exempt → Summer 2027 Protocol</span>
+            </div>
+            <p class="text-stone-700 text-[11px] leading-relaxed">
+              If dMAT is completed or degree is verified exempt from dMAT, proceed with the Passau Summer 2027 application window (1 Nov – 15 Dec 2026).<br>
+              <strong>Front-Loading Rule:</strong> Complete 100% of Germany paperwork (APS, MOI letter, project abstract, grade conversion) before 10 November so 10–29 Nov is reserved strictly for CAT mocks.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Clash Anatomy Visual -->
+      <div class="p-4 sm:p-5 rounded-2xl bg-white/80 border border-stone-300/80 space-y-4">
+        <div class="text-xs font-bold text-stone-800 uppercase tracking-wider font-mono">
+          Why Waiting Until After 29 Nov Without A Decision Fails:
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+          <div class="p-3.5 rounded-xl bg-stone-50 border border-red-200 shadow-sm space-y-1.5">
+            <div class="font-bold text-red-900 flex items-center gap-1.5">
+              <span>⚠️ APS &amp; dMAT Lead Time</span>
+            </div>
+            <p class="text-stone-600 text-[11px] leading-relaxed">
+              dMAT is required for APS if degree is in an affected field and APS started on/after 29 June 2026 (<a href="https://aps-india.de/dmat" target="_blank" class="text-blue-700 underline font-semibold">aps-india.de/dmat</a>). If dMAT was missed, summer 2027 APS cannot be issued in time; candidate must pivot to Winter 2027/28.
+            </p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-stone-50 border border-blue-200 shadow-sm space-y-1.5">
+            <div class="font-bold text-blue-900 flex items-center gap-1.5">
+              <span>💡 MOI Over IELTS Stress</span>
+            </div>
+            <p class="text-stone-600 text-[11px] leading-relaxed">
+              Passau accepts official institutional documentation stating 100% English MOI (IELTS 5.5 = B2). Requesting the MDU MOI letter avoids booking stressful last-minute IELTS tests during peak CAT preparation.
+            </p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-stone-50 border border-purple-200 shadow-sm space-y-1.5">
+            <div class="font-bold text-purple-900 flex items-center gap-1.5">
+              <span>🏛️ No VPD for Passau</span>
+            </div>
+            <p class="text-stone-600 text-[11px] leading-relaxed">
+              <strong>Passau does not use uni-assist VPD.</strong> Application route depends directly on Passau's interactive guide (<a href="https://www.uni-passau.de/en/apply" target="_blank" class="text-blue-700 underline font-semibold">uni-passau.de/en/apply</a>), eliminating uni-assist VPD waiting delays.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Strategy Pillars -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+        <div class="p-4 rounded-2xl bg-white/80 border border-stone-300/80 space-y-2">
+          <div class="text-xs font-mono font-bold text-blue-700">Pillar 1 · Sep 20–30</div>
+          <div class="font-bold text-stone-900 text-sm">Initiate Bureaucracy &amp; dMAT Check</div>
+          <p class="text-xs text-stone-600">
+            Submit CAT registration (22 Sep, Rs 2,700 Gen / Rs 1,350 Reserved). Verify dMAT status at <a href="https://aps-india.de/dmat" target="_blank" class="text-blue-700 underline font-semibold">aps-india.de/dmat</a> (VERIFY). If dMAT is not possible, commit to Winter 2027/28 and eliminate the 15 Dec clash.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-white/80 border border-stone-300/80 space-y-2">
+          <div class="text-xs font-mono font-bold text-blue-700">Pillar 2 · Oct 01–31</div>
+          <div class="font-bold text-stone-900 text-sm">Secure MOI &amp; University Audits</div>
+          <p class="text-xs text-stone-600">
+            Obtain MDU 100% English MOI certificate (book IELTS only as backup). Compute CS credit share (~two-thirds rule), check Anabin H+ (<a href="https://anabin.kmk.org" target="_blank" class="text-blue-700 underline font-semibold">anabin.kmk.org</a> - VERIFY), and prepare project abstract with link.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-white/80 border border-stone-300/80 space-y-2">
+          <div class="text-xs font-mono font-bold text-blue-700">Pillar 3 · Nov 10–29</div>
+          <div class="font-bold text-stone-900 text-sm">German Lock &amp; CAT Sprint</div>
+          <p class="text-xs text-stone-600">
+            If on Summer 2027 track, lock Passau application draft by 10 Nov. Dedicate 100% of mental energy to final CAT mocks and 29 Nov exam day (68 questions, 120 min).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 3: 14-WEEK CHRONOLOGICAL ACTION PLAN (SEP 2026 – JAN 2027)        -->
+    <!-- ========================================================================= -->
+    <section id="week-by-week" class="space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+        <div>
+          <h3 class="text-xl sm:text-2xl font-black text-stone-900 tracking-tight flex items-center gap-2">
+            <span>🗓️ 14-Week Chronological Master Roadmap</span>
+            <span class="text-xs px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-900 font-bold border border-blue-300">
+              Week-by-Week Action Plan
+            </span>
+          </h3>
+          <p class="text-xs text-stone-600">
+            Synchronized timeline outlining daily allocations across CAT preparation, German university milestones, and full-stack software job search.
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+
+        <!-- Week 1: 20 Sep - 27 Sep -->
+        <div class="p-5 rounded-2xl glass-droplet space-y-3 border-l-4 border-l-red-600">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-stone-900 text-white">Week 01</span>
+              <span class="text-xs font-bold text-stone-700">20 Sep – 27 Sep 2026</span>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-red-100 text-red-800 border border-red-300">CRITICAL KICKSTART</span>
+            </div>
+            <span class="text-xs font-mono text-stone-500">Total Load: 6.0 hrs/day</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs pt-1">
+            <div class="p-3 rounded-xl bg-amber-50/70 border border-amber-200 space-y-1">
+              <strong class="text-amber-900 block font-mono">🐯 CAT Stream (3.5 hrs/day):</strong>
+              <p class="text-stone-700">
+                <strong>22 Sep (5 PM):</strong> Final CAT Registration &amp; Fee submission (₹2,700 General / OBC; ₹1,350 SC / ST / PwD) on <a href="https://iimcat.ac.in" target="_blank" class="text-blue-700 underline font-semibold">iimcat.ac.in</a>. Complete Diagnostic Mock 1; prepare for 68-question format (VARC 24, DILR 22, QA 22; 120 min).
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-red-50/70 border border-red-200 space-y-1">
+              <strong class="text-red-900 block font-mono">🇩🇪 Germany Stream (1 hr/day):</strong>
+              <p class="text-stone-700">
+                Register on <a href="https://aps-india.de/dmat" target="_blank" class="text-blue-700 underline font-semibold">aps-india.de/dmat</a>. Check dMAT: required if degree is in affected field and APS started on/after 29 June 2026 (reg reportedly closed 15 Sep - VERIFY). <strong>Decision branch:</strong> If dMAT is not possible, shift Germany track to Winter 2027/28 and eliminate 15 Dec clash. Initiate MDU MOI letter request.
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-emerald-50/70 border border-emerald-200 space-y-1">
+              <strong class="text-emerald-900 block font-mono">💼 Job Search Stream (1.5 hrs/day):</strong>
+              <p class="text-stone-700">
+                Submit 15 applications on Instahyre/LinkedIn with "Immediate Joiner" headline; complete 2 DSA problems daily from <a href="dsa_master_tracker.html" class="text-blue-700 underline font-semibold">tracker</a> (Arrays / Two Pointers).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Week 2: 28 Sep - 04 Oct -->
+        <div class="p-5 rounded-2xl glass-droplet space-y-3 border-l-4 border-l-amber-600">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-stone-900 text-white">Week 02</span>
+              <span class="text-xs font-bold text-stone-700">28 Sep – 04 Oct 2026</span>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-amber-100 text-amber-800 border border-amber-300">MDU MOI &amp; ANABIN AUDIT</span>
+            </div>
+            <span class="text-xs font-mono text-stone-500">Total Load: 6.0 hrs/day</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs pt-1">
+            <div class="p-3 rounded-xl bg-amber-50/70 border border-amber-200 space-y-1">
+              <strong class="text-amber-900 block font-mono">🐯 CAT Stream (3.5 hrs/day):</strong>
+              <p class="text-stone-700">
+                Algebra core: Linear &amp; Quadratic Equations, Logarithms, Polynomials. DILR Linear &amp; Circular Seating Arrangements (2 sets/day). CAT Mock 2 on Sunday + 3-hr analysis.
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-red-50/70 border border-red-200 space-y-1">
+              <strong class="text-red-900 block font-mono">🇩🇪 Germany Stream (1 hr/day):</strong>
+              <p class="text-stone-700">
+                Request MDU 100% English Medium-of-Instruction (MOI) letter (Passau accepts 100% English MOI; IELTS 5.5 = B2). Book IELTS only if MOI fails or another university requires it. Perform Anabin H+ check for MDU (<a href="https://anabin.kmk.org" target="_blank" class="text-blue-700 underline font-semibold">anabin.kmk.org</a> - VERIFY).
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-emerald-50/70 border border-emerald-200 space-y-1">
+              <strong class="text-emerald-900 block font-mono">💼 Job Search Stream (1.5 hrs/day):</strong>
+              <p class="text-stone-700">
+                15 outbound applications; update resume with Next.js 16 Real-Time Chat project; complete Sliding Window &amp; Hash Map drills in tracker.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Week 3: 05 Oct - 11 Oct -->
+        <div class="p-5 rounded-2xl glass-droplet space-y-3 border-l-4 border-l-blue-600">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-stone-900 text-white">Week 03</span>
+              <span class="text-xs font-bold text-stone-700">05 Oct – 11 Oct 2026</span>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-blue-100 text-blue-800 border border-blue-300">PASSAU GUIDE &amp; DEGREE AUDIT</span>
+            </div>
+            <span class="text-xs font-mono text-stone-500">Total Load: 6.0 hrs/day</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs pt-1">
+            <div class="p-3 rounded-xl bg-amber-50/70 border border-amber-200 space-y-1">
+              <strong class="text-amber-900 block font-mono">🐯 CAT Stream (3.5 hrs/day):</strong>
+              <p class="text-stone-700">
+                Time, Speed &amp; Distance (Relative speed, Trains, Races), Work &amp; Pipes. VARC: Paragraph Summary &amp; Odd Sentence Out. Mock 3 on Saturday.
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-red-50/70 border border-red-200 space-y-1">
+              <strong class="text-red-900 block font-mono">🇩🇪 Germany Stream (1 hr/day):</strong>
+              <p class="text-stone-700">
+                Navigate Passau interactive application guide at <a href="https://www.uni-passau.de/en/apply" target="_blank" class="text-blue-700 underline font-semibold">uni-passau.de/en/apply</a> (Passau does not use uni-assist VPD). Compute CS credit share from MDU scheme (Passau rule: ~two-thirds). FIM rule: Choose ONE of M.Sc. CS or AI Engineering.
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-emerald-50/70 border border-emerald-200 space-y-1">
+              <strong class="text-emerald-900 block font-mono">💼 Job Search Stream (1.5 hrs/day):</strong>
+              <p class="text-stone-700">
+                Attend recruiter initial phone screens; review TypeScript curriculum Topic 1.13 and 2.6 for upcoming technical interviews.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Week 4: 12 Oct - 18 Oct -->
+        <div class="p-5 rounded-2xl glass-droplet space-y-3 border-l-4 border-l-stone-600">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-stone-900 text-white">Week 04</span>
+              <span class="text-xs font-bold text-stone-700">12 Oct – 18 Oct 2026</span>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-stone-200 text-stone-800 border border-stone-300">PROJECT ABSTRACT &amp; CONVERTER</span>
+            </div>
+            <span class="text-xs font-mono text-stone-500">Total Load: 6.0 hrs/day</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs pt-1">
+            <div class="p-3 rounded-xl bg-amber-50/70 border border-amber-200 space-y-1">
+              <strong class="text-amber-900 block font-mono">🐯 CAT Stream (3.5 hrs/day):</strong>
+              <p class="text-stone-700">
+                Geometry &amp; Mensuration (Triangles, Circles, Coordinate Geometry). DILR Matrix Grids &amp; Scheduling. Mock 4 + Error Log entry review.
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-red-50/70 border border-red-200 space-y-1">
+              <strong class="text-red-900 block font-mono">🇩🇪 Germany Stream (1 hr/day):</strong>
+              <p class="text-stone-700">
+                Prepare final-year project abstract with link (MDU Project-III). Use Passau's grade converter to compute German grade (top-70% route requires MDU ranking doc - VERIFY). If on dMAT track, dMAT certificate reportedly issued 12 Oct (VERIFY).
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-emerald-50/70 border border-emerald-200 space-y-1">
+              <strong class="text-emerald-900 block font-mono">💼 Job Search Stream (1.5 hrs/day):</strong>
+              <p class="text-stone-700">
+                15 outbound applications; practice 2 LeetCode Tree / Binary Search problems; update LinkedIn featured portfolio.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Week 5: 19 Oct - 25 Oct -->
+        <div class="p-5 rounded-2xl glass-droplet space-y-3 border-l-4 border-l-indigo-600">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-stone-900 text-white">Week 05</span>
+              <span class="text-xs font-bold text-stone-700">19 Oct – 25 Oct 2026</span>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-indigo-100 text-indigo-800 border border-indigo-300">PRE-REGISTRATION AUDIT</span>
+            </div>
+            <span class="text-xs font-mono text-stone-500">Total Load: 6.0 hrs/day</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs pt-1">
+            <div class="p-3 rounded-xl bg-amber-50/70 border border-amber-200 space-y-1">
+              <strong class="text-amber-900 block font-mono">🐯 CAT Stream (3.5 hrs/day):</strong>
+              <p class="text-stone-700">
+                Number Systems &amp; Modern Math (P&amp;C, Probability). DILR Games &amp; Tournaments. Mock 5 + Sectional Timed Practice.
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-red-50/70 border border-red-200 space-y-1">
+              <strong class="text-red-900 block font-mono">🇩🇪 Germany Stream (1 hr/day):</strong>
+              <p class="text-stone-700">
+                Confirm receipt of MDU 100% English MOI letter (or prepare for IELTS only if conditional backup was needed). Finalize Letter of Motivation for Passau application.
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-emerald-50/70 border border-emerald-200 space-y-1">
+              <strong class="text-emerald-900 block font-mono">💼 Job Search Stream (1.5 hrs/day):</strong>
+              <p class="text-stone-700">
+                10 targeted applications; maintain fast response times for recruiters; dynamic programming memoization practice.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Week 6: 26 Oct - 01 Nov -->
+        <div class="p-5 rounded-2xl glass-droplet space-y-3 border-l-4 border-l-purple-600">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-stone-900 text-white">Week 06</span>
+              <span class="text-xs font-bold text-stone-700">26 Oct – 01 Nov 2026</span>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-purple-100 text-purple-800 border border-purple-300">DOCUMENTATION AUDIT</span>
+            </div>
+            <span class="text-xs font-mono text-stone-500">Total Load: 6.0 hrs/day</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs pt-1">
+            <div class="p-3 rounded-xl bg-amber-50/70 border border-amber-200 space-y-1">
+              <strong class="text-amber-900 block font-mono">🐯 CAT Stream (3.5 hrs/day):</strong>
+              <p class="text-stone-700">
+                Algebra and Arithmetic comprehensive revision. Question-skipping discipline drills (skipping lengthy traps under 45 seconds). Mock 6.
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-red-50/70 border border-red-200 space-y-1">
+              <strong class="text-red-900 block font-mono">🇩🇪 Germany Stream (1 hr/day):</strong>
+              <p class="text-stone-700">
+                Verify MDU MOI certificate is archived in dossier. (If conditional IELTS was required, sit for test). Verify APS/dMAT progress if on Summer 2027 track.
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-emerald-50/70 border border-emerald-200 space-y-1">
+              <strong class="text-emerald-900 block font-mono">💼 Job Search Stream (1.5 hrs/day):</strong>
+              <p class="text-stone-700">
+                Maintain 2 DSA questions daily; attend technical pairing interviews; review system design caching &amp; database indexing.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Week 7: 02 Nov - 08 Nov -->
+        <div class="p-5 rounded-2xl glass-droplet space-y-3 border-l-4 border-l-blue-700">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-stone-900 text-white">Week 07</span>
+              <span class="text-xs font-bold text-stone-700">02 Nov – 08 Nov 2026</span>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-blue-100 text-blue-900 border border-blue-300">CAT ADMIT CARD &amp; PASSAU OPEN</span>
+            </div>
+            <span class="text-xs font-mono text-stone-500">Total Load: 6.0 hrs/day</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs pt-1">
+            <div class="p-3 rounded-xl bg-amber-50/70 border border-amber-200 space-y-1">
+              <strong class="text-amber-900 block font-mono">🐯 CAT Stream (3.5 hrs/day):</strong>
+              <p class="text-stone-700">
+                <strong>05 Nov:</strong> Download CAT 2026 Admit Card on <a href="https://iimcat.ac.in" target="_blank" class="text-blue-700 underline font-semibold">iimcat.ac.in</a>. Note test slot (Slot 1, 2, or 3). Shift all remaining mock tests to this exact time window. Mock 7.
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-red-50/70 border border-red-200 space-y-1">
+              <strong class="text-red-900 block font-mono">🇩🇪 Germany Stream (1 hr/day):</strong>
+              <p class="text-stone-700">
+                Passau summer window opened 1 Nov (runs 1 Nov – 15 Dec for all applicants on <a href="https://www.uni-passau.de/en/apply" target="_blank" class="text-blue-700 underline font-semibold">uni-passau.de/en/apply</a>). Collate verified dossier.
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-emerald-50/70 border border-emerald-200 space-y-1">
+              <strong class="text-emerald-900 block font-mono">💼 Job Search Stream (1.5 hrs/day):</strong>
+              <p class="text-stone-700">
+                Keep job applications active on Monday morning only; prioritize interview pipeline progression.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Week 8: 09 Nov - 15 Nov -->
+        <div class="p-5 rounded-2xl glass-droplet space-y-3 border-l-4 border-l-emerald-600">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-stone-900 text-white">Week 08</span>
+              <span class="text-xs font-bold text-stone-700">09 Nov – 15 Nov 2026</span>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-emerald-100 text-emerald-800 border border-emerald-300">GERMANY DOSSIER FREEZE</span>
+            </div>
+            <span class="text-xs font-mono text-stone-500">Total Load: 6.0 hrs/day</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs pt-1">
+            <div class="p-3 rounded-xl bg-amber-50/70 border border-amber-200 space-y-1">
+              <strong class="text-amber-900 block font-mono">🐯 CAT Stream (4.5 hrs/day):</strong>
+              <p class="text-stone-700">
+                Mock 8 and Mock 9 under strict slot timing. Deep dive into QA selection: target 11–13 high-accuracy correct answers in chosen section.
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-red-50/70 border border-red-200 space-y-1">
+              <strong class="text-red-900 block font-mono">🇩🇪 Germany Stream (LOCK):</strong>
+              <p class="text-stone-700">
+                <strong>CLASH RESOLUTION MILESTONE:</strong> If on Summer 2027 track, finalize and lock all university application files by 15 Nov. <strong>FREEZE ALL GERMANY WORK</strong> after 15 Nov until CAT concludes. (If branched to Winter 2027/28, already on auto-pilot!).
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-emerald-50/70 border border-emerald-200 space-y-1">
+              <strong class="text-emerald-900 block font-mono">💼 Job Search Stream (0.5 hr/day):</strong>
+              <p class="text-stone-700">
+                Pause new cold applications; attend only scheduled 2nd/final stage interview rounds.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Week 9: 16 Nov - 22 Nov -->
+        <div class="p-5 rounded-2xl glass-droplet space-y-3 border-l-4 border-l-red-600">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-stone-900 text-white">Week 09</span>
+              <span class="text-xs font-bold text-stone-700">16 Nov – 22 Nov 2026</span>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-red-100 text-red-800 border border-red-300">CAT HIGH-INTENSITY SPRINT</span>
+            </div>
+            <span class="text-xs font-mono text-stone-500">Total Load: 5 hrs/day</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs pt-1">
+            <div class="p-3 rounded-xl bg-amber-50/70 border border-amber-200 space-y-1 md:col-span-2">
+              <strong class="text-amber-900 block font-mono">🐯 CAT Stream (4.5 hrs/day):</strong>
+              <p class="text-stone-700">
+                Take Mocks 10, 11, and 12 on Tuesday, Thursday, and Saturday. Zero new topics. Revise complete error log, mental math short-cuts, and DILR set selection filters.
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-stone-100 border border-stone-300 space-y-1">
+              <strong class="text-stone-800 block font-mono">🇩🇪 / 💼 Germany &amp; Jobs:</strong>
+              <p class="text-stone-600">
+                <strong>COMPLETE PAUSE:</strong> Germany paperwork is frozen on auto-pilot. No new job applications. Maximum mental focus on CAT performance.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Week 10: 23 Nov - 28 Nov -->
+        <div class="p-5 rounded-2xl glass-droplet space-y-3 border-l-4 border-l-amber-700">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-stone-900 text-white">Week 10</span>
+              <span class="text-xs font-bold text-stone-700">23 Nov – 28 Nov 2026</span>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-amber-100 text-amber-800 border border-amber-300">CAT EXAM EVE &amp; TAPERING</span>
+            </div>
+            <span class="text-xs font-mono text-stone-500">Total Load: 3 hrs/day (Tapering)</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs pt-1">
+            <div class="p-3 rounded-xl bg-amber-50/70 border border-amber-200 space-y-1 md:col-span-2">
+              <strong class="text-amber-900 block font-mono">🐯 CAT Stream (3 hrs/day):</strong>
+              <p class="text-stone-700">
+                Final low-stress Mock 13 on Tuesday. Light formula review Wednesday–Thursday. Rest completely on Friday &amp; Saturday. Print color admit card, verify original Aadhaar card, visit test venue map.
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-stone-100 border border-stone-300 space-y-1">
+              <strong class="text-stone-800 block font-mono">Mindset &amp; Sleep:</strong>
+              <p class="text-stone-600">
+                Stabilize sleep schedule (wake up at 6:00 AM daily). Hydrate, avoid screen fatigue after 7 PM.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Week 11: 29 Nov - 05 Dec -->
+        <div class="p-5 rounded-2xl glass-droplet space-y-3 border-l-4 border-l-blue-900">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-stone-900 text-white">Week 11</span>
+              <span class="text-xs font-bold text-stone-700">29 Nov – 05 Dec 2026</span>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-blue-100 text-blue-900 border border-blue-300">CAT EXAM &amp; POST-AUDIT</span>
+            </div>
+            <span class="text-xs font-mono text-stone-500">Milestone Week</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs pt-1">
+            <div class="p-3 rounded-xl bg-blue-100/80 border border-blue-300 space-y-1">
+              <strong class="text-blue-950 block font-mono">🎯 29 NOV (SUNDAY):</strong>
+              <p class="text-blue-900 font-bold">
+                CAT 2026 EXAMINATION DAY! 68 Questions (VARC 24, DILR 22, QA 22), 120 Mins. Execute planned section pacing.
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-red-50/70 border border-red-200 space-y-1">
+              <strong class="text-red-900 block font-mono">🇩🇪 Post-CAT Review (01–05 Dec):</strong>
+              <p class="text-stone-700">
+                If on Summer 2027 track, review Passau interactive guide (<a href="https://www.uni-passau.de/en/apply" target="_blank" class="text-blue-700 underline font-semibold">uni-passau.de/en/apply</a>), attach APS PDF, MDU MOI letter, project abstract with link, and computed credit share.
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-emerald-50/70 border border-emerald-200 space-y-1">
+              <strong class="text-emerald-900 block font-mono">💼 Job Re-Activation:</strong>
+              <p class="text-stone-700">
+                Send out 20 applications; resume morning 45-min DSA maintenance.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Week 12: 06 Dec - 15 Dec -->
+        <div class="p-5 rounded-2xl glass-droplet space-y-3 border-l-4 border-l-red-800">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-stone-900 text-white">Week 12</span>
+              <span class="text-xs font-bold text-stone-700">06 Dec – 15 Dec 2026</span>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-red-200 text-red-900 border border-red-400">PASSAU DEADLINE SUBMISSION</span>
+            </div>
+            <span class="text-xs font-mono text-stone-500">Submission Window</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs pt-1">
+            <div class="p-3.5 rounded-xl bg-red-50/80 border border-red-300 space-y-1.5">
+              <strong class="text-red-950 block font-mono text-sm">🇩🇪 15 DEC 2026: PASSAU APPLICATION DEADLINE</strong>
+              <p class="text-stone-700 leading-relaxed">
+                Submit completed application on Passau portal (<a href="https://www.uni-passau.de/en/apply" target="_blank" class="text-blue-700 underline font-semibold">uni-passau.de/en/apply</a>; Passau does not use uni-assist VPD). Upload: B.Tech Degree + 8 Semesters Transcript (70.56%), Passau grade converter result (or MDU ranking doc for top-70% route - VERIFY), computed CS credit share (Passau rule: ~two-thirds), final-year project abstract with link, Anabin H+ confirmation, MDU 100% English MOI letter (or IELTS 5.5 = B2), and APS certificate.<br>
+                <strong>Decision Branch:</strong> If dMAT was not possible, Germany was moved to Winter 2027/28 and this 15 Dec clash is completely removed!
+              </p>
+            </div>
+            <div class="p-3.5 rounded-xl bg-emerald-50/80 border border-emerald-300 space-y-1.5">
+              <strong class="text-emerald-950 block font-mono text-sm">💼 Job Search Sprint</strong>
+              <p class="text-stone-700 leading-relaxed">
+                Full-time focus switches to high-velocity SWE job search. Target startups hiring for Q1 2027 start dates. Immediate joiner status gives significant edge over candidates serving 60–90 day notice periods.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Week 13: 16 Dec - 31 Dec -->
+        <div class="p-5 rounded-2xl glass-droplet space-y-3 border-l-4 border-l-teal-600">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-stone-900 text-white">Week 13</span>
+              <span class="text-xs font-bold text-stone-700">16 Dec – 31 Dec 2026</span>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-teal-100 text-teal-800 border border-teal-300">FULL-STACK SWE SPRINT</span>
+            </div>
+            <span class="text-xs font-mono text-stone-500">Employment Focus</span>
+          </div>
+
+          <div class="text-xs text-stone-700 space-y-2">
+            <p>
+              Aggressive full-stack engineering interview sprint. Complete take-home coding challenges (Next.js 16 App Router, TypeScript contracts, Prisma/PostgreSQL, Docker/Kubernetes). Maintain 30+ applications per week.
+            </p>
+          </div>
+        </div>
+
+        <!-- Week 14+: Jan 2027 -->
+        <div class="p-5 rounded-2xl glass-droplet space-y-3 border-l-4 border-l-emerald-800">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-stone-900 text-white">Week 14+</span>
+              <span class="text-xs font-bold text-stone-700">January 2027</span>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-emerald-100 text-emerald-800 border border-emerald-300">RESULTS &amp; OFFERS</span>
+            </div>
+            <span class="text-xs font-mono text-stone-500">Decision Phase</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs pt-1">
+            <div class="p-3 rounded-xl bg-amber-50/70 border border-amber-200 space-y-1">
+              <strong class="text-amber-900 block font-mono">🐯 CAT Results:</strong>
+              <p class="text-stone-700">
+                First week of Jan 2027: Check official percentile scorecards at <a href="https://iimcat.ac.in" target="_blank" class="text-blue-700 underline font-semibold">iimcat.ac.in</a> (VERIFY on iimcat.ac.in). Submit forms for shortlisting institutes. Prepare for WAT-PI rounds.
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-red-50/70 border border-red-200 space-y-1">
+              <strong class="text-red-900 block font-mono">🇩🇪 Passau Decision:</strong>
+              <p class="text-stone-700">
+                Track admission decision on Passau portal (<a href="https://www.uni-passau.de/en/apply" target="_blank" class="text-blue-700 underline font-semibold">uni-passau.de/en/apply</a>). (If branched to Winter 2027/28, take dMAT in spring and apply for Winter 2027/28).
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-emerald-50/70 border border-emerald-200 space-y-1">
+              <strong class="text-emerald-900 block font-mono">💼 SWE Job Offers:</strong>
+              <p class="text-stone-700">
+                Negotiate incoming full-stack engineering offers. Compare career trajectories: high-growth startup role vs €0-tuition German Master of Science in Passau.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 4: DAILY TIME ALLOCATION MATRIX (DOABLE SCHEDULE)                 -->
+    <!-- ========================================================================= -->
+    <section id="daily-allocation" class="glass-droplet rounded-3xl p-6 sm:p-8 space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <h3 class="text-xl sm:text-2xl font-black text-stone-900 tracking-tight">
+            ⏰ Daily Load &amp; Time Allocation Matrix
+          </h3>
+          <p class="text-xs text-stone-600">
+            Realistic, sustainable daily hours designed to prevent burnout while aggressively maintaining triple-track momentum.
+          </p>
+        </div>
+        <div class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-stone-900 text-white shadow-sm">
+          Target: 6.0 Hours / Day (360 Mins)
+        </div>
+      </div>
+
+      <!-- Schedule Breakdown Table -->
+      <div class="overflow-x-auto rounded-2xl border border-stone-300/80 bg-white/70 shadow-sm">
+        <table class="w-full text-left border-collapse text-xs">
+          <thead>
+            <tr class="bg-stone-100/90 text-stone-800 font-mono text-[11px] uppercase border-b border-stone-300/80">
+              <th class="p-3.5">Time Block</th>
+              <th class="p-3.5">Focus Stream</th>
+              <th class="p-3.5">Daily Deliverables</th>
+              <th class="p-3.5">Duration</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-stone-200 font-sans">
+            <tr class="hover:bg-stone-50/80 transition-colors">
+              <td class="p-3.5 font-mono font-bold text-stone-900">07:30 – 08:15 AM</td>
+              <td class="p-3.5">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-900 border border-emerald-200">
+                  💼 DSA / SWE
+                </span>
+              </td>
+              <td class="p-3.5 text-stone-700">
+                2 LeetCode problems (1 Medium + 1 Easy/Review) from <a href="dsa_master_tracker.html" class="text-blue-700 underline font-semibold">DSA Tracker</a>. Algorithmic freshness.
+              </td>
+              <td class="p-3.5 font-mono font-semibold text-stone-800">45 Mins</td>
+            </tr>
+
+            <tr class="hover:bg-stone-50/80 transition-colors">
+              <td class="p-3.5 font-mono font-bold text-stone-900">08:15 – 09:00 AM</td>
+              <td class="p-3.5">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-teal-100 text-teal-900 border border-teal-200">
+                  💼 Job Outreach
+                </span>
+              </td>
+              <td class="p-3.5 text-stone-700">
+                Review inbound recruiter messages, send 3–5 tailored applications on Instahyre/LinkedIn with immediate joiner note.
+              </td>
+              <td class="p-3.5 font-mono font-semibold text-stone-800">45 Mins</td>
+            </tr>
+
+            <tr class="hover:bg-stone-50/80 transition-colors bg-amber-50/40">
+              <td class="p-3.5 font-mono font-bold text-stone-900">10:00 – 12:00 PM</td>
+              <td class="p-3.5">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-900 border border-amber-200">
+                  🐯 CAT QA &amp; DILR
+                </span>
+              </td>
+              <td class="p-3.5 text-stone-700">
+                Core QA concept drills (Arithmetic/Algebra: 15–20 high-quality questions) + 2 timed DILR sets (40 min).
+              </td>
+              <td class="p-3.5 font-mono font-semibold text-stone-800">120 Mins</td>
+            </tr>
+
+            <tr class="hover:bg-stone-50/80 transition-colors">
+              <td class="p-3.5 font-mono font-bold text-stone-900">02:30 – 03:30 PM</td>
+              <td class="p-3.5">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-100 text-red-900 border border-red-200">
+                  🇩🇪 Germany Admin
+                </span>
+              </td>
+              <td class="p-3.5 text-stone-700">
+                Sept/Oct: APS &amp; dMAT check, MDU MOI letter request, credit share calculation, project abstract. (Replaced with CAT revision after 10 Nov).
+              </td>
+              <td class="p-3.5 font-mono font-semibold text-stone-800">60 Mins</td>
+            </tr>
+
+            <tr class="hover:bg-stone-50/80 transition-colors bg-amber-50/40">
+              <td class="p-3.5 font-mono font-bold text-stone-900">04:30 – 06:00 PM</td>
+              <td class="p-3.5">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-900 border border-amber-200">
+                  🐯 CAT VARC
+                </span>
+              </td>
+              <td class="p-3.5 text-stone-700">
+                3 Reading Comprehension passages (Philosophy, Economics, Tech) + 8 Verbal Ability questions + error journaling.
+              </td>
+              <td class="p-3.5 font-mono font-semibold text-stone-800">90 Mins</td>
+            </tr>
+
+            <tr class="hover:bg-stone-50/80 transition-colors bg-stone-100/60 font-semibold">
+              <td class="p-3.5 font-mono text-stone-900">TOTAL DAILY LOAD</td>
+              <td class="p-3.5 text-stone-800">Triple-Track Synergy</td>
+              <td class="p-3.5 text-stone-700">
+                Evenings (after 6 PM) reserved for physical workout, family, dinner, and mental decompression. (45m + 45m + 120m + 60m + 90m = 360m).
+              </td>
+              <td class="p-3.5 font-mono text-stone-900">6 hrs 00 min</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- FOOTER                                                                    -->
+    <!-- ========================================================================= -->
+    <footer class="pt-8 pb-12 text-center text-xs text-stone-600 space-y-2 border-t border-stone-300/60">
+      <div class="flex items-center justify-center gap-2">
+        <span class="font-bold text-stone-800">Lakshay Nagpal</span>
+        <span>·</span>
+        <a href="mailto:lakshayn0001@gmail.com" class="text-blue-700 hover:underline">lakshayn0001@gmail.com</a>
+        <span>·</span>
+        <span>+91 83959 91957</span>
+      </div>
+      <p class="text-[11px] text-stone-500">
+        Live Master Calendar synchronized for CAT 2026, Passau M.Sc. CS Summer 2027, APS India, and Full-Stack Engineering job placement. Built with Tailwind CSS and Liquid Glassmorphism.
+      </p>
+    </footer>
+
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- CLIENT JAVASCRIPT: FILTERS, COUNTDOWNS, AND LOCALSTORAGE PERSISTENCE      -->
+  <!-- ========================================================================= -->
+  <script>
+    // Sidebar Drawer Toggle for Mobile
+    function toggleSidebar(open) {
+      const drawer = document.getElementById('sideNavDrawer');
+      const backdrop = document.getElementById('sidebarBackdrop');
+      if (open) {
+        drawer.classList.remove('-translate-x-full');
+        backdrop.classList.remove('hidden');
+      } else {
+        drawer.classList.add('-translate-x-full');
+        backdrop.classList.add('hidden');
+      }
+    }
+
+    // Category Filter Handler
+    function filterCalendar(category, btnElement) {
+      // Update button styling
+      document.querySelectorAll('.calendar-filter-btn').forEach(b => {
+        b.classList.remove('bg-stone-900', 'text-white', 'shadow-sm');
+        b.classList.add('droplet-pill');
+      });
+      btnElement.classList.add('bg-stone-900', 'text-white', 'shadow-sm');
+      btnElement.classList.remove('droplet-pill');
+
+      // Filter cards
+      const cards = document.querySelectorAll('.deadline-card');
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-category') || '';
+        if (category === 'all' || cat.includes(category)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // LocalStorage Task Tracking
+    const STORAGE_KEY = 'lakshay_calendar_tasks_v1';
+
+    function getCompletedTasks() {
+      try {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+      } catch(e) {
+        return [];
+      }
+    }
+
+    function saveCompletedTasks(arr) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
+      updateChecklistUI();
+    }
+
+    function toggleTask(id) {
+      let list = getCompletedTasks();
+      if (list.includes(id)) {
+        list = list.filter(item => item !== id);
+      } else {
+        list.push(id);
+      }
+      saveCompletedTasks(list);
+    }
+
+    function updateChecklistUI() {
+      const list = getCompletedTasks();
+      const checkboxes = document.querySelectorAll('input[type="checkbox"][id^="check-"]');
+      let count = 0;
+
+      checkboxes.forEach(cb => {
+        if (list.includes(cb.id)) {
+          cb.checked = true;
+          count++;
+          cb.closest('.deadline-card, .task-card')?.classList.add('opacity-75');
+        } else {
+          cb.checked = false;
+          cb.closest('.deadline-card, .task-card')?.classList.remove('opacity-75');
+        }
+      });
+
+      const countEl = document.getElementById('completed-count');
+      const totalEl = document.getElementById('total-count');
+      if (countEl) countEl.textContent = count;
+      if (totalEl) totalEl.textContent = checkboxes.length;
+    }
+
+    function resetAllTaskStatuses() {
+      if (confirm('Reset all marked checklist items on this calendar?')) {
+        localStorage.removeItem(STORAGE_KEY);
+        updateChecklistUI();
+      }
+    }
+
+    // Live Real-Time Countdown Calculations from 20 Sep 2026
+    function calculateDaysRemaining(targetDateStr) {
+      const now = new Date('2026-09-20T14:06:18+05:30'); // System synchronized anchor time
+      const target = new Date(targetDateStr);
+      const diffTime = target - now;
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      return diffDays;
+    }
+
+    function initCountdowns() {
+      const regDays = calculateDaysRemaining('2026-09-22T17:00:00+05:30');
+      const examDays = calculateDaysRemaining('2026-11-29T08:30:00+05:30');
+      const passauDays = calculateDaysRemaining('2026-12-15T18:00:00+01:00');
+
+      const regEl = document.getElementById('cat-reg-countdown');
+      const examEl = document.getElementById('cat-exam-countdown');
+      const passauEl = document.getElementById('passau-countdown');
+
+      if (regEl) regEl.textContent = regDays > 0 ? regDays + ' Days' : (regDays === 0 ? 'Today (5 PM)' : 'Closed');
+      if (examEl) examEl.textContent = examDays + ' Days';
+      if (passauEl) passauEl.textContent = passauDays + ' Days';
+    }
+
+    // Initialize on DOM load
+    document.addEventListener('DOMContentLoaded', () => {
+      initCountdowns();
+      updateChecklistUI();
+    });
+  </script>
+</body>
+</html>
