@@ -163,15 +163,18 @@
   <!-- Persistent Left Side Navigation (Desktop Permanent) -->
   <aside id="sideNavDrawer" class="w-64 fixed inset-y-0 left-0 z-30 flex flex-col glass-droplet-sidebar transition-transform duration-300 -translate-x-full lg:translate-x-0">
     <div class="p-4 border-b border-stone-300/60 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-600 via-teal-600 to-olive-700 flex items-center justify-center font-black text-white text-base shadow-sm">
+      <a href="profile.html" class="flex items-center gap-3 group" title="Open Full Candidate Profile & Dossier">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-600 via-teal-600 to-olive-700 flex items-center justify-center font-black text-white text-base shadow-sm group-hover:scale-105 transition-transform">
           LN
         </div>
         <div>
-          <div class="font-black text-stone-900 text-sm tracking-tight">Lakshay Nagpal</div>
+          <div class="font-black text-stone-900 text-sm tracking-tight group-hover:text-emerald-800 transition-colors flex items-center gap-1">
+            <span>Lakshay Nagpal</span>
+            <span class="text-[10px] text-stone-400 group-hover:text-emerald-700">↗</span>
+          </div>
           <span class="text-[11px] text-emerald-800 font-mono font-semibold">Daily Cockpit</span>
         </div>
-      </div>
+      </a>
       <button onclick="toggleSidebar(false)" class="lg:hidden p-1.5 rounded-lg text-stone-500 hover:text-stone-900 hover:bg-stone-200" title="Close Menu">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
       </button>
@@ -228,9 +231,14 @@
 
       <!-- Resumes & Outbound -->
       <div>
-        <div class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-stone-500">Resumes &amp; Outreach</div>
+        <div class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-stone-500">Profile &amp; Credentials</div>
         <div class="mt-1 space-y-0.5">
-          <a href="resume.html" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/60 transition-all">
+          <a href="profile.html" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-stone-900 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200/80 font-bold transition-all shadow-2xs">
+            <span>👤</span>
+            <span>Candidate Profile</span>
+            <span class="ml-auto text-[9px] px-1.5 py-0.5 rounded-full bg-emerald-200 text-emerald-900 font-mono font-bold">Bio</span>
+          </a>
+          <a href="resume.html" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/60 transition-all font-medium">
             <span>📄</span>
             <span>Original Resume</span>
           </a>
@@ -281,6 +289,12 @@
             <span class="text-stone-400 text-[10px]">IST</span>
             <span id="liveClockIST">--:--:--</span>
           </div>
+
+          <!-- My Profile Quick Access -->
+          <a href="profile.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white text-xs font-bold shadow-2xs transition-all cursor-pointer" title="View Full Candidate Profile & Bio">
+            <span>👤</span>
+            <span class="hidden sm:inline">My Profile</span>
+          </a>
 
           <!-- Notification Trigger -->
           <button id="btnToggleNotifications" onclick="enableNotifications()" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-white hover:bg-stone-100 text-stone-800 text-xs font-semibold border border-stone-300 shadow-2xs transition-all cursor-pointer" title="Enable browser notifications">
@@ -573,25 +587,28 @@
             </div>
           </div>
 
-          <!-- Portal 5: Dual Resumes & Outreach -->
+          <!-- Portal 5: Candidate Profile & Dual Resumes -->
           <div class="glass-droplet-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between space-y-3">
             <div class="space-y-2">
               <div class="flex items-center justify-between">
-                <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-stone-200 text-stone-800 border border-stone-300 font-mono">
-                  📄 Resumes
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-950 border border-emerald-300 font-mono">
+                  👤 Profile &amp; Resumes
                 </span>
-                <span class="text-[11px] font-mono font-bold text-stone-700">Dual-Track</span>
+                <span class="text-[11px] font-mono font-bold text-emerald-900">Verified Bio</span>
               </div>
-              <h3 class="font-black text-stone-900 text-sm">Full-Stack &amp; German CV</h3>
+              <h3 class="font-black text-stone-900 text-sm">Full Profile &amp; Dual Resumes</h3>
               <p class="text-xs text-stone-600 leading-relaxed">
-                Original resume (React 19 / Node / TypeScript) and German DIN A4 CV detailing EU Blue Card eligibility (§18g AufenthG) and Bavarian grade.
+                Full academic breakdown, verified credentials, technical stack, original resume, and German DIN A4 CV with EU Blue Card readiness.
               </p>
             </div>
-            <div class="pt-2 border-t border-stone-200/80 flex items-center gap-2">
-              <a href="https://drive.google.com/file/d/15GwnY6jhijyzTbYt-QVjesA7c4dnuHzE/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="flex-1 text-center py-2 px-3 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-xs transition-all shadow-2xs">
+            <div class="pt-2 border-t border-stone-200/80 flex items-center gap-2 flex-wrap">
+              <a href="profile.html" class="flex-1 min-w-[110px] text-center py-2 px-3 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-xs transition-all shadow-2xs">
+                Open Profile 👤
+              </a>
+              <a href="https://drive.google.com/file/d/15GwnY6jhijyzTbYt-QVjesA7c4dnuHzE/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="py-2 px-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold text-xs border border-stone-300 transition-all" title="German PDF on Google Drive">
                 German PDF 📥
               </a>
-              <a href="assets/Lakshay_Nagpal_Resume_Original.pdf" download="Lakshay_Nagpal_Resume.pdf" class="py-2 px-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold text-xs border border-stone-300 transition-all" title="Original PDF">
+              <a href="assets/Lakshay_Nagpal_Resume_Original.pdf" download="Lakshay_Nagpal_Resume.pdf" class="py-2 px-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold text-xs border border-stone-300 transition-all" title="Original Resume PDF">
                 Original 📥
               </a>
             </div>
@@ -630,7 +647,9 @@
     <footer class="mt-auto border-t border-stone-300/70 bg-[#e4eae0]/70 py-4 text-center text-xs text-stone-600">
       <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
         <span class="font-mono">Lakshay Nagpal · Personal Execution Cockpit</span>
-        <div class="flex items-center gap-3 text-stone-600 text-[11px]">
+        <div class="flex items-center gap-3 text-stone-600 text-[11px] flex-wrap justify-center">
+          <a href="profile.html" class="hover:text-stone-950 font-bold text-emerald-800">👤 Candidate Profile</a>
+          <span>•</span>
           <a href="cat_2026_syllabus_roadmap.html" class="hover:text-stone-950 font-semibold">CAT Roadmap</a>
           <span>•</span>
           <a href="german_universities_evaluation.html" class="hover:text-stone-950 font-semibold">German MSc</a>
