@@ -1,0 +1,91 @@
+name: Generate Daily Execution Plan
+
+on:
+  schedule:
+    # Runs at 23:00 UTC daily = 04:30 AM IST (Asia/Kolkata)
+    - cron: '0 23 * * *'
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Target execution date (YYYY-MM-DD, defaults to today in IST)'
+        required: false
+        type: string
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-commit-plan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate Daily Plan
+        env:
+          XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+          XAI_MODEL: ${{ secrets.XAI_MODEL }}
+        run: |
+          if [ -n "${{ inputs.date }}" ]; then
+            node scripts/generate_plan.js "${{ inputs.date }}"
+          else
+            node scripts/generate_plan.js
+          fi
+
+      - name: Commit and Push if Plan Changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action [Daily Plan]"
+          if [ -n "$(git status --porcelain data/)" ]; then
+            git add data/daily_plan.json data/history/
+            PLAN_DATE=$(node -e 'console.log(require("./data/daily_plan.json").date)')
+            git commit -m "chore(daily-plan): update execution plan for ${PLAN_DATE} [skip ci]"
+            git push
+            echo "Committed and pushed updated plan for ${PLAN_DATE}."
+          else
+            echo "No changes in daily plan. Skipping commit."
+          fi
+
+      - name: Optional Push Notification to ntfy.sh
+        if: env.NTFY_TOPIC != ''
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: |
+          node -e '
+            const fs = require("fs");
+            if (!fs.existsSync("data/daily_plan.json")) process.exit(0);
+            const plan = JSON.parse(fs.readFileSync("data/daily_plan.json", "utf8"));
+            const topic = process.env.NTFY_TOPIC;
+            if (!topic) process.exit(0);
+
+            const title = `Daily Plan: ${plan.date} (6.0h Budget)`;
+            let body = `${plan.summary}\n\nToday Schedule:\n`;
+            plan.blocks.forEach(b => {
+              body += `• ${b.start}–${b.end} [${b.stream.toUpperCase()}] ${b.title}\n`;
+            });
+            if (plan.urgent_alerts && plan.urgent_alerts.length > 0) {
+              body += `\n⚠️ URGENT DEADLINES:\n`;
+              plan.urgent_alerts.forEach(a => {
+                body += `• ${a.title} (${a.deadline}): ${a.action}\n`;
+              });
+            }
+
+            fetch(`https://ntfy.sh/${topic}`, {
+              method: "POST",
+              headers: {
+                "Title": title,
+                "Priority": (plan.urgent_alerts && plan.urgent_alerts.length) ? "4" : "3",
+                "Tags": "calendar,rocket,dart",
+                "Click": "https://lakshayn0001.github.io/dashboard/"
+              },
+              body: body
+            })
+            .then(res => console.log("ntfy.sh dispatch status:", res.status))
+            .catch(err => console.error("ntfy.sh dispatch error:", err));
+          '

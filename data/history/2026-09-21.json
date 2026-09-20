@@ -1,0 +1,117 @@
+{
+  "date": "2026-09-21",
+  "timezone": "Asia/Kolkata",
+  "generated_at": "2026-09-20T13:44:33.352Z",
+  "summary": "Day 3 of 72 (Percentages Mastery: Multipliers & Successive Changes): Lock down base-change formulas (x% increase followed by y% decrease) and linear seating deductions.",
+  "urgent_alerts": [
+    {
+      "title": "CAT 2026 Registration Close",
+      "deadline": "22 Sep 2026, 5:00 PM IST",
+      "action": "Submit CAT 2026 registration, 6 city preferences, and fee payment (₹2,700 Gen) before 5:00 PM cutoff."
+    },
+    {
+      "title": "dMAT Status Check (aps-india.de/dmat & g.a.s.t.)",
+      "deadline": "2026-09-22T23:59:59+05:30",
+      "action": "Check if dMAT registration is closed, exempt, or scheduled for next sitting; if closed, lock Winter 2027/28 branch."
+    },
+    {
+      "title": "Anabin H+ Check for MDU Rohtak",
+      "deadline": "2026-09-22T23:59:59+05:30",
+      "action": "Verify MDU H+ institutional status and B.Tech CSE degree recognition on anabin.kmk.org; save PDF confirmation."
+    },
+    {
+      "title": "Run Passau Interactive Guide",
+      "deadline": "2026-09-22T23:59:59+05:30",
+      "action": "Run Passau interactive application guide for M.Sc. CS/AI to confirm application route (direct portal vs uni-assist; no VPD)."
+    },
+    {
+      "title": "Email MDU for MOI Letter & Cohort Ranking Doc",
+      "deadline": "2026-09-22T23:59:59+05:30",
+      "action": "Send email to MDU Rohtak Registrar requesting 100% English Medium-of-Instruction letter and official cohort ranking certificate."
+    }
+  ],
+  "blocks": [
+    {
+      "id": "block-dsa",
+      "start": "07:30",
+      "end": "08:15",
+      "title": "DSA Algorithmic Problem Solving (2 Problems)",
+      "stream": "dsa",
+      "details": "Solve 2 curated LeetCode problems (1 Medium + 1 Easy/Review) from the 247-problem DSA Tracker. Focus on algorithmic clarity and edge cases.",
+      "links": [
+        "dsa_master_tracker.html"
+      ],
+      "priority": 1,
+      "notify_before_min": 10,
+      "verify": false
+    },
+    {
+      "id": "block-job",
+      "start": "08:15",
+      "end": "09:00",
+      "title": "Dedicated Job Outreach Application Batch",
+      "stream": "job",
+      "details": "Dedicated morning batch: Submit 8–10 tailored applications on Instahyre and LinkedIn Jobs. Target Series A–C tech and European remote roles highlighting Immediate Joiner status.",
+      "links": [
+        "profile.html#cold-email",
+        "https://www.instahyre.com"
+      ],
+      "priority": 2,
+      "notify_before_min": 10,
+      "verify": false
+    },
+    {
+      "id": "block-cat-qa-dilr",
+      "start": "10:00",
+      "end": "12:00",
+      "title": "CAT Day 3: QA & DILR Focus",
+      "stream": "cat",
+      "details": "QA: Percentages LOD 1 & LOD 2: 25 questions covering Net Price change, A is x% more than B, and income-expenditure splits.. DILR: Linear Arrangements 1 (Single Row, all facing North). Solve 2 sets from Rodha DILR Playlist. Focus on definite vs conditional clues..",
+      "links": [
+        "cat_2026_syllabus_roadmap.html",
+        "cat_2026_syllabus_roadmap.html#day-3"
+      ],
+      "priority": 1,
+      "notify_before_min": 10,
+      "verify": false
+    },
+    {
+      "id": "block-germany-admin",
+      "start": "14:30",
+      "end": "15:30",
+      "title": "Germany Academic Admin & Prerequisite Audits",
+      "stream": "germany",
+      "details": "Zero-fee audit tasks: Check Anabin H+ status for MDU, audit dMAT status on aps-india.de/dmat, review Passau interactive guide checklist, and email MDU for 100% English MOI letter.",
+      "links": [
+        "deadlines_calendar.html#prerequisite-tasks",
+        "https://anabin.kmk.org",
+        "https://aps-india.de/dmat",
+        "https://www.uni-passau.de/en/apply"
+      ],
+      "priority": 2,
+      "notify_before_min": 10,
+      "verify": true
+    },
+    {
+      "id": "block-cat-varc",
+      "start": "16:30",
+      "end": "18:00",
+      "title": "CAT Day 3: VARC & Verbal Ability",
+      "stream": "cat",
+      "details": "CL MyZone VARC: Complete RC Module 1 Practice Drill 1 (2 Passages, 8 Questions under 18 mins). Track accuracy. Maintain error log on Career Launcher MyZone.",
+      "links": [
+        "cat_2026_syllabus_roadmap.html",
+        "cat_2026_syllabus_roadmap.html#day-3"
+      ],
+      "priority": 1,
+      "notify_before_min": 10,
+      "verify": false
+    }
+  ],
+  "totals_by_stream_min": {
+    "dsa": 45,
+    "job": 45,
+    "cat": 210,
+    "germany": 60
+  }
+}

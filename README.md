@@ -21,6 +21,58 @@ Interactive developer portal and admissions roadmap hosted on GitHub Pages. Cent
 | 👤 **Candidate Profile & Dossier Hub** | Official academic records breakdown (8 semesters, 70.56% aggregate), dual-track cold email generator, 60+ job search portals engine, and high-res verified assets. | [`profile.html`](profile.html) |
 | 💻 **Full-Stack Cloud Projects** | Production applications including Next.js 16 Real-Time Chat App (Socket.IO, K8s, Docker) and AI Data Analytics Dashboard (Gemini 1.5 API). | [GitHub Repositories](https://github.com/lakshayn0001?tab=repositories) |
 
+## 🔔 Daily Execution Plan & Notification Engine
+
+An automated, intelligent daily planner and notification system that synchronizes study agendas across CAT 2026, German MSc preparation, DSA problem solving, and job applications.
+
+### ⚙️ How It Works
+1. **Context Extraction:** `scripts/build_context.js` compiles verified milestones, 72-day CAT syllabus, DSA priorities, and German application tracks into `data/context.json`.
+2. **Automated Generation:** A GitHub Actions cron workflow (`.github/workflows/daily-plan.yml`) runs daily at **23:00 UTC (04:30 AM IST)** or via manual dispatch:
+   - Evaluates current IST date and urgent deadlines ($\le 7$ days away).
+   - Generates an optimized daily schedule via xAI Grok API (`prompts/grok_system.md`) adhering strictly to the **6.0-hour daily budget**, wake/sleep constraints (06:30 – 22:30 IST), and meal windows.
+   - **Deterministic Fallback:** If the API key is not present or an API failure occurs, `scripts/generate_plan.js` automatically produces a deterministic schedule directly from `data/context.json`.
+   - Validates the resulting JSON against `data/daily_plan.schema.json`.
+   - Saves to `data/daily_plan.json` (active) and archives to `data/history/YYYY-MM-DD.json`.
+   - Commits changes to `main`, auto-updating GitHub Pages, and dispatches an optional push notification to mobile via `ntfy.sh`.
+3. **Live Dashboard Experience (`index.html`):**
+   - **Urgent Alerts Banner:** Highlights imminent deadlines (e.g., CAT registration closing).
+   - **Real-Time Focus ("Now" & "Next"):** Live IST clock and dynamic countdown timer to block completion.
+   - **Interactive Timeline:** Checkable task lists with browser `localStorage` persistence and stream badges (`cat`, `germany`, `dsa`, `job`, `health`).
+   - **Browser Desktop Notifications:** 30-second interval checker alerting you at block start times.
+   - **One-Click Calendar Sync (.ics):** Exports standard iCalendar file with `VALARM` 5-minute pre-event reminders for Google Calendar, Apple Calendar, or Outlook.
+
+### 🔑 GitHub Actions Secrets Setup
+To enable Grok AI generation and mobile notifications, configure these repository secrets under **Settings** > **Secrets and variables** > **Actions**:
+
+| Secret Name | Required? | Description | Example |
+| :--- | :--- | :--- | :--- |
+| `XAI_API_KEY` | Optional | xAI API Key for Grok (`https://console.x.ai`). If omitted, deterministic fallback runs. | `xai-...` |
+| `XAI_MODEL` | Optional | Model identifier (defaults to `grok-beta` if unset). | `grok-beta` or `grok-2` |
+| `NTFY_TOPIC` | Optional | Topic name on [ntfy.sh](https://ntfy.sh) to receive push notifications on phone. | `lakshay-daily-planner-prod` |
+
+### 💻 Manual Execution & Local Development
+You can run and test the planner locally without needing any third-party libraries (zero-dependency Node.js 20+):
+
+```bash
+# 1. Regenerate context from repo HTML sources
+node scripts/build_context.js
+
+# 2. Generate daily plan for today (uses deterministic engine if XAI_API_KEY is not set)
+node scripts/generate_plan.js
+
+# 3. Generate daily plan for a specific date
+node scripts/generate_plan.js 2026-09-22
+
+# 4. (Optional) Run with Grok API locally
+export XAI_API_KEY="your-xai-key"
+export XAI_MODEL="grok-beta"
+node scripts/generate_plan.js
+```
+
+### 🔒 Privacy & Zero-Exposure Security Note
+- **Public Output:** `data/daily_plan.json` is checked into git and deployed publicly on GitHub Pages. Only professional goals, study topics, and official timeline milestones are stored.
+- **Zero API Key Leakage:** Client-side JavaScript (`index.html`) never interacts with third-party LLM APIs. The dashboard only makes a single same-origin fetch to `data/daily_plan.json`. All API tokens reside strictly in GitHub Actions Secrets and run on runner environments only.
+
 ---
 
 ## 🌐 Deploying to GitHub Pages

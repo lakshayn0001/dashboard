@@ -215,6 +215,11 @@
             <span class="text-lg">🏠</span>
             <span>Master Dashboard</span>
           </a>
+          <a href="#section-daily-plan" class="flex items-center gap-3 px-3 py-2 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
+            <span class="text-base">📅</span>
+            <span>Today's Plan</span>
+            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 font-mono font-bold">Live</span>
+          </a>
           <a href="profile.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
             <span class="text-lg">👤</span>
             <span>Candidate Profile</span>
@@ -432,6 +437,180 @@
             <button onclick="setFilter('dossier', this)" class="filter-tag px-3 py-2 rounded-xl text-xs font-semibold bg-white text-stone-700 hover:text-stone-950 hover:bg-stone-100 border border-stone-300 transition-all">Dossier (2)</button>
           </div>
         </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- TODAY'S PLAN & NOTIFICATIONS SYSTEM (LIVE 6.0H SCHEDULE & NOW/NEXT)       -->
+      <!-- ========================================================================= -->
+      <section id="section-daily-plan" class="glass-droplet rounded-3xl p-6 sm:p-8 space-y-6 border border-emerald-600/30 shadow-md">
+        
+        <!-- Header & Action Controls -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-stone-200/80 pb-5">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 text-xs font-bold uppercase tracking-wider border border-emerald-300">
+              <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+              Live Execution Engine · 6.0h Daily Budget
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-black text-stone-950 tracking-tight mt-1 flex items-center gap-2">
+              <span>📅</span> Today's Plan &amp; Notifications
+            </h2>
+            <p class="text-xs sm:text-sm text-stone-600 mt-1" id="dailyPlanSubtitle">
+              Loading daily schedule from <code class="px-1.5 py-0.5 rounded bg-stone-100 font-mono text-[11px]">data/daily_plan.json</code>...
+            </p>
+          </div>
+
+          <!-- Top Action Buttons -->
+          <div class="flex flex-wrap items-center gap-2">
+            <!-- Notification Toggle Button -->
+            <button id="btnToggleNotifications" onclick="enableNotifications()" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-stone-900 hover:bg-stone-800 text-white text-xs font-bold shadow-sm transition-all cursor-pointer" title="Enable browser alerts for upcoming blocks">
+              <span id="notifIcon">🔔</span>
+              <span id="notifBtnLabel">Enable Alerts</span>
+            </button>
+
+            <!-- Download ICS Button -->
+            <button onclick="downloadTodayICS()" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold shadow-sm transition-all cursor-pointer" title="Download RFC 5545 iCalendar file with VALARM reminders">
+              <span>📥</span>
+              <span>Download .ics</span>
+            </button>
+
+            <!-- Refresh Button -->
+            <button onclick="loadDailyPlan(true)" class="p-2 rounded-xl bg-white hover:bg-stone-100 text-stone-700 border border-stone-300 text-xs font-semibold shadow-2xs transition-all cursor-pointer" title="Reload plan data">
+              🔄
+            </button>
+          </div>
+        </div>
+
+        <!-- Stale Plan Warning Banner (Shown if plan date != today in Asia/Kolkata) -->
+        <div id="stalePlanWarning" class="hidden p-4 rounded-2xl bg-amber-50 border border-amber-300 text-amber-950 text-xs flex items-start gap-3 shadow-xs">
+          <span class="text-lg shrink-0">⚠️</span>
+          <div class="space-y-1">
+            <strong class="font-bold block text-sm">Plan Date Notice</strong>
+            <p id="stalePlanText" class="leading-relaxed">
+              Showing plan for <span id="stalePlanDate" class="font-mono font-bold"></span>. Today in IST is <span id="staleCurrentDate" class="font-mono font-bold"></span>. You can trigger the daily workflow to generate today's schedule.
+            </p>
+          </div>
+        </div>
+
+        <!-- Urgent Alerts Banner (aria-live="polite") -->
+        <div id="urgentAlertsBanner" aria-live="polite" class="hidden p-4 sm:p-5 rounded-2xl bg-red-50/90 border-2 border-red-400/80 text-red-950 space-y-3 shadow-xs">
+          <div class="flex items-center justify-between gap-2 border-b border-red-200/80 pb-2.5">
+            <div class="flex items-center gap-2 font-bold text-xs uppercase tracking-wider text-red-800">
+              <span class="w-2.5 h-2.5 rounded-full bg-red-600 animate-ping"></span>
+              <span>🚨 Critical Statutory Deadlines &amp; Urgent Audits (Next 7 Days)</span>
+            </div>
+            <span id="urgentAlertsCountBadge" class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-red-200 text-red-900">0 Alerts</span>
+          </div>
+          <div id="urgentAlertsList" class="space-y-2">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+
+        <!-- Now / Next Live Status & Countdown Hero Widget -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          
+          <!-- Now & Next Card (Span 2) -->
+          <div class="lg:col-span-2 p-5 rounded-2xl bg-white/90 border border-stone-300/80 space-y-4 shadow-sm flex flex-col justify-between">
+            <div class="flex items-center justify-between gap-2 border-b border-stone-200 pb-3">
+              <div class="flex items-center gap-2">
+                <span class="text-base">⚡</span>
+                <span class="text-xs font-bold uppercase tracking-wider text-stone-700">Real-Time Schedule Status</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-[11px] font-mono text-stone-500 font-semibold">IST:</span>
+                <span id="liveClockIST" class="text-xs font-mono font-extrabold text-stone-900 bg-stone-100 px-2 py-0.5 rounded border border-stone-200">--:--:--</span>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <!-- Active Block (NOW) -->
+              <div class="p-3.5 rounded-xl bg-emerald-50/80 border border-emerald-300/80 space-y-1.5" id="nowCardContainer">
+                <div class="flex items-center justify-between">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-emerald-600 text-white flex items-center gap-1 shadow-2xs">
+                    <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span> NOW
+                  </span>
+                  <span id="nowTimerBadge" class="text-[10px] font-mono font-bold text-emerald-900">--</span>
+                </div>
+                <div id="nowBlockTitle" class="text-sm font-black text-emerald-950 truncate">No active block right now</div>
+                <p id="nowBlockDetails" class="text-xs text-emerald-800 line-clamp-2 leading-relaxed">Check upcoming block in timeline.</p>
+              </div>
+
+              <!-- Next Block (UPCOMING) -->
+              <div class="p-3.5 rounded-xl bg-amber-50/80 border border-amber-300/80 space-y-1.5" id="nextCardContainer">
+                <div class="flex items-center justify-between">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-amber-600 text-white shadow-2xs">
+                    NEXT UP
+                  </span>
+                  <span id="nextTimerBadge" class="text-[10px] font-mono font-bold text-amber-900">--</span>
+                </div>
+                <div id="nextBlockTitle" class="text-sm font-black text-amber-950 truncate">No upcoming blocks</div>
+                <p id="nextBlockDetails" class="text-xs text-amber-800 line-clamp-2 leading-relaxed">All scheduled blocks for today are finished.</p>
+              </div>
+            </div>
+
+            <!-- Countdown Ticker Bar -->
+            <div class="pt-1 flex items-center justify-between text-xs bg-stone-50 p-2.5 rounded-xl border border-stone-200">
+              <span class="text-stone-600 font-medium" id="countdownLabel">Countdown to next block:</span>
+              <span id="countdownTimer" class="font-mono font-black text-stone-900 text-sm">--m --s</span>
+            </div>
+          </div>
+
+          <!-- Daily Overview & Progress Card (Span 1) -->
+          <div class="p-5 rounded-2xl bg-white/90 border border-stone-300/80 space-y-3.5 shadow-sm flex flex-col justify-between">
+            <div class="flex items-center justify-between border-b border-stone-200 pb-2.5">
+              <span class="text-xs font-bold uppercase tracking-wider text-stone-700">Today's Progress</span>
+              <span id="dailyProgressFraction" class="text-xs font-mono font-extrabold text-emerald-800">0 / 0 Done</span>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="space-y-1">
+              <div class="w-full h-3 bg-stone-200 rounded-full overflow-hidden border border-stone-300">
+                <div id="dailyProgressBarInner" class="h-full bg-gradient-to-r from-emerald-600 to-teal-500 transition-all duration-300" style="width: 0%;"></div>
+              </div>
+              <div class="flex justify-between text-[10px] font-mono text-stone-500 font-semibold">
+                <span>Completed Tasks</span>
+                <span id="dailyProgressPercent">0%</span>
+              </div>
+            </div>
+
+            <!-- Stream Totals Breakdown -->
+            <div class="space-y-1.5 pt-1">
+              <div class="text-[11px] font-bold text-stone-600">Planned Load (6.0h Budget):</div>
+              <div id="streamTotalsContainer" class="flex flex-wrap gap-1.5">
+                <!-- Populated dynamically with stream pill badges -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Section -->
+        <div class="space-y-3 pt-2">
+          <div class="flex items-center justify-between">
+            <h3 class="text-sm font-bold uppercase tracking-wider text-stone-800 flex items-center gap-2">
+              <span>📋</span> Chronological Execution Timeline
+            </h3>
+            <span class="text-xs text-stone-500 font-mono">Mark items as completed to persist</span>
+          </div>
+
+          <!-- Dynamic Blocks Timeline List -->
+          <div id="dailyPlanBlocksList" class="space-y-3">
+            <!-- Populated dynamically via renderDailyPlan() -->
+          </div>
+
+          <!-- Loading State -->
+          <div id="dailyPlanLoading" class="p-8 text-center bg-white/70 rounded-2xl border border-stone-200 space-y-2">
+            <div class="w-6 h-6 border-2 border-emerald-600 border-t-transparent rounded-full animate-spin mx-auto"></div>
+            <p class="text-xs font-semibold text-stone-600">Loading daily plan...</p>
+          </div>
+
+          <!-- Error State -->
+          <div id="dailyPlanError" class="hidden p-6 text-center bg-red-50 rounded-2xl border border-red-200 space-y-2 text-red-900 text-xs">
+            <span class="text-2xl block">⚠️</span>
+            <strong>Unable to load daily plan</strong>
+            <p class="text-stone-600">Could not fetch <code class="font-mono">data/daily_plan.json</code>.</p>
+            <button onclick="loadDailyPlan(true)" class="px-3 py-1.5 rounded-lg bg-red-700 text-white font-bold cursor-pointer">Retry</button>
+          </div>
+        </div>
+
       </section>
 
       <!-- ========================================================================= -->
@@ -1189,6 +1368,597 @@
       const bar = document.getElementById('floatingAudioBar');
       if (bar) bar.classList.add('hidden');
     }
+
+    // =========================================================================
+    // DAILY PLAN & NOTIFICATIONS ENGINE (data/daily_plan.json)
+    // =========================================================================
+    let currentDailyPlan = null;
+    let dailyPlanTimerInterval = null;
+    let dailyNotificationInterval = null;
+
+    function getTodayDateIST() {
+      const formatter = new Intl.DateTimeFormat('en-CA', {
+        timeZone: 'Asia/Kolkata',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit'
+      });
+      return formatter.format(new Date());
+    }
+
+    function getCurrentTimeIST() {
+      const now = new Date();
+      return new Intl.DateTimeFormat('en-GB', {
+        timeZone: 'Asia/Kolkata',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+      }).format(now);
+    }
+
+    function timeStringToMinutes(str) {
+      if (!str || typeof str !== 'string') return 0;
+      const [h, m] = str.split(':').map(Number);
+      return (h || 0) * 60 + (m || 0);
+    }
+
+    async function loadDailyPlan(forceReload = false) {
+      const loadingEl = document.getElementById('dailyPlanLoading');
+      const errorEl = document.getElementById('dailyPlanError');
+      const subtitleEl = document.getElementById('dailyPlanSubtitle');
+
+      if (loadingEl) loadingEl.classList.remove('hidden');
+      if (errorEl) errorEl.classList.add('hidden');
+
+      try {
+        const url = 'data/daily_plan.json' + (forceReload ? `?t=${Date.now()}` : '');
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(`HTTP ${res.status} fetching daily_plan.json`);
+        const plan = await res.json();
+        currentDailyPlan = plan;
+
+        renderDailyPlan(plan);
+        if (loadingEl) loadingEl.classList.add('hidden');
+        if (subtitleEl) {
+          const genTime = plan.generated_at ? new Date(plan.generated_at).toLocaleTimeString('en-IN', { timeZone: 'Asia/Kolkata' }) : '04:30 AM';
+          subtitleEl.innerHTML = `Plan for <strong class="text-stone-900 font-mono">${plan.date}</strong> · Generated at ${genTime} IST`;
+        }
+
+        if (dailyPlanTimerInterval) clearInterval(dailyPlanTimerInterval);
+        dailyPlanTimerInterval = setInterval(updateLiveTickerAndNowNext, 1000);
+        updateLiveTickerAndNowNext();
+
+      } catch (err) {
+        console.error('Failed to load daily plan:', err);
+        if (loadingEl) loadingEl.classList.add('hidden');
+        if (errorEl) errorEl.classList.remove('hidden');
+      }
+    }
+
+    function renderDailyPlan(plan) {
+      const todayIST = getTodayDateIST();
+      const isStale = plan.date !== todayIST;
+
+      // Stale plan banner
+      const staleEl = document.getElementById('stalePlanWarning');
+      const stalePlanDateEl = document.getElementById('stalePlanDate');
+      const staleCurrentDateEl = document.getElementById('staleCurrentDate');
+      if (staleEl) {
+        if (isStale) {
+          staleEl.classList.remove('hidden');
+          if (stalePlanDateEl) stalePlanDateEl.innerText = plan.date;
+          if (staleCurrentDateEl) staleCurrentDateEl.innerText = todayIST;
+        } else {
+          staleEl.classList.add('hidden');
+        }
+      }
+
+      // Urgent Alerts Banner
+      const alertsBanner = document.getElementById('urgentAlertsBanner');
+      const alertsList = document.getElementById('urgentAlertsList');
+      const alertsBadge = document.getElementById('urgentAlertsCountBadge');
+
+      if (plan.urgent_alerts && plan.urgent_alerts.length > 0) {
+        if (alertsBanner) alertsBanner.classList.remove('hidden');
+        if (alertsBadge) alertsBadge.innerText = `${plan.urgent_alerts.length} Alert${plan.urgent_alerts.length > 1 ? 's' : ''}`;
+        if (alertsList) {
+          alertsList.innerHTML = plan.urgent_alerts.map(a => `
+            <div class="p-3 rounded-xl bg-white/90 border border-red-300 flex flex-col sm:flex-row sm:items-center justify-between gap-2 shadow-2xs">
+              <div class="space-y-0.5">
+                <div class="font-bold text-red-950 text-xs sm:text-sm flex items-center gap-1.5">
+                  <span>📌</span>
+                  <span>${escapeHtml(a.title)}</span>
+                </div>
+                <p class="text-[11px] text-stone-700 leading-relaxed">${escapeHtml(a.action)}</p>
+              </div>
+              <span class="shrink-0 text-[10px] font-mono font-bold bg-red-100 text-red-900 border border-red-300 px-2.5 py-1 rounded-lg self-start sm:self-center">
+                Due: ${escapeHtml(a.deadline)}
+              </span>
+            </div>
+          `).join('');
+        }
+      } else {
+        if (alertsBanner) alertsBanner.classList.add('hidden');
+      }
+
+      // Stream Totals
+      const totalsContainer = document.getElementById('streamTotalsContainer');
+      if (totalsContainer && plan.totals_by_stream_min) {
+        const streamBadges = {
+          cat: { bg: 'bg-amber-100', text: 'text-amber-900', label: '🐯 CAT Prep' },
+          dsa: { bg: 'bg-emerald-100', text: 'text-emerald-900', label: '⚡ DSA' },
+          job: { bg: 'bg-teal-100', text: 'text-teal-900', label: '💼 Job Outreach' },
+          germany: { bg: 'bg-blue-100', text: 'text-blue-900', label: '🇩🇪 Germany' },
+          health: { bg: 'bg-purple-100', text: 'text-purple-900', label: '🏃 Health' },
+          rest: { bg: 'bg-stone-100', text: 'text-stone-800', label: '☕ Break' }
+        };
+
+        totalsContainer.innerHTML = Object.entries(plan.totals_by_stream_min).map(([st, min]) => {
+          const cfg = streamBadges[st] || { bg: 'bg-stone-100', text: 'text-stone-800', label: st.toUpperCase() };
+          return `
+            <span class="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold ${cfg.bg} ${cfg.text} border border-stone-200">
+              ${cfg.label}: ${min}m
+            </span>
+          `;
+        }).join('');
+      }
+
+      // Render timeline blocks
+      renderBlocksList(plan);
+      updateProgressUI(plan);
+    }
+
+    function renderBlocksList(plan) {
+      const blocksListEl = document.getElementById('dailyPlanBlocksList');
+      if (!blocksListEl || !plan.blocks) return;
+
+      const doneKey = `daily_plan_done_${plan.date}`;
+      let completedIds = [];
+      try {
+        completedIds = JSON.parse(localStorage.getItem(doneKey) || '[]');
+      } catch (e) {
+        completedIds = [];
+      }
+
+      const streamColors = {
+        cat: 'bg-amber-100 text-amber-900 border-amber-300',
+        dsa: 'bg-emerald-100 text-emerald-900 border-emerald-300',
+        job: 'bg-teal-100 text-teal-900 border-teal-300',
+        germany: 'bg-blue-100 text-blue-900 border-blue-300',
+        health: 'bg-purple-100 text-purple-900 border-purple-300',
+        rest: 'bg-stone-100 text-stone-800 border-stone-300'
+      };
+
+      const priorityColors = {
+        1: 'bg-red-100 text-red-900 border-red-300',
+        2: 'bg-amber-100 text-amber-900 border-amber-300',
+        3: 'bg-stone-100 text-stone-700 border-stone-300'
+      };
+
+      blocksListEl.innerHTML = plan.blocks.map(b => {
+        const isDone = completedIds.includes(b.id);
+        const dur = timeStringToMinutes(b.end) - timeStringToMinutes(b.start);
+        const stClass = streamColors[b.stream] || 'bg-stone-100 text-stone-800 border-stone-300';
+        const pClass = priorityColors[b.priority] || 'bg-stone-100 text-stone-700 border-stone-300';
+
+        const linksHtml = (b.links && b.links.length > 0) ? `
+          <div class="flex flex-wrap items-center gap-1.5 pt-1">
+            ${b.links.map(l => {
+              const isExt = l.startsWith('http');
+              const label = l.includes('cat_2026') ? 'CAT Roadmap'
+                          : l.includes('dsa') ? 'DSA Tracker'
+                          : l.includes('deadlines') ? 'Deadlines Portal'
+                          : l.includes('careerlauncher') ? 'CL MyZone ↗'
+                          : l.includes('instahyre') ? 'Instahyre ↗'
+                          : l.includes('anabin') ? 'Anabin KMK ↗'
+                          : l.includes('aps-india') ? 'APS India ↗'
+                          : l.includes('uni-passau') ? 'Uni Passau ↗'
+                          : 'Resource ↗';
+              return `
+                <a href="${escapeHtml(l)}" ${isExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="px-2 py-0.5 rounded-lg text-[10px] font-semibold bg-stone-100 hover:bg-emerald-100 text-stone-700 hover:text-emerald-900 border border-stone-200 transition-all">
+                  ${label}
+                </a>
+              `;
+            }).join('')}
+          </div>
+        ` : '';
+
+        return `
+          <div id="block-card-${b.id}" class="timeline-block-card p-4 sm:p-5 rounded-2xl bg-white/95 border border-stone-300/80 shadow-xs transition-all space-y-2.5 ${isDone ? 'opacity-70 bg-stone-50/70' : ''}">
+            <div class="flex items-start justify-between gap-3">
+              <div class="flex items-start gap-3">
+                <input type="checkbox" id="check-${b.id}" onchange="toggleBlockCompleted('${b.id}')" ${isDone ? 'checked' : ''} class="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 text-emerald-600 rounded border-stone-300 focus:ring-emerald-500 cursor-pointer">
+                <div>
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase border ${stClass}">
+                      ${b.stream.toUpperCase()}
+                    </span>
+                    <span class="text-xs font-mono font-extrabold text-stone-900">
+                      ${b.start} – ${b.end}
+                    </span>
+                    <span class="text-[10px] font-mono text-stone-500">
+                      (${dur}m)
+                    </span>
+                    <span id="badge-now-${b.id}" class="hidden px-2 py-0.5 rounded-full text-[10px] font-black uppercase bg-emerald-600 text-white animate-pulse">
+                      NOW
+                    </span>
+                    <span id="badge-next-${b.id}" class="hidden px-2 py-0.5 rounded-full text-[10px] font-black uppercase bg-amber-600 text-white">
+                      NEXT
+                    </span>
+                    ${b.verify ? '<span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-orange-100 text-orange-900 border border-orange-300">VERIFY</span>' : ''}
+                  </div>
+                  <h4 class="text-sm sm:text-base font-extrabold text-stone-900 mt-1 ${isDone ? 'line-through text-stone-400' : ''}">
+                    ${escapeHtml(b.title)}
+                  </h4>
+                </div>
+              </div>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold border shrink-0 ${pClass}">
+                P${b.priority}
+              </span>
+            </div>
+
+            <p class="text-xs text-stone-700 leading-relaxed pl-7 sm:pl-8 ${isDone ? 'text-stone-400' : ''}">
+              ${escapeHtml(b.details)}
+            </p>
+
+            <div class="pl-7 sm:pl-8">
+              ${linksHtml}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function toggleBlockCompleted(blockId) {
+      if (!currentDailyPlan) return;
+      const doneKey = `daily_plan_done_${currentDailyPlan.date}`;
+      let completed = [];
+      try {
+        completed = JSON.parse(localStorage.getItem(doneKey) || '[]');
+      } catch (e) {
+        completed = [];
+      }
+
+      if (completed.includes(blockId)) {
+        completed = completed.filter(id => id !== blockId);
+      } else {
+        completed.push(blockId);
+      }
+
+      localStorage.setItem(doneKey, JSON.stringify(completed));
+      renderBlocksList(currentDailyPlan);
+      updateProgressUI(currentDailyPlan);
+    }
+
+    function updateProgressUI(plan) {
+      if (!plan || !plan.blocks) return;
+      const doneKey = `daily_plan_done_${plan.date}`;
+      let completed = [];
+      try {
+        completed = JSON.parse(localStorage.getItem(doneKey) || '[]');
+      } catch (e) {
+        completed = [];
+      }
+
+      const total = plan.blocks.length;
+      const done = completed.length;
+      const pct = total > 0 ? Math.round((done / total) * 100) : 0;
+
+      const fracEl = document.getElementById('dailyProgressFraction');
+      const barEl = document.getElementById('dailyProgressBarInner');
+      const pctEl = document.getElementById('dailyProgressPercent');
+
+      if (fracEl) fracEl.innerText = `${done} / ${total} Done`;
+      if (barEl) barEl.style.width = `${pct}%`;
+      if (pctEl) pctEl.innerText = `${pct}%`;
+    }
+
+    function updateLiveTickerAndNowNext() {
+      if (!currentDailyPlan || !currentDailyPlan.blocks) return;
+
+      const clockEl = document.getElementById('liveClockIST');
+      const nowStr = getCurrentTimeIST();
+      if (clockEl) clockEl.innerText = nowStr;
+
+      const [h, m, s] = nowStr.split(':').map(Number);
+      const currentSeconds = h * 3600 + m * 60 + s;
+      const currentMinutes = h * 60 + m;
+
+      let activeBlock = null;
+      let nextBlock = null;
+
+      for (const b of currentDailyPlan.blocks) {
+        const startMin = timeStringToMinutes(b.start);
+        const endMin = timeStringToMinutes(b.end);
+
+        if (currentMinutes >= startMin && currentMinutes < endMin) {
+          activeBlock = b;
+        } else if (currentMinutes < startMin && (!nextBlock || startMin < timeStringToMinutes(nextBlock.start))) {
+          nextBlock = b;
+        }
+      }
+
+      // Update Now Card
+      const nowTitle = document.getElementById('nowBlockTitle');
+      const nowDetails = document.getElementById('nowBlockDetails');
+      const nowTimerBadge = document.getElementById('nowTimerBadge');
+      const nowContainer = document.getElementById('nowCardContainer');
+
+      if (activeBlock) {
+        const endSec = timeStringToMinutes(activeBlock.end) * 60;
+        const remainingSec = Math.max(0, endSec - currentSeconds);
+        const rMin = Math.floor(remainingSec / 60);
+        const rSec = remainingSec % 60;
+
+        if (nowTitle) nowTitle.innerText = activeBlock.title;
+        if (nowDetails) nowDetails.innerText = activeBlock.details;
+        if (nowTimerBadge) nowTimerBadge.innerText = `Ends in ${rMin}m ${rSec}s`;
+        if (nowContainer) nowContainer.className = "p-3.5 rounded-xl bg-emerald-100/90 border-2 border-emerald-500 shadow-sm space-y-1.5";
+      } else {
+        if (nowTitle) nowTitle.innerText = "No active block right now";
+        if (nowDetails) nowDetails.innerText = "Check upcoming block in timeline or take a planned rest window.";
+        if (nowTimerBadge) nowTimerBadge.innerText = "Rest / Transition";
+        if (nowContainer) nowContainer.className = "p-3.5 rounded-xl bg-stone-100/90 border border-stone-200 space-y-1.5 opacity-80";
+      }
+
+      // Update Next Card
+      const nextTitle = document.getElementById('nextBlockTitle');
+      const nextDetails = document.getElementById('nextBlockDetails');
+      const nextTimerBadge = document.getElementById('nextTimerBadge');
+
+      if (nextBlock) {
+        const startSec = timeStringToMinutes(nextBlock.start) * 60;
+        const untilSec = Math.max(0, startSec - currentSeconds);
+        const uMin = Math.floor(untilSec / 60);
+        const uSec = untilSec % 60;
+
+        if (nextTitle) nextTitle.innerText = nextBlock.title;
+        if (nextDetails) nextDetails.innerText = `Starts at ${nextBlock.start} (${uMin}m ${uSec}s left): ${nextBlock.details}`;
+        if (nextTimerBadge) nextTimerBadge.innerText = `In ${uMin}m ${uSec}s`;
+      } else {
+        if (nextTitle) nextTitle.innerText = "All blocks concluded";
+        if (nextDetails) nextDetails.innerText = "All scheduled blocks for today are finished. Rest & family time.";
+        if (nextTimerBadge) nextTimerBadge.innerText = "Done for today";
+      }
+
+      // Countdown Bar
+      const cdLabel = document.getElementById('countdownLabel');
+      const cdTimer = document.getElementById('countdownTimer');
+
+      if (activeBlock) {
+        const endSec = timeStringToMinutes(activeBlock.end) * 60;
+        const rem = Math.max(0, endSec - currentSeconds);
+        const rm = Math.floor(rem / 60);
+        const rs = rem % 60;
+        if (cdLabel) cdLabel.innerText = `Active Block (${activeBlock.stream.toUpperCase()}) ends in:`;
+        if (cdTimer) cdTimer.innerText = `${rm}m ${rs}s`;
+      } else if (nextBlock) {
+        const startSec = timeStringToMinutes(nextBlock.start) * 60;
+        const rem = Math.max(0, startSec - currentSeconds);
+        const rm = Math.floor(rem / 60);
+        const rs = rem % 60;
+        if (cdLabel) cdLabel.innerText = `Next Block (${nextBlock.start}) starts in:`;
+        if (cdTimer) cdTimer.innerText = `${rm}m ${rs}s`;
+      } else {
+        if (cdLabel) cdLabel.innerText = "Day Complete:";
+        if (cdTimer) cdTimer.innerText = "00m 00s";
+      }
+
+      // Update badges in timeline list
+      currentDailyPlan.blocks.forEach(b => {
+        const nowBadge = document.getElementById(`badge-now-${b.id}`);
+        const nextBadge = document.getElementById(`badge-next-${b.id}`);
+        const card = document.getElementById(`block-card-${b.id}`);
+
+        if (activeBlock && activeBlock.id === b.id) {
+          if (nowBadge) nowBadge.classList.remove('hidden');
+          if (nextBadge) nextBadge.classList.add('hidden');
+          if (card) card.classList.add('ring-2', 'ring-emerald-500', 'bg-emerald-50/30');
+        } else if (nextBlock && nextBlock.id === b.id) {
+          if (nowBadge) nowBadge.classList.add('hidden');
+          if (nextBadge) nextBadge.classList.remove('hidden');
+          if (card) card.classList.remove('ring-2', 'ring-emerald-500', 'bg-emerald-50/30');
+        } else {
+          if (nowBadge) nowBadge.classList.add('hidden');
+          if (nextBadge) nextBadge.classList.add('hidden');
+          if (card) card.classList.remove('ring-2', 'ring-emerald-500', 'bg-emerald-50/30');
+        }
+      });
+    }
+
+    // =========================================================================
+    // WEB NOTIFICATIONS API & 30-SECOND CHECK LOOP
+    // =========================================================================
+    function enableNotifications() {
+      if (!('Notification' in window)) {
+        showToast('Notifications are not supported by this browser.');
+        return;
+      }
+
+      Notification.requestPermission().then(permission => {
+        updateNotificationButtonState(permission);
+        if (permission === 'granted') {
+          showToast('Notifications enabled! You will receive alerts before each block.');
+          try {
+            new Notification("Daily Planner Active", {
+              body: "Browser alerts are now active for today's schedule.",
+              icon: "assets/lakshay_photo.jpg"
+            });
+          } catch (e) {}
+          startNotificationLoop();
+        } else if (permission === 'denied') {
+          showToast('Notifications were denied in browser permissions.');
+        }
+      });
+    }
+
+    function updateNotificationButtonState(permission) {
+      const btn = document.getElementById('btnToggleNotifications');
+      const icon = document.getElementById('notifIcon');
+      const label = document.getElementById('notifBtnLabel');
+      if (!btn || !label) return;
+
+      const perm = permission || (('Notification' in window) ? Notification.permission : 'default');
+      if (perm === 'granted') {
+        btn.className = "inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-800 text-white text-xs font-bold shadow-sm transition-all cursor-pointer";
+        if (icon) icon.innerText = "✅";
+        label.innerText = "Alerts Active";
+      } else if (perm === 'denied') {
+        btn.className = "inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-stone-200 text-stone-500 text-xs font-semibold shadow-2xs transition-all cursor-not-allowed";
+        if (icon) icon.innerText = "🔕";
+        label.innerText = "Alerts Blocked";
+      } else {
+        btn.className = "inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-stone-900 hover:bg-stone-800 text-white text-xs font-bold shadow-sm transition-all cursor-pointer";
+        if (icon) icon.innerText = "🔔";
+        label.innerText = "Enable Alerts";
+      }
+    }
+
+    function startNotificationLoop() {
+      if (dailyNotificationInterval) clearInterval(dailyNotificationInterval);
+      dailyNotificationInterval = setInterval(checkAndTriggerNotifications, 30000);
+      checkAndTriggerNotifications();
+    }
+
+    function checkAndTriggerNotifications() {
+      if (!('Notification' in window) || Notification.permission !== 'granted' || !currentDailyPlan) return;
+
+      const nowStr = getCurrentTimeIST();
+      const [h, m] = nowStr.split(':').map(Number);
+      const currentMinutes = h * 60 + m;
+
+      currentDailyPlan.blocks.forEach(b => {
+        const startMin = timeStringToMinutes(b.start);
+        const leadMin = b.notify_before_min || 10;
+        const triggerMin = startMin - leadMin;
+
+        // Trigger if within 1 minute of trigger window
+        if (currentMinutes >= triggerMin && currentMinutes < startMin) {
+          const sessionKey = `notified_${currentDailyPlan.date}_${b.id}_lead`;
+          if (!sessionStorage.getItem(sessionKey)) {
+            sessionStorage.setItem(sessionKey, 'true');
+            new Notification(`Upcoming: ${b.title}`, {
+              body: `Starts in ${startMin - currentMinutes} mins (${b.start} IST).\n${b.details}`,
+              icon: "assets/lakshay_photo.jpg"
+            });
+          }
+        }
+
+        // Trigger right at start
+        if (currentMinutes === startMin) {
+          const sessionKey = `notified_${currentDailyPlan.date}_${b.id}_start`;
+          if (!sessionStorage.getItem(sessionKey)) {
+            sessionStorage.setItem(sessionKey, 'true');
+            new Notification(`NOW: ${b.title}`, {
+              body: `Active until ${b.end} IST.\n${b.details}`,
+              icon: "assets/lakshay_photo.jpg"
+            });
+          }
+        }
+      });
+    }
+
+    // =========================================================================
+    // ICALENDAR (.ics) RFC 5545 EXPORT WITH VALARM REMINDERS
+    // =========================================================================
+    function downloadTodayICS() {
+      if (!currentDailyPlan || !currentDailyPlan.blocks) {
+        showToast("No active daily plan to download.");
+        return;
+      }
+
+      const plan = currentDailyPlan;
+      const dateParts = plan.date.split('-');
+      const year = dateParts[0];
+      const month = dateParts[1];
+      const day = dateParts[2];
+      const dateCompact = `${year}${month}${day}`;
+
+      const nowUtc = new Date().toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+
+      let ics = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//Lakshay Nagpal//Daily Planner//EN',
+        'CALSCALE:GREGORIAN',
+        'METHOD:PUBLISH',
+        'X-WR-CALNAME:Lakshay Daily Plan (' + plan.date + ')',
+        'X-WR-TIMEZONE:Asia/Kolkata',
+        'BEGIN:VTIMEZONE',
+        'TZID:Asia/Kolkata',
+        'BEGIN:STANDARD',
+        'DTSTART:19700101T000000',
+        'TZOFFSETFROM:+0530',
+        'TZOFFSETTO:+0530',
+        'TZNAME:IST',
+        'END:STANDARD',
+        'END:VTIMEZONE'
+      ];
+
+      plan.blocks.forEach(b => {
+        const startCompact = b.start.replace(':', '') + '00';
+        const endCompact = b.end.replace(':', '') + '00';
+        const dtstart = `DTSTART;TZID=Asia/Kolkata:${dateCompact}T${startCompact}`;
+        const dtend = `DTEND;TZID=Asia/Kolkata:${dateCompact}T${endCompact}`;
+        const uid = `block-${b.id}-${plan.date}@lakshayn0001.github.io`;
+        const summary = `[${b.stream.toUpperCase()}] ${b.title}`;
+        const description = (b.details || '').replace(/\n/g, '\\n');
+        const notifyMin = b.notify_before_min || 10;
+
+        ics.push(
+          'BEGIN:VEVENT',
+          `UID:${uid}`,
+          `DTSTAMP:${nowUtc}`,
+          dtstart,
+          dtend,
+          `SUMMARY:${summary}`,
+          `DESCRIPTION:${description}`,
+          `CATEGORIES:${b.stream.toUpperCase()}`,
+          `PRIORITY:${b.priority}`,
+          'BEGIN:VALARM',
+          `TRIGGER:-PT${notifyMin}M`,
+          'ACTION:DISPLAY',
+          `DESCRIPTION:Reminder: ${b.title} starts in ${notifyMin} minutes`,
+          'END:VALARM',
+          'END:VEVENT'
+        );
+      });
+
+      ics.push('END:VCALENDAR');
+
+      const icsString = ics.join('\r\n');
+      const blob = new Blob([icsString], { type: 'text/calendar;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `lakshay_daily_plan_${plan.date}.ics`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+
+      showToast(`Downloaded ${plan.date} calendar (.ics) with VALARMs!`);
+    }
+
+    function escapeHtml(text) {
+      if (!text) return '';
+      return String(text)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    // Auto-initialize daily plan and notification state on window load
+    window.addEventListener('DOMContentLoaded', () => {
+      loadDailyPlan();
+      updateNotificationButtonState();
+      if ('Notification' in window && Notification.permission === 'granted') {
+        startNotificationLoop();
+      }
+    });
   </script>
 </body>
 </html>

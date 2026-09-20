@@ -1,0 +1,124 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DailyPlan",
+  "description": "Daily notification and execution plan schema for Lakshay Nagpal's Dashboard",
+  "type": "object",
+  "required": [
+    "date",
+    "timezone",
+    "generated_at",
+    "summary",
+    "urgent_alerts",
+    "blocks",
+    "totals_by_stream_min"
+  ],
+  "properties": {
+    "date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "Calendar date of the plan in YYYY-MM-DD format (Asia/Kolkata timezone)"
+    },
+    "timezone": {
+      "type": "string",
+      "default": "Asia/Kolkata"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO timestamp of when this plan was compiled"
+    },
+    "summary": {
+      "type": "string",
+      "description": "High-level strategic executive summary of today's focus and deliverables"
+    },
+    "urgent_alerts": {
+      "type": "array",
+      "description": "Statutory deadlines and urgent prerequisite actions within 7 days",
+      "items": {
+        "type": "object",
+        "required": ["title", "deadline", "action"],
+        "properties": {
+          "title": { "type": "string" },
+          "deadline": { "type": "string", "description": "Human-readable or ISO timestamp deadline" },
+          "action": { "type": "string", "description": "Specific action required" }
+        }
+      }
+    },
+    "blocks": {
+      "type": "array",
+      "description": "Ordered non-overlapping time blocks for the day",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "start",
+          "end",
+          "title",
+          "stream",
+          "details",
+          "links",
+          "priority",
+          "notify_before_min",
+          "verify"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for this block"
+          },
+          "start": {
+            "type": "string",
+            "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$",
+            "description": "Start time in HH:MM (24-hour) format"
+          },
+          "end": {
+            "type": "string",
+            "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$",
+            "description": "End time in HH:MM (24-hour) format"
+          },
+          "title": {
+            "type": "string",
+            "description": "Block header/title"
+          },
+          "stream": {
+            "type": "string",
+            "enum": ["cat", "germany", "job", "dsa", "health", "rest"],
+            "description": "Category stream of this block"
+          },
+          "details": {
+            "type": "string",
+            "description": "Detailed actionable checklist and deliverables for this session"
+          },
+          "links": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Clickable resources, portal links, or internal anchor links"
+          },
+          "priority": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 3,
+            "description": "1 = Highest/Critical, 2 = Medium, 3 = Flexible/Maintenance"
+          },
+          "notify_before_min": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 60,
+            "default": 10,
+            "description": "Lead time in minutes for browser notifications and calendar VALARM"
+          },
+          "verify": {
+            "type": "boolean",
+            "description": "True if this block requires live official verification on external portals"
+          }
+        }
+      }
+    },
+    "totals_by_stream_min": {
+      "type": "object",
+      "description": "Total planned duration in minutes aggregated per stream",
+      "additionalProperties": { "type": "number" }
+    }
+  },
+  "additionalProperties": false
+}

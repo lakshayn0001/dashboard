@@ -1,0 +1,86 @@
+{
+  "date": "2026-09-21",
+  "timezone": "Asia/Kolkata",
+  "generated_at": "2026-09-20T19:00:00.000Z",
+  "summary": "Phase 1 / Week 2 launch: High-intensity Arithmetic Percentages drills and Linear Arrangements, dual job search application batch, and German track 72-hour zero-fee prerequisite audits before CAT registration closes.",
+  "urgent_alerts": [
+    {
+      "title": "CAT 2026 Registration Close Tomorrow",
+      "deadline": "22 Sep 2026, 5:00 PM IST",
+      "action": "Ensure application form, 6 city preferences, and ₹2,700 fee payment are completed on iimcat.ac.in before the 5 PM cutoff."
+    },
+    {
+      "title": "German Track 72-Hour Zero-Fee Prerequisite Audit",
+      "deadline": "22 Sep 2026, 11:59 PM IST",
+      "action": "Complete Anabin H+ check for MDU, audit dMAT status on aps-india.de/dmat & g.a.s.t., run Passau interactive guide, and email MDU for 100% English MOI letter."
+    }
+  ],
+  "blocks": [
+    {
+      "id": "block-dsa-0730",
+      "start": "07:30",
+      "end": "08:15",
+      "title": "DSA Algorithmic Practice (2 Problems)",
+      "stream": "dsa",
+      "details": "Solve 2 LeetCode problems (1 Medium on Two Pointers / Sliding Window + 1 Easy/Review) using DSA Master Tracker.",
+      "links": ["dsa_master_tracker.html"],
+      "priority": 1,
+      "notify_before_min": 10,
+      "verify": false
+    },
+    {
+      "id": "block-job-0815",
+      "start": "08:15",
+      "end": "09:00",
+      "title": "Monday Job Search Application Batch (8–10 Submissions)",
+      "stream": "job",
+      "details": "Dedicated Monday morning outreach: submit 8–10 tailored applications on Instahyre and LinkedIn for Full-Stack / SWE roles (Immediate Joiner advantage).",
+      "links": ["profile.html#cold-email", "https://www.instahyre.com"],
+      "priority": 2,
+      "notify_before_min": 10,
+      "verify": false
+    },
+    {
+      "id": "block-cat-qa-dilr-1000",
+      "start": "10:00",
+      "end": "12:00",
+      "title": "CAT Day 3: Percentages Multipliers & Linear Seating Logic",
+      "stream": "cat",
+      "details": "QA: Percentages Mastery—decimal multipliers, successive changes, and 20 practice drills from Rodha. DILR: 2 timed Linear Seating Arrangement sets from CAT 2022 Slot 1 & 2 on 2IIM.",
+      "links": ["cat_2026_syllabus_roadmap.html#day-3", "https://myzone.careerlauncher.com/login.jsp"],
+      "priority": 1,
+      "notify_before_min": 10,
+      "verify": false
+    },
+    {
+      "id": "block-germany-1430",
+      "start": "14:30",
+      "end": "15:30",
+      "title": "Germany Prerequisite Audit: Anabin, dMAT & MDU MOI",
+      "stream": "germany",
+      "details": "Execute 72-hour zero-fee checklist: 1. Confirm MDU H+ on anabin.kmk.org. 2. Verify dMAT status on aps-india.de/dmat. 3. Run Passau interactive guide. 4. Email MDU for 100% English MOI letter.",
+      "links": ["deadlines_calendar.html#prerequisite-tasks", "https://anabin.kmk.org", "https://aps-india.de/dmat", "https://www.uni-passau.de/en/apply"],
+      "priority": 1,
+      "notify_before_min": 10,
+      "verify": true
+    },
+    {
+      "id": "block-cat-varc-1630",
+      "start": "16:30",
+      "end": "18:00",
+      "title": "CAT Day 3: VARC Philosophy RC & Verbal Logic Drills",
+      "stream": "cat",
+      "details": "3 Reading Comprehension passages (Aeon Philosophy/Sociology) + 8 Verbal Ability questions (Para-jumbles & Odd-One-Out) on Career Launcher MyZone + error log entry.",
+      "links": ["cat_2026_syllabus_roadmap.html#day-3", "https://myzone.careerlauncher.com/login.jsp"],
+      "priority": 1,
+      "notify_before_min": 10,
+      "verify": false
+    }
+  ],
+  "totals_by_stream_min": {
+    "dsa": 45,
+    "job": 45,
+    "cat": 210,
+    "germany": 60
+  }
+}
