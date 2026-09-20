@@ -6,6 +6,8 @@
   <meta name="description" content="Ultimate Production TypeScript Curriculum & Interview Mastery Guide for Full-Stack Engineers - React 19, Next.js 16/15, Node.js, Express, PostgreSQL, 79 Topics, and 125 Technical Interview Q&As.">
   <title>TypeScript Full-Stack Curriculum &amp; Interview Mastery | Lakshay Nagpal</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typescript/5.4.5/typescript.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/zod@3.22.4/lib/index.umd.js"></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -371,6 +373,75 @@
       background: linear-gradient(90deg, #2d6a4f, #059669);
       border-radius: 999px;
       transition: width 0.3s ease;
+    }
+
+    /* Compiler Practice Buttons */
+    .practice-btn {
+      background: linear-gradient(135deg, #2d6a4f 0%, #1b4332 100%);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: #ffffff !important;
+      border-radius: 5px;
+      padding: 3px 9px;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: var(--font-mono);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.15s ease;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    }
+    .practice-btn:hover {
+      background: linear-gradient(135deg, #388663 0%, #225a43 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 3px 8px rgba(45, 106, 79, 0.4);
+      color: #ffffff !important;
+      text-decoration: none !important;
+    }
+
+    .topic-practice-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(45, 106, 79, 0.35);
+      background: rgba(45, 106, 79, 0.08);
+      color: #2d6a4f;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.15s;
+    }
+    .topic-practice-btn:hover {
+      background: #2d6a4f;
+      color: white;
+      border-color: #2d6a4f;
+      transform: translateY(-1px);
+    }
+    [data-theme="dark"] .topic-practice-btn {
+      background: rgba(82, 183, 136, 0.15);
+      color: #74c69d;
+      border-color: rgba(82, 183, 136, 0.3);
+    }
+    [data-theme="dark"] .topic-practice-btn:hover {
+      background: #52b788;
+      color: #111a12;
+    }
+
+    /* Studio Modal Styles */
+    #tsCompilerWindow.is-maximized {
+      max-width: 98vw !important;
+      height: 96vh !important;
+      max-height: 96vh !important;
+      border-radius: 16px !important;
+    }
+
+    .tab-size-2 {
+      tab-size: 2;
+      -moz-tab-size: 2;
     }
 
     /* Action Buttons */
@@ -1746,6 +1817,10 @@
         </div>
 
         <div class="nav-actions">
+          <button onclick="openCompilerPlayground()" class="btn btn-primary shadow-sm" title="Open Interactive TypeScript Compiler & Practice Studio (Cmd+K / Ctrl+K)">
+            <span>⚡</span>
+            <span>Compiler Studio</span>
+          </button>
           <a href="learning_hub.html" class="droplet-pill px-3 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 text-xs font-semibold hidden md:inline-flex items-center gap-1.5 transition-all">
             <span>🧠</span>
             <span>Learning Hub</span>
@@ -1805,6 +1880,11 @@
             <span>125 Interview Q&amp;As</span>
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
           </a>
+
+          <button onclick="openCompilerPlayground()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-gradient-to-tr from-emerald-800 via-teal-800 to-olive-900 hover:from-emerald-900 hover:to-teal-900 text-white text-xs font-bold shadow-md transition-all cursor-pointer transform hover:scale-102">
+            <span>⚡</span>
+            <span>Open TS Compiler Studio</span>
+          </button>
         </div>
 
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 pt-4">
@@ -2133,6 +2213,9 @@
   <div class="topic-card-header">
     <h3>1.1 What TypeScript is and is not</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('1.1')" title="Practice Topic 1.1 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('1.1')" id="btn-done-1.1">
         <span>✓</span> Mark Done
       </button>
@@ -2144,7 +2227,10 @@
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Compile-Time Safety vs Runtime Reality</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// 1. TypeScript is an ERASE-ONLY type system
 type User = { id: string; name: string; email: string };
@@ -2237,6 +2323,9 @@ function parseUser(raw: unknown): User {
   <div class="topic-card-header">
     <h3>1.2 Tooling: install, tsc, ts-node, tsx, and editor</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('1.2')" title="Practice Topic 1.2 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('1.2')" id="btn-done-1.2">
         <span>✓</span> Mark Done
       </button>
@@ -2248,7 +2337,10 @@ function parseUser(raw: unknown): User {
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Project Setup &amp; Fast Execution Tooling</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// package.json dependencies
 // {
@@ -2337,6 +2429,9 @@ function parseUser(raw: unknown): User {
   <div class="topic-card-header">
     <h3>1.3 Primitive types and special types (first pass)</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('1.3')" title="Practice Topic 1.3 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('1.3')" id="btn-done-1.3">
         <span>✓</span> Mark Done
       </button>
@@ -2348,7 +2443,10 @@ function parseUser(raw: unknown): User {
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Primitives, Top Types, and Bottom Types</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// Primitives
 const id: string = &quot;usr_01&quot;;
@@ -2432,6 +2530,9 @@ function throwError(msg: string): never {
   <div class="topic-card-header">
     <h3>1.4 Type annotations vs type inference</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('1.4')" title="Practice Topic 1.4 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('1.4')" id="btn-done-1.4">
         <span>✓</span> Mark Done
       </button>
@@ -2443,7 +2544,10 @@ function throwError(msg: string): never {
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · When to Annotate vs When to Let TS Infer</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// ❌ OVER-ANNOTATION (NOISY):
 const count: number = 10;
@@ -2529,6 +2633,9 @@ scores.forEach((score) =&gt; {
   <div class="topic-card-header">
     <h3>1.5 Arrays, tuples, and readonly arrays</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('1.5')" title="Practice Topic 1.5 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('1.5')" id="btn-done-1.5">
         <span>✓</span> Mark Done
       </button>
@@ -2540,7 +2647,10 @@ scores.forEach((score) =&gt; {
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Homogeneous Arrays vs Positional Tuples</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// 1. Homogeneous Array
 const numbers: number[] = [1, 2, 3];
@@ -2628,6 +2738,9 @@ const loc: Coordinate = [28.6139, 77.2090];
   <div class="topic-card-header">
     <h3>1.6 Functions — beginner</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('1.6')" title="Practice Topic 1.6 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('1.6')" id="btn-done-1.6">
         <span>✓</span> Mark Done
       </button>
@@ -2639,7 +2752,10 @@ const loc: Coordinate = [28.6139, 77.2090];
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Parameter Types, Optionality, and Void Returns</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// Optional parameter (?) vs Default parameter
 function sendInvite(toEmail: string, role: string = &quot;member&quot;, note?: string): boolean {
@@ -2721,6 +2837,9 @@ const ascending: Comparator = (x, y) =&gt; x - y;</code></pre>
   <div class="topic-card-header">
     <h3>1.7 Object types — beginner</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('1.7')" title="Practice Topic 1.7 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('1.7')" id="btn-done-1.7">
         <span>✓</span> Mark Done
       </button>
@@ -2732,7 +2851,10 @@ const ascending: Comparator = (x, y) =&gt; x - y;</code></pre>
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Object Shapes, Excess Property Checks &amp; Readonly</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>type UserProfile = {
   readonly id: string;        // Cannot be reassigned
@@ -2821,6 +2943,9 @@ function printPoint(p: Point) { console.log(p.x, p.y); }
   <div class="topic-card-header">
     <h3>1.8 Type aliases</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('1.8')" title="Practice Topic 1.8 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('1.8')" id="btn-done-1.8">
         <span>✓</span> Mark Done
       </button>
@@ -2832,7 +2957,10 @@ function printPoint(p: Point) { console.log(p.x, p.y); }
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Naming Types, Unions, and Function Signatures</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// 1. Primitive Alias (Note: structural, NOT nominal)
 type UserId = string; 
@@ -2915,6 +3043,9 @@ const notFound: HttpStatus = 404;</code></pre>
   <div class="topic-card-header">
     <h3>1.9 Interfaces — beginner</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('1.9')" title="Practice Topic 1.9 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('1.9')" id="btn-done-1.9">
         <span>✓</span> Mark Done
       </button>
@@ -2926,7 +3057,10 @@ const notFound: HttpStatus = 404;</code></pre>
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Extending Interfaces &amp; Declaration Merging</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>interface Person {
   id: string;
@@ -3022,6 +3156,9 @@ const item: Product = { id: &quot;p1&quot;, name: &quot;Keyboard&quot;, priceCen
   <div class="topic-card-header">
     <h3>1.10 Union types — beginner</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('1.10')" title="Practice Topic 1.10 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('1.10')" id="btn-done-1.10">
         <span>✓</span> Mark Done
       </button>
@@ -3033,7 +3170,10 @@ const item: Product = { id: &quot;p1&quot;, name: &quot;Keyboard&quot;, priceCen
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Handling Disjoint Types &amp; Narrowing</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>type ApiResponse = 
   | { success: true; data: string[] }
@@ -3118,6 +3258,9 @@ function handleResponse(res: ApiResponse) {
   <div class="topic-card-header">
     <h3>1.11 any, unknown, never, void — working knowledge</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('1.11')" title="Practice Topic 1.11 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('1.11')" id="btn-done-1.11">
         <span>✓</span> Mark Done
       </button>
@@ -3129,7 +3272,10 @@ function handleResponse(res: ApiResponse) {
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · The Quartet: any vs unknown vs never vs void</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// 1. any: Disables type-checker completely (viral contagion!)
 let bad: any = 10;
@@ -3223,6 +3369,9 @@ if (typeof safeData === &quot;string&quot;) {
   <div class="topic-card-header">
     <h3>1.12 Type assertions (as) — first rules</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('1.12')" title="Practice Topic 1.12 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('1.12')" id="btn-done-1.12">
         <span>✓</span> Mark Done
       </button>
@@ -3234,7 +3383,10 @@ if (typeof safeData === &quot;string&quot;) {
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Type Assertions vs Runtime Narrowing</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// ❌ THE DANGEROUS ASSERTION LIE:
 const element = document.getElementById(&quot;search-box&quot;) as HTMLInputElement;
@@ -3322,6 +3474,9 @@ console.log(item.toFixed(2));</code></pre>
   <div class="topic-card-header">
     <h3>1.13 tsconfig.json and strict mode — beginner</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('1.13')" title="Practice Topic 1.13 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('1.13')" id="btn-done-1.13">
         <span>✓</span> Mark Done
       </button>
@@ -3333,7 +3488,10 @@ console.log(item.toFixed(2));</code></pre>
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · (A) Next.js App vs (B) Node Library tsconfig.json</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// ==============================================================
 // CONFIG A: Next.js Application (Type-Check Only; Turbopack Bundles)
@@ -3643,6 +3801,9 @@ function isUser(val: unknown): val is User {
   <div class="topic-card-header">
     <h3>2.1 Literal types and widening</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('2.1')" title="Practice Topic 2.1 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('2.1')" id="btn-done-2.1">
         <span>✓</span> Mark Done
       </button>
@@ -3654,7 +3815,10 @@ function isUser(val: unknown): val is User {
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Literal Types vs Widened Types</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// 1. Literal Widening with let:
 let env = &quot;development&quot;; // Inferred as: string (can be reassigned to any string)
@@ -3742,6 +3906,9 @@ let widened = original;   // Widened to: string
   <div class="topic-card-header">
     <h3>2.2 Intersection types</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('2.2')" title="Practice Topic 2.2 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('2.2')" id="btn-done-2.2">
         <span>✓</span> Mark Done
       </button>
@@ -3753,7 +3920,10 @@ let widened = original;   // Widened to: string
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Combining Shapes &amp; Conflicting Intersections</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>type Timestamps = {
   createdAt: Date;
@@ -3850,6 +4020,9 @@ const record: TimestampedEntity = {
   <div class="topic-card-header">
     <h3>2.3 Narrowing and type guards</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('2.3')" title="Practice Topic 2.3 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('2.3')" id="btn-done-2.3">
         <span>✓</span> Mark Done
       </button>
@@ -3861,7 +4034,10 @@ const record: TimestampedEntity = {
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Type Predicates &amp; Assertion Functions</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>type Admin = { role: &quot;admin&quot;; permissions: string[] };
 type Customer = { role: &quot;customer&quot;; loyaltyPoints: number };
@@ -3958,6 +4134,9 @@ function processAdminAction(acc: Account) {
   <div class="topic-card-header">
     <h3>2.4 Discriminated unions</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('2.4')" title="Practice Topic 2.4 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('2.4')" id="btn-done-2.4">
         <span>✓</span> Mark Done
       </button>
@@ -4009,7 +4188,10 @@ switch (state.status) {
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Exhaustive State Machines with Tagged Unions</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>type PaymentState =
   | { status: &quot;pending&quot; }
@@ -4113,6 +4295,9 @@ function handle(res: ApiResponse&lt;number&gt;) {
   <div class="topic-card-header">
     <h3>2.5 Functions — intermediate</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('2.5')" title="Practice Topic 2.5 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('2.5')" id="btn-done-2.5">
         <span>✓</span> Mark Done
       </button>
@@ -4124,7 +4309,10 @@ function handle(res: ApiResponse&lt;number&gt;) {
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Function Overloads &amp; this-Parameter Typing</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// 1. Function Overloads:
 // Overload signatures (public interface):
@@ -4213,6 +4401,9 @@ function formatValue(v: number | string): string {
   <div class="topic-card-header">
     <h3>2.6 Classes and OOP in TypeScript</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('2.6')" title="Practice Topic 2.6 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('2.6')" id="btn-done-2.6">
         <span>✓</span> Mark Done
       </button>
@@ -4224,7 +4415,10 @@ function formatValue(v: number | string): string {
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Parameter Properties &amp; Runtime Private (#field)</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>interface DatabaseConfig {
   connectionUrl: string;
@@ -4333,6 +4527,9 @@ console.log(c.id); // Public
   <div class="topic-card-header">
     <h3>2.7 Generics — intermediate</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('2.7')" title="Practice Topic 2.7 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('2.7')" id="btn-done-2.7">
         <span>✓</span> Mark Done
       </button>
@@ -4344,7 +4541,10 @@ console.log(c.id); // Public
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Generic Constraints &amp; Keyof Parameterization</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// 1. Generic with constraint (T must have an &#x27;id&#x27; property):
 interface HasId {
@@ -4431,6 +4631,9 @@ const n = getFirst([10, 20]); // Inferred as: number | undefined</code></pre>
   <div class="topic-card-header">
     <h3>2.8 Built-in utility types — working set</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('2.8')" title="Practice Topic 2.8 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('2.8')" id="btn-done-2.8">
         <span>✓</span> Mark Done
       </button>
@@ -4442,7 +4645,10 @@ const n = getFirst([10, 20]); // Inferred as: number | undefined</code></pre>
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Essential Utility Types in Production</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>type User = {
   id: string;
@@ -4534,6 +4740,9 @@ type PublicUser = Omit&lt;User, &quot;passwordHash&quot;&gt;;
   <div class="topic-card-header">
     <h3>2.9 as const and satisfies</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('2.9')" title="Practice Topic 2.9 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('2.9')" id="btn-done-2.9">
         <span>✓</span> Mark Done
       </button>
@@ -4545,7 +4754,10 @@ type PublicUser = Omit&lt;User, &quot;passwordHash&quot;&gt;;
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · as const vs satisfies in Modern TypeScript</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>type RouteConfig = {
   path: string;
@@ -4645,6 +4857,9 @@ const hex = theme.primary;</code></pre>
   <div class="topic-card-header">
     <h3>2.10 Enums — use sparingly</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('2.10')" title="Practice Topic 2.10 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('2.10')" id="btn-done-2.10">
         <span>✓</span> Mark Done
       </button>
@@ -4656,7 +4871,10 @@ const hex = theme.primary;</code></pre>
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Why Modern TS Prefers Literal Unions Over Enums</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// ⚠️ NUMERIC ENUMS HAVE REVERSE MAPPING &amp; RUNTIME WEIGHT:
 enum StatusEnum {
@@ -4752,6 +4970,9 @@ export type Role = (typeof Role)[keyof typeof Role]; // &quot;admin&quot; | &quo
   <div class="topic-card-header">
     <h3>2.11 Modules: ESM, import type, and file structure</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('2.11')" title="Practice Topic 2.11 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('2.11')" id="btn-done-2.11">
         <span>✓</span> Mark Done
       </button>
@@ -4763,7 +4984,10 @@ export type Role = (typeof Role)[keyof typeof Role]; // &quot;admin&quot; | &quo
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Type-Only Imports &amp; Module Isolation</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// types.ts
 export type User = { id: string; name: string };
@@ -4846,6 +5070,9 @@ export function connect(cfg: DatabaseConfig) { /* ... */ }</code></pre>
   <div class="topic-card-header">
     <h3>2.12 DOM typing</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('2.12')" title="Practice Topic 2.12 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('2.12')" id="btn-done-2.12">
         <span>✓</span> Mark Done
       </button>
@@ -4857,7 +5084,10 @@ export function connect(cfg: DatabaseConfig) { /* ... */ }</code></pre>
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · DOM Events, Elements, and Form Narrowing</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// 1. Generic querySelector:
 const input = document.querySelector&lt;HTMLInputElement&gt;(&quot;#email-input&quot;);
@@ -5142,6 +5372,9 @@ console.log(user.name.toUpperCase());</code></pre>
   <div class="topic-card-header">
     <h3>3.1 keyof type operator</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('3.1')" title="Practice Topic 3.1 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('3.1')" id="btn-done-3.1">
         <span>✓</span> Mark Done
       </button>
@@ -5153,7 +5386,10 @@ console.log(user.name.toUpperCase());</code></pre>
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Extracting Property Keys from Shapes and Unions</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>type User = { id: string; name: string; email: string };
 type UserKeys = keyof User; // &quot;id&quot; | &quot;name&quot; | &quot;email&quot;
@@ -5237,6 +5473,9 @@ type UnionKeys = keyof (A | B); // Inferred as: &quot;id&quot; (only the common 
   <div class="topic-card-header">
     <h3>3.2 typeof type operator</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('3.2')" title="Practice Topic 3.2 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('3.2')" id="btn-done-3.2">
         <span>✓</span> Mark Done
       </button>
@@ -5248,7 +5487,10 @@ type UnionKeys = keyof (A | B); // Inferred as: &quot;id&quot; (only the common 
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Deriving Types Directly from Runtime Objects</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// Single Source of Truth: The runtime object defines the type!
 const appConfig = {
@@ -5334,6 +5576,9 @@ type ServerInfo = ReturnType&lt;typeof makeServer&gt;;</code></pre>
   <div class="topic-card-header">
     <h3>3.3 Indexed access types</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('3.3')" title="Practice Topic 3.3 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('3.3')" id="btn-done-3.3">
         <span>✓</span> Mark Done
       </button>
@@ -5345,7 +5590,10 @@ type ServerInfo = ReturnType&lt;typeof makeServer&gt;;</code></pre>
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Indexing Object Properties and Arrays (T[K] and T[number])</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>type ApiResponse = {
   meta: { total: number; page: number };
@@ -5431,6 +5679,9 @@ type Color = (typeof COLORS)[number]; // &quot;red&quot; | &quot;green&quot; | &
   <div class="topic-card-header">
     <h3>3.4 Mapped types</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('3.4')" title="Practice Topic 3.4 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('3.4')" id="btn-done-3.4">
         <span>✓</span> Mark Done
       </button>
@@ -5442,7 +5693,10 @@ type Color = (typeof COLORS)[number]; // &quot;red&quot; | &quot;green&quot; | &
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Transforming Object Shapes &amp; Key Remapping</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// 1. Reimplementing Partial&lt;T&gt; and Readonly&lt;T&gt;:
 type MyPartial&lt;T&gt; = { [K in keyof T]?: T[K] };
@@ -5527,6 +5781,9 @@ type UserGetters = Getters&lt;User&gt;;
   <div class="topic-card-header">
     <h3>3.5 Conditional types</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('3.5')" title="Practice Topic 3.5 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('3.5')" id="btn-done-3.5">
         <span>✓</span> Mark Done
       </button>
@@ -5538,7 +5795,10 @@ type UserGetters = Getters&lt;User&gt;;
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Type-Level Branching (T extends U ? X : Y)</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// Type-level ternary:
 type IsString&lt;T&gt; = T extends string ? true : false;
@@ -5620,6 +5880,9 @@ type Active = MyExclude&lt;&quot;a&quot; | &quot;b&quot; | &quot;c&quot;, &quot;
   <div class="topic-card-header">
     <h3>3.6 infer keyword</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('3.6')" title="Practice Topic 3.6 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('3.6')" id="btn-done-3.6">
         <span>✓</span> Mark Done
       </button>
@@ -5631,7 +5894,10 @@ type Active = MyExclude&lt;&quot;a&quot; | &quot;b&quot; | &quot;c&quot;, &quot;
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Pattern Matching &amp; Extracting Hidden Types</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// 1. Reimplementing ReturnType&lt;T&gt;:
 type MyReturnType&lt;T&gt; = T extends (...args: any[]) =&gt; infer R ? R : never;
@@ -5714,6 +5980,9 @@ type Value = AwaitResult&lt;Promise&lt;string&gt;&gt;; // string</code></pre>
   <div class="topic-card-header">
     <h3>3.7 Template literal types</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('3.7')" title="Practice Topic 3.7 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('3.7')" id="btn-done-3.7">
         <span>✓</span> Mark Done
       </button>
@@ -5725,7 +5994,10 @@ type Value = AwaitResult&lt;Promise&lt;string&gt;&gt;; // string</code></pre>
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · String Type Computation &amp; Pattern Matching</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// 1. Event listener types:
 type Entity = &quot;user&quot; | &quot;order&quot;;
@@ -5811,6 +6083,9 @@ type UserGetters = Getters&lt;{ name: string; age: number }&gt;;
   <div class="topic-card-header">
     <h3>3.8 Recursive types</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('3.8')" title="Practice Topic 3.8 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('3.8')" id="btn-done-3.8">
         <span>✓</span> Mark Done
       </button>
@@ -5822,7 +6097,10 @@ type UserGetters = Getters&lt;{ name: string; age: number }&gt;;
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Arbitrary JSON Values &amp; Comment Tree Data</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// 1. Type-Safe JSON Representation:
 type JsonPrimitive = string | number | boolean | null;
@@ -5913,6 +6191,9 @@ type CommentNode = {
   <div class="topic-card-header">
     <h3>3.9 Distributive conditional types (mastery)</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('3.9')" title="Practice Topic 3.9 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('3.9')" id="btn-done-3.9">
         <span>✓</span> Mark Done
       </button>
@@ -5924,7 +6205,10 @@ type CommentNode = {
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Controlling Distribution Over Union Constituents</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// 1. Naked type parameter: DISTRIBUTES over unions:
 type ToArray&lt;T&gt; = T extends any ? T[] : never;
@@ -6012,6 +6296,9 @@ type ND = NonDistributive&lt;string | number&gt;; // (string | number)[]</code><
   <div class="topic-card-header">
     <h3>3.10 Type compatibility and structural typing</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('3.10')" title="Practice Topic 3.10 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('3.10')" id="btn-done-3.10">
         <span>✓</span> Mark Done
       </button>
@@ -6023,7 +6310,10 @@ type ND = NonDistributive&lt;string | number&gt;; // (string | number)[]</code><
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Duck Typing vs Freshness &amp; Assignability</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>type Point2D = { x: number; y: number };
 type Point3D = { x: number; y: number; z: number };
@@ -6111,6 +6401,9 @@ let a: Article = b; // ✅ Allowed! TS checks shape, not declaration names.</cod
   <div class="topic-card-header">
     <h3>3.11 Variance (functions and generics)</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('3.11')" title="Practice Topic 3.11 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('3.11')" id="btn-done-3.11">
         <span>✓</span> Mark Done
       </button>
@@ -6160,7 +6453,10 @@ let handleDog: Consumer&lt;Dog&gt; = handleAnimal; // ✅ LEGAL
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Covariant Returns and Contravariant Parameters</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>class Animal { name = &quot;animal&quot;; }
 class Dog extends Animal { bark() { console.log(&quot;woof&quot;); } }
@@ -6249,6 +6545,9 @@ let makeAnimal: Producer&lt;Animal&gt; = makeCat; // ✅ Legal (Cat is an Animal
   <div class="topic-card-header">
     <h3>3.12 Declaration files, ambient declarations, .d.ts</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('3.12')" title="Practice Topic 3.12 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('3.12')" id="btn-done-3.12">
         <span>✓</span> Mark Done
       </button>
@@ -6260,7 +6559,10 @@ let makeAnimal: Producer&lt;Animal&gt; = makeCat; // ✅ Legal (Cat is an Animal
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Typing Third-Party Untyped JS and Asset Modules</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// 1. Untyped Third-Party Module Wrapper (vendor-sdk.d.ts):
 declare module &quot;legacy-payment-sdk&quot; {
@@ -6344,6 +6646,9 @@ declare module &quot;markdown-parser&quot; {
   <div class="topic-card-header">
     <h3>3.13 Module resolution and ESM/CJS interop</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('3.13')" title="Practice Topic 3.13 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('3.13')" id="btn-done-3.13">
         <span>✓</span> Mark Done
       </button>
@@ -6355,7 +6660,10 @@ declare module &quot;markdown-parser&quot; {
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · NodeNext Resolution &amp; Explicit .js Extensions</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// Under &quot;moduleResolution&quot;: &quot;NodeNext&quot; in modern Node.js:
 // Relative imports MUST include the emitted extension (.js), even in .ts files!
@@ -6438,6 +6746,9 @@ import type { UserRow } from &quot;./schema.js&quot;;
   <div class="topic-card-header">
     <h3>3.14 Compiler options deep dive</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('3.14')" title="Practice Topic 3.14 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('3.14')" id="btn-done-3.14">
         <span>✓</span> Mark Done
       </button>
@@ -6449,7 +6760,10 @@ import type { UserRow } from &quot;./schema.js&quot;;
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Safety Flags Beyond strict: true</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// tsconfig.json additions:
 // &quot;noUncheckedIndexedAccess&quot;: true
@@ -6533,6 +6847,9 @@ const c1: Config = {};                  // ✅ Allowed (property omitted)
   <div class="topic-card-header">
     <h3>3.15 Decorators and metadata</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('3.15')" title="Practice Topic 3.15 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('3.15')" id="btn-done-3.15">
         <span>✓</span> Mark Done
       </button>
@@ -6544,7 +6861,10 @@ const c1: Config = {};                  // ✅ Allowed (property omitted)
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · TC39 Standard Decorators vs Legacy Metadata</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// Modern TC39 Stage 3 Method Decorator (TS 5.0+):
 function LogExecution(target: any, context: ClassMethodDecoratorContext) {
@@ -6635,6 +6955,9 @@ class InvoiceService {
   <div class="topic-card-header">
     <h3>3.16 JSX / TSX language support</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('3.16')" title="Practice Topic 3.16 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('3.16')" id="btn-done-3.16">
         <span>✓</span> Mark Done
       </button>
@@ -6646,7 +6969,10 @@ class InvoiceService {
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Typing JSX Elements, Intrinsic Elements, and ReactNode</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>import React, { type ReactNode } from &quot;react&quot;;
 
@@ -6908,6 +7234,9 @@ type R2 = UnwrapPromise&lt;R1&gt;;        // { count: number }</code></pre>
   <div class="topic-card-header">
     <h3>4.1 Type inference internals (practical model)</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('4.1')" title="Practice Topic 4.1 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('4.1')" id="btn-done-4.1">
         <span>✓</span> Mark Done
       </button>
@@ -6919,7 +7248,10 @@ type R2 = UnwrapPromise&lt;R1&gt;;        // { count: number }</code></pre>
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Contextual Typing &amp; Generic Inference Priority</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// 1. Contextual Typing flow:
 // Target type (left side) drives inference of lambda parameters:
@@ -7001,6 +7333,9 @@ const [user, setUser] = useState&lt;User | null&gt;(null);</code></pre>
   <div class="topic-card-header">
     <h3>4.2 Branded and opaque types</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('4.2')" title="Practice Topic 4.2 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('4.2')" id="btn-done-4.2">
         <span>✓</span> Mark Done
       </button>
@@ -7051,7 +7386,10 @@ function cancelOrder(orderId: OrderId, userId: UserId) { /* ... */ }
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Nominal Safety via Unique Symbols</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// Brand helper:
 declare const brand: unique symbol;
@@ -7144,6 +7482,9 @@ function parseOrderId(raw: string): OrderId {
   <div class="topic-card-header">
     <h3>4.3 Declaration merging and module augmentation</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('4.3')" title="Practice Topic 4.3 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('4.3')" id="btn-done-4.3">
         <span>✓</span> Mark Done
       </button>
@@ -7155,7 +7496,10 @@ function parseOrderId(raw: string): OrderId {
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Augmenting Express Request &amp; ProcessEnv</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// 1. Augmenting Express Request (express.d.ts):
 import type { AuthUser } from &quot;./models/auth.js&quot;;
@@ -7253,6 +7597,9 @@ export {};</code></pre>
   <div class="topic-card-header">
     <h3>4.4 Union-to-intersection &amp; contravariance tricks</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('4.4')" title="Practice Topic 4.4 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('4.4')" id="btn-done-4.4">
         <span>✓</span> Mark Done
       </button>
@@ -7264,7 +7611,10 @@ export {};</code></pre>
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Advanced Type-Level Union to Intersection Transform</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// Transforming a Union into an Intersection using Function Parameter Contravariance:
 // When union members appear in parameter positions of a conditional extends,
@@ -7343,6 +7693,9 @@ type MergedIntersection = UnionToIntersection&lt;InputUnion&gt;;
   <div class="topic-card-header">
     <h3>4.5 Compiler performance and type complexity</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('4.5')" title="Practice Topic 4.5 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('4.5')" id="btn-done-4.5">
         <span>✓</span> Mark Done
       </button>
@@ -7354,7 +7707,10 @@ type MergedIntersection = UnionToIntersection&lt;InputUnion&gt;;
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Diagnosing Compiler Slowness &amp; Extended Diagnostics</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// Diagnostic command in terminal:
 // $ tsc --noEmit --extendedDiagnostics
@@ -7436,6 +7792,9 @@ npx tsc --noEmit --extendedDiagnostics</code></pre>
   <div class="topic-card-header">
     <h3>4.6 TypeScript compiler API and transformers</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('4.6')" title="Practice Topic 4.6 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('4.6')" id="btn-done-4.6">
         <span>✓</span> Mark Done
       </button>
@@ -7447,7 +7806,10 @@ npx tsc --noEmit --extendedDiagnostics</code></pre>
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Programmatic AST Traversal with ts.createProgram</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>import ts from &quot;typescript&quot;;
 
@@ -7537,6 +7899,9 @@ console.log(&quot;AST Statements count:&quot;, sourceFile.statements.length);</c
   <div class="topic-card-header">
     <h3>4.7 Legacy features you must still recognize</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('4.7')" title="Practice Topic 4.7 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('4.7')" id="btn-done-4.7">
         <span>✓</span> Mark Done
       </button>
@@ -7548,7 +7913,10 @@ console.log(&quot;AST Statements count:&quot;, sourceFile.statements.length);</c
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Recognizing Namespaces &amp; Triple-Slash Directives</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// ⚠️ LEGACY 1: Namespaces (pre-ESM module system from 2014)
 // Do NOT use in modern application code; use standard ESM import/export!
@@ -7817,6 +8185,9 @@ type Merged = UnionToIntersection&lt;Union&gt;;
   <div class="topic-card-header">
     <h3>5.1 Component props and children</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('5.1')" title="Practice Topic 5.1 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('5.1')" id="btn-done-5.1">
         <span>✓</span> Mark Done
       </button>
@@ -7828,7 +8199,10 @@ type Merged = UnionToIntersection&lt;Union&gt;;
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Composing Native HTML Props &amp; Children</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>import React, { type ComponentPropsWithoutRef, type ReactNode } from &quot;react&quot;;
 
@@ -7925,6 +8299,9 @@ export function Card({ title, children }: CardProps) {
   <div class="topic-card-header">
     <h3>5.2 Events, refs, and DOM in React</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('5.2')" title="Practice Topic 5.2 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('5.2')" id="btn-done-5.2">
         <span>✓</span> Mark Done
       </button>
@@ -7936,7 +8313,10 @@ export function Card({ title, children }: CardProps) {
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Synthetic Events &amp; Typed DOM Refs (React 18 &amp; 19)</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>import React, { useRef, type ChangeEvent, type FormEvent } from &quot;react&quot;;
 
@@ -8031,6 +8411,9 @@ export function SearchInput() {
   <div class="topic-card-header">
     <h3>5.3 Hooks typing</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('5.3')" title="Practice Topic 5.3 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('5.3')" id="btn-done-5.3">
         <span>✓</span> Mark Done
       </button>
@@ -8042,7 +8425,10 @@ export function SearchInput() {
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · useReducer Discriminated Actions &amp; Context Guards</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>import React, { createContext, useContext, useReducer, type ReactNode } from &quot;react&quot;;
 
@@ -8141,6 +8527,9 @@ export function useAuth(): AuthState {
   <div class="topic-card-header">
     <h3>5.4 Generic components and lists</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('5.4')" title="Practice Topic 5.4 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('5.4')" id="btn-done-5.4">
         <span>✓</span> Mark Done
       </button>
@@ -8152,7 +8541,10 @@ export function useAuth(): AuthState {
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Generic Table Component with Automatic Inference</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>import React, { type ReactNode } from &quot;react&quot;;
 
@@ -8262,6 +8654,9 @@ export function Select&lt;T&gt;({ items, getLabel, onSelect }: SelectProps&lt;T&
   <div class="topic-card-header">
     <h3>5.5 Next.js App Router + TypeScript</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('5.5')" title="Practice Topic 5.5 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('5.5')" id="btn-done-5.5">
         <span>✓</span> Mark Done
       </button>
@@ -8273,7 +8668,10 @@ export function Select&lt;T&gt;({ items, getLabel, onSelect }: SelectProps&lt;T&
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Next.js 16 (Current) &amp; 15 (LTS) Async Params &amp; Server Components</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// app/users/[id]/page.tsx
 // In Next.js 15 and 16, params and searchParams are asynchronous Promises!
@@ -8369,6 +8767,9 @@ export default async function Page({ params }: Props) {
   <div class="topic-card-header">
     <h3>5.6 Forms, server actions, and field errors</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('5.6')" title="Practice Topic 5.6 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('5.6')" id="btn-done-5.6">
         <span>✓</span> Mark Done
       </button>
@@ -8380,7 +8781,10 @@ export default async function Page({ params }: Props) {
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Server Action with Shared Zod Validation</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// Shared schema (packages/contracts/auth.ts)
 import { z } from &quot;zod&quot;;
@@ -8672,6 +9076,9 @@ export function List&lt;T extends { id: string }&gt;({ items, renderItem }: List
   <div class="topic-card-header">
     <h3>6.1 Node type definitions and runtime APIs</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('6.1')" title="Practice Topic 6.1 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('6.1')" id="btn-done-6.1">
         <span>✓</span> Mark Done
       </button>
@@ -8683,7 +9090,10 @@ export function List&lt;T extends { id: string }&gt;({ items, renderItem }: List
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Typed Node.js APIs &amp; Environment Variable Parsing</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>import fs from &quot;node:fs/promises&quot;;
 import path from &quot;node:path&quot;;
@@ -8772,6 +9182,9 @@ async function readConfigFile(relativePath: string): Promise&lt;unknown&gt; {
   <div class="topic-card-header">
     <h3>6.2 tsconfig for Node services</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('6.2')" title="Practice Topic 6.2 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('6.2')" id="btn-done-6.2">
         <span>✓</span> Mark Done
       </button>
@@ -8783,7 +9196,10 @@ async function readConfigFile(relativePath: string): Promise&lt;unknown&gt; {
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Server-Specific tsconfig Configuration</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>{
   &quot;compilerOptions&quot;: {
@@ -8864,6 +9280,9 @@ async function readConfigFile(relativePath: string): Promise&lt;unknown&gt; {
   <div class="topic-card-header">
     <h3>6.3 Express typing</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('6.3')" title="Practice Topic 6.3 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('6.3')" id="btn-done-6.3">
         <span>✓</span> Mark Done
       </button>
@@ -8875,7 +9294,10 @@ async function readConfigFile(relativePath: string): Promise&lt;unknown&gt; {
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Typed Express Route Handlers &amp; Error Middleware</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>import express, { type Request, type Response, type NextFunction } from &quot;express&quot;;
 
@@ -8972,6 +9394,9 @@ function updateUser(req: Request&lt;Params, unknown, Body&gt;, res: Response) {
   <div class="topic-card-header">
     <h3>6.4 Async TypeScript on the server</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('6.4')" title="Practice Topic 6.4 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('6.4')" id="btn-done-6.4">
         <span>✓</span> Mark Done
       </button>
@@ -8983,7 +9408,10 @@ function updateUser(req: Request&lt;Params, unknown, Body&gt;, res: Response) {
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Async/Await, Promise Types, and Unknown Catch</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// 1. Handling catch clause with &#x27;unknown&#x27; (TypeScript strict standard):
 async function safeDbQuery&lt;T&gt;(queryFn: () =&gt; Promise&lt;T&gt;): Promise&lt;T | null&gt; {
@@ -9079,6 +9507,9 @@ async function loadDashboard(userId: string) {
   <div class="topic-card-header">
     <h3>6.5 Error modeling</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('6.5')" title="Practice Topic 6.5 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('6.5')" id="btn-done-6.5">
         <span>✓</span> Mark Done
       </button>
@@ -9090,7 +9521,10 @@ async function loadDashboard(userId: string) {
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Custom Domain Error Hierarchy with Discriminants</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// 1. Tagged Domain Error Class:
 export class AppError extends Error {
@@ -9372,6 +9806,9 @@ export function errorHandler(err: unknown, req: Request, res: Response, next: Ne
   <div class="topic-card-header">
     <h3>7.1 API contracts and DTO strategy</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('7.1')" title="Practice Topic 7.1 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('7.1')" id="btn-done-7.1">
         <span>✓</span> Mark Done
       </button>
@@ -9383,7 +9820,10 @@ export function errorHandler(err: unknown, req: Request, res: Response, next: Ne
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Separating Database Rows, Domain Models, and Public DTOs</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// 1. Raw Database Row (Internal persistence structure):
 type UserRow = {
@@ -9471,6 +9911,9 @@ type CreateUserDto = Omit&lt;DbUser, &quot;id&quot; | &quot;createdAt&quot;&gt;;
   <div class="topic-card-header">
     <h3>7.2 Runtime validation and Zod</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('7.2')" title="Practice Topic 7.2 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('7.2')" id="btn-done-7.2">
         <span>✓</span> Mark Done
       </button>
@@ -9482,7 +9925,10 @@ type CreateUserDto = Omit&lt;DbUser, &quot;id&quot; | &quot;createdAt&quot;&gt;;
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Zod Schema Inference &amp; Coercion Transforms</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>import { z } from &quot;zod&quot;;
 
@@ -9575,6 +10021,9 @@ console.log(parsed.page); // 3 (number)</code></pre>
   <div class="topic-card-header">
     <h3>7.3 Type-safe PostgreSQL access</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('7.3')" title="Practice Topic 7.3 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('7.3')" id="btn-done-7.3">
         <span>✓</span> Mark Done
       </button>
@@ -9586,7 +10035,10 @@ console.log(parsed.page); // 3 (number)</code></pre>
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Prisma &amp; Drizzle Schema Inferred Models</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// 1. Prisma Client generated types:
 // import { PrismaClient, Prisma } from &#x27;@prisma/client&#x27;;
@@ -9677,6 +10129,9 @@ type ApiInput = { middleName?: string };</code></pre>
   <div class="topic-card-header">
     <h3>7.4 End-to-end type safety patterns</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('7.4')" title="Practice Topic 7.4 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('7.4')" id="btn-done-7.4">
         <span>✓</span> Mark Done
       </button>
@@ -9688,7 +10143,10 @@ type ApiInput = { middleName?: string };</code></pre>
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Monorepo Contract Sharing &amp; RPC Pipelines</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// packages/contracts/src/users.ts
 import { z } from &quot;zod&quot;;
@@ -9774,6 +10232,9 @@ export type UserDto = z.infer&lt;typeof UserSchema&gt;;</code></pre>
   <div class="topic-card-header">
     <h3>7.5 Auth types across the stack</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('7.5')" title="Practice Topic 7.5 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('7.5')" id="btn-done-7.5">
         <span>✓</span> Mark Done
       </button>
@@ -9785,7 +10246,10 @@ export type UserDto = z.infer&lt;typeof UserSchema&gt;;</code></pre>
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Validated JWT Payloads &amp; Session State Machine</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>import { z } from &quot;zod&quot;;
 
@@ -10060,6 +10524,9 @@ function toPublicUser(row: UserRow): PublicUser {
   <div class="topic-card-header">
     <h3>8.1 Project architecture for TS full-stack</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('8.1')" title="Practice Topic 8.1 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('8.1')" id="btn-done-8.1">
         <span>✓</span> Mark Done
       </button>
@@ -10071,7 +10538,10 @@ function toPublicUser(row: UserRow): PublicUser {
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Layered Architecture &amp; Server-Only Guardrails</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// Recommended Directory Structure:
 // apps/
@@ -10152,6 +10622,9 @@ import &quot;server-only&quot;;
   <div class="topic-card-header">
     <h3>8.2 Monorepos and shared types</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('8.2')" title="Practice Topic 8.2 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('8.2')" id="btn-done-8.2">
         <span>✓</span> Mark Done
       </button>
@@ -10163,7 +10636,10 @@ import &quot;server-only&quot;;
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Project References &amp; pnpm Workspaces</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// pnpm-workspace.yaml
 // packages:
@@ -10254,6 +10730,9 @@ import &quot;server-only&quot;;
   <div class="topic-card-header">
     <h3>8.3 ESLint and typescript-eslint</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('8.3')" title="Practice Topic 8.3 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('8.3')" id="btn-done-8.3">
         <span>✓</span> Mark Done
       </button>
@@ -10265,7 +10744,10 @@ import &quot;server-only&quot;;
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Strict Type-Aware ESLint Rules</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// eslint.config.js (Flat Config with type-checked rules):
 // import tseslint from &#x27;typescript-eslint&#x27;;
@@ -10352,6 +10834,9 @@ import &quot;server-only&quot;;
   <div class="topic-card-header">
     <h3>8.4 CI, emit, and source maps</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('8.4')" title="Practice Topic 8.4 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('8.4')" id="btn-done-8.4">
         <span>✓</span> Mark Done
       </button>
@@ -10363,7 +10848,10 @@ import &quot;server-only&quot;;
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Production CI Pipeline &amp; Verification Steps</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code># .github/workflows/ci.yml
 # name: CI Pipeline
@@ -10445,6 +10933,9 @@ import &quot;server-only&quot;;
   <div class="topic-card-header">
     <h3>8.5 Dependency types and publishing</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('8.5')" title="Practice Topic 8.5 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('8.5')" id="btn-done-8.5">
         <span>✓</span> Mark Done
       </button>
@@ -10456,7 +10947,10 @@ import &quot;server-only&quot;;
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Publishing Dual CJS/ESM Packages with Types</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// package.json for a published TypeScript package:
 // {
@@ -10729,6 +11223,9 @@ jobs:
   <div class="topic-card-header">
     <h3>9.1 Jest / Vitest with TypeScript</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('9.1')" title="Practice Topic 9.1 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('9.1')" id="btn-done-9.1">
         <span>✓</span> Mark Done
       </button>
@@ -10740,7 +11237,10 @@ jobs:
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Type-Safe Test Factories (Avoiding &#x27;as User&#x27; Fixtures)</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>import { describe, it, expect } from &quot;vitest&quot;;
 
@@ -10831,6 +11331,9 @@ function makeTask(overrides?: Partial&lt;Task&gt;): Task {
   <div class="topic-card-header">
     <h3>9.2 Typing mocks and spies</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('9.2')" title="Practice Topic 9.2 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('9.2')" id="btn-done-9.2">
         <span>✓</span> Mark Done
       </button>
@@ -10842,7 +11345,10 @@ function makeTask(overrides?: Partial&lt;Task&gt;): Task {
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Mocking Interfaces Rather Than Heavy Concrete Clients</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>import { vi, describe, it, expect } from &quot;vitest&quot;;
 
@@ -10929,6 +11435,9 @@ const mockFind = vi.fn&lt;Repo[&quot;find&quot;]&gt;().mockResolvedValue(&quot;f
   <div class="topic-card-header">
     <h3>9.3 Testing types themselves</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('9.3')" title="Practice Topic 9.3 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('9.3')" id="btn-done-9.3">
         <span>✓</span> Mark Done
       </button>
@@ -10940,7 +11449,10 @@ const mockFind = vi.fn&lt;Repo[&quot;find&quot;]&gt;().mockResolvedValue(&quot;f
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · @ts-expect-error Directives &amp; Assignability Tests</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// 1. @ts-expect-error: Verifies that an illegal call fails compilation!
 // If TypeScript does NOT produce an error on the next line, the build fails!
@@ -11022,6 +11534,9 @@ requireString(123);</code></pre>
   <div class="topic-card-header">
     <h3>9.4 Contract Testing &amp; Mock Service Worker (MSW v2) Type Safety</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('9.4')" title="Practice Topic 9.4 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('9.4')" id="btn-done-9.4">
         <span>✓</span> Mark Done
       </button>
@@ -11031,7 +11546,10 @@ requireString(123);</code></pre>
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · MSW v2 Strictly Typed Request Handlers</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>import { http, HttpResponse } from "msw";
 
@@ -11137,6 +11655,9 @@ export const getUserHandler = http.get&lt;{ id: string }, never, ApiResponse&lt;
   <div class="topic-card-header">
     <h3>9.5 End-to-End Type Safety with Playwright Test Fixtures</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('9.5')" title="Practice Topic 9.5 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('9.5')" id="btn-done-9.5">
         <span>✓</span> Mark Done
       </button>
@@ -11146,7 +11667,10 @@ export const getUserHandler = http.get&lt;{ id: string }, never, ApiResponse&lt;
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Custom Playwright Fixtures &amp; Typed Page Objects</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>import { test as base, expect, Page } from "@playwright/test";
 
@@ -11252,6 +11776,9 @@ export const test = base.extend&lt;UserFixture&gt;({
   <div class="topic-card-header">
     <h3>9.6 Property-Based &amp; Invariant Testing with Fast-Check</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('9.6')" title="Practice Topic 9.6 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('9.6')" id="btn-done-9.6">
         <span>✓</span> Mark Done
       </button>
@@ -11261,7 +11788,10 @@ export const test = base.extend&lt;UserFixture&gt;({
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Fast-Check Invariants &amp; Serialization Laws</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>import { describe, it, expect } from "vitest";
 import * as fc from "fast-check";
@@ -11551,6 +12081,9 @@ console.log(admin.role); // &quot;admin&quot;, all other fields fully populated!
   <div class="topic-card-header">
     <h3>10.1 Interview communication patterns &amp; trade-offs</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('10.1')" title="Practice Topic 10.1 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('10.1')" id="btn-done-10.1">
         <span>✓</span> Mark Done
       </button>
@@ -11562,7 +12095,10 @@ console.log(admin.role); // &quot;admin&quot;, all other fields fully populated!
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Live Interview Refactoring: Eliminating Illegal States</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// ❌ WHAT JUNIORS WRITE IN INTERVIEWS (BOOLEAN SOUP):
 type JuniorState = {
@@ -11647,6 +12183,9 @@ type SeniorState =
   <div class="topic-card-header">
     <h3>10.2 Whiteboard Live-Coding: Implementing Utility Types from Scratch</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('10.2')" title="Practice Topic 10.2 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('10.2')" id="btn-done-10.2">
         <span>✓</span> Mark Done
       </button>
@@ -11656,7 +12195,10 @@ type SeniorState =
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Live-Coding Built-in Utility Types</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// 1. Reimplementing Pick&lt;T, K&gt;:
 type MyPick&lt;T, K extends keyof T&gt; = {
@@ -11744,6 +12286,9 @@ type Test1 = MyAwaited&lt;Promise&lt;Promise&lt;string&gt;&gt;&gt;; // string</c
   <div class="topic-card-header">
     <h3>10.3 Architectural System Defense: Migrating JS Monoliths to Strict TypeScript</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('10.3')" title="Practice Topic 10.3 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('10.3')" id="btn-done-10.3">
         <span>✓</span> Mark Done
       </button>
@@ -11753,7 +12298,10 @@ type Test1 = MyAwaited&lt;Promise&lt;Promise&lt;string&gt;&gt;&gt;; // string</c
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Incremental Migration Strategy &amp; Gating</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// PHASE 1: Zero-code changes, opt-in JSDoc validation:
 // @ts-check
@@ -11842,6 +12390,9 @@ export async function chargeCustomer(userId, payload) {
   <div class="topic-card-header">
     <h3>10.4 Compiler Performance Profiling &amp; Diagnostic Troubleshooting</h3>
     <div class="topic-controls">
+      <button class="topic-practice-btn" onclick="openTopicInCompiler('10.4')" title="Practice Topic 10.4 in TypeScript Compiler">
+        <span>⚡</span> Practice
+      </button>
       <button class="topic-completed-toggle" onclick="toggleTopicDone('10.4')" id="btn-done-10.4">
         <span>✓</span> Mark Done
       </button>
@@ -11851,7 +12402,10 @@ export async function chargeCustomer(userId, payload) {
     <div class="code-box">
       <div class="code-box-header">
         <div class="code-lang"><span class="code-lang-dot"></span> TypeScript · Compiler Diagnostics &amp; Union Explosion Prevention</div>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        <div class="flex items-center gap-2">
+          <button class="practice-btn" onclick="openPracticeInCompiler(this)" title="Practice this topic's code in the Live TypeScript Compiler">⚡ Practice</button>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
       </div>
       <pre><code>// 1. Diagnostic profiling command:
 // tsc --diagnostics --generateTrace traceDir
@@ -15337,6 +15891,187 @@ export type CheckoutState = CartState | ShippingState | PaymentState | Confirmed
     </footer>
   </div><!-- /lg:pl-72 -->
 
+  
+  <!-- Floating TypeScript Compiler Launch Button -->
+  <button id="floatingCompilerTrigger" onclick="openCompilerPlayground()" class="fixed bottom-6 right-6 z-40 droplet-pill px-4 py-3 rounded-2xl shadow-xl flex items-center gap-2 font-bold text-xs bg-emerald-800 hover:bg-emerald-900 text-white transition-all transform hover:scale-105 border border-emerald-600 cursor-pointer" title="Open Interactive TypeScript Compiler & Playground (Cmd+K / Ctrl+K)">
+    <span class="text-sm">⚡</span>
+    <span>TS Compiler</span>
+    <span class="text-[10px] px-1.5 py-0.5 rounded bg-white/20 font-mono hidden sm:inline">⌘K</span>
+  </button>
+
+  <!-- Interactive TypeScript Practice Studio & Live Compiler Modal -->
+  <div id="tsCompilerModal" class="fixed inset-0 z-50 bg-stone-950/75 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 lg:p-6 hidden opacity-0 transition-opacity duration-200">
+    <div id="tsCompilerWindow" class="glass-droplet rounded-2xl sm:rounded-3xl w-full max-w-[1520px] h-[92vh] max-h-[960px] flex flex-col shadow-2xl border border-stone-300/80 overflow-hidden transition-all transform scale-95 duration-200 bg-white/95 text-stone-900">
+      
+      <!-- Studio Header -->
+      <div class="px-4 sm:px-6 py-3 border-b border-stone-300/70 flex flex-wrap items-center justify-between gap-3 bg-stone-50/90 shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-emerald-700 to-teal-800 flex items-center justify-center text-white font-mono font-black text-sm shadow-sm droplet-pill">
+            TS
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-bold text-stone-900 text-sm sm:text-base tracking-tight">TypeScript Compiler Studio</span>
+              <span id="compilerTsVersionBadge" class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-100 text-emerald-900 border border-emerald-300">v5.4 In-Browser</span>
+            </div>
+            <div class="flex items-center gap-2 text-[11px] text-stone-600">
+              <span>Live Practice &amp; Execution Sandbox</span>
+              <span>•</span>
+              <span id="compilerActiveTopicLabel" class="font-bold text-emerald-800 truncate max-w-[200px] sm:max-w-md">Scratchpad</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Topic / Preset Selector -->
+        <div class="flex items-center gap-2 flex-wrap">
+          <div class="flex items-center gap-1.5">
+            <label class="text-xs font-bold text-stone-700 hidden sm:inline">Topic:</label>
+            <select id="compilerTopicDropdown" onchange="handleTopicDropdownChange(this.value)" class="olive-input text-xs px-2.5 py-1.5 rounded-xl border border-stone-300 font-medium max-w-[200px] sm:max-w-[300px] truncate bg-white">
+              <!-- Dynamically populated with all 79 topics + presets -->
+            </select>
+          </div>
+
+          <div class="flex items-center gap-1.5">
+            <label class="text-xs font-bold text-stone-700 hidden md:inline">Target:</label>
+            <select id="compilerTargetSelect" onchange="runCompilerCode()" class="olive-input text-xs px-2 py-1.5 rounded-xl border border-stone-300 font-mono bg-white">
+              <option value="ES2022" selected>ES2022</option>
+              <option value="ES2020">ES2020</option>
+              <option value="ESNext">ESNext</option>
+              <option value="ES2015">ES2015 (ES6)</option>
+              <option value="ES5">ES5</option>
+            </select>
+          </div>
+
+          <label class="hidden lg:flex items-center gap-1.5 text-xs text-stone-700 font-semibold cursor-pointer bg-white/80 px-2.5 py-1.5 rounded-xl border border-stone-300">
+            <input type="checkbox" id="compilerStrictMode" checked onchange="runCompilerCode()" class="accent-emerald-700 cursor-pointer">
+            <span>Strict</span>
+          </label>
+
+          <!-- Run Button -->
+          <button onclick="runCompilerCode()" class="px-4 py-1.5 rounded-xl bg-gradient-to-tr from-emerald-700 via-teal-700 to-olive-800 text-white font-bold text-xs shadow-md hover:from-emerald-800 hover:to-teal-800 transition-all flex items-center gap-1.5 cursor-pointer transform hover:scale-102">
+            <span>▶</span>
+            <span>Run (Ctrl+Enter)</span>
+          </button>
+
+          <!-- Maximize / Toggle Fullscreen Button -->
+          <button onclick="toggleCompilerFullscreen()" class="p-1.5 rounded-xl text-stone-600 hover:text-stone-900 hover:bg-stone-200 transition-all hidden sm:inline-flex" title="Toggle Fullscreen Window">
+            <svg id="fullscreenIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
+          </button>
+
+          <!-- Close Button -->
+          <button onclick="closeCompilerPlayground()" class="p-1.5 rounded-xl text-stone-600 hover:text-stone-900 hover:bg-stone-200 transition-all cursor-pointer" title="Close Compiler (Esc)">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Studio Body: Split View (Editor on Left, Output on Right) -->
+      <div class="flex-grow grid grid-cols-1 lg:grid-cols-2 overflow-hidden min-h-0 divide-y lg:divide-y-0 lg:divide-x divide-stone-300/80">
+        
+        <!-- Left: Editor Pane -->
+        <div class="flex flex-col min-h-0 bg-[#0d1410] text-[#e6edf3]">
+          <!-- Editor Subheader / Controls -->
+          <div class="px-4 py-2 bg-[#141f19] border-b border-[#213027] flex items-center justify-between text-xs text-stone-400 shrink-0">
+            <div class="flex items-center gap-2 font-mono">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
+              <span class="font-bold text-stone-200">practice.ts</span>
+              <span class="text-[10px] text-stone-400 hidden sm:inline">(TypeScript Source)</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <button onclick="resetCompilerToOriginal()" class="px-2 py-1 rounded bg-[#1f2d24] hover:bg-[#2a3c30] text-stone-300 text-[11px] font-medium transition-all" title="Reset code to original snippet for this topic">
+                🔄 Reset
+              </button>
+              <button onclick="copyCompilerCode()" class="px-2 py-1 rounded bg-[#1f2d24] hover:bg-[#2a3c30] text-stone-300 text-[11px] font-medium transition-all" title="Copy code to clipboard">
+                📋 Copy
+              </button>
+              <button onclick="clearCompilerEditor()" class="px-2 py-1 rounded bg-[#1f2d24] hover:bg-[#2a3c30] text-stone-300 text-[11px] font-medium transition-all" title="Clear editor">
+                🧹 Clear
+              </button>
+              <button onclick="insertSampleLog()" class="px-2 py-1 rounded bg-[#1f2d24] hover:bg-[#2a3c30] text-emerald-400 text-[11px] font-medium transition-all hidden sm:inline" title="Append console.log to inspect values">
+                💡 +Log
+              </button>
+            </div>
+          </div>
+
+          <!-- Editor with Line Numbers -->
+          <div class="flex-grow flex min-h-0 relative overflow-hidden font-mono text-xs sm:text-sm">
+            <div id="compilerLineNumbers" class="py-3 px-2 select-none bg-[#090f0c] text-stone-500 text-right w-11 shrink-0 overflow-hidden font-mono leading-relaxed border-r border-[#1a2920]">
+              1
+            </div>
+            <textarea id="compilerCodeInput" spellcheck="false" autocomplete="off" autocapitalize="off" class="flex-grow p-3 bg-transparent text-[#e6edf3] font-mono leading-relaxed resize-none outline-none overflow-y-auto whitespace-pre tab-size-2" placeholder="// Type TypeScript code here or practice any curriculum topic...&#10;// Press Ctrl+Enter to compile and run."></textarea>
+          </div>
+
+          <div class="px-4 py-1.5 bg-[#090f0c] border-t border-[#1a2920] flex items-center justify-between text-[11px] text-stone-400 shrink-0 font-mono">
+            <div class="flex items-center gap-3">
+              <span id="compilerCursorPos">Ln 1, Col 1</span>
+              <span id="compilerLineCount">1 lines</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span>Tab: 2 spaces</span>
+              <span>•</span>
+              <span class="text-emerald-400">Ctrl+Enter to Run</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Output Pane (Tabs: Console, JS, Diagnostics) -->
+        <div class="flex flex-col min-h-0 bg-[#0a0f0c] text-stone-200">
+          <!-- Output Tabs Header -->
+          <div class="px-4 py-1.5 bg-[#121914] border-b border-[#1f2b23] flex items-center justify-between text-xs shrink-0">
+            <div class="flex items-center gap-1">
+              <button id="tabConsoleBtn" onclick="switchCompilerTab('console')" class="px-3 py-1 rounded-lg font-bold text-xs transition-all bg-emerald-700 text-white flex items-center gap-1.5">
+                <span>🖥️ Console Output</span>
+                <span id="consoleCountBadge" class="text-[10px] px-1.5 py-0.2 rounded-full bg-emerald-900 text-emerald-200 font-mono">0</span>
+              </button>
+              <button id="tabJsBtn" onclick="switchCompilerTab('js')" class="px-3 py-1 rounded-lg font-medium text-xs text-stone-400 hover:text-white transition-all flex items-center gap-1">
+                <span>⚡ Compiled JS</span>
+              </button>
+              <button id="tabDiagnosticsBtn" onclick="switchCompilerTab('diagnostics')" class="px-3 py-1 rounded-lg font-medium text-xs text-stone-400 hover:text-white transition-all flex items-center gap-1">
+                <span>⚠️ Diagnostics</span>
+                <span id="diagnosticsCountBadge" class="hidden text-[10px] px-1.5 py-0.2 rounded-full bg-red-900 text-red-200 font-mono">0</span>
+              </button>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <span id="compilerExecTime" class="text-[10px] font-mono text-emerald-400">Ready</span>
+              <button onclick="clearCompilerConsole()" class="px-2 py-0.5 rounded text-[11px] text-stone-400 hover:text-white hover:bg-[#1f2b23] transition-all font-mono">
+                Clear
+              </button>
+            </div>
+          </div>
+
+          <!-- Tab 1: Console View -->
+          <div id="paneConsole" class="flex-grow flex flex-col min-h-0 overflow-y-auto p-3 font-mono text-xs space-y-1">
+            <div id="compilerConsoleLogs" class="space-y-1">
+              <div class="text-stone-500 italic py-2 px-1 text-[11px]">
+                Click "▶ Run (Ctrl+Enter)" to compile TypeScript and execute in live sandbox.
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 2: Compiled JavaScript View -->
+          <div id="paneJs" class="flex-grow min-h-0 overflow-auto p-3 font-mono text-xs hidden">
+            <pre><code id="compilerJsOutput" class="text-stone-300 whitespace-pre leading-relaxed">// Compiled JavaScript will appear here...</code></pre>
+          </div>
+
+          <!-- Tab 3: Diagnostics View -->
+          <div id="paneDiagnostics" class="flex-grow min-h-0 overflow-y-auto p-3 font-mono text-xs space-y-2 hidden">
+            <div id="compilerDiagnosticsList">
+              <div class="text-stone-400 text-xs py-2">No diagnostics reported. Code is type-sound!</div>
+            </div>
+          </div>
+
+          <!-- Output Footer Bar -->
+          <div class="px-4 py-1.5 bg-[#090e0b] border-t border-[#1a261f] flex items-center justify-between text-[11px] text-stone-400 shrink-0 font-mono">
+            <span id="compilerStatusMsg">TypeScript Compiler Active</span>
+            <span class="text-stone-500">Full In-Browser Execution Sandbox</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   <!-- Floating Toast -->
   <div class="toast" id="toast">Code copied to clipboard!</div>
 
@@ -15833,8 +16568,726 @@ function initScrollSpy() {
   sections.forEach(sec => observer.observe(sec));
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+
+    // =========================================================================
+    // TYPESCRIPT COMPILER & INTERACTIVE PRACTICE STUDIO CONTROLLER
+    // =========================================================================
+
+    let currentPracticingTopicId = null;
+    let originalTopicCodeSnippet = '';
+    let isCompilerFullscreen = false;
+
+    // Starter presets for quick practice
+    const compilerPresets = {
+      'scratchpad': {
+        title: 'Blank TypeScript Scratchpad',
+        code: `// Welcome to the Live TypeScript Compiler & Practice Studio!
+// You can edit code, add types, test type errors, and press Ctrl+Enter to run.
+
+interface Candidate {
+  name: string;
+  role: string;
+  yoe: number;
+  skills: readonly string[];
+}
+
+const candidate: Candidate = {
+  name: "Lakshay Nagpal",
+  role: "Full-Stack Software Engineer",
+  yoe: 3,
+  skills: ["TypeScript 5.4", "Next.js 16", "React 19", "Node.js", "PostgreSQL"]
+};
+
+console.log("Candidate Profile:", candidate);
+console.log("Core Skills:", candidate.skills.join(", "));
+`
+      },
+      'generics': {
+        title: 'Preset: Generic Constraints & Return Types',
+        code: `// Generic Constraint & Return Type Inference
+interface EntityWithId {
+  id: string | number;
+}
+
+function pluckUniqueId<T extends EntityWithId>(items: T[]): Array<T["id"]> {
+  return Array.from(new Set(items.map(item => item.id)));
+}
+
+const users = [
+  { id: "usr_1", name: "Alice", role: "admin" },
+  { id: "usr_2", name: "Bob", role: "user" },
+  { id: "usr_1", name: "Alice Dup", role: "admin" }
+];
+
+const uniqueIds = pluckUniqueId(users);
+console.log("Plucked Unique IDs:", uniqueIds);
+`
+      },
+      'discriminated_unions': {
+        title: 'Preset: Discriminated Unions & Exhaustiveness',
+        code: `// Exhaustive Pattern Matching with never
+type ApiResult<T> =
+  | { status: "success"; data: T; timestamp: number }
+  | { status: "error"; message: string; code: number }
+  | { status: "loading"; progress: number };
+
+function handleApiResult<T>(res: ApiResult<T>): string {
+  switch (res.status) {
+    case "success":
+      return "✅ Loaded data successfully at " + new Date(res.timestamp).toLocaleTimeString();
+    case "error":
+      return "❌ Error " + res.code + ": " + res.message;
+    case "loading":
+      return "⏳ Loading... " + res.progress + "%";
+    default:
+      // Exhaustiveness check guarantees every case was handled at compile time!
+      const _exhaustiveCheck: never = res;
+      return _exhaustiveCheck;
+  }
+}
+
+const test1: ApiResult<string[]> = { status: "success", data: ["TS", "React"], timestamp: Date.now() };
+const test2: ApiResult<string[]> = { status: "error", message: "Unauthorized", code: 401 };
+
+console.log(handleApiResult(test1));
+console.log(handleApiResult(test2));
+`
+      },
+      'zod_validation': {
+        title: 'Preset: Zod Runtime Schema Validation & Inferred Type',
+        code: `// Real Zod Validation in Browser!
+import { z } from "zod";
+
+const UserRegisterSchema = z.object({
+  username: z.string().min(3, "Username must be at least 3 chars"),
+  email: z.string().email("Invalid email address"),
+  age: z.number().int().min(18, "Must be at least 18"),
+  tags: z.array(z.string()).default([])
+});
+
+type UserRegisterDTO = z.infer<typeof UserRegisterSchema>;
+
+// Test 1: Valid payload
+const validResult = UserRegisterSchema.safeParse({
+  username: "lakshay_nagpal",
+  email: "lakshayn0001@gmail.com",
+  age: 24,
+  tags: ["typescript", "fullstack"]
+});
+
+console.log("Valid Payload SafeParse Success?", validResult.success);
+if (validResult.success) {
+  console.log("Parsed User:", validResult.data);
+}
+
+// Test 2: Invalid payload
+const invalidResult = UserRegisterSchema.safeParse({
+  username: "ln",
+  email: "not-an-email",
+  age: 16
+});
+
+console.log("Invalid Payload SafeParse Success?", invalidResult.success);
+if (!invalidResult.success) {
+  console.log("Validation Issues:", invalidResult.error.format());
+}
+`
+      }
+    };
+
+    function initCompilerStudio() {
+      // 1. Populate Topic Dropdown
+      const dropdown = document.getElementById('compilerTopicDropdown');
+      if (!dropdown) return;
+      dropdown.innerHTML = '';
+
+      // Presets Group
+      const presetGroup = document.createElement('optgroup');
+      presetGroup.label = '⚡ Starter Presets';
+      Object.keys(compilerPresets).forEach(key => {
+        const opt = document.createElement('option');
+        opt.value = 'preset:' + key;
+        opt.textContent = compilerPresets[key].title;
+        presetGroup.appendChild(opt);
+      });
+      dropdown.appendChild(presetGroup);
+
+      // Topics by Level
+      const allTopicCards = document.querySelectorAll('.topic-card');
+      let currentLvl = null;
+      let currentOptGroup = null;
+
+      allTopicCards.forEach(card => {
+        const id = card.id.replace('topic-', '');
+        const lvl = id.split('.')[0];
+        const h3 = card.querySelector('h3');
+        const title = h3 ? h3.innerText.trim() : 'Topic ' + id;
+
+        if (lvl !== currentLvl) {
+          currentLvl = lvl;
+          currentOptGroup = document.createElement('optgroup');
+          currentOptGroup.label = 'Level ' + lvl + ' Topics';
+          dropdown.appendChild(currentOptGroup);
+        }
+
+        const opt = document.createElement('option');
+        opt.value = 'topic:' + id;
+        opt.textContent = title;
+        currentOptGroup.appendChild(opt);
+      });
+
+      // 2. Editor keyboard shortcuts & line numbers
+      const textarea = document.getElementById('compilerCodeInput');
+      if (textarea) {
+        textarea.addEventListener('keydown', handleEditorKeydown);
+        textarea.addEventListener('input', () => {
+          updateEditorLineNumbers();
+          updateCursorPosition();
+        });
+        textarea.addEventListener('click', updateCursorPosition);
+        textarea.addEventListener('keyup', updateCursorPosition);
+        textarea.addEventListener('scroll', syncEditorScroll);
+      }
+
+      // 3. Global keyboard shortcuts: Cmd+K / Ctrl+K to toggle compiler
+      window.addEventListener('keydown', (e) => {
+        if ((e.metaKey || e.ctrlKey) && (e.key === 'k' || e.key === 'K')) {
+          e.preventDefault();
+          const modal = document.getElementById('tsCompilerModal');
+          if (modal && !modal.classList.contains('hidden')) {
+            closeCompilerPlayground();
+          } else {
+            openCompilerPlayground();
+          }
+        }
+        if (e.key === 'Escape') {
+          const modal = document.getElementById('tsCompilerModal');
+          if (modal && !modal.classList.contains('hidden')) {
+            closeCompilerPlayground();
+          }
+        }
+      });
+    }
+
+    function openCompilerPlayground(initialCode, topicTitle, topicId) {
+      const modal = document.getElementById('tsCompilerModal');
+      const win = document.getElementById('tsCompilerWindow');
+      const textarea = document.getElementById('compilerCodeInput');
+      const topicLabel = document.getElementById('compilerActiveTopicLabel');
+      const dropdown = document.getElementById('compilerTopicDropdown');
+
+      if (!modal || !win || !textarea) return;
+
+      currentPracticingTopicId = topicId || null;
+
+      let codeToLoad = initialCode;
+      let titleToSet = topicTitle;
+
+      if (!codeToLoad) {
+        if (topicId) {
+          codeToLoad = getTopicCode(topicId);
+          titleToSet = getTopicTitle(topicId);
+        } else {
+          codeToLoad = compilerPresets['scratchpad'].code;
+          titleToSet = compilerPresets['scratchpad'].title;
+        }
+      }
+
+      originalTopicCodeSnippet = codeToLoad;
+      textarea.value = codeToLoad;
+
+      if (topicLabel) topicLabel.textContent = titleToSet || 'Scratchpad';
+
+      if (dropdown) {
+        if (topicId) {
+          dropdown.value = 'topic:' + topicId;
+        } else {
+          dropdown.value = 'preset:scratchpad';
+        }
+      }
+
+      modal.classList.remove('hidden');
+      requestAnimationFrame(() => {
+        modal.classList.remove('opacity-0');
+        win.classList.remove('scale-95');
+        win.classList.add('scale-100');
+        textarea.focus();
+        updateEditorLineNumbers();
+        updateCursorPosition();
+        runCompilerCode();
+      });
+
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCompilerPlayground() {
+      const modal = document.getElementById('tsCompilerModal');
+      const win = document.getElementById('tsCompilerWindow');
+      if (!modal || !win) return;
+
+      win.classList.remove('scale-100');
+      win.classList.add('scale-95');
+      modal.classList.add('opacity-0');
+
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }, 200);
+    }
+
+    function toggleCompilerFullscreen() {
+      const win = document.getElementById('tsCompilerWindow');
+      if (!win) return;
+      isCompilerFullscreen = !isCompilerFullscreen;
+      if (isCompilerFullscreen) {
+        win.classList.add('is-maximized');
+      } else {
+        win.classList.remove('is-maximized');
+      }
+    }
+
+    function openTopicInCompiler(topicId) {
+      const code = getTopicCode(topicId);
+      const title = getTopicTitle(topicId);
+      openCompilerPlayground(code, title, topicId);
+    }
+
+    function openPracticeInCompiler(btn) {
+      const card = btn.closest('.topic-card');
+      if (card) {
+        const topicId = card.id.replace('topic-', '');
+        openTopicInCompiler(topicId);
+      } else {
+        const codeBox = btn.closest('.code-box');
+        const code = codeBox ? (codeBox.querySelector('pre code')?.innerText || '') : '';
+        openCompilerPlayground(code, 'Custom Code Box', null);
+      }
+    }
+
+    function getTopicCode(topicId) {
+      const card = document.getElementById('topic-' + topicId);
+      if (!card) return '';
+      const codeEl = card.querySelector('.code-box pre code');
+      return codeEl ? codeEl.innerText : '';
+    }
+
+    function getTopicTitle(topicId) {
+      const card = document.getElementById('topic-' + topicId);
+      if (!card) return 'Topic ' + topicId;
+      const heading = card.querySelector('h3');
+      return heading ? heading.innerText.trim() : 'Topic ' + topicId;
+    }
+
+    function handleTopicDropdownChange(val) {
+      if (!val) return;
+      if (val.startsWith('preset:')) {
+        const key = val.replace('preset:', '');
+        const preset = compilerPresets[key];
+        if (preset) {
+          currentPracticingTopicId = null;
+          originalTopicCodeSnippet = preset.code;
+          document.getElementById('compilerCodeInput').value = preset.code;
+          document.getElementById('compilerActiveTopicLabel').textContent = preset.title;
+          updateEditorLineNumbers();
+          runCompilerCode();
+        }
+      } else if (val.startsWith('topic:')) {
+        const tid = val.replace('topic:', '');
+        openTopicInCompiler(tid);
+      }
+    }
+
+    function resetCompilerToOriginal() {
+      const textarea = document.getElementById('compilerCodeInput');
+      if (textarea && originalTopicCodeSnippet) {
+        textarea.value = originalTopicCodeSnippet;
+        updateEditorLineNumbers();
+        runCompilerCode();
+        showToast("Code reset to original topic snippet!");
+      }
+    }
+
+    function copyCompilerCode() {
+      const textarea = document.getElementById('compilerCodeInput');
+      if (!textarea) return;
+      navigator.clipboard.writeText(textarea.value).then(() => {
+        showToast("Code copied to clipboard!");
+      });
+    }
+
+    function clearCompilerEditor() {
+      const textarea = document.getElementById('compilerCodeInput');
+      if (textarea) {
+        textarea.value = '';
+        updateEditorLineNumbers();
+        document.getElementById('compilerConsoleLogs').innerHTML = '<div class="text-stone-500 italic py-2">Editor cleared. Type code and press Ctrl+Enter to compile.</div>';
+        document.getElementById('compilerJsOutput').textContent = '// No code to transpile.';
+      }
+    }
+
+    function clearCompilerConsole() {
+      const logs = document.getElementById('compilerConsoleLogs');
+      if (logs) {
+        logs.innerHTML = '<div class="text-stone-500 italic py-2">Console cleared.</div>';
+      }
+      document.getElementById('consoleCountBadge').textContent = '0';
+    }
+
+    function insertSampleLog() {
+      const textarea = document.getElementById('compilerCodeInput');
+      if (!textarea) return;
+      const snippet = `\n\n// --- Live Inspection --- \nconsole.log("Executed at:", new Date().toLocaleTimeString());\n`;
+      textarea.value += snippet;
+      updateEditorLineNumbers();
+      runCompilerCode();
+      showToast("Inserted sample console.log()");
+    }
+
+    function switchCompilerTab(tab) {
+      const paneConsole = document.getElementById('paneConsole');
+      const paneJs = document.getElementById('paneJs');
+      const paneDiag = document.getElementById('paneDiagnostics');
+
+      const btnConsole = document.getElementById('tabConsoleBtn');
+      const btnJs = document.getElementById('tabJsBtn');
+      const btnDiag = document.getElementById('tabDiagnosticsBtn');
+
+      [paneConsole, paneJs, paneDiag].forEach(p => p?.classList.add('hidden'));
+      [btnConsole, btnJs, btnDiag].forEach(b => {
+        b?.classList.remove('bg-emerald-700', 'text-white');
+        b?.classList.add('text-stone-400');
+      });
+
+      if (tab === 'console') {
+        paneConsole?.classList.remove('hidden');
+        btnConsole?.classList.add('bg-emerald-700', 'text-white');
+        btnConsole?.classList.remove('text-stone-400');
+      } else if (tab === 'js') {
+        paneJs?.classList.remove('hidden');
+        btnJs?.classList.add('bg-emerald-700', 'text-white');
+        btnJs?.classList.remove('text-stone-400');
+      } else if (tab === 'diagnostics') {
+        paneDiag?.classList.remove('hidden');
+        btnDiag?.classList.add('bg-emerald-700', 'text-white');
+        btnDiag?.classList.remove('text-stone-400');
+      }
+    }
+
+    function updateEditorLineNumbers() {
+      const textarea = document.getElementById('compilerCodeInput');
+      const gutter = document.getElementById('compilerLineNumbers');
+      const lineCountSpan = document.getElementById('compilerLineCount');
+      if (!textarea || !gutter) return;
+
+      const lines = textarea.value.split('\n').length;
+      let nums = '';
+      for (let i = 1; i <= lines; i++) {
+        nums += i + '<br>';
+      }
+      gutter.innerHTML = nums;
+      if (lineCountSpan) lineCountSpan.textContent = lines + ' lines';
+    }
+
+    function updateCursorPosition() {
+      const textarea = document.getElementById('compilerCodeInput');
+      const posSpan = document.getElementById('compilerCursorPos');
+      if (!textarea || !posSpan) return;
+
+      const val = textarea.value.substring(0, textarea.selectionStart);
+      const lines = val.split('\n');
+      const currentLine = lines.length;
+      const currentCol = lines[lines.length - 1].length + 1;
+      posSpan.textContent = `Ln ${currentLine}, Col ${currentCol}`;
+    }
+
+    function syncEditorScroll() {
+      const textarea = document.getElementById('compilerCodeInput');
+      const gutter = document.getElementById('compilerLineNumbers');
+      if (textarea && gutter) {
+        gutter.scrollTop = textarea.scrollTop;
+      }
+    }
+
+    function handleEditorKeydown(e) {
+      const textarea = e.target;
+
+      // Ctrl+Enter or Cmd+Enter to Run
+      if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+        e.preventDefault();
+        runCompilerCode();
+        return;
+      }
+
+      // Tab key indentation (2 spaces)
+      if (e.key === 'Tab') {
+        e.preventDefault();
+        const start = textarea.selectionStart;
+        const end = textarea.selectionEnd;
+        textarea.value = textarea.value.substring(0, start) + '  ' + textarea.value.substring(end);
+        textarea.selectionStart = textarea.selectionEnd = start + 2;
+        updateEditorLineNumbers();
+        updateCursorPosition();
+      }
+    }
+
+    // --- COMPILER & RUNNER EXECUTION ---
+    function runCompilerCode() {
+      const textarea = document.getElementById('compilerCodeInput');
+      const targetSelect = document.getElementById('compilerTargetSelect');
+      const strictCheckbox = document.getElementById('compilerStrictMode');
+      const consoleLogs = document.getElementById('compilerConsoleLogs');
+      const jsOutput = document.getElementById('compilerJsOutput');
+      const diagList = document.getElementById('compilerDiagnosticsList');
+      const diagBadge = document.getElementById('diagnosticsCountBadge');
+      const statusMsg = document.getElementById('compilerStatusMsg');
+
+      if (!textarea || !consoleLogs) return;
+
+      const sourceCode = textarea.value;
+      const targetVal = targetSelect ? targetSelect.value : 'ES2022';
+      const isStrict = strictCheckbox ? strictCheckbox.checked : true;
+
+      const compileStart = performance.now();
+      const compiled = compileTypeScript(sourceCode, { target: targetVal, strict: isStrict });
+      const compileTime = Math.round(performance.now() - compileStart);
+
+      // 1. Show Compiled JS in JS tab
+      if (jsOutput) {
+        jsOutput.textContent = compiled.outputText || '// No output generated';
+      }
+
+      // 2. Process Diagnostics
+      const diagnostics = compiled.diagnostics || [];
+      if (diagBadge) {
+        if (diagnostics.length > 0) {
+          diagBadge.textContent = diagnostics.length;
+          diagBadge.classList.remove('hidden');
+        } else {
+          diagBadge.classList.add('hidden');
+        }
+      }
+
+      if (diagList) {
+        if (diagnostics.length === 0) {
+          diagList.innerHTML = '<div class="text-emerald-400 text-xs py-2 font-mono">✓ No compile-time diagnostics reported. Code is type-sound!</div>';
+        } else {
+          let diagHtml = '<div class="space-y-2">';
+          diagnostics.forEach((d, idx) => {
+            const msg = typeof d.messageText === 'string' ? d.messageText : (d.messageText?.messageText || 'Type Error');
+            const code = d.code ? `TS${d.code}` : 'DIAG';
+            diagHtml += `
+              <div class="p-2.5 rounded-lg bg-red-950/40 border border-red-800/60 font-mono text-xs text-red-200 flex items-start gap-2">
+                <span class="px-1.5 py-0.5 rounded bg-red-900 text-red-100 font-bold text-[10px] shrink-0">${code}</span>
+                <div class="flex-grow whitespace-pre-wrap">${escapeHtml(msg)}</div>
+              </div>
+            `;
+          });
+          diagHtml += '</div>';
+          diagList.innerHTML = diagHtml;
+        }
+      }
+
+      if (statusMsg) {
+        statusMsg.textContent = `Compiled in ${compileTime}ms (${targetVal}${isStrict ? ', Strict' : ''})`;
+      }
+
+      // 3. Execute in In-Browser Sandbox
+      executeInSandbox(compiled.outputText, consoleLogs);
+    }
+
+    function compileTypeScript(code, options) {
+      if (typeof ts !== 'undefined' && ts.transpileModule) {
+        try {
+          const targetMap = {
+            'ES2022': ts.ScriptTarget.ES2022,
+            'ES2020': ts.ScriptTarget.ES2020,
+            'ESNext': ts.ScriptTarget.ESNext,
+            'ES2015': ts.ScriptTarget.ES2015,
+            'ES5': ts.ScriptTarget.ES5
+          };
+          const target = targetMap[options.target] || ts.ScriptTarget.ES2022;
+
+          const res = ts.transpileModule(code, {
+            compilerOptions: {
+              target: target,
+              module: ts.ModuleKind.CommonJS,
+              jsx: ts.JsxEmit.ReactJSX,
+              strict: options.strict !== false,
+              esModuleInterop: true,
+              allowSyntheticDefaultImports: true
+            },
+            reportDiagnostics: true
+          });
+
+          // Also analyze source file for syntax errors
+          const sourceFile = ts.createSourceFile("practice.ts", code, ts.ScriptTarget.Latest, true);
+          const parseDiagnostics = sourceFile.parseDiagnostics || [];
+
+          return {
+            outputText: res.outputText,
+            diagnostics: [...(res.diagnostics || []), ...parseDiagnostics]
+          };
+        } catch (e) {
+          return {
+            outputText: stripTsTypesFallback(code),
+            diagnostics: [{ messageText: 'Transpile error: ' + e.message, code: 0 }]
+          };
+        }
+      } else {
+        // Fallback for offline mode without window.ts
+        return {
+          outputText: stripTsTypesFallback(code),
+          diagnostics: [{ messageText: 'Note: Running in offline type-stripper mode (TypeScript CDN offline).', code: 0 }]
+        };
+      }
+    }
+
+    // Lightweight offline type stripper fallback
+    function stripTsTypesFallback(code) {
+      return code
+        .replace(/import\s+type\s+.*?;/g, '')
+        .replace(/type\s+[A-Za-z0-9_<>\s,]+=\s*[\s\S]*?;/g, '')
+        .replace(/interface\s+[A-Za-z0-9_<>\s,]+{[\s\S]*?}/g, '')
+        .replace(/:\s*[A-Za-z0-9_<>|\[\]\s,]+/g, '')
+        .replace(/as\s+[A-Za-z0-9_<>|\[\]]+/g, '')
+        .replace(/<[A-Za-z0-9_\s,]+>/g, '');
+    }
+
+    function executeInSandbox(jsCode, consoleContainer) {
+      consoleContainer.innerHTML = '';
+      let logCount = 0;
+
+      function appendLog(type, args) {
+        logCount++;
+        const row = document.createElement('div');
+        row.className = `py-1 px-2 border-b border-[#1a261f] font-mono text-xs flex items-start gap-2 ${
+          type === 'error' ? 'bg-red-950/40 text-red-300' :
+          type === 'warn' ? 'bg-amber-950/40 text-amber-300' :
+          type === 'table' ? 'bg-blue-950/30 text-blue-200' : 'text-stone-200'
+        }`;
+        const time = new Date().toLocaleTimeString().split(' ')[0];
+        const icon = type === 'error' ? '❌' : type === 'warn' ? '⚠️' : type === 'table' ? '📊' : '›';
+        
+        let formattedHtml = '';
+        try {
+          formattedHtml = Array.from(args).map(arg => formatLogValue(arg)).join(' ');
+        } catch(err) {
+          formattedHtml = escapeHtml(String(args));
+        }
+
+        row.innerHTML = `<span class="text-[10px] text-stone-500 select-none shrink-0">${time} ${icon}</span><div class="flex-grow whitespace-pre-wrap break-all">${formattedHtml}</div>`;
+        consoleContainer.appendChild(row);
+        const badge = document.getElementById('consoleCountBadge');
+        if (badge) badge.textContent = logCount;
+      }
+
+      const customConsole = {
+        log: (...args) => appendLog('info', args),
+        info: (...args) => appendLog('info', args),
+        warn: (...args) => appendLog('warn', args),
+        error: (...args) => appendLog('error', args),
+        table: (data) => appendLog('table', [data]),
+        clear: () => {
+          consoleContainer.innerHTML = '';
+          logCount = 0;
+          document.getElementById('consoleCountBadge').textContent = '0';
+        }
+      };
+
+      // Mock require for common libraries in curriculum
+      const customRequire = (name) => {
+        if (name === 'zod') {
+          if (typeof Zod !== 'undefined') return Zod;
+          if (typeof window.Zod !== 'undefined') return window.Zod;
+          if (typeof z !== 'undefined') return { z, default: z };
+        }
+        if (name === 'react') {
+          return window.React || {};
+        }
+        return {};
+      };
+
+      // Mock fetch for curriculum API examples
+      const customFetch = async (url, options) => {
+        return {
+          ok: true,
+          status: 200,
+          json: async () => ({
+            id: "usr_101",
+            name: "Lakshay Nagpal",
+            email: "lakshayn0001@gmail.com",
+            role: "Software Engineer",
+            status: "active",
+            skills: ["TypeScript", "Next.js", "React 19"],
+            createdAt: new Date().toISOString()
+          }),
+          text: async () => JSON.stringify({ id: "usr_101", name: "Lakshay Nagpal" })
+        };
+      };
+
+      try {
+        const wrappedCode = `
+          return (async function(console, require, fetch, window, document) {
+            "use strict";
+            const exports = {};
+            const module = { exports: exports };
+            ${jsCode}
+            return module.exports;
+          })(customConsole, customRequire, customFetch, window, document);
+        `;
+
+        const runner = new Function('customConsole', 'customRequire', 'customFetch', 'window', 'document', wrappedCode);
+        const start = performance.now();
+        const resultPromise = runner(customConsole, customRequire, customFetch, window, document);
+
+        resultPromise.then(() => {
+          const dur = Math.round(performance.now() - start);
+          const execTimeEl = document.getElementById('compilerExecTime');
+          if (execTimeEl) execTimeEl.textContent = `⚡ Executed in ${dur}ms`;
+          if (logCount === 0) {
+            const row = document.createElement('div');
+            row.className = 'py-3 px-2 text-stone-400 text-xs italic border-b border-[#1a261f]';
+            row.innerHTML = '✓ Code executed successfully with 0 runtime errors.<br><span class="text-[11px] text-stone-500">(No <code>console.log()</code> emitted. Tip: Click <strong>"💡 +Log"</strong> above to inspect output).</span>';
+            consoleContainer.appendChild(row);
+          }
+        }).catch(err => {
+          appendLog('error', [err.name + ': ' + err.message]);
+        });
+
+      } catch (err) {
+        appendLog('error', [err.name + ': ' + err.message]);
+      }
+    }
+
+    function formatLogValue(arg) {
+      if (arg === undefined) return '<span class="text-stone-500 italic">undefined</span>';
+      if (arg === null) return '<span class="text-stone-500 italic">null</span>';
+      if (typeof arg === 'string') return `<span class="text-emerald-400">"${escapeHtml(arg)}"</span>`;
+      if (typeof arg === 'number') return `<span class="text-cyan-400 font-bold">${arg}</span>`;
+      if (typeof arg === 'boolean') return `<span class="text-purple-400 font-bold">${arg}</span>`;
+      if (typeof arg === 'function') return `<span class="text-amber-400">ƒ ${arg.name || 'anonymous'}()</span>`;
+      if (typeof arg === 'object') {
+        try {
+          return `<span class="text-stone-300">${escapeHtml(JSON.stringify(arg, null, 2))}</span>`;
+        } catch (e) {
+          return `<span class="text-stone-400">[Object ${arg.constructor?.name || ''}]</span>`;
+        }
+      }
+      return escapeHtml(String(arg));
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
   initTheme();
+  initCompilerStudio();
   updateProgressUI();
   updateExerciseUI();
   restoreChecklist();
