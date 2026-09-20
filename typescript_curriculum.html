@@ -3016,14 +3016,14 @@ const office: GeoPoint = [28.6139, 77.2090, &quot;New Delhi&quot;];
 // 3. React hook returning a typed tuple [state, toggleAction]:
 import { useState, useCallback } from &quot;react&quot;;
 
-function useToggle(initial: boolean = false): readonly [boolean, () =&gt; void] {
-  const [value, setValue] = useState&lt;boolean&gt;(initial);
-  const toggle = useCallback(() =&gt; {
-    setValue((prev) =&gt; !prev);
+export function useToggle(initial: boolean = false): [boolean, (next?: boolean) => void] {
+  const [value, setValue] = useState<boolean>(initial);
+  const toggle = useCallback((next?: boolean) => {
+    setValue((prev) => (typeof next === "boolean" ? next : !prev));
   }, []);
-  return [value, toggle] as const;
+  return [value, toggle];
 }</code></pre>
-      <div class="code-caption">Tuples encode fixed positions and length; &#x27;as const&#x27; with useState ensures a typed immutable [boolean, () =&gt; void] return.</div>
+      <div class="code-caption">Tuples encode fixed positions and length; typed [boolean, (next?: boolean) =&gt; void] tuple supports both toggle and explicit boolean setting.</div>
     </div>
 
     <div class="topic-sections-grid">
@@ -3854,7 +3854,7 @@ console.log(item.toFixed(2));</code></pre>
         </div>
       </div>
       <pre><code>// ==============================================================
-// CONFIG A: Next.js Application (Type-Check Only; Turbopack Bundles)
+// CONFIG A: Next.js &amp; Vite Modern Bundler Apps (Type-Check Only; noEmit)
 // ==============================================================
 {
   "compilerOptions": {
@@ -3863,19 +3863,19 @@ console.log(item.toFixed(2));</code></pre>
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
-    "noEmit": true,                         /* Bundler handles JS output */
+    "noEmit": true,                         /* Bundler (Vite / Turbopack) handles JS emission */
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "bundler",          /* Modern bundler resolution (TS 5.0+) */
     "resolveJsonModule": true,
-    "isolatedModules": true,                /* Required for single-file transpilers */
-    "jsx": "preserve",                      /* React handles JSX during build */
+    "isolatedModules": true,                /* Required for Vite/esbuild/SWC single-file transpilers */
+    "jsx": "preserve",                      /* 'preserve' for Next.js App Router; use 'react-jsx' for Vite */
     "incremental": true,
-    "plugins": [{ "name": "next" }],
+    "plugins": [{ "name": "next" }],       /* Next.js language service plugin; omit for Vite */
     "paths": { "@/*": ["./src/*"] },
     "noUncheckedIndexedAccess": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["src/**/*", "next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
 
@@ -3901,7 +3901,7 @@ console.log(item.toFixed(2));</code></pre>
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist", "**/*.test.ts"]
 }</code></pre>
-      <div class="code-caption">Next.js uses moduleResolution: 'bundler' with noEmit: true; Node libraries use module/moduleResolution: 'NodeNext' with noEmit: false and declaration: true.</div>
+      <div class="code-caption">Modern Next.js &amp; Vite web apps use moduleResolution: 'bundler' with noEmit: true ('preserve' for Next.js, 'react-jsx' for Vite); Node libraries use module/moduleResolution: 'NodeNext' with noEmit: false and declaration: true.</div>
     </div>
 
     <div class="topic-sections-grid">
@@ -8896,17 +8896,19 @@ export function useAuth(): AuthState {
     <div class="topic-drill-card">
       <div class="topic-drill-top">
         <span class="topic-drill-badge">⚡ Quick Assessment Drill</span>
-        <div class="topic-drill-prompt"><strong>Checkpoint Challenge:</strong> Write a useToggle custom hook that returns a strongly typed tuple [boolean, () =&gt; void].</div>
+        <div class="topic-drill-prompt"><strong>Checkpoint Challenge:</strong> Write a useToggle custom hook that returns a strongly typed tuple [boolean, (next?: boolean) =&gt; void].</div>
       </div>
       <details class="topic-drill-details">
         <summary class="topic-drill-summary">💡 Reveal Model Solution &amp; Explanation</summary>
         <div class="topic-drill-content">
-          <pre><code>function useToggle(initial = false): readonly [boolean, () =&gt; void] {
-  const [val, setVal] = React.useState(initial);
-  const toggle = React.useCallback(() =&gt; setVal(v =&gt; !v), []);
-  return [val, toggle] as const;
+          <pre><code>function useToggle(initial: boolean = false): [boolean, (next?: boolean) =&gt; void] {
+  const [val, setVal] = React.useState&lt;boolean&gt;(initial);
+  const toggle = React.useCallback((next?: boolean) =&gt; {
+    setVal((v) =&gt; (typeof next === "boolean" ? next : !v));
+  }, []);
+  return [val, toggle];
 }</code></pre>
-          <div class="topic-drill-expl"><strong>Explanation:</strong> &#x27;as const&#x27; or an explicit readonly tuple return type prevents TypeScript from widening the return array to (boolean | (() =&gt; void))[].</div>
+          <div class="topic-drill-expl"><strong>Explanation:</strong> An explicit tuple return type [boolean, (next?: boolean) =&gt; void] prevents TypeScript from widening the return array to (boolean | ((next?: boolean) =&gt; void))[] and allows caller-driven toggling or direct setting.</div>
         </div>
       </details>
     </div>
@@ -12114,7 +12116,7 @@ type AppFixtures = {
 // Extend base test with typed fixtures:
 export const test = base.extend&lt;AppFixtures&gt;({
   authToken: async ({}, use) =&gt; {
-    const token = "mock-jwt-auth-session-token";
+    const token = process.env.PLAYWRIGHT_TEST_TOKEN ?? `test-session-${crypto.randomUUID()}`;
     await use(token);
   },
   dashboardPage: async ({ page }, use) =&gt; {
