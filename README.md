@@ -17,6 +17,7 @@ Interactive developer portal and admissions roadmap hosted on GitHub Pages. Cent
 | 🐯 **CAT 2026 Strategic Master Roadmap & Empirical Syllabus** | Full 3-section preparation plan (68 Qs: VARC 24, DILR 22, QA 22; source: iimcat.ac.in / VERIFY), adaptive post-mock rules, 72-day daily timetable with 14 full-length mocks, target B-school admission criteria (IITs, FMS, CAP IIMs), and official IIM facts. | [`cat_2026_syllabus_roadmap.html`](cat_2026_syllabus_roadmap.html) |
 | 📘 **Production TypeScript Curriculum & Interview Mastery** | 17,600+ curriculum lines spanning 10 mastery levels, 79 core topics, 100+ practice drills, 10 production labs, type-level metaprogramming, and 125 technical interview Q&As. | [`typescript_curriculum.html`](typescript_curriculum.html) |
 | 📄 **German Lebenslauf (DIN 5008 CV)** | Standardized German-language curriculum vitae tailored for DACH employers and German university admissions. | [`lebenslauf_de.html`](lebenslauf_de.html) |
+| 📄 **English Tech CV (1-Page)** | 1-page English CV tailored for German startups, scale-ups, and international tech companies (EU Blue Card compliant, Bavarian grade conversion). | [`Lakshay_Nagpal_CV.html`](Lakshay_Nagpal_CV.html) |
 | 💻 **Full-Stack Cloud Projects** | Production applications including Next.js 16 Real-Time Chat App (Socket.IO, K8s, Docker) and AI Data Analytics Dashboard (Gemini 1.5 API). | [GitHub Repositories](https://github.com/lakshayn0001?tab=repositories) |
 
 ---
