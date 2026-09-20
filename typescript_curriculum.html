@@ -444,6 +444,61 @@
       -moz-tab-size: 2;
     }
 
+    /* Pixel-Perfect Compiler Editor & Line Numbers Alignment */
+    #compilerLineNumbers,
+    #compilerCodeInput {
+      font-family: 'JetBrains Mono', Menlo, Monaco, Consolas, ui-monospace, monospace !important;
+      font-size: 13px !important;
+      line-height: 22px !important;
+      box-sizing: border-box !important;
+    }
+
+    #compilerLineNumbers {
+      width: 48px !important;
+      min-width: 48px !important;
+      padding: 12px 10px 12px 0 !important;
+      text-align: right !important;
+      line-height: 22px !important;
+      overflow: hidden !important;
+      user-select: none !important;
+      border-right: 1px solid #1a2920 !important;
+      background: #090f0c !important;
+      color: #5a7350 !important;
+    }
+
+    #compilerCodeInput {
+      padding: 12px 14px !important;
+      line-height: 22px !important;
+      white-space: pre !important;
+      overflow-x: auto !important;
+      overflow-y: scroll !important;
+      word-wrap: normal !important;
+      outline: none !important;
+      border: none !important;
+      resize: none !important;
+      color: #e6edf3 !important;
+      caret-color: #52b788 !important;
+    }
+
+    .compiler-log-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 5px 8px;
+      border-radius: 6px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      line-height: 1.5;
+      word-break: break-word;
+      background: rgba(255, 255, 255, 0.03);
+      border-left: 3px solid #2d6a4f;
+      margin-bottom: 4px;
+    }
+    .compiler-log-info { border-left-color: #3b82f6; color: #93c5fd; }
+    .compiler-log-warn { border-left-color: #f59e0b; color: #fde68a; background: rgba(245, 158, 11, 0.08); }
+    .compiler-log-error { border-left-color: #ef4444; color: #fca5a5; background: rgba(239, 68, 68, 0.08); }
+    .compiler-log-success { border-left-color: #10b981; color: #a7f3d0; background: rgba(16, 185, 129, 0.08); }
+
     /* Action Buttons */
     .btn {
       display: inline-flex;
@@ -489,7 +544,17 @@
       align-items: start;
     }
     @media (max-width: 1100px) {
-      .layout { grid-template-columns: 1fr; }
+      .layout {
+        grid-template-columns: 1fr;
+        padding: 0 16px 40px;
+        gap: 20px;
+      }
+      .sidebar {
+        position: relative !important;
+        top: 0 !important;
+        max-height: 480px !important;
+        margin-bottom: 20px !important;
+      }
     }
 
     /* Sticky Sidebar */
@@ -1651,6 +1716,244 @@
   border-left: 3px solid var(--accent-purple);
 }
 
+    /* ==========================================================================
+       COMPREHENSIVE DARK THEME SYSTEM & REFINED CONTRAST OVERRIDES
+       ========================================================================== */
+
+    /* Custom Dark Mode Scrollbars */
+    [data-theme="dark"] ::-webkit-scrollbar-track {
+      background: #111a12;
+    }
+    [data-theme="dark"] ::-webkit-scrollbar-thumb {
+      background: #2d4530;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    [data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+      background: #3d5e41;
+    }
+
+    /* Studio Modal & Workspace Window Dark Theme */
+    [data-theme="dark"] #tsCompilerWindow {
+      background: rgba(18, 27, 20, 0.98) !important;
+      border-color: rgba(135, 160, 122, 0.35) !important;
+      color: #f4f7f2 !important;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7) !important;
+    }
+    [data-theme="dark"] #tsCompilerWindow > div:first-child {
+      background: rgba(24, 36, 27, 0.96) !important;
+      border-color: rgba(135, 160, 122, 0.25) !important;
+    }
+    [data-theme="dark"] #tsCompilerWindow .text-stone-900 {
+      color: #f4f7f2 !important;
+    }
+    [data-theme="dark"] #tsCompilerWindow .text-stone-700 {
+      color: #d7e2ce !important;
+    }
+    [data-theme="dark"] #tsCompilerWindow .text-stone-600 {
+      color: #9fb791 !important;
+    }
+    [data-theme="dark"] #compilerTopicDropdown,
+    [data-theme="dark"] #compilerTargetSelect {
+      background: #0d1410 !important;
+      color: #f4f7f2 !important;
+      border-color: rgba(135, 160, 122, 0.3) !important;
+    }
+    [data-theme="dark"] #compilerTopicDropdown optgroup,
+    [data-theme="dark"] #compilerTopicDropdown option,
+    [data-theme="dark"] #compilerTargetSelect option {
+      background: #0d1410 !important;
+      color: #f4f7f2 !important;
+    }
+    [data-theme="dark"] #tsCompilerWindow label {
+      background: rgba(24, 36, 27, 0.9) !important;
+      border-color: rgba(135, 160, 122, 0.3) !important;
+      color: #d7e2ce !important;
+    }
+    [data-theme="dark"] #tsCompilerWindow button.text-stone-600 {
+      color: #9fb791 !important;
+    }
+    [data-theme="dark"] #tsCompilerWindow button.text-stone-600:hover {
+      background: rgba(45, 75, 40, 0.4) !important;
+      color: #ffffff !important;
+    }
+
+    /* Global Persistent Left Sidebar (#sideNavDrawer) Dark Theme */
+    [data-theme="dark"] #sideNavDrawer {
+      background: rgba(18, 27, 20, 0.96) !important;
+      border-color: rgba(135, 160, 122, 0.22) !important;
+      box-shadow: 4px 0 24px rgba(0, 0, 0, 0.4) !important;
+    }
+    [data-theme="dark"] #sideNavDrawer .text-stone-900 {
+      color: #f4f7f2 !important;
+    }
+    [data-theme="dark"] #sideNavDrawer .text-stone-600 {
+      color: #9fb791 !important;
+    }
+    [data-theme="dark"] #sideNavDrawer .tracking-wider.text-stone-600 {
+      color: #628053 !important;
+    }
+    [data-theme="dark"] #sideNavDrawer a.text-stone-700 {
+      color: #d7e2ce !important;
+    }
+    [data-theme="dark"] #sideNavDrawer a.text-stone-700:hover {
+      background: rgba(45, 75, 40, 0.35) !important;
+      color: #ffffff !important;
+    }
+    [data-theme="dark"] #sideNavDrawer .border-stone-300\/60 {
+      border-color: rgba(135, 160, 122, 0.2) !important;
+    }
+    [data-theme="dark"] #sideNavDrawer button.text-stone-500 {
+      color: #9fb791 !important;
+    }
+    [data-theme="dark"] #sideNavDrawer button.text-stone-500:hover {
+      background: rgba(45, 75, 40, 0.4) !important;
+      color: #ffffff !important;
+    }
+    [data-theme="dark"] #sideNavDrawer .bg-stone-200 {
+      background: rgba(45, 75, 40, 0.4) !important;
+      color: #d7e2ce !important;
+    }
+
+    /* Top Sticky Navigation Bar Dark Theme */
+    [data-theme="dark"] .glass-droplet-nav .text-stone-900 {
+      color: #f4f7f2 !important;
+    }
+    [data-theme="dark"] .glass-droplet-nav .text-stone-600 {
+      color: #9fb791 !important;
+    }
+    [data-theme="dark"] .glass-droplet-nav button.text-stone-700 {
+      background: rgba(26, 39, 28, 0.9) !important;
+      border-color: rgba(135, 160, 122, 0.3) !important;
+      color: #d7e2ce !important;
+    }
+    [data-theme="dark"] .glass-droplet-nav button.text-stone-700:hover {
+      background: rgba(45, 75, 40, 0.4) !important;
+      color: #ffffff !important;
+    }
+
+    /* Floating Audio Player Bar Dark Theme */
+    [data-theme="dark"] #floatingAudioBar {
+      background: rgba(22, 33, 24, 0.96) !important;
+      border-color: rgba(135, 160, 122, 0.3) !important;
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6) !important;
+    }
+    [data-theme="dark"] #audioPlayerTitle {
+      color: #f4f7f2 !important;
+    }
+    [data-theme="dark"] #audioPlayerStatus {
+      color: #74c69d !important;
+    }
+    [data-theme="dark"] #floatingAudioBar button {
+      background: rgba(35, 52, 38, 0.9) !important;
+      color: #d7e2ce !important;
+    }
+    [data-theme="dark"] #floatingAudioBar button:hover {
+      background: rgba(45, 75, 40, 0.5) !important;
+      color: #ffffff !important;
+    }
+
+    /* Footer Dark Theme */
+    [data-theme="dark"] footer {
+      background: #111a12 !important;
+      border-color: rgba(135, 160, 122, 0.2) !important;
+      color: #9fb791 !important;
+    }
+    [data-theme="dark"] footer a {
+      color: #d7e2ce !important;
+    }
+    [data-theme="dark"] footer a:hover {
+      color: #52b788 !important;
+    }
+    [data-theme="dark"] footer p {
+      color: #628053 !important;
+    }
+
+    /* Interactive Feedback & Difficulty Badges in Dark Mode */
+    [data-theme="dark"] .quiz-feedback.show-correct {
+      background: rgba(16, 185, 129, 0.15) !important;
+      color: #6ee7b7 !important;
+      border-color: rgba(16, 185, 129, 0.35) !important;
+    }
+    [data-theme="dark"] .quiz-feedback.show-incorrect {
+      background: rgba(244, 63, 94, 0.15) !important;
+      color: #fda4af !important;
+      border-color: rgba(244, 63, 94, 0.35) !important;
+    }
+    [data-theme="dark"] .diff-beg {
+      background: rgba(56, 189, 248, 0.15) !important;
+      color: #38bdf8 !important;
+      border: 1px solid rgba(56, 189, 248, 0.3) !important;
+    }
+    [data-theme="dark"] .diff-int {
+      background: rgba(245, 158, 11, 0.15) !important;
+      color: #fbbf24 !important;
+      border: 1px solid rgba(245, 158, 11, 0.3) !important;
+    }
+    [data-theme="dark"] .diff-adv {
+      background: rgba(244, 63, 94, 0.15) !important;
+      color: #fb7185 !important;
+      border: 1px solid rgba(244, 63, 94, 0.3) !important;
+    }
+    [data-theme="dark"] .diff-exp {
+      background: rgba(168, 85, 247, 0.15) !important;
+      color: #c084fc !important;
+      border: 1px solid rgba(168, 85, 247, 0.3) !important;
+    }
+    [data-theme="dark"] .bug-hunt-card {
+      background: rgba(22, 33, 24, 0.9) !important;
+      border-color: rgba(245, 158, 11, 0.35) !important;
+    }
+    [data-theme="dark"] .lab-task-card {
+      background: rgba(22, 33, 24, 0.9) !important;
+      border-color: rgba(135, 160, 122, 0.25) !important;
+    }
+    [data-theme="dark"] .code-caption {
+      background: #090f0c !important;
+      color: #9fb791 !important;
+      border-color: rgba(135, 160, 122, 0.2) !important;
+    }
+
+    /* ==========================================================================
+       RESPONSIVE REFINEMENTS FOR MOBILE (<640px) & TABLET (<1100px)
+       ========================================================================== */
+    @media (max-width: 640px) {
+      .layout {
+        padding: 0 12px 30px !important;
+      }
+      .section-header {
+        padding: 14px 16px !important;
+      }
+      .section-body {
+        padding: 16px 14px 20px !important;
+      }
+      .topic-card-header {
+        padding: 12px 14px !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+      }
+      .topic-controls {
+        width: 100% !important;
+        justify-content: space-between !important;
+      }
+      .topic-body {
+        padding: 14px !important;
+      }
+      .code-box pre {
+        padding: 12px 14px !important;
+        font-size: 11.5px !important;
+      }
+      #tsCompilerWindow {
+        height: 98vh !important;
+        max-height: 98vh !important;
+        border-radius: 12px !important;
+      }
+      #floatingCompilerTrigger {
+        bottom: 80px !important;
+        right: 14px !important;
+      }
+    }
 
 </style>
   <script src="assets/js/active-tracker.js"></script>
@@ -15893,14 +16196,14 @@ export type CheckoutState = CartState | ShippingState | PaymentState | Confirmed
 
   
   <!-- Floating TypeScript Compiler Launch Button -->
-  <button id="floatingCompilerTrigger" onclick="openCompilerPlayground()" class="fixed bottom-6 right-6 z-40 droplet-pill px-4 py-3 rounded-2xl shadow-xl flex items-center gap-2 font-bold text-xs bg-emerald-800 hover:bg-emerald-900 text-white transition-all transform hover:scale-105 border border-emerald-600 cursor-pointer" title="Open Interactive TypeScript Compiler & Playground (Cmd+K / Ctrl+K)">
+  <button id="floatingCompilerTrigger" onclick="openCompilerPlayground()" class="fixed bottom-20 right-4 sm:bottom-6 sm:right-6 z-40 droplet-pill px-4 py-3 rounded-2xl shadow-xl flex items-center gap-2 font-bold text-xs bg-emerald-800 hover:bg-emerald-900 text-white transition-all transform hover:scale-105 border border-emerald-600 cursor-pointer" title="Open Interactive TypeScript Compiler & Playground (Cmd+K / Ctrl+K)">
     <span class="text-sm">⚡</span>
     <span>TS Compiler</span>
     <span class="text-[10px] px-1.5 py-0.5 rounded bg-white/20 font-mono hidden sm:inline">⌘K</span>
   </button>
 
   <!-- Interactive TypeScript Practice Studio & Live Compiler Modal -->
-  <div id="tsCompilerModal" class="fixed inset-0 z-50 bg-stone-950/75 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 lg:p-6 hidden opacity-0 transition-opacity duration-200">
+  <div id="tsCompilerModal" class="fixed inset-0 z-[100] bg-stone-950/75 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 lg:p-6 hidden opacity-0 transition-opacity duration-200">
     <div id="tsCompilerWindow" class="glass-droplet rounded-2xl sm:rounded-3xl w-full max-w-[1520px] h-[92vh] max-h-[960px] flex flex-col shadow-2xl border border-stone-300/80 overflow-hidden transition-all transform scale-95 duration-200 bg-white/95 text-stone-900">
       
       <!-- Studio Header -->
@@ -17160,10 +17463,10 @@ if (!invalidResult.success) {
       function appendLog(type, args) {
         logCount++;
         const row = document.createElement('div');
-        row.className = `py-1 px-2 border-b border-[#1a261f] font-mono text-xs flex items-start gap-2 ${
-          type === 'error' ? 'bg-red-950/40 text-red-300' :
-          type === 'warn' ? 'bg-amber-950/40 text-amber-300' :
-          type === 'table' ? 'bg-blue-950/30 text-blue-200' : 'text-stone-200'
+        row.className = `compiler-log-row ${
+          type === 'error' ? 'compiler-log-error' :
+          type === 'warn' ? 'compiler-log-warn' :
+          type === 'table' ? 'compiler-log-info' : 'compiler-log-success'
         }`;
         const time = new Date().toLocaleTimeString().split(' ')[0];
         const icon = type === 'error' ? '❌' : type === 'warn' ? '⚠️' : type === 'table' ? '📊' : '›';
