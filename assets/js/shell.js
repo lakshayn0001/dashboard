@@ -20,6 +20,7 @@
     { label: 'Calendar', href: 'deadlines_calendar.html', key: 'calendar', icon: '🗓️' },
     { label: 'CAT', href: 'cat_2026_syllabus_roadmap.html', key: 'cat', icon: '🐯' },
     { label: 'Germany', href: 'german_universities_evaluation.html', key: 'germany', icon: '🇩🇪' },
+    { label: 'German Learner', href: 'german_learner.html', key: 'german_learner', icon: '🗣️' },
     { label: 'Career', href: 'profile.html', key: 'career', icon: '👤' },
     {
       label: 'Learn',
@@ -63,6 +64,18 @@
       { label: 'Tuition & Living Costs', href: '#costs', icon: '💶' },
       { label: 'Career Transition & Salaries', href: '#transition', icon: '💼' },
       { label: 'Strategic Q&A Overview', href: '#qa', icon: '❓' }
+    ],
+    'german_learner.html': [
+      { label: 'Alphabet & Sounds', href: '#alphabet', icon: '🔤' },
+      { label: 'Greetings & Basics', href: '#basics', icon: '👋' },
+      { label: 'Pronouns & Questions', href: '#pronouns', icon: '❓' },
+      { label: 'Calendar & Time', href: '#calendar-time', icon: '📅' },
+      { label: 'Noun Gender Gym', href: '#nouns', icon: '🏷️' },
+      { label: 'Verbs & Conjugation', href: '#verbs', icon: '⚡' },
+      { label: 'Adjectives & Opposites', href: '#adjectives', icon: '🎨' },
+      { label: 'Conjunctions & Syntax', href: '#conjunctions', icon: '🧩' },
+      { label: 'Dialogue Bank (49)', href: '#dialogues', icon: '💬' },
+      { label: '8-Week Roadmap', href: '#roadmap', icon: '🗓️' }
     ],
     'profile.html': [
       { label: 'Candidate Identity & Bio', href: '#profile-header', icon: '👤' },
