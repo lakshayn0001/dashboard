@@ -1,0 +1,1 @@
+Daily Workload Blueprint: On weekdays, commit 2.5 to 3 hours total: 45 minutes for VARC reading and comprehension, 45 minutes for one timed DILR set and video analysis, 50 to 60 minutes for QA covering 8 to 10 focused problems, and 15 minutes for your error log. On weekends, dedicate 4 to 4.5 hours for full mocks and in-depth forensic analysis.

@@ -6,6 +6,7 @@
   <title>CAT 2026 Master Roadmap &amp; Empirical Syllabus | Lakshay Nagpal</title>
   <meta name="description" content="Exhaustive CAT 2026 strategic preparation roadmap, section-wise empirical syllabus, 10-day kickstart timetable, and official IIM/IIT exam specifications.">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/shell.css">
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -133,180 +134,11 @@
   <div class="droplet-orb-2"></div>
   <div class="droplet-orb-3"></div>
 
-  <!-- Side Navigation Drawer Backdrop (Mobile only) -->
-  <div id="sidebarBackdrop" onclick="toggleSidebar(false)" class="fixed inset-0 bg-stone-900/40 backdrop-blur-sm z-40 hidden lg:hidden transition-opacity duration-300"></div>
-
-  <!-- Side Navigation Drawer (Permanent on Desktop, Drawer on Mobile) -->
-  <aside id="sideNavDrawer" class="fixed top-0 left-0 bottom-0 w-72 glass-droplet-sidebar z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out flex flex-col shadow-2xl lg:shadow-none">
-    <div class="p-5 border-b border-stone-300/60 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-600 via-orange-500 to-amber-700 flex items-center justify-center font-black text-white text-lg shadow-md droplet-pill">
-          LN
-        </div>
-        <div>
-          <div class="font-bold text-stone-900 text-sm tracking-tight flex items-center gap-1.5">
-            <span>Lakshay Nagpal</span>
-            <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-300">VERIFIED</span>
-          </div>
-          <span class="text-xs text-stone-600 font-mono block">CAT 2026 Strategy</span>
-        </div>
-      </div>
-      <button onclick="toggleSidebar(false)" class="p-2 rounded-lg text-stone-500 hover:text-stone-900 hover:bg-stone-200 transition-all lg:hidden" title="Close Menu">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-      </button>
-    </div>
-
-    <div class="flex-grow overflow-y-auto py-4 px-3 space-y-6">
-      <div>
-        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Core Portals</div>
-        <div class="mt-2 space-y-1">
-          <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 font-medium transition-all group text-sm">
-            <span class="text-lg">⚡</span>
-            <span>Daily Cockpit</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-mono font-bold">Today</span>
-          </a>
-          <a href="profile.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 font-medium transition-all group text-sm">
-            <span class="text-lg">👤</span>
-            <span>Candidate Profile</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-mono font-bold">Resume &amp; Bio</span>
-          </a>
-          <a href="dsa_master_tracker.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 font-medium transition-all group text-sm">
-            <span class="text-lg">⚡</span>
-            <span>DSA Master Tracker</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-mono">240+ LC</span>
-          </a>
-          <a href="learning_hub.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 font-medium transition-all group text-sm">
-            <span class="text-lg">🧠</span>
-            <span>Learning Hub</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-mono">6 Tracks (Track 0 to 5)</span>
-          </a>
-          <a href="typescript_curriculum.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 font-medium transition-all group text-sm">
-            <span class="text-lg">📘</span>
-            <span>TypeScript Curriculum</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-800 font-mono">17.6K Lines</span>
-          </a>
-        </div>
-      </div>
-
-      <div>
-        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Higher Education &amp; Admissions</div>
-        <div class="mt-2 space-y-1">
-          <a href="cat_2026_syllabus_roadmap.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-amber-100/90 text-amber-950 border border-amber-300 font-bold transition-all group text-sm shadow-sm">
-            <span class="text-lg">🐯</span>
-            <span>CAT 2026 Strategy</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-amber-200/80 text-amber-900 font-mono">Active</span>
-          </a>
-          <a href="https://myzone.careerlauncher.com/login.jsp" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2 rounded-xl bg-amber-50/90 hover:bg-amber-100/90 text-amber-900 border border-amber-300/80 font-semibold transition-all group text-xs shadow-2xs">
-            <span class="text-base">🎓</span>
-            <span class="truncate">CL MyZone (VARC)</span>
-            <span class="ml-auto text-[9px] px-1.5 py-0.5 rounded-full font-bold bg-emerald-100 text-emerald-800 border border-emerald-300 font-mono">Enrolled ↗</span>
-          </a>
-          <a href="german_universities_evaluation.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 font-medium transition-all group text-sm">
-            <span class="text-lg">🇩🇪</span>
-            <span>German Universities</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-mono">Tuition-Free</span>
-          </a>
-        </div>
-      </div>
-
-      <div>
-        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Professional Dossier</div>
-        <div class="mt-2 space-y-1">
-          <a href="resume.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-base">📄</span>
-            <span>Original Resume</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-stone-200 text-stone-800 font-mono">Full-Stack</span>
-          </a>
-          <a href="Lakshay_Nagpal_CV.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-base">🇩🇪</span>
-            <span>German Companies CV</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-900 font-mono">Blue Card</span>
-          </a>
-          <a href="https://drive.google.com/file/d/15GwnY6jhijyzTbYt-QVjesA7c4dnuHzE/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 px-3 py-2 rounded-xl text-emerald-800 hover:text-emerald-950 hover:bg-emerald-50 transition-all group text-sm font-semibold">
-            <span class="text-base">📥</span>
-            <span>Download German PDF</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300 font-mono">Drive ↗</span>
-          </a>
-          <a href="profile.html#job-portals" class="flex items-center gap-3 px-3 py-2 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-base">💼</span>
-            <span>Job Portals Engine</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-mono">60+ Links</span>
-          </a>
-          <a href="https://lakshayn0001.github.io/Portfolio/" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-base">🌐</span>
-            <span>Developer Portfolio</span>
-            <svg class="w-3.5 h-3.5 text-stone-400 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-          </a>
-        </div>
-      </div>
-
-      <div>
-        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Connect</div>
-        <div class="mt-2 space-y-1">
-          <a href="https://www.linkedin.com/in/lakshay-nagpal-1a2a0134a/" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <svg class="w-4 h-4 text-[#0a66c2] fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z"/></svg>
-            <span>LinkedIn Profile</span>
-          </a>
-          <a href="https://github.com/lakshayn0001/dashboard" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <svg class="w-4 h-4 text-stone-600 fill-current" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
-            <span>GitHub Repository</span>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="p-4 border-t border-stone-300/60 text-[11px] text-stone-600 flex items-center justify-between">
-      <span>Immediate Joiner / 0 Days</span>
-      <span class="text-amber-800 font-mono font-bold">B.Tech 70.56%</span>
-    </div>
-  </aside>
+  <!-- Application Shell Mount -->
+  <div id="app-shell"></div>
 
   <!-- Main Content Wrapper with persistent sidebar offset on Desktop -->
-  <div class="lg:pl-72 flex flex-col min-h-screen relative z-10">
-
-    <!-- Sticky Top Navigation -->
-    <header class="sticky top-0 z-30 w-full glass-droplet-nav shadow-xs">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        <div class="flex items-center gap-3">
-          <button onclick="toggleSidebar(true)" class="p-2 rounded-xl bg-white/80 border border-stone-300 text-stone-700 hover:text-stone-950 transition-all flex items-center gap-1.5 lg:hidden" title="Toggle Navigation Menu">
-            <svg class="w-4 h-4 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-            <span class="text-xs font-semibold hidden sm:inline">Menu</span>
-          </button>
-          <a href="index.html" class="w-9 h-9 rounded-xl bg-white/80 border border-stone-300 hover:border-amber-600 flex items-center justify-center text-stone-700 hover:text-stone-950 transition-all" title="Back to Master Dashboard">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-          </a>
-          <div>
-            <span class="font-bold text-stone-900 text-base tracking-tight block">CAT 2026 Strategic Master Roadmap</span>
-            <span class="text-xs text-amber-800 font-mono flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-amber-600 animate-pulse"></span>
-              Empirical Syllabus &amp; High-Yield Topic Architecture
-            </span>
-          </div>
-        </div>
-
-        <!-- Quick Nav Links -->
-        <nav class="hidden xl:flex items-center gap-1 text-xs font-semibold text-stone-700">
-          <a href="#official" class="px-2 py-1 rounded-lg hover:bg-stone-200/70 transition-all text-amber-800 font-bold">Exam Reality</a>
-          <a href="#structure" class="px-2 py-1 rounded-lg hover:bg-stone-200/70 transition-all">Battle Plans</a>
-          <a href="#loop" class="px-2 py-1 rounded-lg hover:bg-stone-200/70 transition-all">4-Step Loop</a>
-          <a href="#ignore" class="px-2 py-1 rounded-lg hover:bg-stone-200/70 transition-all text-red-800 font-semibold">What to Ignore</a>
-          <a href="#checklists" class="px-2 py-1 rounded-lg hover:bg-stone-200/70 transition-all">Topic Checklists</a>
-          <a href="#links" class="px-2 py-1 rounded-lg hover:bg-stone-200/70 transition-all">20 Portals</a>
-          <a href="#timetable" class="px-2.5 py-1 rounded-lg bg-amber-500/15 hover:bg-amber-500/25 text-amber-900 border border-amber-400/50 font-bold transition-all shadow-2xs">72-Day Timetable ↗</a>
-        </nav>
-
-        <div class="flex items-center gap-2">
-          <a href="https://www.linkedin.com/in/lakshay-nagpal-1a2a0134a/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0a66c2] hover:bg-[#004182] text-white text-xs font-semibold shadow-xs transition-all" title="LinkedIn Profile">
-            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z"/></svg>
-            <span class="hidden sm:inline">LinkedIn</span>
-          </a>
-          <button onclick="window.print()" class="no-print hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/80 hover:bg-white text-stone-700 text-xs font-medium border border-stone-300 transition-all shadow-xs">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
-            <span>Print</span>
-          </button>
-        </div>
-      </div>
-    </header>
+  <div class="shell-content-wrapper lg:pl-64 flex flex-col min-h-screen relative z-10">
 
   <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
 
@@ -8783,22 +8615,29 @@
   <div id="floatingAudioBar" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden max-w-xl w-[92%] sm:w-auto px-4 py-2.5 rounded-2xl glass-droplet bg-white/95 border border-stone-300/90 shadow-2xl text-stone-900 flex items-center justify-between gap-4 transition-all">
     <div class="flex items-center gap-3 overflow-hidden">
       <!-- Animated equalizer bars -->
-      <div class="flex items-end gap-0.5 h-4 w-4 text-amber-700">
+      <div id="audioEqualizer" class="flex items-end gap-0.5 h-4 w-4 text-amber-700 flex-shrink-0">
         <span class="w-1 bg-amber-600 rounded-full animate-bounce h-2"></span>
         <span class="w-1 bg-amber-600 rounded-full animate-bounce h-4" style="animation-delay: 0.15s"></span>
         <span class="w-1 bg-amber-600 rounded-full animate-bounce h-3" style="animation-delay: 0.3s"></span>
       </div>
-      <div class="truncate">
+      <div class="truncate max-w-[210px] sm:max-w-xs">
         <div id="audioPlayerTitle" class="text-xs font-bold text-stone-900 truncate">Playing Audio Summary</div>
-        <div id="audioPlayerStatus" class="text-[11px] text-stone-500">Narrating brief...</div>
+        <div class="flex items-center gap-2">
+          <span id="audioPlayerStatus" class="text-[11px] text-stone-500 truncate">Neural Voice (af_heart)</span>
+          <span id="audioPlayerTime" class="text-[10px] text-stone-400 font-mono">0:00 / 0:00</span>
+        </div>
+        <div id="audioProgressContainer" class="w-full bg-stone-200 rounded-full h-1 mt-1 overflow-hidden">
+          <div id="audioProgressBar" class="bg-amber-600 h-1 rounded-full transition-all" style="width: 0%"></div>
+        </div>
       </div>
     </div>
     <div class="flex items-center gap-2 flex-shrink-0">
-      <button onclick="toggleAudioPlayback()" id="audioPlayPauseBtn" class="p-1.5 rounded-lg bg-amber-700 hover:bg-amber-800 text-white transition-all" title="Pause / Resume">
+      <button onclick="cycleAudioSpeed()" id="audioSpeedBtn" class="px-2 py-1 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-700 text-[11px] font-bold transition-all cursor-pointer" title="Cycle playback speed (0.8x, 1.0x, 1.25x)">1.0x</button>
+      <button onclick="toggleAudioPlayback()" id="audioPlayPauseBtn" class="p-1.5 rounded-lg bg-amber-700 hover:bg-amber-800 text-white transition-all cursor-pointer" title="Pause / Resume">
         <svg id="pauseIcon" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/></svg>
         <svg id="playIcon" class="w-4 h-4 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
       </button>
-      <button onclick="stopAudioSummary()" class="p-1.5 rounded-lg bg-stone-200 hover:bg-stone-300 text-stone-700 hover:text-stone-900 transition-all" title="Stop Audio">
+      <button onclick="stopAudioSummary()" class="p-1.5 rounded-lg bg-stone-200 hover:bg-stone-300 text-stone-700 hover:text-stone-900 transition-all cursor-pointer" title="Stop Audio">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
       </button>
     </div>
@@ -8948,8 +8787,51 @@
     });
 
     // Web Speech Synthesis Audio Brief Engine (Female Voice Model)
+    let audioManifest = null;
+    let currentAudio = null;
     let currentUtterance = null;
     let activeAudioBtn = null;
+    let audioPlaybackRate = parseFloat(localStorage.getItem('dashboard_audio_speed') || '1.0');
+
+    function slugifyTitle(str) {
+      return (str || '').toLowerCase().replace(/['"&]/g, '').replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '');
+    }
+
+    async function loadAudioManifest() {
+      if (audioManifest) return audioManifest;
+      try {
+        const res = await fetch('data/audio_manifest.json');
+        if (res.ok) {
+          audioManifest = await res.json();
+          return audioManifest;
+        }
+      } catch (e) {
+        console.warn('Audio manifest not available:', e);
+      }
+      return null;
+    }
+
+    function formatAudioTime(seconds) {
+      if (!seconds || isNaN(seconds)) return '0:00';
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    }
+
+    function cycleAudioSpeed() {
+      const speeds = [0.8, 1.0, 1.25];
+      let currIdx = speeds.indexOf(audioPlaybackRate);
+      if (currIdx === -1) currIdx = 1;
+      audioPlaybackRate = speeds[(currIdx + 1) % speeds.length];
+      localStorage.setItem('dashboard_audio_speed', audioPlaybackRate.toString());
+      
+      const speedBtn = document.getElementById('audioSpeedBtn');
+      if (speedBtn) speedBtn.innerText = `${audioPlaybackRate}x`;
+
+      if (currentAudio) {
+        currentAudio.playbackRate = audioPlaybackRate;
+      }
+    }
 
     function getFemaleVoice() {
       const voices = window.speechSynthesis.getVoices();
@@ -8958,21 +8840,20 @@
       const enVoices = voices.filter(v => v.lang && v.lang.startsWith('en'));
       const pool = enVoices.length > 0 ? enVoices : voices;
 
-      // 1. Explicit 'female' tag in name
+      const naturalFemale = pool.find(v => (v.name.includes('Natural') || v.name.includes('Neural') || v.name.includes('Online')) && /female|jenny|aria|ava|sonia/i.test(v.name));
+      if (naturalFemale) return naturalFemale;
+
       let found = pool.find(v => /female/i.test(v.name));
       if (found) return found;
 
-      // 2. Renowned natural female system voices across macOS / iOS / Windows / Android / Chrome
       const femaleNames = [
         'Samantha', 'Victoria', 'Karen', 'Zira', 'Jenny', 'Aria', 'Ava', 'Allison',
         'Susan', 'Moira', 'Tessa', 'Fiona', 'Veena', 'Google UK English Female',
-        'Google US English', 'Microsoft Zira', 'Microsoft Jenny', 'Microsoft Aria',
-        'en-US-Neural2-F', 'en-GB-Neural2-F'
+        'Google US English', 'Microsoft Zira', 'Microsoft Jenny', 'Microsoft Aria'
       ];
       found = pool.find(v => femaleNames.some(fn => v.name.includes(fn)));
       if (found) return found;
 
-      // 3. Exclude known male voice names
       const maleNames = ['Daniel', 'Alex', 'David', 'George', 'Fred', 'Mark', 'Guy', 'Tom', 'Oliver', 'James'];
       found = pool.find(v => !maleNames.some(mn => v.name.includes(mn)));
       return found || pool[0];
@@ -8982,77 +8863,6 @@
       window.speechSynthesis.onvoiceschanged = () => {
         window.speechSynthesis.getVoices();
       };
-    }
-
-    function playAudioSummary(btn, title, text) {
-      if (!('speechSynthesis' in window)) {
-        alert('Text-to-speech audio is not supported in this browser.');
-        return;
-      }
-
-      if (window.speechSynthesis.speaking && activeAudioBtn === btn) {
-        toggleAudioPlayback();
-        return;
-      }
-
-      stopAudioSummary();
-
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.rate = 1.0;
-      utterance.pitch = 1.06; // Articulate, natural female pitch
-
-      const femaleVoice = getFemaleVoice();
-      if (femaleVoice) utterance.voice = femaleVoice;
-
-      utterance.onstart = () => {
-        activeAudioBtn = btn;
-        if (btn) {
-          btn.classList.add('ring-2', 'ring-amber-400', 'bg-amber-600', 'text-white');
-          const label = btn.querySelector('.audio-label');
-          if (label) label.innerText = 'Playing...';
-        }
-        const bar = document.getElementById('floatingAudioBar');
-        const titleEl = document.getElementById('audioPlayerTitle');
-        const statusEl = document.getElementById('audioPlayerStatus');
-        if (bar) bar.classList.remove('hidden');
-        if (titleEl) titleEl.innerText = title;
-        if (statusEl) statusEl.innerText = 'Narrating brief summary (Female Voice)...';
-        showPlayIcon(false);
-      };
-
-      utterance.onend = () => {
-        stopAudioSummary();
-      };
-
-      utterance.onerror = () => {
-        stopAudioSummary();
-      };
-
-      currentUtterance = utterance;
-      window.speechSynthesis.speak(utterance);
-    }
-
-    function toggleAudioPlayback() {
-      if (!window.speechSynthesis.speaking) return;
-      if (window.speechSynthesis.paused) {
-        window.speechSynthesis.resume();
-        showPlayIcon(false);
-        if (activeAudioBtn) {
-          const label = activeAudioBtn.querySelector('.audio-label');
-          if (label) label.innerText = 'Playing...';
-        }
-        const statusEl = document.getElementById('audioPlayerStatus');
-        if (statusEl) statusEl.innerText = 'Narrating brief summary...';
-      } else {
-        window.speechSynthesis.pause();
-        showPlayIcon(true);
-        if (activeAudioBtn) {
-          const label = activeAudioBtn.querySelector('.audio-label');
-          if (label) label.innerText = 'Paused';
-        }
-        const statusEl = document.getElementById('audioPlayerStatus');
-        if (statusEl) statusEl.innerText = 'Paused (click to resume)';
-      }
     }
 
     function showPlayIcon(isPaused) {
@@ -9067,10 +8877,51 @@
           playIcon.classList.add('hidden');
         }
       }
+      const eq = document.getElementById('audioEqualizer');
+      if (eq) {
+        if (isPaused) eq.classList.add('opacity-40');
+        else eq.classList.remove('opacity-40');
+      }
+    }
+
+    function toggleAudioPlayback() {
+      if (currentAudio) {
+        if (currentAudio.paused) {
+          currentAudio.play().then(() => {
+            showPlayIcon(false);
+            const statusEl = document.getElementById('audioPlayerStatus');
+            if (statusEl) statusEl.innerText = `Playing (${audioPlaybackRate}x)`;
+          }).catch(err => console.error('Audio play error:', err));
+        } else {
+          currentAudio.pause();
+          showPlayIcon(true);
+          const statusEl = document.getElementById('audioPlayerStatus');
+          if (statusEl) statusEl.innerText = 'Paused';
+        }
+        return;
+      }
+
+      if (window.speechSynthesis && window.speechSynthesis.speaking) {
+        if (window.speechSynthesis.paused) {
+          window.speechSynthesis.resume();
+          showPlayIcon(false);
+        } else {
+          window.speechSynthesis.pause();
+          showPlayIcon(true);
+        }
+      }
     }
 
     function stopAudioSummary() {
-      window.speechSynthesis.cancel();
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+        currentAudio = null;
+      }
+      if (window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+      }
+      currentUtterance = null;
       if (activeAudioBtn) {
         activeAudioBtn.classList.remove('ring-2', 'ring-amber-400', 'bg-amber-600', 'text-white');
         const label = activeAudioBtn.querySelector('.audio-label');
@@ -9079,6 +8930,127 @@
       }
       const bar = document.getElementById('floatingAudioBar');
       if (bar) bar.classList.add('hidden');
+      const eq = document.getElementById('audioEqualizer');
+      if (eq) eq.classList.add('hidden');
+    }
+
+    async function playAudioSummary(btn, title, text, optId) {
+      if ((currentAudio || (window.speechSynthesis && window.speechSynthesis.speaking)) && activeAudioBtn === btn) {
+        toggleAudioPlayback();
+        return;
+      }
+
+      stopAudioSummary();
+      activeAudioBtn = btn;
+
+      if (btn) {
+        btn.classList.add('ring-2', 'ring-amber-400', 'bg-amber-600', 'text-white');
+        const label = btn.querySelector('.audio-label');
+        if (label) {
+          if (!label.getAttribute('data-default-label')) {
+            label.setAttribute('data-default-label', label.innerText);
+          }
+          label.innerText = 'Playing...';
+        }
+      }
+
+      const bar = document.getElementById('floatingAudioBar');
+      const titleEl = document.getElementById('audioPlayerTitle');
+      const statusEl = document.getElementById('audioPlayerStatus');
+      const timeEl = document.getElementById('audioPlayerTime');
+      const progressContainer = document.getElementById('audioProgressContainer');
+      const progressBar = document.getElementById('audioProgressBar');
+      const speedBtn = document.getElementById('audioSpeedBtn');
+      const eq = document.getElementById('audioEqualizer');
+
+      if (bar) bar.classList.remove('hidden');
+      if (eq) eq.classList.remove('hidden', 'opacity-40');
+      if (titleEl) titleEl.innerText = title;
+      if (speedBtn) speedBtn.innerText = `${audioPlaybackRate}x`;
+      showPlayIcon(false);
+
+      const manifest = await loadAudioManifest();
+      const slug = optId || slugifyTitle(title);
+      const manifestKey = `cat_2026_syllabus_roadmap/${slug}`;
+
+      let audioItem = manifest && manifest.items ? manifest.items[manifestKey] : null;
+      if (!audioItem && manifest && manifest.items) {
+        for (const k in manifest.items) {
+          if (k.endsWith('/' + slug) || (manifest.items[k].title && manifest.items[k].title.toLowerCase() === title.toLowerCase())) {
+            audioItem = manifest.items[k];
+            break;
+          }
+        }
+      }
+
+      if (audioItem && audioItem.path) {
+        const audio = new Audio(audioItem.path);
+        audio.playbackRate = audioPlaybackRate;
+        currentAudio = audio;
+
+        if (statusEl) statusEl.innerText = `Neural Voice (${manifest.default_voice || 'af_heart'})`;
+        if (progressContainer) progressContainer.classList.remove('hidden');
+        if (timeEl) {
+          timeEl.classList.remove('hidden');
+          timeEl.innerText = `0:00 / ${formatAudioTime(audioItem.duration_sec)}`;
+        }
+
+        audio.addEventListener('timeupdate', () => {
+          if (!audio.duration) return;
+          const pct = (audio.currentTime / audio.duration) * 100;
+          if (progressBar) progressBar.style.width = `${pct}%`;
+          if (timeEl) timeEl.innerText = `${formatAudioTime(audio.currentTime)} / ${formatAudioTime(audio.duration)}`;
+        });
+
+        audio.addEventListener('ended', () => {
+          stopAudioSummary();
+        });
+
+        audio.addEventListener('error', (e) => {
+          console.warn('Audio file playback failed, falling back to Web Speech:', e);
+          currentAudio = null;
+          fallbackWebSpeech(text, title);
+        });
+
+        audio.play().catch(err => {
+          console.warn('Audio play() rejected, falling back to Web Speech:', err);
+          currentAudio = null;
+          fallbackWebSpeech(text, title);
+        });
+
+        return;
+      }
+
+      fallbackWebSpeech(text, title);
+    }
+
+    function fallbackWebSpeech(text, title) {
+      if (!('speechSynthesis' in window)) {
+        alert('Audio playback is not supported in this browser.');
+        stopAudioSummary();
+        return;
+      }
+
+      const statusEl = document.getElementById('audioPlayerStatus');
+      const progressContainer = document.getElementById('audioProgressContainer');
+      const timeEl = document.getElementById('audioPlayerTime');
+
+      if (statusEl) statusEl.innerText = 'Narrating (Browser Speech Synthesis)...';
+      if (progressContainer) progressContainer.classList.add('hidden');
+      if (timeEl) timeEl.classList.add('hidden');
+
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = audioPlaybackRate;
+      utterance.pitch = 1.06;
+
+      const femaleVoice = getFemaleVoice();
+      if (femaleVoice) utterance.voice = femaleVoice;
+
+      utterance.onend = () => { stopAudioSummary(); };
+      utterance.onerror = () => { stopAudioSummary(); };
+
+      currentUtterance = utterance;
+      window.speechSynthesis.speak(utterance);
     }
   
     function toggleSidebar(open) {
@@ -9095,5 +9067,6 @@
     }
 
   </script>
+  <script src="assets/js/shell.js"></script>
 </body>
 </html>

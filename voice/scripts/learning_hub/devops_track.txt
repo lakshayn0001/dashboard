@@ -1,0 +1,1 @@
+Track 3 covers Cloud Infrastructure and DevOps. Master Docker container optimizations, Kubernetes pods and ingress controllers, Helm charts, automated GitHub Actions pipelines, Terraform infrastructure as code, and observability with Prometheus and Grafana.

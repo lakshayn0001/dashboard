@@ -1,0 +1,1 @@
+Test Architecture: 68 questions (VARC 24, DILR 22, QA 22; source: iimcat.ac.in / VERIFY) in 120 minutes with strict 40-minute locked timers per section. Correct answers earn plus 3 marks, while wrong MCQs lose 1 mark. Non-MCQ TITA questions carry zero negative penalty.

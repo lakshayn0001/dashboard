@@ -1,0 +1,54 @@
+{
+  "provider": "kokoro",
+  "voice": "af_nicole",
+  "style": "warm",
+  "speed": 0.86,
+  "mp3_kbps": 48,
+  "mono": true,
+  "engine_version": "1.1.0",
+  "providers": {
+    "kokoro": {
+      "sample_rate": 24000,
+      "default_voice": "af_nicole",
+      "voices": {
+        "af_nicole": "American Female - Nicole (Soft, Seductive, Warm, Conversational)",
+        "af_heart": "American Female - Heart (Warm, Expressive, Supportive)",
+        "bf_emma": "British Female - Emma (Gentle, Crisp RP)",
+        "af_sky": "American Female - Sky (Soothing, Soft, Dreamy)"
+      }
+    },
+    "edge_tts": {
+      "default_voice": "en-US-JennyNeural",
+      "voices": {
+        "en-US-JennyNeural": "US Female - Jenny (Conversational, Warm)",
+        "en-US-AvaNeural": "US Female - Ava (Natural, Expressive, Soft)",
+        "en-GB-SoniaNeural": "UK Female - Sonia (Gentle, Clear)",
+        "en-IN-NeerjaNeural": "Indian Female - Neerja (Professional)"
+      }
+    },
+    "azure": {
+      "env_key": "AZURE_KEY",
+      "env_region": "AZURE_REGION",
+      "default_voice": "en-US-JennyNeural",
+      "voices": {
+        "en-US-JennyNeural": "US Female - Jenny Neural",
+        "en-GB-SoniaNeural": "UK Female - Sonia Neural"
+      }
+    },
+    "elevenlabs": {
+      "env_key": "ELEVENLABS_KEY",
+      "model": "eleven_multilingual_v2",
+      "default_voice": "21m00Tcm4TlvDq8ikWAM",
+      "voices": {
+        "21m00Tcm4TlvDq8ikWAM": "Rachel (Calm, Warm, Alluring)"
+      }
+    },
+    "local_say": {
+      "default_voice": "Samantha",
+      "voices": {
+        "Samantha": "macOS Female - Samantha (Warm, Soft, Seductive with Warmth EQ)",
+        "Karen": "macOS Female - Karen (Australian, Expressive)"
+      }
+    }
+  }
+}

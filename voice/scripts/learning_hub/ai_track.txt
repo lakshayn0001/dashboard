@@ -1,0 +1,1 @@
+Track 4 covers Applied AI and LLM Systems. Dive into dense vector embeddings, vector search with Qdrant and Pinecone, modern RAG pipelines with hybrid search and reranking, and building autonomous agentic loops with tool calling.

@@ -6,6 +6,7 @@
   <meta name="description" content="Ultimate Production TypeScript Curriculum & Interview Mastery Guide for Full-Stack Engineers - React 19, Next.js 16/15, Node.js, Express, PostgreSQL, 79 Topics, and 125 Technical Interview Q&As.">
   <title>TypeScript Full-Stack Curriculum &amp; Interview Mastery | Lakshay Nagpal</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/shell.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typescript/5.4.5/typescript.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/zod@3.22.4/lib/index.umd.js"></script>
   <script>
@@ -2009,198 +2010,54 @@
   <div class="droplet-orb-2"></div>
   <div class="droplet-orb-3"></div>
 
-  <!-- Backdrop for slide-over drawer -->
-  <div id="sidebarBackdrop" onclick="toggleSidebar(false)" class="fixed inset-0 bg-stone-900/40 backdrop-blur-sm z-40 hidden transition-opacity duration-300"></div>
-
-  <!-- On-Demand Left Side Navigation Drawer (Opens via Menu/Portals button) -->
-  <aside id="sideNavDrawer" class="w-72 fixed inset-y-0 left-0 z-50 flex flex-col glass-droplet-sidebar transition-transform duration-300 -translate-x-full shadow-2xl">
-    <div class="p-5 border-b border-stone-300/60 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 via-teal-600 to-olive-700 flex items-center justify-center font-black text-white text-lg shadow-md droplet-pill">
-          LN
-        </div>
-        <div>
-          <div class="font-bold text-stone-900 text-sm tracking-tight flex items-center gap-1.5">
-            <span>Lakshay Nagpal</span>
-            <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">VERIFIED</span>
-          </div>
-          <span class="text-xs text-stone-600 font-mono block">Control Center</span>
-        </div>
-      </div>
-      <!-- Close button -->
-      <button onclick="toggleSidebar(false)" class="p-1.5 rounded-lg text-stone-500 hover:text-stone-900 hover:bg-stone-200 transition-all cursor-pointer" title="Close Menu">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-      </button>
-    </div>
-
-    <div class="flex-grow overflow-y-auto py-4 px-3 space-y-6">
-      <!-- Group 1: Core Portals -->
-      <div>
-        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Core Portals</div>
-        <div class="mt-2 space-y-1">
-          <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-lg">⚡</span>
-            <span>Daily Cockpit</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-mono font-bold">Today</span>
-          </a>
-          <a href="profile.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-lg">👤</span>
-            <span>Candidate Profile</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-mono font-bold">Resume &amp; Bio</span>
-          </a>
-          <a href="learning_hub.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-lg">🧠</span>
-            <span>Learning Hub</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-mono">5 Tracks + DSA</span>
-          </a>
-          <a href="dsa_master_tracker.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-lg">⚡</span>
-            <span>DSA Master Tracker</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-mono">240+ LC</span>
-          </a>
-          <a href="typescript_curriculum.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-emerald-100/90 text-emerald-950 border border-emerald-300 transition-all group text-sm font-bold shadow-sm">
-            <span class="text-lg">📘</span>
-            <span>TypeScript Curriculum</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-200/80 text-emerald-900 font-mono font-bold">Active · 79 Topics</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Group 2: Higher Education & Admissions -->
-      <div>
-        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Higher Education &amp; Admissions</div>
-        <div class="mt-2 space-y-1">
-          <a href="deadlines_calendar.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-lg">📅</span>
-            <span>Deadlines &amp; Calendar</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-red-100 text-red-800 font-mono">2026–27</span>
-          </a>
-          <a href="german_universities_evaluation.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-lg">🇩🇪</span>
-            <span>German Universities</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-mono">Tuition-Free</span>
-          </a>
-          <a href="cat_2026_syllabus_roadmap.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-lg">🐯</span>
-            <span>CAT 2026 Strategy</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 font-mono">IIM/IIT</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Group 3: Professional Dossier -->
-      <div>
-        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Professional Dossier</div>
-        <div class="mt-2 space-y-1">
-          <a href="resume.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-base">📄</span>
-            <span>Original Resume</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-stone-200 text-stone-800 font-mono">Full-Stack</span>
-          </a>
-          <a href="Lakshay_Nagpal_CV.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-base">🇩🇪</span>
-            <span>German Companies CV</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-900 font-mono">Blue Card</span>
-          </a>
-          <a href="https://drive.google.com/file/d/15GwnY6jhijyzTbYt-QVjesA7c4dnuHzE/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 px-3 py-2 rounded-xl text-emerald-800 hover:text-emerald-950 hover:bg-emerald-50 transition-all group text-sm font-semibold">
-            <span class="text-base">📥</span>
-            <span>Download German PDF</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300 font-mono">Drive ↗</span>
-          </a>
-          <a href="https://lakshayn0001.github.io/Portfolio/" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-base">🌐</span>
-            <span>Developer Portfolio</span>
-            <svg class="w-3.5 h-3.5 text-stone-400 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Group 4: Connect -->
-      <div>
-        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Connect</div>
-        <div class="mt-2 space-y-1">
-          <a href="https://www.linkedin.com/in/lakshay-nagpal-1a2a0134a/" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <svg class="w-4 h-4 text-[#0a66c2] fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z"/></svg>
-            <span>LinkedIn Profile</span>
-          </a>
-          <a href="https://github.com/lakshayn0001/dashboard" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <svg class="w-4 h-4 text-stone-600 fill-current" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
-            <span>GitHub Repository</span>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="p-4 border-t border-stone-300/60 text-[11px] text-stone-600 flex items-center justify-between">
-      <span>Immediate Joiner / 0 Days</span>
-      <span class="text-emerald-800 font-mono font-bold">B.Tech 70.56%</span>
-    </div>
-  </aside>
+  <!-- Application Shell Mount -->
+  <div id="app-shell"></div>
 
   <!-- Main Content Wrapper (Full Width with Single Curriculum Sidebar) -->
-  <div class="flex flex-col min-h-screen relative z-10 w-full">
+  <div class="shell-content-wrapper lg:pl-64 flex flex-col min-h-screen relative z-10 w-full">
 
-    <!-- Sticky Top Glass Navigation Bar -->
-    <header class="sticky top-0 z-30 w-full glass-droplet-nav shadow-xs">
-      <div class="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
-        
-        <!-- Left: Quick Navigation & Branding -->
-        <div class="flex items-center gap-2 sm:gap-3">
-          <a href="index.html" class="p-2 rounded-xl bg-white/90 hover:bg-stone-100 text-stone-700 hover:text-stone-950 border border-stone-300 transition-all flex items-center gap-1.5 cursor-pointer shadow-2xs font-semibold text-xs" title="Return to Daily Cockpit">
-            <span>⚡</span>
-            <span class="hidden sm:inline">Daily Cockpit</span>
-          </a>
-          <button onclick="toggleSidebar(true)" class="p-2 rounded-xl bg-white/90 hover:bg-stone-100 text-stone-700 hover:text-stone-950 border border-stone-300 transition-all flex items-center gap-1.5 cursor-pointer shadow-2xs font-semibold text-xs" title="Open All Portals Drawer">
-            <svg class="w-4 h-4 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-            <span class="hidden md:inline">Portals</span>
-          </button>
-
-          <div class="flex items-center gap-2 pl-2 border-l border-stone-300/80">
-            <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-emerald-700 via-teal-700 to-olive-800 flex items-center justify-center text-white font-mono font-black text-sm droplet-pill shadow-sm">
-              TS
-            </div>
-            <div>
-              <div class="font-bold text-stone-900 text-sm sm:text-base tracking-tight flex items-center gap-2">
-                <span>TypeScript Curriculum</span>
-                <span class="hidden sm:inline px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">79 Topics</span>
-              </div>
-              <span class="text-[10px] text-emerald-800 font-mono hidden sm:block">Production &amp; 2–5 YOE Mastery</span>
-            </div>
-          </div>
+    <!-- Interactive Studio & Progress Utility Bar -->
+    <div class="mx-4 sm:mx-6 lg:mx-8 mt-4 p-3 rounded-2xl bg-white/75 backdrop-blur-md border border-stone-300/70 shadow-2xs flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-emerald-700 via-teal-700 to-olive-800 flex items-center justify-center text-white font-mono font-black text-sm droplet-pill shadow-sm">
+          TS
         </div>
-
-        <!-- Center: Global progress indicator -->
-        <div class="progress-container hidden lg:flex items-center gap-2">
-          <span class="text-stone-700 font-bold text-xs">Progress:</span>
-          <div class="progress-bar-bg w-36">
-            <div class="progress-bar-fill" id="global-progress-bar"></div>
+        <div>
+          <div class="font-bold text-stone-900 text-sm tracking-tight flex items-center gap-2">
+            <span>TypeScript Curriculum</span>
+            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">79 Topics</span>
           </div>
-          <span id="global-progress-text" class="font-mono text-emerald-800 font-bold text-xs">0%</span>
-        </div>
-
-        <!-- Right: Actions -->
-        <div class="flex items-center gap-2">
-          <button onclick="openCompilerPlayground()" class="btn btn-primary shadow-sm" title="Open Interactive TypeScript Compiler & Practice Studio (Cmd+K / Ctrl+K)">
-            <span>⚡</span>
-            <span class="hidden sm:inline">Compiler Studio</span>
-            <kbd class="hidden md:inline text-[9px] px-1.5 py-0.5 rounded bg-emerald-900/40 text-emerald-200 font-mono ml-1">⌘K</kbd>
-          </button>
-          <a href="dsa_master_tracker.html" class="droplet-pill px-3 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 text-xs font-semibold hidden xl:inline-flex items-center gap-1.5 transition-all">
-            <span>⚡</span>
-            <span>DSA Tracker</span>
-          </a>
-          <button class="btn" onclick="toggleTheme()" id="theme-btn" title="Toggle Light/Dark Theme">
-            <span id="theme-icon">🌙</span> <span id="theme-label" class="hidden sm:inline">Dark</span>
-          </button>
-          <button class="btn hidden sm:inline-flex" onclick="expandAll()" title="Expand All Code & Sections">
-            Expand All
-          </button>
-          <button class="btn hidden sm:inline-flex" onclick="collapseAll()" title="Collapse All Code">
-            Collapse All
-          </button>
+          <span class="text-[10px] text-emerald-800 font-mono">Production &amp; 2–5 YOE Mastery</span>
         </div>
       </div>
-    </header>
+
+      <!-- Center: Global progress indicator -->
+      <div class="progress-container flex items-center gap-2">
+        <span class="text-stone-700 font-bold text-xs">Progress:</span>
+        <div class="progress-bar-bg w-32 sm:w-36">
+          <div class="progress-bar-fill" id="global-progress-bar"></div>
+        </div>
+        <span id="global-progress-text" class="font-mono text-emerald-800 font-bold text-xs">0%</span>
+      </div>
+
+      <!-- Right: Action Buttons -->
+      <div class="flex items-center gap-2 flex-wrap">
+        <button onclick="openCompilerPlayground()" class="btn btn-primary shadow-sm cursor-pointer" title="Open Interactive TypeScript Compiler & Practice Studio (Cmd+K / Ctrl+K)">
+          <span>⚡</span>
+          <span>Compiler Studio</span>
+          <kbd class="hidden md:inline text-[9px] px-1.5 py-0.5 rounded bg-emerald-900/40 text-emerald-200 font-mono ml-1">⌘K</kbd>
+        </button>
+        <button class="btn cursor-pointer" onclick="toggleTheme()" id="theme-btn" title="Toggle Light/Dark Theme">
+          <span id="theme-icon">🌙</span> <span id="theme-label" class="hidden sm:inline">Dark</span>
+        </button>
+        <button class="btn hidden sm:inline-flex cursor-pointer" onclick="expandAll()" title="Expand All Code & Sections">
+          Expand All
+        </button>
+        <button class="btn hidden sm:inline-flex cursor-pointer" onclick="collapseAll()" title="Collapse All Code">
+          Collapse All
+        </button>
+      </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="glass-droplet rounded-3xl p-6 sm:p-10 relative overflow-hidden shadow-lg border border-stone-300/80 my-6 mx-4 sm:mx-6 lg:mx-8">
@@ -2568,8 +2425,14 @@
         <h2>Beginner</h2>
       </div>
     </div>
-    <div style="font-size: 12px; font-weight: 700; color: var(--text-muted);">
+    <div class="flex items-center gap-3">
+      <div style="font-size: 12px; font-weight: 700; color: var(--text-muted);">
       13 Topics
+    </div>
+      <button onclick="playAudioSummary(this, 'Level 1: Beginner Overview', 'Welcome to Level 1. Take a slow, steady breath as we begin. Here, we build your rock-solid foundation, learning how the TypeScript compiler erases types at runtime, and training yourself to step away from any out of habit. We will master primitive types, function signatures, clean type inference, and essential tsconfig discipline. Let us build your confidence, one step at a time.', 'level_1_beginner')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 hover:border-emerald-600 text-xs font-semibold shadow-sm transition-all">
+          <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+          <span class="audio-label" data-default-label="Listen Level 1 Brief">Listen Level 1 Brief</span>
+        </button>
     </div>
   </div>
   <div class="section-body">
@@ -4169,8 +4032,14 @@ function isUser(val: unknown): val is User {
         <h2>Intermediate</h2>
       </div>
     </div>
-    <div style="font-size: 12px; font-weight: 700; color: var(--text-muted);">
+    <div class="flex items-center gap-3">
+      <div style="font-size: 12px; font-weight: 700; color: var(--text-muted);">
       12 Topics
+    </div>
+      <button onclick="playAudioSummary(this, 'Level 2: Intermediate Overview', 'Welcome to Level 2. Here, your TypeScript journey truly comes alive. We focus on modeling real application state, using discriminated unions and type narrowing as a natural reflex. You will master reusable generics, keyof operators, and safe asynchronous patterns with Promises. Trust your instincts, embrace the compiler, and let every error guide you forward.', 'level_2_intermediate')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 hover:border-emerald-600 text-xs font-semibold shadow-sm transition-all">
+          <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+          <span class="audio-label" data-default-label="Listen Level 2 Brief">Listen Level 2 Brief</span>
+        </button>
     </div>
   </div>
   <div class="section-body">
@@ -5752,8 +5621,14 @@ console.log(user.name.toUpperCase());</code></pre>
         <h2>Advanced</h2>
       </div>
     </div>
-    <div style="font-size: 12px; font-weight: 700; color: var(--text-muted);">
+    <div class="flex items-center gap-3">
+      <div style="font-size: 12px; font-weight: 700; color: var(--text-muted);">
       16 Topics
+    </div>
+      <button onclick="playAudioSummary(this, 'Level 3: Advanced Overview', 'Welcome to Level 3. You are entering the powerful realm of type-level programming. Here, we compute types from other types using conditional types, the infer keyword, mapped types, and template literals. This is the exact craftsmanship behind production-grade SDKs and bulletproof domain models. Stay patient, stay curious, and feel the elegance of pure static typing.', 'level_3_advanced')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 hover:border-emerald-600 text-xs font-semibold shadow-sm transition-all">
+          <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+          <span class="audio-label" data-default-label="Listen Level 3 Brief">Listen Level 3 Brief</span>
+        </button>
     </div>
   </div>
   <div class="section-body">
@@ -7630,8 +7505,14 @@ type R2 = UnwrapPromise&lt;R1&gt;;        // { count: number }</code></pre>
         <h2>Expert / Type-System Internals</h2>
       </div>
     </div>
-    <div style="font-size: 12px; font-weight: 700; color: var(--text-muted);">
+    <div class="flex items-center gap-3">
+      <div style="font-size: 12px; font-weight: 700; color: var(--text-muted);">
       7 Topics
+    </div>
+      <button onclick="playAudioSummary(this, 'Level 4: Expert Internals Overview', 'Welcome to Level 4. Step into the deep engine of the TypeScript type checker. Together, we explore covariance, contravariance, branded nominal IDs, and module augmentations. You will understand compiler performance, declaration merging, and the precise mathematical boundaries of inference. You are mastering the machine from within, with calmness and clarity.', 'level_4_expert_internals')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 hover:border-emerald-600 text-xs font-semibold shadow-sm transition-all">
+          <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+          <span class="audio-label" data-default-label="Listen Level 4 Brief">Listen Level 4 Brief</span>
+        </button>
     </div>
   </div>
   <div class="section-body">
@@ -8588,8 +8469,14 @@ type Merged = UnionToIntersection&lt;Union&gt;;
         <h2>React + TypeScript</h2>
       </div>
     </div>
-    <div style="font-size: 12px; font-weight: 700; color: var(--text-muted);">
+    <div class="flex items-center gap-3">
+      <div style="font-size: 12px; font-weight: 700; color: var(--text-muted);">
       6 Topics
+    </div>
+      <button onclick="playAudioSummary(this, 'Level 5: React and Next.js Overview', 'Welcome to Level 5. Let us craft modern, airtight frontend architectures with React 19 and Next.js 16. We eliminate all loose typings, typing custom hooks, polymorphic components, and Server Actions with end-to-end precision. Notice how peaceful your code feels when the UI is completely type-safe and resilient. I know you are going to love this.', 'level_5_react_nextjs')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 hover:border-emerald-600 text-xs font-semibold shadow-sm transition-all">
+          <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+          <span class="audio-label" data-default-label="Listen Level 5 Brief">Listen Level 5 Brief</span>
+        </button>
     </div>
   </div>
   <div class="section-body">
@@ -9487,8 +9374,14 @@ export function List&lt;T extends { id: string }&gt;({ items, renderItem }: List
         <h2>Node.js + TypeScript</h2>
       </div>
     </div>
-    <div style="font-size: 12px; font-weight: 700; color: var(--text-muted);">
+    <div class="flex items-center gap-3">
+      <div style="font-size: 12px; font-weight: 700; color: var(--text-muted);">
       5 Topics
+    </div>
+      <button onclick="playAudioSummary(this, 'Level 6: Node.js Server Overview', 'Welcome to Level 6. Now, we bring TypeScript to the backend server with absolute rigor. We configure Node.js runtimes, ECMAScript module resolution, and clean process lifecycle management. From runtime environment variable parsing to structured logging, you are building robust, production-ready server applications that never fail silently.', 'level_6_nodejs_server')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 hover:border-emerald-600 text-xs font-semibold shadow-sm transition-all">
+          <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+          <span class="audio-label" data-default-label="Listen Level 6 Brief">Listen Level 6 Brief</span>
+        </button>
     </div>
   </div>
   <div class="section-body">
@@ -10222,8 +10115,14 @@ export function errorHandler(err: unknown, req: Request, res: Response, next: Ne
         <h2>Backend / API Type Safety</h2>
       </div>
     </div>
-    <div style="font-size: 12px; font-weight: 700; color: var(--text-muted);">
+    <div class="flex items-center gap-3">
+      <div style="font-size: 12px; font-weight: 700; color: var(--text-muted);">
       5 Topics
+    </div>
+      <button onclick="playAudioSummary(this, 'Level 7: Backend API Type Safety Overview', 'Welcome to Level 7. Here, we unify your entire stack with one unbroken contract. From incoming HTTP requests to PostgreSQL databases and frontend clients, we use Zod schema validation and type-safe query builders to guarantee runtime correctness. No data leaks, no runtime crashes, just absolute engineering serenity.', 'level_7_backend_api_type_safety')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 hover:border-emerald-600 text-xs font-semibold shadow-sm transition-all">
+          <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+          <span class="audio-label" data-default-label="Listen Level 7 Brief">Listen Level 7 Brief</span>
+        </button>
     </div>
   </div>
   <div class="section-body">
@@ -10945,8 +10844,14 @@ function toPublicUser(row: UserRow): PublicUser {
         <h2>Production TypeScript</h2>
       </div>
     </div>
-    <div style="font-size: 12px; font-weight: 700; color: var(--text-muted);">
+    <div class="flex items-center gap-3">
+      <div style="font-size: 12px; font-weight: 700; color: var(--text-muted);">
       5 Topics
+    </div>
+      <button onclick="playAudioSummary(this, 'Level 8: Production Architecture Overview', 'Welcome to Level 8. This is where engineering scales across teams, repositories, and continuous integration. We establish project references, strict linting rules, and lightning-fast CI builds with tsc noEmit. You are learning how senior engineers protect codebases for years to come. Breathe easy, and lead with clarity.', 'level_8_production_architecture')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 hover:border-emerald-600 text-xs font-semibold shadow-sm transition-all">
+          <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+          <span class="audio-label" data-default-label="Listen Level 8 Brief">Listen Level 8 Brief</span>
+        </button>
     </div>
   </div>
   <div class="section-body">
@@ -11649,8 +11554,14 @@ jobs:
         <h2>Testing</h2>
       </div>
     </div>
-    <div style="font-size: 12px; font-weight: 700; color: var(--text-muted);">
+    <div class="flex items-center gap-3">
+      <div style="font-size: 12px; font-weight: 700; color: var(--text-muted);">
       6 Topics
+    </div>
+      <button onclick="playAudioSummary(this, 'Level 9: Testing and Verification Overview', 'Welcome to Level 9. Testing in TypeScript is both an art and a science. We ensure your unit and integration tests remain strictly typed with Vitest, while introducing type-level testing with tools like tsd and expect-type. When your types and your unit tests agree, you can ship to production with unwavering confidence.', 'level_9_testing_verification')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 hover:border-emerald-600 text-xs font-semibold shadow-sm transition-all">
+          <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+          <span class="audio-label" data-default-label="Listen Level 9 Brief">Listen Level 9 Brief</span>
+        </button>
     </div>
   </div>
   <div class="section-body">
@@ -12513,8 +12424,14 @@ console.log(admin.role); // &quot;admin&quot;, all other fields fully populated!
         <h2>Interview Preparation</h2>
       </div>
     </div>
-    <div style="font-size: 12px; font-weight: 700; color: var(--text-muted);">
+    <div class="flex items-center gap-3">
+      <div style="font-size: 12px; font-weight: 700; color: var(--text-muted);">
       4 Topics
+    </div>
+      <button onclick="playAudioSummary(this, 'Level 10: Interview Preparation Overview', 'Welcome to Level 10. You have done the work, and now we prepare you to shine in senior technical interviews. We turn your hands-on experience into crisp, articulate answers about tradeoffs, compiler behavior, and real-world system design. You are calm, prepared, and ready to stand out with poise and deep technical authority.', 'level_10_interview_preparation')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 hover:border-emerald-600 text-xs font-semibold shadow-sm transition-all">
+          <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+          <span class="audio-label" data-default-label="Listen Level 10 Brief">Listen Level 10 Brief</span>
+        </button>
     </div>
   </div>
   <div class="section-body">
@@ -13144,6 +13061,12 @@ export type CheckoutState = CartState | ShippingState | PaymentState | Confirmed
             <h2>Complete Topic Mastery Checklist</h2>
           </div>
         </div>
+        <div class="flex items-center gap-3">
+          <button onclick="playAudioSummary(this, 'Appendix A: Topic Mastery Checklist Brief', 'Welcome to Appendix A. This is your personal milestone tracker across all 79 curriculum topics. Take your time, mark each concept as you achieve true production confidence, and watch your expertise grow. Your progress is saved automatically. Celebrate each checkmark, because every single one represents genuine mastery.', 'appendix_a_checklist')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 hover:border-emerald-600 text-xs font-semibold shadow-sm transition-all">
+          <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+          <span class="audio-label" data-default-label="Listen Appendix A Brief">Listen Appendix A Brief</span>
+        </button>
+        </div>
       </div>
       <div class="section-body">
         <div class="level-goal-card">
@@ -13203,6 +13126,12 @@ export type CheckoutState = CartState | ShippingState | PaymentState | Confirmed
             <div class="level-eyebrow">Appendix B</div>
             <h2>Recommended Learning Order</h2>
           </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <button onclick="playAudioSummary(this, 'Appendix B: Recommended Learning Order Brief', 'Welcome to Appendix B. Here is your structured, phased roadmap through the TypeScript landscape. Starting with fundamentals, progressing through React and backend integration, and culminating in type-system internals, this guided pathway prevents burnout and ensures every concept builds naturally on the last.', 'appendix_b_learning_order')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 hover:border-emerald-600 text-xs font-semibold shadow-sm transition-all">
+          <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+          <span class="audio-label" data-default-label="Listen Appendix B Brief">Listen Appendix B Brief</span>
+        </button>
         </div>
       </div>
       <div class="section-body">
@@ -13265,6 +13194,12 @@ export type CheckoutState = CartState | ShippingState | PaymentState | Confirmed
             <div class="level-eyebrow">Appendix C</div>
             <h2>30 / 60 / 90-Day Full-Stack Roadmap</h2>
           </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <button onclick="playAudioSummary(this, 'Appendix C: Full-Stack Roadmap Brief', 'Welcome to Appendix C. Your 30, 60, and 90-day execution blueprint. Structured into dedicated milestones for core fundamentals, full-stack application development, and senior interview mastery. Stay disciplined, keep a steady daily rhythm, and remember that consistent, focused practice compounds into extraordinary results.', 'appendix_c_roadmap')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 hover:border-emerald-600 text-xs font-semibold shadow-sm transition-all">
+          <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+          <span class="audio-label" data-default-label="Listen Appendix C Brief">Listen Appendix C Brief</span>
+        </button>
         </div>
       </div>
       <div class="section-body">
@@ -13336,6 +13271,12 @@ export type CheckoutState = CartState | ShippingState | PaymentState | Confirmed
             <div class="level-eyebrow">Appendix D</div>
             <h2>100+ Hands-On Practice Drills</h2>
           </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <button onclick="playAudioSummary(this, 'Appendix D: Practice Drills Brief', 'Welcome to Appendix D. Real muscle memory comes from writing code. Here you have over 100 hands-on practice drills and compiler katas. Launch them in the interactive studio, solve the type puzzles, and watch how quickly your diagnostic intuition sharpens with every completed exercise.', 'appendix_d_practice_drills')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 hover:border-emerald-600 text-xs font-semibold shadow-sm transition-all">
+          <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+          <span class="audio-label" data-default-label="Listen Appendix D Brief">Listen Appendix D Brief</span>
+        </button>
         </div>
       </div>
       <div class="section-body">
@@ -13877,9 +13818,15 @@ export type CheckoutState = CartState | ShippingState | PaymentState | Confirmed
             <h2>125 Production Interview Questions &amp; Answers</h2>
           </div>
         </div>
-        <div style="font-size: 12px; font-weight: 700; color: var(--text-muted);">
+        <div class="flex items-center gap-3">
+      <div style="font-size: 12px; font-weight: 700; color: var(--text-muted);">
           125 Curated Answers
         </div>
+      <button onclick="playAudioSummary(this, 'Appendix E: Interview QA Bank Brief', 'Welcome to Appendix E. An exhaustive archive of 125 senior-level interview questions and concise production explanations. Review these architectural tradeoffs, edge cases, and best practices so you can speak about TypeScript with calm eloquence and proven technical depth in any interview setting.', 'appendix_e_interview_qa_bank')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 hover:border-emerald-600 text-xs font-semibold shadow-sm transition-all">
+          <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+          <span class="audio-label" data-default-label="Listen Appendix E Brief">Listen Appendix E Brief</span>
+        </button>
+    </div>
       </div>
       <div class="section-body">
         <div class="level-goal-card">
@@ -16036,6 +15983,12 @@ export type CheckoutState = CartState | ShippingState | PaymentState | Confirmed
             <h2>10 Realistic Full-Stack TypeScript Projects</h2>
           </div>
         </div>
+        <div class="flex items-center gap-3">
+          <button onclick="playAudioSummary(this, 'Appendix F: Full Stack Projects Brief', 'Welcome to Appendix F. Step beyond theory into 10 realistic full-stack portfolio projects. Build multi-tenant SaaS dashboards, real-time collaboration engines, and typed microservice architectures that demonstrate your end-to-end full-stack mastery to any engineering manager.', 'appendix_f_full_stack_projects')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 hover:border-emerald-600 text-xs font-semibold shadow-sm transition-all">
+          <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+          <span class="audio-label" data-default-label="Listen Appendix F Brief">Listen Appendix F Brief</span>
+        </button>
+        </div>
       </div>
       <div class="section-body">
         <div class="projects-grid">
@@ -16222,6 +16175,12 @@ export type CheckoutState = CartState | ShippingState | PaymentState | Confirmed
             <h2>Final TypeScript Mastery Checklist &amp; Bookmarks</h2>
           </div>
         </div>
+        <div class="flex items-center gap-3">
+          <button onclick="playAudioSummary(this, 'Appendix G: Mastery Checklist and Bookmarks Brief', 'Welcome to Appendix G. Your final graduation audit and authoritative bookmark collection. Verify your readiness across all 10 core competencies, access key community resources, and take pride in how far you have come. You are thoroughly equipped to excel in top-tier engineering roles.', 'appendix_g_mastery_bookmarks')" class="audio-brief-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 hover:border-emerald-600 text-xs font-semibold shadow-sm transition-all">
+          <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+          <span class="audio-label" data-default-label="Listen Appendix G Brief">Listen Appendix G Brief</span>
+        </button>
+        </div>
       </div>
       <div class="section-body">
         <div class="level-goal-card">
@@ -16298,21 +16257,27 @@ export type CheckoutState = CartState | ShippingState | PaymentState | Confirmed
     <div id="floatingAudioBar" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 hidden max-w-md w-[92%] bg-white/95 border border-stone-300 rounded-2xl shadow-2xl p-3.5 backdrop-blur-xl transition-all">
       <div class="flex items-center justify-between gap-3">
         <div class="flex items-center gap-2.5 overflow-hidden">
-          <div class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-800 shrink-0">
+          <div id="audioEqualizer" class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-800 shrink-0">
             <span class="animate-pulse">🎙️</span>
           </div>
-          <div class="truncate">
+          <div class="truncate max-w-[180px] sm:max-w-xs">
             <div id="audioPlayerTitle" class="text-xs font-bold text-stone-900 truncate">TypeScript Curriculum Overview</div>
-            <div id="audioPlayerStatus" class="text-[10px] text-emerald-700 truncate">Narrating brief overview...</div>
+            <div class="flex items-center gap-2">
+              <span id="audioPlayerStatus" class="text-[10px] text-emerald-700 truncate">Neural Voice (af_heart)</span>
+              <span id="audioPlayerTime" class="text-[10px] text-stone-400 font-mono">0:00 / 0:00</span>
+            </div>
+            <div id="audioProgressContainer" class="w-full bg-stone-200 rounded-full h-1 mt-1 overflow-hidden">
+              <div id="audioProgressBar" class="bg-emerald-600 h-1 rounded-full transition-all" style="width: 0%"></div>
+            </div>
           </div>
         </div>
         <div class="flex items-center gap-2 shrink-0">
-          <button id="audioSpeedBtn" onclick="cycleAudioSpeed()" class="px-2 py-1 rounded-lg bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-300 font-mono text-[11px] font-bold transition-all cursor-pointer" title="Toggle Playback Speed (1.0x / 1.25x / 1.5x)">1.0x</button>
-          <button onclick="toggleAudioPlayback()" class="p-2 rounded-lg bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-800 dark:text-stone-200 transition-all cursor-pointer" title="Play/Pause">
+          <button id="audioSpeedBtn" onclick="cycleAudioSpeed()" class="px-2 py-1 rounded-lg bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-300 font-mono text-[11px] font-bold transition-all cursor-pointer" title="Toggle Playback Speed (0.8x / 1.0x / 1.25x)">1.0x</button>
+          <button onclick="toggleAudioPlayback()" id="audioPlayPauseBtn" class="p-2 rounded-lg bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-800 dark:text-stone-200 transition-all cursor-pointer" title="Play/Pause">
             <svg id="pauseIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             <svg id="playIcon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           </button>
-          <button onclick="stopAudioSummary()" class="p-2 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-600 hover:text-stone-900 transition-all" title="Close Audio">
+          <button onclick="stopAudioSummary()" class="p-2 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-600 hover:text-stone-900 transition-all cursor-pointer" title="Close Audio">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
           </button>
         </div>
@@ -16715,89 +16680,59 @@ export type CheckoutState = CartState | ShippingState | PaymentState | Confirmed
       window.speechSynthesis.speak(utterance);
     }
 
-    function playAudioSummary(btn, title, text) {
-      if (!('speechSynthesis' in window)) {
-        alert('Text-to-speech audio is not supported in this browser.');
-        return;
-      }
-      if (window.speechSynthesis.speaking && activeAudioBtn === btn) {
-        toggleAudioPlayback();
-        return;
-      }
-      stopAudioSummary();
-      currentActiveTopicId = 'global-overview';
+    let audioManifest = null;
+    let currentAudio = null;
 
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.rate = audioPlaybackRate;
-      utterance.pitch = 1.06;
-      const femaleVoice = getFemaleVoice();
-      if (femaleVoice) utterance.voice = femaleVoice;
-
-      utterance.onstart = () => {
-        activeAudioBtn = btn;
-        if (btn) {
-          btn.classList.add('ring-2', 'ring-emerald-500', 'bg-emerald-700', 'text-white');
-          const label = btn.querySelector('.audio-label');
-          if (label) label.innerText = 'Playing...';
-        }
-        const bar = document.getElementById('floatingAudioBar');
-        const titleEl = document.getElementById('audioPlayerTitle');
-        const statusEl = document.getElementById('audioPlayerStatus');
-        if (bar) bar.classList.remove('hidden');
-        if (titleEl) titleEl.innerText = title;
-        if (statusEl) statusEl.innerText = `Narrating curriculum overview · ${audioPlaybackRate}x speed`;
-        showPlayIcon(false);
-      };
-
-      utterance.onend = () => { stopAudioSummary(); };
-      utterance.onerror = () => { stopAudioSummary(); };
-      currentUtterance = utterance;
-      window.speechSynthesis.speak(utterance);
+    function slugifyTitle(str) {
+      return (str || '').toLowerCase().replace(/['"&]/g, '').replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '');
     }
 
-    function toggleAudioPlayback() {
-      if (!window.speechSynthesis.speaking) return;
-      if (window.speechSynthesis.paused) {
-        window.speechSynthesis.resume();
-        showPlayIcon(false);
-        if (activeAudioBtn) {
-          const label = activeAudioBtn.querySelector('.audio-label');
-          if (label) label.innerText = 'Playing...';
-          const icon = activeAudioBtn.querySelector('.audio-icon');
-          if (icon) icon.innerText = '🔊';
+    async function loadAudioManifest() {
+      if (audioManifest) return audioManifest;
+      try {
+        const res = await fetch('data/audio_manifest.json');
+        if (res.ok) {
+          audioManifest = await res.json();
+          return audioManifest;
         }
-        const statusEl = document.getElementById('audioPlayerStatus');
-        if (statusEl) statusEl.innerText = `Narrating topic explanation · ${audioPlaybackRate}x speed`;
-      } else {
-        window.speechSynthesis.pause();
-        showPlayIcon(true);
-        if (activeAudioBtn) {
-          const label = activeAudioBtn.querySelector('.audio-label');
-          if (label) label.innerText = 'Paused';
-          const icon = activeAudioBtn.querySelector('.audio-icon');
-          if (icon) icon.innerText = '⏸️';
-        }
-        const statusEl = document.getElementById('audioPlayerStatus');
-        if (statusEl) statusEl.innerText = 'Paused (click to resume)';
+      } catch (e) {
+        console.warn('Audio manifest not available:', e);
       }
+      return null;
+    }
+
+    function formatAudioTime(seconds) {
+      if (!seconds || isNaN(seconds)) return '0:00';
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
     }
 
     function cycleAudioSpeed() {
-      const speeds = [1.0, 1.25, 1.5];
-      const idx = speeds.indexOf(audioPlaybackRate);
-      audioPlaybackRate = speeds[(idx + 1) % speeds.length];
-      const speedBtn = document.getElementById('audioSpeedBtn');
-      if (speedBtn) speedBtn.textContent = audioPlaybackRate + 'x';
+      const speeds = [0.8, 1.0, 1.25];
+      let currIdx = speeds.indexOf(audioPlaybackRate);
+      if (currIdx === -1) currIdx = 1;
+      audioPlaybackRate = speeds[(currIdx + 1) % speeds.length];
+      localStorage.setItem('dashboard_audio_speed', audioPlaybackRate.toString());
       
-      const statusEl = document.getElementById('audioPlayerStatus');
-      if (statusEl && window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
-        statusEl.innerText = `Speed set to ${audioPlaybackRate}x (takes effect on next play)`;
+      const speedBtn = document.getElementById('audioSpeedBtn');
+      if (speedBtn) speedBtn.textContent = `${audioPlaybackRate}x`;
+
+      if (currentAudio) {
+        currentAudio.playbackRate = audioPlaybackRate;
       }
     }
 
     function stopAudioSummary() {
-      if (!('speechSynthesis' in window)) return;
-      window.speechSynthesis.cancel();
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+        currentAudio = null;
+      }
+      if (window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+      }
+      currentUtterance = null;
       if (activeAudioBtn) {
         activeAudioBtn.classList.remove('ring-2', 'ring-emerald-500', 'bg-emerald-700', 'text-white', 'is-playing');
         const label = activeAudioBtn.querySelector('.audio-label');
@@ -16815,6 +16750,172 @@ export type CheckoutState = CartState | ShippingState | PaymentState | Confirmed
       }
       const bar = document.getElementById('floatingAudioBar');
       if (bar) bar.classList.add('hidden');
+      const eq = document.getElementById('audioEqualizer');
+      if (eq) eq.classList.add('hidden');
+    }
+
+    function toggleAudioPlayback() {
+      if (currentAudio) {
+        if (currentAudio.paused) {
+          currentAudio.play().then(() => {
+            showPlayIcon(false);
+            const statusEl = document.getElementById('audioPlayerStatus');
+            if (statusEl) statusEl.innerText = `Playing (${audioPlaybackRate}x)`;
+          }).catch(err => console.error('Audio play error:', err));
+        } else {
+          currentAudio.pause();
+          showPlayIcon(true);
+          const statusEl = document.getElementById('audioPlayerStatus');
+          if (statusEl) statusEl.innerText = 'Paused';
+        }
+        return;
+      }
+
+      if (window.speechSynthesis && window.speechSynthesis.speaking) {
+        if (window.speechSynthesis.paused) {
+          window.speechSynthesis.resume();
+          showPlayIcon(false);
+          if (activeAudioBtn) {
+            const label = activeAudioBtn.querySelector('.audio-label');
+            if (label) label.innerText = 'Playing...';
+            const icon = activeAudioBtn.querySelector('.audio-icon');
+            if (icon) icon.innerText = '🔊';
+          }
+          const statusEl = document.getElementById('audioPlayerStatus');
+          if (statusEl) statusEl.innerText = `Narrating topic explanation · ${audioPlaybackRate}x speed`;
+        } else {
+          window.speechSynthesis.pause();
+          showPlayIcon(true);
+          if (activeAudioBtn) {
+            const label = activeAudioBtn.querySelector('.audio-label');
+            if (label) label.innerText = 'Paused';
+            const icon = activeAudioBtn.querySelector('.audio-icon');
+            if (icon) icon.innerText = '⏸️';
+          }
+          const statusEl = document.getElementById('audioPlayerStatus');
+          if (statusEl) statusEl.innerText = 'Paused (click to resume)';
+        }
+      }
+    }
+
+    async function playAudioSummary(btn, title, text, optId) {
+      if ((currentAudio || (window.speechSynthesis && window.speechSynthesis.speaking)) && activeAudioBtn === btn) {
+        toggleAudioPlayback();
+        return;
+      }
+
+      stopAudioSummary();
+      activeAudioBtn = btn;
+      currentActiveTopicId = 'global-overview';
+
+      if (btn) {
+        btn.classList.add('ring-2', 'ring-emerald-500', 'bg-emerald-700', 'text-white');
+        const label = btn.querySelector('.audio-label');
+        if (label) {
+          if (!label.getAttribute('data-default-label')) {
+            label.setAttribute('data-default-label', label.innerText);
+          }
+          label.innerText = 'Playing...';
+        }
+      }
+
+      const bar = document.getElementById('floatingAudioBar');
+      const titleEl = document.getElementById('audioPlayerTitle');
+      const statusEl = document.getElementById('audioPlayerStatus');
+      const timeEl = document.getElementById('audioPlayerTime');
+      const progressContainer = document.getElementById('audioProgressContainer');
+      const progressBar = document.getElementById('audioProgressBar');
+      const speedBtn = document.getElementById('audioSpeedBtn');
+      const eq = document.getElementById('audioEqualizer');
+
+      if (bar) bar.classList.remove('hidden');
+      if (eq) eq.classList.remove('hidden', 'opacity-40');
+      if (titleEl) titleEl.innerText = title;
+      if (speedBtn) speedBtn.innerText = `${audioPlaybackRate}x`;
+      showPlayIcon(false);
+
+      const manifest = await loadAudioManifest();
+      const slug = optId || slugifyTitle(title);
+      const manifestKey = `typescript_curriculum/${slug}`;
+
+      let audioItem = manifest && manifest.items ? manifest.items[manifestKey] : null;
+      if (!audioItem && manifest && manifest.items) {
+        for (const k in manifest.items) {
+          if (k.endsWith('/' + slug) || (manifest.items[k].title && manifest.items[k].title.toLowerCase() === title.toLowerCase())) {
+            audioItem = manifest.items[k];
+            break;
+          }
+        }
+      }
+
+      if (audioItem && audioItem.path) {
+        const audio = new Audio(audioItem.path);
+        audio.playbackRate = audioPlaybackRate;
+        currentAudio = audio;
+
+        if (statusEl) statusEl.innerText = `Neural Voice (${manifest.default_voice || 'af_heart'})`;
+        if (progressContainer) progressContainer.classList.remove('hidden');
+        if (timeEl) {
+          timeEl.classList.remove('hidden');
+          timeEl.innerText = `0:00 / ${formatAudioTime(audioItem.duration_sec)}`;
+        }
+
+        audio.addEventListener('timeupdate', () => {
+          if (!audio.duration) return;
+          const pct = (audio.currentTime / audio.duration) * 100;
+          if (progressBar) progressBar.style.width = `${pct}%`;
+          if (timeEl) timeEl.innerText = `${formatAudioTime(audio.currentTime)} / ${formatAudioTime(audio.duration)}`;
+        });
+
+        audio.addEventListener('ended', () => {
+          stopAudioSummary();
+        });
+
+        audio.addEventListener('error', (e) => {
+          console.warn('Audio file playback failed, falling back to Web Speech:', e);
+          currentAudio = null;
+          fallbackWebSpeech(text, title);
+        });
+
+        audio.play().catch(err => {
+          console.warn('Audio play() rejected, falling back to Web Speech:', err);
+          currentAudio = null;
+          fallbackWebSpeech(text, title);
+        });
+
+        return;
+      }
+
+      fallbackWebSpeech(text, title);
+    }
+
+    function fallbackWebSpeech(text, title) {
+      if (!('speechSynthesis' in window)) {
+        alert('Audio playback is not supported in this browser.');
+        stopAudioSummary();
+        return;
+      }
+
+      const statusEl = document.getElementById('audioPlayerStatus');
+      const progressContainer = document.getElementById('audioProgressContainer');
+      const timeEl = document.getElementById('audioPlayerTime');
+
+      if (statusEl) statusEl.innerText = `Narrating curriculum overview · ${audioPlaybackRate}x speed`;
+      if (progressContainer) progressContainer.classList.add('hidden');
+      if (timeEl) timeEl.classList.add('hidden');
+
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = audioPlaybackRate;
+      utterance.pitch = 1.06;
+
+      const femaleVoice = getFemaleVoice();
+      if (femaleVoice) utterance.voice = femaleVoice;
+
+      utterance.onend = () => { stopAudioSummary(); };
+      utterance.onerror = () => { stopAudioSummary(); };
+
+      currentUtterance = utterance;
+      window.speechSynthesis.speak(utterance);
     }
 
     function playCompilerActiveTopicAudio() {
@@ -17939,5 +18040,7 @@ if (!invalidResult.success) {
 });
 
   </script>
+  <!-- Universal Application Shell Script -->
+  <script src="assets/js/shell.js"></script>
 </body>
 </html>

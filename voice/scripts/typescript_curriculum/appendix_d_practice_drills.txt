@@ -1,0 +1,1 @@
+Welcome to Appendix D. Real muscle memory comes from writing code. Here you have over 100 hands-on practice drills and compiler katas. Launch them in the interactive studio, solve the type puzzles, and watch how quickly your diagnostic intuition sharpens with every completed exercise.

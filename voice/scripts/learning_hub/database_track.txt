@@ -1,0 +1,1 @@
+Track 5 covers Database Engineering and Internals. Understand PostgreSQL MVCC, Write-Ahead Logging, B-Tree and GIN indexes, reading EXPLAIN ANALYZE execution plans, and configuring PgBouncer connection pooling.

@@ -1,0 +1,1 @@
+Welcome to the interactive TypeScript Studio. You can practice any of the 79 curriculum topics, inspect compiled JavaScript, and test type-safety in the real-time execution sandbox with Zod and simulated APIs.

@@ -6,6 +6,7 @@
   <title>Lakshay's Daily Cockpit | Personal Execution Dashboard</title>
   <meta name="description" content="Personal daily execution cockpit for Lakshay Nagpal - CAT 2026, German MSc Prep, DSA LeetCode Tracker, and Software Engineering.">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/shell.css">
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -157,173 +158,43 @@
   <div class="droplet-orb-1"></div>
   <div class="droplet-orb-2"></div>
 
-  <!-- Mobile-only backdrop for small screens (< lg) -->
-  <div id="sidebarBackdrop" onclick="toggleSidebar(false)" class="fixed inset-0 bg-stone-900/40 backdrop-blur-sm z-20 hidden lg:hidden transition-opacity duration-300"></div>
-
-  <!-- Persistent Left Side Navigation (Desktop Permanent) -->
-  <aside id="sideNavDrawer" class="w-64 fixed inset-y-0 left-0 z-30 flex flex-col glass-droplet-sidebar transition-transform duration-300 -translate-x-full lg:translate-x-0">
-    <div class="p-4 border-b border-stone-300/60 flex items-center justify-between">
-      <a href="profile.html" class="flex items-center gap-3 group" title="Open Full Candidate Profile & Dossier">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-600 via-teal-600 to-olive-700 flex items-center justify-center font-black text-white text-base shadow-sm group-hover:scale-105 transition-transform">
-          LN
-        </div>
-        <div>
-          <div class="font-black text-stone-900 text-sm tracking-tight group-hover:text-emerald-800 transition-colors flex items-center gap-1">
-            <span>Lakshay Nagpal</span>
-            <span class="text-[10px] text-stone-400 group-hover:text-emerald-700">↗</span>
-          </div>
-          <span class="text-[11px] text-emerald-800 font-mono font-semibold">Daily Cockpit</span>
-        </div>
-      </a>
-      <button onclick="toggleSidebar(false)" class="lg:hidden p-1.5 rounded-lg text-stone-500 hover:text-stone-900 hover:bg-stone-200" title="Close Menu">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-      </button>
-    </div>
-
-    <div class="flex-grow overflow-y-auto py-3 px-2 space-y-4 text-xs font-medium">
-      <!-- Daily Engine -->
-      <div>
-        <div class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-stone-500">Live Execution</div>
-        <div class="mt-1 space-y-0.5">
-          <a href="#section-daily-plan" class="flex items-center gap-2.5 px-2.5 py-2 rounded-xl bg-emerald-100/90 text-emerald-950 font-bold border border-emerald-300/80 shadow-2xs">
-            <span>📅</span>
-            <span>Today's Agenda</span>
-            <span class="ml-auto text-[9px] px-1.5 py-0.5 rounded-full bg-emerald-200 text-emerald-900 font-mono font-bold">Active</span>
-          </a>
-          <a href="#section-master-todos" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/60 transition-all font-semibold">
-            <span>✅</span>
-            <span>All Things To Do</span>
-            <span id="sidebarTodoBadge" class="ml-auto text-[9px] px-1.5 py-0.5 rounded-full bg-stone-200 text-stone-700 font-mono font-bold">23 Items</span>
-          </a>
-          <a href="deadlines_calendar.html" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/60 transition-all">
-            <span>⏰</span>
-            <span>Master Deadlines</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Core Prep Tracks -->
-      <div>
-        <div class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-stone-500">Preparation Portals</div>
-        <div class="mt-1 space-y-0.5">
-          <a href="cat_2026_syllabus_roadmap.html" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/60 transition-all">
-            <span>🐯</span>
-            <span>CAT 2026 Roadmap</span>
-          </a>
-          <a href="https://myzone.careerlauncher.com/login.jsp" target="_blank" rel="noreferrer" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-amber-900 bg-amber-50 hover:bg-amber-100 border border-amber-200 font-semibold transition-all">
-            <span>🎓</span>
-            <span>CL MyZone (VARC)</span>
-            <span class="ml-auto text-[9px] font-mono">↗</span>
-          </a>
-          <a href="german_universities_evaluation.html" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/60 transition-all">
-            <span>🇩🇪</span>
-            <span>German MSc Engine</span>
-          </a>
-          <a href="dsa_master_tracker.html" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/60 transition-all">
-            <span>⚡</span>
-            <span>DSA Master (247 Qs)</span>
-          </a>
-          <a href="learning_hub.html" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/60 transition-all">
-            <span>🧠</span>
-            <span>Engineering Hub (6 Tracks)</span>
-          </a>
-          <a href="typescript_curriculum.html" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/60 transition-all">
-            <span>📘</span>
-            <span>TypeScript Guide</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Resumes & Outbound -->
-      <div>
-        <div class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-stone-500">Profile &amp; Credentials</div>
-        <div class="mt-1 space-y-0.5">
-          <a href="profile.html" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-stone-900 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200/80 font-bold transition-all shadow-2xs">
-            <span>👤</span>
-            <span>Candidate Profile</span>
-            <span class="ml-auto text-[9px] px-1.5 py-0.5 rounded-full bg-emerald-200 text-emerald-900 font-mono font-bold">Bio</span>
-          </a>
-          <a href="resume.html" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/60 transition-all font-medium">
-            <span>📄</span>
-            <span>Original Resume</span>
-          </a>
-          <a href="Lakshay_Nagpal_CV.html" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/60 transition-all">
-            <span>🇩🇪</span>
-            <span>German CV (Blue Card)</span>
-          </a>
-          <a href="https://drive.google.com/file/d/15GwnY6jhijyzTbYt-QVjesA7c4dnuHzE/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-emerald-800 hover:bg-emerald-50 font-semibold transition-all">
-            <span>📥</span>
-            <span>German PDF (Drive)</span>
-          </a>
-          <a href="profile.html#cold-email" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/60 transition-all">
-            <span>✉️</span>
-            <span>Cold Email Generator</span>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="p-3 border-t border-stone-300/60 text-[11px] text-stone-500 flex items-center justify-between">
-      <span class="font-mono">Daily Target: 6.0h</span>
-      <span class="text-emerald-700 font-mono font-bold">Strict Budget</span>
-    </div>
-  </aside>
+  <!-- Application Shell Mount -->
+  <div id="app-shell"></div>
 
   <!-- Main Content Area -->
-  <div class="lg:pl-64 flex flex-col min-h-screen relative z-10">
+  <div class="shell-content-wrapper lg:pl-64 flex flex-col min-h-screen relative z-10">
 
-    <!-- Top Sticky Header -->
-    <header class="sticky top-0 z-20 w-full glass-droplet-nav">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
-        
-        <!-- Left: Brand / Title -->
-        <div class="flex items-center gap-3">
-          <button onclick="toggleSidebar(true)" class="lg:hidden p-1.5 rounded-lg bg-white/90 text-stone-700 border border-stone-300" title="Open Navigation Menu">
-            <svg class="w-5 h-5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-          </button>
-          <div class="flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse"></span>
-            <span class="text-sm font-black text-stone-900 tracking-tight">Personal Command Cockpit</span>
-          </div>
+    <!-- Main Command Body -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 space-y-6">
+
+      <!-- Executive Status & Real-time IST Strip -->
+      <div class="flex flex-wrap items-center justify-between gap-3 p-3 rounded-2xl bg-white/75 backdrop-blur-md border border-stone-300/70 shadow-2xs">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse"></span>
+          <span class="text-xs sm:text-sm font-black text-stone-900 tracking-tight">Personal Command Cockpit</span>
         </div>
-
-        <!-- Right: Time & Quick Controls -->
         <div class="flex items-center gap-2">
           <!-- Real-Time IST Clock -->
           <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-stone-900 text-white font-mono text-xs font-bold shadow-xs">
             <span class="text-stone-400 text-[10px]">IST</span>
             <span id="liveClockIST">--:--:--</span>
           </div>
-
-          <!-- My Profile Quick Access -->
-          <a href="profile.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white text-xs font-bold shadow-2xs transition-all cursor-pointer" title="View Full Candidate Profile & Bio">
-            <span>👤</span>
-            <span class="hidden sm:inline">My Profile</span>
-          </a>
-
           <!-- Notification Trigger -->
           <button id="btnToggleNotifications" onclick="enableNotifications()" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-white hover:bg-stone-100 text-stone-800 text-xs font-semibold border border-stone-300 shadow-2xs transition-all cursor-pointer" title="Enable browser notifications">
             <span id="notifIcon">🔔</span>
             <span id="notifBtnLabel" class="hidden sm:inline">Alerts</span>
           </button>
-
           <!-- Calendar Export -->
           <button onclick="downloadTodayICS()" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-semibold shadow-2xs transition-all cursor-pointer" title="Download today's .ics with reminders">
             <span>📥</span>
             <span class="hidden sm:inline">.ics</span>
           </button>
-
           <!-- Refresh -->
           <button onclick="loadDailyPlan(true)" class="p-1.5 rounded-xl bg-white hover:bg-stone-100 text-stone-700 border border-stone-300 text-xs font-semibold shadow-2xs transition-all cursor-pointer" title="Refresh plan data">
             🔄
           </button>
         </div>
-
       </div>
-    </header>
-
-    <!-- Main Command Body -->
-    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 space-y-6">
 
       <!-- ========================================================================= -->
       <!-- 1. URGENT STATUTORY DEADLINES BANNER (Only shows when deadlines <= 7 days) -->
@@ -1042,7 +913,7 @@
               <a href="profile.html" class="flex-1 min-w-[110px] text-center py-2 px-3 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-xs transition-all shadow-2xs">
                 Open Profile 👤
               </a>
-              <a href="https://drive.google.com/file/d/15GwnY6jhijyzTbYt-QVjesA7c4dnuHzE/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="py-2 px-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold text-xs border border-stone-300 transition-all" title="German PDF on Google Drive">
+              <a href="assets/Lakshay_Nagpal_Resume_German.pdf" download="Lakshay_Nagpal_Resume_German.pdf" class="py-2 px-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold text-xs border border-stone-300 transition-all" title="German PDF Download">
                 German PDF 📥
               </a>
               <a href="assets/Lakshay_Nagpal_Resume_Original.pdf" download="Lakshay_Nagpal_Resume.pdf" class="py-2 px-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold text-xs border border-stone-300 transition-all" title="Original Resume PDF">
@@ -1110,17 +981,24 @@
   <div id="floatingAudioBar" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden max-w-xl w-[92%] sm:w-auto px-4 py-2.5 rounded-2xl glass-droplet bg-white/95 border border-stone-300/90 shadow-2xl text-stone-900 flex items-center justify-between gap-4 transition-all">
     <div class="flex items-center gap-3 overflow-hidden">
       <!-- Animated equalizer bars -->
-      <div class="flex items-end gap-0.5 h-4 w-4 text-emerald-700">
+      <div id="audioEqualizer" class="flex items-end gap-0.5 h-4 w-4 text-emerald-700 flex-shrink-0">
         <span class="w-1 bg-emerald-600 rounded-full animate-bounce h-2"></span>
         <span class="w-1 bg-emerald-600 rounded-full animate-bounce h-4" style="animation-delay: 0.15s"></span>
         <span class="w-1 bg-emerald-600 rounded-full animate-bounce h-3" style="animation-delay: 0.3s"></span>
       </div>
-      <div class="truncate">
+      <div class="truncate max-w-[210px] sm:max-w-xs">
         <div id="audioPlayerTitle" class="text-xs font-bold text-stone-900 truncate">Playing Audio Briefing</div>
-        <div id="audioPlayerStatus" class="text-[11px] text-stone-500">Narrating brief (Female Voice)...</div>
+        <div class="flex items-center gap-2">
+          <span id="audioPlayerStatus" class="text-[11px] text-stone-500 truncate">Neural Voice (af_heart)</span>
+          <span id="audioPlayerTime" class="text-[10px] text-stone-400 font-mono">0:00 / 0:00</span>
+        </div>
+        <div id="audioProgressContainer" class="w-full bg-stone-200 rounded-full h-1 mt-1 overflow-hidden">
+          <div id="audioProgressBar" class="bg-emerald-600 h-1 rounded-full transition-all" style="width: 0%"></div>
+        </div>
       </div>
     </div>
     <div class="flex items-center gap-2 flex-shrink-0">
+      <button onclick="cycleAudioSpeed()" id="audioSpeedBtn" class="px-2 py-1 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-700 text-[11px] font-bold transition-all cursor-pointer" title="Cycle playback speed (0.8x, 1.0x, 1.25x)">1.0x</button>
       <button onclick="toggleAudioPlayback()" id="audioPlayPauseBtn" class="p-1.5 rounded-lg bg-emerald-800 hover:bg-emerald-900 text-white transition-all cursor-pointer" title="Pause / Resume">
         <svg id="pauseIcon" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/></svg>
         <svg id="playIcon" class="w-4 h-4 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -1885,8 +1763,51 @@
     // =========================================================================
     // Web Speech Synthesis Audio Brief Engine (Female Voice Model)
     // =========================================================================
+    let audioManifest = null;
+    let currentAudio = null;
     let currentUtterance = null;
     let activeAudioBtn = null;
+    let audioPlaybackRate = parseFloat(localStorage.getItem('dashboard_audio_speed') || '1.0');
+
+    function slugifyTitle(str) {
+      return (str || '').toLowerCase().replace(/['"&]/g, '').replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '');
+    }
+
+    async function loadAudioManifest() {
+      if (audioManifest) return audioManifest;
+      try {
+        const res = await fetch('data/audio_manifest.json');
+        if (res.ok) {
+          audioManifest = await res.json();
+          return audioManifest;
+        }
+      } catch (e) {
+        console.warn('Audio manifest not available:', e);
+      }
+      return null;
+    }
+
+    function formatAudioTime(seconds) {
+      if (!seconds || isNaN(seconds)) return '0:00';
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    }
+
+    function cycleAudioSpeed() {
+      const speeds = [0.8, 1.0, 1.25];
+      let currIdx = speeds.indexOf(audioPlaybackRate);
+      if (currIdx === -1) currIdx = 1;
+      audioPlaybackRate = speeds[(currIdx + 1) % speeds.length];
+      localStorage.setItem('dashboard_audio_speed', audioPlaybackRate.toString());
+      
+      const speedBtn = document.getElementById('audioSpeedBtn');
+      if (speedBtn) speedBtn.innerText = `${audioPlaybackRate}x`;
+
+      if (currentAudio) {
+        currentAudio.playbackRate = audioPlaybackRate;
+      }
+    }
 
     function getFemaleVoice() {
       const voices = window.speechSynthesis.getVoices();
@@ -1895,14 +1816,16 @@
       const enVoices = voices.filter(v => v.lang && v.lang.startsWith('en'));
       const pool = enVoices.length > 0 ? enVoices : voices;
 
+      const naturalFemale = pool.find(v => (v.name.includes('Natural') || v.name.includes('Neural') || v.name.includes('Online')) && /female|jenny|aria|ava|sonia/i.test(v.name));
+      if (naturalFemale) return naturalFemale;
+
       let found = pool.find(v => /female/i.test(v.name));
       if (found) return found;
 
       const femaleNames = [
         'Samantha', 'Victoria', 'Karen', 'Zira', 'Jenny', 'Aria', 'Ava', 'Allison',
         'Susan', 'Moira', 'Tessa', 'Fiona', 'Veena', 'Google UK English Female',
-        'Google US English', 'Microsoft Zira', 'Microsoft Jenny', 'Microsoft Aria',
-        'en-US-Neural2-F', 'en-GB-Neural2-F'
+        'Google US English', 'Microsoft Zira', 'Microsoft Jenny', 'Microsoft Aria'
       ];
       found = pool.find(v => femaleNames.some(fn => v.name.includes(fn)));
       if (found) return found;
@@ -1918,49 +1841,189 @@
       };
     }
 
-    function playAudioSummary(btn, title, text) {
-      if (!('speechSynthesis' in window)) {
-        alert('Text-to-speech audio is not supported in this browser.');
+    function showAudioPlayIcon(isPaused) {
+      const pauseIcon = document.getElementById('pauseIcon');
+      const playIcon = document.getElementById('playIcon');
+      if (pauseIcon && playIcon) {
+        if (isPaused) {
+          pauseIcon.classList.add('hidden');
+          playIcon.classList.remove('hidden');
+        } else {
+          pauseIcon.classList.remove('hidden');
+          playIcon.classList.add('hidden');
+        }
+      }
+      const eq = document.getElementById('audioEqualizer');
+      if (eq) {
+        if (isPaused) eq.classList.add('opacity-40');
+        else eq.classList.remove('opacity-40');
+      }
+    }
+
+    function toggleAudioPlayback() {
+      if (currentAudio) {
+        if (currentAudio.paused) {
+          currentAudio.play().then(() => {
+            showAudioPlayIcon(false);
+            const statusEl = document.getElementById('audioPlayerStatus');
+            if (statusEl) statusEl.innerText = `Playing (${audioPlaybackRate}x)`;
+          }).catch(err => console.error('Audio play error:', err));
+        } else {
+          currentAudio.pause();
+          showAudioPlayIcon(true);
+          const statusEl = document.getElementById('audioPlayerStatus');
+          if (statusEl) statusEl.innerText = 'Paused';
+        }
         return;
       }
 
-      if (window.speechSynthesis.speaking && activeAudioBtn === btn) {
+      if (window.speechSynthesis && window.speechSynthesis.speaking) {
+        if (window.speechSynthesis.paused) {
+          window.speechSynthesis.resume();
+          showAudioPlayIcon(false);
+        } else {
+          window.speechSynthesis.pause();
+          showAudioPlayIcon(true);
+        }
+      }
+    }
+
+    function stopAudioSummary() {
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+        currentAudio = null;
+      }
+      if (window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+      }
+      currentUtterance = null;
+      if (activeAudioBtn) {
+        activeAudioBtn.classList.remove('ring-2', 'ring-emerald-400', 'bg-emerald-700', 'text-white');
+        const label = activeAudioBtn.querySelector('.audio-label');
+        if (label) label.innerText = label.getAttribute('data-default-label') || 'Listen Brief';
+        activeAudioBtn = null;
+      }
+      const bar = document.getElementById('floatingAudioBar');
+      if (bar) bar.classList.add('hidden');
+      const eq = document.getElementById('audioEqualizer');
+      if (eq) eq.classList.add('hidden');
+    }
+
+    async function playAudioSummary(btn, title, text, optId) {
+      if ((currentAudio || (window.speechSynthesis && window.speechSynthesis.speaking)) && activeAudioBtn === btn) {
         toggleAudioPlayback();
         return;
       }
 
       stopAudioSummary();
+      activeAudioBtn = btn;
+
+      if (btn) {
+        btn.classList.add('ring-2', 'ring-emerald-400', 'bg-emerald-700', 'text-white');
+        const label = btn.querySelector('.audio-label');
+        if (label) {
+          if (!label.getAttribute('data-default-label')) {
+            label.setAttribute('data-default-label', label.innerText);
+          }
+          label.innerText = 'Playing...';
+        }
+      }
+
+      const bar = document.getElementById('floatingAudioBar');
+      const titleEl = document.getElementById('audioPlayerTitle');
+      const statusEl = document.getElementById('audioPlayerStatus');
+      const timeEl = document.getElementById('audioPlayerTime');
+      const progressContainer = document.getElementById('audioProgressContainer');
+      const progressBar = document.getElementById('audioProgressBar');
+      const speedBtn = document.getElementById('audioSpeedBtn');
+      const eq = document.getElementById('audioEqualizer');
+
+      if (bar) bar.classList.remove('hidden');
+      if (eq) eq.classList.remove('hidden', 'opacity-40');
+      if (titleEl) titleEl.innerText = title;
+      if (speedBtn) speedBtn.innerText = `${audioPlaybackRate}x`;
+      showAudioPlayIcon(false);
+
+      const manifest = await loadAudioManifest();
+      const slug = optId || slugifyTitle(title);
+      const manifestKey = `index/${slug}`;
+
+      let audioItem = manifest && manifest.items ? manifest.items[manifestKey] : null;
+      if (!audioItem && manifest && manifest.items) {
+        for (const k in manifest.items) {
+          if (k.endsWith('/' + slug) || (manifest.items[k].title && manifest.items[k].title.toLowerCase() === title.toLowerCase())) {
+            audioItem = manifest.items[k];
+            break;
+          }
+        }
+      }
+
+      if (audioItem && audioItem.path) {
+        const audio = new Audio(audioItem.path);
+        audio.playbackRate = audioPlaybackRate;
+        currentAudio = audio;
+
+        if (statusEl) statusEl.innerText = `Neural Voice (${manifest.default_voice || 'af_heart'})`;
+        if (progressContainer) progressContainer.classList.remove('hidden');
+        if (timeEl) {
+          timeEl.classList.remove('hidden');
+          timeEl.innerText = `0:00 / ${formatAudioTime(audioItem.duration_sec)}`;
+        }
+
+        audio.addEventListener('timeupdate', () => {
+          if (!audio.duration) return;
+          const pct = (audio.currentTime / audio.duration) * 100;
+          if (progressBar) progressBar.style.width = `${pct}%`;
+          if (timeEl) timeEl.innerText = `${formatAudioTime(audio.currentTime)} / ${formatAudioTime(audio.duration)}`;
+        });
+
+        audio.addEventListener('ended', () => {
+          stopAudioSummary();
+        });
+
+        audio.addEventListener('error', (e) => {
+          console.warn('Audio file playback failed, falling back to Web Speech:', e);
+          currentAudio = null;
+          fallbackWebSpeech(text, title);
+        });
+
+        audio.play().catch(err => {
+          console.warn('Audio play() rejected, falling back to Web Speech:', err);
+          currentAudio = null;
+          fallbackWebSpeech(text, title);
+        });
+
+        return;
+      }
+
+      fallbackWebSpeech(text, title);
+    }
+
+    function fallbackWebSpeech(text, title) {
+      if (!('speechSynthesis' in window)) {
+        alert('Audio playback is not supported in this browser.');
+        stopAudioSummary();
+        return;
+      }
+
+      const statusEl = document.getElementById('audioPlayerStatus');
+      const progressContainer = document.getElementById('audioProgressContainer');
+      const timeEl = document.getElementById('audioPlayerTime');
+
+      if (statusEl) statusEl.innerText = 'Narrating (Browser Speech Synthesis)...';
+      if (progressContainer) progressContainer.classList.add('hidden');
+      if (timeEl) timeEl.classList.add('hidden');
 
       const utterance = new SpeechSynthesisUtterance(text);
-      utterance.rate = 1.0;
+      utterance.rate = audioPlaybackRate;
       utterance.pitch = 1.06;
 
       const femaleVoice = getFemaleVoice();
       if (femaleVoice) utterance.voice = femaleVoice;
 
-      utterance.onstart = () => {
-        activeAudioBtn = btn;
-        if (btn) {
-          btn.classList.add('ring-2', 'ring-emerald-400', 'bg-emerald-700', 'text-white');
-          const label = btn.querySelector('.audio-label');
-          if (label) label.innerText = 'Playing...';
-        }
-        const bar = document.getElementById('floatingAudioBar');
-        const titleEl = document.getElementById('audioPlayerTitle');
-        const statusEl = document.getElementById('audioPlayerStatus');
-        if (bar) bar.classList.remove('hidden');
-        if (titleEl) titleEl.innerText = title;
-        if (statusEl) statusEl.innerText = 'Narrating brief (Female Voice)...';
-        showAudioPlayIcon(false);
-      };
-
-      utterance.onend = () => {
-        stopAudioSummary();
-      };
-
-      utterance.onerror = () => {
-        stopAudioSummary();
-      };
+      utterance.onend = () => { stopAudioSummary(); };
+      utterance.onerror = () => { stopAudioSummary(); };
 
       currentUtterance = utterance;
       window.speechSynthesis.speak(utterance);
@@ -1981,62 +2044,13 @@
         text += "Your daily schedule focuses on four core pillars: start with your morning verbal ability and reading comprehension drill on Career Launcher MyZone. Transition into your afternoon quantitative aptitude sprint tackling arithmetic and algebra. Dedicate your evening to solving two full DILR arrangement sets. And close out your night with algorithmic problem solving and system development. Stay disciplined and conquer each block.";
       }
 
-      playAudioSummary(btn, title, text);
+      playAudioSummary(btn, title, text, "daily_brief");
     }
 
     function playMasterTodosAudioBrief(btn) {
       const title = "Master To-Dos Briefing";
       const text = "Here is your master operational briefing, Lakshay. Across your six core pillars, you have twenty-three actionable targets. First, your non-negotiable daily rhythm: complete your morning VARC article and CL reading comprehension drill, followed by afternoon arithmetic or algebra problem sets, evening DILR caselets, and night DSA practice. Second, for CAT 2026, keep your Sunday mock test sacrosanct, maintain your mistake notebook, and master high-yield arithmetic and algebra. Third, for your German Master's applications, your critical path is submitting your APS India dossier, requesting official transcripts from MDU Rohtak, securing two academic recommendation letters, and preparing for IELTS band 7.5. Fourth, maintain momentum on your 247 DSA roadmap across arrays, binary search, trees, and dynamic programming. Fifth, advance your TypeScript production deep-dive and distributed microservices architecture. And sixth, keep your dual resumes ATS-optimized and deploy your weekly outbound outreach. Execute step-by-step with relentless consistency.";
-      playAudioSummary(btn, title, text);
-    }
-
-    function toggleAudioPlayback() {
-      if (!window.speechSynthesis.speaking) return;
-      if (window.speechSynthesis.paused) {
-        window.speechSynthesis.resume();
-        showAudioPlayIcon(false);
-        if (activeAudioBtn) {
-          const label = activeAudioBtn.querySelector('.audio-label');
-          if (label) label.innerText = 'Playing...';
-        }
-        const statusEl = document.getElementById('audioPlayerStatus');
-        if (statusEl) statusEl.innerText = 'Narrating brief...';
-      } else {
-        window.speechSynthesis.pause();
-        showAudioPlayIcon(true);
-        if (activeAudioBtn) {
-          const label = activeAudioBtn.querySelector('.audio-label');
-          if (label) label.innerText = 'Paused';
-        }
-        const statusEl = document.getElementById('audioPlayerStatus');
-        if (statusEl) statusEl.innerText = 'Paused (click to resume)';
-      }
-    }
-
-    function showAudioPlayIcon(isPaused) {
-      const pauseIcon = document.getElementById('pauseIcon');
-      const playIcon = document.getElementById('playIcon');
-      if (pauseIcon && playIcon) {
-        if (isPaused) {
-          pauseIcon.classList.add('hidden');
-          playIcon.classList.remove('hidden');
-        } else {
-          pauseIcon.classList.remove('hidden');
-          playIcon.classList.add('hidden');
-        }
-      }
-    }
-
-    function stopAudioSummary() {
-      window.speechSynthesis.cancel();
-      if (activeAudioBtn) {
-        activeAudioBtn.classList.remove('ring-2', 'ring-emerald-400', 'bg-emerald-700', 'text-white');
-        const label = activeAudioBtn.querySelector('.audio-label');
-        if (label) label.innerText = label.getAttribute('data-default-label') || 'Listen Brief';
-        activeAudioBtn = null;
-      }
-      const bar = document.getElementById('floatingAudioBar');
-      if (bar) bar.classList.add('hidden');
+      playAudioSummary(btn, title, text, "master_todos");
     }
 
     // Initialize on window load
@@ -2049,5 +2063,6 @@
       }
     });
   </script>
+  <script src="assets/js/shell.js"></script>
 </body>
 </html>

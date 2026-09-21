@@ -6,6 +6,7 @@
   <title>Deadlines &amp; Master Calendar 2026–2027 | Lakshay Nagpal</title>
   <meta name="description" content="Official verified deadlines, clash analysis, week-by-week execution roadmap, and time allocation schedule for CAT 2026, German University admissions (Passau M.Sc. CS), dMAT, APS India, English MOI, and Full-Stack SDE job search.">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/shell.css">
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -214,161 +215,35 @@
   <div class="droplet-orb-2"></div>
   <div class="droplet-orb-3"></div>
 
-  <!-- Mobile-only backdrop (< lg) -->
-  <div id="sidebarBackdrop" onclick="toggleSidebar(false)" class="fixed inset-0 bg-stone-900/40 backdrop-blur-sm z-20 hidden lg:hidden transition-opacity duration-300"></div>
+  <!-- Application Shell Mount -->
+  <div id="app-shell"></div>
 
-  <!-- Persistent Left Side Navigation -->
-  <aside id="sideNavDrawer" class="w-72 fixed inset-y-0 left-0 z-30 flex flex-col glass-droplet-sidebar transition-transform duration-300 -translate-x-full lg:translate-x-0">
-    <div class="p-5 border-b border-stone-300/60 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-600 via-orange-500 to-red-600 flex items-center justify-center font-black text-white text-lg shadow-md droplet-pill">
-          📅
-        </div>
-        <div>
-          <div class="font-bold text-stone-900 text-sm tracking-tight flex items-center gap-1.5">
-            <span>Deadlines &amp; Plan</span>
-            <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-900 border border-amber-300">2026–27</span>
-          </div>
-          <span class="text-xs text-stone-600 font-mono block">Lakshay Nagpal · SDE</span>
-        </div>
-      </div>
-      <button onclick="toggleSidebar(false)" class="lg:hidden p-1.5 rounded-lg text-stone-500 hover:text-stone-900 hover:bg-stone-200 transition-all" title="Close Menu">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-      </button>
-    </div>
+  <!-- Main Content Wrapper with shell content offset -->
+  <div class="shell-content-wrapper lg:pl-64 flex flex-col min-h-screen relative z-10">
 
-    <div class="flex-grow overflow-y-auto py-4 px-3 space-y-6">
-      <div>
-        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Core Portals</div>
-        <div class="mt-2 space-y-1">
-          <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 font-medium transition-all group text-sm">
-            <span class="text-lg">⚡</span>
-            <span>Daily Cockpit</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-mono font-bold">Today</span>
-          </a>
-          <a href="deadlines_calendar.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-amber-500/15 border border-amber-600/30 text-amber-950 font-bold transition-all group text-sm shadow-sm">
-            <span class="text-lg">📅</span>
-            <span>Deadlines &amp; Calendar</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-amber-200 text-amber-900 font-mono font-bold">Active</span>
-          </a>
-          <a href="cat_2026_syllabus_roadmap.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 font-medium transition-all group text-sm">
-            <span class="text-lg">🐯</span>
-            <span>CAT 2026 Roadmap</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 font-mono font-bold">29 Nov</span>
-          </a>
-          <a href="german_universities_evaluation.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 font-medium transition-all group text-sm">
-            <span class="text-lg">🇩🇪</span>
-            <span>German Universities</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-red-100 text-red-800 font-mono font-bold">15 Dec</span>
-          </a>
-          <a href="dsa_master_tracker.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 font-medium transition-all group text-sm">
-            <span class="text-lg">⚡</span>
-            <span>DSA Master Tracker</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-mono">247 LC</span>
-          </a>
-          <a href="learning_hub.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 font-medium transition-all group text-sm">
-            <span class="text-lg">🧠</span>
-            <span>Learning Hub</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-mono">6 Tracks (Track 0 to 5)</span>
-          </a>
-          <a href="typescript_curriculum.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 font-medium transition-all group text-sm">
-            <span class="text-lg">📘</span>
-            <span>TypeScript Curriculum</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-800 font-mono">79 Topics</span>
-          </a>
-          <a href="profile.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 font-medium transition-all group text-sm">
-            <span class="text-lg">👤</span>
-            <span>Profile &amp; Credentials</span>
-          </a>
-        </div>
-      </div>
+    <!-- Main Content Container -->
+    <main class="flex-grow p-4 sm:p-8 space-y-10 max-w-7xl mx-auto w-full relative z-10">
 
-      <!-- Professional Dossier -->
-      <div>
-        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Professional Dossier</div>
-        <div class="mt-2 space-y-1">
-          <a href="resume.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-base">📄</span>
-            <span>Original Resume</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-stone-200 text-stone-800 font-mono">Full-Stack</span>
-          </a>
-          <a href="Lakshay_Nagpal_CV.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-base">🇩🇪</span>
-            <span>German Companies CV</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-900 font-mono">Blue Card</span>
-          </a>
-          <a href="https://drive.google.com/file/d/15GwnY6jhijyzTbYt-QVjesA7c4dnuHzE/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 px-3 py-2 rounded-xl text-emerald-800 hover:text-emerald-950 hover:bg-emerald-50 font-semibold transition-all group text-sm">
-            <span class="text-base">📥</span>
-            <span>Download German PDF</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300 font-mono">Drive ↗</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Quick Section Anchor Links -->
-      <div>
-        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">On This Page</div>
-        <div class="mt-2 space-y-1 text-xs">
-          <a href="#quick-stats" class="block px-3 py-1.5 rounded-lg text-stone-600 hover:text-stone-900 hover:bg-stone-200/50 transition-all font-medium">⚡ Countdown &amp; Urgent Status</a>
-          <a href="#official-deadlines" class="block px-3 py-1.5 rounded-lg text-stone-600 hover:text-stone-900 hover:bg-stone-200/50 transition-all font-medium">🏛️ Official Verified Deadlines</a>
-          <a href="#prerequisite-tasks" class="block px-3 py-1.5 rounded-lg text-stone-600 hover:text-stone-900 hover:bg-stone-200/50 transition-all font-medium">📋 German Prerequisite Tasks</a>
-          <a href="#clash-analysis" class="block px-3 py-1.5 rounded-lg text-stone-600 hover:text-stone-900 hover:bg-stone-200/50 transition-all font-medium">⚔️ Clash &amp; dMAT Decision Branch</a>
-          <a href="#week-by-week" class="block px-3 py-1.5 rounded-lg text-stone-600 hover:text-stone-900 hover:bg-stone-200/50 transition-all font-medium">🗓️ 14-Week Action Blueprint</a>
-          <a href="#daily-allocation" class="block px-3 py-1.5 rounded-lg text-stone-600 hover:text-stone-900 hover:bg-stone-200/50 transition-all font-medium">⏰ Daily Time Allocation Matrix</a>
-        </div>
-      </div>
-
-      <!-- Candidate Metadata Card -->
-      <div class="p-3.5 rounded-2xl bg-stone-100/80 border border-stone-300/80 space-y-2 text-xs">
-        <div class="font-bold text-stone-800 flex items-center justify-between">
-          <span>Candidate Profile</span>
-          <span class="text-[10px] text-emerald-800 font-mono font-bold bg-emerald-100 px-1.5 py-0.5 rounded">0 Days Notice</span>
-        </div>
-        <div class="text-stone-600 text-[11px] space-y-1">
-          <div><strong>B.Tech CS:</strong> 70.56% (MDU Rohtak)</div>
-          <div><strong>German Grade:</strong> Task: Use Passau grade converter (top-70% route needs MDU rank doc)</div>
-          <div><strong>CS Credit Share:</strong> Task: Compute from MDU scheme (Passau rule: ~two-thirds)</div>
-          <div><strong>Target Role:</strong> Full-Stack SDE (React 19 / Next.js 16)</div>
-        </div>
-      </div>
-    </div>
-  </aside>
-
-  <!-- Top Glass Bar -->
-  <header class="sticky top-0 z-20 glass-droplet-nav px-4 sm:px-8 py-3.5 flex items-center justify-between lg:pl-80">
-    <div class="flex items-center gap-3">
-      <button onclick="toggleSidebar(true)" class="lg:hidden p-2 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/60 transition-all" title="Open Navigation Menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-      </button>
-      <div>
+      <!-- Sub-header Quick Controls Bar -->
+      <div class="flex flex-wrap items-center justify-between gap-3 p-3 rounded-2xl bg-white/75 backdrop-blur-md border border-stone-300/70 shadow-2xs">
         <div class="flex items-center gap-2">
           <span class="text-xs font-mono font-bold text-amber-800 bg-amber-100/90 border border-amber-300/80 px-2 py-0.5 rounded-md">
-            Deadlines &amp; Planner (verify on official sites)
+            Deadlines &amp; Planner
           </span>
-          <span id="current-today-date" class="hidden sm:inline-block text-xs font-mono text-stone-500">Today: 20 Sep 2026</span>
+          <span id="current-today-date" class="text-xs font-mono text-stone-500">Today: 20 Sep 2026</span>
         </div>
-        <h1 class="text-base sm:text-lg font-black text-stone-900 tracking-tight flex items-center gap-2 mt-0.5">
-          <span>Deadlines &amp; Calendar</span>
-          <span class="text-xs font-normal text-stone-600">· Dual-Track Preparation &amp; Job Search</span>
-        </h1>
+        <div class="flex items-center gap-2 sm:gap-3">
+          <a href="cat_2026_syllabus_roadmap.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl droplet-pill text-xs font-bold text-amber-900">
+            <span>🐯 CAT Roadmap</span>
+          </a>
+          <a href="german_universities_evaluation.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl droplet-pill text-xs font-bold text-red-900">
+            <span>🇩🇪 Passau Evaluation</span>
+          </a>
+          <button onclick="resetAllTaskStatuses()" class="p-2 rounded-xl text-stone-600 hover:text-stone-900 hover:bg-stone-200/60 transition-all text-xs flex items-center gap-1 font-mono cursor-pointer" title="Reset Stored Checkboxes">
+            <span>↺</span> <span class="hidden sm:inline">Reset Checks</span>
+          </button>
+        </div>
       </div>
-    </div>
-
-    <div class="flex items-center gap-2 sm:gap-3">
-      <a href="cat_2026_syllabus_roadmap.html" class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl droplet-pill text-xs font-bold text-amber-900">
-        <span>🐯 CAT Roadmap</span>
-      </a>
-      <a href="german_universities_evaluation.html" class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl droplet-pill text-xs font-bold text-red-900">
-        <span>🇩🇪 Passau Evaluation</span>
-      </a>
-      <button onclick="resetAllTaskStatuses()" class="p-2 rounded-xl text-stone-600 hover:text-stone-900 hover:bg-stone-200/60 transition-all text-xs flex items-center gap-1 font-mono" title="Reset Stored Checkboxes">
-        <span>↺</span> <span class="hidden sm:inline">Reset Checks</span>
-      </button>
-    </div>
-  </header>
-
-  <!-- Main Content Container -->
-  <main class="lg:pl-72 flex-grow p-4 sm:p-8 space-y-10 max-w-7xl mx-auto w-full relative z-10">
 
     <!-- ========================================================================= -->
     <!-- HERO SECTION & LIVE COUNTDOWNS                                            -->
@@ -1930,6 +1805,7 @@
     </footer>
 
   </main>
+  </div> <!-- end shell-content-wrapper -->
 
   <!-- ========================================================================= -->
   <!-- CLIENT JAVASCRIPT: FILTERS, COUNTDOWNS, AND LOCALSTORAGE PERSISTENCE      -->
@@ -2087,5 +1963,6 @@
       updateChecklistUI();
     });
   </script>
+  <script src="assets/js/shell.js"></script>
 </body>
 </html>

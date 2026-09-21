@@ -1,0 +1,1 @@
+Welcome to Lakshay Nagpal's comprehensive TypeScript Master Curriculum. This guide spans 10 structured levels across 79 in-depth topics, featuring hands-on drills for React 19, Next.js 16 and 15 App Router, Node.js backend type safety, and 125 technical interview questions and answers.

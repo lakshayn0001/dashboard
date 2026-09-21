@@ -1,0 +1,1 @@
+Welcome to Level 4. Step into the deep engine of the TypeScript type checker. Together, we explore covariance, contravariance, branded nominal IDs, and module augmentations. You will understand compiler performance, declaration merging, and the precise mathematical boundaries of inference. You are mastering the machine from within, with calmness and clarity.

@@ -1,0 +1,102 @@
+{
+  "warm": {
+    "speed": 0.86,
+    "pause_clause_ms": 200,
+    "pause_sentence_ms": 460,
+    "pause_paragraph_ms": 850,
+    "loudness_lufs": -19.5,
+    "eq": {
+      "low_shelf_freq_hz": 220,
+      "low_shelf_gain_db": 3.8,
+      "high_cut_freq_hz": 6800
+    },
+    "reverb": {
+      "enabled": true,
+      "room_size": 0.16,
+      "damping": 0.65,
+      "wet_level": 0.08
+    },
+    "speed_variance_pct": 0.035,
+    "description": "Supportive, calm, and soothing with natural clause pauses and velvety chest warmth."
+  },
+  "seductive_calm": {
+    "speed": 0.83,
+    "pause_clause_ms": 240,
+    "pause_sentence_ms": 520,
+    "pause_paragraph_ms": 950,
+    "loudness_lufs": -21.0,
+    "eq": {
+      "low_shelf_freq_hz": 200,
+      "low_shelf_gain_db": 4.2,
+      "high_cut_freq_hz": 6400
+    },
+    "reverb": {
+      "enabled": true,
+      "room_size": 0.18,
+      "damping": 0.70,
+      "wet_level": 0.10
+    },
+    "speed_variance_pct": 0.035,
+    "description": "Alluring, softly spoken, deeply relaxed and intimate with gentle breathing pauses."
+  },
+  "calm": {
+    "speed": 0.88,
+    "pause_clause_ms": 180,
+    "pause_sentence_ms": 440,
+    "pause_paragraph_ms": 800,
+    "loudness_lufs": -18.5,
+    "eq": {
+      "low_shelf_freq_hz": 200,
+      "low_shelf_gain_db": 2.5,
+      "high_cut_freq_hz": 7200
+    },
+    "reverb": {
+      "enabled": true,
+      "room_size": 0.12,
+      "damping": 0.55,
+      "wet_level": 0.06
+    },
+    "speed_variance_pct": 0.03,
+    "description": "Steady, composed, balanced cadence with gentle, unhurried pauses."
+  },
+  "empathetic": {
+    "speed": 0.84,
+    "pause_clause_ms": 220,
+    "pause_sentence_ms": 500,
+    "pause_paragraph_ms": 900,
+    "loudness_lufs": -20.0,
+    "eq": {
+      "low_shelf_freq_hz": 230,
+      "low_shelf_gain_db": 3.6,
+      "high_cut_freq_hz": 6600
+    },
+    "reverb": {
+      "enabled": true,
+      "room_size": 0.16,
+      "damping": 0.65,
+      "wet_level": 0.09
+    },
+    "speed_variance_pct": 0.035,
+    "description": "Reassuring, understanding, patient tone for challenging study sessions."
+  },
+  "intimate": {
+    "speed": 0.82,
+    "pause_clause_ms": 260,
+    "pause_sentence_ms": 600,
+    "pause_paragraph_ms": 1100,
+    "loudness_lufs": -22.0,
+    "eq": {
+      "low_shelf_freq_hz": 240,
+      "low_shelf_gain_db": 4.5,
+      "high_cut_freq_hz": 6200
+    },
+    "reverb": {
+      "enabled": true,
+      "room_size": 0.20,
+      "damping": 0.72,
+      "wet_level": 0.11
+    },
+    "speed_variance_pct": 0.04,
+    "description": "Slowest, softest, longest pauses with close-mic bedroom acoustic intimacy."
+  }
+}

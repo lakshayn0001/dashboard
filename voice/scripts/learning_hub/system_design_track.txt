@@ -1,0 +1,1 @@
+Track 2 covers Distributed System Design and High-Level Architecture. Key modules include microservices communication, caching tiers with Redis, message brokers like Apache Kafka, database sharding strategies, rate limiting algorithms like Token Bucket, and the CAP theorem tradeoffs.

@@ -1,0 +1,1 @@
+Welcome to Level 1. Take a slow, steady breath as we begin. Here, we build your rock-solid foundation, learning how the TypeScript compiler erases types at runtime, and training yourself to step away from any out of habit. We will master primitive types, function signatures, clean type inference, and essential tsconfig discipline. Let us build your confidence, one step at a time.

@@ -1,0 +1,58 @@
+name: Daily Voice Briefing Engine
+
+on:
+  push:
+    paths:
+      - 'data/daily_plan.json'
+      - 'voice/**'
+  workflow_dispatch:
+  schedule:
+    # 02:00 UTC (07:30 AM IST) daily morning brief generation
+    - cron: '0 2 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  render-daily-audio:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install System Dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg espeak-ng libsndfile1
+
+      - name: Install Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r voice/requirements.txt || pip install edge-tts numpy scipy soundfile
+
+      - name: Render Daily Voice Briefing
+        run: |
+          python3 voice/voice_engine.py --daily
+
+      - name: Commit Audio Assets and Manifest
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Stage ONLY assets/audio and data/audio_manifest.json
+          git add assets/audio/ data/audio_manifest.json
+          
+          # Check if there are staged changes
+          if git diff --staged --quiet; then
+            echo "No audio changes to commit."
+          else
+            git commit -m "chore(audio): auto-render daily cockpit voice briefing [skip ci]"
+            git push
+          fi

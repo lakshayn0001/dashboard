@@ -1,0 +1,1 @@
+Welcome to Level 9. Testing in TypeScript is both an art and a science. We ensure your unit and integration tests remain strictly typed with Vitest, while introducing type-level testing with tools like tsd and expect-type. When your types and your unit tests agree, you can ship to production with unwavering confidence.

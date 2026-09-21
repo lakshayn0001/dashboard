@@ -1,0 +1,1 @@
+Welcome to Level 2. Here, your TypeScript journey truly comes alive. We focus on modeling real application state, using discriminated unions and type narrowing as a natural reflex. You will master reusable generics, keyof operators, and safe asynchronous patterns with Promises. Trust your instincts, embrace the compiler, and let every error guide you forward.

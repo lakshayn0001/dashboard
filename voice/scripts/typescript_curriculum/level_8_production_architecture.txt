@@ -1,0 +1,1 @@
+Welcome to Level 8. This is where engineering scales across teams, repositories, and continuous integration. We establish project references, strict linting rules, and lightning-fast CI builds with tsc noEmit. You are learning how senior engineers protect codebases for years to come. Breathe easy, and lead with clarity.

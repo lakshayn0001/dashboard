@@ -1,0 +1,1 @@
+Welcome to Appendix F. Step beyond theory into 10 realistic full-stack portfolio projects. Build multi-tenant SaaS dashboards, real-time collaboration engines, and typed microservice architectures that demonstrate your end-to-end full-stack mastery to any engineering manager.

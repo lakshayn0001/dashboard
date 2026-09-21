@@ -6,6 +6,7 @@
   <title>Candidate Profile &amp; Verified Credentials | Lakshay Nagpal</title>
   <meta name="description" content="Verified candidate profile, educational marks breakdown, downloadable resume, official photo, and enterprise software engineering credentials for Lakshay Nagpal.">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/shell.css">
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -200,190 +201,11 @@
   <div class="droplet-orb-2"></div>
   <div class="droplet-orb-3"></div>
 
-  <!-- Mobile-only backdrop for small screens (< lg) -->
-  <div id="sidebarBackdrop" onclick="toggleSidebar(false)" class="fixed inset-0 bg-stone-900/40 backdrop-blur-sm z-20 hidden lg:hidden transition-opacity duration-300"></div>
-
-  <!-- Persistent Left Side Navigation (Always Open on Desktop) -->
-  <aside id="sideNavDrawer" class="w-72 fixed inset-y-0 left-0 z-30 flex flex-col glass-droplet-sidebar transition-transform duration-300 -translate-x-full lg:translate-x-0">
-    <div class="p-5 border-b border-stone-300/60 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 via-teal-600 to-olive-700 flex items-center justify-center font-black text-white text-lg shadow-md droplet-pill">
-          LN
-        </div>
-        <div>
-          <div class="font-bold text-stone-900 text-sm tracking-tight flex items-center gap-1.5">
-            <span>Lakshay Nagpal</span>
-          </div>
-          <span class="text-xs text-stone-600 font-mono block">Candidate Profile</span>
-        </div>
-      </div>
-      <!-- Close button visible only on mobile -->
-      <button onclick="toggleSidebar(false)" class="lg:hidden p-1.5 rounded-lg text-stone-500 hover:text-stone-900 hover:bg-stone-200 transition-all" title="Close Menu">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-      </button>
-    </div>
-
-    <div class="flex-grow overflow-y-auto py-4 px-3 space-y-6">
-      <!-- Group 1: Core Portals -->
-      <div>
-        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Core Portals</div>
-        <div class="mt-2 space-y-1">
-          <a href="profile.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-emerald-100/90 text-emerald-950 border border-emerald-300 transition-all group text-sm font-bold shadow-sm">
-            <span class="text-lg">👤</span>
-            <span>Candidate Profile</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-200/80 text-emerald-900 font-mono">Active</span>
-          </a>
-          <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-lg">⚡</span>
-            <span>Daily Cockpit</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-mono font-bold">Today</span>
-          </a>
-          <a href="learning_hub.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-lg">🧠</span>
-            <span>Learning Hub</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-mono">6 Tracks (Track 0 to 5)</span>
-          </a>
-          <a href="dsa_master_tracker.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-lg">⚡</span>
-            <span>DSA Master Tracker</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-mono">240+ LC</span>
-          </a>
-          <a href="typescript_curriculum.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-lg">📘</span>
-            <span>TypeScript Curriculum</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-800 font-mono">17.6K Lines</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Group 2: Higher Education -->
-      <div>
-        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Higher Education &amp; Admissions</div>
-        <div class="mt-2 space-y-1">
-          <a href="german_universities_evaluation.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-lg">🇩🇪</span>
-            <span>German Universities</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-mono">Tuition-Free</span>
-          </a>
-          <a href="cat_2026_syllabus_roadmap.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-lg">🐯</span>
-            <span>CAT 2026 Strategy</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 font-mono">IIM/IIT</span>
-          </a>
-          <a href="https://myzone.careerlauncher.com/login.jsp" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2 rounded-xl bg-amber-50/90 hover:bg-amber-100/90 text-amber-900 border border-amber-300/80 font-semibold transition-all group text-xs shadow-2xs">
-            <span class="text-base">🎓</span>
-            <span class="truncate">CL MyZone (VARC)</span>
-            <span class="ml-auto text-[9px] px-1.5 py-0.5 rounded-full font-bold bg-emerald-100 text-emerald-800 border border-emerald-300 font-mono">Enrolled ↗</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Group 3: Professional Dossier -->
-      <div>
-        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Professional Dossier</div>
-        <div class="mt-2 space-y-1">
-          <a href="resume.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-base">📄</span>
-            <span>Original Resume</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-stone-200 text-stone-800 font-mono">Full-Stack</span>
-          </a>
-          <a href="Lakshay_Nagpal_CV.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-base">🇩🇪</span>
-            <span>German Companies CV</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-900 font-mono">Blue Card</span>
-          </a>
-          <a href="https://drive.google.com/file/d/15GwnY6jhijyzTbYt-QVjesA7c4dnuHzE/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 px-3 py-2 rounded-xl text-emerald-800 hover:text-emerald-950 hover:bg-emerald-50 transition-all group text-sm font-semibold">
-            <span class="text-base">📥</span>
-            <span>Download German PDF</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300 font-mono">Drive ↗</span>
-          </a>
-          <a href="#cold-email" class="flex items-center gap-3 px-3 py-2 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-base">✉️</span>
-            <span>Cold Email Generator</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-mono">Customizer</span>
-          </a>
-          <a href="#job-portals" class="flex items-center gap-3 px-3 py-2 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-semibold">
-            <span class="text-base">💼</span>
-            <span>Job Portals Engine</span>
-            <span class="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-mono">60+ Links</span>
-          </a>
-          <a href="assets/lakshay_photo.jpg" download="Lakshay_Nagpal_Photo.jpg" class="flex items-center gap-3 px-3 py-2 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-base">📷</span>
-            <span>Download Photo (HD)</span>
-          </a>
-          <a href="https://lakshayn0001.github.io/Portfolio/" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <span class="text-base">🌐</span>
-            <span>Developer Portfolio</span>
-            <svg class="w-3.5 h-3.5 text-stone-400 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Group 4: Connect -->
-      <div>
-        <div class="px-3 text-[11px] font-bold uppercase tracking-wider text-stone-600">Connect</div>
-        <div class="mt-2 space-y-1">
-          <a href="https://www.linkedin.com/in/lakshay-nagpal-1a2a0134a/" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <svg class="w-4 h-4 text-[#0a66c2] fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z"/></svg>
-            <span>LinkedIn Profile</span>
-          </a>
-          <a href="https://github.com/lakshayn0001/dashboard" target="_blank" rel="noreferrer" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-stone-700 hover:text-stone-950 hover:bg-stone-200/70 transition-all group text-sm font-medium">
-            <svg class="w-4 h-4 text-stone-600 fill-current" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
-            <span>GitHub Repository</span>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="p-4 border-t border-stone-300/60 text-[11px] text-stone-600 flex items-center justify-between">
-      <span>Immediate Joiner / 0 Days</span>
-      <span class="text-emerald-800 font-mono font-bold">B.Tech 70.56%</span>
-    </div>
-  </aside>
+  <!-- Application Shell Mount -->
+  <div id="app-shell"></div>
 
   <!-- Main Content Wrapper (Beside Permanent Sidebar on Desktop) -->
-  <div class="lg:pl-72 flex flex-col min-h-screen relative z-10">
-
-    <!-- Sticky Top Glass Navigation Bar (No Menu Button on Desktop) -->
-    <header class="sticky top-0 z-20 w-full glass-droplet-nav">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        <div class="flex items-center gap-3">
-          <!-- Mobile Drawer Trigger ONLY on <lg screens -->
-          <button onclick="toggleSidebar(true)" class="lg:hidden p-2 rounded-xl bg-white/90 hover:bg-stone-100 text-stone-700 hover:text-stone-950 border border-stone-300 transition-all flex items-center gap-1.5 cursor-pointer shadow-sm" title="Open Navigation Menu">
-            <svg class="w-5 h-5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-            <span class="text-xs font-semibold">Menu</span>
-          </button>
-
-          <div class="flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse"></span>
-            <span class="text-xs sm:text-sm font-bold text-stone-900 tracking-tight">Verified Candidate Profile &amp; Dossier</span>
-            <span class="text-xs font-mono text-stone-500 hidden md:inline">• Lakshay Nagpal</span>
-          </div>
-        </div>
-
-        <div class="flex items-center gap-2">
-          <a href="index.html" class="droplet-pill px-3 py-1.5 rounded-xl text-stone-700 hover:text-stone-950 text-xs font-semibold inline-flex items-center gap-1.5 transition-all">
-            <span>⚡</span>
-            <span class="hidden sm:inline">Daily Cockpit</span>
-          </a>
-          <a href="resume.html" class="droplet-pill px-3 py-1.5 rounded-xl text-stone-800 hover:text-stone-950 text-xs font-semibold inline-flex items-center gap-1.5 transition-all">
-            <span>📄</span>
-            <span class="hidden sm:inline">Original Resume</span>
-          </a>
-          <a href="Lakshay_Nagpal_CV.html" class="droplet-pill px-3 py-1.5 rounded-xl text-stone-800 hover:text-stone-950 text-xs font-semibold inline-flex items-center gap-1.5 transition-all">
-            <span>🇩🇪</span>
-            <span class="hidden sm:inline">German CV</span>
-          </a>
-          <a href="https://drive.google.com/file/d/15GwnY6jhijyzTbYt-QVjesA7c4dnuHzE/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-semibold shadow-sm transition-all">
-            <span>📥 German PDF ↗</span>
-          </a>
-          <a href="https://www.linkedin.com/in/lakshay-nagpal-1a2a0134a/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#0a66c2] hover:bg-[#004182] text-white text-xs font-semibold shadow-sm transition-all" title="LinkedIn Profile">
-            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z"/></svg>
-            <span class="hidden sm:inline">LinkedIn</span>
-          </a>
-        </div>
-      </div>
-    </header>
+  <div class="shell-content-wrapper lg:pl-64 flex flex-col min-h-screen relative z-10">
 
     <!-- Main Container -->
     <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
@@ -391,7 +213,7 @@
       <!-- ========================================================================= -->
       <!-- CANDIDATE PROFILE HERO CARD WITH OFFICIAL PHOTO & DIRECT DOWNLOADS         -->
       <!-- ========================================================================= -->
-      <section class="glass-droplet rounded-3xl p-6 sm:p-10 border border-stone-300/80 shadow-lg relative overflow-hidden">
+      <section id="profile-header" class="glass-droplet rounded-3xl p-6 sm:p-10 border border-stone-300/80 shadow-lg relative overflow-hidden">
         <div class="flex flex-col md:flex-row items-center md:items-start gap-8 relative z-10">
           
           <!-- Candidate Photo Frame with Liquid Droplet Border -->
@@ -483,9 +305,9 @@
                 <svg class="w-3.5 h-3.5 text-stone-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
               </a>
 
-              <a href="https://drive.google.com/file/d/15GwnY6jhijyzTbYt-QVjesA7c4dnuHzE/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold shadow-sm transition-all" title="Download German Companies CV via Google Drive">
-                <span>🇩🇪 Download German CV (PDF) ↗</span>
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              <a href="assets/Lakshay_Nagpal_Resume_German.pdf" download="Lakshay_Nagpal_Resume_German.pdf" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold shadow-sm transition-all" title="Download German Companies CV PDF">
+                <span>🇩🇪 Download German CV (PDF)</span>
+                <svg class="w-3.5 h-3.5 text-emerald-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
               </a>
 
               <a href="resume.html" class="droplet-pill px-3.5 py-2.5 rounded-xl text-stone-800 hover:text-stone-950 text-xs font-bold inline-flex items-center gap-1.5 transition-all" title="Open Original Resume Web View">
@@ -510,9 +332,246 @@
       </section>
 
       <!-- ========================================================================= -->
+      <!-- SECTION: TECHNICAL STACK & CORE ARCHITECTURE COMPETENCIES                -->
+      <!-- ========================================================================= -->
+      <section id="tech-stack" class="glass-droplet rounded-3xl p-6 sm:p-8 space-y-6 border border-stone-300/80 shadow-md">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-stone-200">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-100 border border-emerald-300 text-emerald-900 text-xs font-bold uppercase tracking-wider">
+              💻 Core Engineering Stack • Production Verified
+            </div>
+            <h2 class="text-2xl font-black text-stone-900 mt-1">
+              Technical Stack &amp; Architecture Competencies
+            </h2>
+            <p class="text-xs text-stone-600 mt-0.5">
+              Hands-on mastery across full-stack systems, distributed release engineering, and enterprise cloud infrastructure.
+            </p>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="px-3 py-1.5 rounded-xl bg-emerald-100 text-emerald-900 font-mono text-xs font-bold border border-emerald-300">
+              2.6+ Yrs Enterprise
+            </span>
+            <span class="px-3 py-1.5 rounded-xl bg-stone-100 text-stone-800 font-mono text-xs font-bold border border-stone-300">
+              240+ LeetCode Solved
+            </span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Card 1: Core Languages & Runtimes -->
+          <div class="p-5 rounded-2xl bg-white/90 border border-stone-300/80 space-y-3 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="text-xl">⚡</span>
+                <h3 class="text-sm font-black text-stone-900">Languages &amp; Runtimes</h3>
+              </div>
+              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200">Production</span>
+            </div>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Type-safe systems, modern asynchronous programming, object-oriented design patterns, and high-throughput data processing.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">TypeScript</span>
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">JavaScript (ES6+)</span>
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">Python</span>
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">Java</span>
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">SQL</span>
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">HTML5 / CSS3</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Frontend Engineering -->
+          <div class="p-5 rounded-2xl bg-white/90 border border-stone-300/80 space-y-3 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="text-xl">⚛️</span>
+                <h3 class="text-sm font-black text-stone-900">Frontend Engineering</h3>
+              </div>
+              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 border border-blue-200">Interactive</span>
+            </div>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Responsive client-side architecture, reactive state management, modular components, and fluid cross-device UI experiences.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">React.js</span>
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">Next.js</span>
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">Tailwind CSS</span>
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">Redux / Context API</span>
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">DOM APIs</span>
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">Glassmorphism UI</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Backend & Microservices -->
+          <div class="p-5 rounded-2xl bg-white/90 border border-stone-300/80 space-y-3 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="text-xl">🛠️</span>
+                <h3 class="text-sm font-black text-stone-900">Backend &amp; Microservices</h3>
+              </div>
+              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-teal-100 text-teal-800 border border-teal-200">Scalable</span>
+            </div>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Distributed service design, RESTful API development, secure JWT authorization, middleware pipelines, and event-driven backends.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">Node.js</span>
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">Express.js</span>
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">RESTful APIs</span>
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">Microservices</span>
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">JWT / OAuth</span>
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">System Design</span>
+            </div>
+          </div>
+
+          <!-- Card 4: DevOps & Release Engineering -->
+          <div class="p-5 rounded-2xl bg-white/90 border border-stone-300/80 space-y-3 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="text-xl">🚀</span>
+                <h3 class="text-sm font-black text-stone-900">DevOps &amp; Infrastructure</h3>
+              </div>
+              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-800 border border-indigo-200">15+ Servers</span>
+            </div>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Automated deployment orchestration across 15+ server environments, 50+ production releases, and 99.5%+ sustained system uptime.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">Docker</span>
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">Kubernetes</span>
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">CI/CD Pipelines</span>
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">Git / GitHub</span>
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">Linux Shell Scripting</span>
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">Production Health Checks</span>
+            </div>
+          </div>
+
+          <!-- Card 5: Database Engineering -->
+          <div class="p-5 rounded-2xl bg-white/90 border border-stone-300/80 space-y-3 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="text-xl">🗄️</span>
+                <h3 class="text-sm font-black text-stone-900">Database Engineering</h3>
+              </div>
+              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-200">100+ SQL Scripts</span>
+            </div>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Transactional data integrity, relational schema design, migration governance, query indexing, and zero-downtime database rollout scripts.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">PostgreSQL</span>
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">MySQL</span>
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">Schema Migrations</span>
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">Complex Queries</span>
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">ACID Transactions</span>
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">Data Modeling</span>
+            </div>
+          </div>
+
+          <!-- Card 6: Computer Science & Problem Solving -->
+          <div class="p-5 rounded-2xl bg-white/90 border border-stone-300/80 space-y-3 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="text-xl">🧠</span>
+                <h3 class="text-sm font-black text-stone-900">Algorithms &amp; Problem Solving</h3>
+              </div>
+              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-purple-100 text-purple-800 border border-purple-200">25 Patterns</span>
+            </div>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Systematic algorithmic mastery across 240+ LeetCode problems, Big-O space/time optimization, and high-yield interview patterns.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">Data Structures &amp; Algorithms</span>
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">Sliding Window &amp; Two Pointers</span>
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">Dynamic Programming &amp; Graphs</span>
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">Tree Traversals</span>
+              <span class="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-800 text-xs font-semibold">OOP &amp; SOLID Principles</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 2: PROFESSIONAL EXPERIENCE & ENTERPRISE TRACK RECORD             -->
+      <!-- ========================================================================= -->
+      <section id="experience" class="glass-droplet rounded-3xl p-6 sm:p-8 space-y-6 border border-stone-300/80 shadow-md">
+        <div class="flex items-center justify-between border-b border-stone-200 pb-4">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-100 border border-blue-300 text-blue-900 text-xs font-bold uppercase tracking-wider">
+              💼 Professional Work History (about 2.6 Years)
+            </div>
+            <h2 class="text-2xl font-black text-stone-900 mt-1">
+              Enterprise Software Engineering Experience
+            </h2>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <!-- Job 1: OATI -->
+          <div class="p-5 rounded-2xl bg-white/90 border border-stone-300/80 space-y-3 shadow-sm">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <h3 class="text-lg font-bold text-stone-900">
+                  Software Integrator
+                </h3>
+                <span class="text-sm font-semibold text-emerald-800">
+                  Open Access Technology India Pvt. Ltd. (OATI)
+                </span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="px-3 py-1 rounded-lg bg-stone-100 text-stone-700 text-xs font-mono font-semibold">
+                  1 Jun 2023 – 16 Jan 2026 (about 2.6 Yrs / 31 mos 18 days)
+                </span>
+                <a href="https://drive.google.com/file/d/1V3WUaI4ASQmF7MOENCaoWenCwt1-78oX/view?usp=sharing" target="_blank" rel="noreferrer" class="px-3 py-1 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold inline-flex items-center gap-1 shadow-sm">
+                  <span>Experience Letter ↗</span>
+                </a>
+              </div>
+            </div>
+
+            <ul class="list-disc list-inside text-xs text-stone-700 space-y-1.5 leading-relaxed">
+              <li>Automated and orchestrated application deployment workflows across <strong>15+ distributed enterprise server environments</strong>, reducing manual rollout overhead by ~40% across release cycles.</li>
+              <li>Governed end-to-end release lifecycles across <strong>50+ production builds</strong>, executing pre-release validation protocols and environment health checks to sustain <strong>99.5%+ post-deployment system availability</strong>.</li>
+              <li>Authored and executed <strong>100+ transactional SQL validation routines</strong> and schema migration scripts to verify database connectivity, mitigate schema drift, and safeguard production data integrity.</li>
+              <li>Conducted root-cause analysis on critical release blockers by interrogating system logs and backend REST API payloads, reducing mean time to resolution (MTTR) by ~30%.</li>
+            </ul>
+          </div>
+
+          <!-- Job 2: Geekster -->
+          <div class="p-5 rounded-2xl bg-white/90 border border-stone-300/80 space-y-3 shadow-sm">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <h3 class="text-lg font-bold text-stone-900">
+                  Intern Teaching Assistant Engineer
+                </h3>
+                <span class="text-sm font-semibold text-blue-800">
+                  Geekster
+                </span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="px-3 py-1 rounded-lg bg-stone-100 text-stone-700 text-xs font-mono font-semibold">
+                  Jan 2022 – Jun 2022 (6 Mos)
+                </span>
+                <a href="https://drive.google.com/file/d/1rsVBAD43JQncRFX5xs_6V71Au6KGY20u/view?usp=sharing" target="_blank" rel="noreferrer" class="px-3 py-1 rounded-lg bg-blue-700 hover:bg-blue-800 text-white text-xs font-bold inline-flex items-center gap-1 shadow-sm">
+                  <span>View Certificate ↗</span>
+                </a>
+              </div>
+            </div>
+
+            <ul class="list-disc list-inside text-xs text-stone-700 space-y-1.5 leading-relaxed">
+              <li>Mentored a cohort of <strong>40+ aspiring software developers</strong> in core frontend engineering (JavaScript, React.js, HTML5, CSS3), achieving an <strong>85%+ curriculum completion rate</strong>.</li>
+              <li>Facilitated <strong>25+ technical debugging sessions</strong>, guiding developers through algorithmic optimization, state management, REST API consumption, and modular component reusability.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- ========================================================================= -->
       <!-- SECTION 1: VERIFIED EDUCATIONAL QUALIFICATIONS & 8-SEMESTER BREAKDOWN     -->
       <!-- ========================================================================= -->
-      <section class="glass-droplet rounded-3xl p-6 sm:p-8 space-y-6 border border-stone-300/80 shadow-md">
+      <section id="qualifications" class="glass-droplet rounded-3xl p-6 sm:p-8 space-y-6 border border-stone-300/80 shadow-md">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-stone-200">
           <div>
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-100 border border-emerald-300 text-emerald-900 text-xs font-bold uppercase tracking-wider">
@@ -695,83 +754,9 @@
       </section>
 
       <!-- ========================================================================= -->
-      <!-- SECTION 2: PROFESSIONAL EXPERIENCE & ENTERPRISE TRACK RECORD             -->
-      <!-- ========================================================================= -->
-      <section class="glass-droplet rounded-3xl p-6 sm:p-8 space-y-6 border border-stone-300/80 shadow-md">
-        <div class="flex items-center justify-between border-b border-stone-200 pb-4">
-          <div>
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-100 border border-blue-300 text-blue-900 text-xs font-bold uppercase tracking-wider">
-              💼 Professional Work History (about 2.6 Years)
-            </div>
-            <h2 class="text-2xl font-black text-stone-900 mt-1">
-              Enterprise Software Engineering Experience
-            </h2>
-          </div>
-        </div>
-
-        <div class="space-y-6">
-          <!-- Job 1: OATI -->
-          <div class="p-5 rounded-2xl bg-white/90 border border-stone-300/80 space-y-3 shadow-sm">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-              <div>
-                <h3 class="text-lg font-bold text-stone-900">
-                  Software Integrator
-                </h3>
-                <span class="text-sm font-semibold text-emerald-800">
-                  Open Access Technology India Pvt. Ltd. (OATI)
-                </span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="px-3 py-1 rounded-lg bg-stone-100 text-stone-700 text-xs font-mono font-semibold">
-                  1 Jun 2023 – 16 Jan 2026 (about 2.6 Yrs / 31 mos 18 days)
-                </span>
-                <a href="https://drive.google.com/file/d/1V3WUaI4ASQmF7MOENCaoWenCwt1-78oX/view?usp=sharing" target="_blank" rel="noreferrer" class="px-3 py-1 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold inline-flex items-center gap-1 shadow-sm">
-                  <span>Experience Letter ↗</span>
-                </a>
-              </div>
-            </div>
-
-            <ul class="list-disc list-inside text-xs text-stone-700 space-y-1.5 leading-relaxed">
-              <li>Automated and orchestrated application deployment workflows across <strong>15+ distributed enterprise server environments</strong>, reducing manual rollout overhead by ~40% across release cycles.</li>
-              <li>Governed end-to-end release lifecycles across <strong>50+ production builds</strong>, executing pre-release validation protocols and environment health checks to sustain <strong>99.5%+ post-deployment system availability</strong>.</li>
-              <li>Authored and executed <strong>100+ transactional SQL validation routines</strong> and schema migration scripts to verify database connectivity, mitigate schema drift, and safeguard production data integrity.</li>
-              <li>Conducted root-cause analysis on critical release blockers by interrogating system logs and backend REST API payloads, reducing mean time to resolution (MTTR) by ~30%.</li>
-            </ul>
-          </div>
-
-          <!-- Job 2: Geekster -->
-          <div class="p-5 rounded-2xl bg-white/90 border border-stone-300/80 space-y-3 shadow-sm">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-              <div>
-                <h3 class="text-lg font-bold text-stone-900">
-                  Intern Teaching Assistant Engineer
-                </h3>
-                <span class="text-sm font-semibold text-blue-800">
-                  Geekster
-                </span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="px-3 py-1 rounded-lg bg-stone-100 text-stone-700 text-xs font-mono font-semibold">
-                  Jan 2022 – Jun 2022 (6 Mos)
-                </span>
-                <a href="https://drive.google.com/file/d/1rsVBAD43JQncRFX5xs_6V71Au6KGY20u/view?usp=sharing" target="_blank" rel="noreferrer" class="px-3 py-1 rounded-lg bg-blue-700 hover:bg-blue-800 text-white text-xs font-bold inline-flex items-center gap-1 shadow-sm">
-                  <span>View Certificate ↗</span>
-                </a>
-              </div>
-            </div>
-
-            <ul class="list-disc list-inside text-xs text-stone-700 space-y-1.5 leading-relaxed">
-              <li>Mentored a cohort of <strong>40+ aspiring software developers</strong> in core frontend engineering (JavaScript, React.js, HTML5, CSS3), achieving an <strong>85%+ curriculum completion rate</strong>.</li>
-              <li>Facilitated <strong>25+ technical debugging sessions</strong>, guiding developers through algorithmic optimization, state management, REST API consumption, and modular component reusability.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- ========================================================================= -->
       <!-- SECTION 3: QUICK COPY CENTER FOR FAST JOB APPLICATIONS                   -->
       <!-- ========================================================================= -->
-      <section class="glass-droplet rounded-3xl p-6 sm:p-8 space-y-6 border border-stone-300/80 shadow-md">
+      <section id="quick-copy" class="glass-droplet rounded-3xl p-6 sm:p-8 space-y-6 border border-stone-300/80 shadow-md">
         <div class="flex items-center justify-between border-b border-stone-200 pb-4">
           <div>
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-amber-100 border border-amber-300 text-amber-900 text-xs font-bold uppercase tracking-wider">
@@ -1025,18 +1010,18 @@
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-stone-200">
           <div>
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-100 border border-blue-300 text-blue-900 text-xs font-bold uppercase tracking-wider">
-              💼 Strategic Career Launchpad • 64 Curated Portals
+              💼 Strategic Career Launchpad • 99 Curated Portals
             </div>
             <h2 class="text-2xl font-black text-stone-900 mt-1">
               Global Job Portals &amp; Country Directory
             </h2>
             <p class="text-xs text-stone-600 mt-0.5">
-              Targeted job-search platforms for <strong>India 🇮🇳</strong>, <strong>Dubai / UAE 🇦🇪</strong>, <strong>Germany 🇩🇪</strong>, <strong>Global Remote 🌍</strong>, and <strong>Direct Big Tech 🏢</strong> with cadence schedules.
+              Targeted job-search platforms for <strong>India 🇮🇳</strong>, <strong>Dubai / UAE 🇦🇪</strong>, <strong>Germany 🇩🇪</strong>, <strong>Australia 🇦🇺</strong>, <strong>UK 🇬🇧</strong>, <strong>Ireland 🇮🇪</strong>, <strong>Switzerland 🇨🇭</strong>, <strong>Netherlands 🇳🇱</strong>, <strong>Canada 🇨🇦</strong>, <strong>Singapore 🇸🇬</strong>, <strong>United States 🇺🇸</strong>, <strong>Global Remote 🌍</strong>, and <strong>Direct Big Tech 🏢</strong>.
             </p>
           </div>
           <div class="flex items-center gap-2 flex-wrap">
             <span id="portalCountBadge" class="px-3 py-1.5 rounded-xl bg-stone-100 text-stone-800 border border-stone-300 font-mono text-xs font-bold shadow-sm">
-              Showing 64 Portals
+              Showing 99 Portals
             </span>
             <span id="portalSelectedBadge" class="px-3 py-1.5 rounded-xl bg-emerald-100 text-emerald-900 border border-emerald-300 font-mono text-xs font-bold shadow-sm flex items-center gap-1.5">
               <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
@@ -1057,10 +1042,15 @@
             <div class="text-xs font-bold uppercase tracking-wider text-stone-700 flex items-center gap-2">
               <span>🎯</span> Recommended Multi-Market Application Strategy
             </div>
-            <div class="flex items-center gap-1 text-xs">
-              <button onclick="setCadenceTab('india')" id="cadenceTab-india" class="px-3 py-1 rounded-lg font-bold bg-emerald-700 text-white shadow-sm transition-all cursor-pointer">🇮🇳 India</button>
-              <button onclick="setCadenceTab('uae')" id="cadenceTab-uae" class="px-3 py-1 rounded-lg font-medium text-stone-700 hover:bg-stone-200 transition-all cursor-pointer">🇦🇪 Dubai/UAE</button>
-              <button onclick="setCadenceTab('germany')" id="cadenceTab-germany" class="px-3 py-1 rounded-lg font-medium text-stone-700 hover:bg-stone-200 transition-all cursor-pointer">🇩🇪 Germany</button>
+            <div class="flex items-center gap-1 text-xs flex-wrap">
+              <button onclick="setCadenceTab('india')" id="cadenceTab-india" class="px-2.5 py-1 rounded-lg font-bold bg-emerald-700 text-white shadow-sm transition-all cursor-pointer">🇮🇳 India</button>
+              <button onclick="setCadenceTab('uae')" id="cadenceTab-uae" class="px-2.5 py-1 rounded-lg font-medium text-stone-700 hover:bg-stone-200 transition-all cursor-pointer">🇦🇪 Dubai/UAE</button>
+              <button onclick="setCadenceTab('germany')" id="cadenceTab-germany" class="px-2.5 py-1 rounded-lg font-medium text-stone-700 hover:bg-stone-200 transition-all cursor-pointer">🇩🇪 Germany</button>
+              <button onclick="setCadenceTab('australia')" id="cadenceTab-australia" class="px-2.5 py-1 rounded-lg font-medium text-stone-700 hover:bg-stone-200 transition-all cursor-pointer">🇦🇺 Australia/NZ</button>
+              <button onclick="setCadenceTab('uk')" id="cadenceTab-uk" class="px-2.5 py-1 rounded-lg font-medium text-stone-700 hover:bg-stone-200 transition-all cursor-pointer">🇬🇧 UK &amp; IE</button>
+              <button onclick="setCadenceTab('europe')" id="cadenceTab-europe" class="px-2.5 py-1 rounded-lg font-medium text-stone-700 hover:bg-stone-200 transition-all cursor-pointer">🇨🇭 CH &amp; NL</button>
+              <button onclick="setCadenceTab('apac')" id="cadenceTab-apac" class="px-2.5 py-1 rounded-lg font-medium text-stone-700 hover:bg-stone-200 transition-all cursor-pointer">🇸🇬 Singapore</button>
+              <button onclick="setCadenceTab('americas')" id="cadenceTab-americas" class="px-2.5 py-1 rounded-lg font-medium text-stone-700 hover:bg-stone-200 transition-all cursor-pointer">🇨🇦 CA &amp; US</button>
             </div>
           </div>
 
@@ -1146,7 +1136,147 @@
                 View 2–3× / Week Portals →
               </button>
             </div>
+         
+          <!-- Tab Content: Australia & NZ -->
+          <div id="cadencePanel-australia" class="hidden grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-3.5 rounded-xl bg-emerald-50/80 border border-emerald-200 space-y-2">
+              <div class="flex items-center justify-between text-xs font-bold text-emerald-950">
+                <span class="flex items-center gap-1.5">⚡ Daily Core Priority (Market Leaders)</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 font-mono text-[10px]">2 Platforms</span>
+              </div>
+              <p class="text-[11px] text-stone-700 leading-relaxed">
+                Apply daily on: <strong>SEEK Australia</strong> (the undisputed #1 portal in AU/NZ with ~70%+ market share) and <strong>Indeed Australia</strong>. Ensure Australian resume format (no photo, key accomplishments emphasized).
+              </p>
+              <button onclick="filterByCadenceGroup('australia', 'daily')" class="text-xs text-emerald-800 font-bold hover:underline flex items-center gap-1 cursor-pointer">
+                View Daily Australia Portals →
+              </button>
+            </div>
+            <div class="p-3.5 rounded-xl bg-stone-50 border border-stone-200 space-y-2">
+              <div class="flex items-center justify-between text-xs font-bold text-stone-900">
+                <span class="flex items-center gap-1.5">📅 2–3× Per Week + Government</span>
+                <span class="px-2 py-0.5 rounded bg-stone-200 text-stone-800 font-mono text-[10px]">3 Platforms</span>
+              </div>
+              <p class="text-[11px] text-stone-700 leading-relaxed">
+                Check 2-3x weekly: <strong>Workforce Australia</strong> (official Government portal with verified employers), <strong>GradConnection</strong> (early career &amp; graduate tech), and <strong>Jora Australia</strong>.
+              </p>
+              <button onclick="filterByCadenceGroup('australia', 'biweekly')" class="text-xs text-stone-800 font-bold hover:underline flex items-center gap-1 cursor-pointer">
+                View 2–3× / Week AU Portals →
+              </button>
+            </div>
           </div>
+
+          <!-- Tab Content: UK & Ireland -->
+          <div id="cadencePanel-uk" class="hidden grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-3.5 rounded-xl bg-emerald-50/80 border border-emerald-200 space-y-2">
+              <div class="flex items-center justify-between text-xs font-bold text-emerald-950">
+                <span class="flex items-center gap-1.5">⚡ Daily Tech &amp; Corporate Priority</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 font-mono text-[10px]">5 Platforms</span>
+              </div>
+              <p class="text-[11px] text-stone-700 leading-relaxed">
+                Apply daily on: <strong>CWJobs UK</strong> (#1 tech specialist in the UK), <strong>IrishJobs.ie</strong> (Ireland's #1 corporate portal), <strong>Totaljobs UK</strong>, <strong>Reed.co.uk</strong>, and <strong>Jobs.ie</strong>. High FinTech &amp; SaaS demand in London and Dublin.
+              </p>
+              <button onclick="filterByCadenceGroup('uk', 'daily')" class="text-xs text-emerald-800 font-bold hover:underline flex items-center gap-1 cursor-pointer">
+                View Daily UK Portals →
+              </button>
+            </div>
+            <div class="p-3.5 rounded-xl bg-stone-50 border border-stone-200 space-y-2">
+              <div class="flex items-center justify-between text-xs font-bold text-stone-900">
+                <span class="flex items-center gap-1.5">📅 2–3× Per Week (Startups &amp; Gov)</span>
+                <span class="px-2 py-0.5 rounded bg-stone-200 text-stone-800 font-mono text-[10px]">3 Platforms</span>
+              </div>
+              <p class="text-[11px] text-stone-700 leading-relaxed">
+                Check 2-3x weekly: <strong>Work in Startups UK</strong>, <strong>Silicon Republic Jobs</strong> (Irish tech ecosystem), and <strong>Find a Job (UK Gov)</strong>.
+              </p>
+              <button onclick="filterByCadenceGroup('uk', 'biweekly')" class="text-xs text-stone-800 font-bold hover:underline flex items-center gap-1 cursor-pointer">
+                View 2–3× / Week UK Portals →
+              </button>
+            </div>
+          </div>
+
+          <!-- Tab Content: Switzerland & Netherlands -->
+          <div id="cadencePanel-europe" class="hidden grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-3.5 rounded-xl bg-emerald-50/80 border border-emerald-200 space-y-2">
+              <div class="flex items-center justify-between text-xs font-bold text-emerald-950">
+                <span class="flex items-center gap-1.5">⚡ Daily Swiss &amp; Dutch Core</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 font-mono text-[10px]">2 Platforms</span>
+              </div>
+              <p class="text-[11px] text-stone-700 leading-relaxed">
+                Apply daily on: <strong>Jobs.ch</strong> (undisputed #1 Swiss job portal covering Zurich &amp; Geneva) and <strong>Nationale Vacaturebank</strong> (top Dutch national board). Highest tech salaries in Europe.
+              </p>
+              <button onclick="filterByCadenceGroup('switzerland', 'daily')" class="text-xs text-emerald-800 font-bold hover:underline flex items-center gap-1 cursor-pointer">
+                View Daily Swiss Portals →
+              </button>
+            </div>
+            <div class="p-3.5 rounded-xl bg-stone-50 border border-stone-200 space-y-2">
+              <div class="flex items-center justify-between text-xs font-bold text-stone-900">
+                <span class="flex items-center gap-1.5">📅 2–3× Per Week (Tech &amp; Expat)</span>
+                <span class="px-2 py-0.5 rounded bg-stone-200 text-stone-800 font-mono text-[10px]">4 Platforms</span>
+              </div>
+              <p class="text-[11px] text-stone-700 leading-relaxed">
+                Check 2-3x weekly: <strong>SwissDev Jobs</strong> (100% transparent CHF pay brackets), <strong>I amsterdam Jobs</strong> (English-speaking expat hub), <strong>Techleap.nl</strong> (Dutch scaleups), and <strong>Jobup.ch</strong> (Romandie).
+              </p>
+              <button onclick="filterByCadenceGroup('netherlands', 'biweekly')" class="text-xs text-stone-800 font-bold hover:underline flex items-center gap-1 cursor-pointer">
+                View 2–3× / Week Dutch Portals →
+              </button>
+            </div>
+          </div>
+
+          <!-- Tab Content: Singapore & APAC -->
+          <div id="cadencePanel-apac" class="hidden grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-3.5 rounded-xl bg-emerald-50/80 border border-emerald-200 space-y-2">
+              <div class="flex items-center justify-between text-xs font-bold text-emerald-950">
+                <span class="flex items-center gap-1.5">⚡ Daily APAC Core</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 font-mono text-[10px]">3 Platforms</span>
+              </div>
+              <p class="text-[11px] text-stone-700 leading-relaxed">
+                Apply daily on: <strong>NodeFlair</strong> (Southeast Asia's #1 tech salary &amp; jobs portal), <strong>MyCareersFuture</strong> (official Singapore Gov / MOM portal), and <strong>Jobstreet Singapore</strong> (SEEK Group).
+              </p>
+              <button onclick="filterByCadenceGroup('singapore', 'daily')" class="text-xs text-emerald-800 font-bold hover:underline flex items-center gap-1 cursor-pointer">
+                View Daily Singapore Portals →
+              </button>
+            </div>
+            <div class="p-3.5 rounded-xl bg-stone-50 border border-stone-200 space-y-2">
+              <div class="flex items-center justify-between text-xs font-bold text-stone-900">
+                <span class="flex items-center gap-1.5">📅 2–3× Per Week (Scaleups)</span>
+                <span class="px-2 py-0.5 rounded bg-stone-200 text-stone-800 font-mono text-[10px]">1 Platform</span>
+              </div>
+              <p class="text-[11px] text-stone-700 leading-relaxed">
+                Check 2-3x weekly: <strong>Glints</strong> (rapidly growing tech recruitment &amp; startup talent hub across Singapore, Indonesia, and Vietnam).
+              </p>
+              <button onclick="filterByCadenceGroup('singapore', 'biweekly')" class="text-xs text-stone-800 font-bold hover:underline flex items-center gap-1 cursor-pointer">
+                View Scaleup Portals →
+              </button>
+            </div>
+          </div>
+
+          <!-- Tab Content: Canada & US -->
+          <div id="cadencePanel-americas" class="hidden grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-3.5 rounded-xl bg-emerald-50/80 border border-emerald-200 space-y-2">
+              <div class="flex items-center justify-between text-xs font-bold text-emerald-950">
+                <span class="flex items-center gap-1.5">⚡ Daily North American Priority</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 font-mono text-[10px]">3 Platforms</span>
+              </div>
+              <p class="text-[11px] text-stone-700 leading-relaxed">
+                Apply daily on: <strong>Canada Job Bank</strong> (official Government portal with LMIA &amp; Express Entry flags), <strong>Dice</strong> (top US dedicated tech specialist), and <strong>Indeed Canada</strong> (Toronto &amp; Vancouver hubs).
+              </p>
+              <button onclick="filterByCadenceGroup('canada', 'daily')" class="text-xs text-emerald-800 font-bold hover:underline flex items-center gap-1 cursor-pointer">
+                View Daily CA &amp; US Portals →
+              </button>
+            </div>
+            <div class="p-3.5 rounded-xl bg-stone-50 border border-stone-200 space-y-2">
+              <div class="flex items-center justify-between text-xs font-bold text-stone-900">
+                <span class="flex items-center gap-1.5">📅 2–3× Per Week (Transparent Pay &amp; Startups)</span>
+                <span class="px-2 py-0.5 rounded bg-stone-200 text-stone-800 font-mono text-[10px]">4 Platforms</span>
+              </div>
+              <p class="text-[11px] text-stone-700 leading-relaxed">
+                Check 2-3x weekly: <strong>Levels.fyi Jobs</strong> (verified software engineering compensation tiers), <strong>Built In</strong> (major US tech hubs), <strong>Eluta.ca</strong> (Top 100 Employers), and <strong>Hacker News</strong>.
+              </p>
+              <button onclick="filterByCadenceGroup('usa', 'biweekly')" class="text-xs text-stone-800 font-bold hover:underline flex items-center gap-1 cursor-pointer">
+                View Startup &amp; Tech Hub Portals →
+              </button>
+            </div>
+          </div>
+ </div>
         </div>
 
         <!-- Filter Controls Dock (Dropdowns + Search) -->
@@ -1158,11 +1288,19 @@
                 🌐 Country / Region
               </label>
               <select id="portalCountrySelect" onchange="filterPortals()" class="w-full px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold olive-select cursor-pointer">
-                <option value="ALL">🌍 All Countries &amp; Markets (64)</option>
+                <option value="ALL">🌍 All Countries &amp; Markets (99 Portals)</option>
                 <option value="india">🇮🇳 India (21 Portals)</option>
+                <option value="germany">🇩🇪 Germany &amp; DACH (18 Portals)</option>
                 <option value="uae">🇦🇪 Dubai / UAE (16 Portals)</option>
-                <option value="germany">🇩🇪 Germany (23 Portals)</option>
-                <option value="global">🌍 Global &amp; Remote (8 Portals)</option>
+                <option value="australia">🇦🇺 Australia &amp; NZ (5 Portals)</option>
+                <option value="uk">🇬🇧 United Kingdom (5 Portals)</option>
+                <option value="singapore">🇸🇬 Singapore &amp; APAC (4 Portals)</option>
+                <option value="ireland">🇮🇪 Ireland (3 Portals)</option>
+                <option value="switzerland">🇨🇭 Switzerland (3 Portals)</option>
+                <option value="netherlands">🇳🇱 Netherlands (3 Portals)</option>
+                <option value="canada">🇨🇦 Canada (3 Portals)</option>
+                <option value="usa">🇺🇸 United States (2 Portals)</option>
+                <option value="global">🌍 Global Remote (10 Portals)</option>
                 <option value="enterprise">🏢 Direct Enterprise Careers (6 Portals)</option>
               </select>
             </div>
@@ -1247,7 +1385,7 @@
           <span>•</span>
           <a href="Lakshay_Nagpal_CV.html" class="hover:text-emerald-800 transition-colors font-semibold">German CV</a>
           <span>•</span>
-          <a href="https://drive.google.com/file/d/15GwnY6jhijyzTbYt-QVjesA7c4dnuHzE/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-800 transition-colors font-semibold">Download German PDF ↗</a>
+          <a href="assets/Lakshay_Nagpal_Resume_German.pdf" download="Lakshay_Nagpal_Resume_German.pdf" class="hover:text-emerald-800 transition-colors font-semibold">Download German PDF 📥</a>
           <span>•</span>
           <a href="assets/lakshay_photo.jpg" download="Lakshay_Nagpal_Photo.jpg" class="hover:text-emerald-800 transition-colors font-semibold">Download Photo</a>
           <span>•</span>
@@ -1588,6 +1726,53 @@ Online Resume: https://lakshayn0001.github.io/dashboard/resume.html`;
       { name: "Adzuna", country: "global", countryLabel: "🌍 Global Remote", tier: "tier3", tierLabel: "Tier 3: Additional Portals", cadence: "weekly", cadenceLabel: "📅 Weekly", url: "https://www.adzuna.com/", note: "Job search engine tracking market salary trends and hiring demand", badge: "Global", category: "Aggregator" },
       { name: "Talent.com", country: "global", countryLabel: "🌍 Global Remote", tier: "tier3", tierLabel: "Tier 3: Additional Portals", cadence: "weekly", cadenceLabel: "📅 Weekly", url: "https://www.talent.com/", note: "Global job marketplace with salary calculators and tax tools", badge: "Global", category: "Aggregator" },
 
+
+      // --- AUSTRALIA & NEW ZEALAND ---
+      { name: "SEEK Australia", country: "australia", countryLabel: "🇦🇺 Australia & NZ", tier: "tier1", tierLabel: "Tier 1: Must Use", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://au.seek.com/", note: "Dominant #1 job board in Australia & NZ (~70%+ market share) for all tech & software roles", badge: "Daily Essential", category: "Market Leader" },
+      { name: "Indeed Australia", country: "australia", countryLabel: "🇦🇺 Australia & NZ", tier: "tier1", tierLabel: "Tier 1: Must Use", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://au.indeed.com/", note: "Major aggregator for Australian corporate, SME, and software development hiring", badge: "Daily Essential", category: "Aggregator" },
+      { name: "Workforce Australia", country: "australia", countryLabel: "🇦🇺 Australia & NZ", tier: "gov", tierLabel: "Official Government", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://www.workforceaustralia.gov.au/", note: "Official Australian Government Department of Employment portal with verified employers", badge: "Gov Portal", category: "Official Government" },
+      { name: "GradConnection Australia", country: "australia", countryLabel: "🇦🇺 Australia & NZ", tier: "tier2", tierLabel: "Tier 2: Tech Specialist", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://au.gradconnection.com/", note: "Premier portal for early-career (1–4 yrs), graduate, and junior tech engineering roles", badge: "Early Career", category: "Early Career" },
+      { name: "Jora Australia", country: "australia", countryLabel: "🇦🇺 Australia & NZ", tier: "tier3", tierLabel: "Tier 3: Additional Portals", cadence: "weekly", cadenceLabel: "📅 Weekly", url: "https://au.jora.com/", note: "High-speed Australian meta-search engine powered by the SEEK Group", badge: "Meta-Search", category: "Aggregator" },
+
+      // --- UNITED KINGDOM ---
+      { name: "CWJobs UK", country: "uk", countryLabel: "🇬🇧 United Kingdom", tier: "tier1", tierLabel: "Tier 1: Must Use", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://www.cwjobs.co.uk/", note: "The UK's #1 dedicated tech and software developer specialist board", badge: "Daily Essential", category: "Tech Specialist" },
+      { name: "Totaljobs UK", country: "uk", countryLabel: "🇬🇧 United Kingdom", tier: "tier1", tierLabel: "Tier 1: Must Use", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://www.totaljobs.com/", note: "One of the UK's largest job boards (StepStone UK) with extensive corporate tech volume", badge: "Daily Essential", category: "UK Leader" },
+      { name: "Reed.co.uk", country: "uk", countryLabel: "🇬🇧 United Kingdom", tier: "tier1", tierLabel: "Tier 1: Must Use", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://www.reed.co.uk/", note: "High-volume UK employment marketplace with direct recruiter and agency outreach", badge: "Daily Essential", category: "General & IT" },
+      { name: "Work In Startups UK", country: "uk", countryLabel: "🇬🇧 United Kingdom", tier: "tier2", tierLabel: "Tier 2: Tech Specialist", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://workinstartups.com/", note: "Premier community board for London and UK-funded tech startups and scaleups", badge: "Startup Hub", category: "Startups" },
+      { name: "Find a Job (UK Gov)", country: "uk", countryLabel: "🇬🇧 United Kingdom", tier: "gov", tierLabel: "Official Government", cadence: "weekly", cadenceLabel: "📅 Weekly", url: "https://findajob.dwp.gov.uk/", note: "Official UK Government Department for Work & Pensions employment database", badge: "Official Gov", category: "Official Government" },
+
+      // --- IRELAND ---
+      { name: "IrishJobs.ie", country: "ireland", countryLabel: "🇮🇪 Ireland", tier: "tier1", tierLabel: "Tier 1: Must Use", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://www.irishjobs.ie/", note: "Ireland's #1 corporate and software engineering job board (Dublin tech hub)", badge: "Daily Essential", category: "Ireland Leader" },
+      { name: "Jobs.ie", country: "ireland", countryLabel: "🇮🇪 Ireland", tier: "tier1", tierLabel: "Tier 1: Must Use", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://www.jobs.ie/", note: "Leading Irish career portal with strong multinational and IT engineering listings", badge: "Daily Essential", category: "National Portal" },
+      { name: "Silicon Republic Jobs", country: "ireland", countryLabel: "🇮🇪 Ireland", tier: "tier2", tierLabel: "Tier 2: Tech Specialist", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://www.siliconrepublic.com/jobs", note: "Ireland's premier tech news and innovation portal tracking European tech HQs", badge: "Tech & Innovation", category: "Tech Specialist" },
+
+      // --- SWITZERLAND ---
+      { name: "Jobs.ch", country: "switzerland", countryLabel: "🇨🇭 Switzerland", tier: "tier1", tierLabel: "Tier 1: Must Use", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://www.jobs.ch/", note: "Undisputed #1 Swiss job portal covering Zurich tech hub, Basel, and Bern", badge: "Daily Essential", category: "Swiss Leader" },
+      { name: "SwissDev Jobs", country: "switzerland", countryLabel: "🇨🇭 Switzerland", tier: "tier2", tierLabel: "Tier 2: Tech Specialist", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://swissdevjobs.ch/", note: "Developer-first portal with 100% transparent CHF salary bands and tech stack filters", badge: "Dev-First", category: "Tech Specialist" },
+      { name: "Jobup.ch", country: "switzerland", countryLabel: "🇨🇭 Switzerland", tier: "tier2", tierLabel: "Tier 2: Tech Specialist", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://www.jobup.ch/", note: "Leading portal for French-speaking Switzerland (Geneva, Lausanne tech hubs)", badge: "Romandie Leader", category: "Regional" },
+
+      // --- NETHERLANDS ---
+      { name: "Nationale Vacaturebank", country: "netherlands", countryLabel: "🇳🇱 Netherlands", tier: "tier1", tierLabel: "Tier 1: Must Use", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://www.nationalevacaturebank.nl/", note: "Top Dutch employment portal indexing enterprise and tech engineering vacancies", badge: "Daily Essential", category: "Netherlands Leader" },
+      { name: "I amsterdam Jobs", country: "netherlands", countryLabel: "🇳🇱 Netherlands", tier: "tier2", tierLabel: "Tier 2: Tech Specialist", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://www.iamsterdam.com/en/work/jobs", note: "Official Amsterdam city portal curated for international and English-speaking tech talent", badge: "English / Expat", category: "International / English" },
+      { name: "Techleap.nl Jobs", country: "netherlands", countryLabel: "🇳🇱 Netherlands", tier: "tier2", tierLabel: "Tier 2: Tech Specialist", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://jobs.techleap.nl/", note: "Official Dutch startup ecosystem job board backed by the Ministry of Economic Affairs", badge: "Dutch Startups", category: "Startups" },
+
+      // --- CANADA ---
+      { name: "Canada Job Bank", country: "canada", countryLabel: "🇨🇦 Canada", tier: "gov", tierLabel: "Official Government", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://www.jobbank.gc.ca/", note: "Official Government of Canada job board with verified LMIA-approved & Express Entry roles", badge: "Official Gov", category: "Official Government" },
+      { name: "Indeed Canada", country: "canada", countryLabel: "🇨🇦 Canada", tier: "tier1", tierLabel: "Tier 1: Must Use", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://ca.indeed.com/", note: "Highest volume job aggregator across Toronto, Vancouver, and Waterloo tech corridors", badge: "Daily Essential", category: "Aggregator" },
+      { name: "Eluta.ca", country: "canada", countryLabel: "🇨🇦 Canada", tier: "tier2", tierLabel: "Tier 2: Tech Specialist", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://www.eluta.ca/", note: "Specialized search engine indexing direct career pages of Canada's Top 100 Employers", badge: "Direct Employer", category: "Direct Hire" },
+
+      // --- SINGAPORE & SOUTHEAST ASIA ---
+      { name: "MyCareersFuture", country: "singapore", countryLabel: "🇸🇬 Singapore & APAC", tier: "gov", tierLabel: "Official Government", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://www.mycareersfuture.gov.sg/", note: "Official Singapore Government statutory job portal (MOM & WSG) with verified postings", badge: "Official Gov", category: "Official Government" },
+      { name: "NodeFlair", country: "singapore", countryLabel: "🇸🇬 Singapore & APAC", tier: "tier1", tierLabel: "Tier 1: Must Use", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://nodeflair.com/", note: "Southeast Asia's #1 tech developer portal with verified tech salaries and tech stack insights", badge: "Dev-First", category: "Tech Specialist" },
+      { name: "Jobstreet Singapore", country: "singapore", countryLabel: "🇸🇬 Singapore & APAC", tier: "tier1", tierLabel: "Tier 1: Must Use", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://www.jobstreet.com.sg/", note: "Dominant Southeast Asian employment platform (SEEK Group) for regional tech", badge: "Daily Essential", category: "APAC Leader" },
+      { name: "Glints", country: "singapore", countryLabel: "🇸🇬 Singapore & APAC", tier: "tier2", tierLabel: "Tier 2: Tech Specialist", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://glints.com/", note: "Premier tech recruitment and startup hiring platform across Singapore, Indonesia, Vietnam", badge: "Tech Scaleups", category: "Startups" },
+
+      // --- UNITED STATES & DEVELOPER SPECIALISTS ---
+      { name: "Dice", country: "usa", countryLabel: "🇺🇸 United States", tier: "tier1", tierLabel: "Tier 1: Must Use", cadence: "daily", cadenceLabel: "⚡ Daily", url: "https://www.dice.com/", note: "Dedicated US specialist tech portal for software engineering and cloud systems", badge: "Tech Specialist", category: "Tech & Cloud" },
+      { name: "Built In", country: "usa", countryLabel: "🇺🇸 United States", tier: "tier2", tierLabel: "Tier 2: Tech Specialist", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://builtin.com/", note: "Top portal for major US tech hubs (NYC, Austin, SF, Chicago, Boston, Seattle)", badge: "Tech Hubs", category: "Startups & Tech" },
+      { name: "Levels.fyi Jobs", country: "global", countryLabel: "🌍 Global Remote", tier: "tier2", tierLabel: "Tier 2: Tech Specialist", cadence: "biweekly", cadenceLabel: "📅 2–3× / Week", url: "https://www.levels.fyi/jobs", note: "Curated software engineering vacancies indexed with transparent salary & leveling benchmarks", badge: "Verified Pay", category: "Compensation" },
+      { name: "Hacker News: Who is Hiring?", country: "global", countryLabel: "🌍 Global Remote", tier: "tier2", tierLabel: "Tier 2: Tech Specialist", cadence: "biweekly", cadenceLabel: "📅 Monthly", url: "https://news.ycombinator.com/", note: "Direct monthly hiring thread created by Y-Combinator founders & engineering leaders", badge: "Direct Founders", category: "Founder Direct" },
+
       // --- DIRECT ENTERPRISE CAREERS ---
       { name: "Amazon Jobs", country: "enterprise", countryLabel: "🏢 Direct Tech Enterprise", tier: "enterprise", tierLabel: "Enterprise Careers", cadence: "weekly", cadenceLabel: "🏢 Direct Company", url: "https://www.amazon.jobs/", note: "Direct applications for AWS, Retail, and Software Development Engineer (SDE) roles", badge: "Direct Career Page", category: "Big Tech" },
       { name: "Google Careers", country: "enterprise", countryLabel: "🏢 Direct Tech Enterprise", tier: "enterprise", tierLabel: "Enterprise Careers", cadence: "weekly", cadenceLabel: "🏢 Direct Company", url: "https://careers.google.com/", note: "Software Engineer, Cloud, and Systems roles worldwide (India, Munich, Zurich, US)", badge: "Direct Career Page", category: "Big Tech" },
@@ -1720,6 +1905,10 @@ Online Resume: https://lakshayn0001.github.io/dashboard/resume.html`;
       }).join('');
     }
 
+    function filterPortals() {
+      renderPortals();
+    }
+
     function togglePortalCard(portalName, event) {
       if (event) {
         event.stopPropagation();
@@ -1753,7 +1942,7 @@ Online Resume: https://lakshayn0001.github.io/dashboard/resume.html`;
     }
 
     function setCadenceTab(tab) {
-      ['india', 'uae', 'germany'].forEach(t => {
+      ['india', 'uae', 'germany', 'australia', 'uk', 'europe', 'apac', 'americas'].forEach(t => {
         const btn = document.getElementById(`cadenceTab-${t}`);
         const panel = document.getElementById(`cadencePanel-${t}`);
         if (t === tab) {
@@ -1847,5 +2036,6 @@ Online Resume: https://lakshayn0001.github.io/dashboard/resume.html`;
       }
     });
   </script>
+  <script src="assets/js/shell.js"></script>
 </body>
 </html>
