@@ -10,13 +10,13 @@
       "title": "Daily Cockpit Briefing",
       "page": "index",
       "path": "assets/audio/index/daily_brief.mp3",
-      "sha256": "d87da4f787afa8bf97996fb720f9d4c77914dc1ce85e78b72b3a31168c1945bd",
-      "words": 98,
-      "duration_sec": 44.6,
-      "size_bytes": 2140754,
+      "sha256": "3ac03cc0763998000676f4d587850bcbbe504236ba524e47ea5be94f637f7213",
+      "words": 91,
+      "duration_sec": 72.58,
+      "size_bytes": 436125,
       "voice": "af_nicole",
       "style": "warm",
-      "updated_at": "2026-09-21T04:45:35Z"
+      "updated_at": "2026-09-22T07:36:13Z"
     },
     "index/master_todos": {
       "title": "Master To-Dos Briefing",
@@ -559,5 +559,5 @@
       "updated_at": "2026-09-20T18:33:20Z"
     }
   },
-  "updated_at": "2026-09-21T04:45:35Z"
+  "updated_at": "2026-09-22T07:36:13Z"
 }
