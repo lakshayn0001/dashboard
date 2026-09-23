@@ -84,7 +84,10 @@
       { label: 'Verified Qualifications', href: '#qualifications', icon: '📜' },
       { label: 'Application Field Shortcuts', href: '#quick-copy', icon: '⚡' },
       { label: 'Cold Email Generator', href: '#cold-email', icon: '✉️' },
-      { label: 'Global Job Portals (99 Sites)', href: '#job-portals', icon: '🌐' }
+      { label: 'Global Job Portals (99 Sites)', href: '#job-portals', icon: '🌐' },
+      { label: 'Original Resume', href: 'resume.html', icon: '📄' },
+      { label: 'German CV', href: 'Lakshay_Nagpal_CV.html', icon: '🇩🇪' },
+      { label: 'Lebenslauf', href: 'lebenslauf_de.html', icon: '📋' }
     ],
     'learning_hub.html': [
       { label: 'Track 0: DSA Problem Bank (247 Qs)', href: '#dsa-track', icon: '⚡' },
