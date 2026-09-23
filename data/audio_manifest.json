@@ -17,7 +17,7 @@
       "voice": "en-US-EmmaMultilingualNeural",
       "style": "velvet",
       "provider": "edge_tts",
-      "updated_at": "2026-09-23T06:46:42Z"
+      "updated_at": "2026-09-23T07:37:19Z"
     },
     "index/master_todos": {
       "title": "Master To-Dos Briefing",
@@ -560,6 +560,6 @@
       "updated_at": "2026-09-20T18:33:20Z"
     }
   },
-  "updated_at": "2026-09-23T06:46:42Z",
+  "updated_at": "2026-09-23T07:37:19Z",
   "voice_label": "Velvet · Emma"
 }
