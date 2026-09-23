@@ -8613,7 +8613,7 @@
       <div class="truncate max-w-[210px] sm:max-w-xs">
         <div id="audioPlayerTitle" class="text-xs font-bold text-stone-900 truncate">Playing Audio Summary</div>
         <div class="flex items-center gap-2">
-          <span id="audioPlayerStatus" class="text-[11px] text-stone-500 truncate">Velvet · Emma</span>
+          <span id="audioPlayerStatus" class="text-[11px] text-stone-500 truncate">Close · Ava</span>
           <span id="audioPlayerTime" class="text-[10px] text-stone-400 font-mono">0:00 / 0:00</span>
         </div>
         <div id="audioProgressContainer" class="w-full bg-stone-200 rounded-full h-1 mt-1 overflow-hidden">
@@ -8978,7 +8978,7 @@
         audio.playbackRate = audioPlaybackRate;
         currentAudio = audio;
 
-        if (statusEl) statusEl.innerText = `${manifest.voice_label || 'Velvet · Emma'}`;
+        if (statusEl) statusEl.innerText = `${manifest.voice_label || 'Close · Ava'}`;
         if (progressContainer) progressContainer.classList.remove('hidden');
         if (timeEl) {
           timeEl.classList.remove('hidden');

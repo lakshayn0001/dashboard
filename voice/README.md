@@ -18,6 +18,15 @@ python3 voice/voice_engine.py --samples
 python3 voice/voice_engine.py --all --force
 ```
 
+To try a voice without changing the site:
+
+```bash
+python3 voice/generate.py --list --female
+python3 voice/generate.py --voice en-NZ-MollyNeural --text "Take one slow breath."
+```
+
+The mp3 is written to the Desktop as `voice_generated.mp3`. The dashboard voice is left alone.
+
 The audition passage is:
 > *"Good morning, Lakshay. Take one slow breath. Today is day three, and it is a steady one. First, two LeetCode problems, then your job applications. After breakfast, we will work on percentages, one step at a time. If something feels hard, that is normal. You have already done the hardest part by showing up. I am glad you are here."*
 

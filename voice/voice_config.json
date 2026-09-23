@@ -1,18 +1,18 @@
 {
   "provider": "edge_tts",
-  "voice": "en-US-EmmaMultilingualNeural",
+  "voice": "en-US-AvaMultilingualNeural",
   "style": "velvet",
-  "speed": 0.92,
-  "pitch_hz": -7,
-  "mp3_kbps": 64,
+  "speed": 0.94,
+  "pitch_hz": 0,
+  "mp3_kbps": 128,
   "mono": true,
-  "engine_version": "2.0.0",
-  "voice_label": "Velvet · Emma",
+  "engine_version": "2.7.0",
+  "voice_label": "Close · Ava",
   "providers": {
     "edge_tts": {
-      "default_voice": "en-US-EmmaMultilingualNeural",
+      "default_voice": "en-US-AvaMultilingualNeural",
       "voices": {
-        "en-US-EmmaMultilingualNeural": "Emma Multilingual. Adult feminine neural voice. Soft, close, a little lower, and still clear. This is the only voice the dashboard renders."
+        "en-US-AvaMultilingualNeural": "Ava Multilingual. Close, warm, a little uneven from sentence to sentence. Not a whisper."
       }
     },
     "kokoro": {

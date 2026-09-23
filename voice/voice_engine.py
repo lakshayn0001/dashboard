@@ -54,7 +54,7 @@ AUDITION_TEXT = (
     "You have already done the hardest part by showing up. I am glad you are here."
 )
 
-CANONICAL_VOICE = "en-US-EmmaMultilingualNeural"
+CANONICAL_VOICE = "en-US-AvaMultilingualNeural"
 CANONICAL_STYLE = "velvet"
 
 
@@ -79,6 +79,31 @@ def get_audio_duration_wave(wav_path: Path) -> float:
             return round(frames / float(rate), 2)
     except Exception:
         return 0.0
+
+
+def _trim_padding(audio: np.ndarray, sample_rate: int, keep_lead_ms: int = 25, keep_tail_ms: int = 45, threshold: float = 0.02) -> np.ndarray:
+    """Drop the silence a synthesizer glues on. Keep a short edge so it does not click."""
+    if audio.size == 0:
+        return audio
+    voiced = np.where(np.abs(audio) > threshold)[0]
+    if voiced.size == 0:
+        return audio[: max(1, int(0.05 * sample_rate))]
+    lead = int(keep_lead_ms * sample_rate / 1000)
+    tail = int(keep_tail_ms * sample_rate / 1000)
+    start = max(0, int(voiced[0]) - lead)
+    end = min(len(audio), int(voiced[-1]) + tail)
+    return audio[start:end]
+
+
+def _fade_edges(audio: np.ndarray, sample_rate: int, fade_ms: int = 8) -> np.ndarray:
+    count = int(fade_ms * sample_rate / 1000)
+    if audio.size < count * 2 or count < 2:
+        return audio
+    faded = audio.copy()
+    ramp = np.linspace(0.0, 1.0, count, dtype=np.float32)
+    faded[:count] *= ramp
+    faded[-count:] *= ramp[::-1]
+    return faded
 
 
 def compute_cache_hash(text: str, voice: str, style: str, engine_version: str, provider: str) -> str:
@@ -129,14 +154,15 @@ class KokoroProvider(BaseTTSProvider):
 
 
 class EdgeTTSProvider(BaseTTSProvider):
-    """Microsoft neural voices. One full read per script, so the delivery stays continuous."""
+    """Microsoft neural voices. Read one sentence at a time so pauses stay intentional."""
 
-    long_form = True
+    sentence_form = True
     LEGACY_VOICES = {
         "af_heart": CANONICAL_VOICE,
         "af_nicole": CANONICAL_VOICE,
         "af_sky": CANONICAL_VOICE,
         "bf_emma": CANONICAL_VOICE,
+        "en-US-EmmaMultilingualNeural": CANONICAL_VOICE,
     }
 
     def __init__(self):
@@ -150,7 +176,9 @@ class EdgeTTSProvider(BaseTTSProvider):
                 "edge-tts is not installed. Install with: pip install edge-tts"
             ) from exc
 
-    def synthesize_sentence(self, text: str, voice: str, speed: float, pitch_hz: int = 0) -> Tuple[np.ndarray, int]:
+    def synthesize_sentence(
+        self, text: str, voice: str, speed: float, pitch_hz: int = 0, volume: str = "+0%"
+    ) -> Tuple[np.ndarray, int]:
         from dsp import find_ffmpeg
 
         spoken = (text or "").strip()
@@ -163,7 +191,7 @@ class EdgeTTSProvider(BaseTTSProvider):
 
         async def _run():
             communicate = self.edge_tts.Communicate(
-                spoken, edge_voice, rate=rate_str, pitch=pitch_str
+                spoken, edge_voice, rate=rate_str, pitch=pitch_str, volume=volume
             )
             raw_bytes = b""
             async for chunk in communicate.stream():
@@ -441,15 +469,34 @@ class VoiceEngine:
                     print(f"  [CACHED] {output_mp3_path.relative_to(BASE_DIR)} ({item_v.get('duration_sec', 0)}s)")
                     return output_mp3_path, cache_hash, item_v.get("duration_sec", 0.0)
 
-        # 3. Neural voices read the whole script once. Chopping clauses makes them restart
-        # and sound less like a person. Local engines still go sentence by sentence.
+        # 3. Edge reads a whole sentence at once. Commas keep their own short breath.
+        # Silence is inserted only after a finished sentence, never inside a phrase.
         audio_segments: List[np.ndarray] = []
         sample_rate = 24000
+        volume = style_cfg.get("volume", "+0%")
         if getattr(self.provider, "long_form", False):
             chunk_audio, sample_rate = self.provider.synthesize_sentence(
-                normalized_text, voice, speed_base, pitch_hz
+                normalized_text, voice, speed_base, pitch_hz, volume
             )
             audio_segments.append(chunk_audio)
+        elif getattr(self.provider, "sentence_form", False):
+            pause_pattern = style_cfg.get("pause_pattern_ms") or [int(style_cfg.get("pause_sentence_ms", 200))]
+            contour = style_cfg.get("pitch_contour_hz") or [0]
+            variance = float(style_cfg.get("speed_variance_pct", 0.0))
+            spoken = [s for s in sentences if s.strip()]
+            for i, sentence in enumerate(spoken):
+                # Pace and pitch change from sentence to sentence so it is not one metronome.
+                sentence_speed = round(speed_base * (1.0 + ((i % 3) - 1) * variance), 3)
+                sentence_pitch = pitch_hz + int(contour[i % len(contour)])
+                chunk_audio, sample_rate = self.provider.synthesize_sentence(
+                    sentence, voice, sentence_speed, sentence_pitch, volume
+                )
+                chunk_audio = _trim_padding(chunk_audio, sample_rate, keep_lead_ms=40, keep_tail_ms=90, threshold=0.012)
+                chunk_audio = _fade_edges(chunk_audio, sample_rate, fade_ms=4)
+                audio_segments.append(chunk_audio)
+                if i < len(spoken) - 1:
+                    gap_ms = int(pause_pattern[i % len(pause_pattern)])
+                    audio_segments.append(create_silence(gap_ms, sample_rate))
         else:
             sentence_pause_ms = style_cfg.get("pause_sentence_ms", 480)
             clause_pause_ms = style_cfg.get("pause_clause_ms", 200)
@@ -496,7 +543,11 @@ class VoiceEngine:
         convert_wav_to_mp3(temp_wav, output_mp3_path, self.mp3_kbps)
         temp_wav.unlink(missing_ok=True)
 
-        print(f"  [RENDERED] {output_mp3_path.relative_to(BASE_DIR)} ({duration_sec}s, {output_mp3_path.stat().st_size} bytes)")
+        try:
+            shown = output_mp3_path.relative_to(BASE_DIR)
+        except ValueError:
+            shown = output_mp3_path
+        print(f"  [RENDERED] {shown} ({duration_sec}s, {output_mp3_path.stat().st_size} bytes)")
         return output_mp3_path, cache_hash, duration_sec
 
     def render_samples(self) -> List[Path]:

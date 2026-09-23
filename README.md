@@ -36,7 +36,7 @@
 
 This repository powers a high-performance, single-origin developer dashboard built with semantic HTML5, modern Tailwind CSS, and glassmorphism styling. It integrates static portfolio showcases with dynamic, automated daily scheduling powered by **xAI Grok** and GitHub Actions.
 
-Spoken English on every page uses one voice, **Velvet · Emma** (`en-US-EmmaMultilingualNeural`, style `velvet`): an adult female neural voice, soft and close, pitched slightly down, with light warmth and almost no reverb. The player reads `data/audio_manifest.json`. It does not pick a random browser voice unless that recording is missing. German pronunciation drills stay on a female German voice.
+Spoken English on every page uses one voice, **Close · Ava** (`en-US-AvaMultilingualNeural`): a warm adult voice, a little softer than conversation, with small changes in pace from sentence to sentence. The player reads `data/audio_manifest.json`. It does not pick a random browser voice unless that recording is missing. German pronunciation drills stay on a female German voice.
 
 ```mermaid
 flowchart TD

@@ -1,24 +1,27 @@
 {
   "velvet": {
-    "speed": 0.92,
-    "pitch_hz": -7,
-    "pause_clause_ms": 140,
-    "pause_sentence_ms": 320,
-    "pause_paragraph_ms": 640,
-    "loudness_lufs": -18.0,
+    "speed": 0.94,
+    "pitch_hz": 0,
+    "pitch_contour_hz": [0, -2, 1, -1],
+    "volume": "-4%",
+    "pause_clause_ms": 0,
+    "pause_sentence_ms": 200,
+    "pause_pattern_ms": [240, 160, 200],
+    "pause_paragraph_ms": 280,
+    "loudness_lufs": -19.0,
     "eq": {
-      "low_shelf_freq_hz": 170,
-      "low_shelf_gain_db": 1.8,
-      "high_cut_freq_hz": 11000
+      "low_shelf_freq_hz": 200,
+      "low_shelf_gain_db": 1.2,
+      "high_cut_freq_hz": 12000
     },
     "reverb": {
-      "enabled": true,
-      "room_size": 0.05,
-      "damping": 0.82,
-      "wet_level": 0.03
+      "enabled": false,
+      "room_size": 0.0,
+      "damping": 0.9,
+      "wet_level": 0.0
     },
-    "speed_variance_pct": 0.012,
-    "description": "The only delivery used by the dashboard. Adult, feminine, soft and close, slightly lower, unhurried, with enough presence to stay intense rather than whispered. Light warmth, almost no room, so it still sounds like a real person."
+    "speed_variance_pct": 0.025,
+    "description": "Ava Multilingual, spoken close and a little uneven. Soft, warm, not a whisper, not a performance."
   },
   "warm": {
     "speed": 0.86,
