@@ -1,22 +1,23 @@
 {
-  "engine_version": "1.0.0",
-  "provider": "kokoro",
-  "default_voice": "af_nicole",
-  "default_style": "warm",
+  "engine_version": "2.0.0",
+  "provider": "edge_tts",
+  "default_voice": "en-US-EmmaMultilingualNeural",
+  "default_style": "velvet",
   "sample_rate_hz": 24000,
-  "bitrate_kbps": 48,
+  "bitrate_kbps": 64,
   "items": {
     "index/daily_brief": {
       "title": "Daily Cockpit Briefing",
       "page": "index",
       "path": "assets/audio/index/daily_brief.mp3",
-      "sha256": "3ac03cc0763998000676f4d587850bcbbe504236ba524e47ea5be94f637f7213",
-      "words": 91,
-      "duration_sec": 72.58,
-      "size_bytes": 436125,
-      "voice": "af_nicole",
-      "style": "warm",
-      "updated_at": "2026-09-22T07:36:13Z"
+      "sha256": "555374ba69736be84a1956fa758c16806e7df18eccc80d0a8ecba54538a10ffb",
+      "words": 92,
+      "duration_sec": 37.9,
+      "size_bytes": 303789,
+      "voice": "en-US-EmmaMultilingualNeural",
+      "style": "velvet",
+      "provider": "edge_tts",
+      "updated_at": "2026-09-23T06:46:42Z"
     },
     "index/master_todos": {
       "title": "Master To-Dos Briefing",
@@ -559,5 +560,6 @@
       "updated_at": "2026-09-20T18:33:20Z"
     }
   },
-  "updated_at": "2026-09-22T07:36:13Z"
+  "updated_at": "2026-09-23T06:46:42Z",
+  "voice_label": "Velvet · Emma"
 }
