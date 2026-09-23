@@ -175,11 +175,12 @@ class EdgeTTSProvider(BaseTTSProvider):
         last_error = None
         for attempt in range(4):
             try:
-                audio_bytes = self.asyncio.run(_run())
+                audio_bytes = self.asyncio.run(self.asyncio.wait_for(_run(), timeout=75))
                 if audio_bytes:
                     break
             except Exception as exc:
                 last_error = exc
+                print(f"  [RETRY] Edge TTS attempt {attempt + 1} failed: {exc}")
                 time.sleep(1.2 * (attempt + 1))
         if not audio_bytes:
             raise RuntimeError(f"Edge TTS returned no audio ({last_error})")
@@ -556,13 +557,58 @@ class VoiceEngine:
         self.save_manifest()
         return out_path
 
-    def render_pages(self, force: bool = False) -> Dict[str, Any]:
-        """Extracts scripts from all pages and renders audio for each."""
+    def _remember_existing(self, raw_text: str, out_path: Path, manifest_key: str, title: str, page_key: str) -> None:
+        """Record a clip that was already rendered, without calling the speech service again."""
+        normalized = normalize_for_tts(raw_text)
+        cache_hash = compute_cache_hash(
+            normalized, self.default_voice, self.default_style, self.engine_version, self.provider_name
+        )
+        duration = 0.0
+        ffmpeg_bin = None
+        try:
+            from dsp import find_ffmpeg
+            ffmpeg_bin = find_ffmpeg()
+        except Exception:
+            ffmpeg_bin = None
+        if ffmpeg_bin and out_path.exists():
+            probed = subprocess.run(
+                [ffmpeg_bin, "-i", str(out_path)],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.PIPE,
+                text=True,
+            )
+            match = re.search(r"Duration:\s*(\d+):(\d+):(\d+(?:\.\d+)?)", probed.stderr or "")
+            if match:
+                hours, minutes, seconds = match.groups()
+                duration = round(int(hours) * 3600 + int(minutes) * 60 + float(seconds), 2)
+        self.manifest["items"][manifest_key] = {
+            "title": title,
+            "page": page_key,
+            "path": f"assets/audio/{page_key}/{out_path.name}",
+            "sha256": cache_hash,
+            "words": len(raw_text.split()),
+            "duration_sec": duration,
+            "size_bytes": out_path.stat().st_size if out_path.exists() else 0,
+            "voice": self.default_voice,
+            "style": self.default_style,
+            "provider": self.provider_name,
+            "updated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+        }
+
+    def render_pages(self, force: bool = False, start_at: Optional[str] = None) -> Dict[str, Any]:
+        """Extracts scripts from all pages and renders audio for each.
+
+        start_at keeps every earlier clip that already exists and begins
+        synthesis at that script id (for example topic_10_2).
+        """
         print(f"\n=======================================================")
         print(f"Page Audio: Extracting scripts & rendering to assets/audio/")
+        if start_at:
+            print(f"Resume from: {start_at}")
         print(f"=======================================================")
         extracted = extract_all()
         results = {}
+        started = not start_at
 
         for page_key, items in extracted.items():
             print(f"\nRendering {len(items)} audio briefs for page: [{page_key}]")
@@ -572,6 +618,14 @@ class VoiceEngine:
                 out_path = AUDIO_DIR / page_key / f"{item_id}.mp3"
                 word_count = len(item["text"].split())
 
+                if not started:
+                    if item_id == start_at or manifest_key == start_at:
+                        started = True
+                    elif out_path.exists() and out_path.stat().st_size > 1000:
+                        print(f"  [KEEP] {manifest_key}")
+                        self._remember_existing(item["text"], out_path, manifest_key, item["title"], page_key)
+                        continue
+
                 print(f"-> [{manifest_key}] '{item['title']}' ({word_count} words)")
                 _, cache_hash, duration = self.render_script(
                     raw_text=item["text"],
@@ -579,7 +633,7 @@ class VoiceEngine:
                     voice=self.default_voice,
                     style=self.default_style,
                     title=item["title"],
-                    force=force
+                    force=force or bool(start_at)
                 )
 
                 self.manifest["items"][manifest_key] = {
@@ -596,6 +650,10 @@ class VoiceEngine:
                     "updated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
                 }
                 results[manifest_key] = self.manifest["items"][manifest_key]
+                self.save_manifest()
+
+        if start_at and not started:
+            raise RuntimeError(f"Could not find a script id matching {start_at}")
 
         self.save_manifest()
         print(f"\nCompleted page audio rendering. Total manifest items: {len(self.manifest['items'])}")
@@ -613,6 +671,7 @@ def main():
     parser.add_argument("--pages", action="store_true", help="Extract and render all page summary audio files")
     parser.add_argument("--all", action="store_true", help="Render daily briefing, page summaries, and update manifest")
     parser.add_argument("--force", action="store_true", help="Force re-rendering even if cached")
+    parser.add_argument("--from", dest="start_at", type=str, default=None, help="Skip existing clips before this script id, then render from there")
     parser.add_argument("--provider", type=str, default=None, help="Override TTS provider (kokoro, edge_tts, azure, elevenlabs, local_say)")
     parser.add_argument("--voice", type=str, default=None, help="Override voice name")
     parser.add_argument("--style", type=str, default=None, help="Override delivery style (calm, warm, empathetic, intimate)")
@@ -641,7 +700,7 @@ def main():
     elif args.daily:
         engine.render_daily(force=args.force)
     elif args.pages:
-        engine.render_pages(force=args.force)
+        engine.render_pages(force=args.force, start_at=args.start_at)
     elif args.all:
         engine.manifest["items"] = {}
         engine.render_samples()
