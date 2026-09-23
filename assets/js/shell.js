@@ -34,6 +34,7 @@
   // Per-Page "On this page" Anchor Definitions
   const SUB_NAV_CONFIG = {
     'index.html': [
+      { label: 'The Goal', href: '#section-goal-map', icon: '🎯' },
       { label: "Today's Agenda", href: '#section-daily-plan', icon: '📅' },
       { label: 'All Things To Do', href: '#section-master-todos', icon: '✅' },
       { label: 'Strategic Portals', href: '#section-portals', icon: '🚀' }
