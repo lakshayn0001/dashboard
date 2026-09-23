@@ -1,0 +1,1 @@
+Overview of Binary Search Tree (BST). BST invariant (left < root < right), in-order sorted property, deletion, and validation. Contains 8 high-yield problems. Focus on mastering the key patterns and edge cases.

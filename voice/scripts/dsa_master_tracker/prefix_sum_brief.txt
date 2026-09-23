@@ -1,0 +1,1 @@
+Overview of Prefix Sum. Cumulative array queries, range sum in O(1), and prefix-modulo techniques. Contains 8 high-yield problems. Focus on mastering the key patterns and edge cases.

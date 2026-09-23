@@ -8,20 +8,17 @@ A lightweight, high-fidelity, standalone text-to-speech (TTS) engine designed sp
 
 ## 1. Quick Start & Auditioning
 
-To sample the 12 available voice & delivery style permutations:
+The dashboard has one voice. Every English brief, including the daily plan, the page summaries, the TypeScript topic buttons, and the DSA pattern buttons, is rendered from `voice/voice_config.json`.
 
 ```bash
-# Render 4 voices x 3 styles (12 MP3 files in voice/samples/)
+# One audition clip: voice/samples/velvet.mp3
 python3 voice/voice_engine.py --samples
+
+# Re-render every published clip with that same voice
+python3 voice/voice_engine.py --all --force
 ```
 
-Open `voice/samples/` and listen to the samples:
-- `sample_af_heart_calm.mp3` | `sample_af_heart_warm.mp3` | `sample_af_heart_intimate.mp3`
-- `sample_af_nicole_calm.mp3` | `sample_af_nicole_warm.mp3` | `sample_af_nicole_intimate.mp3`
-- `sample_bf_emma_calm.mp3` | `sample_bf_emma_warm.mp3` | `sample_bf_emma_intimate.mp3`
-- `sample_af_sky_calm.mp3` | `sample_af_sky_warm.mp3` | `sample_af_sky_intimate.mp3`
-
-The audition passage used for all samples:
+The audition passage is:
 > *"Good morning, Lakshay. Take one slow breath. Today is day three, and it is a steady one. First, two LeetCode problems, then your job applications. After breakfast, we will work on percentages, one step at a time. If something feels hard, that is normal. You have already done the hardest part by showing up. I am glad you are here."*
 
 ---
@@ -41,8 +38,6 @@ python3 voice/voice_engine.py --all
 # Force re-render without relying on SHA-256 cache
 python3 voice/voice_engine.py --all --force
 
-# Test with a specific provider, voice, or style
-python3 voice/voice_engine.py --daily --voice af_nicole --style intimate
 ```
 
 ---
@@ -53,42 +48,33 @@ Edit `voice/voice_config.json` to change default settings:
 
 ```json
 {
-  "provider": "kokoro",
-  "voice": "af_heart",
-  "style": "warm",
-  "speed": 0.88,
-  "mp3_kbps": 48,
-  "mono": true,
-  "engine_version": "1.0.0"
+  "provider": "edge_tts",
+  "voice": "en-US-EmmaMultilingualNeural",
+  "style": "velvet",
+  "voice_label": "Velvet · Emma",
+  "speed": 0.92,
+  "pitch_hz": -7,
+  "mp3_kbps": 64,
+  "engine_version": "2.0.0"
 }
 ```
 
-### Supported Providers:
-1. **`kokoro` (Default Neural Engine)**:
-   - 82M parameter lightweight transformer TTS model operating natively at 24 kHz.
-   - Pinned voices: `af_heart` (warm American female), `af_nicole` (conversational), `bf_emma` (crisp British RP), `af_sky` (soothing).
-   - Requires: `pip install kokoro soundfile torch`.
-2. **`edge_tts` (Zero-Key Neural Cloud Provider)**:
-   - Microsoft Edge neural cloud speech synthesis (no API keys required).
-   - Voices: `en-US-JennyNeural`, `en-US-AvaNeural`, `en-GB-SoniaNeural`, `en-IN-NeerjaNeural`.
-3. **`azure` (Optional Cloud Provider)**:
-   - Microsoft Azure Cognitive Services Speech.
-   - Requires environment variables: `export AZURE_KEY="your_key"` and `export AZURE_REGION="eastus"`.
-4. **`elevenlabs` (Optional Cloud Provider)**:
-   - ElevenLabs multilingual neural synthesis.
-   - Requires environment variable: `export ELEVENLABS_KEY="your_key"`.
-5. **`local_say` (macOS Offline Fallback)**:
-   - Uses native macOS `say` voice synthesis coupled with the full DSP post-processing pipeline. Runs completely offline with zero pip package dependencies.
+Published audio does not rotate voices. `velvet` is the only style the pages request.
+
+1. **`edge_tts` (the voice the site uses)**:
+   - Microsoft Emma Multilingual, an adult female neural voice.
+   - Delivery is soft and close: about 8 percent slower, pitched down 7 Hz, light warmth, almost no reverb, so it stays intelligible instead of whispered.
+   - No API key. Requires `pip install edge-tts` and ffmpeg (or `imageio-ffmpeg`).
+2. **`azure` and `elevenlabs`**: optional, only if you pass `--provider` and set the matching API key. They are not used by the published site.
+3. **`local_say`**: macOS `say`, only when you explicitly pass `--provider local_say`. The engine will not quietly fall back to it.
 
 ---
 
 ## 4. Delivery Styles & Acoustic DSP (`voice/styles.json`)
 
-The engine shapes acoustic delivery using digital signal processing:
-- **`warm` (Default)**: Speed 0.88x, +3.0 dB low-shelf warmth EQ at 220 Hz, gentle high-cut at 7000 Hz, close-mic studio acoustic reverb, 260 ms sentence pauses, -19.0 LUFS loudness.
-- **`calm`**: Speed 0.85x, +2.5 dB low shelf, subtle high cut, 320 ms pauses, -20.0 LUFS.
-- **`empathetic`**: Speed 0.84x, +3.5 dB low shelf, gentle room presence, 350 ms pauses, -19.5 LUFS.
-- **`intimate`**: Speed 0.82x, +4.0 dB low shelf, closer microphone acoustic space, 400 ms pauses, -21.0 LUFS.
+`velvet` is the style every published file uses. The other names in `styles.json` are unused presets.
+
+- **`velvet`**: speed 0.92, pitch −7 Hz, +1.8 dB low shelf at 170 Hz, high cut at 11 kHz, barely-there room (wet 0.03), −18 LUFS. Soft and close, still clear.
 
 ---
 

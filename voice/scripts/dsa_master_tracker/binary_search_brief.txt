@@ -1,0 +1,1 @@
+Overview of Binary Search. Logarithmic search on sorted arrays, search spaces, and binary search on the answer. Contains 15 high-yield problems. Focus on mastering the key patterns and edge cases.

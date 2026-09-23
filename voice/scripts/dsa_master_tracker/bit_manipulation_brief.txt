@@ -1,0 +1,1 @@
+Overview of Bit Manipulation. Bitwise XOR, AND, OR, bit masks, two's complement, and bit-level arithmetic. Contains 8 high-yield problems. Focus on mastering the key patterns and edge cases.

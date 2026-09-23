@@ -837,9 +837,12 @@
                 Passau 2/3 credit rule, ~70 CS ECTS alignment, Anabin H+ verification, and Bavarian grade benchmark (2.47 'Gut').
               </p>
             </div>
-            <div class="pt-2 border-t border-stone-200/80 flex items-center gap-2">
+            <div class="pt-2 border-t border-stone-200/80 flex items-center gap-2 flex-wrap">
               <a href="german_universities_evaluation.html" class="flex-1 text-center py-2 px-3 rounded-xl bg-blue-800 hover:bg-blue-900 text-white font-bold text-xs transition-all shadow-2xs">
                 Admissions Engine ↗
+              </a>
+              <a href="german_learner.html" class="py-2 px-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold text-xs border border-stone-300 transition-all" title="German language practice">
+                German A1 ↗
               </a>
               <a href="deadlines_calendar.html" class="py-2 px-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold text-xs border border-stone-300 transition-all" title="Deadlines">
                 Deadlines ↗
@@ -989,7 +992,7 @@
       <div class="truncate max-w-[210px] sm:max-w-xs">
         <div id="audioPlayerTitle" class="text-xs font-bold text-stone-900 truncate">Playing Audio Briefing</div>
         <div class="flex items-center gap-2">
-          <span id="audioPlayerStatus" class="text-[11px] text-stone-500 truncate">Neural Voice (af_heart)</span>
+          <span id="audioPlayerStatus" class="text-[11px] text-stone-500 truncate">Velvet · Emma</span>
           <span id="audioPlayerTime" class="text-[10px] text-stone-400 font-mono">0:00 / 0:00</span>
         </div>
         <div id="audioProgressContainer" class="w-full bg-stone-200 rounded-full h-1 mt-1 overflow-hidden">
@@ -1964,7 +1967,7 @@
         audio.playbackRate = audioPlaybackRate;
         currentAudio = audio;
 
-        if (statusEl) statusEl.innerText = `Neural Voice (${manifest.default_voice || 'af_heart'})`;
+        if (statusEl) statusEl.innerText = `${manifest.voice_label || 'Velvet · Emma'}`;
         if (progressContainer) progressContainer.classList.remove('hidden');
         if (timeEl) {
           timeEl.classList.remove('hidden');

@@ -690,7 +690,7 @@
           <div class="truncate max-w-[180px] sm:max-w-xs">
             <div id="audioPlayerTitle" class="text-xs font-bold text-stone-900 truncate">Learning Hub Overview</div>
             <div class="flex items-center gap-2">
-              <span id="audioPlayerStatus" class="text-[10px] text-emerald-800 truncate">Neural Voice (af_nicole)</span>
+              <span id="audioPlayerStatus" class="text-[10px] text-emerald-800 truncate">Velvet · Emma</span>
               <span id="audioPlayerTime" class="text-[10px] text-stone-400 font-mono">0:00 / 0:00</span>
             </div>
             <div id="audioProgressContainer" class="w-full bg-stone-200 rounded-full h-1 mt-1 overflow-hidden">
@@ -1386,7 +1386,7 @@
         audio.playbackRate = audioPlaybackRate;
         currentAudio = audio;
 
-        if (statusEl) statusEl.innerText = `Neural Voice (${manifest.default_voice || 'af_nicole'})`;
+        if (statusEl) statusEl.innerText = `${manifest.voice_label || 'Velvet · Emma'}`;
         if (progressContainer) progressContainer.classList.remove('hidden');
         if (timeEl) {
           timeEl.classList.remove('hidden');

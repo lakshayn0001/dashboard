@@ -1,0 +1,1 @@
+Overview of System & Data Structure Design. High-frequency interview design questions: LRU, LFU, O(1) structures, and autocomplete. Contains 6 high-yield problems. Focus on mastering the key patterns and edge cases.

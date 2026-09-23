@@ -1,0 +1,1 @@
+Overview of Trie (Prefix Tree). Prefix lookups, word dictionaries, autocomplete search, and bitwise XOR tries. Contains 6 high-yield problems. Focus on mastering the key patterns and edge cases.

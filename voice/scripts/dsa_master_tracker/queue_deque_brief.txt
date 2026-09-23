@@ -1,0 +1,1 @@
+Overview of Queue & Deque. FIFO queues, double-ended deques, sliding window maximum, and BFS buffers. Contains 7 high-yield problems. Focus on mastering the key patterns and edge cases.

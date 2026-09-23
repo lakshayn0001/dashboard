@@ -1,0 +1,1 @@
+Overview of Intervals. Sorting by start/end time, interval merging, intersection, and non-overlapping schedules. Contains 8 high-yield problems. Focus on mastering the key patterns and edge cases.

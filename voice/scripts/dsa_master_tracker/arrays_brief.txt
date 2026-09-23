@@ -1,0 +1,1 @@
+Overview of Arrays. Fundamental array manipulations, prefix sums, Kadane's algorithm, and in-place transformations. Contains 15 high-yield problems. Focus on mastering the key patterns and edge cases.

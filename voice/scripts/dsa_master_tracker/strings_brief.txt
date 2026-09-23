@@ -1,0 +1,1 @@
+Overview of Strings. String parsing, anagrams, palindromes, sliding window substrings, and serialization. Contains 12 high-yield problems. Focus on mastering the key patterns and edge cases.

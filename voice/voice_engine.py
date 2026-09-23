@@ -54,8 +54,8 @@ AUDITION_TEXT = (
     "You have already done the hardest part by showing up. I am glad you are here."
 )
 
-SAMPLE_VOICES = ["af_nicole", "af_heart", "bf_emma", "af_sky"]
-SAMPLE_STYLES = ["calm", "warm", "seductive_calm"]
+CANONICAL_VOICE = "en-US-EmmaMultilingualNeural"
+CANONICAL_STYLE = "velvet"
 
 
 def load_json(path: Path) -> Dict[str, Any]:
@@ -91,7 +91,7 @@ def compute_cache_hash(text: str, voice: str, style: str, engine_version: str, p
 # =====================================================================
 
 class BaseTTSProvider:
-    def synthesize_sentence(self, text: str, voice: str, speed: float) -> Tuple[np.ndarray, int]:
+    def synthesize_sentence(self, text: str, voice: str, speed: float, pitch_hz: int = 0) -> Tuple[np.ndarray, int]:
         raise NotImplementedError
 
 
@@ -115,7 +115,7 @@ class KokoroProvider(BaseTTSProvider):
             self.pipelines[lang_code] = self.KPipeline(lang_code=lang_code)
         return self.pipelines[lang_code]
 
-    def synthesize_sentence(self, text: str, voice: str, speed: float) -> Tuple[np.ndarray, int]:
+    def synthesize_sentence(self, text: str, voice: str, speed: float, pitch_hz: int = 0) -> Tuple[np.ndarray, int]:
         pipeline = self._get_pipeline(voice)
         generator = pipeline(text, voice=voice, speed=speed, split_pattern=r'\n+')
         chunks = []
@@ -129,12 +129,14 @@ class KokoroProvider(BaseTTSProvider):
 
 
 class EdgeTTSProvider(BaseTTSProvider):
-    """Zero-key Neural Cloud Provider using Edge-TTS."""
-    VOICE_MAP = {
-        "af_heart": "en-US-JennyNeural",
-        "af_nicole": "en-US-AvaNeural",
-        "bf_emma": "en-GB-SoniaNeural",
-        "af_sky": "en-US-AriaNeural"
+    """Microsoft neural voices. One full read per script, so the delivery stays continuous."""
+
+    long_form = True
+    LEGACY_VOICES = {
+        "af_heart": CANONICAL_VOICE,
+        "af_nicole": CANONICAL_VOICE,
+        "af_sky": CANONICAL_VOICE,
+        "bf_emma": CANONICAL_VOICE,
     }
 
     def __init__(self):
@@ -143,43 +145,74 @@ class EdgeTTSProvider(BaseTTSProvider):
             import asyncio
             self.edge_tts = edge_tts
             self.asyncio = asyncio
-        except ImportError:
+        except ImportError as exc:
             raise RuntimeError(
-                "edge-tts is not installed in the current environment. "
-                "Install with: pip install edge-tts"
-            )
+                "edge-tts is not installed. Install with: pip install edge-tts"
+            ) from exc
 
-    def synthesize_sentence(self, text: str, voice: str, speed: float) -> Tuple[np.ndarray, int]:
-        edge_voice = self.VOICE_MAP.get(voice, voice)
-        rate_str = f"{int((speed - 1.0) * 100):+d}%"
-        
+    def synthesize_sentence(self, text: str, voice: str, speed: float, pitch_hz: int = 0) -> Tuple[np.ndarray, int]:
+        from dsp import find_ffmpeg
+
+        spoken = (text or "").strip()
+        if not spoken:
+            return np.zeros(2400, dtype=np.float32), 24000
+
+        edge_voice = self.LEGACY_VOICES.get(voice, voice or CANONICAL_VOICE)
+        rate_str = f"{int(round((speed - 1.0) * 100)):+d}%"
+        pitch_str = f"{int(pitch_hz):+d}Hz"
+
         async def _run():
-            communicate = self.edge_tts.Communicate(text, edge_voice, rate=rate_str)
+            communicate = self.edge_tts.Communicate(
+                spoken, edge_voice, rate=rate_str, pitch=pitch_str
+            )
             raw_bytes = b""
             async for chunk in communicate.stream():
                 if chunk["type"] == "audio":
                     raw_bytes += chunk["data"]
             return raw_bytes
 
-        audio_bytes = self.asyncio.run(_run())
-        tmp_mp3 = CACHE_DIR / "edge_temp.mp3"
-        tmp_wav = CACHE_DIR / "edge_temp.wav"
-        tmp_mp3.parent.mkdir(parents=True, exist_ok=True)
+        audio_bytes = b""
+        last_error = None
+        for attempt in range(4):
+            try:
+                audio_bytes = self.asyncio.run(_run())
+                if audio_bytes:
+                    break
+            except Exception as exc:
+                last_error = exc
+                time.sleep(1.2 * (attempt + 1))
+        if not audio_bytes:
+            raise RuntimeError(f"Edge TTS returned no audio ({last_error})")
+
+        CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        token = f"{os.getpid()}_{time.time_ns()}"
+        tmp_mp3 = CACHE_DIR / f"edge_{token}.mp3"
+        tmp_wav = CACHE_DIR / f"edge_{token}.wav"
         tmp_mp3.write_bytes(audio_bytes)
 
-        # Decode to wav
-        if shutil.which("ffmpeg"):
-            subprocess.run(["ffmpeg", "-y", "-i", str(tmp_mp3), "-ar", "24000", "-ac", "1", str(tmp_wav)],
-                           stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        elif shutil.which("afconvert"):
-            subprocess.run(["afconvert", "-f", "WAVE", "-d", "LEI16@24000", str(tmp_mp3), str(tmp_wav)],
-                           stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        
-        # Read wav
+        ffmpeg_bin = find_ffmpeg()
+        if not ffmpeg_bin:
+            raise RuntimeError(
+                "ffmpeg is required to decode neural audio. "
+                "Install ffmpeg, or pip install imageio-ffmpeg."
+            )
+        decoded = subprocess.run(
+            [ffmpeg_bin, "-y", "-i", str(tmp_mp3), "-ar", "24000", "-ac", "1", str(tmp_wav)],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
+        if decoded.returncode != 0 or not tmp_wav.exists():
+            raise RuntimeError("ffmpeg could not decode Edge audio")
+
         with wave.open(str(tmp_wav), "rb") as wf:
             frames = wf.readframes(wf.getnframes())
             data = np.frombuffer(frames, dtype=np.int16).astype(np.float32) / 32768.0
-            return data, 24000
+
+        tmp_mp3.unlink(missing_ok=True)
+        tmp_wav.unlink(missing_ok=True)
+        if data.size == 0:
+            raise RuntimeError("Decoded Edge audio was empty")
+        return data, 24000
 
 
 class AzureProvider(BaseTTSProvider):
@@ -192,9 +225,9 @@ class AzureProvider(BaseTTSProvider):
                 "Azure provider requires AZURE_KEY and AZURE_REGION environment variables to be set."
             )
 
-    def synthesize_sentence(self, text: str, voice: str, speed: float) -> Tuple[np.ndarray, int]:
+    def synthesize_sentence(self, text: str, voice: str, speed: float, pitch_hz: int = 0) -> Tuple[np.ndarray, int]:
         import urllib.request
-        azure_voice = "en-US-JennyNeural" if "heart" in voice or "nicole" in voice else "en-GB-SoniaNeural"
+        azure_voice = CANONICAL_VOICE if voice in ("af_heart", "af_nicole", CANONICAL_VOICE) else voice
         url = f"https://{self.region}.tts.speech.microsoft.com/cognitiveservices/v1"
         headers = {
             "Ocp-Apim-Subscription-Key": self.key,
@@ -227,9 +260,9 @@ class ElevenLabsProvider(BaseTTSProvider):
         if not self.key:
             raise RuntimeError("ElevenLabs provider requires ELEVENLABS_KEY environment variable.")
 
-    def synthesize_sentence(self, text: str, voice: str, speed: float) -> Tuple[np.ndarray, int]:
+    def synthesize_sentence(self, text: str, voice: str, speed: float, pitch_hz: int = 0) -> Tuple[np.ndarray, int]:
         import urllib.request
-        voice_id = "21m00Tcm4TlvDq8ikWAM"  # Rachel
+        voice_id = voice if voice and voice not in ("af_heart", "af_nicole") else "21m00Tcm4TlvDq8ikWAM"
         url = f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}"
         headers = {
             "xi-api-key": self.key,
@@ -272,7 +305,7 @@ class LocalSayProvider(BaseTTSProvider):
         if not shutil.which("say"):
             raise RuntimeError("macOS 'say' command not available.")
 
-    def synthesize_sentence(self, text: str, voice: str, speed: float) -> Tuple[np.ndarray, int]:
+    def synthesize_sentence(self, text: str, voice: str, speed: float, pitch_hz: int = 0) -> Tuple[np.ndarray, int]:
         mac_voice = self.VOICE_MAP.get(voice, "Samantha")
         rate_wpm = max(120, int(148 * (speed / 0.86)))
         
@@ -316,9 +349,10 @@ class VoiceEngine:
             self.config.update(config_override)
 
         self.styles = load_json(STYLES_PATH)
-        self.provider_name = self.config.get("provider", "kokoro")
-        self.default_voice = self.config.get("voice", "af_heart")
-        self.default_style = self.config.get("style", "warm")
+        self.provider_name = self.config.get("provider", "edge_tts")
+        self.default_voice = self.config.get("voice", CANONICAL_VOICE)
+        self.default_style = self.config.get("style", CANONICAL_STYLE)
+        self.voice_label = self.config.get("voice_label", "Velvet · Emma")
         self.default_speed = self.config.get("speed", 0.88)
         self.mp3_kbps = self.config.get("mp3_kbps", 48)
         self.engine_version = self.config.get("engine_version", "1.0.0")
@@ -327,28 +361,18 @@ class VoiceEngine:
         self.manifest = self._load_manifest()
 
     def _init_provider(self, name: str) -> BaseTTSProvider:
-        """Instantiates the requested provider with automatic fallback if dependencies missing."""
-        if name == "kokoro":
-            try:
-                return KokoroProvider()
-            except Exception as e:
-                print(f"[INFO] Kokoro provider unavailable ({e}). Falling back to LocalSayProvider with DSP pipeline.")
-                return LocalSayProvider()
-        elif name == "edge_tts":
-            try:
-                return EdgeTTSProvider()
-            except Exception as e:
-                print(f"[INFO] Edge-TTS unavailable ({e}). Falling back to LocalSayProvider.")
-                return LocalSayProvider()
-        elif name == "azure":
-            return AzureProvider()
-        elif name == "elevenlabs":
-            return ElevenLabsProvider()
-        elif name == "local_say":
-            return LocalSayProvider()
-        else:
-            print(f"[WARN] Unknown provider '{name}', falling back to LocalSayProvider.")
-            return LocalSayProvider()
+        """Build the requested provider. Published audio must not silently become macOS say."""
+        builders = {
+            "kokoro": KokoroProvider,
+            "edge_tts": EdgeTTSProvider,
+            "azure": AzureProvider,
+            "elevenlabs": ElevenLabsProvider,
+            "local_say": LocalSayProvider,
+        }
+        builder = builders.get(name)
+        if builder is None:
+            raise RuntimeError(f"Unknown TTS provider '{name}'. Use edge_tts.")
+        return builder()
 
     def _load_manifest(self) -> Dict[str, Any]:
         if MANIFEST_PATH.exists():
@@ -358,6 +382,7 @@ class VoiceEngine:
             "provider": self.provider_name,
             "default_voice": self.default_voice,
             "default_style": self.default_style,
+            "voice_label": self.voice_label,
             "sample_rate_hz": 24000,
             "bitrate_kbps": self.mp3_kbps,
             "items": {}
@@ -365,9 +390,12 @@ class VoiceEngine:
 
     def save_manifest(self) -> None:
         self.manifest["updated_at"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+        self.manifest["engine_version"] = self.engine_version
         self.manifest["provider"] = self.provider_name
         self.manifest["default_voice"] = self.default_voice
         self.manifest["default_style"] = self.default_style
+        self.manifest["voice_label"] = self.voice_label
+        self.manifest["bitrate_kbps"] = self.mp3_kbps
         save_json(MANIFEST_PATH, self.manifest)
 
     def render_script(
@@ -395,8 +423,9 @@ class VoiceEngine:
         style = style or self.default_style
         speed = speed or self.default_speed
 
-        style_cfg = self.styles.get(style, self.styles.get("warm", {}))
+        style_cfg = self.styles.get(style, self.styles.get(CANONICAL_STYLE, self.styles.get("warm", {})))
         speed_base = style_cfg.get("speed", speed)
+        pitch_hz = int(style_cfg.get("pitch_hz", self.config.get("pitch_hz", 0)))
 
         # 1. Normalize text
         normalized_text = normalize_for_tts(raw_text)
@@ -411,37 +440,40 @@ class VoiceEngine:
                     print(f"  [CACHED] {output_mp3_path.relative_to(BASE_DIR)} ({item_v.get('duration_sec', 0)}s)")
                     return output_mp3_path, cache_hash, item_v.get("duration_sec", 0.0)
 
-        # 3. Render sentence by sentence with clause breathing pauses and subtle speed variation
+        # 3. Neural voices read the whole script once. Chopping clauses makes them restart
+        # and sound less like a person. Local engines still go sentence by sentence.
         audio_segments: List[np.ndarray] = []
         sample_rate = 24000
-        sentence_pause_ms = style_cfg.get("pause_sentence_ms", 480)
-        clause_pause_ms = style_cfg.get("pause_clause_ms", 200)
-        speed_variation_pct = style_cfg.get("speed_variance_pct", 0.035)
+        if getattr(self.provider, "long_form", False):
+            chunk_audio, sample_rate = self.provider.synthesize_sentence(
+                normalized_text, voice, speed_base, pitch_hz
+            )
+            audio_segments.append(chunk_audio)
+        else:
+            sentence_pause_ms = style_cfg.get("pause_sentence_ms", 480)
+            clause_pause_ms = style_cfg.get("pause_clause_ms", 200)
+            speed_variation_pct = style_cfg.get("speed_variance_pct", 0.035)
 
-        for i, sentence in enumerate(sentences):
-            if not sentence.strip():
-                continue
-            
-            # Deterministic variation (+/- speed_variation_pct) based on sentence index
-            variation = ((i % 3) - 1) * (speed_variation_pct / 2.0)
-            sentence_speed = round(speed_base * (1.0 + variation), 3)
+            for i, sentence in enumerate(sentences):
+                if not sentence.strip():
+                    continue
 
-            # Split on clause boundaries (commas, semicolons, dashes) for natural breathing pauses
-            clauses = [c.strip() for c in re.split(r'(?<=[,;:\u2014])\s+', sentence) if c.strip()]
-            if not clauses:
-                clauses = [sentence]
+                variation = ((i % 3) - 1) * (speed_variation_pct / 2.0)
+                sentence_speed = round(speed_base * (1.0 + variation), 3)
 
-            for c_idx, clause in enumerate(clauses):
-                chunk_audio, sr = self.provider.synthesize_sentence(clause, voice, sentence_speed)
-                sample_rate = sr
-                audio_segments.append(chunk_audio)
-                if c_idx < len(clauses) - 1:
-                    audio_segments.append(create_silence(clause_pause_ms, sample_rate))
+                clauses = [c.strip() for c in re.split(r'(?<=[,;:\u2014])\s+', sentence) if c.strip()]
+                if not clauses:
+                    clauses = [sentence]
 
-            # Insert calm breathing pause between sentences
-            if i < len(sentences) - 1:
-                silence = create_silence(sentence_pause_ms, sample_rate)
-                audio_segments.append(silence)
+                for c_idx, clause in enumerate(clauses):
+                    chunk_audio, sr = self.provider.synthesize_sentence(clause, voice, sentence_speed, pitch_hz)
+                    sample_rate = sr
+                    audio_segments.append(chunk_audio)
+                    if c_idx < len(clauses) - 1:
+                        audio_segments.append(create_silence(clause_pause_ms, sample_rate))
+
+                if i < len(sentences) - 1:
+                    audio_segments.append(create_silence(sentence_pause_ms, sample_rate))
 
         if not audio_segments:
             # Fallback silence
@@ -467,31 +499,25 @@ class VoiceEngine:
         return output_mp3_path, cache_hash, duration_sec
 
     def render_samples(self) -> List[Path]:
-        """Renders the audition text across 4 voices x 3 styles = 12 MP3 files."""
-        print(f"\n=======================================================")
-        print(f"Audition Samples: Rendering 4 voices x 3 styles (12 files)")
+        """Render one audition of the voice the whole dashboard uses."""
+        print("\n=======================================================")
+        print(f"Audition: {self.voice_label} ({self.default_voice}, {self.default_style})")
         print(f"Target: {SAMPLES_DIR}")
-        print(f"=======================================================")
+        print("=======================================================")
         SAMPLES_DIR.mkdir(parents=True, exist_ok=True)
-        generated_files = []
-
-        for voice in SAMPLE_VOICES:
-            for style in SAMPLE_STYLES:
-                file_name = f"sample_{voice}_{style}.mp3"
-                out_path = SAMPLES_DIR / file_name
-                print(f"Rendering sample: Voice={voice} | Style={style} -> {file_name}")
-                _, _, duration = self.render_script(
-                    raw_text=AUDITION_TEXT,
-                    output_mp3_path=out_path,
-                    voice=voice,
-                    style=style,
-                    title=f"Sample: {voice} ({style})",
-                    force=True
-                )
-                generated_files.append(out_path)
-
-        print(f"\nCompleted {len(generated_files)} audition samples in {SAMPLES_DIR}.")
-        return generated_files
+        for stale in SAMPLES_DIR.glob("sample_*.mp3"):
+            stale.unlink()
+        out_path = SAMPLES_DIR / "velvet.mp3"
+        self.render_script(
+            raw_text=AUDITION_TEXT,
+            output_mp3_path=out_path,
+            voice=self.default_voice,
+            style=self.default_style,
+            title=self.voice_label,
+            force=True,
+        )
+        print(f"\nAudition written to {out_path}.")
+        return [out_path]
 
     def render_daily(self, force: bool = False) -> Path:
         """Renders the daily briefing script from data/daily_plan.json."""
@@ -524,6 +550,7 @@ class VoiceEngine:
             "size_bytes": out_path.stat().st_size if out_path.exists() else 0,
             "voice": self.default_voice,
             "style": self.default_style,
+            "provider": self.provider_name,
             "updated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
         }
         self.save_manifest()
@@ -565,6 +592,7 @@ class VoiceEngine:
                     "size_bytes": out_path.stat().st_size if out_path.exists() else 0,
                     "voice": self.default_voice,
                     "style": self.default_style,
+                    "provider": self.provider_name,
                     "updated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
                 }
                 results[manifest_key] = self.manifest["items"][manifest_key]
@@ -580,7 +608,7 @@ class VoiceEngine:
 
 def main():
     parser = argparse.ArgumentParser(description="Standalone Voice Engine for Lakshay Nagpal's Dashboard")
-    parser.add_argument("--samples", action="store_true", help="Render audition text in 4 voices x 3 styles (12 MP3 files)")
+    parser.add_argument("--samples", action="store_true", help="Render the one Velvet audition clip")
     parser.add_argument("--daily", action="store_true", help="Render daily morning briefing to assets/audio/index/daily_brief.mp3")
     parser.add_argument("--pages", action="store_true", help="Extract and render all page summary audio files")
     parser.add_argument("--all", action="store_true", help="Render daily briefing, page summaries, and update manifest")
@@ -615,6 +643,8 @@ def main():
     elif args.pages:
         engine.render_pages(force=args.force)
     elif args.all:
+        engine.manifest["items"] = {}
+        engine.render_samples()
         engine.render_daily(force=args.force)
         engine.render_pages(force=args.force)
     else:

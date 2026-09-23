@@ -17,6 +17,7 @@
    - [7. Production TypeScript Curriculum](#7-production-typescript-curriculum-typescript_curriculumhtml)
    - [8. Dual Resume & CV System](#8-dual-resume--cv-system)
    - [9. Candidate Profile & Dossier Hub](#9-candidate-profile--dossier-hub-profilehtml)
+   - [10. German Language Learner](#10-german-language-learner-german_learnerhtml)
 3. [🔔 Grok Bot & Daily Notification Setup Guide](#-grok-bot--daily-notification-setup-guide)
    - [How the Engine Works](#how-the-engine-works)
    - [Step 1: Get xAI Grok API Key](#step-1-get-xai-grok-api-key)
@@ -34,6 +35,8 @@
 ## 🏛️ Overview & Architecture
 
 This repository powers a high-performance, single-origin developer dashboard built with semantic HTML5, modern Tailwind CSS, and glassmorphism styling. It integrates static portfolio showcases with dynamic, automated daily scheduling powered by **xAI Grok** and GitHub Actions.
+
+Spoken English on every page uses one voice, **Velvet · Emma** (`en-US-EmmaMultilingualNeural`, style `velvet`): an adult female neural voice, soft and close, pitched slightly down, with light warmth and almost no reverb. The player reads `data/audio_manifest.json`. It does not pick a random browser voice unless that recording is missing. German pronunciation drills stay on a female German voice.
 
 ```mermaid
 flowchart TD
@@ -133,6 +136,11 @@ flowchart TD
 - **Direct Link:** [`profile.html`](profile.html)
 - **Academic Dossier:** Complete verified breakdown of 8 B.Tech semesters (3810 / 5400 marks, 70.56% aggregate, First Division).
 - **Job Search Engine:** Links to 60+ global job search portals and an interactive cold email template generator.
+
+### 10. German Language Learner (`german_learner.html`)
+- **Direct Link:** [`german_learner.html`](german_learner.html)
+- Alphabet, articles, verbs, and the 49-sentence dialogue bank.
+- Pronunciation buttons use a female German voice (`de-DE`). They do not use the English Velvet voice, because those buttons exist to model German sounds.
 
 ---
 

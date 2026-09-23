@@ -3,7 +3,11 @@
 *.jpg
 *.jpeg
 *.png
-!assets/**
+# Only the files the public site actually serves.
+!assets/lakshay_photo.jpg
+!assets/Lakshay_Nagpal_Resume_Original.pdf
+!assets/Lakshay_Nagpal_Resume_German.pdf
+!assets/Lakshay_Nagpal_Resume.pdf
 Date_of_Birth_Certificate*
 birth_certificate*
 Left_Thumb_Impression*
@@ -13,6 +17,7 @@ desktop_cassette_wallpaper.jpg
 
 # Development environments and system artifacts
 .venv/
+voice/.cache/
 __pycache__/
 *.pyc
 .DS_Store

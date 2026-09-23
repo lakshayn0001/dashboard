@@ -1,0 +1,1 @@
+Overview of Trees. Binary tree traversals (pre/in/post/level), recursive depth, views, and LCA. Contains 15 high-yield problems. Focus on mastering the key patterns and edge cases.

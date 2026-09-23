@@ -1,0 +1,1 @@
+Overview of Stack & Monotonic Stack. LIFO operations, monotonic stack for next greater/smaller elements, and histogram areas. Contains 10 high-yield problems. Focus on mastering the key patterns and edge cases.

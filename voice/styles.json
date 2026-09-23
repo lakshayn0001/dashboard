@@ -1,4 +1,25 @@
 {
+  "velvet": {
+    "speed": 0.92,
+    "pitch_hz": -7,
+    "pause_clause_ms": 140,
+    "pause_sentence_ms": 320,
+    "pause_paragraph_ms": 640,
+    "loudness_lufs": -18.0,
+    "eq": {
+      "low_shelf_freq_hz": 170,
+      "low_shelf_gain_db": 1.8,
+      "high_cut_freq_hz": 11000
+    },
+    "reverb": {
+      "enabled": true,
+      "room_size": 0.05,
+      "damping": 0.82,
+      "wet_level": 0.03
+    },
+    "speed_variance_pct": 0.012,
+    "description": "The only delivery used by the dashboard. Adult, feminine, soft and close, slightly lower, unhurried, with enough presence to stay intense rather than whispered. Light warmth, almost no room, so it still sounds like a real person."
+  },
   "warm": {
     "speed": 0.86,
     "pause_clause_ms": 200,

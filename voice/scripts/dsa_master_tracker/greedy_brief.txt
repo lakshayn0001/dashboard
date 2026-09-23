@@ -1,0 +1,1 @@
+Overview of Greedy. Locally optimal choices yielding global optimums, jump games, and gas stations. Contains 10 high-yield problems. Focus on mastering the key patterns and edge cases.

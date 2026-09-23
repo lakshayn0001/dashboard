@@ -1,0 +1,1 @@
+Overview of Backtracking. Exhaustive combinatorial search, constraint propagation, pruning, and state restoration. Contains 10 high-yield problems. Focus on mastering the key patterns and edge cases.

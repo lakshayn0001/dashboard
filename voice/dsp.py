@@ -19,6 +19,18 @@ from typing import List, Dict, Any, Optional
 import numpy as np
 
 
+def find_ffmpeg() -> Optional[str]:
+    """Return an ffmpeg executable: PATH first, then the imageio-ffmpeg binary."""
+    found = shutil.which("ffmpeg")
+    if found:
+        return found
+    try:
+        import imageio_ffmpeg
+        return imageio_ffmpeg.get_ffmpeg_exe()
+    except Exception:
+        return None
+
+
 def apply_biquad_filter(samples: np.ndarray, b: np.ndarray, a: np.ndarray) -> np.ndarray:
     """Direct Form I / II IIR filter in pure NumPy."""
     out = np.zeros_like(samples)
@@ -222,10 +234,11 @@ def convert_wav_to_mp3(wav_path: Path, mp3_path: Path, bitrate_kbps: int = 48) -
     """
     mp3_path.parent.mkdir(parents=True, exist_ok=True)
 
-    # 1. Try ffmpeg
-    if shutil.which("ffmpeg"):
+    # 1. Try ffmpeg (system binary or the imageio-ffmpeg package)
+    ffmpeg_bin = find_ffmpeg()
+    if ffmpeg_bin:
         cmd = [
-            "ffmpeg", "-y", "-i", str(wav_path),
+            ffmpeg_bin, "-y", "-i", str(wav_path),
             "-codec:a", "libmp3lame",
             "-b:a", f"{bitrate_kbps}k",
             "-ac", "1",

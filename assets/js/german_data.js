@@ -347,8 +347,12 @@
     if (!('speechSynthesis' in window)) return;
     const voices = window.speechSynthesis.getVoices();
     // Prioritize German voices: de-DE, de-AT, de-CH
-    germanVoice = voices.find(v => v.lang === 'de-DE') ||
-                  voices.find(v => v.lang.startsWith('de')) || null;
+    const femaleGerman = /katja|amala|petra|anna|hedda|seraphina|google deutsch|female/i;
+    const maleGerman = /stefan|conrad|killian|male/i;
+    germanVoice = voices.find(v => v.lang && v.lang.startsWith('de') && femaleGerman.test(v.name)) ||
+                  voices.find(v => v.lang && v.lang.startsWith('de') && !maleGerman.test(v.name)) ||
+                  voices.find(v => v.lang && v.lang.startsWith('de')) ||
+                  null;
   }
 
   if ('speechSynthesis' in window) {
