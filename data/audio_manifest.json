@@ -13,11 +13,11 @@
       "sha256": "9d76fb1a59bf588c57b57329cc887409e3fc45db8b919e3a4ac54ede3fc2ba58",
       "words": 95,
       "duration_sec": 37.78,
-      "size_bytes": 605613,
+      "size_bytes": 605997,
       "voice": "en-US-AvaMultilingualNeural",
       "style": "velvet",
       "provider": "edge_tts",
-      "updated_at": "2026-10-09T08:46:24Z"
+      "updated_at": "2026-10-10T08:18:15Z"
     },
     "index/master_todos": {
       "title": "Master To-Dos Briefing",
@@ -1957,6 +1957,6 @@
       "updated_at": "2026-09-23T12:03:44Z"
     }
   },
-  "updated_at": "2026-10-09T08:46:24Z",
+  "updated_at": "2026-10-10T08:18:15Z",
   "voice_label": "Close · Ava"
 }
