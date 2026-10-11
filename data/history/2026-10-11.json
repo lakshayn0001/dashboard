@@ -1,0 +1,97 @@
+{
+  "date": "2026-10-11",
+  "timezone": "Asia/Kolkata",
+  "generated_at": "2026-10-11T01:36:24.234Z",
+  "summary": "Day 23 of 72 (Phase 1 Milestone Test: Full 2-Hour Benchmark Mock 1): Sit for a complete 120-minute national benchmark mock under exact exam conditions. Target 45–55 raw marks.",
+  "urgent_alerts": [
+    {
+      "title": "IELTS Academic Booking Trigger (Backup Deadline)",
+      "deadline": "2026-10-15T23:59:59+05:30",
+      "action": "If MDU 100% English MOI letter is not issued by 15 Oct, immediately book IELTS Academic slot for early November (target >= 6.5 / B2)."
+    }
+  ],
+  "blocks": [
+    {
+      "id": "block-dsa",
+      "start": "07:30",
+      "end": "08:15",
+      "title": "DSA Algorithmic Problem Solving (2 Problems)",
+      "stream": "dsa",
+      "details": "Solve 2 curated LeetCode problems (1 Medium + 1 Easy/Review) from the 247-problem DSA Tracker. Focus on algorithmic clarity and edge cases.",
+      "links": [
+        "dsa_master_tracker.html"
+      ],
+      "priority": 1,
+      "notify_before_min": 10,
+      "verify": false
+    },
+    {
+      "id": "block-job",
+      "start": "08:15",
+      "end": "09:00",
+      "title": "Job Search Recruiter Triage & Screening Replies",
+      "stream": "job",
+      "details": "15–30 min recruiter communications triage: reply to inbound messages, confirm availability, schedule technical screenings, and follow up on pending submissions.",
+      "links": [
+        "profile.html#cold-email",
+        "https://www.instahyre.com"
+      ],
+      "priority": 2,
+      "notify_before_min": 10,
+      "verify": false
+    },
+    {
+      "id": "block-cat-qa-dilr",
+      "start": "10:00",
+      "end": "12:00",
+      "title": "CAT Day 23: QA & DILR Focus",
+      "stream": "cat",
+      "details": "QA: Benchmark Mock 1 - Section 3: QA 40 mins. Harvest 8–10 Arithmetic questions. Target zero negative marks.. DILR: Benchmark Mock 1 - Section 2: DILR 40 mins. Select 2 sets, aim for 8–10 clean questions with 100% accuracy..",
+      "links": [
+        "cat_2026_syllabus_roadmap.html",
+        "cat_2026_syllabus_roadmap.html#day-23"
+      ],
+      "priority": 1,
+      "notify_before_min": 10,
+      "verify": false
+    },
+    {
+      "id": "block-germany-admin",
+      "start": "14:30",
+      "end": "15:30",
+      "title": "Germany Academic Admin & Prerequisite Audits",
+      "stream": "germany",
+      "details": "Zero-fee audit tasks: Check Anabin H+ status for MDU, audit dMAT status on aps-india.de/dmat, review Passau interactive guide checklist, and email MDU for 100% English MOI letter.",
+      "links": [
+        "deadlines_calendar.html#prerequisite-tasks",
+        "https://anabin.kmk.org",
+        "https://aps-india.de/dmat",
+        "https://www.uni-passau.de/en/apply"
+      ],
+      "priority": 2,
+      "notify_before_min": 10,
+      "verify": true
+    },
+    {
+      "id": "block-cat-varc",
+      "start": "16:30",
+      "end": "18:00",
+      "title": "CAT Day 23: VARC & Verbal Ability",
+      "stream": "cat",
+      "details": "Benchmark Mock 1 - Section 1: VARC 40 mins. Apply Gejo passage scanning mechanics. Maintain error log on Career Launcher MyZone.",
+      "links": [
+        "cat_2026_syllabus_roadmap.html",
+        "cat_2026_syllabus_roadmap.html#day-23"
+      ],
+      "priority": 1,
+      "notify_before_min": 10,
+      "verify": false
+    }
+  ],
+  "totals_by_stream_min": {
+    "dsa": 45,
+    "job": 45,
+    "cat": 210,
+    "germany": 60
+  }
+}
