@@ -1,8 +1,8 @@
 {
-  "date": "2026-10-11",
+  "date": "2026-10-12",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-10-11T01:36:24.234Z",
-  "summary": "Day 23 of 72 (Phase 1 Milestone Test: Full 2-Hour Benchmark Mock 1): Sit for a complete 120-minute national benchmark mock under exact exam conditions. Target 45–55 raw marks.",
+  "generated_at": "2026-10-12T02:08:40.106Z",
+  "summary": "Day 24 of 72 (Linear Equations: Solutions Nature & Substitution Tricks): Identify consistency of systems (a1/a2 = b1/b2 != c1/c2 for no solution) and rapid variable elimination.",
   "urgent_alerts": [
     {
       "title": "IELTS Academic Booking Trigger (Backup Deadline)",
@@ -29,9 +29,9 @@
       "id": "block-job",
       "start": "08:15",
       "end": "09:00",
-      "title": "Job Search Recruiter Triage & Screening Replies",
+      "title": "Dedicated Job Outreach Application Batch",
       "stream": "job",
-      "details": "15–30 min recruiter communications triage: reply to inbound messages, confirm availability, schedule technical screenings, and follow up on pending submissions.",
+      "details": "Dedicated morning batch: Submit 8–10 tailored applications on Instahyre and LinkedIn Jobs. Target Series A–C tech and European remote roles highlighting Immediate Joiner status.",
       "links": [
         "profile.html#cold-email",
         "https://www.instahyre.com"
@@ -44,12 +44,12 @@
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 23: QA & DILR Focus",
+      "title": "CAT Day 24: QA & DILR Focus",
       "stream": "cat",
-      "details": "QA: Benchmark Mock 1 - Section 3: QA 40 mins. Harvest 8–10 Arithmetic questions. Target zero negative marks.. DILR: Benchmark Mock 1 - Section 2: DILR 40 mins. Select 2 sets, aim for 8–10 clean questions with 100% accuracy..",
+      "details": "QA: 25 Questions on Linear Equations: Word problems, cost of pens & notebooks equations, and non-negative integer solutions.. DILR: Quant-Based Reasoning 1: Numerical puzzle grids where cell values satisfy linear sum equations. Rodha DILR..",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-23"
+        "cat_2026_syllabus_roadmap.html#day-24"
       ],
       "priority": 1,
       "notify_before_min": 10,
@@ -76,12 +76,12 @@
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 23: VARC & Verbal Ability",
+      "title": "CAT Day 24: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "Benchmark Mock 1 - Section 1: VARC 40 mins. Apply Gejo passage scanning mechanics. Maintain error log on Career Launcher MyZone.",
+      "details": "CL MyZone VARC: RC Module 4 - Philosophy & Abstract Ideas. Practice unpacking dense philosophical sentences. Maintain error log on Career Launcher MyZone.",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-23"
+        "cat_2026_syllabus_roadmap.html#day-24"
       ],
       "priority": 1,
       "notify_before_min": 10,
