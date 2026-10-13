@@ -1,0 +1,97 @@
+{
+  "date": "2026-10-13",
+  "timezone": "Asia/Kolkata",
+  "generated_at": "2026-10-13T03:23:31.080Z",
+  "summary": "Day 25 of 72 (Special Equations: Diophantine Equations & Integral Bounds): Solve ax + by = c for positive integral solutions using modular arithmetic and coefficient bounding.",
+  "urgent_alerts": [
+    {
+      "title": "IELTS Academic Booking Trigger (Backup Deadline)",
+      "deadline": "2026-10-15T23:59:59+05:30",
+      "action": "If MDU 100% English MOI letter is not issued by 15 Oct, immediately book IELTS Academic slot for early November (target >= 6.5 / B2)."
+    }
+  ],
+  "blocks": [
+    {
+      "id": "block-dsa",
+      "start": "07:30",
+      "end": "08:15",
+      "title": "DSA Algorithmic Problem Solving (2 Problems)",
+      "stream": "dsa",
+      "details": "Solve 2 curated LeetCode problems (1 Medium + 1 Easy/Review) from the 247-problem DSA Tracker. Focus on algorithmic clarity and edge cases.",
+      "links": [
+        "dsa_master_tracker.html"
+      ],
+      "priority": 1,
+      "notify_before_min": 10,
+      "verify": false
+    },
+    {
+      "id": "block-job",
+      "start": "08:15",
+      "end": "09:00",
+      "title": "Job Search Recruiter Triage & Screening Replies",
+      "stream": "job",
+      "details": "15–30 min recruiter communications triage: reply to inbound messages, confirm availability, schedule technical screenings, and follow up on pending submissions.",
+      "links": [
+        "profile.html#cold-email",
+        "https://www.instahyre.com"
+      ],
+      "priority": 2,
+      "notify_before_min": 10,
+      "verify": false
+    },
+    {
+      "id": "block-cat-qa-dilr",
+      "start": "10:00",
+      "end": "12:00",
+      "title": "CAT Day 25: QA & DILR Focus",
+      "stream": "cat",
+      "details": "QA: 20 Questions on Special Integral Equations: Finding the number of integral pairs (x, y) satisfying 7x + 11y = 500.. DILR: Quant-Based Reasoning 2: Target scores, currency note combinations, and exchange logic. Anastasis Set 18 & 19..",
+      "links": [
+        "cat_2026_syllabus_roadmap.html",
+        "cat_2026_syllabus_roadmap.html#day-25"
+      ],
+      "priority": 1,
+      "notify_before_min": 10,
+      "verify": false
+    },
+    {
+      "id": "block-germany-admin",
+      "start": "14:30",
+      "end": "15:30",
+      "title": "Germany Academic Admin & Prerequisite Audits",
+      "stream": "germany",
+      "details": "Zero-fee audit tasks: Check Anabin H+ status for MDU, audit dMAT status on aps-india.de/dmat, review Passau interactive guide checklist, and email MDU for 100% English MOI letter.",
+      "links": [
+        "deadlines_calendar.html#prerequisite-tasks",
+        "https://anabin.kmk.org",
+        "https://aps-india.de/dmat",
+        "https://www.uni-passau.de/en/apply"
+      ],
+      "priority": 2,
+      "notify_before_min": 10,
+      "verify": true
+    },
+    {
+      "id": "block-cat-varc",
+      "start": "16:30",
+      "end": "18:00",
+      "title": "CAT Day 25: VARC & Verbal Ability",
+      "stream": "cat",
+      "details": "Read 1 essay on Ethics / Political Science on AL Daily. Solve Cracku Free Daily Verbal Target. Maintain error log on Career Launcher MyZone.",
+      "links": [
+        "cat_2026_syllabus_roadmap.html",
+        "cat_2026_syllabus_roadmap.html#day-25"
+      ],
+      "priority": 1,
+      "notify_before_min": 10,
+      "verify": false
+    }
+  ],
+  "totals_by_stream_min": {
+    "dsa": 45,
+    "job": 45,
+    "cat": 210,
+    "germany": 60
+  }
+}

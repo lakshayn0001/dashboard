@@ -1,8 +1,8 @@
 {
-  "date": "2026-10-12",
+  "date": "2026-10-13",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-10-12T02:08:40.106Z",
-  "summary": "Day 24 of 72 (Linear Equations: Solutions Nature & Substitution Tricks): Identify consistency of systems (a1/a2 = b1/b2 != c1/c2 for no solution) and rapid variable elimination.",
+  "generated_at": "2026-10-13T03:23:31.080Z",
+  "summary": "Day 25 of 72 (Special Equations: Diophantine Equations & Integral Bounds): Solve ax + by = c for positive integral solutions using modular arithmetic and coefficient bounding.",
   "urgent_alerts": [
     {
       "title": "IELTS Academic Booking Trigger (Backup Deadline)",
@@ -29,9 +29,9 @@
       "id": "block-job",
       "start": "08:15",
       "end": "09:00",
-      "title": "Dedicated Job Outreach Application Batch",
+      "title": "Job Search Recruiter Triage & Screening Replies",
       "stream": "job",
-      "details": "Dedicated morning batch: Submit 8–10 tailored applications on Instahyre and LinkedIn Jobs. Target Series A–C tech and European remote roles highlighting Immediate Joiner status.",
+      "details": "15–30 min recruiter communications triage: reply to inbound messages, confirm availability, schedule technical screenings, and follow up on pending submissions.",
       "links": [
         "profile.html#cold-email",
         "https://www.instahyre.com"
@@ -44,12 +44,12 @@
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 24: QA & DILR Focus",
+      "title": "CAT Day 25: QA & DILR Focus",
       "stream": "cat",
-      "details": "QA: 25 Questions on Linear Equations: Word problems, cost of pens & notebooks equations, and non-negative integer solutions.. DILR: Quant-Based Reasoning 1: Numerical puzzle grids where cell values satisfy linear sum equations. Rodha DILR..",
+      "details": "QA: 20 Questions on Special Integral Equations: Finding the number of integral pairs (x, y) satisfying 7x + 11y = 500.. DILR: Quant-Based Reasoning 2: Target scores, currency note combinations, and exchange logic. Anastasis Set 18 & 19..",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-24"
+        "cat_2026_syllabus_roadmap.html#day-25"
       ],
       "priority": 1,
       "notify_before_min": 10,
@@ -76,12 +76,12 @@
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 24: VARC & Verbal Ability",
+      "title": "CAT Day 25: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "CL MyZone VARC: RC Module 4 - Philosophy & Abstract Ideas. Practice unpacking dense philosophical sentences. Maintain error log on Career Launcher MyZone.",
+      "details": "Read 1 essay on Ethics / Political Science on AL Daily. Solve Cracku Free Daily Verbal Target. Maintain error log on Career Launcher MyZone.",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-24"
+        "cat_2026_syllabus_roadmap.html#day-25"
       ],
       "priority": 1,
       "notify_before_min": 10,
