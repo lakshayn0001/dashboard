@@ -1,0 +1,97 @@
+{
+  "date": "2026-10-14",
+  "timezone": "Asia/Kolkata",
+  "generated_at": "2026-10-14T01:40:15.330Z",
+  "summary": "Day 26 of 72 (Quadratic Equations 1: Nature of Roots & Discriminant): Master discriminant rules (D > 0, D = 0, D < 0, D is perfect square) and relations alpha + beta = -b/a, alpha*beta = c/a.",
+  "urgent_alerts": [
+    {
+      "title": "IELTS Academic Booking Trigger (Backup Deadline)",
+      "deadline": "2026-10-15T23:59:59+05:30",
+      "action": "If MDU 100% English MOI letter is not issued by 15 Oct, immediately book IELTS Academic slot for early November (target >= 6.5 / B2)."
+    }
+  ],
+  "blocks": [
+    {
+      "id": "block-dsa",
+      "start": "07:30",
+      "end": "08:15",
+      "title": "DSA Algorithmic Problem Solving (2 Problems)",
+      "stream": "dsa",
+      "details": "Solve 2 curated LeetCode problems (1 Medium + 1 Easy/Review) from the 247-problem DSA Tracker. Focus on algorithmic clarity and edge cases.",
+      "links": [
+        "dsa_master_tracker.html"
+      ],
+      "priority": 1,
+      "notify_before_min": 10,
+      "verify": false
+    },
+    {
+      "id": "block-job",
+      "start": "08:15",
+      "end": "09:00",
+      "title": "Dedicated Job Outreach Application Batch",
+      "stream": "job",
+      "details": "Dedicated morning batch: Submit 8–10 tailored applications on Instahyre and LinkedIn Jobs. Target Series A–C tech and European remote roles highlighting Immediate Joiner status.",
+      "links": [
+        "profile.html#cold-email",
+        "https://www.instahyre.com"
+      ],
+      "priority": 2,
+      "notify_before_min": 10,
+      "verify": false
+    },
+    {
+      "id": "block-cat-qa-dilr",
+      "start": "10:00",
+      "end": "12:00",
+      "title": "CAT Day 26: QA & DILR Focus",
+      "stream": "cat",
+      "details": "QA: 25 Questions on Quadratic Equations: Forming quadratics from roots, symmetric expressions (alpha^2 + beta^2).. DILR: Games & Tournaments 1: Round Robin Tournaments, matches played, points table logic (Win=2, Draw=1, Loss=0)..",
+      "links": [
+        "cat_2026_syllabus_roadmap.html",
+        "cat_2026_syllabus_roadmap.html#day-26"
+      ],
+      "priority": 1,
+      "notify_before_min": 10,
+      "verify": false
+    },
+    {
+      "id": "block-germany-admin",
+      "start": "14:30",
+      "end": "15:30",
+      "title": "Germany Academic Admin & Prerequisite Audits",
+      "stream": "germany",
+      "details": "Zero-fee audit tasks: Check Anabin H+ status for MDU, audit dMAT status on aps-india.de/dmat, review Passau interactive guide checklist, and email MDU for 100% English MOI letter.",
+      "links": [
+        "deadlines_calendar.html#prerequisite-tasks",
+        "https://anabin.kmk.org",
+        "https://aps-india.de/dmat",
+        "https://www.uni-passau.de/en/apply"
+      ],
+      "priority": 2,
+      "notify_before_min": 10,
+      "verify": true
+    },
+    {
+      "id": "block-cat-varc",
+      "start": "16:30",
+      "end": "18:00",
+      "title": "CAT Day 26: VARC & Verbal Ability",
+      "stream": "cat",
+      "details": "CL MyZone VARC: Verbal Ability Module 4 - Advanced Parajumbles mandatory sequence detection. Maintain error log on Career Launcher MyZone.",
+      "links": [
+        "cat_2026_syllabus_roadmap.html",
+        "cat_2026_syllabus_roadmap.html#day-26"
+      ],
+      "priority": 1,
+      "notify_before_min": 10,
+      "verify": false
+    }
+  ],
+  "totals_by_stream_min": {
+    "dsa": 45,
+    "job": 45,
+    "cat": 210,
+    "germany": 60
+  }
+}
