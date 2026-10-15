@@ -1,8 +1,8 @@
 {
-  "date": "2026-10-14",
+  "date": "2026-10-15",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-10-14T01:40:15.330Z",
-  "summary": "Day 26 of 72 (Quadratic Equations 1: Nature of Roots & Discriminant): Master discriminant rules (D > 0, D = 0, D < 0, D is perfect square) and relations alpha + beta = -b/a, alpha*beta = c/a.",
+  "generated_at": "2026-10-15T01:16:35.849Z",
+  "summary": "Day 27 of 72 (Quadratic Equations 2: Maxima/Minima & Common Roots): Find vertex (-b/2a, -D/4a) for quadratic curves and set up common root condition determinant.",
   "urgent_alerts": [
     {
       "title": "IELTS Academic Booking Trigger (Backup Deadline)",
@@ -29,9 +29,9 @@
       "id": "block-job",
       "start": "08:15",
       "end": "09:00",
-      "title": "Dedicated Job Outreach Application Batch",
+      "title": "Job Search Recruiter Triage & Screening Replies",
       "stream": "job",
-      "details": "Dedicated morning batch: Submit 8–10 tailored applications on Instahyre and LinkedIn Jobs. Target Series A–C tech and European remote roles highlighting Immediate Joiner status.",
+      "details": "15–30 min recruiter communications triage: reply to inbound messages, confirm availability, schedule technical screenings, and follow up on pending submissions.",
       "links": [
         "profile.html#cold-email",
         "https://www.instahyre.com"
@@ -44,12 +44,12 @@
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 26: QA & DILR Focus",
+      "title": "CAT Day 27: QA & DILR Focus",
       "stream": "cat",
-      "details": "QA: 25 Questions on Quadratic Equations: Forming quadratics from roots, symmetric expressions (alpha^2 + beta^2).. DILR: Games & Tournaments 1: Round Robin Tournaments, matches played, points table logic (Win=2, Draw=1, Loss=0)..",
+      "details": "QA: 20 Questions on Maximum/Minimum value of quadratic expressions, range of quadratic rational functions (ax^2+bx+c)/(dx^2+ex+f).. DILR: Games & Tournaments 2: Knockout Tournaments, seeded players, number of matches to determine champion, upsets..",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-26"
+        "cat_2026_syllabus_roadmap.html#day-27"
       ],
       "priority": 1,
       "notify_before_min": 10,
@@ -76,12 +76,12 @@
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 26: VARC & Verbal Ability",
+      "title": "CAT Day 27: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "CL MyZone VARC: Verbal Ability Module 4 - Advanced Parajumbles mandatory sequence detection. Maintain error log on Career Launcher MyZone.",
+      "details": "Read 1 scientific essay on Neuroscience on Aeon. Solve 2 RC passages on CL MyZone. Maintain error log on Career Launcher MyZone.",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-26"
+        "cat_2026_syllabus_roadmap.html#day-27"
       ],
       "priority": 1,
       "notify_before_min": 10,
