@@ -1,8 +1,8 @@
 {
-  "date": "2026-10-15",
+  "date": "2026-10-16",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-10-15T01:16:35.849Z",
-  "summary": "Day 27 of 72 (Quadratic Equations 2: Maxima/Minima & Common Roots): Find vertex (-b/2a, -D/4a) for quadratic curves and set up common root condition determinant.",
+  "generated_at": "2026-10-16T01:01:45.781Z",
+  "summary": "Day 28 of 72 (Higher Order Polynomials: Factor & Remainder Theorems): Evaluate P(a) using synthetic division, find roots of cubic polynomials, and apply Vieta's formulas for degree 3.",
   "urgent_alerts": [
     {
       "title": "IELTS Academic Booking Trigger (Backup Deadline)",
@@ -44,12 +44,12 @@
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 27: QA & DILR Focus",
+      "title": "CAT Day 28: QA & DILR Focus",
       "stream": "cat",
-      "details": "QA: 20 Questions on Maximum/Minimum value of quadratic expressions, range of quadratic rational functions (ax^2+bx+c)/(dx^2+ex+f).. DILR: Games & Tournaments 2: Knockout Tournaments, seeded players, number of matches to determine champion, upsets..",
+      "details": "QA: 20 Questions on Remainder Theorem, Factor Theorem, and sum/product of roots of cubic equations.. DILR: Games & Tournaments 3: Multi-stage tournaments (Group stage followed by Knockouts). Anastasis Set 20..",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-27"
+        "cat_2026_syllabus_roadmap.html#day-28"
       ],
       "priority": 1,
       "notify_before_min": 10,
@@ -76,12 +76,12 @@
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 27: VARC & Verbal Ability",
+      "title": "CAT Day 28: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "Read 1 scientific essay on Neuroscience on Aeon. Solve 2 RC passages on CL MyZone. Maintain error log on Career Launcher MyZone.",
+      "details": "CL MyZone VARC: Verbal Ability Module 5 - Summary of Short Passages under 90 seconds. Maintain error log on Career Launcher MyZone.",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-27"
+        "cat_2026_syllabus_roadmap.html#day-28"
       ],
       "priority": 1,
       "notify_before_min": 10,
