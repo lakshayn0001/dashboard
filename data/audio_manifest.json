@@ -17,7 +17,7 @@
       "voice": "en-US-AvaMultilingualNeural",
       "style": "velvet",
       "provider": "edge_tts",
-      "updated_at": "2026-10-16T06:56:01Z"
+      "updated_at": "2026-10-17T06:47:29Z"
     },
     "index/master_todos": {
       "title": "Master To-Dos Briefing",
@@ -1957,6 +1957,6 @@
       "updated_at": "2026-09-23T12:03:44Z"
     }
   },
-  "updated_at": "2026-10-16T06:56:01Z",
+  "updated_at": "2026-10-17T06:47:29Z",
   "voice_label": "Close · Ava"
 }
