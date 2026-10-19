@@ -1,8 +1,8 @@
 {
-  "date": "2026-10-18",
+  "date": "2026-10-19",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-10-18T00:41:54.515Z",
-  "summary": "Day 30 of 72 (Weekly Review + 2IIM 2022 Slot 1 QA Deep Dive): Deconstruct every Quant problem from CAT 2022 Slot 1. Confirm which 10 problems were accessible.",
+  "generated_at": "2026-10-19T00:53:46.051Z",
+  "summary": "Day 31 of 72 (Inequalities: The Wavy Curve (Sign Scheme) Method): Plot roots on real number line, determine alternating signs (+/-), and write interval solutions for rational inequalities.",
   "urgent_alerts": [],
   "blocks": [
     {
@@ -23,9 +23,9 @@
       "id": "block-job",
       "start": "08:15",
       "end": "09:00",
-      "title": "Job Search Recruiter Triage & Screening Replies",
+      "title": "Dedicated Job Outreach Application Batch",
       "stream": "job",
-      "details": "15–30 min recruiter communications triage: reply to inbound messages, confirm availability, schedule technical screenings, and follow up on pending submissions.",
+      "details": "Dedicated morning batch: Submit 8–10 tailored applications on Instahyre and LinkedIn Jobs. Target Series A–C tech and European remote roles highlighting Immediate Joiner status.",
       "links": [
         "profile.html#cold-email",
         "https://www.instahyre.com"
@@ -38,12 +38,12 @@
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 30: QA & DILR Focus",
+      "title": "CAT Day 31: QA & DILR Focus",
       "stream": "cat",
-      "details": "QA: CAT 2022 Slot 1 QA: Solve all 22 questions un-timed on 2IIM. Review shortcut solutions and smart eliminations.. DILR: Anastasis Shankar Set 21 & Set 22: Advanced ranking and numerical reasoning puzzles..",
+      "details": "QA: 25 Questions on Inequalities: (x-a)(x-b)/(x-c) > 0, quadratic inequalities, and finding integer values satisfying range.. DILR: Scheduling & Timetabling Puzzles 1: Shift allocations, meeting slots, and overlapping time window logic..",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-30"
+        "cat_2026_syllabus_roadmap.html#day-31"
       ],
       "priority": 1,
       "notify_before_min": 10,
@@ -70,12 +70,12 @@
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 30: VARC & Verbal Ability",
+      "title": "CAT Day 31: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "Read 1 long-form essay on History / Archaeology from Project Syndicate. Complete error log updates. Maintain error log on Career Launcher MyZone.",
+      "details": "CL MyZone VARC: RC Module 5 - Critical Reasoning integrated in Reading Comprehension (Weaken/Strengthen author). Maintain error log on Career Launcher MyZone.",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-30"
+        "cat_2026_syllabus_roadmap.html#day-31"
       ],
       "priority": 1,
       "notify_before_min": 10,
