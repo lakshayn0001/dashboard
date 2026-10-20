@@ -1,8 +1,8 @@
 {
-  "date": "2026-10-19",
+  "date": "2026-10-20",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-10-19T00:53:46.051Z",
-  "summary": "Day 31 of 72 (Inequalities: The Wavy Curve (Sign Scheme) Method): Plot roots on real number line, determine alternating signs (+/-), and write interval solutions for rational inequalities.",
+  "generated_at": "2026-10-20T01:37:39.505Z",
+  "summary": "Day 32 of 72 (Modulus & Absolute Values: Piecewise Equations): Break down |x-a| into positive and negative regimes. Master geometric interpretation of distance on number line.",
   "urgent_alerts": [],
   "blocks": [
     {
@@ -23,9 +23,9 @@
       "id": "block-job",
       "start": "08:15",
       "end": "09:00",
-      "title": "Dedicated Job Outreach Application Batch",
+      "title": "Job Search Recruiter Triage & Screening Replies",
       "stream": "job",
-      "details": "Dedicated morning batch: Submit 8–10 tailored applications on Instahyre and LinkedIn Jobs. Target Series A–C tech and European remote roles highlighting Immediate Joiner status.",
+      "details": "15–30 min recruiter communications triage: reply to inbound messages, confirm availability, schedule technical screenings, and follow up on pending submissions.",
       "links": [
         "profile.html#cold-email",
         "https://www.instahyre.com"
@@ -38,12 +38,12 @@
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 31: QA & DILR Focus",
+      "title": "CAT Day 32: QA & DILR Focus",
       "stream": "cat",
-      "details": "QA: 25 Questions on Inequalities: (x-a)(x-b)/(x-c) > 0, quadratic inequalities, and finding integer values satisfying range.. DILR: Scheduling & Timetabling Puzzles 1: Shift allocations, meeting slots, and overlapping time window logic..",
+      "details": "QA: 20 Questions on Modulus: Solving |x-2| + |x-5| = 7 and graphing |x| functions to find minimum values.. DILR: Scheduling & Timetabling Puzzles 2: Multi-room event scheduling under presenter availability constraints..",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-31"
+        "cat_2026_syllabus_roadmap.html#day-32"
       ],
       "priority": 1,
       "notify_before_min": 10,
@@ -70,12 +70,12 @@
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 31: VARC & Verbal Ability",
+      "title": "CAT Day 32: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "CL MyZone VARC: RC Module 5 - Critical Reasoning integrated in Reading Comprehension (Weaken/Strengthen author). Maintain error log on Career Launcher MyZone.",
+      "details": "Read 1 essay on Modern Economics / Behavioral Science on Aeon. Solve Cracku Free Daily Verbal Target. Maintain error log on Career Launcher MyZone.",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-31"
+        "cat_2026_syllabus_roadmap.html#day-32"
       ],
       "priority": 1,
       "notify_before_min": 10,
