@@ -1,8 +1,8 @@
 {
-  "date": "2026-10-20",
+  "date": "2026-10-21",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-10-20T01:37:39.505Z",
-  "summary": "Day 32 of 72 (Modulus & Absolute Values: Piecewise Equations): Break down |x-a| into positive and negative regimes. Master geometric interpretation of distance on number line.",
+  "generated_at": "2026-10-21T01:22:22.522Z",
+  "summary": "Day 33 of 72 (Maxima & Minima: AM-GM Inequality & Algebraic Optimization): Apply Arithmetic Mean >= Geometric Mean for positive variables. Recognize when equality holds (x1 = x2 = ... = xn).",
   "urgent_alerts": [],
   "blocks": [
     {
@@ -23,9 +23,9 @@
       "id": "block-job",
       "start": "08:15",
       "end": "09:00",
-      "title": "Job Search Recruiter Triage & Screening Replies",
+      "title": "Dedicated Job Outreach Application Batch",
       "stream": "job",
-      "details": "15–30 min recruiter communications triage: reply to inbound messages, confirm availability, schedule technical screenings, and follow up on pending submissions.",
+      "details": "Dedicated morning batch: Submit 8–10 tailored applications on Instahyre and LinkedIn Jobs. Target Series A–C tech and European remote roles highlighting Immediate Joiner status.",
       "links": [
         "profile.html#cold-email",
         "https://www.instahyre.com"
@@ -38,12 +38,12 @@
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 32: QA & DILR Focus",
+      "title": "CAT Day 33: QA & DILR Focus",
       "stream": "cat",
-      "details": "QA: 20 Questions on Modulus: Solving |x-2| + |x-5| = 7 and graphing |x| functions to find minimum values.. DILR: Scheduling & Timetabling Puzzles 2: Multi-room event scheduling under presenter availability constraints..",
+      "details": "QA: 20 Questions on AM-GM Inequality applications: Minimum value of x + 1/x, product maximization under sum constraint.. DILR: Critical Path / Project Networks: Activity nodes, earliest start time, latest finish time, float calculations..",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-32"
+        "cat_2026_syllabus_roadmap.html#day-33"
       ],
       "priority": 1,
       "notify_before_min": 10,
@@ -70,12 +70,12 @@
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 32: VARC & Verbal Ability",
+      "title": "CAT Day 33: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "Read 1 essay on Modern Economics / Behavioral Science on Aeon. Solve Cracku Free Daily Verbal Target. Maintain error log on Career Launcher MyZone.",
+      "details": "CL MyZone VARC: Verbal Ability Module 6 - Sentence Insertion / Sentence Completion drills. Maintain error log on Career Launcher MyZone.",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-32"
+        "cat_2026_syllabus_roadmap.html#day-33"
       ],
       "priority": 1,
       "notify_before_min": 10,
