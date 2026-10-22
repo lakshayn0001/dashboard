@@ -1,8 +1,8 @@
 {
-  "date": "2026-10-21",
+  "date": "2026-10-22",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-10-21T01:22:22.522Z",
-  "summary": "Day 33 of 72 (Maxima & Minima: AM-GM Inequality & Algebraic Optimization): Apply Arithmetic Mean >= Geometric Mean for positive variables. Recognize when equality holds (x1 = x2 = ... = xn).",
+  "generated_at": "2026-10-22T01:18:51.353Z",
+  "summary": "Day 34 of 72 (Functions 1: Domain, Range & Composite Functions): Determine allowable values under square roots and denominators. Calculate composite functions f(g(x)) and inverse f^-1(x).",
   "urgent_alerts": [],
   "blocks": [
     {
@@ -23,9 +23,9 @@
       "id": "block-job",
       "start": "08:15",
       "end": "09:00",
-      "title": "Dedicated Job Outreach Application Batch",
+      "title": "Job Search Recruiter Triage & Screening Replies",
       "stream": "job",
-      "details": "Dedicated morning batch: Submit 8–10 tailored applications on Instahyre and LinkedIn Jobs. Target Series A–C tech and European remote roles highlighting Immediate Joiner status.",
+      "details": "15–30 min recruiter communications triage: reply to inbound messages, confirm availability, schedule technical screenings, and follow up on pending submissions.",
       "links": [
         "profile.html#cold-email",
         "https://www.instahyre.com"
@@ -38,12 +38,12 @@
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 33: QA & DILR Focus",
+      "title": "CAT Day 34: QA & DILR Focus",
       "stream": "cat",
-      "details": "QA: 20 Questions on AM-GM Inequality applications: Minimum value of x + 1/x, product maximization under sum constraint.. DILR: Critical Path / Project Networks: Activity nodes, earliest start time, latest finish time, float calculations..",
+      "details": "QA: 25 Questions on Functions: Domain of sqrt(f(x)), evaluating nested functions f(f(f(x))), and Even/Odd symmetry.. DILR: Venn Diagrams 1: 2-Set and 3-Set basic Venn formulas (Union, Intersection, Exactly one, Exactly two)..",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-33"
+        "cat_2026_syllabus_roadmap.html#day-34"
       ],
       "priority": 1,
       "notify_before_min": 10,
@@ -70,12 +70,12 @@
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 33: VARC & Verbal Ability",
+      "title": "CAT Day 34: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "CL MyZone VARC: Verbal Ability Module 6 - Sentence Insertion / Sentence Completion drills. Maintain error log on Career Launcher MyZone.",
+      "details": "Read 1 essay on Literary Criticism / Sociology on AL Daily. Solve 2 RC passages on CL MyZone. Maintain error log on Career Launcher MyZone.",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-33"
+        "cat_2026_syllabus_roadmap.html#day-34"
       ],
       "priority": 1,
       "notify_before_min": 10,
