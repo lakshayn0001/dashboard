@@ -1,8 +1,8 @@
 {
-  "date": "2026-10-22",
+  "date": "2026-10-23",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-10-22T01:18:51.353Z",
-  "summary": "Day 34 of 72 (Functions 1: Domain, Range & Composite Functions): Determine allowable values under square roots and denominators. Calculate composite functions f(g(x)) and inverse f^-1(x).",
+  "generated_at": "2026-10-23T01:18:19.767Z",
+  "summary": "Day 35 of 72 (Functions 2: Functional Equations & Venn Max/Min): Solve functional identities like f(x+y) = f(x)f(y) (exponential) and find Maxima/Minima in 3-set Venn diagrams.",
   "urgent_alerts": [],
   "blocks": [
     {
@@ -38,12 +38,12 @@
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 34: QA & DILR Focus",
+      "title": "CAT Day 35: QA & DILR Focus",
       "stream": "cat",
-      "details": "QA: 25 Questions on Functions: Domain of sqrt(f(x)), evaluating nested functions f(f(f(x))), and Even/Odd symmetry.. DILR: Venn Diagrams 1: 2-Set and 3-Set basic Venn formulas (Union, Intersection, Exactly one, Exactly two)..",
+      "details": "QA: 20 Questions on Functional Equations and Periodicity of Functions. Verify shortcut patterns on Cracku Cheat Sheet.. DILR: Venn Diagrams 2: Maxima & Minima in 3-set and 4-set Venn diagrams. Anastasis Shankar Set 23 & Set 24..",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-34"
+        "cat_2026_syllabus_roadmap.html#day-35"
       ],
       "priority": 1,
       "notify_before_min": 10,
@@ -70,12 +70,12 @@
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 34: VARC & Verbal Ability",
+      "title": "CAT Day 35: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "Read 1 essay on Literary Criticism / Sociology on AL Daily. Solve 2 RC passages on CL MyZone. Maintain error log on Career Launcher MyZone.",
+      "details": "CL MyZone VARC: RC Module 6 - Pacing & Time Allocation. Complete 3 passages in 26 minutes. Maintain error log on Career Launcher MyZone.",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-34"
+        "cat_2026_syllabus_roadmap.html#day-35"
       ],
       "priority": 1,
       "notify_before_min": 10,
