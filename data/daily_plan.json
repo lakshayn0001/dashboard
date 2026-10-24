@@ -1,8 +1,8 @@
 {
-  "date": "2026-10-23",
+  "date": "2026-10-24",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-10-23T01:18:19.767Z",
-  "summary": "Day 35 of 72 (Functions 2: Functional Equations & Venn Max/Min): Solve functional identities like f(x+y) = f(x)f(y) (exponential) and find Maxima/Minima in 3-set Venn diagrams.",
+  "generated_at": "2026-10-24T01:23:58.854Z",
+  "summary": "Day 36 of 72 (Algebra & Venn Timed Drill + Mock 2 Prep): Take timed 40-min Algebra quiz + solve 2 classic CAT Venn sets from CAT 2020 Slot 2.",
   "urgent_alerts": [],
   "blocks": [
     {
@@ -38,12 +38,12 @@
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 35: QA & DILR Focus",
+      "title": "CAT Day 36: QA & DILR Focus",
       "stream": "cat",
-      "details": "QA: 20 Questions on Functional Equations and Periodicity of Functions. Verify shortcut patterns on Cracku Cheat Sheet.. DILR: Venn Diagrams 2: Maxima & Minima in 3-set and 4-set Venn diagrams. Anastasis Shankar Set 23 & Set 24..",
+      "details": "QA: Timed 15-Question Algebra Quiz (Inequalities, Modulus, Functions) in 35 minutes. Aim for 80%+ accuracy.. DILR: CAT 2020 Slot 2 Venn Diagram Set: Solve under 12-minute exam timer. Compare your visual representation with 2IIM..",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-35"
+        "cat_2026_syllabus_roadmap.html#day-36"
       ],
       "priority": 1,
       "notify_before_min": 10,
@@ -70,12 +70,12 @@
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 35: VARC & Verbal Ability",
+      "title": "CAT Day 36: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "CL MyZone VARC: RC Module 6 - Pacing & Time Allocation. Complete 3 passages in 26 minutes. Maintain error log on Career Launcher MyZone.",
+      "details": "Solve 2 RC passages from CAT 2021 Slot 3 on 2IIM portal. Check accuracy and time per question. Maintain error log on Career Launcher MyZone.",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-35"
+        "cat_2026_syllabus_roadmap.html#day-36"
       ],
       "priority": 1,
       "notify_before_min": 10,
