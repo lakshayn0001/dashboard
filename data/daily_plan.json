@@ -1,8 +1,8 @@
 {
-  "date": "2026-10-24",
+  "date": "2026-10-25",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-10-24T01:23:58.854Z",
-  "summary": "Day 36 of 72 (Algebra & Venn Timed Drill + Mock 2 Prep): Take timed 40-min Algebra quiz + solve 2 classic CAT Venn sets from CAT 2020 Slot 2.",
+  "generated_at": "2026-10-25T00:53:35.086Z",
+  "summary": "Day 37 of 72 (Mid-Way Milestone: Full 2-Hour Benchmark Mock 2): Take full 120-minute national benchmark mock. Test combined Arithmetic + Algebra question harvesting.",
   "urgent_alerts": [],
   "blocks": [
     {
@@ -38,12 +38,12 @@
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 36: QA & DILR Focus",
+      "title": "CAT Day 37: QA & DILR Focus",
       "stream": "cat",
-      "details": "QA: Timed 15-Question Algebra Quiz (Inequalities, Modulus, Functions) in 35 minutes. Aim for 80%+ accuracy.. DILR: CAT 2020 Slot 2 Venn Diagram Set: Solve under 12-minute exam timer. Compare your visual representation with 2IIM..",
+      "details": "QA: Benchmark Mock 2 - Section 3: QA 40 mins. Scan entire section in 3 mins. Harvest 10–12 Arithmetic/Algebra Qs.. DILR: Benchmark Mock 2 - Section 2: DILR 40 mins. Rapid 5-min scan. Attempt best 2 sets (8–10 Qs)..",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-36"
+        "cat_2026_syllabus_roadmap.html#day-37"
       ],
       "priority": 1,
       "notify_before_min": 10,
@@ -70,12 +70,12 @@
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 36: VARC & Verbal Ability",
+      "title": "CAT Day 37: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "Solve 2 RC passages from CAT 2021 Slot 3 on 2IIM portal. Check accuracy and time per question. Maintain error log on Career Launcher MyZone.",
+      "details": "Benchmark Mock 2 - Section 1: VARC 40 mins. Attempt 3 RCs (12 Qs) + 5 VA Qs. Target: 30+ marks. Maintain error log on Career Launcher MyZone.",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-36"
+        "cat_2026_syllabus_roadmap.html#day-37"
       ],
       "priority": 1,
       "notify_before_min": 10,
