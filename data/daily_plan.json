@@ -1,8 +1,8 @@
 {
-  "date": "2026-10-25",
+  "date": "2026-10-26",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-10-25T00:53:35.086Z",
-  "summary": "Day 37 of 72 (Mid-Way Milestone: Full 2-Hour Benchmark Mock 2): Take full 120-minute national benchmark mock. Test combined Arithmetic + Algebra question harvesting.",
+  "generated_at": "2026-10-26T01:01:33.621Z",
+  "summary": "Day 38 of 72 (Logarithms 1: Basic Laws, Base Change & Power Properties): Master log(ab) = log a + log b, log(a/b) = log a - log b, log_b(a) = log_c(a)/log_c(b), and base transformations.",
   "urgent_alerts": [],
   "blocks": [
     {
@@ -23,9 +23,9 @@
       "id": "block-job",
       "start": "08:15",
       "end": "09:00",
-      "title": "Job Search Recruiter Triage & Screening Replies",
+      "title": "Dedicated Job Outreach Application Batch",
       "stream": "job",
-      "details": "15–30 min recruiter communications triage: reply to inbound messages, confirm availability, schedule technical screenings, and follow up on pending submissions.",
+      "details": "Dedicated morning batch: Submit 8–10 tailored applications on Instahyre and LinkedIn Jobs. Target Series A–C tech and European remote roles highlighting Immediate Joiner status.",
       "links": [
         "profile.html#cold-email",
         "https://www.instahyre.com"
@@ -38,12 +38,12 @@
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 37: QA & DILR Focus",
+      "title": "CAT Day 38: QA & DILR Focus",
       "stream": "cat",
-      "details": "QA: Benchmark Mock 2 - Section 3: QA 40 mins. Scan entire section in 3 mins. Harvest 10–12 Arithmetic/Algebra Qs.. DILR: Benchmark Mock 2 - Section 2: DILR 40 mins. Rapid 5-min scan. Attempt best 2 sets (8–10 Qs)..",
+      "details": "QA: 25 Questions on Logarithms: Simplifying nested log expressions, solving log equations, and base-change mechanics.. DILR: Data Interpretation Core: Fast fraction-to-percentage conversions in tables. Anastasis DILR Set 25..",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-37"
+        "cat_2026_syllabus_roadmap.html#day-38"
       ],
       "priority": 1,
       "notify_before_min": 10,
@@ -70,12 +70,12 @@
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 37: VARC & Verbal Ability",
+      "title": "CAT Day 38: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "Benchmark Mock 2 - Section 1: VARC 40 mins. Attempt 3 RCs (12 Qs) + 5 VA Qs. Target: 30+ marks. Maintain error log on Career Launcher MyZone.",
+      "details": "CL MyZone VARC: RC Module 7 - Handling Dense Scientific Jargon. Solve 2 passages (8 Qs) in 18 mins. Maintain error log on Career Launcher MyZone.",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-37"
+        "cat_2026_syllabus_roadmap.html#day-38"
       ],
       "priority": 1,
       "notify_before_min": 10,
