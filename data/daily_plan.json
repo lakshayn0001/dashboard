@@ -1,8 +1,8 @@
 {
-  "date": "2026-10-27",
+  "date": "2026-10-28",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-10-27T01:51:19.712Z",
-  "summary": "Day 39 of 72 (Logarithms 2: Inequalities & Characteristic/Mantissa): Solve log_b(x) > log_b(y) when 0 1. Find number of digits in a^b using characteristic.",
+  "generated_at": "2026-10-28T02:03:17.511Z",
+  "summary": "Day 40 of 72 (Progressions 1: Arithmetic Progression (AP)): Master Tn = a + (n-1)d, Sn = n/2[2a + (n-1)d] = n x (Middle Term), and selecting 3 terms (a-d, a, a+d).",
   "urgent_alerts": [],
   "blocks": [
     {
@@ -23,9 +23,9 @@
       "id": "block-job",
       "start": "08:15",
       "end": "09:00",
-      "title": "Job Search Recruiter Triage & Screening Replies",
+      "title": "Dedicated Job Outreach Application Batch",
       "stream": "job",
-      "details": "15–30 min recruiter communications triage: reply to inbound messages, confirm availability, schedule technical screenings, and follow up on pending submissions.",
+      "details": "Dedicated morning batch: Submit 8–10 tailored applications on Instahyre and LinkedIn Jobs. Target Series A–C tech and European remote roles highlighting Immediate Joiner status.",
       "links": [
         "profile.html#cold-email",
         "https://www.instahyre.com"
@@ -38,12 +38,12 @@
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 39: QA & DILR Focus",
+      "title": "CAT Day 40: QA & DILR Focus",
       "stream": "cat",
-      "details": "QA: 20 Questions on Logarithmic Inequalities and number of digits in large powers. Review formulas on Cracku.. DILR: DI Tables with Missing Data: Formulate balance equations across rows and columns. Anastasis Set 26..",
+      "details": "QA: 25 Questions on AP: Sum of n terms, arithmetic means inserted between numbers, and AP word problems.. DILR: DI Line Graphs & Multiple Bar Charts: Growth rate comparisons without full manual division. Anastasis Set 27..",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-39"
+        "cat_2026_syllabus_roadmap.html#day-40"
       ],
       "priority": 1,
       "notify_before_min": 10,
@@ -70,12 +70,12 @@
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 39: VARC & Verbal Ability",
+      "title": "CAT Day 40: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "Read 1 essay on Political Theory on Project Syndicate. Solve Cracku Free Daily Verbal Target. Maintain error log on Career Launcher MyZone.",
+      "details": "CL MyZone VARC: Verbal Ability Module 7 - Mixed VA Blitz (Parajumbles + Odd Sentence + Summary). Maintain error log on Career Launcher MyZone.",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-39"
+        "cat_2026_syllabus_roadmap.html#day-40"
       ],
       "priority": 1,
       "notify_before_min": 10,

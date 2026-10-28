@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-28",
+  "timezone": "Asia/Kolkata",
+  "generated_at": "2026-10-28T02:03:17.511Z",
+  "summary": "Day 40 of 72 (Progressions 1: Arithmetic Progression (AP)): Master Tn = a + (n-1)d, Sn = n/2[2a + (n-1)d] = n x (Middle Term), and selecting 3 terms (a-d, a, a+d).",
+  "urgent_alerts": [],
+  "blocks": [
+    {
+      "id": "block-dsa",
+      "start": "07:30",
+      "end": "08:15",
+      "title": "DSA Algorithmic Problem Solving (2 Problems)",
+      "stream": "dsa",
+      "details": "Solve 2 curated LeetCode problems (1 Medium + 1 Easy/Review) from the 247-problem DSA Tracker. Focus on algorithmic clarity and edge cases.",
+      "links": [
+        "dsa_master_tracker.html"
+      ],
+      "priority": 1,
+      "notify_before_min": 10,
+      "verify": false
+    },
+    {
+      "id": "block-job",
+      "start": "08:15",
+      "end": "09:00",
+      "title": "Dedicated Job Outreach Application Batch",
+      "stream": "job",
+      "details": "Dedicated morning batch: Submit 8–10 tailored applications on Instahyre and LinkedIn Jobs. Target Series A–C tech and European remote roles highlighting Immediate Joiner status.",
+      "links": [
+        "profile.html#cold-email",
+        "https://www.instahyre.com"
+      ],
+      "priority": 2,
+      "notify_before_min": 10,
+      "verify": false
+    },
+    {
+      "id": "block-cat-qa-dilr",
+      "start": "10:00",
+      "end": "12:00",
+      "title": "CAT Day 40: QA & DILR Focus",
+      "stream": "cat",
+      "details": "QA: 25 Questions on AP: Sum of n terms, arithmetic means inserted between numbers, and AP word problems.. DILR: DI Line Graphs & Multiple Bar Charts: Growth rate comparisons without full manual division. Anastasis Set 27..",
+      "links": [
+        "cat_2026_syllabus_roadmap.html",
+        "cat_2026_syllabus_roadmap.html#day-40"
+      ],
+      "priority": 1,
+      "notify_before_min": 10,
+      "verify": false
+    },
+    {
+      "id": "block-germany-admin",
+      "start": "14:30",
+      "end": "15:30",
+      "title": "Germany Academic Admin & Prerequisite Audits",
+      "stream": "germany",
+      "details": "Zero-fee audit tasks: Check Anabin H+ status for MDU, audit dMAT status on aps-india.de/dmat, review Passau interactive guide checklist, and email MDU for 100% English MOI letter.",
+      "links": [
+        "deadlines_calendar.html#prerequisite-tasks",
+        "https://anabin.kmk.org",
+        "https://aps-india.de/dmat",
+        "https://www.uni-passau.de/en/apply"
+      ],
+      "priority": 2,
+      "notify_before_min": 10,
+      "verify": true
+    },
+    {
+      "id": "block-cat-varc",
+      "start": "16:30",
+      "end": "18:00",
+      "title": "CAT Day 40: VARC & Verbal Ability",
+      "stream": "cat",
+      "details": "CL MyZone VARC: Verbal Ability Module 7 - Mixed VA Blitz (Parajumbles + Odd Sentence + Summary). Maintain error log on Career Launcher MyZone.",
+      "links": [
+        "cat_2026_syllabus_roadmap.html",
+        "cat_2026_syllabus_roadmap.html#day-40"
+      ],
+      "priority": 1,
+      "notify_before_min": 10,
+      "verify": false
+    }
+  ],
+  "totals_by_stream_min": {
+    "dsa": 45,
+    "job": 45,
+    "cat": 210,
+    "germany": 60
+  }
+}
