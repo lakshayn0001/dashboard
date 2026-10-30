@@ -1,9 +1,15 @@
 {
-  "date": "2026-10-29",
+  "date": "2026-10-30",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-10-29T02:11:54.041Z",
-  "summary": "Day 41 of 72 (Progressions 2: Geometric Progression (GP) & Infinite Series): Master Tn = a*r^(n-1), Sn = a(r^n - 1)/(r-1), and Sum to infinity S_inf = a/(1-r) for |r| < 1.",
-  "urgent_alerts": [],
+  "generated_at": "2026-10-30T02:26:10.383Z",
+  "summary": "Day 42 of 72 (Progressions 3: Special Series & AGP): Master Sigma n = n(n+1)/2, Sigma n^2 = n(n+1)(2n+1)/6, Sigma n^3 = [n(n+1)/2]^2, and telescoping fractions.",
+  "urgent_alerts": [
+    {
+      "title": "CAT 2026 Admit Card Release",
+      "deadline": "2026-11-05T23:59:59+05:30",
+      "action": "Download CAT 2026 admit card on iimcat.ac.in (expected early Nov, verify on iimcat.ac.in). Note allocated slot (Slot 1, 2, or 3), and align mock tests with slot timing."
+    }
+  ],
   "blocks": [
     {
       "id": "block-dsa",
@@ -38,12 +44,12 @@
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 41: QA & DILR Focus",
+      "title": "CAT Day 42: QA & DILR Focus",
       "stream": "cat",
-      "details": "QA: 20 Questions on GP: Infinite series bouncing ball problems, geometric mean insertion, and GP inequalities.. DILR: DI Pie Charts: Converting percentages to degrees (3.6 degrees = 1%) and multiple pie charts comparison..",
+      "details": "QA: 20 Questions on Special Series, telescoping 1/(n(n+1)) sums, and Arithmetico-Geometric Progressions.. DILR: DI Combined Pie Chart + Data Table: Anastasis Shankar Set 28 & Set 29..",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-41"
+        "cat_2026_syllabus_roadmap.html#day-42"
       ],
       "priority": 1,
       "notify_before_min": 10,
@@ -70,12 +76,12 @@
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 41: VARC & Verbal Ability",
+      "title": "CAT Day 42: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "Read 1 essay on Cultural Anthropology on Aeon. Solve 2 RC passages on CL MyZone. Maintain error log on Career Launcher MyZone.",
+      "details": "CL MyZone VARC: Full Verbal Ability Speed Drill (8 Questions in 10 minutes strict). Maintain error log on Career Launcher MyZone.",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-41"
+        "cat_2026_syllabus_roadmap.html#day-42"
       ],
       "priority": 1,
       "notify_before_min": 10,
