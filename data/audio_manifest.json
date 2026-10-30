@@ -10,14 +10,14 @@
       "title": "Daily Cockpit Briefing",
       "page": "index",
       "path": "assets/audio/index/daily_brief.mp3",
-      "sha256": "11adfd7689639de110b8d6d8ff8ecc324fff76d19f3393141550aeb0fb401501",
-      "words": 91,
-      "duration_sec": 38.48,
-      "size_bytes": 617133,
+      "sha256": "0ead9e555590b7db753c81721d3e7216fe38fb5577d2afa1a24f4a1d4b0c155b",
+      "words": 93,
+      "duration_sec": 38.27,
+      "size_bytes": 613677,
       "voice": "en-US-AvaMultilingualNeural",
       "style": "velvet",
       "provider": "edge_tts",
-      "updated_at": "2026-10-29T08:17:25Z"
+      "updated_at": "2026-10-30T08:23:57Z"
     },
     "index/master_todos": {
       "title": "Master To-Dos Briefing",
@@ -1957,6 +1957,6 @@
       "updated_at": "2026-09-23T12:03:44Z"
     }
   },
-  "updated_at": "2026-10-29T08:17:25Z",
+  "updated_at": "2026-10-30T08:23:57Z",
   "voice_label": "Close · Ava"
 }
