@@ -1,8 +1,8 @@
 {
-  "date": "2026-10-31",
+  "date": "2026-11-01",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-10-31T02:05:12.423Z",
-  "summary": "Day 43 of 72 (Full Data Interpretation Marathon (4 Classic CAT DI Sets)): Solve 4 complete CAT DI sets under exam timing. Focus on smart rounding and eliminating unviable answer choices.",
+  "generated_at": "2026-11-01T01:56:29.117Z",
+  "summary": "Day 44 of 72 (Weekly Review + CAT 2023 Slot 2 DILR Deconstruction): Deconstruct CAT 2023 Slot 2 DILR sets. Understand the modern logic design of multi-variable constraints.",
   "urgent_alerts": [
     {
       "title": "CAT 2026 Admit Card Release",
@@ -44,12 +44,12 @@
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 43: QA & DILR Focus",
+      "title": "CAT Day 44: QA & DILR Focus",
       "stream": "cat",
-      "details": "QA: 20 Questions on mixed Algebra (Logs, AP-GP, Quadratics) to consolidate Phase 2 skills.. DILR: Solve 4 DI sets from CAT 2022 Slot 2 & Slot 3 on 2IIM. Compare calculation methods with 2IIM videos..",
+      "details": "QA: Consolidate Algebra Formula Sheet. Review all formulas for logs, progressions, and quadratics on Cracku.. DILR: CAT 2023 Slot 2 DILR: Solve all 4 sets untimed on 2IIM. Record structural takeaways in DILR journal..",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-43"
+        "cat_2026_syllabus_roadmap.html#day-44"
       ],
       "priority": 1,
       "notify_before_min": 10,
@@ -76,12 +76,12 @@
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 43: VARC & Verbal Ability",
+      "title": "CAT Day 44: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "Take Full VARC Sectional Test 4 on Career Launcher MyZone (24 Qs, 40 Mins). Review trap answer selections. Maintain error log on Career Launcher MyZone.",
+      "details": "Read 1 deep-dive essay on AL Daily. Review error log for all Phase 2 verbal drills. Maintain error log on Career Launcher MyZone.",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-43"
+        "cat_2026_syllabus_roadmap.html#day-44"
       ],
       "priority": 1,
       "notify_before_min": 10,
