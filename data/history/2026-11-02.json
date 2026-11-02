@@ -1,0 +1,97 @@
+{
+  "date": "2026-11-02",
+  "timezone": "Asia/Kolkata",
+  "generated_at": "2026-11-02T02:09:13.344Z",
+  "summary": "Day 45 of 72 (Geometry Triangles 1: Angles, Inequalities & Triplets): Master sum of angles, exterior angle theorem, triangle inequality (|a-b| < c < a+b), and Pythagorean triplets.",
+  "urgent_alerts": [
+    {
+      "title": "CAT 2026 Admit Card Release",
+      "deadline": "2026-11-05T23:59:59+05:30",
+      "action": "Download CAT 2026 admit card on iimcat.ac.in (expected early Nov, verify on iimcat.ac.in). Note allocated slot (Slot 1, 2, or 3), and align mock tests with slot timing."
+    }
+  ],
+  "blocks": [
+    {
+      "id": "block-dsa",
+      "start": "07:30",
+      "end": "08:15",
+      "title": "DSA Algorithmic Problem Solving (2 Problems)",
+      "stream": "dsa",
+      "details": "Solve 2 curated LeetCode problems (1 Medium + 1 Easy/Review) from the 247-problem DSA Tracker. Focus on algorithmic clarity and edge cases.",
+      "links": [
+        "dsa_master_tracker.html"
+      ],
+      "priority": 1,
+      "notify_before_min": 10,
+      "verify": false
+    },
+    {
+      "id": "block-job",
+      "start": "08:15",
+      "end": "09:00",
+      "title": "Dedicated Job Outreach Application Batch",
+      "stream": "job",
+      "details": "Dedicated morning batch: Submit 8–10 tailored applications on Instahyre and LinkedIn Jobs. Target Series A–C tech and European remote roles highlighting Immediate Joiner status.",
+      "links": [
+        "profile.html#cold-email",
+        "https://www.instahyre.com"
+      ],
+      "priority": 2,
+      "notify_before_min": 10,
+      "verify": false
+    },
+    {
+      "id": "block-cat-qa-dilr",
+      "start": "10:00",
+      "end": "12:00",
+      "title": "CAT Day 45: QA & DILR Focus",
+      "stream": "cat",
+      "details": "QA: 25 Questions on Triangles basics: Finding angles, allowable integer third side counts, and obtuse/acute angle tests.. DILR: Radar Charts & Bubble Scatter Plots: Interpreting multi-axis spider charts and bubble radii. Anastasis Set 30..",
+      "links": [
+        "cat_2026_syllabus_roadmap.html",
+        "cat_2026_syllabus_roadmap.html#day-45"
+      ],
+      "priority": 1,
+      "notify_before_min": 10,
+      "verify": false
+    },
+    {
+      "id": "block-germany-admin",
+      "start": "14:30",
+      "end": "15:30",
+      "title": "Germany Academic Admin & Prerequisite Audits",
+      "stream": "germany",
+      "details": "Zero-fee audit tasks: Check Anabin H+ status for MDU, audit dMAT status on aps-india.de/dmat, review Passau interactive guide checklist, and email MDU for 100% English MOI letter.",
+      "links": [
+        "deadlines_calendar.html#prerequisite-tasks",
+        "https://anabin.kmk.org",
+        "https://aps-india.de/dmat",
+        "https://www.uni-passau.de/en/apply"
+      ],
+      "priority": 2,
+      "notify_before_min": 10,
+      "verify": true
+    },
+    {
+      "id": "block-cat-varc",
+      "start": "16:30",
+      "end": "18:00",
+      "title": "CAT Day 45: VARC & Verbal Ability",
+      "stream": "cat",
+      "details": "CL MyZone VARC: RC Module 8 - Literature & Historical Narrative passages. Solve 2 passages (8 Qs) in 18 mins. Maintain error log on Career Launcher MyZone.",
+      "links": [
+        "cat_2026_syllabus_roadmap.html",
+        "cat_2026_syllabus_roadmap.html#day-45"
+      ],
+      "priority": 1,
+      "notify_before_min": 10,
+      "verify": false
+    }
+  ],
+  "totals_by_stream_min": {
+    "dsa": 45,
+    "job": 45,
+    "cat": 210,
+    "germany": 60
+  }
+}

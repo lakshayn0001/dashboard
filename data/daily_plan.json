@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-01",
+  "date": "2026-11-02",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-11-01T01:56:29.117Z",
-  "summary": "Day 44 of 72 (Weekly Review + CAT 2023 Slot 2 DILR Deconstruction): Deconstruct CAT 2023 Slot 2 DILR sets. Understand the modern logic design of multi-variable constraints.",
+  "generated_at": "2026-11-02T02:09:13.344Z",
+  "summary": "Day 45 of 72 (Geometry Triangles 1: Angles, Inequalities & Triplets): Master sum of angles, exterior angle theorem, triangle inequality (|a-b| < c < a+b), and Pythagorean triplets.",
   "urgent_alerts": [
     {
       "title": "CAT 2026 Admit Card Release",
@@ -29,9 +29,9 @@
       "id": "block-job",
       "start": "08:15",
       "end": "09:00",
-      "title": "Job Search Recruiter Triage & Screening Replies",
+      "title": "Dedicated Job Outreach Application Batch",
       "stream": "job",
-      "details": "15–30 min recruiter communications triage: reply to inbound messages, confirm availability, schedule technical screenings, and follow up on pending submissions.",
+      "details": "Dedicated morning batch: Submit 8–10 tailored applications on Instahyre and LinkedIn Jobs. Target Series A–C tech and European remote roles highlighting Immediate Joiner status.",
       "links": [
         "profile.html#cold-email",
         "https://www.instahyre.com"
@@ -44,12 +44,12 @@
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 44: QA & DILR Focus",
+      "title": "CAT Day 45: QA & DILR Focus",
       "stream": "cat",
-      "details": "QA: Consolidate Algebra Formula Sheet. Review all formulas for logs, progressions, and quadratics on Cracku.. DILR: CAT 2023 Slot 2 DILR: Solve all 4 sets untimed on 2IIM. Record structural takeaways in DILR journal..",
+      "details": "QA: 25 Questions on Triangles basics: Finding angles, allowable integer third side counts, and obtuse/acute angle tests.. DILR: Radar Charts & Bubble Scatter Plots: Interpreting multi-axis spider charts and bubble radii. Anastasis Set 30..",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-44"
+        "cat_2026_syllabus_roadmap.html#day-45"
       ],
       "priority": 1,
       "notify_before_min": 10,
@@ -76,12 +76,12 @@
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 44: VARC & Verbal Ability",
+      "title": "CAT Day 45: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "Read 1 deep-dive essay on AL Daily. Review error log for all Phase 2 verbal drills. Maintain error log on Career Launcher MyZone.",
+      "details": "CL MyZone VARC: RC Module 8 - Literature & Historical Narrative passages. Solve 2 passages (8 Qs) in 18 mins. Maintain error log on Career Launcher MyZone.",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-44"
+        "cat_2026_syllabus_roadmap.html#day-45"
       ],
       "priority": 1,
       "notify_before_min": 10,
