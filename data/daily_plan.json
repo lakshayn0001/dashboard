@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-11-03T03:51:16.355Z",
-  "summary": "Day 46 of 72 (Geometry Triangles 2: Similarity, Congruence & Area Ratios): Master AAA similarity, Basic Proportionality Theorem (Thales), and Area1/Area2 = (Side1/Side2)^2 = (Height1/Height2)^2.",
+  "generated_at": "2026-11-04T02:56:04.026Z",
+  "summary": "Day 47 of 72 (Geometry Centers: Centroid, Incenter, Circumcenter & Orthocenter): Centroid divides medians 2:1. Inradius r = Area/s. Circumradius R = abc/4(Area). Orthocenter is altitude intersection.",
   "urgent_alerts": [
     {
       "title": "CAT 2026 Admit Card Release",
@@ -29,9 +29,9 @@
       "id": "block-job",
       "start": "08:15",
       "end": "09:00",
-      "title": "Job Search Recruiter Triage & Screening Replies",
+      "title": "Dedicated Job Outreach Application Batch",
       "stream": "job",
-      "details": "15–30 min recruiter communications triage: reply to inbound messages, confirm availability, schedule technical screenings, and follow up on pending submissions.",
+      "details": "Dedicated morning batch: Submit 8–10 tailored applications on Instahyre and LinkedIn Jobs. Target Series A–C tech and European remote roles highlighting Immediate Joiner status.",
       "links": [
         "profile.html#cold-email",
         "https://www.instahyre.com"
@@ -44,12 +44,12 @@
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 46: QA & DILR Focus",
+      "title": "CAT Day 47: QA & DILR Focus",
       "stream": "cat",
-      "details": "QA: 25 Questions on Similar Triangles, median dividing area into equal halves, and Apollonius Theorem.. DILR: Matrix Seating with Mathematical Logic: Anastasis Shankar Set 31 & Set 32..",
+      "details": "QA: 20 Questions on Triangle Centers and area coordinates. Verify incenter angle formulas (90 + A/2) on Cracku.. DILR: Routes & Networks / Flow Diagrams 1: Pipe flow with capacity bottlenecks and source-to-sink pathways..",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-46"
+        "cat_2026_syllabus_roadmap.html#day-47"
       ],
       "priority": 1,
       "notify_before_min": 10,
@@ -76,12 +76,12 @@
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 46: VARC & Verbal Ability",
+      "title": "CAT Day 47: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "Read 1 essay on Art History / Architecture on Aeon. Solve Cracku Free Daily Verbal Target. Maintain error log on Career Launcher MyZone.",
+      "details": "CL MyZone VARC: Verbal Ability Module 8 - Speed summary drills & elimination of pseudo-summaries. Maintain error log on Career Launcher MyZone.",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-46"
+        "cat_2026_syllabus_roadmap.html#day-47"
       ],
       "priority": 1,
       "notify_before_min": 10,
