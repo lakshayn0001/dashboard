@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-05",
+  "date": "2026-11-06",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-11-05T03:16:36.927Z",
-  "summary": "Day 48 of 72 (Geometry Circles 1: Chords, Tangents & Secants): Equal chords equidistant from center. Angle subtended at center is double angle at circumference. Alternate Segment Theorem.",
+  "generated_at": "2026-11-06T03:15:52.720Z",
+  "summary": "Day 49 of 72 (Geometry Circles 2: Cyclic Quadrilaterals & Tangents): Opposite angles sum to 180 degrees. Ptolemy's Theorem (d1*d2 = ac + bd). Direct and Transverse Common Tangents lengths.",
   "urgent_alerts": [
     {
       "title": "CAT 2026 Admit Card Release",
@@ -44,12 +44,12 @@
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 48: QA & DILR Focus",
+      "title": "CAT Day 49: QA & DILR Focus",
       "stream": "cat",
-      "details": "QA: 25 Questions on Circle theorems: Tangent-Secant theorem (PT^2 = PA x PB), intersecting chords inside circle (PA x PB = PC x PD).. DILR: Routes & Networks / Flow Diagrams 2: Intermediate node transfer costs and shortest path algorithms..",
+      "details": "QA: 20 Questions on Cyclic Quads and Common Tangents: sqrt(d^2 - (r1-r2)^2) vs sqrt(d^2 - (r1+r2)^2).. DILR: Unconventional / Miscellaneous DILR Logic: Word puzzles, matrix cryptarithms, and symbol substitution games..",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-48"
+        "cat_2026_syllabus_roadmap.html#day-49"
       ],
       "priority": 1,
       "notify_before_min": 10,
@@ -76,12 +76,12 @@
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 48: VARC & Verbal Ability",
+      "title": "CAT Day 49: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "Read 1 essay on Law / Judicial Philosophy on AL Daily. Solve 2 RC passages on CL MyZone. Maintain error log on Career Launcher MyZone.",
+      "details": "CL MyZone VARC: Full-length RC Sectional Drill (4 Passages, 16 Qs in 28 minutes). Track pace per passage. Maintain error log on Career Launcher MyZone.",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-48"
+        "cat_2026_syllabus_roadmap.html#day-49"
       ],
       "priority": 1,
       "notify_before_min": 10,
