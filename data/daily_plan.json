@@ -1,15 +1,9 @@
 {
-  "date": "2026-11-06",
+  "date": "2026-11-07",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-11-06T03:15:52.720Z",
-  "summary": "Day 49 of 72 (Geometry Circles 2: Cyclic Quadrilaterals & Tangents): Opposite angles sum to 180 degrees. Ptolemy's Theorem (d1*d2 = ac + bd). Direct and Transverse Common Tangents lengths.",
-  "urgent_alerts": [
-    {
-      "title": "CAT 2026 Admit Card Release",
-      "deadline": "2026-11-05T23:59:59+05:30",
-      "action": "Download CAT 2026 admit card on iimcat.ac.in (expected early Nov, verify on iimcat.ac.in). Note allocated slot (Slot 1, 2, or 3), and align mock tests with slot timing."
-    }
-  ],
+  "generated_at": "2026-11-07T02:34:54.379Z",
+  "summary": "Day 50 of 72 (Quadrilaterals & Regular Polygons): Properties of Parallelogram, Rhombus (d1*d2/2), Trapezium (1/2*(a+b)*h), and Regular Hexagon (6 equilateral triangles).",
+  "urgent_alerts": [],
   "blocks": [
     {
       "id": "block-dsa",
@@ -44,12 +38,12 @@
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 49: QA & DILR Focus",
+      "title": "CAT Day 50: QA & DILR Focus",
       "stream": "cat",
-      "details": "QA: 20 Questions on Cyclic Quads and Common Tangents: sqrt(d^2 - (r1-r2)^2) vs sqrt(d^2 - (r1+r2)^2).. DILR: Unconventional / Miscellaneous DILR Logic: Word puzzles, matrix cryptarithms, and symbol substitution games..",
+      "details": "QA: 20 Questions on Polygons: Interior angle sum (n-2)*180, number of diagonals n(n-3)/2, and Hexagon area formulas.. DILR: Anastasis Shankar Set 33 & Set 34: Multi-constraint seating and order deduction puzzles under timed pressure..",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-49"
+        "cat_2026_syllabus_roadmap.html#day-50"
       ],
       "priority": 1,
       "notify_before_min": 10,
@@ -76,12 +70,12 @@
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 49: VARC & Verbal Ability",
+      "title": "CAT Day 50: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "CL MyZone VARC: Full-length RC Sectional Drill (4 Passages, 16 Qs in 28 minutes). Track pace per passage. Maintain error log on Career Launcher MyZone.",
+      "details": "Solve 2 CAT 2020 Slot 3 RC passages on 2IIM. Focus on identifying answer choices that are too broad or narrow. Maintain error log on Career Launcher MyZone.",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-49"
+        "cat_2026_syllabus_roadmap.html#day-50"
       ],
       "priority": 1,
       "notify_before_min": 10,
