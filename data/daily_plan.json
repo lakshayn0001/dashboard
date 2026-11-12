@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-11",
+  "date": "2026-11-12",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-11-11T02:34:31.158Z",
-  "summary": "Day 54 of 72 (Special Right Triangles & Heights/Distances Basics (Class 10 Application)): Standard special right triangles (30°-60°-90° and 45°-45°-90° ratios) and Class 10 angle of elevation/depression shadow problems. Skip all Class 11–12 identities.",
+  "generated_at": "2026-11-12T03:39:02.316Z",
+  "summary": "Day 55 of 72 (Permutations & Combinations 1: Counting Principles & nCr): Fundamental Principle of Multiplication vs Addition, Factorials, nPr = n!/(n-r)!, nCr = n!/[r!(n-r)!], and team selections.",
   "urgent_alerts": [
     {
       "title": "Passau Application Freeze & Submission Window",
@@ -29,9 +29,9 @@
       "id": "block-job",
       "start": "08:15",
       "end": "09:00",
-      "title": "Dedicated Job Outreach Application Batch",
+      "title": "Job Search Recruiter Triage & Screening Replies",
       "stream": "job",
-      "details": "Dedicated morning batch: Submit 8–10 tailored applications on Instahyre and LinkedIn Jobs. Target Series A–C tech and European remote roles highlighting Immediate Joiner status.",
+      "details": "15–30 min recruiter communications triage: reply to inbound messages, confirm availability, schedule technical screenings, and follow up on pending submissions.",
       "links": [
         "profile.html#cold-email",
         "https://www.instahyre.com"
@@ -44,12 +44,12 @@
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 54: QA & DILR Focus",
+      "title": "CAT Day 55: QA & DILR Focus",
       "stream": "cat",
-      "details": "QA: 8–10 Questions on Heights & Distances and 30°-60°-90° right triangle applications. Strictly skip all higher trigonometric identities.. DILR: Quant-Based DILR: Maximizing or minimizing output based on algebraic conditions. Rodha DILR..",
+      "details": "QA: 25 Questions on P&C basics: Forming words with restricted letters, forming digits with/without repetition.. DILR: Missing Value DI Tables: Row/column constraints and linear bounds. Anastasis Shankar Set 38..",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-54"
+        "cat_2026_syllabus_roadmap.html#day-55"
       ],
       "priority": 1,
       "notify_before_min": 10,
@@ -76,12 +76,12 @@
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 54: VARC & Verbal Ability",
+      "title": "CAT Day 55: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "CL MyZone VARC: Verbal Ability Sprint - 4 Parajumbles + 3 Odd Sentence + 3 Summary under 15 mins. Maintain error log on Career Launcher MyZone.",
+      "details": "Read 1 essay on Evolutionary Biology on AL Daily. Solve 2 RC passages on CL MyZone. Maintain error log on Career Launcher MyZone.",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-54"
+        "cat_2026_syllabus_roadmap.html#day-55"
       ],
       "priority": 1,
       "notify_before_min": 10,
