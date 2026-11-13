@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-12",
+  "date": "2026-11-13",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-11-12T03:39:02.316Z",
-  "summary": "Day 55 of 72 (Permutations & Combinations 1: Counting Principles & nCr): Fundamental Principle of Multiplication vs Addition, Factorials, nPr = n!/(n-r)!, nCr = n!/[r!(n-r)!], and team selections.",
+  "generated_at": "2026-11-13T03:13:55.037Z",
+  "summary": "Day 56 of 72 (Permutations & Combinations 2: Circular, Grouping & Repetition): Arrangements around circular table (n-1)!, arrangements with identical items n!/(p!q!), and distributing items into groups.",
   "urgent_alerts": [
     {
       "title": "Passau Application Freeze & Submission Window",
@@ -44,12 +44,12 @@
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 55: QA & DILR Focus",
+      "title": "CAT Day 56: QA & DILR Focus",
       "stream": "cat",
-      "details": "QA: 25 Questions on P&C basics: Forming words with restricted letters, forming digits with/without repetition.. DILR: Missing Value DI Tables: Row/column constraints and linear bounds. Anastasis Shankar Set 38..",
+      "details": "QA: 20 Questions on Circular Permutations, Necklace problems (n-1)!/2, and identical coin distribution (n+r-1)C(r-1).. DILR: Selection DI Sets: Matrix matching with probability or selection rules. Anastasis Set 39..",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-55"
+        "cat_2026_syllabus_roadmap.html#day-56"
       ],
       "priority": 1,
       "notify_before_min": 10,
@@ -76,12 +76,12 @@
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 55: VARC & Verbal Ability",
+      "title": "CAT Day 56: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "Read 1 essay on Evolutionary Biology on AL Daily. Solve 2 RC passages on CL MyZone. Maintain error log on Career Launcher MyZone.",
+      "details": "CL MyZone VARC: Full VARC Sectional Test 5 (24 Qs, 40 Mins). Focus on maintaining momentum across passage 3 and 4. Maintain error log on Career Launcher MyZone.",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-55"
+        "cat_2026_syllabus_roadmap.html#day-56"
       ],
       "priority": 1,
       "notify_before_min": 10,
