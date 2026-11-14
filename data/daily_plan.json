@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-13",
+  "date": "2026-11-14",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-11-13T03:13:55.037Z",
-  "summary": "Day 56 of 72 (Permutations & Combinations 2: Circular, Grouping & Repetition): Arrangements around circular table (n-1)!, arrangements with identical items n!/(p!q!), and distributing items into groups.",
+  "generated_at": "2026-11-14T02:56:03.314Z",
+  "summary": "Day 57 of 72 (Probability Fundamentals: Classical, Conditional & Independent Events): P(E) = n(E)/n(S). Addition rule P(A U B) = P(A) + P(B) - P(A n B). Independent events P(A n B) = P(A)*P(B). Dice & Cards models.",
   "urgent_alerts": [
     {
       "title": "Passau Application Freeze & Submission Window",
@@ -44,12 +44,12 @@
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 56: QA & DILR Focus",
+      "title": "CAT Day 57: QA & DILR Focus",
       "stream": "cat",
-      "details": "QA: 20 Questions on Circular Permutations, Necklace problems (n-1)!/2, and identical coin distribution (n+r-1)C(r-1).. DILR: Selection DI Sets: Matrix matching with probability or selection rules. Anastasis Set 39..",
+      "details": "QA: 20 Questions on Probability: At least one head/six, drawing colored balls with/without replacement, and fair coin tosses.. DILR: Solve 1 complete DILR slot simulation from CAT 2022 Slot 3 (4 sets in 40 mins) on 2IIM..",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-56"
+        "cat_2026_syllabus_roadmap.html#day-57"
       ],
       "priority": 1,
       "notify_before_min": 10,
@@ -76,12 +76,12 @@
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 56: VARC & Verbal Ability",
+      "title": "CAT Day 57: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "CL MyZone VARC: Full VARC Sectional Test 5 (24 Qs, 40 Mins). Focus on maintaining momentum across passage 3 and 4. Maintain error log on Career Launcher MyZone.",
+      "details": "Read 1 essay on Philosophy of Science on Aeon. Solve 2 RC passages from CAT 2021 Slot 1 on 2IIM. Maintain error log on Career Launcher MyZone.",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-56"
+        "cat_2026_syllabus_roadmap.html#day-57"
       ],
       "priority": 1,
       "notify_before_min": 10,
