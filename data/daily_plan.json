@@ -1,15 +1,9 @@
 {
-  "date": "2026-11-16",
+  "date": "2026-11-17",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-11-16T02:36:10.209Z",
-  "summary": "Day 59 of 72 (Number System 1: Divisibility Rules & Factors Breakdown): Divisibility tests for 2, 3, 4, 7, 8, 9, 11, 13. Prime factorization N = p^a * q^b. Number of factors (a+1)(b+1), sum of factors.",
-  "urgent_alerts": [
-    {
-      "title": "Passau Application Freeze & Submission Window",
-      "deadline": "2026-11-15T23:59:59+05:30",
-      "action": "Submit completed Passau M.Sc. CS application before 15 Nov freeze to preserve 100% mental stamina for CAT exam."
-    }
-  ],
+  "generated_at": "2026-11-17T04:58:38.432Z",
+  "summary": "Day 60 of 72 (Number System 2: Remainder Theorems (Euler & Fermat)): Negative remainders concept. Fermat's Little Theorem (a^(p-1) mod p = 1). Euler's Totient phi(n) and power reduction.",
+  "urgent_alerts": [],
   "blocks": [
     {
       "id": "block-dsa",
@@ -29,9 +23,9 @@
       "id": "block-job",
       "start": "08:15",
       "end": "09:00",
-      "title": "Dedicated Job Outreach Application Batch",
+      "title": "Job Search Recruiter Triage & Screening Replies",
       "stream": "job",
-      "details": "Dedicated morning batch: Submit 8–10 tailored applications on Instahyre and LinkedIn Jobs. Target Series A–C tech and European remote roles highlighting Immediate Joiner status.",
+      "details": "15–30 min recruiter communications triage: reply to inbound messages, confirm availability, schedule technical screenings, and follow up on pending submissions.",
       "links": [
         "profile.html#cold-email",
         "https://www.instahyre.com"
@@ -44,12 +38,12 @@
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 59: QA & DILR Focus",
+      "title": "CAT Day 60: QA & DILR Focus",
       "stream": "cat",
-      "details": "QA: 25 Questions on Divisibility Rules & Factorization: Number of even/odd factors, number of factors coprime to 10.. DILR: CAT 2021 Slot 1 DILR Set 1 & Set 2: Solve under 12-minute timer on 2IIM. Check alternate notation..",
+      "details": "QA: 20 Questions on Remainder Theorems: Finding remainders of large powers (e.g. 2^100 mod 7) and binomial theorem remainders.. DILR: CAT 2021 Slot 2 DILR Set 1 & Set 2: Solve on 2IIM. Refine case-elimination speed..",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-59"
+        "cat_2026_syllabus_roadmap.html#day-60"
       ],
       "priority": 1,
       "notify_before_min": 10,
@@ -73,12 +67,12 @@
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 59: VARC & Verbal Ability",
+      "title": "CAT Day 60: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "CL MyZone VARC: Speed Drill - Solve 2 dense RCs in 16 mins. Focus on main idea and tone questions. Maintain error log on Career Launcher MyZone.",
+      "details": "Read 1 essay on Modern Psychology / Economics on AL Daily. Solve Cracku Free Daily Verbal Target. Maintain error log on Career Launcher MyZone.",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-59"
+        "cat_2026_syllabus_roadmap.html#day-60"
       ],
       "priority": 1,
       "notify_before_min": 10,
