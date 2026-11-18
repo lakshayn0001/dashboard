@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-17",
+  "date": "2026-11-18",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-11-17T04:58:38.432Z",
-  "summary": "Day 60 of 72 (Number System 2: Remainder Theorems (Euler & Fermat)): Negative remainders concept. Fermat's Little Theorem (a^(p-1) mod p = 1). Euler's Totient phi(n) and power reduction.",
+  "generated_at": "2026-11-18T04:03:21.432Z",
+  "summary": "Day 61 of 72 (Number System 3: Unit Digits, Cyclicity & Last 2 Digits): Cyclicity of 2, 3, 7, 8 is 4; cyclicity of 4, 9 is 2. Last two digits using binomial expansion and mod 100 shortcuts.",
   "urgent_alerts": [],
   "blocks": [
     {
@@ -23,9 +23,9 @@
       "id": "block-job",
       "start": "08:15",
       "end": "09:00",
-      "title": "Job Search Recruiter Triage & Screening Replies",
+      "title": "Dedicated Job Outreach Application Batch",
       "stream": "job",
-      "details": "15–30 min recruiter communications triage: reply to inbound messages, confirm availability, schedule technical screenings, and follow up on pending submissions.",
+      "details": "Dedicated morning batch: Submit 8–10 tailored applications on Instahyre and LinkedIn Jobs. Target Series A–C tech and European remote roles highlighting Immediate Joiner status.",
       "links": [
         "profile.html#cold-email",
         "https://www.instahyre.com"
@@ -38,12 +38,12 @@
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 60: QA & DILR Focus",
+      "title": "CAT Day 61: QA & DILR Focus",
       "stream": "cat",
-      "details": "QA: 20 Questions on Remainder Theorems: Finding remainders of large powers (e.g. 2^100 mod 7) and binomial theorem remainders.. DILR: CAT 2021 Slot 2 DILR Set 1 & Set 2: Solve on 2IIM. Refine case-elimination speed..",
+      "details": "QA: 20 Questions on Unit Digits, Trailing Zeroes in n! (Legendre's Formula [n/5] + [n/25] + ...), and base-n numbers.. DILR: CAT 2022 Slot 1 DILR Set 1 & Set 2: Solve on 2IIM. Practice zero-roughwork table tracking..",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-60"
+        "cat_2026_syllabus_roadmap.html#day-61"
       ],
       "priority": 1,
       "notify_before_min": 10,
@@ -67,12 +67,12 @@
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 60: VARC & Verbal Ability",
+      "title": "CAT Day 61: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "Read 1 essay on Modern Psychology / Economics on AL Daily. Solve Cracku Free Daily Verbal Target. Maintain error log on Career Launcher MyZone.",
+      "details": "CL MyZone VARC: Parajumbles & Summary Sprint (10 Questions in 12 mins strict). Maintain error log on Career Launcher MyZone.",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-60"
+        "cat_2026_syllabus_roadmap.html#day-61"
       ],
       "priority": 1,
       "notify_before_min": 10,
