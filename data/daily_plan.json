@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-19",
+  "date": "2026-11-20",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-11-19T03:59:42.511Z",
-  "summary": "Day 62 of 72 (Number System 4: HCF, LCM Models & Successive Division): HCF x LCM = Product of two numbers. Standard remainder models: Remainder is same r (LCM + r), Difference (Divisor - Remainder) is constant.",
+  "generated_at": "2026-11-20T03:53:08.617Z",
+  "summary": "Day 63 of 72 (CAT 2023 Slot 1 Paper Deconstruction (Full 66 Qs)): Analyze every single question from actual CAT 2023 Slot 1 on 2IIM. Classify into Must-Attempt vs Must-Skip.",
   "urgent_alerts": [],
   "blocks": [
     {
@@ -38,12 +38,12 @@
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 62: QA & DILR Focus",
+      "title": "CAT Day 63: QA & DILR Focus",
       "stream": "cat",
-      "details": "QA: 20 Questions on HCF-LCM models and successive division remainder problems.. DILR: CAT 2022 Slot 2 DILR Set 1 & Set 2: Anastasis Shankar Set 41 & Set 42 walkthrough..",
+      "details": "QA: Deconstruct all 22 questions of CAT 2023 Slot 1 QA. Confirm that 9 questions were straightforward Arithmetic/Algebra.. DILR: Deconstruct all 4 sets of CAT 2023 Slot 1 DILR. Note down which set had the cleanest entry condition..",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-62"
+        "cat_2026_syllabus_roadmap.html#day-63"
       ],
       "priority": 1,
       "notify_before_min": 10,
@@ -67,12 +67,12 @@
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 62: VARC & Verbal Ability",
+      "title": "CAT Day 63: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "Read 1 essay on Climate Science / Geopolitics on Project Syndicate. Solve 2 RC passages on CL MyZone. Maintain error log on Career Launcher MyZone.",
+      "details": "Deconstruct all 24 questions of CAT 2023 Slot 1 VARC. Review exact answer keys and rationale on 2IIM. Maintain error log on Career Launcher MyZone.",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-62"
+        "cat_2026_syllabus_roadmap.html#day-63"
       ],
       "priority": 1,
       "notify_before_min": 10,
