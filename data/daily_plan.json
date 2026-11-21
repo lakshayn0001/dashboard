@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-20",
+  "date": "2026-11-21",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-11-20T03:53:08.617Z",
-  "summary": "Day 63 of 72 (CAT 2023 Slot 1 Paper Deconstruction (Full 66 Qs)): Analyze every single question from actual CAT 2023 Slot 1 on 2IIM. Classify into Must-Attempt vs Must-Skip.",
+  "generated_at": "2026-11-21T03:49:28.959Z",
+  "summary": "Day 64 of 72 (CAT 2023 Slot 2 & Slot 3 High-Yield Sprint): Deconstruct key sets from CAT 2023 Slot 2 and Slot 3. Reinforce time-management discipline.",
   "urgent_alerts": [],
   "blocks": [
     {
@@ -38,12 +38,12 @@
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 63: QA & DILR Focus",
+      "title": "CAT Day 64: QA & DILR Focus",
       "stream": "cat",
-      "details": "QA: Deconstruct all 22 questions of CAT 2023 Slot 1 QA. Confirm that 9 questions were straightforward Arithmetic/Algebra.. DILR: Deconstruct all 4 sets of CAT 2023 Slot 1 DILR. Note down which set had the cleanest entry condition..",
+      "details": "QA: Solve 15 selected Arithmetic & Algebra questions from CAT 2023 Slot 2 & 3. Note step savings.. DILR: CAT 2023 Slot 2 DILR: Solve the best 2 sets on Anastasis Shankar channel..",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-63"
+        "cat_2026_syllabus_roadmap.html#day-64"
       ],
       "priority": 1,
       "notify_before_min": 10,
@@ -67,12 +67,12 @@
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 63: VARC & Verbal Ability",
+      "title": "CAT Day 64: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "Deconstruct all 24 questions of CAT 2023 Slot 1 VARC. Review exact answer keys and rationale on 2IIM. Maintain error log on Career Launcher MyZone.",
+      "details": "Solve 2 RC passages from CAT 2023 Slot 2 on 2IIM. Aim for 8/8 accuracy under 16 minutes. Maintain error log on Career Launcher MyZone.",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-63"
+        "cat_2026_syllabus_roadmap.html#day-64"
       ],
       "priority": 1,
       "notify_before_min": 10,

@@ -1,0 +1,87 @@
+{
+  "date": "2026-11-21",
+  "timezone": "Asia/Kolkata",
+  "generated_at": "2026-11-21T03:49:28.959Z",
+  "summary": "Day 64 of 72 (CAT 2023 Slot 2 & Slot 3 High-Yield Sprint): Deconstruct key sets from CAT 2023 Slot 2 and Slot 3. Reinforce time-management discipline.",
+  "urgent_alerts": [],
+  "blocks": [
+    {
+      "id": "block-dsa",
+      "start": "07:30",
+      "end": "08:15",
+      "title": "DSA Algorithmic Problem Solving (2 Problems)",
+      "stream": "dsa",
+      "details": "Solve 2 curated LeetCode problems (1 Medium + 1 Easy/Review) from the 247-problem DSA Tracker. Focus on algorithmic clarity and edge cases.",
+      "links": [
+        "dsa_master_tracker.html"
+      ],
+      "priority": 1,
+      "notify_before_min": 10,
+      "verify": false
+    },
+    {
+      "id": "block-job",
+      "start": "08:15",
+      "end": "09:00",
+      "title": "Job Search Recruiter Triage & Screening Replies",
+      "stream": "job",
+      "details": "15–30 min recruiter communications triage: reply to inbound messages, confirm availability, schedule technical screenings, and follow up on pending submissions.",
+      "links": [
+        "profile.html#cold-email",
+        "https://www.instahyre.com"
+      ],
+      "priority": 2,
+      "notify_before_min": 10,
+      "verify": false
+    },
+    {
+      "id": "block-cat-qa-dilr",
+      "start": "10:00",
+      "end": "12:00",
+      "title": "CAT Day 64: QA & DILR Focus",
+      "stream": "cat",
+      "details": "QA: Solve 15 selected Arithmetic & Algebra questions from CAT 2023 Slot 2 & 3. Note step savings.. DILR: CAT 2023 Slot 2 DILR: Solve the best 2 sets on Anastasis Shankar channel..",
+      "links": [
+        "cat_2026_syllabus_roadmap.html",
+        "cat_2026_syllabus_roadmap.html#day-64"
+      ],
+      "priority": 1,
+      "notify_before_min": 10,
+      "verify": false
+    },
+    {
+      "id": "block-cat-revision",
+      "start": "14:30",
+      "end": "15:30",
+      "title": "CAT 2026 High-Yield Revision & Error Log",
+      "stream": "cat",
+      "details": "Post-freeze study sprint: Review flagged weak areas, formula shortcuts, and recent mock exam error log entries.",
+      "links": [
+        "cat_2026_syllabus_roadmap.html#timetable"
+      ],
+      "priority": 1,
+      "notify_before_min": 10,
+      "verify": false
+    },
+    {
+      "id": "block-cat-varc",
+      "start": "16:30",
+      "end": "18:00",
+      "title": "CAT Day 64: VARC & Verbal Ability",
+      "stream": "cat",
+      "details": "Solve 2 RC passages from CAT 2023 Slot 2 on 2IIM. Aim for 8/8 accuracy under 16 minutes. Maintain error log on Career Launcher MyZone.",
+      "links": [
+        "cat_2026_syllabus_roadmap.html",
+        "cat_2026_syllabus_roadmap.html#day-64"
+      ],
+      "priority": 1,
+      "notify_before_min": 10,
+      "verify": false
+    }
+  ],
+  "totals_by_stream_min": {
+    "dsa": 45,
+    "job": 45,
+    "cat": 270
+  }
+}
