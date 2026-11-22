@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-21",
+  "date": "2026-11-22",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-11-21T03:49:28.959Z",
-  "summary": "Day 64 of 72 (CAT 2023 Slot 2 & Slot 3 High-Yield Sprint): Deconstruct key sets from CAT 2023 Slot 2 and Slot 3. Reinforce time-management discipline.",
+  "generated_at": "2026-11-22T02:51:43.726Z",
+  "summary": "Day 65 of 72 (Question Selection Speed Drill: Rapid Scanning Protocol): Practice the 5-minute scan: Open QA/DILR papers and instantly star the easiest 8 questions without solving.",
   "urgent_alerts": [],
   "blocks": [
     {
@@ -38,12 +38,12 @@
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 64: QA & DILR Focus",
+      "title": "CAT Day 65: QA & DILR Focus",
       "stream": "cat",
-      "details": "QA: Solve 15 selected Arithmetic & Algebra questions from CAT 2023 Slot 2 & 3. Note step savings.. DILR: CAT 2023 Slot 2 DILR: Solve the best 2 sets on Anastasis Shankar channel..",
+      "details": "QA: Rapidly scan 22 QA questions from CAT 2022 Slot 3. Pick exactly 9 questions to attempt in 30 minutes. Solve them.. DILR: Rapidly evaluate 4 DILR sets: identify the set with highest data clarity within 4 minutes. Anastasis Shankar..",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-64"
+        "cat_2026_syllabus_roadmap.html#day-65"
       ],
       "priority": 1,
       "notify_before_min": 10,
@@ -67,12 +67,12 @@
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 64: VARC & Verbal Ability",
+      "title": "CAT Day 65: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "Solve 2 RC passages from CAT 2023 Slot 2 on 2IIM. Aim for 8/8 accuracy under 16 minutes. Maintain error log on Career Launcher MyZone.",
+      "details": "Rapidly evaluate 4 RC passages: rank them by readability and question directness within 3 minutes. Maintain error log on Career Launcher MyZone.",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-64"
+        "cat_2026_syllabus_roadmap.html#day-65"
       ],
       "priority": 1,
       "notify_before_min": 10,
