@@ -1,0 +1,93 @@
+{
+  "date": "2026-11-24",
+  "timezone": "Asia/Kolkata",
+  "generated_at": "2026-11-24T06:48:32.766Z",
+  "summary": "Day 67 of 72 (Final Benchmark Mock 5: Exact Exam Slot Simulation): Sit for your final full 120-minute mock during your exact assigned CAT exam time slot. Build peak confidence.",
+  "urgent_alerts": [
+    {
+      "title": "CAT 2026 Examination Day",
+      "deadline": "2026-11-29T08:30:00+05:30",
+      "action": "National CAT exam: 68 questions in 120 minutes (VARC 24, DILR 22, QA 22). Report 1 hr before allocated slot."
+    }
+  ],
+  "blocks": [
+    {
+      "id": "block-dsa",
+      "start": "07:30",
+      "end": "08:15",
+      "title": "DSA Algorithmic Problem Solving (2 Problems)",
+      "stream": "dsa",
+      "details": "Solve 2 curated LeetCode problems (1 Medium + 1 Easy/Review) from the 247-problem DSA Tracker. Focus on algorithmic clarity and edge cases.",
+      "links": [
+        "dsa_master_tracker.html"
+      ],
+      "priority": 1,
+      "notify_before_min": 10,
+      "verify": false
+    },
+    {
+      "id": "block-job",
+      "start": "08:15",
+      "end": "09:00",
+      "title": "Job Search Recruiter Triage & Screening Replies",
+      "stream": "job",
+      "details": "15–30 min recruiter communications triage: reply to inbound messages, confirm availability, schedule technical screenings, and follow up on pending submissions.",
+      "links": [
+        "profile.html#cold-email",
+        "https://www.instahyre.com"
+      ],
+      "priority": 2,
+      "notify_before_min": 10,
+      "verify": false
+    },
+    {
+      "id": "block-cat-qa-dilr",
+      "start": "10:00",
+      "end": "12:00",
+      "title": "CAT Day 67: QA & DILR Focus",
+      "stream": "cat",
+      "details": "QA: Final Mock 5 - Section 3: QA 40 mins. Execute 9–11 high-accuracy Arithmetic & Algebra questions.. DILR: Final Mock 5 - Section 2: DILR 40 mins. Lock down 2 clean sets (8–10 questions). Zero panic..",
+      "links": [
+        "cat_2026_syllabus_roadmap.html",
+        "cat_2026_syllabus_roadmap.html#day-67"
+      ],
+      "priority": 1,
+      "notify_before_min": 10,
+      "verify": false
+    },
+    {
+      "id": "block-cat-revision",
+      "start": "14:30",
+      "end": "15:30",
+      "title": "CAT 2026 High-Yield Revision & Error Log",
+      "stream": "cat",
+      "details": "Post-freeze study sprint: Review flagged weak areas, formula shortcuts, and recent mock exam error log entries.",
+      "links": [
+        "cat_2026_syllabus_roadmap.html#timetable"
+      ],
+      "priority": 1,
+      "notify_before_min": 10,
+      "verify": false
+    },
+    {
+      "id": "block-cat-varc",
+      "start": "16:30",
+      "end": "18:00",
+      "title": "CAT Day 67: VARC & Verbal Ability",
+      "stream": "cat",
+      "details": "Final Mock 5 - Section 1: VARC 40 mins. Steady pace: 3 RCs + 4 VA questions. Maintain error log on Career Launcher MyZone.",
+      "links": [
+        "cat_2026_syllabus_roadmap.html",
+        "cat_2026_syllabus_roadmap.html#day-67"
+      ],
+      "priority": 1,
+      "notify_before_min": 10,
+      "verify": false
+    }
+  ],
+  "totals_by_stream_min": {
+    "dsa": 45,
+    "job": 45,
+    "cat": 270
+  }
+}

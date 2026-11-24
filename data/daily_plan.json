@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-23",
+  "date": "2026-11-24",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-11-23T03:34:03.992Z",
-  "summary": "Day 66 of 72 (Master Formula Consolidation + Light Practice): Begin the taper: Memorize the entire Cracku QA Formula Sheet. Solve only 1 RC passage and 1 DILR set.",
+  "generated_at": "2026-11-24T06:48:32.766Z",
+  "summary": "Day 67 of 72 (Final Benchmark Mock 5: Exact Exam Slot Simulation): Sit for your final full 120-minute mock during your exact assigned CAT exam time slot. Build peak confidence.",
   "urgent_alerts": [
     {
       "title": "CAT 2026 Examination Day",
@@ -29,9 +29,9 @@
       "id": "block-job",
       "start": "08:15",
       "end": "09:00",
-      "title": "Dedicated Job Outreach Application Batch",
+      "title": "Job Search Recruiter Triage & Screening Replies",
       "stream": "job",
-      "details": "Dedicated morning batch: Submit 8–10 tailored applications on Instahyre and LinkedIn Jobs. Target Series A–C tech and European remote roles highlighting Immediate Joiner status.",
+      "details": "15–30 min recruiter communications triage: reply to inbound messages, confirm availability, schedule technical screenings, and follow up on pending submissions.",
       "links": [
         "profile.html#cold-email",
         "https://www.instahyre.com"
@@ -44,12 +44,12 @@
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 66: QA & DILR Focus",
+      "title": "CAT Day 67: QA & DILR Focus",
       "stream": "cat",
-      "details": "QA: Review entire Cracku CAT QA Formula Cheat Sheet from first page to last. Recite all geometry & algebra identities.. DILR: Solve 1 moderate arrangement DILR set from Anastasis Shankar. Reinforce clean notation habits..",
+      "details": "QA: Final Mock 5 - Section 3: QA 40 mins. Execute 9–11 high-accuracy Arithmetic & Algebra questions.. DILR: Final Mock 5 - Section 2: DILR 40 mins. Lock down 2 clean sets (8–10 questions). Zero panic..",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-66"
+        "cat_2026_syllabus_roadmap.html#day-67"
       ],
       "priority": 1,
       "notify_before_min": 10,
@@ -73,12 +73,12 @@
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 66: VARC & Verbal Ability",
+      "title": "CAT Day 67: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "Read 1 high-interest Aeon essay. Solve 1 RC passage on Career Launcher MyZone with 100% calm focus. Maintain error log on Career Launcher MyZone.",
+      "details": "Final Mock 5 - Section 1: VARC 40 mins. Steady pace: 3 RCs + 4 VA questions. Maintain error log on Career Launcher MyZone.",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-66"
+        "cat_2026_syllabus_roadmap.html#day-67"
       ],
       "priority": 1,
       "notify_before_min": 10,
