@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-24",
+  "date": "2026-11-25",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-11-24T06:48:32.766Z",
-  "summary": "Day 67 of 72 (Final Benchmark Mock 5: Exact Exam Slot Simulation): Sit for your final full 120-minute mock during your exact assigned CAT exam time slot. Build peak confidence.",
+  "generated_at": "2026-11-25T05:15:51.553Z",
+  "summary": "Day 68 of 72 (Light Post-Mock 5 Analysis & Error Log Rules Lockdown): Analyze Mock 5 focusing strictly on what went RIGHT. Review the Golden Error Log rules.",
   "urgent_alerts": [
     {
       "title": "CAT 2026 Examination Day",
@@ -29,9 +29,9 @@
       "id": "block-job",
       "start": "08:15",
       "end": "09:00",
-      "title": "Job Search Recruiter Triage & Screening Replies",
+      "title": "Dedicated Job Outreach Application Batch",
       "stream": "job",
-      "details": "15–30 min recruiter communications triage: reply to inbound messages, confirm availability, schedule technical screenings, and follow up on pending submissions.",
+      "details": "Dedicated morning batch: Submit 8–10 tailored applications on Instahyre and LinkedIn Jobs. Target Series A–C tech and European remote roles highlighting Immediate Joiner status.",
       "links": [
         "profile.html#cold-email",
         "https://www.instahyre.com"
@@ -44,12 +44,12 @@
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 67: QA & DILR Focus",
+      "title": "CAT Day 68: QA & DILR Focus",
       "stream": "cat",
-      "details": "QA: Final Mock 5 - Section 3: QA 40 mins. Execute 9–11 high-accuracy Arithmetic & Algebra questions.. DILR: Final Mock 5 - Section 2: DILR 40 mins. Lock down 2 clean sets (8–10 questions). Zero panic..",
+      "details": "QA: Review QA Mock 5: Verify calculations. Re-read the formula sheet one more time.. DILR: Review DILR Mock 5: Congratulate yourself on successful set selection. No new tough sets today..",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-67"
+        "cat_2026_syllabus_roadmap.html#day-68"
       ],
       "priority": 1,
       "notify_before_min": 10,
@@ -73,12 +73,12 @@
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 67: VARC & Verbal Ability",
+      "title": "CAT Day 68: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "Final Mock 5 - Section 1: VARC 40 mins. Steady pace: 3 RCs + 4 VA questions. Maintain error log on Career Launcher MyZone.",
+      "details": "Review VARC Mock 5: Reinforce why correct options were chosen. Read 1 pleasant short article on AL Daily. Maintain error log on Career Launcher MyZone.",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-67"
+        "cat_2026_syllabus_roadmap.html#day-68"
       ],
       "priority": 1,
       "notify_before_min": 10,
