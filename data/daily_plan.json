@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-27",
+  "date": "2026-11-28",
   "timezone": "Asia/Kolkata",
-  "generated_at": "2026-11-27T04:49:40.186Z",
-  "summary": "Day 70 of 72 (Admit Card, Documents, Exam Logistics & Route Map): Print 2 color copies of CAT 2026 Admit Card. Affix photograph as per instructions. Check original ID proof.",
+  "generated_at": "2026-11-28T04:35:29.856Z",
+  "summary": "Day 71 of 72 (Zero Books / Zero Mocks Day: Complete Mental Decompression): Strict rest day: No books, no mocks, no forums. Keep brain fresh, hydrated, and calm. Trust your 71 days of disciplined prep.",
   "urgent_alerts": [
     {
       "title": "CAT 2026 Examination Day",
@@ -44,12 +44,12 @@
       "id": "block-cat-qa-dilr",
       "start": "10:00",
       "end": "12:00",
-      "title": "CAT Day 70: QA & DILR Focus",
+      "title": "CAT Day 71: QA & DILR Focus",
       "stream": "cat",
-      "details": "QA: Pack transparent water bottle, original photo ID card, admit card, and 2 identical passport photographs. Sleep by 10:30 PM.. DILR: Map out exam center route on Google Maps. Plan to arrive at center 90 minutes before gate closure time..",
+      "details": "QA: Eat light nutritious dinner. Double check alarm clock and travel arrangements. Sleep soundly by 10:00 PM.. DILR: Take a relaxing evening walk. Stay off social media and telegram groups to avoid exam anxiety contagion..",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-70"
+        "cat_2026_syllabus_roadmap.html#day-71"
       ],
       "priority": 1,
       "notify_before_min": 10,
@@ -73,12 +73,12 @@
       "id": "block-cat-varc",
       "start": "16:30",
       "end": "18:00",
-      "title": "CAT Day 70: VARC & Verbal Ability",
+      "title": "CAT Day 71: VARC & Verbal Ability",
       "stream": "cat",
-      "details": "Download & verify Admit Card from official IIM CAT portal. Ensure candidate name matches Aadhaar card exactly. Maintain error log on Career Launcher MyZone.",
+      "details": "Light 15-minute inspirational reading or pleasant book. Do NOT open test portals or forums. Maintain error log on Career Launcher MyZone.",
       "links": [
         "cat_2026_syllabus_roadmap.html",
-        "cat_2026_syllabus_roadmap.html#day-70"
+        "cat_2026_syllabus_roadmap.html#day-71"
       ],
       "priority": 1,
       "notify_before_min": 10,
